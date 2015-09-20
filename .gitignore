@@ -287,3 +287,4 @@ sympy-plots-for-*.tex/
 *.xdy
 
 *.exe
+*input.txt
