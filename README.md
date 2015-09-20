@@ -1,4 +1,4 @@
 algorithms-spoj
 ============
 
-Getting some experience on [SPOJ](http://www.spoj.com) before trying other competitive programming websites.
+Getting some experience on [SPOJ](http://www.spoj.com/users/davidgalehouse/) before trying other programming competitions. 
