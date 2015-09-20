@@ -285,3 +285,5 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+
+*.exe
