@@ -14,7 +14,7 @@ public class PRIME1
 
         SieveOfEratosthenes sieve = new SieveOfEratosthenes(Billion, strategy);
 
-        int numberOfTestCases = Convert.ToInt32(Console.ReadLine());
+        int numberOfTestCases = int.Parse(Console.ReadLine());
 
         for(int i = 0; i < numberOfTestCases; ++i)
         {
