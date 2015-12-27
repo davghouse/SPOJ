@@ -1,20 +1,26 @@
 using System;
 
-// 1 Life, the Universe, and Everything
-// http://www.spoj.com/problems/TEST/
-public class TEST
+// Life, the Universe, and Everything
+// 1 http://www.spoj.com/problems/TEST/
+// Reads and prints console input until the answer to life, the universe, and everything is found.
+public class Test
 {
-    private static void Main()
-    {
-        TEST.Solve();
-    }
+    private const string AnswerToEverything = "42";
 
     public static void Solve()
     {
         string line;
-        while((line = Console.ReadLine()) != "42")
+        while((line = Console.ReadLine()) != AnswerToEverything)
         {
             Console.WriteLine(line);
         }
+    }
+}
+
+public static class Program
+{
+    private static void Main()
+    {
+        Test.Solve();
     }
 }
