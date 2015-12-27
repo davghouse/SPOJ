@@ -3,7 +3,7 @@ using System;
 // Life, the Universe, and Everything
 // 1 http://www.spoj.com/problems/TEST/
 // Reads and prints console input until the answer to life, the universe, and everything is found.
-public class Test
+public static class TEST
 {
     private const string AnswerToEverything = "42";
 
@@ -21,6 +21,6 @@ public static class Program
 {
     private static void Main()
     {
-        Test.Solve();
+        TEST.Solve();
     }
 }
