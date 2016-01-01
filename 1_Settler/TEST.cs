@@ -5,12 +5,12 @@ using System;
 // Reads and prints console input until the answer to life, the universe, and everything is found.
 public static class TEST
 {
-    private const string AnswerToEverything = "42";
+    private const string _answerToEverything = "42";
 
     public static void Solve()
     {
         string line;
-        while((line = Console.ReadLine()) != AnswerToEverything)
+        while((line = Console.ReadLine()) != _answerToEverything)
         {
             Console.WriteLine(line);
         }

@@ -26,14 +26,14 @@ public static class Program
 {
     private static void Main()
     {
-        int numberOfTestCases = int.Parse(Console.ReadLine());
+        int remainingTestCases = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < numberOfTestCases; ++i)
+        while (remainingTestCases-- > 0)
         {
-            string[] integers = Console.ReadLine().Split(' ');
+            string[] ints = Console.ReadLine().Split(' ');
 
             Console.WriteLine(
-                ADDREV.Solve(int.Parse(integers[0]), int.Parse(integers[1])));
+                ADDREV.Solve(int.Parse(ints[0]), int.Parse(ints[1])));
         }
     }
 }
