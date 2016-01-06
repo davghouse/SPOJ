@@ -49,7 +49,8 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            Console.WriteLine(ONP.Solve(Console.ReadLine()));
+            Console.WriteLine(
+			    ONP.Solve(Console.ReadLine()));
         }
     }
 }

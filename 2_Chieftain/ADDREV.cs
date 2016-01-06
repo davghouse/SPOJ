@@ -30,10 +30,10 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            string[] ints = Console.ReadLine().Split(' ');
+            string[] line = Console.ReadLine().Split(' ');
 
             Console.WriteLine(
-                ADDREV.Solve(int.Parse(ints[0]), int.Parse(ints[1])));
+                ADDREV.Solve(int.Parse(line[0]), int.Parse(line[1])));
         }
     }
 }
