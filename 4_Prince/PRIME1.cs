@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 // Prime Generator
 // 2 http://www.spoj.com/problems/PRIME1/
-// Returns all the primes between two numbers m and n, 1 <= m <= n <= 1,000,000,000, inclusive.
+// Returns all the primes between two numbers m and n (inclusive), where 1 <= m <= n <= 1,000,000,000.
 public static class PRIME1
 {
     private const int _limit = 1000000000;
@@ -56,7 +56,7 @@ public sealed class SieveOfEratosthenesDecider : PrimeDecider
 
     private void BuildSieve()
     {
-        _sieve = new BitArray(Limit + 1, true); // Add one to make room for zero, for convenience.
+        _sieve = new BitArray(Limit + 1, true);
         _sieve[0] = false;
         _sieve[1] = false;
 
@@ -113,7 +113,6 @@ public sealed class SieveOfEratosthenesProvider : PrimeProvider
 
     public override bool IsPrime(int a)
         => _decider.IsPrime(a);
-
 }
 
 public sealed class TrialDivisionDecider : PrimeDecider
@@ -158,9 +157,9 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            string[] ints = Console.ReadLine().Split(' ');
+            string[] line = Console.ReadLine().Split(' ');
 
-            foreach (int prime in PRIME1.Solve(int.Parse(ints[0]), int.Parse(ints[1])))
+            foreach (int prime in PRIME1.Solve(int.Parse(line[0]), int.Parse(line[1])))
             {
                 Console.WriteLine(prime);
             }
