@@ -50,7 +50,7 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(
-			    ONP.Solve(Console.ReadLine()));
+                ONP.Solve(Console.ReadLine()));
         }
     }
 }

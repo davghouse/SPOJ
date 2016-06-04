@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public static class PRIME1
 {
     private const int _limit = 1000000000;
-    private static TrialDivisionDecider _decider;
+    private static readonly TrialDivisionDecider _decider;
 
     static PRIME1()
     {
@@ -41,21 +41,12 @@ public abstract class PrimeProvider : PrimeDecider
 
 public sealed class SieveOfEratosthenesDecider : PrimeDecider
 {
-    private BitArray _sieve;
-
-    public SieveOfEratosthenesDecider()
-        : this(int.MaxValue)
-    { }
+    private readonly BitArray _sieve;
 
     public SieveOfEratosthenesDecider(int limit)
     {
         Limit = limit;
 
-        BuildSieve();
-    }
-
-    private void BuildSieve()
-    {
         _sieve = new BitArray(Limit + 1, true);
         _sieve[0] = false;
         _sieve[1] = false;
@@ -80,48 +71,35 @@ public sealed class SieveOfEratosthenesDecider : PrimeDecider
 
 public sealed class SieveOfEratosthenesProvider : PrimeProvider
 {
-    private SieveOfEratosthenesDecider _decider;
-    private List<int> _primes;
-
-    public SieveOfEratosthenesProvider()
-        : this(int.MaxValue)
-    { }
+    private readonly SieveOfEratosthenesDecider _decider;
 
     public SieveOfEratosthenesProvider(int limit)
     {
         Limit = limit;
-        _decider = new SieveOfEratosthenesDecider(limit);
+        _decider = new SieveOfEratosthenesDecider(Limit);
 
-        BuildPrimes();
-    }
-
-    private void BuildPrimes()
-    {
-        _primes = new List<int>();
+        var primes = new List<int>();
 
         for (int i = 2; i <= Limit; ++i)
         {
             if (_decider.IsPrime(i))
             {
-                _primes.Add(i);
+                primes.Add(i);
             }
         }
-    }
 
-    public override IReadOnlyList<int> Primes
-        => _primes.AsReadOnly();
+        Primes = primes.AsReadOnly();
+    }
 
     public override bool IsPrime(int a)
         => _decider.IsPrime(a);
+
+    public override IReadOnlyList<int> Primes { get; }
 }
 
 public sealed class TrialDivisionDecider : PrimeDecider
 {
-    private SieveOfEratosthenesProvider _sieve;
-
-    public TrialDivisionDecider()
-        : this(int.MaxValue)
-    { }
+    private readonly SieveOfEratosthenesProvider _sieve;
 
     public TrialDivisionDecider(int limit)
     {

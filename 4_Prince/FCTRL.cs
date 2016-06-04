@@ -1,25 +1,27 @@
 using System;
+using System.Collections.Generic;
 
-// Factorial
+// Factorial (apparently a much better way of doing this exists)
 // 11 http://www.spoj.com/problems/FCTRL/
 // Returns the number of trailing zeros of n! (the number of factors of 10), where 1 <= n <= 1,000,000,000.
 public static class FCTRL
 {
     private const int _limit = 1000000000;
-    private static FactorCounter _fivesCounter;
     // Cumulative count of the factors of five for 0 <= i <= _limit / 5, where i represents the ith multiple of 5.
-    private static int[] _fivesCounterCumulative;
+    private static readonly IReadOnlyList<int> _fivesCounterCumulative;
 
     static FCTRL()
     {
-        _fivesCounter = new FactorCounter(factor: 5, limit: _limit);
-        _fivesCounterCumulative = new int[_limit / 5 + 1];
-        _fivesCounterCumulative[0] = 0;
+        var fivesCounter = new FactorCounter(factor: 5, limit: _limit);
+        var fivesCounterCumulative = new int[_limit / 5 + 1];
+        fivesCounterCumulative[0] = 0;
 
         for (int i = 1; i <= _limit / 5; ++i)
         {
-            _fivesCounterCumulative[i] = _fivesCounterCumulative[i - 1] + _fivesCounter.Count(i * 5);
+            fivesCounterCumulative[i] = fivesCounterCumulative[i - 1] + fivesCounter.Count(i * 5);
         }
+
+        _fivesCounterCumulative = Array.AsReadOnly(fivesCounterCumulative);
     }
 
     // n! has as many zeros as it has factors of 10.
@@ -27,14 +29,14 @@ public static class FCTRL
     // Looking at some numbers, it seems like the number of factors of 2 will always be more than the number of factors of 5.
     // So, find the number of factors of 5 for n! by accumulating the factors of 5 for the numbers 1 to n.
     public static int Solve(int n)
-        => _fivesCounterCumulative[n / 5]; // Find the cumulative count for the greatest multiple of 5 less than n (corresponding to index n / 5).
+        => _fivesCounterCumulative[n / 5]; // Accumulate the (n / 5) multiples of 5 that n spans.
 }
 
 // Constructed with a factor and a limit. Used to find how many times that factor evenly divides any input <= limit.
 public sealed class FactorCounter
 {
     // Stores the count we're interested in for 0 <= i <= Limit / (Factor * Factor), where i represents the ith multiple of Factor * Factor (squared for memory concerns).
-    private int[] _counts;
+    private readonly int[] _counts;
 
     public int Factor { get; private set; }
     public int Limit { get; private set; }
@@ -44,11 +46,6 @@ public sealed class FactorCounter
         Factor = factor;
         Limit = limit;
 
-        BuildCounts();
-    }
-
-    private void BuildCounts()
-    {
         _counts = new int[Limit / (Factor * Factor) + 1];
         _counts[0] = 0; // 0 * (Factor * Factor) has no factors equal to Factor.
         _counts[1] = 2; // 1 * (Factor * Factor) has two factors equal to Factor.
