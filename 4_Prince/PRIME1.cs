@@ -135,9 +135,9 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            string[] line = Console.ReadLine().Split(' ');
+            int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-            foreach (int prime in PRIME1.Solve(int.Parse(line[0]), int.Parse(line[1])))
+            foreach (int prime in PRIME1.Solve(line[0], line[1]))
             {
                 Console.WriteLine(prime);
             }

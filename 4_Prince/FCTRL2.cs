@@ -162,7 +162,7 @@ public struct BigInteger : IEquatable<BigInteger>
         => a.Equals(b);
 
     public static bool operator !=(BigInteger a, BigInteger b)
-        => !a.Equals(b);
+        => !(a == b);
 
     #endregion IEquatable<BigInteger>
 }
