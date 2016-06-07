@@ -42,7 +42,8 @@ public static class Program
 
             if (line.All(i => i == 0)) return;
 
-            Console.WriteLine(ACPC10A.Solve(line[0], line[1], line[2]));
+            Console.WriteLine(
+                ACPC10A.Solve(line[0], line[1], line[2]));
         }
     }
 }

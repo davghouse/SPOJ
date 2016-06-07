@@ -48,7 +48,8 @@ public static class Program
         int n;
         while ((n = int.Parse(Console.ReadLine())) != 0)
         {
-            Console.WriteLine(SAMER08F.Solve(n));
+            Console.WriteLine(
+                SAMER08F.Solve(n));
         }
     }
 }
