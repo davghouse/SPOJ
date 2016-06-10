@@ -25,6 +25,7 @@ public static class CANDY
             .Sum();
     }
 }
+
 public static class Program
 {
     private static void Main()
