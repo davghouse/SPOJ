@@ -16,22 +16,22 @@ public static class ExponentiatorMod10
     // A repeating last digit establishes the pattern, as the next last digit depends only
     // on the last digits being multiplied, not on any digits after, as those just
     // add parts that are divisible by 10 and hence don't affect the mod 10 calculation.
-    private static readonly IReadOnlyList<IReadOnlyList<int>> bases0To9LastDigitExponentationPatterns;
+    private static readonly IReadOnlyList<IReadOnlyList<int>> _bases0To9LastDigitExponentationPatterns;
 
     static ExponentiatorMod10()
     {
-        var base0Pattern = new List<int> { 0 }; // 0, (0).
-        var base1Pattern = new List<int> { 1 }; // 1, (1).
-        var base2Pattern = new List<int> { 2, 4, 8, 6 }; // 2, 4, 8, 16, (32)
-        var base3Pattern = new List<int> { 3, 9, 7, 1 }; // 3, 9, 27, 81, (243)
-        var base4Pattern = new List<int> { 4, 6 }; // 4, 16, (64)
-        var base5Pattern = new List<int> { 5 }; // 5, (25)
-        var base6Pattern = new List<int> { 6 }; // 6, (36)
-        var base7Pattern = new List<int> { 7, 9, 3, 1 }; // 7, 49, 343, 2401, (16807)
-        var base8Pattern = new List<int> { 8, 4, 2, 6 }; // 8, 64, 512, 4096, (32768)
-        var base9Pattern = new List<int> { 9, 1 }; // 9, 81, (729)
+        var base0Pattern = new int[] { 0 }; // 0, (0).
+        var base1Pattern = new int[] { 1 }; // 1, (1).
+        var base2Pattern = new int[] { 2, 4, 8, 6 }; // 2, 4, 8, 16, (32)
+        var base3Pattern = new int[] { 3, 9, 7, 1 }; // 3, 9, 27, 81, (243)
+        var base4Pattern = new int[] { 4, 6 }; // 4, 16, (64)
+        var base5Pattern = new int[] { 5 }; // 5, (25)
+        var base6Pattern = new int[] { 6 }; // 6, (36)
+        var base7Pattern = new int[] { 7, 9, 3, 1 }; // 7, 49, 343, 2401, (16807)
+        var base8Pattern = new int[] { 8, 4, 2, 6 }; // 8, 64, 512, 4096, (32768)
+        var base9Pattern = new int[] { 9, 1 }; // 9, 81, (729)
 
-        bases0To9LastDigitExponentationPatterns = new List<List<int>>
+        _bases0To9LastDigitExponentationPatterns = new int[][]
         {
             base0Pattern, base1Pattern, base2Pattern, base3Pattern, base4Pattern,
             base5Pattern, base6Pattern, base7Pattern, base8Pattern, base9Pattern
@@ -47,7 +47,7 @@ public static class ExponentiatorMod10
         // where (b - d) is divisible by 10 (0 mod 10), so only the d^e term in the expansion matters.
         int d = b % 10;
 
-        var lastDigitExponentationPattern = bases0To9LastDigitExponentationPatterns[d];
+        var lastDigitExponentationPattern = _bases0To9LastDigitExponentationPatterns[d];
 
         // Pattern starts at exponent of 1 and ends at exponent of lastDigitExponentationPattern.Count,
         // so e mod the count almost gives the correct position, just have to move zero back to the end.
