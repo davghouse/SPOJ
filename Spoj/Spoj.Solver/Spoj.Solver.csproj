@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{598E4F60-D90C-4C90-AB7A-A17CCB32AE4A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spoj.Solver</RootNamespace>
+    <AssemblyName>Spoj.Solver</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Solutions\TEMPLATE.cs" />
+    <None Include="Solutions\1_Settler\TEST.cs" />
+    <None Include="Solutions\2_Chieftain\ADDREV.cs" />
+    <None Include="Solutions\2_Chieftain\NSTEPS.cs" />
+    <None Include="Solutions\3_Warlord\ACPC10A.cs" />
+    <None Include="Solutions\3_Warlord\CANDY.cs" />
+    <None Include="Solutions\3_Warlord\FASHION.cs" />
+    <None Include="Solutions\3_Warlord\ONP.cs" />
+    <None Include="Solutions\3_Warlord\TOANDFRO.cs" />
+    <None Include="Solutions\4_Prince\AE00.cs" />
+    <None Include="Solutions\4_Prince\FCTRL.cs" />
+    <None Include="Solutions\4_Prince\FCTRL2.cs" />
+    <None Include="Solutions\4_Prince\LASTDIG.cs" />
+    <None Include="Solutions\4_Prince\PRIME1.cs" />
+    <None Include="Solutions\4_Prince\SAMER08F.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Solutions\5_King\" />
+    <Folder Include="Solutions\6_Emporer\" />
+    <Folder Include="Solutions\7_Immortal\" />
+    <Folder Include="Solutions\8_Deity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
+      <Project>{4d10bf86-2d13-462e-9de5-c67d759a0772}</Project>
+      <Name>Spoj.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4_Prince\SAMER08F.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
