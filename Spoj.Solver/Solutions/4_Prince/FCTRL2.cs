@@ -20,7 +20,7 @@ public static class FCTRL2
             factorials[i] = factorials[i - 1] * (new BigInteger(i));
         }
 
-        _factorials = Array.AsReadOnly(factorials);
+        _factorials = factorials;
     }
 
     public static BigInteger Solve(int n)

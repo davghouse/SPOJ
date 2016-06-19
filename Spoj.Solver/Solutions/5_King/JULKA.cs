@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// JULKA
+// Julka
 // 54 http://www.spoj.com/problems/JULKA/
 // Given the apples two girls have together and how many one has over the other,
 // returns how many apples each girl has individually.

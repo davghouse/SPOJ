@@ -1,6 +1,6 @@
 ﻿using System;
 
-// COINS
+// Bytelandian gold coins
 // 346 http://www.spoj.com/problems/COINS/
 // Figures out if it's better to exchange a coin of value n directly for USD at a 1:1 rate,
 // or split the coins up as Byteland banks allow (n/2, n/3, n/4 coins and then recursively on those...).

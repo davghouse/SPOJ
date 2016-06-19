@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-// Factorial (apparently a much better way of doing this exists)
+// Factorial
 // 11 http://www.spoj.com/problems/FCTRL/
 // Returns the number of trailing zeros of n! (the number of factors of 10), where 1 <= n <= 1,000,000,000.
+// Apparently a much better way of doing this exists.
 public static class FCTRL
 {
     private const int _limit = 1000000000;
@@ -21,7 +22,7 @@ public static class FCTRL
             fivesCounterCumulative[i] = fivesCounterCumulative[i - 1] + fivesCounter.Count(i * 5);
         }
 
-        _fivesCounterCumulative = Array.AsReadOnly(fivesCounterCumulative);
+        _fivesCounterCumulative = fivesCounterCumulative;
     }
 
     // n! has as many zeros as it has factors of 10.

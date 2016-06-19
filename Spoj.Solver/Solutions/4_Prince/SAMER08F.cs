@@ -31,7 +31,7 @@ public static class SAMER08F
             squareCounts[n] += squareCounts[n - 2];
         }
 
-        _squareCounts = Array.AsReadOnly(squareCounts);
+        _squareCounts = squareCounts;
     }
 
     private static int SumFromOneUntil(int n)
