@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Solutions\5_King\" />
     <Folder Include="Solutions\6_Emporer\" />
     <Folder Include="Solutions\7_Immortal\" />
     <Folder Include="Solutions\8_Deity\" />
@@ -79,6 +78,9 @@
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5_King\JULKA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
