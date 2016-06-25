@@ -10,7 +10,7 @@ public static class TEMPLATE
     // digits of the numbers being multipled. These are all the three digit numbers whose
     // cubes end in 888. Any other, higher numbers whose cubes end in 888 must themselves
     // end in one of these four numbers (and it's an if and only if).
-    public static IReadOnlyList<int> threeDigitCubesEndingIn888 = new int[] { 192, 442, 692, 942 };
+    public static readonly IReadOnlyList<int> threeDigitCubesEndingIn888 = new int[] { 192, 442, 692, 942 };
 
     public static long Solve(long k)
     {
