@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// HANGOVER
+// Hangover
 // 902 http://www.spoj.com/problems/HANGOVER/
 // Finds the number of cards necessary to achieve a given overhang value (less than 5.2).
 public static class HANGOVER
