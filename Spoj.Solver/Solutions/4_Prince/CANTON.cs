@@ -42,7 +42,7 @@ public static class CANTON
         return $"TERM {n} IS {numeratorOfNthTerm}/{denominatorOfNthTerm}";
     }
 
-    private enum DiagonalEndPosition : byte
+    private enum DiagonalEndPosition
     {
         SideEdge,
         TopEdge
