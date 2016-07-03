@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BigIntegerTests.cs" />
+    <Compile Include="MathHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">

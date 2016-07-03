@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigInteger.cs" />
+    <Compile Include="MathHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
