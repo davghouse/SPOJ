@@ -95,7 +95,13 @@
     <None Include="Solutions\3_Warlord\HANGOVER.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PALIN.cs" />
+    <None Include="Solutions\5_King\PALIN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5_King\ACODE_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5_King\ACODE_v2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
