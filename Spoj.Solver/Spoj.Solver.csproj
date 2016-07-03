@@ -104,6 +104,7 @@
     <None Include="Solutions\5_King\ACODE_v2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\3_Warlord\ABSYS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
