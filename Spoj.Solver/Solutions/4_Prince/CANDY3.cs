@@ -5,7 +5,7 @@ using System.Linq;
 // Candy III
 // 2148 http://www.spoj.com/problems/CANDY3/
 // Determines if N bags full of candies can have their contents redistributed equally amongst N children.
-public static class TEMPLATE
+public static class CANDY3
 {
     // I guess the numbers will be too big if summed directly, so need to use property of modular arithmetic:
     // (a + b) mod m == (a mod m + b mod m) mod m
@@ -42,7 +42,7 @@ public static class Program
             }
 
             Console.WriteLine(
-                TEMPLATE.Solve(backpackCandyCounts));
+                CANDY3.Solve(backpackCandyCounts));
         }
     }
 }
