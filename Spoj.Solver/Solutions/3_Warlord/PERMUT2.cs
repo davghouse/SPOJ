@@ -14,7 +14,11 @@ public static class PERMUT2
         // The permutation is ambiguous if the permutation and the inverse permutation are equal.
         for (int i = 0; i < permutation.Length; ++i)
         {
+            int value = i + 1;
+            int indexOfValueInInversePermutation = permutation[i] - 1;
+            int valueAtTheSameIndexInNormalPermutation = permutation[indexOfValueInInversePermutation];
 
+            if (value != valueAtTheSameIndexInNormalPermutation)
                 return "not ambiguous";
         }
 
