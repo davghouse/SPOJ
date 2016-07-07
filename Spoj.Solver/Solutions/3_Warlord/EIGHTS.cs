@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Triple Fat Ladies
 // 1030 http://www.spoj.com/problems/EIGHTS/
 // Finds the kth cube that ends in 888 (the first such cube is 192).
-public static class TEMPLATE
+public static class EIGHTS
 {
     // Only part that affects the last three digits of a multiplied number are the last three
     // digits of the numbers being multipled. These are all the three digit numbers whose
@@ -33,7 +33,7 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(
-                TEMPLATE.Solve(long.Parse(Console.ReadLine())));
+                EIGHTS.Solve(long.Parse(Console.ReadLine())));
         }
     }
 }
