@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public static class HANGOVER
 {
     private const float _overhangLimit = 5.2f;
+
     // Took a look at the data and it seems like float's precision won't be a problem here (at least for the first 277 terms).
     private static readonly List<float> _runningOverhangTotals;
 

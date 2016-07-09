@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public static class FCTRL
 {
     private const int _limit = 1000000000;
+
     // Cumulative count of the factors of five for 0 <= i <= _limit / 5, where i represents the ith multiple of 5.
     private static readonly IReadOnlyList<int> _fivesCounterCumulative;
 

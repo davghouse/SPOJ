@@ -12,7 +12,7 @@ public static class COINS
     // Cache some of the first 500 million values necessary to do this without recursive calls.
     // The limit for the cache was picked through experimentation; doesn't take too long to
     // create the cache, and trims the exponentially growing recursion enough to be fast for the problem's input.
-    private static IReadOnlyList<long> _exchangeValues;
+    private static readonly IReadOnlyList<long> _exchangeValues;
 
     static COINS()
     {
@@ -27,6 +27,9 @@ public static class COINS
         _exchangeValues = exchangeValues;
     }
 
+    public static long Solve(int n)
+        => GetExchangeValue(n);
+
     private static long GetExchangeValue(int n)
     {
         if (n <= _cachedLimit)
@@ -34,9 +37,6 @@ public static class COINS
 
         return Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
     }
-
-    public static long Solve(int n)
-        => GetExchangeValue(n);
 }
 
 public static class Program
