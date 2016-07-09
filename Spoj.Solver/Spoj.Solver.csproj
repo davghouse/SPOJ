@@ -120,7 +120,10 @@
     <None Include="Solutions\3_Warlord\PERMUT2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\ARMY.cs" />
+    <None Include="Solutions\2_Chieftain\ARMY.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5_King\TRICOUNT.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
