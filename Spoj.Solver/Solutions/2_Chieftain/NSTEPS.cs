@@ -1,7 +1,6 @@
 using System;
 
-// Number Steps
-// 1112 http://www.spoj.com/problems/NSTEPS/
+// 1112 http://www.spoj.com/problems/NSTEPS/ Number Steps
 // Given an x and y coordinate, returns the value on the plane at that point.
 public static class NSTEPS
 {

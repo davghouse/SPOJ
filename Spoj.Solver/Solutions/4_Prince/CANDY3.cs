@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// Candy III
-// 2148 http://www.spoj.com/problems/CANDY3/
+// 2148 http://www.spoj.com/problems/CANDY3/ Candy III
 // Determines if N bags full of candies can have their contents redistributed equally amongst N children.
 public static class CANDY3
 {

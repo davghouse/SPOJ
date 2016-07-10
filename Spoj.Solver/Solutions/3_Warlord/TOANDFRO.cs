@@ -1,8 +1,7 @@
 using System;
 using System.Text;
 
-// To and Fro
-// 400 http://www.spoj.com/problems/TOANDFRO/
+// 400 http://www.spoj.com/problems/TOANDFRO/ To and Fro
 // Given an encoded message and the number of columns used to encode the message,
 // transform the message to the array used for the encoding, and then to the original (padded) message.
 public static class TOANDFRO

@@ -1,7 +1,6 @@
 ﻿using System;
 
-// Build a Fence
-// 4408 http://www.spoj.com/problems/FENCE1/
+// 4408 http://www.spoj.com/problems/FENCE1/ Build a Fence
 // Calculates how much area can be fenced in using a specified length of fence connected to a big wall.
 public static class FENCE1
 {

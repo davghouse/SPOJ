@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-// Prime Generator
-// 2 http://www.spoj.com/problems/PRIME1/
+// 2 http://www.spoj.com/problems/PRIME1/ Prime Generator
 // Returns all the primes between two numbers m and n (inclusive), where 1 <= m <= n <= 1,000,000,000.
 public static class PRIME1
 {

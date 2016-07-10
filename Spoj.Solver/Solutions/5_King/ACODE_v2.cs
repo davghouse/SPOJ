@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Alphacode v2 (bottom-up, dynamic programming with tabulation)
-// 394 http://www.spoj.com/problems/ACODE/
+// 394 http://www.spoj.com/problems/ACODE/ Alphacode
 // Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
-public static class ACODE
+public static class ACODE // v2, bottom-up, dynamic programming with tabulation
 {
     // Array that's built dynamically, containing at index i the decode count for the first i digits
     // of the given number. The number is guaranteed to have no more than 5000 digits.

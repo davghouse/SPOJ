@@ -1,7 +1,6 @@
 ﻿using System;
 
-// Ambiguous Permutations
-// 379 http://www.spoj.com/problems/PERMUT2/
+// 379 http://www.spoj.com/problems/PERMUT2/ Ambiguous Permutations
 // Figures out if a permutation of n integers is the same as its inverse permutation.
 public static class PERMUT2
 {

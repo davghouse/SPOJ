@@ -1,7 +1,6 @@
 ﻿using System;
 
-// AP - Complete The Series (Easy)
-// 11063 http://www.spoj.com/problems/AP2/
+// 11063 http://www.spoj.com/problems/AP2/ AP - Complete The Series (Easy)
 // Given the third term, third-to-last term, and sum of an arithmetic progression, finds the whole series.
 public static class AP2
 {

@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// The last digit
-// 3442 http://www.spoj.com/problems/LASTDIG/
+// 3442 http://www.spoj.com/problems/LASTDIG/ The last digit
 // For a base b from 0 through 20 and an exponent e, compute b^e mod 10 (the last digit of b^e).
 public static class LASTDIG
 {

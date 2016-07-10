@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// Factorial
-// 11 http://www.spoj.com/problems/FCTRL/
+// 11 http://www.spoj.com/problems/FCTRL/ Factorial
 // Returns the number of trailing zeros of n! (the number of factors of 10), where 1 <= n <= 1,000,000,000.
 // Apparently a much better way of doing this exists.
 public static class FCTRL

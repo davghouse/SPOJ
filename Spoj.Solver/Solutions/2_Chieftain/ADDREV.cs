@@ -1,7 +1,6 @@
 using System;
 
-// Adding Reversed Numbers
-// 42 http://www.spoj.com/problems/ADDREV/
+// 42 http://www.spoj.com/problems/ADDREV/ Adding Reversed Numbers
 // Returns the reversed sum of two reversed integers.
 public static class ADDREV
 {

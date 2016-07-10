@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Triple Fat Ladies
-// 1030 http://www.spoj.com/problems/EIGHTS/
+// 1030 http://www.spoj.com/problems/EIGHTS/ Triple Fat Ladies
 // Finds the kth cube that ends in 888 (the first such cube is 192).
 public static class EIGHTS
 {

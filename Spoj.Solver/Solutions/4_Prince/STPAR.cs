@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Street Parade (stack-based, O(n) space)
-// 95 http://www.spoj.com/problems/STPAR/
+// 95 http://www.spoj.com/problems/STPAR/ Street Parade
 // Given the order of some love mobiles on an approach street, figures out if it's possible to
 // put them in their final parade order using a side street (as a stack).
 public static class STPAR

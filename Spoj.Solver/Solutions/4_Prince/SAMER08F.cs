@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// Feynman
-// 3410 http://www.spoj.com/problems/SAMER08F/
+// 3410 http://www.spoj.com/problems/SAMER08F/ Feynman
 // Returns the number of squares in a grid of n x n squares, for 1 <= n <= 100.
 public static class SAMER08F
 {

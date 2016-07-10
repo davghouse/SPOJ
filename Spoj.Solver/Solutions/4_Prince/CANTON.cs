@@ -1,7 +1,6 @@
 ﻿using System;
 
-// Count on Cantor
-// 302 http://www.spoj.com/problems/CANTON/
+// 302 http://www.spoj.com/problems/CANTON/ Count on Cantor
 // Finds the nth term in Cantor's enumeration of the rational numbers.
 public static class CANTON
 {

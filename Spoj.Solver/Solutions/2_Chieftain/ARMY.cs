@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// Army Strength
-// 2727 http://www.spoj.com/problems/ARMY/
+// 2727 http://www.spoj.com/problems/ARMY/ Army Strength
 // Figures out if the army of Godzilla or the army of MechaGodzilla wins the war.
 public static class ARMY
 {

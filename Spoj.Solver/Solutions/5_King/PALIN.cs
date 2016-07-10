@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// The Next Palindrome
-// 5 http://www.spoj.com/problems/PALIN/
+// 5 http://www.spoj.com/problems/PALIN/ The Next Palindrome
 // Outputs the smallest palindrome larger than the given integer (as strings, since they can be very large).
 public static class PALIN
 {

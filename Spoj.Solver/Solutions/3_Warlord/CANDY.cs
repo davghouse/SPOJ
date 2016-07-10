@@ -1,8 +1,7 @@
 using System;
 using System.Linq;
 
-// Candy I
-// 2123 http://www.spoj.com/problems/CANDY/
+// 2123 http://www.spoj.com/problems/CANDY/ Candy I
 // Given packets containing different numbers of candies,
 // count the fewest moves needed to split them up fairly, if possible.
 public static class CANDY

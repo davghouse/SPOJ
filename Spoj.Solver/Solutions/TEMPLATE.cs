@@ -1,7 +1,6 @@
 ﻿using System;
 
-// TEMPLATE
-// <Number> http://www.spoj.com/problems/TEMPLATE/
+// <Number> http://www.spoj.com/problems/TEMPLATE/ <Name>
 // <Description>
 public static class TEMPLATE
 {

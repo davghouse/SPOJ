@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-// Small factorials
-// 24 http://www.spoj.com/problems/FCTRL2/
+// 24 http://www.spoj.com/problems/FCTRL2/ Small factorials
 // Returns n! for 1 <= n <= 100.
 public static class FCTRL2
 {

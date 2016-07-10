@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Alphacode v1 (top-down, recursion with memoization)
-// 394 http://www.spoj.com/problems/ACODE/
+// 394 http://www.spoj.com/problems/ACODE/ Alphacode
 // Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
-public static class ACODE
+public static class ACODE // v1, top-down, recursion with memoization
 {
     private static IReadOnlyDictionary<string, long> _codedLetterDecodeCounts = new Dictionary<string, long>
     {

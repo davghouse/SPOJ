@@ -1,7 +1,6 @@
 ﻿using System;
 
-// Anti-Blot System
-// 2157 http://www.spoj.com/problems/ABSYS/
+// 2157 http://www.spoj.com/problems/ABSYS/ Anti-Blot System
 // Takes an equation with an inkblot over one number, and removes the blot.
 public static class ABSYS
 {

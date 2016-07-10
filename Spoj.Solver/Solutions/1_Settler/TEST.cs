@@ -1,7 +1,6 @@
 using System;
 
-// Life, the Universe, and Everything
-// 1 http://www.spoj.com/problems/TEST/
+// 1 http://www.spoj.com/problems/TEST/ Life, the Universe, and Everything
 // Reads and prints console input until the answer to life, the universe, and everything is found.
 public static class TEST
 {

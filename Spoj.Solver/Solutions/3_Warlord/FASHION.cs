@@ -1,8 +1,7 @@
 using System;
 using System.Linq;
 
-// Fashion Shows
-// 1025 http://www.spoj.com/problems/FASHION/
+// 1025 http://www.spoj.com/problems/FASHION/ Fashion Shows
 // Given parallel arrays of hotness levels, calculate the sum of the values of the hotness bonds.
 public static class FASHION
 {

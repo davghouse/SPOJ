@@ -1,7 +1,6 @@
 using System;
 
-// Transform the Expression
-// 4 http://www.spoj.com/problems/ONP/
+// 4 http://www.spoj.com/problems/ONP/ Transform the Expression
 // Returns the RPN form of the expression with binary operators and parentheses.
 public static class ONP
 {

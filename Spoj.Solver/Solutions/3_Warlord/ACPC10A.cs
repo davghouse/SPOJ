@@ -1,8 +1,7 @@
 using System;
 using System.Linq;
 
-// What's Next
-// 7974 http://www.spoj.com/problems/ACPC10A/
+// 7974 http://www.spoj.com/problems/ACPC10A/ What's Next
 // Given three successive numbers in a sequence, returns the type of sequence and the next number.
 public static class ACPC10A
 {
