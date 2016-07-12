@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BigIntegerTests.cs" />
     <Compile Include="MathHelperTests.cs" />
+    <Compile Include="SimpleGraphTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">

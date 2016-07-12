@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BigInteger.cs" />
     <Compile Include="MathHelper.cs" />
+    <Compile Include="SimpleGraph.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
