@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
+// NOTE: It looks like System.Numerics is referenced by SPOJ now, so this BigInteger is hopefully deprecated.
 namespace Spoj.Library
 {
-    // TODO: support negatives, and lots of other stuff.
+    // TODO: Support negatives, and lots of other stuff.
     public struct BigInteger : IEquatable<BigInteger>
     {
         private static readonly BigInteger _zero = new BigInteger(0);
