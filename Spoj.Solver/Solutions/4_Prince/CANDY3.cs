@@ -30,7 +30,7 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            Console.ReadLine(); // Remove blank line.
+            Console.ReadLine();
 
             int backpackCount = int.Parse(Console.ReadLine());
             ulong[] backpackCandyCounts = new ulong[backpackCount];
