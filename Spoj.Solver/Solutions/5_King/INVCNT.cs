@@ -5,7 +5,7 @@
 public static class INVCNT
 {
     // The array size is limited to 200k elements, but that could be
-    // 200k * (200k - 1) / 2 inversions, forcing us to use long when counting them.
+    // 200k * (200k - 1) / 2 inversions, so we need to use long when counting.
     public static long Solve(int[] array)
     {
         var inversionBST = new InversionBST(array[0]);
