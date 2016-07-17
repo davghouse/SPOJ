@@ -106,7 +106,7 @@ namespace Spoj.Library
 
         public static BigInteger operator *(BigInteger a, BigInteger b)
         {
-            BigInteger result = BigInteger.Zero;
+            var result = BigInteger.Zero;
 
             for (int i = 0; i < b._digits.Count; ++i)
             {

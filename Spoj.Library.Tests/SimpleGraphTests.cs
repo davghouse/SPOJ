@@ -9,7 +9,7 @@ namespace Spoj.Library.Tests
         public void ValidatesAGraph1()
         {
             // This graph is a triangle.
-            SimpleGraph graph = SimpleGraph.Create(3, new[,]
+            var graph = SimpleGraph.Create(3, new[,]
             {
                 {0, 1},
                 {0, 2},
@@ -43,7 +43,7 @@ namespace Spoj.Library.Tests
         public void ValidatesAGraph2()
         {
             // This graph is two lines and a point.
-            SimpleGraph graph = SimpleGraph.Create(5, new[,]
+            var graph = SimpleGraph.Create(5, new[,]
             {
                 {0, 1},
                 {2, 3}
@@ -102,7 +102,7 @@ namespace Spoj.Library.Tests
         public void ChecksIsConnected1()
         {
             // This graph is a triangle.
-            SimpleGraph graph = SimpleGraph.Create(3, new[,]
+            var graph = SimpleGraph.Create(3, new[,]
             {
                 {0, 1},
                 {0, 2},
@@ -116,7 +116,7 @@ namespace Spoj.Library.Tests
         public void ChecksIsConnected2()
         {
             // This graph is two lines and a point.
-            SimpleGraph graph = SimpleGraph.Create(5, new[,]
+            var graph = SimpleGraph.Create(5, new[,]
             {
                 {0, 1},
                 {2, 3}
@@ -129,7 +129,7 @@ namespace Spoj.Library.Tests
         public void ChecksIsConnected3()
         {
             // This graph is B-shaped.
-            SimpleGraph graph = SimpleGraph.Create(6, new[,]
+            var graph = SimpleGraph.Create(6, new[,]
             {
                 {0, 1},
                 {1, 2},
@@ -142,7 +142,7 @@ namespace Spoj.Library.Tests
 
             Assert.IsTrue(graph.IsConnected());
 
-            SimpleGraph graphWithOneExtra = SimpleGraph.Create(7, new[,]
+            var graphWithOneExtra = SimpleGraph.Create(7, new[,]
             {
                 {0, 1},
                 {1, 2},
@@ -160,7 +160,7 @@ namespace Spoj.Library.Tests
         public void ChecksIsConnected4()
         {
             // This graph is a line.
-            SimpleGraph graph = SimpleGraph.Create(6, new[,]
+            var graph = SimpleGraph.Create(6, new[,]
             {
                 {0, 1},
                 {1, 2},
@@ -171,7 +171,7 @@ namespace Spoj.Library.Tests
 
             Assert.IsTrue(graph.IsConnected());
 
-            SimpleGraph graphBrokenInTwo = SimpleGraph.Create(6, new[,]
+            var graphBrokenInTwo = SimpleGraph.Create(6, new[,]
             {
                 {0, 1},
                 {1, 2},

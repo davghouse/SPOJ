@@ -21,8 +21,8 @@ public static class ACODE // v1, top-down, recursion with memoization
 
     public static long Solve(string number)
     {
-        Solver s = new Solver(number);
-        return s.Solve();
+        var solver = new Solver(number);
+        return solver.Solve();
     }
 
     private class Solver

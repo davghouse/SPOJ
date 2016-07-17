@@ -10,8 +10,8 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void ZeroPlusZeroIsZero()
         {
-            BigInteger a = new BigInteger(0);
-            BigInteger b = new BigInteger("0");
+            var a = new BigInteger(0);
+            var b = new BigInteger("0");
 
             Assert.AreEqual(BigInteger.Zero, a + b);
         }
@@ -19,7 +19,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void DoesntEqualItselfPlusOne()
         {
-            BigInteger a = new BigInteger(117);
+            var a = new BigInteger(117);
 
             Assert.AreNotEqual(a, a + BigInteger.One);
         }
@@ -27,7 +27,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void AddsZero()
         {
-            BigInteger a = new BigInteger(117);
+            var a = new BigInteger(117);
 
             Assert.AreEqual(a, a + BigInteger.Zero);
             Assert.AreEqual(a, BigInteger.Zero + a);
@@ -37,10 +37,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void AddsSomeIntegers()
         {
-            BigInteger a = new BigInteger(117);
-            BigInteger b = new BigInteger(245425);
-            BigInteger c = new BigInteger(331);
-            BigInteger abc = new BigInteger(117 + 245425 + 331);
+            var a = new BigInteger(117);
+            var b = new BigInteger(245425);
+            var c = new BigInteger(331);
+            var abc = new BigInteger(117 + 245425 + 331);
 
             Assert.AreEqual(abc, a + b + c);
         }
@@ -48,10 +48,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void AddsSomeBigIntegers()
         {
-            BigInteger a = new BigInteger("2342452452435235098091834098018");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
-            BigInteger c = new BigInteger("123087049626738452486565420250237462376208456824761033164013640476");
-            BigInteger abc = new BigInteger("123087049626738452589503629345688445614063894358556858489945861839");
+            var a = new BigInteger("2342452452435235098091834098018");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var c = new BigInteger("123087049626738452486565420250237462376208456824761033164013640476");
+            var abc = new BigInteger("123087049626738452589503629345688445614063894358556858489945861839");
 
             Assert.AreEqual(abc, a + b + c);
         }
@@ -59,8 +59,8 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void AdditionIsCommutative()
         {
-            BigInteger a = new BigInteger("2342452452435235098091834098018");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var a = new BigInteger("2342452452435235098091834098018");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
 
             Assert.AreEqual(a + b, b + a);
         }
@@ -68,9 +68,9 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void AdditionIsAssociative()
         {
-            BigInteger a = new BigInteger("2342452452435235098091834098018");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
-            BigInteger c = new BigInteger(435);
+            var a = new BigInteger("2342452452435235098091834098018");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var c = new BigInteger(435);
 
             Assert.AreEqual(a + (b + c), (a + b) + c);
         }
@@ -82,7 +82,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void IntegerTimesZeroIsZero()
         {
-            BigInteger a = new BigInteger(234);
+            var a = new BigInteger(234);
 
             Assert.AreEqual(BigInteger.Zero, a * BigInteger.Zero);
             Assert.AreEqual(BigInteger.Zero, BigInteger.Zero * a);
@@ -91,7 +91,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void BigIntegerTimesZeroIsZero()
         {
-            BigInteger a = new BigInteger("2342342345483240982020324524545458");
+            var a = new BigInteger("2342342345483240982020324524545458");
 
             Assert.AreEqual(BigInteger.Zero, a * BigInteger.Zero);
             Assert.AreEqual(BigInteger.Zero, BigInteger.Zero * a);
@@ -100,7 +100,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MultipliesByOne()
         {
-            BigInteger a = new BigInteger("2342342345483240982020324524545458");
+            var a = new BigInteger("2342342345483240982020324524545458");
 
             Assert.AreEqual(a, a * BigInteger.One);
             Assert.AreEqual(a, BigInteger.One * a);
@@ -109,10 +109,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MultipliesSomeIntegers()
         {
-            BigInteger a = new BigInteger(117);
-            BigInteger b = new BigInteger(24542);
-            BigInteger c = new BigInteger(331);
-            BigInteger abc = new BigInteger(117 * 24542 * 331);
+            var a = new BigInteger(117);
+            var b = new BigInteger(24542);
+            var c = new BigInteger(331);
+            var abc = new BigInteger(117 * 24542 * 331);
 
             Assert.AreEqual(abc, a * b * c);
         }
@@ -120,10 +120,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MultipliesSomeBigIntegers()
         {
-            BigInteger a = new BigInteger("35235098091834098018");
-            BigInteger b = new BigInteger("402985098560727234098123345");
-            BigInteger c = new BigInteger("65654202761033164013640476");
-            BigInteger abc = new BigInteger("932238434613340857613513736796192283181771939784559822862931634062779960");
+            var a = new BigInteger("35235098091834098018");
+            var b = new BigInteger("402985098560727234098123345");
+            var c = new BigInteger("65654202761033164013640476");
+            var abc = new BigInteger("932238434613340857613513736796192283181771939784559822862931634062779960");
 
             Assert.AreEqual(abc, a * b * c);
         }
@@ -131,8 +131,8 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MultiplicationIsCommutative()
         {
-            BigInteger a = new BigInteger("2342452452435235098091834098018");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var a = new BigInteger("2342452452435235098091834098018");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
 
             Assert.AreEqual(a * b, b * a);
         }
@@ -140,9 +140,9 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MultiplicationIsAssociative()
         {
-            BigInteger a = new BigInteger("2342452452435235098091834098018");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
-            BigInteger c = new BigInteger(435);
+            var a = new BigInteger("2342452452435235098091834098018");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var c = new BigInteger(435);
 
             Assert.AreEqual(a * (b * c), (a * b) * c);
         }
@@ -154,8 +154,8 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void ZeroMinusZeroIsZero()
         {
-            BigInteger a = new BigInteger(0);
-            BigInteger b = new BigInteger("0");
+            var a = new BigInteger(0);
+            var b = new BigInteger("0");
 
             Assert.AreEqual(BigInteger.Zero, a - b);
         }
@@ -163,7 +163,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void DoesntEqualItselfMinusOne()
         {
-            BigInteger a = new BigInteger(117);
+            var a = new BigInteger(117);
 
             Assert.AreNotEqual(a, a - BigInteger.One);
         }
@@ -171,7 +171,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void SubtractsZero()
         {
-            BigInteger a = new BigInteger(117);
+            var a = new BigInteger(117);
 
             Assert.AreEqual(a, a - BigInteger.Zero);
             Assert.AreEqual(a, a - new BigInteger(0));
@@ -180,10 +180,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void SubtractsSomeIntegers1()
         {
-            BigInteger a = new BigInteger(245425);
-            BigInteger b = new BigInteger(11171);
-            BigInteger c = new BigInteger(333);
-            BigInteger abc = new BigInteger(245425 - 11171 - 333);
+            var a = new BigInteger(245425);
+            var b = new BigInteger(11171);
+            var c = new BigInteger(333);
+            var abc = new BigInteger(245425 - 11171 - 333);
 
             Assert.AreEqual(abc, a - b - c);
         }
@@ -191,9 +191,9 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void SubtractsSomeIntegers2()
         {
-            BigInteger a = new BigInteger(113);
-            BigInteger b = new BigInteger(99);
-            BigInteger ab = new BigInteger(113 - 99);
+            var a = new BigInteger(113);
+            var b = new BigInteger(99);
+            var ab = new BigInteger(113 - 99);
 
             Assert.AreEqual(ab, a - b);
         }
@@ -201,9 +201,9 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void SubtractsSomeIntegers3()
         {
-            BigInteger a = new BigInteger(13);
-            BigInteger b = new BigInteger(4);
-            BigInteger ab = new BigInteger(13 - 4);
+            var a = new BigInteger(13);
+            var b = new BigInteger(4);
+            var ab = new BigInteger(13 - 4);
 
             Assert.AreEqual(ab, a - b);
         }
@@ -211,10 +211,10 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void SubtractsSomeBigIntegers()
         {
-            BigInteger a = new BigInteger("123087049626738452486565420250237462376208456824761033164013640476");
-            BigInteger b = new BigInteger("102938209095450980895402985098560727234098123345");
-            BigInteger c = new BigInteger("2342452452435235098091834098018");
-            BigInteger abc = new BigInteger("123087049626738452383627211154786479138353019290965207838081419113");
+            var a = new BigInteger("123087049626738452486565420250237462376208456824761033164013640476");
+            var b = new BigInteger("102938209095450980895402985098560727234098123345");
+            var c = new BigInteger("2342452452435235098091834098018");
+            var abc = new BigInteger("123087049626738452383627211154786479138353019290965207838081419113");
 
             Assert.AreEqual(abc, a - b - c);
         }
@@ -222,7 +222,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MinusItselfIsZero()
         {
-            BigInteger a = new BigInteger("40476");
+            var a = new BigInteger("40476");
 
             Assert.AreEqual(BigInteger.Zero, a - a);
         }
@@ -230,7 +230,7 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void MinusItselfPlusOneIsOne()
         {
-            BigInteger a = new BigInteger("40476");
+            var a = new BigInteger("40476");
 
             Assert.AreEqual(BigInteger.One, a - a + BigInteger.One);
         }
@@ -254,9 +254,9 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void DividesSomeIntegersByTwo()
         {
-            BigInteger a = new BigInteger(2212);
-            BigInteger b = new BigInteger(1106);
-            BigInteger c = new BigInteger(553);
+            var a = new BigInteger(2212);
+            var b = new BigInteger(1106);
+            var c = new BigInteger(553);
 
             Assert.AreEqual(b, a.DivideByTwo());
             Assert.AreEqual(c, b.DivideByTwo());
@@ -265,8 +265,8 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void DividesSomeBigIntegersByTwo()
         {
-            BigInteger a = new BigInteger("32149817470458794114082");
-            BigInteger b = new BigInteger("912837407413498340938495840576282048");
+            var a = new BigInteger("32149817470458794114082");
+            var b = new BigInteger("912837407413498340938495840576282048");
 
             Assert.AreEqual(new BigInteger("16074908735229397057041"), a.DivideByTwo());
             Assert.AreEqual(new BigInteger("456418703706749170469247920288141024"), b.DivideByTwo());
@@ -275,12 +275,12 @@ namespace Spoj.Library.Tests
         [TestMethod]
         public void DividesPowersOfTwoByTwo()
         {
-            BigInteger a = new BigInteger(32);
-            BigInteger b = new BigInteger(16);
-            BigInteger c = new BigInteger(8);
-            BigInteger d = new BigInteger(4);
-            BigInteger e = new BigInteger(2);
-            BigInteger f = new BigInteger(1);
+            var a = new BigInteger(32);
+            var b = new BigInteger(16);
+            var c = new BigInteger(8);
+            var d = new BigInteger(4);
+            var e = new BigInteger(2);
+            var f = new BigInteger(1);
 
             Assert.AreEqual(b, a.DivideByTwo());
             Assert.AreEqual(c, b.DivideByTwo());

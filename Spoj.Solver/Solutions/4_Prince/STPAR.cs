@@ -15,7 +15,7 @@ public static class STPAR
         // the approach street, we can either push it down the side street, or move it into
         // its final parade position. Before deciding where to move it we can also pop any mobiles
         // already on the side street out of it and into their final parade position.
-        Stack<int> sideStreetLoveMobiles = new Stack<int>();
+        var sideStreetLoveMobiles = new Stack<int>();
         int nextLoveMobileNeededOnTheParadeStreet = 1;
 
         for (int i = 0; i < approachStreetLoveMobiles.Length; ++i)

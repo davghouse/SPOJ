@@ -32,7 +32,7 @@ public static class Program
         int numberOfPackets;
         while ((numberOfPackets = int.Parse(Console.ReadLine())) != -1)
         {
-            int[] packetCandyCounts = new int[numberOfPackets];
+            var packetCandyCounts = new int[numberOfPackets];
             for (int i = 0; i < numberOfPackets; ++i)
             {
                 packetCandyCounts[i] = int.Parse(Console.ReadLine());

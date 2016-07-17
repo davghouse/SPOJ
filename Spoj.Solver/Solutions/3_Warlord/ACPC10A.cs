@@ -14,7 +14,6 @@ public static class ACPC10A
     }
 }
 
-// TODO: Create classes for arithmetic and geometric sequences.
 public static class NumberSequence
 {
     public static bool IsArithmeticSequence(params int[] numbers)
