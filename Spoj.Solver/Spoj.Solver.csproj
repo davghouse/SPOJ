@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Solutions\6_Emporer\" />
     <Folder Include="Solutions\7_Immortal\" />
     <Folder Include="Solutions\8_Deity\" />
   </ItemGroup>
@@ -145,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4_Prince\NGM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6_Emporer\EDIST.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
