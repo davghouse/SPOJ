@@ -4,7 +4,7 @@
 // Determines if the given number is a beehive number.
 public static class BEENUMS
 {
-    // See image for details: http://imgur.com/a/m2VsU.
+    // See image for details: http://i.imgur.com/ELtDEAU.jpg.
     // We try to get the beehive index of the input, then calculate the beehive
     // number from that index to see if it maps back to exactly the input.
     public static string Solve(int number)

@@ -8,7 +8,7 @@ public static class TRICOUNT
     private const int _maxLevel = 1000000;
     private static readonly IReadOnlyList<long> _triangleCounts;
 
-    // See image for details: http://imgur.com/Sa2yh7R.
+    // See image for details: http://i.imgur.com/Sa2yh7R.jpg.
     static TRICOUNT()
     {
         var triangleCounts = new long[_maxLevel + 1];
