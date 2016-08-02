@@ -12,7 +12,7 @@ public static class PT07Y
         if (edgeCount != vertexCount - 1)
             return "NO";
 
-        var graph = SimpleGraph.Create(vertexCount, edges);
+        var graph = SimpleGraph.CreateFromOneBasedEdges(vertexCount, edges);
         return graph.IsConnected() ? "YES" : "NO";
     }
 }
@@ -31,7 +31,7 @@ public class SimpleGraph
     }
 
     // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
-    public static SimpleGraph Create(int vertexCount, int[,] edges)
+    public static SimpleGraph CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
     {
         var graph = new SimpleGraph(vertexCount);
 
@@ -43,6 +43,24 @@ public class SimpleGraph
         for (int i = 0; i < edges.GetLength(0); ++i)
         {
             graph.AddEdge(edges[i, 0], edges[i, 1]);
+        }
+
+        return graph;
+    }
+
+    // For example, edges like (1, 2), (2, 3) => there's an edge between vertices 0 and 1 and 1 and 2.
+    public static SimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
+    {
+        var graph = new SimpleGraph(vertexCount);
+
+        for (int id = 0; id < vertexCount; ++id)
+        {
+            graph._vertices[id] = new Vertex(graph, id);
+        }
+
+        for (int i = 0; i < edges.GetLength(0); ++i)
+        {
+            graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1);
         }
 
         return graph;
@@ -83,8 +101,8 @@ public class SimpleGraph
 
             foreach (var neighbor in vertex.Neighbors)
             {
-                bool neighborWasJustDiscovered = discoveredVertexIDs.Add(neighbor.ID);
-                if (neighborWasJustDiscovered)
+                bool neighborWasDiscoveredForTheFirstTime = discoveredVertexIDs.Add(neighbor.ID);
+                if (neighborWasDiscoveredForTheFirstTime)
                 {
                     verticesToVisit.Push(neighbor);
                 }
@@ -140,12 +158,8 @@ public static class Program
         {
             int[] edge = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-            // Edges come with one-based indexing but our API demands zero-based.
-            int firstVertexID = edge[0] - 1;
-            int secondVertexID = edge[1] - 1;
-
-            edges[i, 0] = firstVertexID;
-            edges[i, 1] = secondVertexID;
+            edges[i, 0] = edge[0];
+            edges[i, 1] = edge[1];
         }
 
         Console.WriteLine(
