@@ -18,7 +18,7 @@ namespace Spoj.Library
         }
 
         // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
-        public static SimpleGraph Create(int vertexCount, int[,] edges)
+        public static SimpleGraph CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
         {
             var graph = new SimpleGraph(vertexCount);
 
@@ -30,6 +30,24 @@ namespace Spoj.Library
             for (int i = 0; i < edges.GetLength(0); ++i)
             {
                 graph.AddEdge(edges[i, 0], edges[i, 1]);
+            }
+
+            return graph;
+        }
+
+        // For example, edges like (1, 2), (2, 3) => there's an edge between vertices 0 and 1 and 1 and 2.
+        public static SimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
+        {
+            var graph = new SimpleGraph(vertexCount);
+
+            for (int id = 0; id < vertexCount; ++id)
+            {
+                graph._vertices[id] = new Vertex(graph, id);
+            }
+
+            for (int i = 0; i < edges.GetLength(0); ++i)
+            {
+                graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1);
             }
 
             return graph;
@@ -70,8 +88,8 @@ namespace Spoj.Library
 
                 foreach (var neighbor in vertex.Neighbors)
                 {
-                    bool neighborWasJustDiscovered = discoveredVertexIDs.Add(neighbor.ID);
-                    if (neighborWasJustDiscovered)
+                    bool neighborWasDiscoveredForTheFirstTime = discoveredVertexIDs.Add(neighbor.ID);
+                    if (neighborWasDiscoveredForTheFirstTime)
                     {
                         verticesToVisit.Push(neighbor);
                     }
@@ -79,6 +97,48 @@ namespace Spoj.Library
             }
 
             return discoveredVertexIDs.Count == VertexCount;
+        }
+
+        public Tuple<Vertex, int> FindFurthestVertex(int startVertexID)
+            => FindFurthestVertex(_vertices[startVertexID]);
+
+        // This finds a furthest vertex from the start vertex, that is, a vertex whose (shortest) path
+        // to the start is the longest, and returns that vertex and its distance (path length) from the start.
+        public Tuple<Vertex, int> FindFurthestVertex(Vertex startVertex)
+        {
+            var discoveredVertexIDs = new HashSet<int> { startVertex.ID };
+            var verticesToVisit = new Queue<Vertex>();
+            verticesToVisit.Enqueue(startVertex);
+
+            Vertex furthestVertex = null;
+            int furthestDistance = -1;
+
+            // We visit vertices in waves, where all vertices in the same wave are the same distance
+            // from the start vertex, which BFS makes convenient. This allows us to avoid storing
+            // distances to the start vertex at the level of individual vertices.
+            while (verticesToVisit.Count > 0)
+            {
+                // We don't care which furthest vertex we get from this wave, so we just choose the first.
+                furthestVertex = verticesToVisit.Peek();
+                ++furthestDistance;
+
+                int waveSize = verticesToVisit.Count;
+                for (int i = 0; i < waveSize; ++i)
+                {
+                    var vertex = verticesToVisit.Dequeue();
+
+                    foreach (var neighbor in vertex.Neighbors)
+                    {
+                        bool neighborWasDiscoveredForTheFirstTime = discoveredVertexIDs.Add(neighbor.ID);
+                        if (neighborWasDiscoveredForTheFirstTime)
+                        {
+                            verticesToVisit.Enqueue(neighbor);
+                        }
+                    }
+                }
+            }
+
+            return Tuple.Create(furthestVertex, furthestDistance);
         }
 
         public class Vertex
