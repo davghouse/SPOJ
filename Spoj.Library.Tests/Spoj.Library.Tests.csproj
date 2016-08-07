@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BigIntegerTests.cs" />
+    <Compile Include="BinarySearchTests.cs" />
     <Compile Include="InputGeneratorTests.cs" />
     <Compile Include="MathHelperTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />

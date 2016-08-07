@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigInteger.cs" />
+    <Compile Include="BinarySearch.cs" />
     <Compile Include="InputGenerator.cs" />
     <Compile Include="MathHelper.cs" />
     <Compile Include="SimpleGraph.cs" />
