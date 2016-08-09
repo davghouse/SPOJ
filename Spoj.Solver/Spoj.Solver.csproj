@@ -78,6 +78,8 @@
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Solutions\4_Prince\OLOLO.cpp" />
+    <None Include="Solutions\TEMPLATE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5_King\JULKA.cs" />
@@ -168,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3_Warlord\OFFSIDE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4_Prince\OLOLO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
