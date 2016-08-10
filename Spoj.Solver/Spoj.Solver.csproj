@@ -148,7 +148,7 @@
     <None Include="Solutions\4_Prince\NGM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emporer\EDIST.cs" />
+    <None Include="Solutions\6_Emperor\EDIST.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3_Warlord\CRDS.cs" />
@@ -157,10 +157,10 @@
     <None Include="Solutions\4_Prince\BEENUMS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emporer\PT07Z.cs" />
+    <None Include="Solutions\6_Emperor\PT07Z.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emporer\AGGRCOW.cs" />
+    <None Include="Solutions\6_Emperor\AGGRCOW.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5_King\BYTESM2.cs" />
