@@ -57,6 +57,7 @@
     <Compile Include="InputGeneratorTests.cs" />
     <Compile Include="MathHelperTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />
+    <Compile Include="StringHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">

@@ -45,6 +45,7 @@
     <Compile Include="InputGenerator.cs" />
     <Compile Include="MathHelper.cs" />
     <Compile Include="SimpleGraph.cs" />
+    <Compile Include="StringHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

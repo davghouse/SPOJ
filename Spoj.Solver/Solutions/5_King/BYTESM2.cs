@@ -52,8 +52,7 @@ public static class Program
         while((line = Console.ReadLine()) != null)
         {
             int[] ints = Array.ConvertAll(
-                // The first parameter stands in for all whitespace delimiters.
-                line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries),
+                line.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
                 int.Parse);
             input.AddRange(ints);
         }
