@@ -193,7 +193,7 @@
     <None Include="Solutions\4_Prince\ARITH2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\EASYPROB.cs" />
+    <None Include="Solutions\4_Prince\EASYPROB.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
