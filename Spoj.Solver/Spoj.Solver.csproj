@@ -86,14 +86,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\SAMER08F.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Solutions\4_Prince\OLOLO.cpp" />
-    <None Include="Solutions\TEMPLATE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5_King\JULKA.cs" />

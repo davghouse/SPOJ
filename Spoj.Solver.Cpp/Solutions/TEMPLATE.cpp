@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// See TEMPLATE.cs--this solution was submitted using C++ because C# was unavailable.
+// See TEMPLATE.cs--this solution was submitted using C++ because C# was too slow.
 int Solve(int a, int b)
 {
   return a * b;

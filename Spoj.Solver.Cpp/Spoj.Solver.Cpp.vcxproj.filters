@@ -1,2 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Solutions">
+      <UniqueIdentifier>{9c647c78-7543-4e29-831c-638adc393ba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\1_Settler">
+      <UniqueIdentifier>{1a2483d1-0466-403f-b78c-323b56c5462b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\2_Chieftain">
+      <UniqueIdentifier>{bd3dc30f-bede-485c-94e8-05e6c2422448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\3_Warlord">
+      <UniqueIdentifier>{6dc64db0-6475-474f-933e-3fcc578d34df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\4_Prince">
+      <UniqueIdentifier>{eb5490d9-9f6d-47ea-a569-cb35b2bb32b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\5_King">
+      <UniqueIdentifier>{9b486302-641f-4be6-9698-dded23a8000c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\6_Emperor">
+      <UniqueIdentifier>{d8d06f2d-0a90-481d-b292-3d8eed94f0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\7_Immortal">
+      <UniqueIdentifier>{369b8838-c150-4bbb-b557-23a070af89c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solutions\8_Deity">
+      <UniqueIdentifier>{15684bec-1473-436b-9c95-4306bc469f60}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Solutions\4_Prince\OLOLO.cpp">
+      <Filter>Solutions\4_Prince</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\4_Prince\SAMER08F.cpp">
+      <Filter>Solutions\4_Prince</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\TEMPLATE.cpp">
+      <Filter>Solutions</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+  </ItemGroup>
+</Project>
