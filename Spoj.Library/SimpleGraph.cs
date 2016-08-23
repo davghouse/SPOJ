@@ -8,11 +8,11 @@ namespace Spoj.Library
     // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
     // corresponds to its index in said array. Immutable so far but at least mutable edges later on probably.
     // Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
-    public class SimpleGraph
+    public sealed class SimpleGraph
     {
-        protected readonly Vertex[] _vertices;
+        private readonly Vertex[] _vertices;
 
-        protected SimpleGraph(int vertexCount)
+        private SimpleGraph(int vertexCount)
         {
             _vertices = new Vertex[vertexCount];
         }
@@ -59,10 +59,10 @@ namespace Spoj.Library
         public IReadOnlyList<Vertex> Vertices
             => Array.AsReadOnly(_vertices);
 
-        protected void AddEdge(int firstVertexID, int secondVertexID)
+        private void AddEdge(int firstVertexID, int secondVertexID)
             => AddEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
 
-        protected void AddEdge(Vertex firstVertex, Vertex secondVertex)
+        private void AddEdge(Vertex firstVertex, Vertex secondVertex)
         {
             firstVertex.AddNeighbor(secondVertex);
             secondVertex.AddNeighbor(firstVertex);
@@ -141,12 +141,12 @@ namespace Spoj.Library
             return Tuple.Create(furthestVertex, furthestDistance);
         }
 
-        public class Vertex
+        public sealed class Vertex
         {
-            protected readonly SimpleGraph _graph;
-            protected readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
+            private readonly SimpleGraph _graph;
+            private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
 
-            protected internal Vertex(SimpleGraph graph, int ID)
+            internal Vertex(SimpleGraph graph, int ID)
             {
                 _graph = graph;
                 this.ID = ID;
@@ -160,10 +160,10 @@ namespace Spoj.Library
             public IEnumerable<Vertex> Neighbors
                 => _neighbors.Skip(0);
 
-            protected internal void AddNeighbor(int neighborID)
+            internal void AddNeighbor(int neighborID)
                 => AddNeighbor(_graph._vertices[neighborID]);
 
-            protected internal void AddNeighbor(Vertex neighbor)
+            internal void AddNeighbor(Vertex neighbor)
                 => _neighbors.Add(neighbor);
 
             public bool HasNeighbor(int neighborID)
