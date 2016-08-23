@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D10BF86-2D13-462E-9DE5-C67D759A0772}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{F3416C1B-AA2D-4028-9997-22F0FED2866D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spoj.Library</RootNamespace>
-    <AssemblyName>Spoj.Library</AssemblyName>
+    <RootNamespace>Spoj.Library.PerformanceTests</RootNamespace>
+    <AssemblyName>Spoj.Library.PerformanceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,26 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BigInteger.cs" />
-    <Compile Include="BinarySearch.cs" />
-    <Compile Include="InputGenerator.cs" />
-    <Compile Include="MathHelper.cs" />
-    <Compile Include="SegmentTree\ArrayBasedSegmentTree.cs" />
-    <Compile Include="SegmentTree\ISegmentTreeQueryValue.cs" />
-    <Compile Include="SegmentTree\NonRecursiveSegmentTree.cs" />
-    <Compile Include="SegmentTree\QueryValues\MaximumQueryValue.cs" />
-    <Compile Include="SegmentTree\QueryValues\MaximumSumQueryValue.cs" />
-    <Compile Include="SegmentTree\QueryValues\MinimumQueryValue.cs" />
-    <Compile Include="SegmentTree\NaiveSegmentTreeAlternatives.cs" />
-    <Compile Include="SegmentTree\QueryValues\ProductQueryValue.cs" />
-    <Compile Include="SegmentTree\SegmentTree.cs" />
-    <Compile Include="SegmentTree\NodeBasedSegmentTree.cs" />
-    <Compile Include="SegmentTree\QueryValues\SumQueryValue.cs" />
-    <Compile Include="SimpleGraph.cs" />
-    <Compile Include="StringHelper.cs" />
+    <Compile Include="ITestSuite.cs" />
+    <Compile Include="TestSuites\SegmentTreeTestSuite.cs" />
+    <Compile Include="TestCase.cs" />
+    <Compile Include="Tester.cs" />
+    <Compile Include="TestResult.cs" />
+    <Compile Include="TestScenario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
+      <Project>{4d10bf86-2d13-462e-9de5-c67d759a0772}</Project>
+      <Name>Spoj.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestSuites\Results\SegmentTreeTestSuiteResults.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

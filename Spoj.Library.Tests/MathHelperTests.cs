@@ -20,5 +20,19 @@ namespace Spoj.Library.Tests
             Assert.IsTrue(MathHelper.IsPowerOfTwo(256));
             Assert.IsFalse(MathHelper.IsPowerOfTwo(260));
         }
+
+        [TestMethod]
+        public void GetsFirstPowerOfTwoAtOrAfter()
+        {
+            Assert.AreEqual(1, MathHelper.GetFirstPowerOfTwoAtOrAfter(-1));
+            Assert.AreEqual(1, MathHelper.GetFirstPowerOfTwoAtOrAfter(0));
+            Assert.AreEqual(1, MathHelper.GetFirstPowerOfTwoAtOrAfter(1));
+            Assert.AreEqual(2, MathHelper.GetFirstPowerOfTwoAtOrAfter(2));
+            Assert.AreEqual(4, MathHelper.GetFirstPowerOfTwoAtOrAfter(3));
+            Assert.AreEqual(4, MathHelper.GetFirstPowerOfTwoAtOrAfter(4));
+            Assert.AreEqual(8, MathHelper.GetFirstPowerOfTwoAtOrAfter(5));
+            Assert.AreEqual(16, MathHelper.GetFirstPowerOfTwoAtOrAfter(13));
+            Assert.AreEqual(32, MathHelper.GetFirstPowerOfTwoAtOrAfter(25));
+        }
     }
 }
