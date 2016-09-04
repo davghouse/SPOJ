@@ -56,6 +56,7 @@
     <Compile Include="BinarySearchTests.cs" />
     <Compile Include="InputGeneratorTests.cs" />
     <Compile Include="MathHelperTests.cs" />
+    <Compile Include="Mod10ExponentiatorTests.cs" />
     <Compile Include="SegmentTree\SegmentTreeTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />
     <Compile Include="StringHelperTests.cs" />

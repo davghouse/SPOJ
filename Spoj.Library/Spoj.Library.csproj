@@ -44,6 +44,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="InputGenerator.cs" />
     <Compile Include="MathHelper.cs" />
+    <Compile Include="Mod10Exponentiator.cs" />
     <Compile Include="SegmentTree\ArrayBasedSegmentTree.cs" />
     <Compile Include="SegmentTree\ISegmentTreeQueryValue.cs" />
     <Compile Include="SegmentTree\NonRecursiveSegmentTree.cs" />

@@ -6,10 +6,10 @@ using System.Collections.Generic;
 public static class LASTDIG
 {
     public static int Solve(int b, int e)
-        => ExponentiatorMod10.Compute(b, e);
+        => Mod10Exponentiator.Compute(b, e);
 }
 
-public static class ExponentiatorMod10
+public static class Mod10Exponentiator
 {
     // Last digit patterns for repeated exponentiations of bases 0 through 9.
     // A repeating last digit establishes the pattern, as the next last digit depends only
@@ -17,7 +17,7 @@ public static class ExponentiatorMod10
     // add parts that are divisible by 10 and hence don't affect the mod 10 calculation.
     private static readonly IReadOnlyList<IReadOnlyList<int>> _bases0To9LastDigitExponentiationPatterns;
 
-    static ExponentiatorMod10()
+    static Mod10Exponentiator()
     {
         var base0Pattern = new[] { 0 }; // 0, (0).
         var base1Pattern = new[] { 1 }; // 1, (1).
