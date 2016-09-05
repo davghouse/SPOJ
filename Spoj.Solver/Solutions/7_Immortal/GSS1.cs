@@ -132,7 +132,7 @@ public static class Program
         int[] sourceArray = Array.ConvertAll(Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries), int.Parse);
         var solver = new GSS1(sourceArray);
 
-        StringBuilder stringBuilder = new StringBuilder();
+        var stringBuilder = new StringBuilder();
         int queryCount = int.Parse(Console.ReadLine());
         for (int i = 0; i < queryCount; ++i)
         {
@@ -140,6 +140,6 @@ public static class Program
             stringBuilder.AppendLine(solver.Solve(line[0] - 1, line[1] - 1).ToString());
         }
 
-        Console.Write(stringBuilder.ToString());
+        Console.Write(stringBuilder);
     }
 }
