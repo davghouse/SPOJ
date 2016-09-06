@@ -125,7 +125,7 @@ public static class MathHelper
 
 public static class Program
 {
-    // Special i/o handling is necessary to work around malformed input and get the time fast enough.
+    // Special I/O handling is necessary to work around malformed input and get the time fast enough.
     private static void Main()
     {
         Console.ReadLine();
