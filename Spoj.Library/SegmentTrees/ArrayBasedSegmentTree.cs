@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Spoj.Library.SegmentTree
+namespace Spoj.Library.SegmentTrees
 {
     // Most guides online cover this approach, but here's one good one:
     // https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/

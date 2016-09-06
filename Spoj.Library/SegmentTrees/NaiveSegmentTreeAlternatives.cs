@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Spoj.Library.SegmentTree
+namespace Spoj.Library.SegmentTrees
 {
     public static class NaiveSegmentTreeAlternatives
     {

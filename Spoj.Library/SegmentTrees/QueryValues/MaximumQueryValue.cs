@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spoj.Library.SegmentTree.QueryValues
+namespace Spoj.Library.SegmentTrees.QueryValues
 {
     public sealed class MaximumQueryValue : ISegmentTreeQueryValue<MaximumQueryValue>
     {

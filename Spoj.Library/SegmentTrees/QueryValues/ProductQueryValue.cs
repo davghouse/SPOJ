@@ -1,4 +1,4 @@
-﻿namespace Spoj.Library.SegmentTree.QueryValues
+﻿namespace Spoj.Library.SegmentTrees.QueryValues
 {
     public sealed class ProductQueryValue : ISegmentTreeQueryValue<ProductQueryValue>
     {

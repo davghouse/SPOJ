@@ -1,5 +1,5 @@
-﻿using Spoj.Library.SegmentTree;
-using Spoj.Library.SegmentTree.QueryValues;
+﻿using Spoj.Library.SegmentTrees;
+using Spoj.Library.SegmentTrees.QueryValues;
 using System;
 using System.Collections.Generic;
 

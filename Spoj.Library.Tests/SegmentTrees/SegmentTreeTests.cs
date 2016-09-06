@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Spoj.Library.SegmentTree;
-using Spoj.Library.SegmentTree.QueryValues;
+using Spoj.Library.SegmentTrees;
+using Spoj.Library.SegmentTrees.QueryValues;
 
-namespace Spoj.Library.Tests.SegmentTree
+namespace Spoj.Library.Tests.SegmentTrees
 {
     [TestClass]
     public class SegmentTreeTests

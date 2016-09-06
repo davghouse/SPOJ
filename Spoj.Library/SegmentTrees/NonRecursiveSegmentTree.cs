@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Spoj.Library.SegmentTree
+namespace Spoj.Library.SegmentTrees
 {
     // This implementation is ripped from http://codeforces.com/blog/entry/18051, with slight adjustments
     // to support querying over a closed-interval and using nulls to avoid necessitating sentinel values.

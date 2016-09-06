@@ -1,4 +1,4 @@
-﻿namespace Spoj.Library.SegmentTree
+﻿namespace Spoj.Library.SegmentTrees
 {
     // The generic parameter is kind of confusing here. The interface gets used in the same way IEquatable<T> gets used.
     // I thought about renaming to ISegmentTreeQueryObject and then having a property like int Value { get; }.

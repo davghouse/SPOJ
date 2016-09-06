@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spoj.Library.SegmentTree.QueryValues
+namespace Spoj.Library.SegmentTrees.QueryValues
 {
     // Given a query range, this value represents the maximum sum for any contiguous subrange.
     public sealed class MaximumSumQueryValue : ISegmentTreeQueryValue<MaximumSumQueryValue>

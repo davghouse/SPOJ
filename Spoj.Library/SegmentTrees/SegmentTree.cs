@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Spoj.Library.SegmentTree
+namespace Spoj.Library.SegmentTrees
 {
     // There are tons of articles about the type of segment tree used here, a good starting point:
     // http://wcipeg.com/wiki/Segment_tree. As far as I can tell this isn't the same as Wikipedia's

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Spoj.Library.SegmentTree
+namespace Spoj.Library.SegmentTrees
 {
     // This implementation is mostly educational. Rather than store the segment query values
     // in an array and do annoying little calculations to determine what segment the array index
