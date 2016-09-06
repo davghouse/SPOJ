@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITestSuite.cs" />
+    <Compile Include="TestSuites\PrimeDeciderTestSuite.cs" />
     <Compile Include="TestSuites\SegmentTreeTestSuite.cs" />
     <Compile Include="TestCase.cs" />
     <Compile Include="Tester.cs" />
@@ -61,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestSuites\Results\SegmentTreeTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\PrimeDeciderTestSuiteResults.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

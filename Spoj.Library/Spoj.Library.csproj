@@ -45,6 +45,11 @@
     <Compile Include="InputGenerator.cs" />
     <Compile Include="MathHelper.cs" />
     <Compile Include="Mod10Exponentiator.cs" />
+    <Compile Include="Primes\PrimeDecider.cs" />
+    <Compile Include="Primes\PrimeProvider.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesDecider.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesProvider.cs" />
+    <Compile Include="Primes\TrialDivisionDecider.cs" />
     <Compile Include="SegmentTrees\ArrayBasedSegmentTree.cs" />
     <Compile Include="SegmentTrees\ISegmentTreeQueryValue.cs" />
     <Compile Include="SegmentTrees\NonRecursiveSegmentTree.cs" />

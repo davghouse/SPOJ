@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public sealed class SegmentTreeTestSuite : ITestSuite
+    public class SegmentTreeTestSuite : ITestSuite
     {
         private readonly IReadOnlyList<int> _allRangesArray;
         private readonly IReadOnlyList<int> _rightEndingRangesArray;
         private readonly IReadOnlyList<int> _randomRangesArray;
-        private readonly int _randomRangesCount = 50000;
+        private const int _randomRangesCount = 50000;
 
         public SegmentTreeTestSuite()
         {

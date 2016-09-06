@@ -72,7 +72,7 @@
     <None Include="Solutions\4_Prince\FCTRL.cs" />
     <None Include="Solutions\4_Prince\FCTRL2.cs" />
     <None Include="Solutions\4_Prince\LASTDIG.cs" />
-    <None Include="Solutions\4_Prince\PRIME1.cs" />
+    <None Include="Solutions\5_King\PRIME1.cs" />
     <None Include="Solutions\4_Prince\SAMER08F.cs" />
   </ItemGroup>
   <ItemGroup>
