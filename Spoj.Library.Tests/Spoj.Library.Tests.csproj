@@ -54,15 +54,16 @@
   <ItemGroup>
     <Compile Include="BigIntegerTests.cs" />
     <Compile Include="BinarySearchTests.cs" />
+    <Compile Include="Helpers\IEnumerableHelperTests.cs" />
     <Compile Include="InputGeneratorTests.cs" />
-    <Compile Include="MathHelperTests.cs" />
+    <Compile Include="Helpers\MathHelperTests.cs" />
     <Compile Include="Mod10ExponentiatorTests.cs" />
     <Compile Include="Primes\PrimeDeciderTests.cs" />
     <Compile Include="Primes\PrimeFactorizerTests.cs" />
     <Compile Include="Primes\PrimeProviderTests.cs" />
     <Compile Include="SegmentTrees\SegmentTreeTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />
-    <Compile Include="StringHelperTests.cs" />
+    <Compile Include="Helpers\StringHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
