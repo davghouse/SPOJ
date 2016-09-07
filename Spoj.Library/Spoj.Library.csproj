@@ -42,12 +42,15 @@
   <ItemGroup>
     <Compile Include="BigInteger.cs" />
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="Helpers\IEnumerableHelper.cs" />
     <Compile Include="InputGenerator.cs" />
-    <Compile Include="MathHelper.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
     <Compile Include="Mod10Exponentiator.cs" />
-    <Compile Include="Primes\PrimeDecider.cs" />
-    <Compile Include="Primes\PrimeProvider.cs" />
+    <Compile Include="Primes\IPrimeDecider.cs" />
+    <Compile Include="Primes\IPrimeFactorizer.cs" />
+    <Compile Include="Primes\IPrimeProvider.cs" />
     <Compile Include="Primes\SieveOfEratosthenesDecider.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesFactorizer.cs" />
     <Compile Include="Primes\SieveOfEratosthenesProvider.cs" />
     <Compile Include="Primes\TrialDivisionDecider.cs" />
     <Compile Include="SegmentTrees\ArrayBasedSegmentTree.cs" />
@@ -62,7 +65,7 @@
     <Compile Include="SegmentTrees\NodeBasedSegmentTree.cs" />
     <Compile Include="SegmentTrees\QueryValues\SumQueryValue.cs" />
     <Compile Include="SimpleGraph.cs" />
-    <Compile Include="StringHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

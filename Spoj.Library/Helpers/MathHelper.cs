@@ -1,4 +1,4 @@
-﻿namespace Spoj.Library
+﻿namespace Spoj.Library.Helpers
 {
     public static class MathHelper
     {

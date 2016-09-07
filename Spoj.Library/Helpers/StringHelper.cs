@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Spoj.Library
+namespace Spoj.Library.Helpers
 {
     public static class StringHelper
     {

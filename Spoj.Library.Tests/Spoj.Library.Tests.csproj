@@ -58,6 +58,7 @@
     <Compile Include="MathHelperTests.cs" />
     <Compile Include="Mod10ExponentiatorTests.cs" />
     <Compile Include="Primes\PrimeDeciderTests.cs" />
+    <Compile Include="Primes\PrimeFactorizerTests.cs" />
     <Compile Include="Primes\PrimeProviderTests.cs" />
     <Compile Include="SegmentTrees\SegmentTreeTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />

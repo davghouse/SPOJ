@@ -1,0 +1,29 @@
+﻿Up to ten million, one full-width pass:
+  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.38472 seconds)
+  Sieve of Eratosthenes factorizer: x9.99032 (0 minutes 3.84354 seconds)
+  Trial division decider:           x11.12477 (0 minutes 4.27999 seconds)
+
+Up to ten million, ten full-width passes:
+  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 1.11541 seconds)
+  Sieve of Eratosthenes factorizer: x30.67280 (0 minutes 34.21281 seconds)
+  Trial division decider:           x38.69093 (0 minutes 43.15633 seconds)
+
+Up to ten million, one 1-million-width pass:
+  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.24788 seconds)
+  Trial division decider:           x1.88450 (0 minutes 0.46713 seconds)
+  Sieve of Eratosthenes factorizer: x2.83321 (0 minutes 0.70230 seconds)
+
+Up to ten million, ten 1-million-width passes:
+  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.33069 seconds)
+  Sieve of Eratosthenes factorizer: x11.49909 (0 minutes 3.80271 seconds)
+  Trial division decider:           x14.12554 (0 minutes 4.67128 seconds)
+
+Up to ten million, one 100k-width pass:
+  Trial division decider:           x1.00000 (0 minutes 0.04555 seconds)
+  Sieve of Eratosthenes decider:    x5.28635 (0 minutes 0.24080 seconds)
+  Sieve of Eratosthenes factorizer: x9.05698 (0 minutes 0.41257 seconds)
+
+Up to ten million, ten 100k-million-width passes:
+  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.24838 seconds)
+  Trial division decider:           x1.81526 (0 minutes 0.45087 seconds)
+  Sieve of Eratosthenes factorizer: x2.91293 (0 minutes 0.72352 seconds)

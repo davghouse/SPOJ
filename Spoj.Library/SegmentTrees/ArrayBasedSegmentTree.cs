@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Spoj.Library.Helpers;
+using System.Collections.Generic;
 
 namespace Spoj.Library.SegmentTrees
 {

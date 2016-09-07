@@ -3,13 +3,14 @@ using System.Collections;
 
 namespace Spoj.Library.Primes
 {
-    public sealed class SieveOfEratosthenesDecider : PrimeDecider
+    public class SieveOfEratosthenesDecider : IPrimeDecider
     {
         private readonly BitArray _sieve;
 
         public SieveOfEratosthenesDecider(int limit)
-            : base(limit)
         {
+            Limit = limit;
+
             _sieve = new BitArray(Limit + 1, true);
             _sieve[0] = false;
             _sieve[1] = false;
@@ -28,7 +29,9 @@ namespace Spoj.Library.Primes
             }
         }
 
-        public override bool IsPrime(int n)
+        public int Limit { get; }
+
+        public bool IsPrime(int n)
             => _sieve[n];
     }
 }

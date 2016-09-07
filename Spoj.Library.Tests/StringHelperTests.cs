@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Spoj.Library.Helpers;
 using System.Linq;
 
 namespace Spoj.Library.Tests

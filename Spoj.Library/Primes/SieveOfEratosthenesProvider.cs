@@ -2,13 +2,14 @@
 
 namespace Spoj.Library.Primes
 {
-    public sealed class SieveOfEratosthenesProvider : PrimeProvider
+    public class SieveOfEratosthenesProvider : IPrimeProvider, IPrimeDecider
     {
         private readonly SieveOfEratosthenesDecider _decider;
 
         public SieveOfEratosthenesProvider(int limit)
-            : base(limit)
         {
+            Limit = limit;
+
             _decider = new SieveOfEratosthenesDecider(Limit);
 
             var primes = new List<int>();
@@ -23,9 +24,11 @@ namespace Spoj.Library.Primes
             Primes = primes.AsReadOnly();
         }
 
-        public override bool IsPrime(int n)
+        public int Limit { get; }
+
+        public bool IsPrime(int n)
             => _decider.IsPrime(n);
 
-        public override IReadOnlyList<int> Primes { get; }
+        public IReadOnlyList<int> Primes { get; }
     }
 }

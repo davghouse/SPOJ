@@ -2,22 +2,25 @@
 
 namespace Spoj.Library.Primes
 {
-    public sealed class TrialDivisionDecider : PrimeDecider
+    public class TrialDivisionDecider : IPrimeDecider
     {
-        private readonly SieveOfEratosthenesProvider _sieve;
+        private readonly SieveOfEratosthenesProvider _sieveProvider;
 
         public TrialDivisionDecider(int limit)
-            : base(limit)
         {
-            _sieve = new SieveOfEratosthenesProvider((int)Math.Sqrt(Limit));
+            Limit = limit;
+
+            _sieveProvider = new SieveOfEratosthenesProvider((int)Math.Sqrt(Limit));
         }
 
-        public override bool IsPrime(int n)
-        {
-            if (n <= _sieve.Limit)
-                return _sieve.IsPrime(n);
+        public int Limit { get; }
 
-            foreach (int prime in _sieve.Primes)
+        public bool IsPrime(int n)
+        {
+            if (n <= _sieveProvider.Limit)
+                return _sieveProvider.IsPrime(n);
+
+            foreach (int prime in _sieveProvider.Primes)
             {
                 if (prime > Math.Sqrt(n))
                     break;
