@@ -69,7 +69,7 @@
     <None Include="Solutions\3_Warlord\ONP.cs" />
     <None Include="Solutions\3_Warlord\TOANDFRO.cs" />
     <None Include="Solutions\4_Prince\AE00.cs" />
-    <None Include="Solutions\4_Prince\FCTRL.cs" />
+    <None Include="Solutions\5_King\FCTRL.cs" />
     <None Include="Solutions\4_Prince\FCTRL2.cs" />
     <None Include="Solutions\4_Prince\LASTDIG.cs" />
     <None Include="Solutions\5_King\PRIME1.cs" />
