@@ -25,7 +25,7 @@ public sealed class ArrayBasedSegmentTree
     public ArrayBasedSegmentTree(IReadOnlyList<int> sourceArray)
     {
         _sourceArray = sourceArray;
-        _treeArray = new MaximumSumQueryValue[2 * MathHelper.GetFirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
+        _treeArray = new MaximumSumQueryValue[2 * MathHelper.FirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
         Build(0, 0, _sourceArray.Count - 1);
     }
 
@@ -111,7 +111,7 @@ public class MaximumSumQueryValue
 
 public static class MathHelper
 {
-    public static int GetFirstPowerOfTwoAtOrAfter(int value)
+    public static int FirstPowerOfTwoAtOrAfter(int value)
     {
         int result = 1;
         while (result < value)

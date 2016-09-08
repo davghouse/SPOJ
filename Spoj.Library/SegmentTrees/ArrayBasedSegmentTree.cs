@@ -12,7 +12,7 @@ namespace Spoj.Library.SegmentTrees
         public ArrayBasedSegmentTree(IReadOnlyList<int> sourceArray)
             : base(sourceArray)
         {
-            _treeArray = new T[2 * MathHelper.GetFirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
+            _treeArray = new T[2 * MathHelper.FirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
             Build(0, 0, _sourceArray.Count - 1);
         }
 
