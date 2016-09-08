@@ -36,8 +36,9 @@ namespace Spoj.Library.Tests.Primes
 
             foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
             {
-                Assert.IsTrue(numberPrimeFactorsPair.Item2.SequenceEqual(
-                    factorizer.GetPrimeFactors(numberPrimeFactorsPair.Item1).OrderBy(f => f).ToArray()));
+                int number = numberPrimeFactorsPair.Item1;
+
+                CollectionAssert.AreEquivalent(primeFactors, factorizer.GetPrimeFactors(number).ToArray());
             }
         }
 
@@ -48,11 +49,9 @@ namespace Spoj.Library.Tests.Primes
 
             foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
             {
-                Assert.IsTrue(numberPrimeFactorsPair.Item2.SetEqual(
-                    factorizer.GetDistinctPrimeFactors(numberPrimeFactorsPair.Item1).ToArray()));
+                int number = numberPrimeFactorsPair.Item1;
+                int[] distinctPrimeFactors = numberPrimeFactorsPair.Item2.Distinct().ToArray();
 
-                Assert.IsTrue(numberPrimeFactorsPair.Item2.Distinct().OrderBy(f => f).SequenceEqual(
-                    factorizer.GetDistinctPrimeFactors(numberPrimeFactorsPair.Item1).OrderBy(f => f).ToArray()));
             }
         }
     }
