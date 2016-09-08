@@ -37,6 +37,7 @@ namespace Spoj.Library.Tests.Primes
             foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
             {
                 int number = numberPrimeFactorsPair.Item1;
+                int[] primeFactors = numberPrimeFactorsPair.Item2;
 
                 CollectionAssert.AreEquivalent(primeFactors, factorizer.GetPrimeFactors(number).ToArray());
             }
@@ -52,6 +53,7 @@ namespace Spoj.Library.Tests.Primes
                 int number = numberPrimeFactorsPair.Item1;
                 int[] distinctPrimeFactors = numberPrimeFactorsPair.Item2.Distinct().ToArray();
 
+                CollectionAssert.AreEquivalent(distinctPrimeFactors, factorizer.GetDistinctPrimeFactors(number).ToArray());
             }
         }
     }
