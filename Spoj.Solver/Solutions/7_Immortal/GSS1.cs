@@ -129,14 +129,18 @@ public static class Program
     private static void Main()
     {
         Console.ReadLine();
-        int[] sourceArray = Array.ConvertAll(Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries), int.Parse);
+        int[] sourceArray = Array.ConvertAll(
+            Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
+            int.Parse);
         var solver = new GSS1(sourceArray);
 
         var stringBuilder = new StringBuilder();
         int queryCount = int.Parse(Console.ReadLine());
         for (int i = 0; i < queryCount; ++i)
         {
-            int[] line = Array.ConvertAll(Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries), int.Parse);
+            int[] line = Array.ConvertAll(
+                Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
+                int.Parse);
             stringBuilder.AppendLine(solver.Solve(line[0] - 1, line[1] - 1).ToString());
         }
 
