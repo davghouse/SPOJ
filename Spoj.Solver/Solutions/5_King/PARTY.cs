@@ -12,10 +12,10 @@ public static class PARTY
     // though, since we need the minimum budget at which that maximum fun value occurs. The budget only
     // goes to 500, so doing a binary search or something isn't necessary; just use a linear search.
     // Seems obvious that this algorithm is correct (unlike EDIST).
-    public static Tuple<int, int> Solve(int partyBudget, int numberOfParties, int[,] partyEntranceFeesAndFunValues)
+    public static Tuple<int, int> Solve(int partyBudget, int partyCount, int[,] partyEntranceFeesAndFunValues)
     {
         // The number of parties index is zero-based but the party budget index corresponds to the available party budget.
-        int[,] partyAndBudgetTableForFunValues = new int[numberOfParties, partyBudget + 1];
+        int[,] partyAndBudgetTableForFunValues = new int[partyCount, partyBudget + 1];
         int nextPartyEntranceFee = partyEntranceFeesAndFunValues[0, 0];
         int nextPartyFunValue = partyEntranceFeesAndFunValues[0, 1];
 
@@ -27,7 +27,7 @@ public static class PARTY
                 : 0;
         }
 
-        for (int nextParty = 1; nextParty < numberOfParties; ++nextParty)
+        for (int nextParty = 1; nextParty < partyCount; ++nextParty)
         {
             nextPartyEntranceFee = partyEntranceFeesAndFunValues[nextParty, 0];
             nextPartyFunValue = partyEntranceFeesAndFunValues[nextParty, 1];
@@ -44,9 +44,9 @@ public static class PARTY
         }
 
         int minimumBudgetForMaximumFunValue = partyBudget;
-        int maximumFunValue = partyAndBudgetTableForFunValues[numberOfParties - 1, partyBudget];
+        int maximumFunValue = partyAndBudgetTableForFunValues[partyCount - 1, partyBudget];
         while (minimumBudgetForMaximumFunValue - 1 >= 0
-            && partyAndBudgetTableForFunValues[numberOfParties - 1, minimumBudgetForMaximumFunValue - 1] == maximumFunValue)
+            && partyAndBudgetTableForFunValues[partyCount - 1, minimumBudgetForMaximumFunValue - 1] == maximumFunValue)
         {
             --minimumBudgetForMaximumFunValue;
         }
@@ -63,19 +63,19 @@ public static class Program
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int partyBudget = line[0];
-            int numberOfParties = line[1];
-            if (partyBudget == 0 && numberOfParties == 0) return;
+            int partyCount = line[1];
+            if (partyBudget == 0 && partyCount == 0) return;
 
-            int[,] partyEntranceFeesAndFunValues = new int[numberOfParties, 2];
+            int[,] partyEntranceFeesAndFunValues = new int[partyCount, 2];
 
-            for (int i = 0; i < numberOfParties; ++i)
+            for (int i = 0; i < partyCount; ++i)
             {
                 line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
                 partyEntranceFeesAndFunValues[i, 0] = line[0]; // entrance fee
                 partyEntranceFeesAndFunValues[i, 1] = line[1]; // fun value
             }
 
-            var budgetAndFunValueResult = PARTY.Solve(partyBudget, numberOfParties, partyEntranceFeesAndFunValues);
+            var budgetAndFunValueResult = PARTY.Solve(partyBudget, partyCount, partyEntranceFeesAndFunValues);
             Console.WriteLine($"{budgetAndFunValueResult.Item1} {budgetAndFunValueResult.Item2}");
 
             Console.ReadLine();
