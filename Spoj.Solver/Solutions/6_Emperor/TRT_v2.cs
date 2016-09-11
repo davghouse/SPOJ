@@ -30,15 +30,15 @@ public static class TRT // v2, bottom-up, dynamic programming with tabulation
         }
 
         // While moving right across the columns, solve up from the diagonal.
-        for (int c = 1; c < treatCount; ++c)
+        for (int cj = 1; cj < treatCount; ++cj)
         {
-            for (int r = c - 1; r >= 0; --r)
+            for (int ri = cj - 1; ri >= 0; --ri)
             {
-                int startingAgeOfRange = StartingAgeOfRange(r, c, treatCount);
+                int startingAgeOfRange = StartingAgeOfRange(ri, cj, treatCount);
 
-                maximumRevenues[r, c] = Math.Max(
-                    startingAgeOfRange * treatValues[r] + maximumRevenues[r + 1, c],
-                    startingAgeOfRange * treatValues[c] + maximumRevenues[r, c - 1]);
+                maximumRevenues[ri, cj] = Math.Max(
+                    startingAgeOfRange * treatValues[ri] + maximumRevenues[ri + 1, cj],
+                    startingAgeOfRange * treatValues[cj] + maximumRevenues[ri, cj - 1]);
             }
         }
 
