@@ -181,7 +181,7 @@
     <None Include="Solutions\3_Warlord\OFFSIDE.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\OLOLO.cs" />
+    <None Include="Solutions\5_King\OLOLO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4_Prince\MAXLN.cs" />
@@ -226,16 +226,16 @@
     <None Include="Solutions\5_King\BITMAP.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\ETF.cs" />
+    <None Include="Solutions\6_Emperor\ETF.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5_King\MARBLES.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\TRT_v1.cs" />
+    <None Include="Solutions\6_Emperor\TRT_v1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\TRT_v2.cs" />
+    <None Include="Solutions\6_Emperor\TRT_v2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4_Prince\AMR10G.cs" />
