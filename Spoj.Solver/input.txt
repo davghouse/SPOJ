@@ -1,5 +1,9 @@
 4
-abcd
-yalam
-fft
-aibzohphobia
+5
+1 2 3 4 5
+1
+10
+9 
+1 3 5 9 7 10 1 10 100
+0
+
