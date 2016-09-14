@@ -23,15 +23,15 @@ public static class AIBOHP // bottom-up, dynamic programming with tabulation
     // Case where end inserted at the start: ba___b, so 1 + (solution for a___) inserts needed.
     // This recursive solution lends itself pretty naturally to dynamic programming, in a similar way as TRT.
     // That is, a 2D table with indices [i, j] corresponding to substrings solution, the answer in the top right.
-    public static int Solve(string @string)
+    public static int Solve(string s)
     {
         // The diagonal(s) are already initialized to zero properly; single/zero length strings are palindromes.
         // While moving right across the columns, solve up from the diagonal.
-        for (int cj = 1; cj < @string.Length; ++cj)
+        for (int cj = 1; cj < s.Length; ++cj)
         {
             for (int ri = cj - 1; ri >= 0; --ri)
             {
-                if (@string[ri] == @string[cj])
+                if (s[ri] == s[cj])
                 {
                     minimumInsertionCounts[ri, cj] = minimumInsertionCounts[ri + 1, cj - 1];
                 }
@@ -45,7 +45,7 @@ public static class AIBOHP // bottom-up, dynamic programming with tabulation
         }
 
         // Return the insertion count for the full string, which is in the top right corner of the table.
-        return minimumInsertionCounts[0, @string.Length - 1];
+        return minimumInsertionCounts[0, s.Length - 1];
     }
 }
 
