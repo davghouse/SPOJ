@@ -64,6 +64,7 @@
     <Compile Include="SegmentTrees\SegmentTreeTests.cs" />
     <Compile Include="SimpleGraphTests.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
+    <Compile Include="StringMatchers\StringMatcherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">

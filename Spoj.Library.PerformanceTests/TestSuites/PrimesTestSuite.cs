@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class PrimeDeciderAndFactorizerTestSuite : ITestSuite
+    public class PrimesTestSuite : ITestSuite
     {
         private const int _tenMillion = 10000000;
 
@@ -48,7 +48,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                 }),
         };
 
-        public void SieveOfEratosthenesDecider(int limit, int passes, int start, int end)
+        private void SieveOfEratosthenesDecider(int limit, int passes, int start, int end)
         {
             var decider = new SieveOfEratosthenesDecider(limit);
 
@@ -61,7 +61,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
         }
 
-        public void TrialDivisionDecider(int limit, int passes, int start, int end)
+        private void TrialDivisionDecider(int limit, int passes, int start, int end)
         {
             var decider = new TrialDivisionDecider(limit);
 
@@ -74,7 +74,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
         }
 
-        public void SieveOfEratosthenesFactorizer(int limit, int passes, int start, int end)
+        private void SieveOfEratosthenesFactorizer(int limit, int passes, int start, int end)
         {
             var factorizer = new SieveOfEratosthenesFactorizer(limit);
 

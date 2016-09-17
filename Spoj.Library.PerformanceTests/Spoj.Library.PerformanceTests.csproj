@@ -44,12 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITestSuite.cs" />
-    <Compile Include="TestSuites\PrimeDeciderAndFactorizerTestSuite.cs" />
-    <Compile Include="TestSuites\SegmentTreeTestSuite.cs" />
+    <Compile Include="TestSuites\PrimesTestSuite.cs" />
+    <Compile Include="TestSuites\SegmentTreesTestSuite.cs" />
     <Compile Include="TestCase.cs" />
     <Compile Include="Tester.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="TestScenario.cs" />
+    <Compile Include="TestSuites\StringMatchersTestSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
@@ -61,8 +62,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestSuites\Results\SegmentTreeTestSuiteResults.txt" />
-    <Content Include="TestSuites\Results\PrimeDeciderAndFactorizerTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\SegmentTreesTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\PrimesTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\StringMatchersTestSuiteResults.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -66,6 +66,8 @@
     <Compile Include="SegmentTrees\QueryValues\SumQueryValue.cs" />
     <Compile Include="SimpleGraph.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="StringMatchers\KmpStringMatcher.cs" />
+    <Compile Include="StringMatchers\NaiveStringMatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

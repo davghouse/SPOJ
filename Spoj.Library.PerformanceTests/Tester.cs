@@ -11,7 +11,7 @@ namespace Spoj.Library.PerformanceTests
         private static void Main(string[] args)
         {
             // Replace with other test suites as needed.
-            ITestSuite testSuite = new PrimeDeciderAndFactorizerTestSuite();
+            ITestSuite testSuite = new StringMatchersTestSuite();
 
             foreach (TestScenario testScenario in testSuite.TestScenarios)
             {

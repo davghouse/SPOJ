@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class SegmentTreeTestSuite : ITestSuite
+    public class SegmentTreesTestSuite : ITestSuite
     {
         private readonly IReadOnlyList<int> _allRangesArray;
         private readonly IReadOnlyList<int> _rightEndingRangesArray;
         private readonly IReadOnlyList<int> _randomRangesArray;
         private const int _randomRangesCount = 50000;
 
-        public SegmentTreeTestSuite()
+        public SegmentTreesTestSuite()
         {
             _allRangesArray = InputGenerator.GenerateRandomInts(1000, -200, 200);
             _rightEndingRangesArray = InputGenerator.GenerateRandomInts(50000, -300, 300);
