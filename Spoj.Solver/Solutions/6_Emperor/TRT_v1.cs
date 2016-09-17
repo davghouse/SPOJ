@@ -43,9 +43,9 @@ public static class TRT // v1, top-down, recursion with memoization
 
         result = Math.Max(
             age * treatValues[indexRange.Start]
-            + SolveWithMemoization(treatValues, IndexRange.Create(indexRange.Start + 1, indexRange.End), age + 1, memoizer),
+                + SolveWithMemoization(treatValues, IndexRange.Create(indexRange.Start + 1, indexRange.End), age + 1, memoizer),
             age * treatValues[indexRange.End]
-            + SolveWithMemoization(treatValues, IndexRange.Create(indexRange.Start, indexRange.End - 1), age + 1, memoizer));
+                + SolveWithMemoization(treatValues, IndexRange.Create(indexRange.Start, indexRange.End - 1), age + 1, memoizer));
 
         memoizer.Add(indexRange, result);
 
