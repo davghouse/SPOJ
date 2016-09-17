@@ -72,7 +72,7 @@ public static class Program
 {
     private static void Main()
     {
-        StringBuilder output = new StringBuilder();
+        var output = new StringBuilder();
 
         int patternLength;
         while (int.TryParse(Console.ReadLine(), out patternLength))

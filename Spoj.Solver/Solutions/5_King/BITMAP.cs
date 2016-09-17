@@ -90,17 +90,17 @@ public static class Program
 
             int?[,] nearestWhitePixelDistances = BITMAP.Solve(rowCount, columnCount, zeroOneRows);
 
-            var stringBuilder = new StringBuilder();
+            var output = new StringBuilder();
             for (int r = 0; r < rowCount; ++r)
             {
-                stringBuilder.Append(nearestWhitePixelDistances[r, 0]);
+                output.Append(nearestWhitePixelDistances[r, 0]);
                 for (int c = 1; c < columnCount; ++c)
                 {
-                    stringBuilder.Append($" {nearestWhitePixelDistances[r, c]}");
+                    output.Append($" {nearestWhitePixelDistances[r, c]}");
                 }
-                stringBuilder.AppendLine();
+                output.AppendLine();
             }
-            Console.Write(stringBuilder);
+            Console.Write(output);
 
             Console.ReadLine();
         }

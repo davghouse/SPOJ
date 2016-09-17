@@ -103,14 +103,14 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
+        var output = new StringBuilder();
 
-        var stringBuilder = new StringBuilder();
         while (remainingTestCases-- > 0)
         {
             int n = int.Parse(Console.ReadLine());
-            stringBuilder.AppendLine(ETF.Solve(n).ToString());
+            output.AppendLine(ETF.Solve(n).ToString());
         }
 
-        Console.Write(stringBuilder);
+        Console.Write(output);
     }
 }

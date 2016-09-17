@@ -33,7 +33,7 @@ public static class TOANDFRO
             }
         }
 
-        StringBuilder originalMessage = new StringBuilder();
+        var originalMessage = new StringBuilder();
         // Traverse the array as it was traversed to set the original message,
         // but now instead of filling in the array, fill in the original message.
         for (int c = 0; c < columnCount; ++c)
