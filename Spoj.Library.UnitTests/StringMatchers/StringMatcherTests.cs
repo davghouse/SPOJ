@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Spoj.Library.Tests.StringMatchers
+namespace Spoj.Library.UnitTests.StringMatchers
 {
     [TestClass]
     public class StringMatcherTests

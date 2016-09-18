@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Spoj.Library.Tests
+namespace Spoj.Library.UnitTests
 {
     [TestClass]
     public class Mod10ExponentiatorTests

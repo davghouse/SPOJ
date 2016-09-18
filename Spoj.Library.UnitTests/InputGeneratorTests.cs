@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace Spoj.Library.Tests
+namespace Spoj.Library.UnitTests
 {
     [TestClass]
     public class InputGeneratorTests

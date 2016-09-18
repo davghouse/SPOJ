@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spoj.Library.Helpers;
 
-namespace Spoj.Library.Tests.Helpers
+namespace Spoj.Library.UnitTests.Helpers
 {
     [TestClass]
     public class MathHelperTests

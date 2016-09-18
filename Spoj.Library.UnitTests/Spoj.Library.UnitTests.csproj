@@ -6,8 +6,8 @@
     <ProjectGuid>{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spoj.Library.Tests</RootNamespace>
-    <AssemblyName>Spoj.Library.Tests</AssemblyName>
+    <RootNamespace>Spoj.Library.UnitTests</RootNamespace>
+    <AssemblyName>Spoj.Library.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

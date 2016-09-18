@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Solver", "Spoj.Solver\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library", "Spoj.Library\Spoj.Library.csproj", "{4D10BF86-2D13-462E-9DE5-C67D759A0772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library.Tests", "Spoj.Library.Tests\Spoj.Library.Tests.csproj", "{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library.UnitTests", "Spoj.Library.UnitTests\Spoj.Library.UnitTests.csproj", "{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Spoj.Solver.Cpp", "Spoj.Solver.Cpp\Spoj.Solver.Cpp.vcxproj", "{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}"
 EndProject

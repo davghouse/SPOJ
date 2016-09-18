@@ -2,7 +2,7 @@
 using Spoj.Library.Primes;
 using System.Linq;
 
-namespace Spoj.Library.Tests.Primes
+namespace Spoj.Library.UnitTests.Primes
 {
     [TestClass]
     public class PrimeProviderTests

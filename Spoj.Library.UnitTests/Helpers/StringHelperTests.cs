@@ -2,7 +2,7 @@
 using Spoj.Library.Helpers;
 using System.Linq;
 
-namespace Spoj.Library.Tests.Helpers
+namespace Spoj.Library.UnitTests.Helpers
 {
     [TestClass]
     public class StringHelperTests

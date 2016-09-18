@@ -2,7 +2,7 @@
 using Spoj.Library.SegmentTrees;
 using Spoj.Library.SegmentTrees.QueryValues;
 
-namespace Spoj.Library.Tests.SegmentTrees
+namespace Spoj.Library.UnitTests.SegmentTrees
 {
     [TestClass]
     public class SegmentTreeTests
