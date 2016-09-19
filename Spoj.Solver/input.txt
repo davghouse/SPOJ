@@ -1,26 +1,30 @@
-long_and_mnemonic_identifier
-anotherExample
-i
-bad_Style
-n_e_e_r_c
-JAVA
-jAVA
-n__e_r_c
-bad_Style
-Bad_style
-java_
-_another
-long_and_mnemonic_identifier
-anotherExample
-c_identifier
-n_e_e_r_c
-n__e_r_c
-nEER_c
-name
-java_
-_java
-ja_va
-goingToCatchU
-goingtocathc_uU
-azzZ
-b
+3
+6
+03 10103538 2222 1233 6160 0142
+03 10103538 2222 1233 6160 0141
+30 10103538 2222 1233 6160 0141
+30 10103538 2222 1233 6160 0142
+30 10103538 2222 1233 6160 0141
+30 10103538 2222 1233 6160 0142
+
+5
+30 10103538 2222 1233 6160 0144
+30 10103538 2222 1233 6160 0142
+30 10103538 2222 1233 6160 0145
+30 10103538 2222 1233 6160 0146
+30 10103538 2222 1233 6160 0143
+
+13
+8
+5
+6
+1
+1
+1
+1
+3
+3
+3
+5
+6
+6
