@@ -1,12 +1,26 @@
-5
-90 10 80 20 10
-8
-1 2 3 4 5 6 7 8
-2
-18 19
-3
-40 60 20
-4
-1 2 3 4
-1
-10
+long_and_mnemonic_identifier
+anotherExample
+i
+bad_Style
+n_e_e_r_c
+JAVA
+jAVA
+n__e_r_c
+bad_Style
+Bad_style
+java_
+_another
+long_and_mnemonic_identifier
+anotherExample
+c_identifier
+n_e_e_r_c
+n__e_r_c
+nEER_c
+name
+java_
+_java
+ja_va
+goingToCatchU
+goingtocathc_uU
+azzZ
+b
