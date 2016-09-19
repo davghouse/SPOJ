@@ -20,7 +20,7 @@ public static class BYTESM2
 
         for (int r = 1; r < height; ++r)
         {
-            for(int c = 0; c < width; ++c)
+            for (int c = 0; c < width; ++c)
             {
                 int leftPathValue = c > 0 ? bestPathValues[r - 1, c - 1] : 0;
                 int middlePathValue = bestPathValues[r - 1, c];
