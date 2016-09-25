@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Spoj.Library.SegmentTrees
 {
-    // This implementation is mostly educational. Rather than store the segment query values
-    // in an array and do annoying little calculations to determine what segment the array index
-    // corresponds to, the nodes store that information/structure when built.
-    public sealed class NodeBasedSegmentTree<T> : SegmentTree<T> where T : class, ISegmentTreeQueryValue<T>, new()
+    // This implementation is almost as fast as array-based. Rather than store the segment query objects
+    // in an array and do little calculations to determine where a segment's children are, the nodes
+    // store that information/structure when built.
+    public sealed class NodeBasedSegmentTree<TQueryObject, TQueryValue> : SegmentTree<TQueryObject, TQueryValue>
+        where TQueryObject : SegmentTreeQueryObject<TQueryObject, TQueryValue>, new()
     {
         private Node _root;
 
-        public NodeBasedSegmentTree(IReadOnlyList<int> sourceArray)
+        public NodeBasedSegmentTree(IReadOnlyList<TQueryValue> sourceArray)
             : base(sourceArray)
         {
             _root = Build(0, _sourceArray.Count - 1);
@@ -17,64 +19,89 @@ namespace Spoj.Library.SegmentTrees
 
         private Node Build(int segmentStartIndex, int segmentEndIndex)
             => segmentStartIndex == segmentEndIndex
-            ? new Node(
+            ? new Node( // Corresponds to a single index, so it's a leaf node.
                 index: segmentStartIndex,
                 value: _sourceArray[segmentStartIndex])
-            : new Node(
+            : new Node( // Corresponds to a range of indices, so it has two children, each corresponding to half the range.
                 leftChild: Build(segmentStartIndex, (segmentStartIndex + segmentEndIndex) / 2),
                 rightChild: Build((segmentStartIndex + segmentEndIndex) / 2 + 1, segmentEndIndex));
 
-        public override T Query(int queryStartIndex, int queryEndIndex)
-            => Query(_root, queryStartIndex, queryEndIndex);
+        public override TQueryValue Query(int queryStartIndex, int queryEndIndex)
+            => Query(_root, queryStartIndex, queryEndIndex).QueryValue;
 
-        private T Query(Node node, int queryStartIndex, int queryEndIndex)
+        // It's always the case that when we enter this method, the node is overlapped at least partially by the query
+        // range. Either one or both of its children are overlapped, the base case where it's overlapped totally (a leaf always is).
+        // Unless we're querying the whole range, if it's totally overlapped it's being called recursively from higher up.
+        private TQueryObject Query(Node node, int queryStartIndex, int queryEndIndex)
         {
-            if (node.IsOverlappedTotallyBy(queryStartIndex, queryEndIndex))
-                return node.QueryValue;
+            if (node.QueryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
+                return node.QueryObject;
 
-            bool leftChildIsOverlapped = node.LeftChild.IsOverlappedBy(queryStartIndex, queryEndIndex);
-            bool rightChildIsOverlapped = node.RightChild.IsOverlappedBy(queryStartIndex, queryEndIndex);
+            bool isLeftHalfOverlapped = node.QueryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
+            bool isRightHalfOverlapped = node.QueryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
 
-            if (leftChildIsOverlapped && rightChildIsOverlapped)
+            if (isLeftHalfOverlapped && isRightHalfOverlapped)
                 return Query(node.LeftChild, queryStartIndex, queryEndIndex)
                     .Combine(Query(node.RightChild, queryStartIndex, queryEndIndex));
-            else if (leftChildIsOverlapped)
+            else if (isLeftHalfOverlapped)
                 return Query(node.LeftChild, queryStartIndex, queryEndIndex);
             else
                 return Query(node.RightChild, queryStartIndex, queryEndIndex);
         }
 
+        public override void Update(int updateIndex, Func<TQueryValue, TQueryValue> updater)
+            => Update(updateIndex, updateIndex, updater);
+
+        public override void Update(int updateStartIndex, int updateEndIndex, Func<TQueryValue, TQueryValue> updater)
+            => Update(_root, updateStartIndex, updateEndIndex, updater);
+
+        // If node is a leaf then we update its query object's value by using the updater, with its current value as input.
+        // Otherwise, update recursively the overlapped children and update node, the parent, after those updates finish.
+        // It's the nature of the recursion that (for non-leaf nodes) either one or both of the children will be updated.
+        private void Update(Node node, int updateStartIndex, int updateEndIndex, Func<TQueryValue, TQueryValue> updater)
+        {
+            if (node.IsLeaf)
+            {
+                node.QueryObject.Reinitialize(updater);
+                return;
+            }
+
+            if (node.QueryObject.IsLeftHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            {
+                Update(node.LeftChild, updateStartIndex, updateEndIndex, updater);
+            }
+
+            if (node.QueryObject.IsRightHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            {
+                Update(node.RightChild, updateStartIndex, updateEndIndex, updater);
+            }
+
+            node.QueryObject.Update(node.LeftChild.QueryObject, node.RightChild.QueryObject);
+        }
+
         private class Node
         {
-            public Node(int index, int value)
+            public Node(int index, TQueryValue value)
             {
-                SegmentStartIndex = SegmentEndIndex = index;
-                QueryValue = new T();
-                QueryValue.Initialize(value);
+                QueryObject = new TQueryObject();
+                QueryObject.Initialize(index, value);
             }
 
             public Node(Node leftChild, Node rightChild)
             {
-                SegmentStartIndex = leftChild.SegmentStartIndex;
-                SegmentEndIndex = rightChild.SegmentEndIndex;
                 LeftChild = leftChild;
                 RightChild = rightChild;
-                QueryValue = leftChild.QueryValue.Combine(rightChild.QueryValue);
+                QueryObject = leftChild.QueryObject.Combine(rightChild.QueryObject);
             }
 
-            public T QueryValue { get; }
-
-            public int SegmentStartIndex { get; }
-            public int SegmentEndIndex { get; }
+            public TQueryObject QueryObject { get; }
 
             public Node LeftChild { get; }
             public Node RightChild { get; }
 
-            public bool IsOverlappedBy(int queryStartIndex, int queryEndIndex)
-                => queryStartIndex <= SegmentEndIndex && queryEndIndex >= SegmentStartIndex;
-
-            public bool IsOverlappedTotallyBy(int queryStartIndex, int queryEndIndex)
-                => queryStartIndex <= SegmentStartIndex && queryEndIndex >= SegmentEndIndex;
+            // If it's not a leaf it has both children (segment's at least 2 in size), but null check both for completeness.
+            public bool IsLeaf =>
+                LeftChild == null && RightChild == null;
         }
     }
 }

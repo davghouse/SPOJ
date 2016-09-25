@@ -1,18 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Spoj.Library.SegmentTrees
 {
-    // This implementation is ripped from http://codeforces.com/blog/entry/18051, with slight adjustments
+    // This implementation is taken from http://codeforces.com/blog/entry/18051, with slight adjustments
     // to support querying over a closed-interval and using nulls to avoid necessitating sentinel values.
     // Bitwise operators provide a small performance benefit, but the non-bitwise versions are commented nearby.
-    public sealed class NonRecursiveSegmentTree<T> : SegmentTree<T> where T : class, ISegmentTreeQueryValue<T>, new()
+    public sealed class NonRecursiveSegmentTree<TQueryObject, TQueryValue> : SegmentTree<TQueryObject, TQueryValue>
+        where TQueryObject : SegmentTreeQueryObject<TQueryObject, TQueryValue>, new()
     {
-        private readonly T[] _treeArray;
+        private readonly TQueryObject[] _treeArray;
 
-        public NonRecursiveSegmentTree(IReadOnlyList<int> sourceArray)
+        public NonRecursiveSegmentTree(IReadOnlyList<TQueryValue> sourceArray)
             : base(sourceArray)
         {
-            _treeArray = new T[2 * sourceArray.Count];
+            _treeArray = new TQueryObject[2 * sourceArray.Count];
             Build();
         }
 
@@ -20,36 +22,33 @@ namespace Spoj.Library.SegmentTrees
         {
             for (int i = 0; i < _sourceArray.Count; ++i)
             {
-                _treeArray[_sourceArray.Count + i] = new T();
-                _treeArray[_sourceArray.Count + i].Initialize(_sourceArray[i]);
+                _treeArray[_sourceArray.Count + i] = new TQueryObject();
+                _treeArray[_sourceArray.Count + i].Initialize(i, _sourceArray[i]);
             }
 
             for (int i = _sourceArray.Count - 1; i > 0; --i)
             {
-                //_treeArray[i] = _treeArray[2 * i].Combine(_treeArray[2 * i + 1]);
                 _treeArray[i] = _treeArray[i << 1].Combine(_treeArray[i << 1 | 1]);
             }
         }
 
-        public override T Query(int queryStartIndex, int queryEndIndex)
+        public override TQueryValue Query(int queryStartIndex, int queryEndIndex)
         {
             if (queryStartIndex == queryEndIndex)
-                return _treeArray[queryStartIndex + _sourceArray.Count];
+                return _treeArray[queryStartIndex + _sourceArray.Count].QueryValue;
 
-            T leftResult = null, rightResult = null;
+            TQueryObject leftResult = null, rightResult = null;
             for (queryStartIndex += _sourceArray.Count, queryEndIndex += _sourceArray.Count + 1;
                 queryStartIndex < queryEndIndex;
-                //queryStartIndex /= 2, queryEndIndex /= 2)
                 queryStartIndex >>= 1, queryEndIndex >>= 1)
             {
-                //if (queryStartIndex % 2 == 1)
                 if ((queryStartIndex & 1) == 1)
                 {
                     leftResult = leftResult == null
                         ? _treeArray[queryStartIndex++]
                         : leftResult.Combine(_treeArray[queryStartIndex++]);
                 }
-                //if (queryEndIndex % 2 == 1)
+
                 if ((queryEndIndex & 1) == 1)
                 {
                     rightResult = rightResult == null
@@ -59,11 +58,32 @@ namespace Spoj.Library.SegmentTrees
             }
 
             if (leftResult != null && rightResult != null)
-                return leftResult.Combine(rightResult);
+                return leftResult.Combine(rightResult).QueryValue;
             else if (leftResult != null)
-                return leftResult;
+                return leftResult.QueryValue;
             else
-                return rightResult;
+                return rightResult.QueryValue;
+        }
+
+        public override void Update(int updateIndex, Func<TQueryValue, TQueryValue> updater)
+        {
+            for (_treeArray[updateIndex += _sourceArray.Count].Reinitialize(updater);
+                 updateIndex > 1;
+                 updateIndex >>= 1)
+            {
+                int parentIndex = updateIndex >> 1;
+
+                _treeArray[parentIndex] = _treeArray[parentIndex << 1].Combine(_treeArray[parentIndex << 1 | 1]);
+            }
+        }
+
+        // This is really slow, I'm not sure if there's a good normal (non-lazy) range update for this segment tree.
+        public override void Update(int updateStartIndex, int updateEndIndex, Func<TQueryValue, TQueryValue> updater)
+        {
+            for (int i = updateStartIndex; i <= updateEndIndex; ++i)
+            {
+                Update(i, updater);
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Spoj.Library.PerformanceTests.TestSuites;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,8 +9,9 @@ namespace Spoj.Library.PerformanceTests
     {
         private static void Main(string[] args)
         {
-            // Replace with other test suites as needed.
-            ITestSuite testSuite = new StringMatchersTestSuite();
+            ITestSuite testSuite = (ITestSuite)Activator
+                .CreateInstance(null, $"Spoj.Library.PerformanceTests.TestSuites.{args[0]}TestSuite")
+                .Unwrap();
 
             foreach (TestScenario testScenario in testSuite.TestScenarios)
             {

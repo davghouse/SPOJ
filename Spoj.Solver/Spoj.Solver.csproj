@@ -273,6 +273,7 @@
     <None Include="Solutions\2_Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\7_Immortal\HORRIBLE.cs" />
     <None Include="InputVerifier.cs" />
     <None Include="Solutions\4_Prince\DOTAA.cs" />
   </ItemGroup>

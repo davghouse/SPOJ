@@ -1,26 +1,34 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spoj.Library.SegmentTrees;
-using Spoj.Library.SegmentTrees.QueryValues;
+using Spoj.Library.SegmentTrees.AdHoc;
+using Spoj.Library.SegmentTrees.QueryObjects;
+using System;
+using System.Collections.Generic;
 
 namespace Spoj.Library.UnitTests.SegmentTrees
 {
     [TestClass]
     public class SegmentTreeTests
     {
-        private static int[][] _sourceArrays = new int[][] {
+        private int[][] _sourceArrays;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            _sourceArrays = new int[][] {
                 new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
                 new[] { 3 },
-                new[] { -3, -3 },
-                new[] { 3, -3 },
-                new[] { -3, 3 },
-                new[] { 3, 3 },
+                new[] { -3, -2 },
+                new[] { 3, -1 },
+                new[] { -3, 4 },
+                new[] { 3, 2 },
                 new[] { 0, 0, 0 },
-                new[] { -3, 2, -2 },
+                new[] { -3, 4, -2 },
                 new[] { 0, 0, 0, 0, 0, 3, 0 },
-                new[] { 3, 0, 0, 0, 0, 0, 0, 0 },
-                new[] { 3, 0, 0, 0, 0, 0, 0, 0, 0 },
-                new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 3 },
-                new[] { 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3 },
+                new[] { 3, 0, 0, 0, 5, 0, 0, 0 },
+                new[] { 3, 0, 1, 0, 0, 0, 0, 0, 0 },
+                new[] { 0, 0, 0, 0, 2, 0, 0, 0, 0, 3 },
+                new[] { 3, 0, 0, 0, 0, 4, 0, 0, 0, 0, 3 },
                 new[] { 1, 2, 3, 0, 0, -1, 0, 0, 3, 2, 1 },
                 new[] { -1, 1, 2, 3, 4, 5, 6, 7, 0, 19, -23, 14, 0, 167, 123, -1344, 13434 },
                 new[] {-3, -2, 1, 3, -2, -4, 6, 7, -3, 2, -1, -1, 4, -6, 4, -1, 3, 5, -6, 7, -1, 0, 0, -3, 4, 2, -1, 2, 9, -7, 10, -1},
@@ -32,117 +40,138 @@ namespace Spoj.Library.UnitTests.SegmentTrees
                     -45, -78, -20, -94, -10, -99, -49, -84, -25, 29, 100, 31, -34, 42, -51, 24, 94, -29, -85, 91, 37, 94, -37
                 }
             };
+        }
 
         [TestMethod]
         public void VerifiesMinimumQueries()
-        {
-            for (int a = 0; a < _sourceArrays.Length; ++a)
-            {
-                var sourceArray = _sourceArrays[a];
-                var nodeBasedSegmentTree = new NodeBasedSegmentTree<MinimumQueryValue>(sourceArray);
-                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<MinimumQueryValue>(sourceArray);
-                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<MinimumQueryValue>(sourceArray);
-
-                for (int i = 0; i < sourceArray.Length; ++i)
-                {
-                    for (int j = i; j < sourceArray.Length; ++j)
-                    {
-                        var expected = NaiveSegmentTreeAlternatives.MinimumQuery(sourceArray, i, j);
-                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j).Minimum);
-                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j).Minimum);
-                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j).Minimum);
-                    }
-                }
-            }
-        }
+            => VerifiesQueries<MinimumQueryObject>(NaiveSegmentTreeAlternatives.MinimumQuery);
 
         [TestMethod]
         public void VerifiesMaximumQueries()
-        {
-            for (int a = 0; a < _sourceArrays.Length; ++a)
-            {
-                var sourceArray = _sourceArrays[a];
-                var nodeBasedSegmentTree = new NodeBasedSegmentTree<MaximumQueryValue>(sourceArray);
-                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<MaximumQueryValue>(sourceArray);
-                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<MaximumQueryValue>(sourceArray);
-
-                for (int i = 0; i < sourceArray.Length; ++i)
-                {
-                    for (int j = i; j < sourceArray.Length; ++j)
-                    {
-                        var expected = NaiveSegmentTreeAlternatives.MaximumQuery(sourceArray, i, j);
-                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j).Maximum);
-                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j).Maximum);
-                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j).Maximum);
-                    }
-                }
-            }
-        }
+            => VerifiesQueries<MaximumQueryObject>(NaiveSegmentTreeAlternatives.MaximumQuery);
 
         [TestMethod]
         public void VerifiesSumQueries()
-        {
-            for (int a = 0; a < _sourceArrays.Length; ++a)
-            {
-                var sourceArray = _sourceArrays[a];
-                var nodeBasedSegmentTree = new NodeBasedSegmentTree<SumQueryValue>(sourceArray);
-                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<SumQueryValue>(sourceArray);
-                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<SumQueryValue>(sourceArray);
-
-                for (int i = 0; i < sourceArray.Length; ++i)
-                {
-                    for (int j = i; j < sourceArray.Length; ++j)
-                    {
-                        var expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, i, j);
-                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j).Sum);
-                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j).Sum);
-                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j).Sum);
-                    }
-                }
-            }
-        }
+            => VerifiesQueries<SumQueryObject>(NaiveSegmentTreeAlternatives.SumQuery);
 
         [TestMethod]
         public void VerifiesProductQueries()
+            => VerifiesQueries<ProductQueryObject>(NaiveSegmentTreeAlternatives.ProductQuery);
+
+        [TestMethod]
+        public void VerifiesMaximumSumQueries()
+            => VerifiesQueries<MaximumSumQueryObject>(NaiveSegmentTreeAlternatives.MaximumSumQuery);
+
+        private void VerifiesQueries<TQueryObject>(Func<IReadOnlyList<int>, int, int, int> naiveVerifier)
+            where TQueryObject : SegmentTreeQueryObject<TQueryObject, int>, new()
         {
             for (int a = 0; a < _sourceArrays.Length; ++a)
             {
                 var sourceArray = _sourceArrays[a];
-                var nodeBasedSegmentTree = new NodeBasedSegmentTree<ProductQueryValue>(sourceArray);
-                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<ProductQueryValue>(sourceArray);
-                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<ProductQueryValue>(sourceArray);
+                var nodeBasedSegmentTree = new NodeBasedSegmentTree<TQueryObject, int>(sourceArray);
+                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<TQueryObject, int>(sourceArray);
+                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<TQueryObject, int>(sourceArray);
 
                 for (int i = 0; i < sourceArray.Length; ++i)
                 {
                     for (int j = i; j < sourceArray.Length; ++j)
                     {
-                        var expected = NaiveSegmentTreeAlternatives.ProductQuery(sourceArray, i, j);
-                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j).Product);
-                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j).Product);
-                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j).Product);
+                        var expected = naiveVerifier(sourceArray, i, j);
+                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j));
+                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j));
+                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j));
                     }
                 }
             }
         }
 
         [TestMethod]
-        public void VerifiesMaximumSumQueries()
+        public void VerifiesMinimumUpdates()
+            => VerifiesUpdates<MinimumQueryObject>(NaiveSegmentTreeAlternatives.MinimumQuery);
+
+        [TestMethod]
+        public void VerifiesMaximumUpdates()
+            => VerifiesUpdates<MaximumQueryObject>(NaiveSegmentTreeAlternatives.MaximumQuery);
+
+        [TestMethod]
+        public void VerifiesSumUpdates()
+            => VerifiesUpdates<SumQueryObject>(NaiveSegmentTreeAlternatives.SumQuery);
+
+        [TestMethod]
+        public void VerifiesProductUpdates()
+            => VerifiesUpdates<ProductQueryObject>(NaiveSegmentTreeAlternatives.ProductQuery);
+
+        [TestMethod]
+        public void VerifiesMaximumSumUpdates()
+            => VerifiesUpdates<MaximumSumQueryObject>(NaiveSegmentTreeAlternatives.MaximumSumQuery);
+
+        private void VerifiesUpdates<TQueryObject>(Func<IReadOnlyList<int>, int, int, int> naiveVerifier)
+            where TQueryObject : SegmentTreeQueryObject<TQueryObject, int>, new()
         {
+            Func<int, int> updater = x => x + 1;
+
             for (int a = 0; a < _sourceArrays.Length; ++a)
             {
                 var sourceArray = _sourceArrays[a];
-                var nodeBasedSegmentTree = new NodeBasedSegmentTree<MaximumSumQueryValue>(sourceArray);
-                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<MaximumSumQueryValue>(sourceArray);
-                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<MaximumSumQueryValue>(sourceArray);
+                var nodeBasedSegmentTree = new NodeBasedSegmentTree<TQueryObject, int>(sourceArray);
+                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<TQueryObject, int>(sourceArray);
+                var nonRecursiveSegmentTree = new NonRecursiveSegmentTree<TQueryObject, int>(sourceArray);
 
                 for (int i = 0; i < sourceArray.Length; ++i)
                 {
                     for (int j = i; j < sourceArray.Length; ++j)
                     {
-                        var expected = NaiveSegmentTreeAlternatives.MaximumSumQuery(sourceArray, i, j);
-                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j).MaximumSum);
-                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j).MaximumSum);
-                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j).MaximumSum);
+                        for (int k = i; k <= j; ++k)
+                        {
+                            sourceArray[k] = updater(sourceArray[k]);
+                        }
+                        nodeBasedSegmentTree.Update(i, j, updater);
+                        arrayBasedSegmentTree.Update(i, j, updater);
+                        nonRecursiveSegmentTree.Update(i, j, updater);
+
+                        var expected = naiveVerifier(sourceArray, i, j);
+                        Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j));
+                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j));
+                        Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j));
+                    }
+                }
+            }
+        }
+
+        [TestMethod]
+        public void VerifiesLazySumSegmentTreeWithRandomOperations()
+        {
+            Func<int, int> updater = x => x + 2;
+            var rand = new Random();
+
+            for (int a = 0; a < _sourceArrays.Length; ++a)
+            {
+                var sourceArray = _sourceArrays[a];
+                var lazySumSegmentTree = new LazySumSegmentTree(sourceArray);
+                var arrayBasedSegmentTree = new ArrayBasedSegmentTree<SumQueryObject, int>(sourceArray);
+
+                for (int r = 0; r < 200; ++r)
+                {
+                    int firstIndex = rand.Next(0, sourceArray.Length);
+                    int secondIndex = rand.Next(0, sourceArray.Length);
+                    int startIndex = Math.Min(firstIndex, secondIndex);
+                    int endIndex = Math.Max(firstIndex, secondIndex);
+                    int mode = rand.Next(2);
+
+                    if (mode == 0) // Update mode.
+                    {
+                        for (int i = startIndex; i <= endIndex; ++i)
+                        {
+                            sourceArray[i] = updater(sourceArray[i]);
+                        }
+                        lazySumSegmentTree.Update(startIndex, endIndex, 2);
+                        arrayBasedSegmentTree.Update(startIndex, endIndex, updater);
+                    }
+                    else // Query mode.
+                    {
+                        var expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        Assert.AreEqual(expected, lazySumSegmentTree.Query(startIndex, endIndex));
+                        Assert.AreEqual(expected, arrayBasedSegmentTree.Query(startIndex, endIndex));
                     }
                 }
             }
