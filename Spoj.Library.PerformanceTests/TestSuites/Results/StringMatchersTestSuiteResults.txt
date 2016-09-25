@@ -1,78 +1,75 @@
-﻿The cases where KMP is super strong, it's clear why (like for a-a). Not sure why it's so weak for a-b.
-But random text and pattern strings might not be the best sample data.
-
-a-a text, pattern length 2:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00231 seconds)
-  Naive matcher, text length 10k: x1.38314 (0 minutes 0.00319 seconds)
-  KMP matcher, text length 1m:    x25.70124 (0 minutes 0.05939 seconds)
-  Naive matcher, text length 1m:  x87.68458 (0 minutes 0.20263 seconds)
+﻿a-a text, pattern length 2:
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00160 seconds)
+  Naive matcher, text length 10k: x1.30862 (0 minutes 0.00209 seconds)
+  KMP matcher, text length 1m:    x11.67789 (0 minutes 0.01869 seconds)
+  Naive matcher, text length 1m:  x77.68950 (0 minutes 0.12440 seconds)
 
 a-a text, pattern length 5:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00075 seconds)
-  Naive matcher, text length 10k: x2.96157 (0 minutes 0.00222 seconds)
-  KMP matcher, text length 1m:    x88.93803 (0 minutes 0.06688 seconds)
-  Naive matcher, text length 1m:  x340.86715 (0 minutes 0.25633 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00027 seconds)
+  Naive matcher, text length 10k: x5.55632 (0 minutes 0.00154 seconds)
+  KMP matcher, text length 1m:    x68.16301 (0 minutes 0.01894 seconds)
+  Naive matcher, text length 1m:  x491.02663 (0 minutes 0.13645 seconds)
 
 a-a text, pattern length 10:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00067 seconds)
-  Naive matcher, text length 10k: x4.16772 (0 minutes 0.00282 seconds)
-  KMP matcher, text length 1m:    x94.82608 (0 minutes 0.06428 seconds)
-  Naive matcher, text length 1m:  x415.28249 (0 minutes 0.28152 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00027 seconds)
+  Naive matcher, text length 10k: x8.07187 (0 minutes 0.00222 seconds)
+  KMP matcher, text length 1m:    x67.76770 (0 minutes 0.01867 seconds)
+  Naive matcher, text length 1m:  x708.00653 (0 minutes 0.19505 seconds)
 
 a-a text, pattern length 5000:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00058 seconds)
-  KMP matcher, text length 1m:    x98.65671 (0 minutes 0.05810 seconds)
-  Naive matcher, text length 10k: x272.41800 (0 minutes 0.16045 seconds)
-  Naive matcher, text length 1m:  x36344.86723 (0 minutes 21.40712 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00027 seconds)
+  KMP matcher, text length 1m:    x69.32010 (0 minutes 0.01903 seconds)
+  Naive matcher, text length 10k: x566.23343 (0 minutes 0.15548 seconds)
+  Naive matcher, text length 1m:  x74924.18718 (0 minutes 20.57418 seconds)
 
 a-b text, pattern length 2:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00041 seconds)
-  Naive matcher, text length 10k: x1.51409 (0 minutes 0.00062 seconds)
-  KMP matcher, text length 1m:    x79.86660 (0 minutes 0.03316 seconds)
-  Naive matcher, text length 1m:  x115.95377 (0 minutes 0.04815 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00020 seconds)
+  Naive matcher, text length 10k: x2.93187 (0 minutes 0.00058 seconds)
+  KMP matcher, text length 1m:    x63.43909 (0 minutes 0.01275 seconds)
+  Naive matcher, text length 1m:  x211.58329 (0 minutes 0.04254 seconds)
 
 a-b text, pattern length 5:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00033 seconds)
-  Naive matcher, text length 10k: x1.04475 (0 minutes 0.00035 seconds)
-  Naive matcher, text length 1m:  x57.94093 (0 minutes 0.01942 seconds)
-  KMP matcher, text length 1m:    x79.97643 (0 minutes 0.02680 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00017 seconds)
+  Naive matcher, text length 10k: x1.87993 (0 minutes 0.00032 seconds)
+  KMP matcher, text length 1m:    x56.75586 (0 minutes 0.00992 seconds)
+  Naive matcher, text length 1m:  x105.52201 (0 minutes 0.01845 seconds)
 
 a-b text, pattern length 20:
-  Naive matcher, text length 10k: x1.00000 (0 minutes 0.00027 seconds)
-  KMP matcher, text length 10k:   x1.11648 (0 minutes 0.00030 seconds)
-  Naive matcher, text length 1m:  x53.82005 (0 minutes 0.01492 seconds)
-  KMP matcher, text length 1m:    x94.19798 (0 minutes 0.02612 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00016 seconds)
+  Naive matcher, text length 10k: x1.75354 (0 minutes 0.00028 seconds)
+  KMP matcher, text length 1m:    x58.80900 (0 minutes 0.00954 seconds)
+  Naive matcher, text length 1m:  x93.50031 (0 minutes 0.01517 seconds)
 
 a-b text, pattern length 5000:
-  Naive matcher, text length 10k: x1.00000 (0 minutes 0.00029 seconds)
-  KMP matcher, text length 10k:   x1.27464 (0 minutes 0.00038 seconds)
-  Naive matcher, text length 1m:  x50.59572 (0 minutes 0.01514 seconds)
-  KMP matcher, text length 1m:    x86.56565 (0 minutes 0.02590 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00021 seconds)
+  Naive matcher, text length 10k: x1.45256 (0 minutes 0.00030 seconds)
+  KMP matcher, text length 1m:    x45.28273 (0 minutes 0.00954 seconds)
+  Naive matcher, text length 1m:  x72.50285 (0 minutes 0.01528 seconds)
 
 a-b text, pattern length 100k:
-  Naive matcher, text length 1m: x1.00000 (0 minutes 0.01537 seconds)
-  KMP matcher, text length 1m:   x1.67786 (0 minutes 0.02578 seconds)
+  KMP matcher, text length 1m:   x1.00000 (0 minutes 0.00961 seconds)
+  Naive matcher, text length 1m: x1.57721 (0 minutes 0.01516 seconds)
 
 a-z text, pattern length 2:
-  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00018 seconds)
-  Naive matcher, text length 10k: x1.14081 (0 minutes 0.00021 seconds)
-  Naive matcher, text length 1m:  x40.98300 (0 minutes 0.00771 seconds)
-  KMP matcher, text length 1m:    x74.92986 (0 minutes 0.01410 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00009 seconds)
+  Naive matcher, text length 10k: x2.30808 (0 minutes 0.00022 seconds)
+  KMP matcher, text length 1m:    x31.76869 (0 minutes 0.00314 seconds)
+  Naive matcher, text length 1m:  x81.81515 (0 minutes 0.00809 seconds)
 
 a-z text, pattern length 5:
-  Naive matcher, text length 10k: x1.00000 (0 minutes 0.00018 seconds)
-  KMP matcher, text length 10k:   x1.04860 (0 minutes 0.00019 seconds)
-  Naive matcher, text length 1m:  x37.41091 (0 minutes 0.00692 seconds)
-  KMP matcher, text length 1m:    x76.49676 (0 minutes 0.01416 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00009 seconds)
+  Naive matcher, text length 10k: x1.92695 (0 minutes 0.00018 seconds)
+  KMP matcher, text length 1m:    x32.92695 (0 minutes 0.00320 seconds)
+  Naive matcher, text length 1m:  x71.64609 (0 minutes 0.00696 seconds)
 
 a-z text, pattern length 20:
-  Naive matcher, text length 10k: x1.00000 (0 minutes 0.00018 seconds)
-  KMP matcher, text length 10k:   x1.03364 (0 minutes 0.00019 seconds)
-  Naive matcher, text length 1m:  x35.97010 (0 minutes 0.00673 seconds)
-  KMP matcher, text length 1m:    x74.83983 (0 minutes 0.01401 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00009 seconds)
+  Naive matcher, text length 10k: x1.98836 (0 minutes 0.00018 seconds)
+  KMP matcher, text length 1m:    x36.18519 (0 minutes 0.00341 seconds)
+  Naive matcher, text length 1m:  x71.98413 (0 minutes 0.00680 seconds)
 
 a-z text, pattern length 5000:
-  Naive matcher, text length 10k: x1.00000 (0 minutes 0.00022 seconds)
-  KMP matcher, text length 10k:   x1.20682 (0 minutes 0.00027 seconds)
-  Naive matcher, text length 1m:  x29.61293 (0 minutes 0.00668 seconds)
-  KMP matcher, text length 1m:    x61.12445 (0 minutes 0.01380 seconds)
+  KMP matcher, text length 10k:   x1.00000 (0 minutes 0.00020 seconds)
+  Naive matcher, text length 10k: x1.12506 (0 minutes 0.00022 seconds)
+  KMP matcher, text length 1m:    x14.72022 (0 minutes 0.00297 seconds)
+  Naive matcher, text length 1m:  x32.85912 (0 minutes 0.00664 seconds)

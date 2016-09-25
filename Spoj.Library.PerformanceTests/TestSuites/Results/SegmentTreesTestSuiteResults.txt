@@ -1,76 +1,54 @@
-﻿Results when not using bitwise operators in the non-recursive segment tree:
-All ranges, array size 1000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.23782 seconds)
-  Array-based:   x1.81881 (0 minutes 0.43256 seconds)
-  Node-based:    x3.64724 (0 minutes 0.86741 seconds)
-  Naive:         x6.48494 (0 minutes 1.54230 seconds)
+﻿All ranges, array size 1000, minimum:
+  Non-recursive query:  x1.00000 (0 minutes 0.04792 seconds)
+  Node-based query:     x1.93176 (0 minutes 0.09257 seconds)
+  Array-based query:    x2.06527 (0 minutes 0.09897 seconds)
+  Naive query:          x18.34327 (0 minutes 0.87902 seconds)
+  Array-based update:   x49.97581 (0 minutes 2.39489 seconds)
+  Node-based update:    x50.19355 (0 minutes 2.40533 seconds)
+  Non-recursive update: x394.95882 (0 minutes 18.92686 seconds)
 
 All ranges, array size 1000, maximum sum query:
-  Non-recursive: x1.00000 (0 minutes 0.42301 seconds)
-  Array-based:   x1.45376 (0 minutes 0.61496 seconds)
-  Node-based:    x2.49014 (0 minutes 1.05336 seconds)
-  Naive:         x5.27203 (0 minutes 2.23015 seconds)
+  Non-recursive: x1.00000 (0 minutes 0.07424 seconds)
+  Node-based:    x1.57860 (0 minutes 0.11721 seconds)
+  Array-based:   x1.69617 (0 minutes 0.12594 seconds)
+  Naive:         x20.32899 (0 minutes 1.50941 seconds)
 
 Right-ending ranges, array size 50000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.05248 seconds)
-  Array-based:   x1.14041 (0 minutes 0.05985 seconds)
-  Node-based:    x1.86707 (0 minutes 0.09799 seconds)
-  Naive:         x208.76977 (0 minutes 10.95759 seconds)
+  Non-recursive: x1.00000 (0 minutes 0.01969 seconds)
+  Array-based:   x1.09112 (0 minutes 0.02149 seconds)
+  Node-based:    x1.36902 (0 minutes 0.02696 seconds)
+  Naive:         x327.75132 (0 minutes 6.45650 seconds)
 
 Right-ending ranges, array size 50000, maximum sum query:
-  Array-based:   x1.00000 (0 minutes 0.08240 seconds)
-  Non-recursive: x1.05787 (0 minutes 0.08717 seconds)
-  Node-based:    x1.54774 (0 minutes 0.12754 seconds)
-  Naive:         x193.19663 (0 minutes 15.92125 seconds)
+  Array-based:   x1.00000 (0 minutes 0.02752 seconds)
+  Non-recursive: x1.12971 (0 minutes 0.03109 seconds)
+  Node-based:    x1.24386 (0 minutes 0.03423 seconds)
+  Naive:         x390.06847 (0 minutes 10.73721 seconds)
 
-50000 random ranges, array size 50000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.07513 seconds)
-  Array-based:   x1.48007 (0 minutes 0.11120 seconds)
-  Node-based:    x2.60215 (0 minutes 0.19551 seconds)
-  Naive:         x97.66967 (0 minutes 7.33868 seconds)
+10000 random ranges, array size 50000, minimum query:
+  Non-recursive: x1.00000 (0 minutes 0.01317 seconds)
+  Node-based:    x1.10216 (0 minutes 0.01451 seconds)
+  Array-based:   x1.37649 (0 minutes 0.01813 seconds)
+  Naive:         x64.50881 (0 minutes 0.84972 seconds)
 
-50000 random ranges, array size 50000, maximum sum query:
-  Non-recursive: x1.00000 (0 minutes 0.11124 seconds)
-  Array-based:   x1.43489 (0 minutes 0.15962 seconds)
-  Node-based:    x2.20520 (0 minutes 0.24531 seconds)
-  Naive:         x97.09634 (0 minutes 10.80132 seconds)
+10000 random ranges, array size 50000, maximum sum query:
+  Non-recursive: x1.00000 (0 minutes 0.01682 seconds)
+  Array-based:   x1.03882 (0 minutes 0.01747 seconds)
+  Node-based:    x1.05294 (0 minutes 0.01771 seconds)
+  Naive:         x86.86133 (0 minutes 1.46157 seconds)
 
+10000 random points, array size 50000, minimum update:
+  Array-based:   x1.00000 (0 minutes 0.01018 seconds)
+  Node-based:    x1.50670 (0 minutes 0.01533 seconds)
+  Non-recursive: x1.57069 (0 minutes 0.01599 seconds)
 
+10000 random ranges, array size 50000, minimum update:
+  Array-based:   x1.00000 (0 minutes 3.26046 seconds)
+  Node-based:    x1.11370 (0 minutes 3.63117 seconds)
+  Non-recursive: x18.59654 (1 minutes 0.63342 seconds)
 
-
-Results when using bitwise operators in the non-recursive segment tree:
-All ranges, array size 1000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.19704 seconds)
-  Array-based:   x2.19869 (0 minutes 0.43324 seconds)
-  Node-based:    x4.51842 (0 minutes 0.89034 seconds)
-  Naive:         x8.24995 (0 minutes 1.62562 seconds)
-
-All ranges, array size 1000, maximum sum query:
-  Non-recursive: x1.00000 (0 minutes 0.37557 seconds)
-  Array-based:   x1.63062 (0 minutes 0.61241 seconds)
-  Node-based:    x2.78563 (0 minutes 1.04620 seconds)
-  Naive:         x5.60542 (0 minutes 2.10524 seconds)
-
-Right-ending ranges, array size 50000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.04892 seconds)
-  Array-based:   x1.10656 (0 minutes 0.05413 seconds)
-  Node-based:    x2.12682 (0 minutes 0.10405 seconds)
-  Naive:         x224.47058 (0 minutes 10.98177 seconds)
-
-Right-ending ranges, array size 50000, maximum sum query:
-  Non-recursive: x1.00000 (0 minutes 0.07814 seconds)
-  Array-based:   x1.06865 (0 minutes 0.08350 seconds)
-  Node-based:    x1.57157 (0 minutes 0.12280 seconds)
-  Naive:         x192.17023 (0 minutes 15.01633 seconds)
-
-50000 random ranges, array size 50000, minimum query:
-  Non-recursive: x1.00000 (0 minutes 0.07045 seconds)
-  Array-based:   x1.50536 (0 minutes 0.10605 seconds)
-  Node-based:    x2.80081 (0 minutes 0.19732 seconds)
-  Naive:         x103.46518 (0 minutes 7.28924 seconds)
-
-50000 random ranges, array size 50000, maximum sum query:
-  Non-recursive: x1.00000 (0 minutes 0.10102 seconds)
-  Array-based:   x1.56718 (0 minutes 0.15832 seconds)
-  Node-based:    x2.42476 (0 minutes 0.24495 seconds)
-  Naive:         x99.88480 (0 minutes 10.09079 seconds)
+10000 random ranges, array size 50000, sum random operation:
+  Ad hoc lazy:   x1.00000 (0 minutes 0.01681 seconds)
+  Array-based:   x70.98341 (0 minutes 1.19352 seconds)
+  Node-based:    x78.05413 (0 minutes 1.31240 seconds)
+  Non-recursive: x1636.20005 (0 minutes 27.51123 seconds)
