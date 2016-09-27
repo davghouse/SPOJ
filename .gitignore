@@ -58,7 +58,7 @@ dlldata.c
 # Chutzpah Test files
 _Chutzpah*
 
-# Visual C++ cache files
+# Visual C++/C# cache files
 ipch/
 *.aps
 *.ncb
@@ -66,6 +66,8 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
+*.VC.db
+*.VC.opendb
 
 # Visual Studio profiler
 *.psess

@@ -121,10 +121,7 @@ namespace Spoj.Library.UnitTests.SegmentTrees
                 {
                     for (int j = i; j < sourceArray.Length; ++j)
                     {
-                        for (int k = i; k <= j; ++k)
-                        {
-                            sourceArray[k] = updater(sourceArray[k]);
-                        }
+                        NaiveSegmentTreeAlternatives.Update(sourceArray, i, j, updater);
                         nodeBasedSegmentTree.Update(i, j, updater);
                         arrayBasedSegmentTree.Update(i, j, updater);
                         nonRecursiveSegmentTree.Update(i, j, updater);
@@ -150,7 +147,7 @@ namespace Spoj.Library.UnitTests.SegmentTrees
                 var lazySumSegmentTree = new LazySumSegmentTree(sourceArray);
                 var arrayBasedSegmentTree = new ArrayBasedSegmentTree<SumQueryObject, int>(sourceArray);
 
-                for (int r = 0; r < 200; ++r)
+                for (int r = 0; r < 1000; ++r)
                 {
                     int firstIndex = rand.Next(0, sourceArray.Length);
                     int secondIndex = rand.Next(0, sourceArray.Length);
@@ -158,16 +155,13 @@ namespace Spoj.Library.UnitTests.SegmentTrees
                     int endIndex = Math.Max(firstIndex, secondIndex);
                     int mode = rand.Next(2);
 
-                    if (mode == 0) // Update mode.
+                    if (mode == 0)
                     {
-                        for (int i = startIndex; i <= endIndex; ++i)
-                        {
-                            sourceArray[i] = updater(sourceArray[i]);
-                        }
+                        NaiveSegmentTreeAlternatives.Update(sourceArray, startIndex, endIndex, updater);
                         lazySumSegmentTree.Update(startIndex, endIndex, 2);
                         arrayBasedSegmentTree.Update(startIndex, endIndex, updater);
                     }
-                    else // Query mode.
+                    else
                     {
                         var expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
                         Assert.AreEqual(expected, lazySumSegmentTree.Query(startIndex, endIndex));

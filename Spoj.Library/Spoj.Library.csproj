@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigInteger.cs" />
+    <Compile Include="BinaryIndexedTrees\NaiveBinaryIndexedTreeAlternatives.cs" />
+    <Compile Include="BinaryIndexedTrees\PURQBinaryIndexedTree.cs" />
+    <Compile Include="BinaryIndexedTrees\RUPQBinaryIndexedTree.cs" />
     <Compile Include="BinarySearch.cs" />
     <Compile Include="Helpers\IEnumerableHelper.cs" />
     <Compile Include="InputGenerator.cs" />

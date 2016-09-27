@@ -46,5 +46,16 @@ namespace Spoj.Library.SegmentTrees
 
             return maximumSum;
         }
+
+        public static void Update(int[] sourceArray, int queryIndex, Func<int, int> updater)
+            => sourceArray[queryIndex] = updater(sourceArray[queryIndex]);
+
+        public static void Update(int[] sourceArray, int queryStartIndex, int queryEndIndex, Func<int, int> updater)
+        {
+            for (int i = queryStartIndex; i <= queryEndIndex; ++i)
+            {
+                sourceArray[i] = updater(sourceArray[i]);
+            }
+        }
     }
 }

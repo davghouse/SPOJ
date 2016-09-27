@@ -245,11 +245,11 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                 int endIndex = Math.Max(firstIndex, secondIndex);
                 int mode = rand.Next(2);
 
-                if (mode == 0) // Update mode.
+                if (mode == 0)
                 {
                     segmentTree.Update(startIndex, endIndex, updater);
                 }
-                else // Query mode.
+                else
                 {
                     segmentTree.Query(startIndex, endIndex);
                 }
@@ -270,11 +270,11 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                 int endIndex = Math.Max(firstIndex, secondIndex);
                 int mode = rand.Next(2);
 
-                if (mode == 0) // Update mode.
+                if (mode == 0)
                 {
                     segmentTree.Update(startIndex, endIndex, 1);
                 }
-                else // Query mode.
+                else
                 {
                     segmentTree.Query(startIndex, endIndex);
                 }
