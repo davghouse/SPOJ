@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITestSuite.cs" />
+    <Compile Include="TestSuites\BinaryIndexedTreesTestSuite.cs" />
     <Compile Include="TestSuites\PrimesTestSuite.cs" />
     <Compile Include="TestSuites\SegmentTreesTestSuite.cs" />
     <Compile Include="TestCase.cs" />
@@ -62,6 +63,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestSuites\Results\BinaryIndexedTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\SegmentTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\PrimesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringMatchersTestSuiteResults.txt" />

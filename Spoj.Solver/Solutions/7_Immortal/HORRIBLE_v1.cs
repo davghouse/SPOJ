@@ -3,7 +3,7 @@ using System.Text;
 
 // 8002 http://www.spoj.com/problems/HORRIBLE/ Horrible Queries
 // Answers range sum queries and performs range additions.
-public static class HORRIBLE
+public static class HORRIBLE // v1, using a segment tree
 {
     public class Solver
     {
@@ -53,11 +53,11 @@ public static class HORRIBLE
         public long Query(int queryStartIndex, int queryEndIndex)
             => Query(0, queryStartIndex, queryEndIndex).Sum;
 
-        // Instead of returning the children object directly, we have to set its range addition to be that of the parent.
-        // The children query object knows the subset of the query segment it intersects with, and everything in there
-        // needs the additions that were applied to the parent segment as a whole. It's kind of weird, but any pending
-        // range additions for the child objects get brought out and added to the sum when you do .Combine or .Sum, but
-        // recursively it makes sense. The children object has a sum but still needs to know about the parent's range additions.
+        // Instead of returning the children object directly, we have to add on the parent's range addition. The children
+        // query object knows the subset of the parent segment it intersects with, and everything in there needs the
+        // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
+        // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
+        // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
         private QueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
             var parentQueryObject = _treeArray[treeArrayIndex];

@@ -138,7 +138,6 @@ namespace Spoj.Library.UnitTests.SegmentTrees
         [TestMethod]
         public void VerifiesLazySumSegmentTreeWithRandomOperations()
         {
-            Func<int, int> updater = x => x + 2;
             var rand = new Random();
 
             for (int a = 0; a < _sourceArrays.Length; ++a)
@@ -157,14 +156,14 @@ namespace Spoj.Library.UnitTests.SegmentTrees
 
                     if (mode == 0)
                     {
-                        NaiveSegmentTreeAlternatives.Update(sourceArray, startIndex, endIndex, updater);
-                        lazySumSegmentTree.Update(startIndex, endIndex, 2);
-                        arrayBasedSegmentTree.Update(startIndex, endIndex, updater);
+                        NaiveSegmentTreeAlternatives.Update(sourceArray, startIndex, endIndex, x => x + r);
+                        lazySumSegmentTree.Update(startIndex, endIndex, rangeAddition: r);
+                        arrayBasedSegmentTree.Update(startIndex, endIndex, x => x + r);
                     }
                     else
                     {
                         var expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
-                        Assert.AreEqual(expected, lazySumSegmentTree.Query(startIndex, endIndex));
+                        Assert.AreEqual(expected, lazySumSegmentTree.SumQuery(startIndex, endIndex));
                         Assert.AreEqual(expected, arrayBasedSegmentTree.Query(startIndex, endIndex));
                     }
                 }

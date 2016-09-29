@@ -12,7 +12,7 @@ namespace Spoj.Library.BinaryIndexedTrees
     // index to update and all queries from that index onward will be increased by the same amount."
     // RUPQ says "okay, here's an index and a value. We interpret this as ALL elements from that index
     // TO THE END of the array get increased by this value, so what you're saying about how the query
-    // results are affected makes sense, thanks!"
+    // results are affected makes sense, thanks! Luckily, this interpretation allows us to do range updates."
     public class RUPQBinaryIndexedTree
     {
         private readonly int[] _tree;
@@ -32,35 +32,35 @@ namespace Spoj.Library.BinaryIndexedTrees
             }
         }
 
-        private void RangeUpdate(int updateStartIndex, int addition)
+        private void RangeUpdate(int updateStartIndex, int delta)
         {
             for (++updateStartIndex;
                 updateStartIndex < _tree.Length;
                 updateStartIndex += updateStartIndex & -updateStartIndex)
             {
-                _tree[updateStartIndex] += addition;
+                _tree[updateStartIndex] += delta;
             }
         }
 
         // We know conceptually what update is doing; the second line undoes it for the part of the array
         // after the update range that shouldn't have been affected.
-        public void RangeUpdate(int updateStartIndex, int updateEndIndex, int addition)
+        public void RangeUpdate(int updateStartIndex, int updateEndIndex, int delta)
         {
-            RangeUpdate(updateStartIndex, addition);
-            RangeUpdate(updateEndIndex + 1, -addition);
+            RangeUpdate(updateStartIndex, delta);
+            RangeUpdate(updateEndIndex + 1, -delta);
         }
 
-        public int SumQuery(int queryIndex)
+        public int ValueQuery(int queryIndex)
         {
-            int sum = 0;
+            int value = 0;
             for (++queryIndex;
                 queryIndex > 0;
                 queryIndex -= queryIndex & -queryIndex)
             {
-                sum += _tree[queryIndex];
+                value += _tree[queryIndex];
             }
 
-            return sum;
+            return value;
         }
     }
 }

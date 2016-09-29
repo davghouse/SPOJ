@@ -57,16 +57,16 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 
                     if (mode == 0)
                     {
-                        NaiveBinaryIndexedTreeAlternatives.PointUpdate(sourceArray, firstIndex, r);
-                        purqBinaryIndexedTree.PointUpdate(firstIndex, r);
+                        NaiveBinaryIndexedTreeAlternatives.PointUpdate(sourceArray, firstIndex, delta: r);
+                        purqBinaryIndexedTree.PointUpdate(firstIndex, delta: r);
                     }
                     else
                     {
                         int startIndex = Math.Min(firstIndex, secondIndex);
                         int endIndex = Math.Max(firstIndex, secondIndex);
 
-                        var expected = NaiveBinaryIndexedTreeAlternatives.CumulativeSumQuery(sourceArray, startIndex, endIndex);
-                        Assert.AreEqual(expected, purqBinaryIndexedTree.CumulativeSumQuery(startIndex, endIndex));
+                        var expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        Assert.AreEqual(expected, purqBinaryIndexedTree.SumQuery(startIndex, endIndex));
                     }
                 }
             }
@@ -92,13 +92,45 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 
                     if (mode == 0)
                     {
-                        NaiveBinaryIndexedTreeAlternatives.RangeUpdate(sourceArray, startIndex, endIndex, r);
-                        rupqBinaryIndexedTree.RangeUpdate(startIndex, endIndex, r);
+                        NaiveBinaryIndexedTreeAlternatives.RangeUpdate(sourceArray, startIndex, endIndex, delta: r);
+                        rupqBinaryIndexedTree.RangeUpdate(startIndex, endIndex, delta: r);
                     }
                     else
                     {
-                        var expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, firstIndex);
-                        Assert.AreEqual(expected, rupqBinaryIndexedTree.SumQuery(firstIndex));
+                        var expected = NaiveBinaryIndexedTreeAlternatives.ValueQuery(sourceArray, firstIndex);
+                        Assert.AreEqual(expected, rupqBinaryIndexedTree.ValueQuery(firstIndex));
+                    }
+                }
+            }
+        }
+
+        [TestMethod]
+        public void VerifiesRURQBinaryIndexedTree()
+        {
+            var rand = new Random();
+
+            for (int a = 0; a < _sourceArrays.Length; ++a)
+            {
+                var sourceArray = _sourceArrays[a];
+                var rurqBinaryIndexedTree = new RURQBinaryIndexedTree(sourceArray);
+
+                for (int r = 0; r < 1000; ++r)
+                {
+                    int firstIndex = rand.Next(0, sourceArray.Length);
+                    int secondIndex = rand.Next(0, sourceArray.Length);
+                    int startIndex = Math.Min(firstIndex, secondIndex);
+                    int endIndex = Math.Max(firstIndex, secondIndex);
+                    int mode = rand.Next(2);
+
+                    if (mode == 0)
+                    {
+                        NaiveBinaryIndexedTreeAlternatives.RangeUpdate(sourceArray, startIndex, endIndex, delta: r);
+                        rurqBinaryIndexedTree.RangeUpdate(startIndex, endIndex, delta: r);
+                    }
+                    else
+                    {
+                        var expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        Assert.AreEqual(expected, rurqBinaryIndexedTree.SumQuery(startIndex, endIndex));
                     }
                 }
             }

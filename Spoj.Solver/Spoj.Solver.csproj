@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\6_Emperor\NHAY.cs" />
+    <None Include="Solutions\7_Immortal\HORRIBLE_v2.cs" />
     <None Include="Solutions\TEMPLATE.cs" />
     <None Include="Solutions\1_Settler\TEST.cs" />
     <None Include="Solutions\2_Chieftain\ADDREV.cs" />
@@ -273,7 +274,7 @@
     <None Include="Solutions\2_Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\7_Immortal\HORRIBLE.cs" />
+    <None Include="Solutions\7_Immortal\HORRIBLE_v1.cs" />
     <None Include="InputVerifier.cs" />
     <None Include="Solutions\4_Prince\DOTAA.cs" />
   </ItemGroup>

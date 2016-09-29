@@ -11,6 +11,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
         private readonly IReadOnlyList<int> _allRangesArray;
         private readonly IReadOnlyList<int> _rightEndingRangesArray;
         private readonly IReadOnlyList<int> _randomRangesArray;
+        private readonly IReadOnlyList<Tuple<int, int>> _randomRanges;
         private const int _randomRangesCount = 10000;
 
         public SegmentTreesTestSuite()
@@ -18,6 +19,22 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             _allRangesArray = InputGenerator.GenerateRandomInts(1000, -200, 200);
             _rightEndingRangesArray = InputGenerator.GenerateRandomInts(50000, -300, 300);
             _randomRangesArray = InputGenerator.GenerateRandomInts(50000, -15007, 15007);
+
+            var randomRanges = new Tuple<int, int>[_randomRangesCount];
+
+            var rand = new Random();
+
+            for (int i = 0; i < _randomRangesCount; ++i)
+            {
+                int firstIndex = rand.Next(0, _randomRangesArray.Count);
+                int secondIndex = rand.Next(0, _randomRangesArray.Count);
+
+                randomRanges[i] = Tuple.Create(
+                    Math.Min(firstIndex, secondIndex),
+                    Math.Max(firstIndex, secondIndex));
+            }
+
+            _randomRanges = Array.AsReadOnly(randomRanges);
         }
 
         public IReadOnlyList<TestScenario> TestScenarios => new TestScenario[]
@@ -124,17 +141,11 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
             else
             {
-                var rand = new Random();
-
                 for (int i = 0; i < _randomRangesCount; ++i)
                 {
-                    int firstIndex = rand.Next(0, _randomRangesArray.Count - 1);
-                    int secondIndex = rand.Next(0, _randomRangesArray.Count - 1);
+                    Tuple<int, int> range = _randomRanges[i];
 
-                    naiveQuerier(
-                        _randomRangesArray,
-                        Math.Min(firstIndex, secondIndex),
-                        Math.Max(firstIndex, secondIndex));
+                    naiveQuerier(_randomRangesArray, range.Item1, range.Item2);
                 }
             }
         }
@@ -168,14 +179,11 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
             else
             {
-                var rand = new Random();
-
                 for (int i = 0; i < _randomRangesCount; ++i)
                 {
-                    int firstIndex = rand.Next(0, array.Count);
-                    int secondIndex = rand.Next(0, array.Count);
+                    Tuple<int, int> range = _randomRanges[i];
 
-                    segmentTree.Query(Math.Min(firstIndex, secondIndex), Math.Max(firstIndex, secondIndex));
+                    segmentTree.Query(range.Item1, range.Item2);
                 }
             }
         }
@@ -203,25 +211,22 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
             else
             {
-                var rand = new Random();
-
                 if (randomPoints)
                 {
                     for (int i = 0; i < _randomRangesCount; ++i)
                     {
-                        int index = rand.Next(0, array.Count);
+                        Tuple<int, int> range = _randomRanges[i];
 
-                        segmentTree.Update(index, updater);
+                        segmentTree.Update(range.Item1, updater);
                     }
                 }
                 else
                 {
                     for (int i = 0; i < _randomRangesCount; ++i)
                     {
-                        int firstIndex = rand.Next(0, array.Count);
-                        int secondIndex = rand.Next(0, array.Count);
+                        Tuple<int, int> range = _randomRanges[i];
 
-                        segmentTree.Update(Math.Min(firstIndex, secondIndex), Math.Max(firstIndex, secondIndex), updater);
+                        segmentTree.Update(range.Item1, range.Item2, updater);
                     }
                 }
             }
@@ -235,23 +240,17 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                 : segmentTreeMode == SegmentTreeMode.ArrayBased ? new ArrayBasedSegmentTree<SumQueryObject, int>(_randomRangesArray)
                 : (SegmentTree<SumQueryObject, int>)new NonRecursiveSegmentTree<SumQueryObject, int>(_randomRangesArray);
 
-            var rand = new Random();
-
             for (int r = 0; r < _randomRangesCount; ++r)
             {
-                int firstIndex = rand.Next(0, _randomRangesArray.Count);
-                int secondIndex = rand.Next(0, _randomRangesArray.Count);
-                int startIndex = Math.Min(firstIndex, secondIndex);
-                int endIndex = Math.Max(firstIndex, secondIndex);
-                int mode = rand.Next(2);
+                Tuple<int, int> range = _randomRanges[r];
 
-                if (mode == 0)
+                if (range.Item1 % 2 == 0)
                 {
-                    segmentTree.Update(startIndex, endIndex, updater);
+                    segmentTree.Update(range.Item1, range.Item2, updater);
                 }
                 else
                 {
-                    segmentTree.Query(startIndex, endIndex);
+                    segmentTree.Query(range.Item1, range.Item2);
                 }
             }
         }
@@ -260,23 +259,17 @@ namespace Spoj.Library.PerformanceTests.TestSuites
         {
             var segmentTree = new LazySumSegmentTree(_randomRangesArray);
 
-            var rand = new Random();
-
             for (int r = 0; r < _randomRangesCount; ++r)
             {
-                int firstIndex = rand.Next(0, _randomRangesArray.Count);
-                int secondIndex = rand.Next(0, _randomRangesArray.Count);
-                int startIndex = Math.Min(firstIndex, secondIndex);
-                int endIndex = Math.Max(firstIndex, secondIndex);
-                int mode = rand.Next(2);
+                Tuple<int, int> range = _randomRanges[r];
 
-                if (mode == 0)
+                if (range.Item1 % 2 == 0)
                 {
-                    segmentTree.Update(startIndex, endIndex, 1);
+                    segmentTree.Update(range.Item1, range.Item2, 1);
                 }
                 else
                 {
-                    segmentTree.Query(startIndex, endIndex);
+                    segmentTree.SumQuery(range.Item1, range.Item2);
                 }
             }
         }

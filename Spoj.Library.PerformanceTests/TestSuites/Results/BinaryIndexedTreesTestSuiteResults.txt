@@ -1,0 +1,20 @@
+﻿20000 random ranges, array size 50000, sum query:
+  PURQ:         x1.00000 (0 minutes 0.00233 seconds)
+  RURQ:         x2.25883 (0 minutes 0.00526 seconds)
+  Segment tree: x12.27381 (0 minutes 0.02859 seconds)
+  Naive:        x430.78344 (0 minutes 1.00376 seconds)
+  RUPQ:         x1156.63881 (0 minutes 2.69508 seconds)
+
+20000 random ranges, array size 50000, range update:
+  RUPQ:         x1.00000 (0 minutes 0.00275 seconds)
+  RURQ:         x1.76131 (0 minutes 0.00484 seconds)
+  Segment tree: x5.13952 (0 minutes 0.01413 seconds)
+  Naive:        x66.36443 (0 minutes 0.18256 seconds)
+  PURQ:         x1460.83500 (0 minutes 4.01861 seconds)
+
+20000 random ranges, array size 50000, random operation:
+  RURQ:         x1.00000 (0 minutes 0.00670 seconds)
+  Segment tree: x3.00465 (0 minutes 0.02015 seconds)
+  Naive:        x89.28810 (0 minutes 0.59905 seconds)
+  RUPQ:         x251.68949 (0 minutes 1.68863 seconds)
+  PURQ:         x297.66413 (0 minutes 1.99708 seconds)

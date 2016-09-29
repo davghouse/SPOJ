@@ -32,15 +32,15 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
         }
 
-        public int Query(int queryStartIndex, int queryEndIndex)
-            => Query(0, queryStartIndex, queryEndIndex).Sum;
+        public int SumQuery(int queryStartIndex, int queryEndIndex)
+            => SumQuery(0, queryStartIndex, queryEndIndex).Sum;
 
-        // Instead of returning the children object directly, we have to set its range addition to be that of the parent.
-        // The children query object knows the subset of the query segment it intersects with, and everything in there
-        // needs the additions that were applied to the parent segment as a whole. It's kind of weird, but any pending
-        // range additions for the child objects get brought out and added to the sum when you do .Combine or .Sum, but
-        // recursively it makes sense. The children object has a sum but still needs to know about the parent's range additions.
-        private QueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
+        // Instead of returning the children object directly, we have to add on the parent's range addition. The children
+        // query object knows the subset of the parent segment it intersects with, and everything in there needs the
+        // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
+        // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
+        // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
+        private QueryObject SumQuery(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
             var parentQueryObject = _treeArray[treeArrayIndex];
 
@@ -54,12 +54,12 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             QueryObject childrenQueryObject;
 
             if (isLeftHalfOverlapped && isRightHalfOverlapped)
-                childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
-                    .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
+                childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
+                    .Combine(SumQuery(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
             else if (isLeftHalfOverlapped)
-                childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+                childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
             else
-                childrenQueryObject = Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+                childrenQueryObject = SumQuery(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
 
             return new QueryObject(
                 childrenQueryObject.SegmentStartIndex,
