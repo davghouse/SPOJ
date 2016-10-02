@@ -11,9 +11,7 @@ namespace Spoj.Library.UnitTests
             // This graph is a triangle.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
-                {0, 1},
-                {0, 2},
-                {1, 2}
+                {0, 1}, {0, 2}, {1, 2}
             });
 
             Assert.AreEqual(graph.Vertices[0].Degree, 2);
@@ -45,8 +43,7 @@ namespace Spoj.Library.UnitTests
             // This graph is two lines and a point.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
-                {0, 1},
-                {2, 3}
+                {0, 1}, {2, 3}
             });
 
             Assert.AreEqual(graph.Vertices[0].Degree, 1);
@@ -103,8 +100,7 @@ namespace Spoj.Library.UnitTests
         {
             var graph = SimpleGraph.CreateFromOneBasedEdges(3, new[,]
             {
-                {1, 2},
-                {2, 3}
+                {1, 2}, {2, 3}
             });
 
             Assert.IsTrue(graph.Vertices[0].HasNeighbor(1));
@@ -121,91 +117,69 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void ChecksIsConnected1()
+        public void VerifiesIsConnected1()
         {
             // This graph is a triangle.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
-                {0, 1},
-                {0, 2},
-                {1, 2}
+                {0, 1}, {0, 2}, {1, 2}
             });
 
             Assert.IsTrue(graph.IsConnected());
         }
 
         [TestMethod]
-        public void ChecksIsConnected2()
+        public void VerifiesIsConnected2()
         {
             // This graph is two lines and a point.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
-                {0, 1},
-                {2, 3}
+                {0, 1}, {2, 3}
             });
 
             Assert.IsFalse(graph.IsConnected());
         }
 
         [TestMethod]
-        public void ChecksIsConnected3()
+        public void VerifiesIsConnected3()
         {
             // This graph is B-shaped.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 4},
-                {4, 5},
-                {5, 0},
-                {2, 5}
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}, {2, 5}
             });
 
             Assert.IsTrue(graph.IsConnected());
 
             var graphWithOneExtra = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 4},
-                {4, 5},
-                {5, 0},
-                {2, 5}
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}, {2, 5}
             });
 
             Assert.IsFalse(graphWithOneExtra.IsConnected());
         }
 
         [TestMethod]
-        public void ChecksIsConnected4()
+        public void VerifiesIsConnected4()
         {
             // This graph is a line.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 4},
-                {4, 5}
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
             });
 
             Assert.IsTrue(graph.IsConnected());
 
             var graphBrokenInTwo = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {3, 4},
-                {4, 5}
+                {0, 1}, {1, 2}, {3, 4}, {4, 5}
             });
 
             Assert.IsFalse(graphBrokenInTwo.IsConnected());
         }
 
         [TestMethod]
-        public void ChecksFurthestVertex1()
+        public void VerifiesFurthestVertex1()
         {
             // This graph is a point.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
@@ -215,16 +189,12 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void ChecksFurthestVertex2()
+        public void VerifiesFurthestVertex2()
         {
             // This graph is a line.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 4},
-                {4, 5}
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
             });
 
             Assert.AreEqual(5, graph.FindFurthestVertex(0).Item1.ID);
@@ -247,15 +217,12 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void ChecksFurthestVertex3()
+        public void VerifiesFurthestVertex3()
         {
             // This graph is a line broken in two.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {3, 4},
-                {4, 5}
+                {0, 1}, {1, 2}, {3, 4}, {4, 5}
             });
 
             Assert.AreEqual(2, graph.FindFurthestVertex(0).Item1.ID);
@@ -280,17 +247,12 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void ChecksFurthestVertex4()
+        public void VerifiesFurthestVertex4()
         {
             // This graph is complete with four vertices.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(4, new[,]
             {
-                {0, 1},
-                {1, 2},
-                {2, 3},
-                {3, 0},
-                {0, 2},
-                {3, 1}
+                {0, 1}, {1, 2}, {2, 3}, {3, 0}, {0, 2}, {3, 1}
             });
 
             Assert.AreEqual(1, graph.FindFurthestVertex(0).Item2);
@@ -300,24 +262,12 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void ChecksFurthestVertex5()
+        public void VerifiesFurthestVertex5()
         {
             // This graph is a weird mess: http://i.imgur.com/kbeOrqA.png.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
             {
-                {0, 1},
-                {0, 3},
-                {0, 4},
-                {0, 5},
-                {1, 2},
-                {1, 3},
-                {1, 6},
-                {2, 3},
-                {2, 4},
-                {3, 4},
-                {4, 5},
-                {4, 8},
-                {5, 7},
+                {0, 1}, {0, 3}, {0, 4}, {0, 5}, {1, 2}, {1, 3}, {1, 6}, {2, 3}, {2, 4}, {3, 4}, {4, 5}, {4, 8}, {5, 7}
             });
 
             Assert.AreEqual(2, graph.FindFurthestVertex(0).Item2);
@@ -329,6 +279,114 @@ namespace Spoj.Library.UnitTests
             Assert.AreEqual(4, graph.FindFurthestVertex(6).Item2);
             Assert.AreEqual(4, graph.FindFurthestVertex(7).Item2);
             Assert.AreEqual(4, graph.FindFurthestVertex(8).Item2);
+        }
+
+        [TestMethod]
+        public void VerifiesIsBipartiteForSmallGraphs()
+        {
+            // This graph is empty.
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(0, new int[,] { });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has a single vertex.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has two vertices.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(2, new int[,] { });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has two vertices connected by an edge.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(2, new[,]
+            {
+                {0, 1}
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has 6 vertices, with pairs connected.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {2, 3}, {4, 5}
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has 6 vertices, connected in a line.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has 6 vertices, connected in a circle.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has 7 vertices, connected in a circle.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 0}
+            });
+            Assert.IsFalse(graph.IsBipartite());
+
+            // This graph has 9 vertices, 6 connected in a line, 3 in a triangle.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 6}
+            });
+            Assert.IsFalse(graph.IsBipartite());
+
+            // This graph has 12 vertices, 6 connected in a line, 4 in a square, 2 in a line.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 9}, {9, 6}, {10, 11}
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph has 7 vertices, 2 connected in a line, 2 in a line, 3 in a triangle
+            graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
+            {
+                {0, 1}, {2, 3}, {4, 5}, {5, 6}, {6, 4}
+            });
+            Assert.IsFalse(graph.IsBipartite());
+        }
+
+        [TestMethod]
+        public void VerifiesIsBipartiteForBiggerGraphs()
+        {
+            // This graph is some bipartite mess. Odds and evens go in their own set, edges between them haphazardly.
+            var graph = SimpleGraph.CreateFromOneBasedEdges(22, new int[,]
+            {
+                { 2, 3 }, { 2, 9 }, { 2, 11 }, { 2, 15 },
+                { 4, 1 }, { 4, 7 }, { 4, 11 }, { 4, 17 },
+                { 6, 1 }, { 6, 11 }, { 6, 7 }, { 6, 15 },
+                { 8, 1 }, { 8, 15 }, { 8, 13 }, { 8, 17 },
+                { 10, 1 }, { 10, 3 }, { 10, 13 }, { 10, 15 },
+                { 14, 1 }, { 16, 3 }, { 16, 7 }, { 16, 17 },
+                { 16, 1 }, { 16, 3 }, { 16, 7 }, { 16, 17 },
+                { 16, 9 }, { 16, 11 }, { 16, 5 }, { 16, 19 },
+                { 18, 9 }, { 18, 11 }, { 18, 5 }, { 18, 19 },
+                { 20, 21 }
+            });
+            Assert.IsTrue(graph.IsBipartite());
+
+            // This graph is like above, except I threw in an edge between an even pair of vertices.
+            graph = SimpleGraph.CreateFromOneBasedEdges(22, new int[,]
+            {
+                { 2, 3 }, { 2, 9 }, { 2, 11 }, { 2, 15 },
+                { 4, 1 }, { 4, 7 }, { 4, 11 }, { 4, 17 },
+                { 6, 1 }, { 6, 11 }, { 6, 7 }, { 6, 15 },
+                { 8, 1 }, { 8, 15 }, { 8, 13 }, { 8, 17 },
+                { 10, 1 }, { 10, 3 }, { 10, 13 }, { 10, 15 },
+                { 14, 1 }, { 16, 3 }, { 16, 7 }, { 16, 17 },
+                { 16, 1 }, { 16, 3 }, { 16, 7 }, { 16, 17 },
+                { 16, 9 }, { 16, 11 }, { 16, 5 }, { 16, 19 },
+                { 18, 9 }, { 18, 11 }, { 18, 5 }, { 18, 19 },
+                { 20, 21 }, {10, 16 }
+            });
+            Assert.IsFalse(graph.IsBipartite());
         }
     }
 }

@@ -1,25 +1,26 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-// 1437 http://www.spoj.com/problems/PT07Z/ Longest path in a tree
-// Finds the longest path in a tree.
-public static class PT07Z
+// 3377 http://www.spoj.com/problems/BUGLIFE/ A Bug's Life
+// Determines if a set of bugs can be divided into two non-interacting groups.
+public static class BUGLIFE
 {
-    // See image for details: http://i.imgur.com/hWnw1N9.jpg.
-    public static int Solve(int nodeCount, int[,] edges)
+    // Best we can do is see if the ants can be divided into two groups, where members
+    // of one group only interact with members of the other group. Same as checking bipartiteness.
+    // Not the actual code submitted. Had to strip everything down and have vertices store their
+    // own search state but the biggest part was using a List instead of a HashSet to store neighbors
+    // (not making use of the HashSet functionality for this problem, and even if removing it leads to
+    // creating a multigraph (a pair of ants going on more than one date), doesn't matter). I observed
+    // no time difference when swapping search start position from first to last vertex. TLE when using
+    // BFS instead of DFS. But my same solution gets AC and TLE across different submits so you should
+    // probably figure out how those faster people did it.
+    public static string Solve(int bugCount, int[,] interactions)
     {
-        if (nodeCount == 1)
-            return 0;
+        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(bugCount, interactions);
 
-        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
-
-        // Proof relies on starting at a leaf, but I have a suspicion that's not necessary.
-        var firstVertex = graph.Vertices.First(v => v.Degree == 1);
-        var secondVertex = graph.FindFurthestVertex(firstVertex).Item1;
-        int longestPathLength = graph.FindFurthestVertex(secondVertex).Item2;
-
-        return longestPathLength;
+        return graph.IsBipartite() ? "No suspicious bugs found!" : "Suspicious bugs found!";
     }
 }
 
@@ -27,11 +28,11 @@ public static class PT07Z
 // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
 // corresponds to its index in said array. Immutable so far but at least mutable edges later on probably.
 // Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
-public class SimpleGraph
+public sealed class SimpleGraph
 {
-    protected readonly Vertex[] _vertices;
+    private readonly Vertex[] _vertices;
 
-    protected SimpleGraph(int vertexCount)
+    private SimpleGraph(int vertexCount)
     {
         _vertices = new Vertex[vertexCount];
     }
@@ -78,10 +79,10 @@ public class SimpleGraph
     public IReadOnlyList<Vertex> Vertices
         => Array.AsReadOnly(_vertices);
 
-    protected void AddEdge(int firstVertexID, int secondVertexID)
+    private void AddEdge(int firstVertexID, int secondVertexID)
         => AddEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
 
-    protected void AddEdge(Vertex firstVertex, Vertex secondVertex)
+    private void AddEdge(Vertex firstVertex, Vertex secondVertex)
     {
         firstVertex.AddNeighbor(secondVertex);
         secondVertex.AddNeighbor(firstVertex);
@@ -116,6 +117,47 @@ public class SimpleGraph
         }
 
         return discoveredVertexIDs.Count == VertexCount;
+    }
+
+    // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
+    // Don't need the count property from a hashset, so using two parallel bit arrays, one for discovery, one for 2-coloring.
+    public bool IsBipartite()
+    {
+        var discoveredVertexIDs = new BitArray(VertexCount);
+        var discoveredVertexColors = new BitArray(VertexCount);
+        var verticesToVisit = new Stack<Vertex>();
+
+        for (int i = 0; i < _vertices.Length; ++i)
+        {
+            if (discoveredVertexIDs[i])
+                continue; // Already explored this component.
+
+            discoveredVertexIDs[i] = true;
+            discoveredVertexColors[i] = true;
+            verticesToVisit.Push(_vertices[i]);
+
+            while (verticesToVisit.Count > 0)
+            {
+                var vertex = verticesToVisit.Pop();
+                bool vertexColor = discoveredVertexColors[vertex.ID];
+
+                foreach (var neighbor in vertex.Neighbors)
+                {
+                    // If undiscovered, discover it and color it opposite the vertex we're visiting from (put it in the other set).
+                    if (!discoveredVertexIDs[neighbor.ID])
+                    {
+                        discoveredVertexIDs[neighbor.ID] = true;
+                        discoveredVertexColors[neighbor.ID] = !vertexColor;
+                        verticesToVisit.Push(neighbor);
+                    }
+                    // Else, make sure its color isn't the same as the vertex we're visting from (verify its not in the same set).
+                    else if (discoveredVertexColors[neighbor.ID] == vertexColor)
+                        return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public Tuple<Vertex, int> FindFurthestVertex(int startVertexID)
@@ -160,12 +202,12 @@ public class SimpleGraph
         return Tuple.Create(furthestVertex, furthestDistance);
     }
 
-    public class Vertex
+    public sealed class Vertex
     {
-        protected readonly SimpleGraph _graph;
-        protected readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
+        private readonly SimpleGraph _graph;
+        private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
 
-        protected internal Vertex(SimpleGraph graph, int ID)
+        internal Vertex(SimpleGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;
@@ -179,10 +221,10 @@ public class SimpleGraph
         public IEnumerable<Vertex> Neighbors
             => _neighbors.Skip(0);
 
-        protected internal void AddNeighbor(int neighborID)
+        internal void AddNeighbor(int neighborID)
             => AddNeighbor(_graph._vertices[neighborID]);
 
-        protected internal void AddNeighbor(Vertex neighbor)
+        internal void AddNeighbor(Vertex neighbor)
             => _neighbors.Add(neighbor);
 
         public bool HasNeighbor(int neighborID)
@@ -197,18 +239,26 @@ public static class Program
 {
     private static void Main()
     {
-        int nodeCount = int.Parse(Console.ReadLine());
-        int edgeCount = nodeCount - 1;
+        int totalTestCases = int.Parse(Console.ReadLine());
 
-        int[,] edges = new int[edgeCount, 2];
-        for (int i = 0; i < edgeCount; ++i)
+        for (int t = 1; t <= totalTestCases; ++t)
         {
-            int[] edge = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int bugCount = line[0];
+            int interactionCount = line[1];
 
-            edges[i, 0] = edge[0];
-            edges[i, 1] = edge[1];
+            int[,] interactions = new int[interactionCount, 2];
+            for (int i = 0; i < interactionCount; ++i)
+            {
+                line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+                interactions[i, 0] = line[0];
+                interactions[i, 1] = line[1];
+            }
+
+            Console.WriteLine($"Scenario #{t}:");
+            Console.WriteLine(
+                BUGLIFE.Solve(bugCount, interactions));
         }
-
-        Console.WriteLine(PT07Z.Solve(nodeCount, edges));
     }
 }

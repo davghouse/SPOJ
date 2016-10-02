@@ -12,7 +12,7 @@ public static class PT07Y
         if (edgeCount != vertexCount - 1)
             return "NO";
 
-        var graph = SimpleGraph.CreateFromOneBasedEdges(vertexCount, edges);
+        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(vertexCount, edges);
         return graph.IsConnected() ? "YES" : "NO";
     }
 }

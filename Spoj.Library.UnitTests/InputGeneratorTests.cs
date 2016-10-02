@@ -39,5 +39,26 @@ namespace Spoj.Library.UnitTests
             Assert.IsTrue(s.Any(c => c == 'a'));
             Assert.IsTrue(s.Any(c => c == 'b'));
         }
+
+        [TestMethod]
+        public void GeneratesEvenOddPairs()
+        {
+            int[,] evenOddPairs = InputGenerator.GenerateRandomEvenOddPairs(1000, 1, 100);
+
+            Assert.AreEqual(1000, evenOddPairs.GetLength(0));
+            for (int p = 0; p < 1000; ++p)
+            {
+                Assert.IsTrue(evenOddPairs[p, 0] % 2 == 0);
+                Assert.IsTrue(evenOddPairs[p, 1] % 2 == 1);
+            }
+
+            evenOddPairs = InputGenerator.GenerateRandomEvenOddPairs(1000, 0, 1);
+            Assert.AreEqual(1000, evenOddPairs.GetLength(0));
+            for (int p = 0; p < 1000; ++p)
+            {
+                Assert.AreEqual(0, evenOddPairs[p, 0]);
+                Assert.AreEqual(1, evenOddPairs[p, 1]);
+            }
+        }
     }
 }

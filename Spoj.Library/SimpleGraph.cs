@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -97,6 +98,47 @@ namespace Spoj.Library
             }
 
             return discoveredVertexIDs.Count == VertexCount;
+        }
+
+        // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
+        // Don't need the count property from a hashset, so using two parallel bit arrays, one for discovery, one for 2-coloring.
+        public bool IsBipartite()
+        {
+            var discoveredVertexIDs = new BitArray(VertexCount);
+            var discoveredVertexColors = new BitArray(VertexCount);
+            var verticesToVisit = new Stack<Vertex>();
+
+            for (int i = 0; i < _vertices.Length; ++i)
+            {
+                if (discoveredVertexIDs[i])
+                    continue; // Already explored this component.
+
+                discoveredVertexIDs[i] = true;
+                discoveredVertexColors[i] = true;
+                verticesToVisit.Push(_vertices[i]);
+
+                while (verticesToVisit.Count > 0)
+                {
+                    var vertex = verticesToVisit.Pop();
+                    bool vertexColor = discoveredVertexColors[vertex.ID];
+
+                    foreach (var neighbor in vertex.Neighbors)
+                    {
+                        // If undiscovered, discover it and color it opposite the vertex we're visiting from (put it in the other set).
+                        if (!discoveredVertexIDs[neighbor.ID])
+                        {
+                            discoveredVertexIDs[neighbor.ID] = true;
+                            discoveredVertexColors[neighbor.ID] = !vertexColor;
+                            verticesToVisit.Push(neighbor);
+                        }
+                        // Else, make sure its color isn't the same as the vertex we're visting from (verify its not in the same set).
+                        else if (discoveredVertexColors[neighbor.ID] == vertexColor)
+                            return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public Tuple<Vertex, int> FindFurthestVertex(int startVertexID)
