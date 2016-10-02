@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.SegmentTrees.AdHoc
 {
-    public class LazySumSegmentTree
+    public sealed class LazySumSegmentTree
     {
         private readonly IReadOnlyList<int> _sourceArray;
         private readonly QueryObject[] _treeArray;

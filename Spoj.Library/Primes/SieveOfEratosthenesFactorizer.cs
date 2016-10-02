@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.Primes
 {
-    public class SieveOfEratosthenesFactorizer : IPrimeFactorizer, IPrimeDecider
+    public sealed class SieveOfEratosthenesFactorizer : IPrimeFactorizer, IPrimeDecider
     {
         // The only thing different about this sieve is that rather than storing true for prime
         // and false for not prime, it stores null for prime and some prime factor (doesn't matter which)

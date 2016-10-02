@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Spoj.Library.Primes
 {
-    public class SieveOfEratosthenesDecider : IPrimeDecider
+    public sealed class SieveOfEratosthenesDecider : IPrimeDecider
     {
         private readonly BitArray _sieve;
 

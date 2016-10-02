@@ -2,7 +2,7 @@
 
 namespace Spoj.Library.Primes
 {
-    public class SieveOfEratosthenesProvider : IPrimeProvider, IPrimeDecider
+    public sealed class SieveOfEratosthenesProvider : IPrimeProvider, IPrimeDecider
     {
         private readonly SieveOfEratosthenesDecider _decider;
 
