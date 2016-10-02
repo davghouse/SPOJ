@@ -91,6 +91,7 @@
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Solutions\2_Chieftain\GUESSING.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5_King\JULKA.cs" />
