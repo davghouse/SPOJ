@@ -43,7 +43,7 @@ public static class SBANK
     // order. Then instead of sorting the Dictionary by key at the end I added on a BST
     // to maintain the sort order--this time the BST worked because I was only inserting
     // new accounts into it, never reading from it (like the SortedDictionary case), and inserts
-    // are relatively rare(?), so it had less overhead than sorting from the hashset all at once...
+    // are relatively rare(?), so it had less overhead than sorting from the hash set all at once...
     public static void SolveFastEnough(int accountCount, StringBuilder output)
     {
         var sortedAccounts = new SortedSet<string>();

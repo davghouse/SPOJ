@@ -28,6 +28,8 @@ public static class BUGLIFE
 // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
 // corresponds to its index in said array. Immutable so far but at least mutable edges later on probably.
 // Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
+// Hash sets in the vertices slow things down (use list for some problems), as does using data structures
+// instead of the vertices themselves to maintain state during searching.
 public sealed class SimpleGraph
 {
     private readonly Vertex[] _vertices;
@@ -120,7 +122,7 @@ public sealed class SimpleGraph
     }
 
     // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
-    // Don't need the count property from a hashset, so using two parallel bit arrays, one for discovery, one for 2-coloring.
+    // Don't need the count property from a hash set, so using two parallel bit arrays, one for discovery, one for 2-coloring.
     public bool IsBipartite()
     {
         var discoveredVertexIDs = new BitArray(VertexCount);
