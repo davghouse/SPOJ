@@ -32,7 +32,7 @@ namespace Spoj.Library.BinaryIndexedTrees
     // RURQQuery(k) negates that value though, so queries are increased by delta * (j - i + 1) as desired.
 
     // Using these two BITs, we can do RURQ in O(logn) time each (both PURQ/RUPQ could do RURQ, but half slowly).
-    public class RURQBinaryIndexedTree
+    public sealed class RURQBinaryIndexedTree
     {
         private readonly int[] _tree1;
         private readonly int[] _tree2;

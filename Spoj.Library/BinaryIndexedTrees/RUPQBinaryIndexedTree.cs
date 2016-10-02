@@ -13,7 +13,7 @@ namespace Spoj.Library.BinaryIndexedTrees
     // RUPQ says "okay, here's an index and a value. We interpret this as ALL elements from that index
     // TO THE END of the array get increased by this value, so what you're saying about how the query
     // results are affected makes sense, thanks! Luckily, this interpretation allows us to do range updates."
-    public class RUPQBinaryIndexedTree
+    public sealed class RUPQBinaryIndexedTree
     {
         private readonly int[] _tree;
 
