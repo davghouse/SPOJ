@@ -74,5 +74,25 @@ namespace Spoj.Library.UnitTests.Helpers
             Assert.AreEqual(11716640, MathHelper.NumberOfCombinations(131, 4));
             Assert.AreEqual(20160075, MathHelper.NumberOfCombinations(31, 9));
         }
+
+        [TestMethod]
+        public void VerifiesGreatestCommonDivisor()
+        {
+            Assert.AreEqual(0, MathHelper.GreatestCommonDivisor(0, 0));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(1, 0));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(0, 1));
+            Assert.AreEqual(2, MathHelper.GreatestCommonDivisor(2, 0));
+            Assert.AreEqual(2, MathHelper.GreatestCommonDivisor(0, 2));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(1, 1));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(1, 2));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(2, 1));
+            Assert.AreEqual(5, MathHelper.GreatestCommonDivisor(25, 15));
+            Assert.AreEqual(5, MathHelper.GreatestCommonDivisor(15, 25));
+            Assert.AreEqual(105, MathHelper.GreatestCommonDivisor(10290, 945));
+            Assert.AreEqual(105, MathHelper.GreatestCommonDivisor(945, 10290));
+            Assert.AreEqual(66, MathHelper.GreatestCommonDivisor(7262574, 210763872));
+            Assert.AreEqual(66, MathHelper.GreatestCommonDivisor(210763872, 7262574));
+            Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(17, 19));
+        }
     }
 }

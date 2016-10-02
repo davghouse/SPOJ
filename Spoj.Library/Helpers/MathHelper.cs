@@ -39,5 +39,23 @@ namespace Spoj.Library.Helpers
 
             return result;
         }
+
+        // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
+        // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
+        // And it divides b, so it divides bt, which means for bt + r to be divisible by it,
+        // r also needs to be divisible by it. So it divides both b and r. And the article
+        // notes the importance of showing not only does it divide b and r, it's also their gcd.
+        public static int GreatestCommonDivisor(int a, int b)
+        {
+            int temp;
+            while (b != 0)
+            {
+                temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
     }
 }

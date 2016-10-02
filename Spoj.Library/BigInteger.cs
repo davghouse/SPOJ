@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// NOTE: It looks like System.Numerics is referenced by SPOJ now, so this BigInteger is hopefully deprecated.
 namespace Spoj.Library
 {
-    // TODO: Support negatives, and lots of other stuff.
+    // NOTE: System.Numerics is referenced by SPOJ now, so this is hopefully deprecated.
+    // TODO: Support negatives, comparison operators, division, and lots of other stuff.
     public struct BigInteger : IEquatable<BigInteger>
     {
         private static readonly BigInteger _zero = new BigInteger(0);
@@ -24,6 +24,8 @@ namespace Spoj.Library
             : this(n.ToString())
         { }
 
+        // For a  number string, the first character is the most significant digit. For our _digits array, it's most
+        // convenient if the first element is the least significant digit, so reverse the order here.
         public BigInteger(string digits)
         {
             var digitsArray = new byte[digits.Length];
@@ -116,33 +118,6 @@ namespace Spoj.Library
             return result;
         }
 
-        public BigInteger DivideByTwo()
-        {
-            var result = new List<byte>(_digits.Count);
-
-            // Rather than calculate this/2 = result, we'll calculate result + result = this.
-            byte carry = 0;
-            for (int i = 0; i < _digits.Count; ++i)
-            {
-                byte sum = (byte)(_digits[i] - carry);
-
-                // There are two ways to create the digit, halving the sum or adding 10 to it
-                // and then halving it, in the case where the carry is necessary because the
-                // next digit isn't even and so can't be halved without first subtracting a carry.
-                if (i < _digits.Count - 1 && _digits[i + 1] % 2 != 0)
-                {
-                    sum += 10;
-                }
-
-                result.Add((byte)(sum / 2));
-                carry = (byte)(sum / 10);
-            }
-
-            RemoveTrailingZeros(result);
-
-            return new BigInteger(result.AsReadOnly());
-        }
-
         private BigInteger MultiplyByDigit(byte digit)
         {
             if (IsZero || digit == 1) return this;
@@ -182,6 +157,33 @@ namespace Spoj.Library
             }
 
             return new BigInteger(Array.AsReadOnly(result));
+        }
+
+        public BigInteger DivideByTwo()
+        {
+            var result = new List<byte>(_digits.Count);
+
+            // Rather than calculate this/2 = result, we'll calculate result + result = this.
+            byte carry = 0;
+            for (int i = 0; i < _digits.Count; ++i)
+            {
+                byte sum = (byte)(_digits[i] - carry);
+
+                // There are two ways to create the digit, halving the sum or adding 10 to it
+                // and then halving it, in the case where the carry is necessary because the
+                // next digit isn't even and so can't be halved without first subtracting a carry.
+                if (i < _digits.Count - 1 && _digits[i + 1] % 2 != 0)
+                {
+                    sum += 10;
+                }
+
+                result.Add((byte)(sum / 2));
+                carry = (byte)(sum / 10);
+            }
+
+            RemoveTrailingZeros(result);
+
+            return new BigInteger(result.AsReadOnly());
         }
 
         private static void RemoveTrailingZeros(List<byte> result)

@@ -278,6 +278,9 @@
     <None Include="InputVerifier.cs" />
     <None Include="Solutions\4_Prince\DOTAA.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4_Prince\GCD2.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
