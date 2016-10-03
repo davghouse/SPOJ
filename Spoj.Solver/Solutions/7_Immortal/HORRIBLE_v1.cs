@@ -9,9 +9,9 @@ public static class HORRIBLE // v1, using a segment tree
     {
         private readonly LazySumSegmentTree _segmentTree;
 
-        public Solver(int arraySize)
+        public Solver(int arrayLength)
         {
-            _segmentTree = new LazySumSegmentTree(arraySize);
+            _segmentTree = new LazySumSegmentTree(arrayLength);
         }
 
         public void Update(int updateStartIndex, int updateEndIndex, int rangeAddition)
@@ -27,10 +27,10 @@ public static class HORRIBLE // v1, using a segment tree
         private static readonly long[] _sourceArray = new long[100000];
         private static readonly QueryObject[] _treeArray = new QueryObject[2 * 1048576 - 1];
 
-        public LazySumSegmentTree(int arraySize)
+        public LazySumSegmentTree(int arrayLength)
         {
-            Array.Clear(_sourceArray, 0, arraySize);
-            Build(0, 0, arraySize - 1);
+            Array.Clear(_sourceArray, 0, arrayLength);
+            Build(0, 0, arrayLength - 1);
         }
 
         private void Build(int treeArrayIndex, int segmentStartIndex, int segmentEndIndex)
@@ -185,10 +185,10 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int arraySize = line[0];
+            int arrayLength = line[0];
             int commandCount = line[1];
 
-            var solver = new HORRIBLE.Solver(arraySize);
+            var solver = new HORRIBLE.Solver(arrayLength);
 
             for (int c = 0; c < commandCount; ++c)
             {

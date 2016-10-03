@@ -37,10 +37,10 @@ namespace Spoj.Library.BinaryIndexedTrees
         private readonly int[] _tree1;
         private readonly int[] _tree2;
 
-        public RURQBinaryIndexedTree(int arraySize)
+        public RURQBinaryIndexedTree(int arrayLength)
         {
-            _tree1 = new int[arraySize + 1];
-            _tree2 = new int[arraySize + 1];
+            _tree1 = new int[arrayLength + 1];
+            _tree2 = new int[arrayLength + 1];
         }
 
         public RURQBinaryIndexedTree(IReadOnlyList<int> array)

@@ -11,9 +11,9 @@ namespace Spoj.Library.BinaryIndexedTrees
     {
         private readonly int[] _tree;
 
-        public PURQBinaryIndexedTree(int arraySize)
+        public PURQBinaryIndexedTree(int arrayLength)
         {
-            _tree = new int[arraySize + 1];
+            _tree = new int[arrayLength + 1];
         }
 
         // There's a way to do this in O(n) instead of O(nlogn), apparently.

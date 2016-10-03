@@ -24,9 +24,9 @@ public static class ARRAYSUB
     // clear the dominators are always sorted, descending, from left to right. Dominators could be thought of recursively
     // as greatest element in subarray, followed by greatest element in subarray to that element's right, etc. O(n)
     // because we add or remove an array element from the dominators at most one time.
-    public static int[] Solve(int arraySize, int[] array, int k)
+    public static int[] Solve(int[] array, int k)
     {
-        if (k == arraySize) return new[] { array.Max() };
+        if (k == array.Length) return new[] { array.Max() };
         if (k == 1) return array;
 
         // Initializing the dominators for the first subarray. Gotta have the rightmost, then the next to the left that's
@@ -48,7 +48,7 @@ public static class ARRAYSUB
         // left that's greater than it, or just itself. Don't have to worry about dominators ever becoming empty, because
         // base case handled above. Even for k = 2, if there's only 1 dominator going in to the next iteration, it must be
         // the rightmost element of the previous subarray, so it's not going to get popped off the end until the next next iteration.
-        int subarrayCount = arraySize - k + 1;
+        int subarrayCount = array.Length - k + 1;
         int[] subarrayMaximums = new int[subarrayCount];
         subarrayMaximums[0] = leftLookingDominators.Last.Value;
 
@@ -87,13 +87,13 @@ public static class Program
 {
     private static void Main()
     {
-        int arraySize = int.Parse(Console.ReadLine());
+        int arrayLength = int.Parse(Console.ReadLine());
         int[] array = Array.ConvertAll(
             Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
             int.Parse);
         int k = int.Parse(Console.ReadLine());
 
         Console.WriteLine(
-            string.Join(" ", ARRAYSUB.Solve(arraySize, array, k)));
+            string.Join(" ", ARRAYSUB.Solve(array, k)));
     }
 }

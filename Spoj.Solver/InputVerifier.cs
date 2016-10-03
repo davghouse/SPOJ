@@ -8,21 +8,21 @@ public static class InputVerifier
 {
     private static void Main()
     {
-        int arraySize = int.Parse(Console.ReadLine());
+        int arrayLength = int.Parse(Console.ReadLine());
 
-        if (arraySize < 1 || arraySize > 100000)
+        if (arrayLength < 1 || arrayLength > 100000)
             throw new FormatException();
 
         int[] array = Array.ConvertAll(
             Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
             int.Parse);
 
-        if (array.Length != arraySize)
+        if (array.Length != arrayLength)
             throw new FormatException();
 
         int k = int.Parse(Console.ReadLine());
 
-        if (k < 1 || k > arraySize)
+        if (k < 1 || k > arrayLength)
             throw new FormatException();
     }
 }

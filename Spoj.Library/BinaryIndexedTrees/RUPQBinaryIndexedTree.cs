@@ -17,9 +17,9 @@ namespace Spoj.Library.BinaryIndexedTrees
     {
         private readonly int[] _tree;
 
-        public RUPQBinaryIndexedTree(int arraySize)
+        public RUPQBinaryIndexedTree(int arrayLength)
         {
-            _tree = new int[arraySize + 1];
+            _tree = new int[arrayLength + 1];
         }
 
         public RUPQBinaryIndexedTree(IReadOnlyList<int> array)

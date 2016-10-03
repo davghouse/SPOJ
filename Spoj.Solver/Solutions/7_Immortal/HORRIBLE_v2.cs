@@ -9,9 +9,9 @@ public static class HORRIBLE // v2, using a RURQ BIT
     {
         private readonly RURQBinaryIndexedTree _binaryIndexedTree;
 
-        public Solver(int arraySize)
+        public Solver(int arrayLength)
         {
-            _binaryIndexedTree = new RURQBinaryIndexedTree(arraySize);
+            _binaryIndexedTree = new RURQBinaryIndexedTree(arrayLength);
         }
 
         public void Update(int updateStartIndex, int updateEndIndex, int delta)
@@ -56,10 +56,10 @@ public static class HORRIBLE // v2, using a RURQ BIT
         private readonly long[] _tree1;
         private readonly long[] _tree2;
 
-        public RURQBinaryIndexedTree(int arraySize)
+        public RURQBinaryIndexedTree(int arrayLength)
         {
-            _tree1 = new long[arraySize + 1];
-            _tree2 = new long[arraySize + 1];
+            _tree1 = new long[arrayLength + 1];
+            _tree2 = new long[arrayLength + 1];
         }
 
         private void Update(long[] tree, int updateIndex, long delta)
@@ -112,10 +112,10 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int arraySize = line[0];
+            int arrayLength = line[0];
             int commandCount = line[1];
 
-            var solver = new HORRIBLE.Solver(arraySize);
+            var solver = new HORRIBLE.Solver(arrayLength);
 
             for (int c = 0; c < commandCount; ++c)
             {
