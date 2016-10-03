@@ -14,7 +14,7 @@ namespace Spoj.Library
 
             var rand = new Random();
 
-            var ints = new int[count];
+            int[] ints = new int[count];
             for (int i = 0; i < count; ++i)
             {
                 ints[i] = rand.Next(minValue, maxValue + 1);
@@ -32,7 +32,7 @@ namespace Spoj.Library
             var rand = new Random();
 
             var distinctRandomInts = new HashSet<int>();
-            var ints = new int[count];
+            int[] ints = new int[count];
             while (distinctRandomInts.Count < count)
             {
                 int randInt = rand.Next(minValue, maxValue + 1);

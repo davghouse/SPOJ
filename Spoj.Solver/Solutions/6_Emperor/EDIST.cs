@@ -13,8 +13,8 @@ public static class EDIST
     {
         // Haven't found/created a proof for the WF algorithm being correct (that is, optimal).
         // We'll just assume it is, and do the space-efficient version as we don't need to backtrace.
-        var previousRowCounts = new int[to.Length + 1];
-        var currentRowCounts = new int[to.Length + 1];
+        int[] previousRowCounts = new int[to.Length + 1];
+        int[] currentRowCounts = new int[to.Length + 1];
         int currentRow = 1;
 
         for (int col = 0; col <= to.Length; ++col)

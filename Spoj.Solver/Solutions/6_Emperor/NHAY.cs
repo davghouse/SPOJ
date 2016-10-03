@@ -44,7 +44,7 @@ public static class KmpStringMatcher
 
     public static IReadOnlyList<int> ComputePrefixesLengthOfLongestProperSuffixThatIsItselfAPrefix(string pattern)
     {
-        var prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix = new int[pattern.Length + 1];
+        int[] prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix = new int[pattern.Length + 1];
         int lengthOfLongestProperSuffixThatIsItselfAPrefix = prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix[1] = 0;
 
         for (int i = 2; i <= pattern.Length; ++i)

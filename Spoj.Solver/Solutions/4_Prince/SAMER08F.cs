@@ -11,7 +11,7 @@ public static class SAMER08F
 
     static SAMER08F()
     {
-        var squareCounts = new int[_limit + 1];
+        int[] squareCounts = new int[_limit + 1];
         squareCounts[0] = 0;
         squareCounts[1] = 1;
         squareCounts[2] = 5;

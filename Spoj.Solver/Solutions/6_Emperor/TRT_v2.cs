@@ -58,7 +58,7 @@ public static class Program
     private static void Main()
     {
         int treatCount = int.Parse(Console.ReadLine());
-        var treatValues = new int[treatCount];
+        int[] treatValues = new int[treatCount];
 
         for (int i = 0; i < treatCount; ++i)
         {

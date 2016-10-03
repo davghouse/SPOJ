@@ -14,7 +14,7 @@ public static class FCTRL
     static FCTRL()
     {
         var fivesCounter = new FactorCounter(factor: 5, limit: _limit);
-        var fivesCounterCumulative = new int[_limit / 5 + 1];
+        int[] fivesCounterCumulative = new int[_limit / 5 + 1];
         fivesCounterCumulative[0] = 0;
 
         for (int i = 1; i <= _limit / 5; ++i)

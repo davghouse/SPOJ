@@ -98,7 +98,7 @@ public static class SBANK
 
             // ASCII value for '9' is 57, we don't want to have to perform subtraction (- '0') to reference
             // array positions, so though there are only 10 characters we care about, make it convenient.
-            var characterCounts = new int[59];
+            int[] characterCounts = new int[59];
 
             // Compute character frequency counts, for the characters '0' to '9' (but stored one index after).
             for (int a = 0; a < accountCount; ++a)

@@ -12,7 +12,7 @@ public static class AE00
     {
         // Rectangles from n squares can use any number of squares, that is, n squares can make
         // as many rectangles as n - 1 squares make, plus however many rectangles from exactly n squares.
-        var rectangleCounts = new int[10001];
+        int[] rectangleCounts = new int[10001];
         rectangleCounts[0] = 0;
         rectangleCounts[1] = 1;
 

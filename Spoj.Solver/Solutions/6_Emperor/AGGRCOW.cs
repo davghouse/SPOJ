@@ -158,7 +158,7 @@ public static class Program
             int stallCount = line[0];
             int cowCount = line[1];
 
-            var stallLocations = new int[stallCount];
+            int[] stallLocations = new int[stallCount];
             for (int i = 0; i < stallCount; ++i)
             {
                 stallLocations[i] = int.Parse(Console.ReadLine());
