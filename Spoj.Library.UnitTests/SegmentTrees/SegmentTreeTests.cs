@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Spoj.Library.Helpers;
 using Spoj.Library.SegmentTrees;
 using Spoj.Library.SegmentTrees.AdHoc;
 using Spoj.Library.SegmentTrees.QueryObjects;

@@ -8,7 +8,7 @@ namespace Spoj.Library.Helpers
         public static bool IsPowerOfTwo(long n)
             => n <= 0 ? false : (n & (n - 1)) == 0;
 
-        public static int FirstPowerOfTwoAtOrAfter(int value)
+        public static int FirstPowerOfTwoEqualOrGreater(int value)
         {
             int result = 1;
             while (result < value)

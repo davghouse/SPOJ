@@ -11,7 +11,7 @@ namespace Spoj.Library.SegmentTrees.AdHoc
         public LazySumSegmentTree(IReadOnlyList<int> sourceArray)
         {
             _sourceArray = sourceArray;
-            _treeArray = new QueryObject[2 * MathHelper.FirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
+            _treeArray = new QueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
             Build(0, 0, _sourceArray.Count - 1);
         }
 

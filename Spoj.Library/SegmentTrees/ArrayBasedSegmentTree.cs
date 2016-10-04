@@ -14,7 +14,7 @@ namespace Spoj.Library.SegmentTrees
         public ArrayBasedSegmentTree(IReadOnlyList<TQueryValue> sourceArray)
             : base(sourceArray)
         {
-            _treeArray = new TQueryObject[2 * MathHelper.FirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
+            _treeArray = new TQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
             Build(0, 0, _sourceArray.Count - 1);
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 // 1043 http://www.spoj.com/problems/GSS1/ Can you answer these queries I
-// Uses a segment tree to solve the maximum sum subrange problem. See component in Spoj.Library for details.
+// Does maximum sum subrange queries on an array (using a segment tree).
 public class GSS1
 {
     private readonly ArrayBasedSegmentTree _segmentTree;
@@ -13,10 +13,12 @@ public class GSS1
         _segmentTree = new ArrayBasedSegmentTree(sourceArray);
     }
 
-    public int Solve(int queryStartIndex, int queryEndIndex)
+    public int Query(int queryStartIndex, int queryEndIndex)
         => _segmentTree.Query(queryStartIndex, queryEndIndex).MaximumSum;
 }
 
+// Most guides online cover this approach, but here's one good one:
+// https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/
 public class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
@@ -25,7 +27,7 @@ public class ArrayBasedSegmentTree
     public ArrayBasedSegmentTree(IReadOnlyList<int> sourceArray)
     {
         _sourceArray = sourceArray;
-        _treeArray = new MaximumSumQueryValue[2 * MathHelper.FirstPowerOfTwoAtOrAfter(_sourceArray.Count) - 1];
+        _treeArray = new MaximumSumQueryValue[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
         Build(0, 0, _sourceArray.Count - 1);
     }
 
@@ -111,7 +113,7 @@ public class MaximumSumQueryValue
 
 public static class MathHelper
 {
-    public static int FirstPowerOfTwoAtOrAfter(int value)
+    public static int FirstPowerOfTwoEqualOrGreater(int value)
     {
         int result = 1;
         while (result < value)
@@ -128,20 +130,25 @@ public static class Program
     // Special I/O handling is necessary to work around malformed input and get the time fast enough.
     private static void Main()
     {
-        Console.ReadLine();
+        int arrayLength = int.Parse(Console.ReadLine());
         int[] sourceArray = Array.ConvertAll(
             Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
             int.Parse);
-        var solver = new GSS1(sourceArray);
-
-        var output = new StringBuilder();
         int queryCount = int.Parse(Console.ReadLine());
+
+        var solver = new GSS1(sourceArray);
+        var output = new StringBuilder();
+
         for (int i = 0; i < queryCount; ++i)
         {
             int[] line = Array.ConvertAll(
                 Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
                 int.Parse);
-            output.AppendLine(solver.Solve(line[0] - 1, line[1] - 1).ToString());
+
+            output.Append(solver.Query(
+                queryStartIndex: line[0] - 1,
+                queryEndIndex: line[1] - 1));
+            output.AppendLine();
         }
 
         Console.Write(output);

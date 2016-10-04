@@ -23,17 +23,17 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesFirstPowerOfTwoAtOrAfter()
+        public void VerifiesFirstPowerOfTwoEqualOrGreater()
         {
-            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoAtOrAfter(-1));
-            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoAtOrAfter(0));
-            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoAtOrAfter(1));
-            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoAtOrAfter(2));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoAtOrAfter(3));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoAtOrAfter(4));
-            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoAtOrAfter(5));
-            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoAtOrAfter(13));
-            Assert.AreEqual(32, MathHelper.FirstPowerOfTwoAtOrAfter(25));
+            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(-1));
+            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(0));
+            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(1));
+            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrGreater(2));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrGreater(3));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrGreater(4));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrGreater(5));
+            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrGreater(13));
+            Assert.AreEqual(32, MathHelper.FirstPowerOfTwoEqualOrGreater(25));
         }
 
         [TestMethod]
