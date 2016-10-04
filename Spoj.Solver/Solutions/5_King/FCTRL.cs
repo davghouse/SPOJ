@@ -34,7 +34,7 @@ public static class FCTRL
 }
 
 // Constructed with a factor and a limit. Used to find how many times that factor evenly divides any input <= limit.
-public sealed class FactorCounter
+public class FactorCounter
 {
     // Stores the count we're interested in for 0 <= i <= Limit / (Factor * Factor), where i represents the ith multiple of Factor * Factor (squared for memory concerns).
     private readonly int[] _counts;

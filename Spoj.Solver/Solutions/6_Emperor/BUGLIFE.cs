@@ -30,7 +30,7 @@ public static class BUGLIFE
 // Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
 // Hash sets in the vertices slow things down (use list for some problems), as does using data structures
 // instead of the vertices themselves to maintain state during searching.
-public sealed class SimpleGraph
+public class SimpleGraph
 {
     private readonly Vertex[] _vertices;
 
@@ -204,7 +204,7 @@ public sealed class SimpleGraph
         return Tuple.Create(furthestVertex, furthestDistance);
     }
 
-    public sealed class Vertex
+    public class Vertex
     {
         private readonly SimpleGraph _graph;
         private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();

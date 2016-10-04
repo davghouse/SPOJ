@@ -17,7 +17,7 @@ public class GSS1
         => _segmentTree.Query(queryStartIndex, queryEndIndex).MaximumSum;
 }
 
-public sealed class ArrayBasedSegmentTree
+public class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
     private readonly MaximumSumQueryValue[] _treeArray;
