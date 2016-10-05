@@ -2,7 +2,7 @@
 
 namespace Spoj.Library.Primes
 {
-    public sealed class SieveOfEratosthenesProvider : IPrimeProvider, IPrimeDecider
+    public sealed class SieveOfEratosthenesProvider : IPrimeDecider, IPrimeProvider
     {
         private readonly SieveOfEratosthenesDecider _decider;
 
@@ -15,7 +15,7 @@ namespace Spoj.Library.Primes
             var primes = new List<int>();
             for (int n = 2; n <= Limit; ++n)
             {
-                if (_decider.IsPrime(n))
+                if (IsPrime(n))
                 {
                     primes.Add(n);
                 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 
 namespace Spoj.Library.Primes
 {
@@ -15,15 +14,20 @@ namespace Spoj.Library.Primes
             _sieve[0] = false;
             _sieve[1] = false;
 
-            for (int n = 2; n <= (int)Math.Sqrt(Limit); ++n)
+            // Check for n up to sqrt(Limit), as any non-primes <= Limit with a factor > sqrt(Limit)
+            // must also have a factor < sqrt(Limit) (otherwise they'd be > Limit), and so already sieved.
+            for (int n = 2; n * n <= Limit; ++n)
             {
-                if (_sieve[n]) // Then n hasn't been sieved yet, so it's prime; sieve its multiples.
+                // If true then n hasn't been sieved yet, so it's prime; sieve its multiples.
+                if (_sieve[n])
                 {
-                    int nextPotentiallyUnsievedMultiple = n * n; // Multiples of n less than this were already sieved from lower primes.
+                    // Multiples of n less than n * n were already sieved from lower primes.
+                    int nextPotentiallyUnsievedMultiple = n * n;
                     while (nextPotentiallyUnsievedMultiple <= Limit)
                     {
                         _sieve[nextPotentiallyUnsievedMultiple] = false;
-                        nextPotentiallyUnsievedMultiple += n; // Room for optimization here; could do += 2n except in the case where n is 2.
+                        // Room for optimization here; could do += 2n except in the case where n is 2.
+                        nextPotentiallyUnsievedMultiple += n; 
                     }
                 }
             }

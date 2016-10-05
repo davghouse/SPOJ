@@ -1,29 +1,47 @@
 ﻿Up to ten million, one full-width pass:
-  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.15157 seconds)
-  Sieve of Eratosthenes factorizer: x14.80999 (0 minutes 2.24477 seconds)
-  Trial division decider:           x18.85014 (0 minutes 2.85715 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x1.00000 (0 minutes 0.14892 seconds)
+  Factoring w/ Sieve of Eratosthenes: x14.65756 (0 minutes 2.18291 seconds)
+  Deciding w/ trial division:         x18.77216 (0 minutes 2.79569 seconds)
+  Factoring w/ trial division:        x65.66119 (0 minutes 9.77876 seconds)
 
 Up to ten million, ten full-width passes:
-  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.49191 seconds)
-  Sieve of Eratosthenes factorizer: x42.70776 (0 minutes 21.00846 seconds)
-  Trial division decider:           x57.73147 (0 minutes 28.39880 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x1.00000 (0 minutes 0.48708 seconds)
+  Factoring w/ Sieve of Eratosthenes: x43.02890 (0 minutes 20.95871 seconds)
+  Deciding w/ trial division:         x56.77246 (0 minutes 27.65299 seconds)
+  Factoring w/ trial division:        x200.55433 (1 minutes 37.68692 seconds)
 
 Up to ten million, one 1-million-width pass:
-  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.11617 seconds)
-  Trial division decider:           x2.62441 (0 minutes 0.30489 seconds)
-  Sieve of Eratosthenes factorizer: x3.04230 (0 minutes 0.35344 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x1.00000 (0 minutes 0.11154 seconds)
+  Deciding w/ trial division:         x2.67937 (0 minutes 0.29887 seconds)
+  Factoring w/ Sieve of Eratosthenes: x3.59197 (0 minutes 0.40066 seconds)
+  Factoring w/ trial division:        x9.31440 (0 minutes 1.03897 seconds)
 
 Up to ten million, ten 1-million-width passes:
-  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.15086 seconds)
-  Sieve of Eratosthenes factorizer: x14.98410 (0 minutes 2.26056 seconds)
-  Trial division decider:           x20.30821 (0 minutes 3.06378 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x1.00000 (0 minutes 0.14596 seconds)
+  Factoring w/ Sieve of Eratosthenes: x15.58923 (0 minutes 2.27544 seconds)
+  Deciding w/ trial division:         x20.37930 (0 minutes 2.97460 seconds)
+  Factoring w/ trial division:        x71.67130 (0 minutes 10.46130 seconds)
 
 Up to ten million, one 100k-width pass:
-  Trial division decider:           x1.00000 (0 minutes 0.02983 seconds)
-  Sieve of Eratosthenes decider:    x3.78174 (0 minutes 0.11284 seconds)
-  Sieve of Eratosthenes factorizer: x6.12068 (0 minutes 0.18263 seconds)
+  Deciding w/ trial division:         x1.00000 (0 minutes 0.02892 seconds)
+  Factoring w/ trial division:        x3.51116 (0 minutes 0.10155 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x3.75042 (0 minutes 0.10847 seconds)
+  Factoring w/ Sieve of Eratosthenes: x7.69054 (0 minutes 0.22244 seconds)
 
-Up to ten million, ten 100k-million-width passes:
-  Sieve of Eratosthenes decider:    x1.00000 (0 minutes 0.11727 seconds)
-  Trial division decider:           x2.55097 (0 minutes 0.29917 seconds)
-  Sieve of Eratosthenes factorizer: x3.04667 (0 minutes 0.35731 seconds)
+Up to ten million, ten 100k-width passes:
+  Deciding w/ Sieve of Eratosthenes:  x1.00000 (0 minutes 0.11226 seconds)
+  Deciding w/ trial division:         x2.57707 (0 minutes 0.28930 seconds)
+  Factoring w/ Sieve of Eratosthenes: x3.58622 (0 minutes 0.40259 seconds)
+  Factoring w/ trial division:        x9.09652 (0 minutes 1.02118 seconds)
+
+Up to ten million, one 1000-width passes:
+  Deciding w/ trial division:         x1.00000 (0 minutes 0.00042 seconds)
+  Factoring w/ trial division:        x2.59967 (0 minutes 0.00109 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x255.99099 (0 minutes 0.10800 seconds)
+  Factoring w/ Sieve of Eratosthenes: x428.70941 (0 minutes 0.18087 seconds)
+
+Up to ten million, ten 1000-width passes:
+  Deciding w/ trial division:         x1.00000 (0 minutes 0.00296 seconds)
+  Factoring w/ trial division:        x3.61717 (0 minutes 0.01071 seconds)
+  Deciding w/ Sieve of Eratosthenes:  x42.18858 (0 minutes 0.12501 seconds)
+  Factoring w/ Sieve of Eratosthenes: x62.99004 (0 minutes 0.18665 seconds)

@@ -53,10 +53,12 @@
     <Compile Include="Primes\IPrimeDecider.cs" />
     <Compile Include="Primes\IPrimeFactorizer.cs" />
     <Compile Include="Primes\IPrimeProvider.cs" />
+    <Compile Include="Primes\NaivePrimeDeciderProviderFactorizer.cs" />
     <Compile Include="Primes\SieveOfEratosthenesDecider.cs" />
     <Compile Include="Primes\SieveOfEratosthenesFactorizer.cs" />
     <Compile Include="Primes\SieveOfEratosthenesProvider.cs" />
     <Compile Include="Primes\TrialDivisionDecider.cs" />
+    <Compile Include="Primes\TrialDivisionFactorizer.cs" />
     <Compile Include="SegmentTrees\AdHoc\LazySumSegmentTree.cs" />
     <Compile Include="SegmentTrees\ArrayBasedSegmentTree.cs" />
     <Compile Include="SegmentTrees\SegmentTreeQueryObject.cs" />

@@ -10,7 +10,7 @@ namespace Spoj.Library.Primes
         {
             Limit = limit;
 
-            _sieveProvider = new SieveOfEratosthenesProvider((int)Math.Sqrt(Limit));
+            _sieveProvider = new SieveOfEratosthenesProvider(Convert.ToInt32(Math.Sqrt(Limit)));
         }
 
         public int Limit { get; }
@@ -22,7 +22,9 @@ namespace Spoj.Library.Primes
 
             foreach (int prime in _sieveProvider.Primes)
             {
-                if (prime > Math.Sqrt(n))
+                // Check for factors up to sqrt(n), as non-primes with such a factor must've had
+                // a factor seen earlier < sqrt(n) (otherwise multiplied together they'd be > n).
+                if (prime * prime > n)
                     break;
 
                 if (n % prime == 0)

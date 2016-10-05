@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Spoj.Library.Helpers;
 using Spoj.Library.Primes;
 using System;
 using System.Linq;
@@ -30,30 +29,68 @@ namespace Spoj.Library.UnitTests.Primes
         };
 
         [TestMethod]
-        public void VerifiesPrimeFactors()
+        public void VerifiesPrimeFactorsAgainstKnownOutput()
         {
-            var factorizer = new SieveOfEratosthenesFactorizer(1000);
+            var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
+            var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
 
             foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
             {
                 int number = numberPrimeFactorsPair.Item1;
                 int[] primeFactors = numberPrimeFactorsPair.Item2;
 
-                CollectionAssert.AreEquivalent(primeFactors, factorizer.GetPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(primeFactors, sieveFactorizer.GetPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(primeFactors, trialDivisionFactorizer.GetPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(primeFactors, NaivePrimeDeciderProviderFactorizer.GetPrimeFactors(number).ToArray());
             }
         }
 
         [TestMethod]
-        public void VerifiesDistinctPrimeFactors()
+        public void VerifiesDistinctPrimeFactorsAgainstKnownOutput()
         {
-            var factorizer = new SieveOfEratosthenesFactorizer(1000);
+            var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
+            var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
 
             foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
             {
                 int number = numberPrimeFactorsPair.Item1;
                 int[] distinctPrimeFactors = numberPrimeFactorsPair.Item2.Distinct().ToArray();
 
-                CollectionAssert.AreEquivalent(distinctPrimeFactors, factorizer.GetDistinctPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(distinctPrimeFactors, sieveFactorizer.GetDistinctPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(distinctPrimeFactors, trialDivisionFactorizer.GetDistinctPrimeFactors(number).ToArray());
+                CollectionAssert.AreEquivalent(distinctPrimeFactors, NaivePrimeDeciderProviderFactorizer.GetDistinctPrimeFactors(number).ToArray());
+            }
+        }
+
+        [TestMethod]
+        public void VerifiesPrimeFactorsAgainstNaiveFactorizer()
+        {
+            var sieveFactorizer = new SieveOfEratosthenesFactorizer(3481);
+            var trialDivisionFactorizer = new TrialDivisionFactorizer(3481);
+            for (int n = 0; n <= 3481; ++n)
+            {
+                CollectionAssert.AreEquivalent(
+                    NaivePrimeDeciderProviderFactorizer.GetPrimeFactors(n).ToArray(),
+                    sieveFactorizer.GetPrimeFactors(n).ToArray());
+                CollectionAssert.AreEquivalent(
+                    NaivePrimeDeciderProviderFactorizer.GetPrimeFactors(n).ToArray(),
+                    trialDivisionFactorizer.GetPrimeFactors(n).ToArray());
+            }
+        }
+
+        [TestMethod]
+        public void VerifiesDistinctPrimeFactorsAgainstNaiveFactorizer()
+        {
+            var sieveFactorizer = new SieveOfEratosthenesFactorizer(3481);
+            var trialDivisionFactorizer = new TrialDivisionFactorizer(3481);
+            for (int n = 0; n <= 3481; ++n)
+            {
+                CollectionAssert.AreEquivalent(
+                    NaivePrimeDeciderProviderFactorizer.GetDistinctPrimeFactors(n).ToArray(),
+                    sieveFactorizer.GetDistinctPrimeFactors(n).ToArray());
+                CollectionAssert.AreEquivalent(
+                    NaivePrimeDeciderProviderFactorizer.GetDistinctPrimeFactors(n).ToArray(),
+                    trialDivisionFactorizer.GetDistinctPrimeFactors(n).ToArray());
             }
         }
     }

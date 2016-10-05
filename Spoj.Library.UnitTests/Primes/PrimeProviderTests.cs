@@ -8,16 +8,28 @@ namespace Spoj.Library.UnitTests.Primes
     public class PrimeProviderTests
     {
         private static int[] primesUpTo2 = new[] { 2 };
-        private static int[] primesUpTo40 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
+        private static int[] primesUpTo49 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
         [TestMethod]
-        public void VerifiesSieveOfEratosthenesProvider()
+        public void VerifiesProvidersAgainstKnownOutput()
         {
-            var provider = new SieveOfEratosthenesProvider(2);
-            Assert.IsTrue(primesUpTo2.SequenceEqual(provider.Primes));
+            var sieveProvider = new SieveOfEratosthenesProvider(2);
+            Assert.IsTrue(primesUpTo2.SequenceEqual(sieveProvider.Primes));
+            Assert.IsTrue(primesUpTo2.SequenceEqual(NaivePrimeDeciderProviderFactorizer.GetPrimes(2)));
 
-            provider = new SieveOfEratosthenesProvider(40);
-            Assert.IsTrue(primesUpTo40.SequenceEqual(provider.Primes));
+            sieveProvider = new SieveOfEratosthenesProvider(49);
+            Assert.IsTrue(primesUpTo49.SequenceEqual(sieveProvider.Primes));
+            Assert.IsTrue(primesUpTo49.SequenceEqual(NaivePrimeDeciderProviderFactorizer.GetPrimes(49)));
+        }
+
+        [TestMethod]
+        public void VerifiesProvidersAgainstNaiveProvider()
+        {
+            for (int n = 1000; n <= 10000; n += 1000)
+            {
+                var sieveProvider = new SieveOfEratosthenesProvider(n);
+                Assert.IsTrue(NaivePrimeDeciderProviderFactorizer.GetPrimes(n).SequenceEqual(sieveProvider.Primes));
+            }
         }
     }
 }
