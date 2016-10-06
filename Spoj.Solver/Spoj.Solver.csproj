@@ -279,6 +279,7 @@
   <ItemGroup>
     <None Include="Solutions\6_Emperor\TWOSQRS.cs" />
     <None Include="Solutions\7_Immortal\HORRIBLE_v1.cs" />
+    <None Include="Solutions\5_King\ANARC05B.cs" />
     <None Include="InputVerifier.cs" />
     <None Include="Solutions\4_Prince\DOTAA.cs" />
   </ItemGroup>
