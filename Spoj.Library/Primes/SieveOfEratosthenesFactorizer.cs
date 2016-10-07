@@ -5,13 +5,13 @@ namespace Spoj.Library.Primes
 {
     public sealed class SieveOfEratosthenesFactorizer : IPrimeDecider, IPrimeProvider, IPrimeFactorizer
     {
-        // The only thing different about this sieve is that rather than storing true for prime
-        // and false for not prime, it stores null for prime and some prime factor (doesn't matter which)
-        // that divides the number for not prime. Knowing some prime factor that divides n, we can divide
-        // by that factor, and then divide the result by its factor, and so on, until we reach one.
+        // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
+        // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
+        // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
+        // can divide by that factor, and then divide the result by its own factor, and so on, until we reach one.
         private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
-        // This bool seems kind of bad but for now, whatever. Providing from here is convenient but may not be needed.
+        // TODO: A bool controlling proper inteface implementation seems bad, but providing isn't always needed...
         public SieveOfEratosthenesFactorizer(int limit, bool needsToProvide = false)
         {
             Limit = limit;
@@ -22,35 +22,35 @@ namespace Spoj.Library.Primes
 
             // Check for n up to sqrt(Limit), as any non-primes <= Limit with a factor > sqrt(Limit)
             // must also have a factor < sqrt(Limit) (otherwise they'd be > Limit), and so already sieved.
-            for (int n = 2; n*n <= Limit; ++n)
+            for (int n = 2; n * n <= Limit; ++n)
             {
-                // If true then n hasn't been sieved yet, so it's prime; sieve its multiples.
+                // If we haven't sieved it yet then it's a prime, so sieve its multiples.
                 if (!sieveWithSomePrimeFactor[n].HasValue)
                 {
                     // Multiples of n less than n * n were already sieved from lower primes.
-                    int nextPotentiallyUnsievedMultiple = n * n;
-                    while (nextPotentiallyUnsievedMultiple <= Limit)
+                    for (int nextPotentiallyUnsievedMultiple = n * n;
+                        nextPotentiallyUnsievedMultiple <= Limit;
+                        nextPotentiallyUnsievedMultiple += n)
                     {
                         sieveWithSomePrimeFactor[nextPotentiallyUnsievedMultiple] = n;
-                        // Room for optimization here; could do += 2n except in the case where n is 2.
-                        nextPotentiallyUnsievedMultiple += n;
                     }
                 }
             }
-
             _sieveWithSomePrimeFactor = Array.AsReadOnly(sieveWithSomePrimeFactor);
 
             if (needsToProvide)
             {
-                var primes = new List<int>();
-                for (int n = 2; n <= Limit; ++n)
+                var primes = 2 <= Limit
+                    ? new List<int> { 2 }
+                    : new List<int>();
+
+                for (int n = 3; n <= Limit; n += 2)
                 {
                     if (IsPrime(n))
                     {
                         primes.Add(n);
                     }
                 }
-
                 Primes = primes.AsReadOnly();
             }
         }

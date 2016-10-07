@@ -12,15 +12,17 @@ namespace Spoj.Library.Primes
 
             _decider = new SieveOfEratosthenesDecider(Limit);
 
-            var primes = new List<int>();
-            for (int n = 2; n <= Limit; ++n)
+            var primes = 2 <= Limit
+                ? new List<int> { 2 }
+                : new List<int>();
+
+            for (int n = 3; n <= Limit; n += 2)
             {
                 if (IsPrime(n))
                 {
                     primes.Add(n);
                 }
             }
-
             Primes = primes.AsReadOnly();
         }
 

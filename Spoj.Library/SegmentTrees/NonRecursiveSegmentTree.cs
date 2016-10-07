@@ -5,7 +5,7 @@ namespace Spoj.Library.SegmentTrees
 {
     // This implementation is taken from http://codeforces.com/blog/entry/18051, with slight adjustments
     // to support querying over a closed-interval and using nulls to avoid necessitating sentinel values.
-    // Bitwise operators provide a small performance benefit, but the non-bitwise versions are commented nearby.
+    // Bitwise operators provide a small performance benefit, but just here to get practice using them.
     public sealed class NonRecursiveSegmentTree<TQueryObject, TQueryValue> : SegmentTree<TQueryObject, TQueryValue>
         where TQueryObject : SegmentTreeQueryObject<TQueryObject, TQueryValue>, new()
     {
