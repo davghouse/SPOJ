@@ -18,7 +18,7 @@ namespace Spoj.Library.Primes
 
             for (int n = 3; n <= Limit; n += 2)
             {
-                if (IsPrime(n))
+                if (IsOddPrime(n))
                 {
                     primes.Add(n);
                 }
@@ -30,6 +30,9 @@ namespace Spoj.Library.Primes
 
         public bool IsPrime(int n)
             => _decider.IsPrime(n);
+
+        public bool IsOddPrime(int n)
+            => _decider.IsOddPrime(n);
 
         public IReadOnlyList<int> Primes { get; }
     }

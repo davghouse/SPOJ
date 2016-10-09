@@ -106,8 +106,8 @@ namespace Spoj.Library
         // Don't need the count property from a hash set, so using two parallel bit arrays, one for discovery, one for 2-coloring.
         public bool IsBipartite()
         {
-            var discoveredVertexIDs = new BitArray(VertexCount);
-            var discoveredVertexColors = new BitArray(VertexCount);
+            var discoveredVertexIDs = new bool[VertexCount];
+            var discoveredVertexColors = new bool[VertexCount];
             var verticesToVisit = new Stack<Vertex>();
 
             for (int i = 0; i < _vertices.Length; ++i)

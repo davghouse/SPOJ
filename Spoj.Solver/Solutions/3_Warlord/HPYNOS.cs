@@ -10,7 +10,7 @@ public static class HPYNOS
     // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bit array to keep track of already seen.
     public static int Solve(int n)
     {
-        BitArray numbersAlreadySeen = new BitArray(731);
+        bool[] numbersAlreadySeen = new bool[731];
         int breakCount = 0;
 
         while (n != 1)

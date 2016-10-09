@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 // 3377 http://www.spoj.com/problems/BUGLIFE/ A Bug's Life
 // Determines if a set of bugs can be divided into two non-interacting groups.
@@ -125,8 +126,8 @@ public class SimpleGraph
     // Don't need the count property from a hash set, so using two parallel bit arrays, one for discovery, one for 2-coloring.
     public bool IsBipartite()
     {
-        var discoveredVertexIDs = new BitArray(VertexCount);
-        var discoveredVertexColors = new BitArray(VertexCount);
+        var discoveredVertexIDs = new bool[VertexCount];
+        var discoveredVertexColors = new bool[VertexCount];
         var verticesToVisit = new Stack<Vertex>();
 
         for (int i = 0; i < _vertices.Length; ++i)
@@ -207,7 +208,7 @@ public class SimpleGraph
     public class Vertex
     {
         private readonly SimpleGraph _graph;
-        private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
+        private readonly List<Vertex> _neighbors = new List<Vertex>();
 
         internal Vertex(SimpleGraph graph, int ID)
         {
@@ -242,6 +243,7 @@ public static class Program
     private static void Main()
     {
         int totalTestCases = int.Parse(Console.ReadLine());
+        var output = new StringBuilder();
 
         for (int t = 1; t <= totalTestCases; ++t)
         {
@@ -258,9 +260,11 @@ public static class Program
                 interactions[i, 1] = line[1];
             }
 
-            Console.WriteLine($"Scenario #{t}:");
-            Console.WriteLine(
+            output.AppendLine($"Scenario #{t}:");
+            output.AppendLine(
                 BUGLIFE.Solve(bugCount, interactions));
         }
+
+        Console.Write(output);
     }
 }
