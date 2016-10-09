@@ -277,6 +277,7 @@
     <None Include="Solutions\2_Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\5_King\MAJOR_v1.cs" />
     <None Include="Solutions\5_King\TDPRIMES.cs" />
     <None Include="Solutions\6_Emperor\TWOSQRS.cs" />
     <None Include="Solutions\7_Immortal\HORRIBLE_v1.cs" />
@@ -296,6 +297,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\6_Emperor\ABCDEF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5_King\MAJOR_v2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
