@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -103,11 +102,11 @@ namespace Spoj.Library
         }
 
         // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
-        // Don't need the count property from a hash set, so using two parallel bit arrays, one for discovery, one for 2-coloring.
+        // Don't need the count property from a hash set, so using two parallel bool arrays, one for discovery, one for 2-coloring.
         public bool IsBipartite()
         {
-            var discoveredVertexIDs = new bool[VertexCount];
-            var discoveredVertexColors = new bool[VertexCount];
+            bool[] discoveredVertexIDs = new bool[VertexCount];
+            bool[] discoveredVertexColors = new bool[VertexCount];
             var verticesToVisit = new Stack<Vertex>();
 
             for (int i = 0; i < _vertices.Length; ++i)
@@ -150,8 +149,9 @@ namespace Spoj.Library
         // to the start is the longest, and returns that vertex and its distance (path length) from the start.
         public Tuple<Vertex, int> FindFurthestVertex(Vertex startVertex)
         {
-            var discoveredVertexIDs = new HashSet<int> { startVertex.ID };
+            bool[] discoveredVertexIDs = new bool[VertexCount];
             var verticesToVisit = new Queue<Vertex>();
+            discoveredVertexIDs[startVertex.ID] = true;
             verticesToVisit.Enqueue(startVertex);
 
             Vertex furthestVertex = null;
@@ -173,9 +173,9 @@ namespace Spoj.Library
 
                     foreach (var neighbor in vertex.Neighbors)
                     {
-                        bool neighborWasDiscoveredForTheFirstTime = discoveredVertexIDs.Add(neighbor.ID);
-                        if (neighborWasDiscoveredForTheFirstTime)
+                        if (!discoveredVertexIDs[neighbor.ID]) 
                         {
+                            discoveredVertexIDs[neighbor.ID] = true;
                             verticesToVisit.Enqueue(neighbor);
                         }
                     }
@@ -183,6 +183,50 @@ namespace Spoj.Library
             }
 
             return Tuple.Create(furthestVertex, furthestDistance);
+        }
+
+        public int GetShortestPathLength(int startVertexID, int endVertexID)
+            => GetShortestPathLength(_vertices[startVertexID], _vertices[endVertexID]);
+
+        public int GetShortestPathLength(Vertex startVertex, Vertex endVertex)
+        {
+            if (startVertex == endVertex) return 0;
+
+            bool[] discoveredVertexIDs = new bool[VertexCount];
+            var verticesToVisit = new Queue<Vertex>();
+            discoveredVertexIDs[startVertex.ID] = true;
+            verticesToVisit.Enqueue(startVertex);
+
+            int distance = 1;
+
+            // We visit vertices in waves, where all vertices in the same wave are the same distance
+            // from the start vertex, which BFS makes convenient. This allows us to avoid storing
+            // distances to the start vertex at the level of individual vertices. To save work we
+            // don't check the wave vertices for endVertex equality, but rather their neighbors.
+            // So that's why the distance start off as one rather than zero.
+            while (verticesToVisit.Count > 0)
+            {
+                int waveSize = verticesToVisit.Count;
+                for (int i = 0; i < waveSize; ++i)
+                {
+                    var vertex = verticesToVisit.Dequeue();
+
+                    foreach (var neighbor in vertex.Neighbors)
+                    {
+                        if (!discoveredVertexIDs[neighbor.ID]) 
+                        {
+                            if (neighbor == endVertex)
+                                return distance;
+
+                            discoveredVertexIDs[neighbor.ID] = true;
+                            verticesToVisit.Enqueue(neighbor);
+                        }
+                    }
+                }
+                ++distance;
+            }
+
+            return -1;
         }
 
         public sealed class Vertex

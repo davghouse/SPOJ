@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Spoj.Library.UnitTests
 {
@@ -387,6 +388,88 @@ namespace Spoj.Library.UnitTests
                 { 20, 21 }, {10, 16 }
             });
             Assert.IsFalse(graph.IsBipartite());
+        }
+
+        [TestMethod]
+        public void VerifiesShortestPathLengthForSmallGraphs()
+        {
+            // This graph has a single vertex.
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
+            Assert.AreEqual(0, graph.GetShortestPathLength(0, 0));
+
+            // This graph has two vertices.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(2, new int[,] { });
+            Assert.AreEqual(0, graph.GetShortestPathLength(0, 0));
+            Assert.AreEqual(0, graph.GetShortestPathLength(1, 1));
+            Assert.AreEqual(-1, graph.GetShortestPathLength(1, 0));
+
+            // This graph has two vertices connected by an edge.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(2, new[,]
+            {
+                {0, 1}
+            });
+            Assert.AreEqual(0, graph.GetShortestPathLength(1, 1));
+            Assert.AreEqual(1, graph.GetShortestPathLength(0, 1));
+
+            // This graph has 6 vertices, with pairs connected.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {2, 3}, {4, 5}
+            });
+            Assert.AreEqual(1, graph.GetShortestPathLength(0, 1));
+            Assert.AreEqual(1, graph.GetShortestPathLength(2, 3));
+            Assert.AreEqual(1, graph.GetShortestPathLength(4, 5));
+            Assert.AreEqual(-1, graph.GetShortestPathLength(3, 5));
+
+            // This graph has 6 vertices, connected in a line.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+            });
+            for (int i = 0; i <= 5; ++i)
+            {
+                for (int j = 0; j <= 5; ++j)
+                {
+                    Assert.AreEqual(Math.Abs(i - j), graph.GetShortestPathLength(i, j));
+                }
+            }
+
+            // This graph has 6 vertices, connected in a circle.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}
+            });
+            Assert.AreEqual(1, graph.GetShortestPathLength(3, 2));
+            Assert.AreEqual(1, graph.GetShortestPathLength(5, 0));
+            Assert.AreEqual(2, graph.GetShortestPathLength(5, 1));
+            Assert.AreEqual(2, graph.GetShortestPathLength(2, 4));
+
+            // This graph has 9 vertices, 6 connected in a line, 3 in a triangle.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 6}
+            });
+            for (int i = 0; i <= 5; ++i)
+            {
+                for (int j = 0; j <= 5; ++j)
+                {
+                    Assert.AreEqual(Math.Abs(i - j), graph.GetShortestPathLength(i, j));
+                }
+            }
+            Assert.AreEqual(-1, graph.GetShortestPathLength(2, 6));
+            Assert.AreEqual(1, graph.GetShortestPathLength(6, 7));
+            Assert.AreEqual(1, graph.GetShortestPathLength(6, 8));
+            Assert.AreEqual(1, graph.GetShortestPathLength(7, 8));
+
+            // This graph has 12 vertices, 6 connected in a line, 4 in a square, 2 in a line.
+            graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
+            {
+                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 9}, {9, 6}, {10, 11}
+            });
+            Assert.AreEqual(1, graph.GetShortestPathLength(10, 11));
+            Assert.AreEqual(2, graph.GetShortestPathLength(6, 8));
+            Assert.AreEqual(-1, graph.GetShortestPathLength(6, 3));
+            Assert.AreEqual(3, graph.GetShortestPathLength(4, 1));
         }
     }
 }

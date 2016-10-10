@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Too many problems have improperly formatted input... random whitespace,
 // missing newlines... things that C# doesn't deal well with by default.
 // It's good to verify the input format on an alt account so you don't get frustrated.
-// Currently verifying for: http://www.spoj.com/problems/MAJOR/
+// Currently verifying for: http://www.spoj.com/problems/PPATH/
 public static class InputVerifier
 {
     private static void Main()
@@ -15,14 +15,15 @@ public static class InputVerifier
 
         while (remainingTestCases-- > 0)
         {
-            int transmissionCount = int.Parse(Console.ReadLine());
-            string[] transmissions = Console.ReadLine().Split();
+            int[] primes = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-            if (transmissionCount != transmissions.Length)
+            if (primes[0] < 1000 || primes[0] > 9999)
                 throw new FormatException();
 
-            if (transmissionCount < 1 || transmissionCount > 1000000)
+            if (primes[1] < 1000 || primes[1] > 9999)
                 throw new FormatException();
+
+            // I'll trust they're primes.
         }
     }
 }
