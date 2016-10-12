@@ -277,6 +277,7 @@
     <None Include="Solutions\2_Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\4_Prince\ENIGMATH.cs" />
     <None Include="Solutions\6_Emperor\FIBOSUM.cs" />
     <None Include="Solutions\5_King\MAJOR_v1.cs" />
     <None Include="Solutions\5_King\TDPRIMES.cs" />
