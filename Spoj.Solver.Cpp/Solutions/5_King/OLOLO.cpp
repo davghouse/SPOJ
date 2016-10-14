@@ -4,16 +4,16 @@
 // See OLOLO.cs--this solution was submitted using C++ because C# I/O is too slow.
 int main()
 {
-  long remainingPyanis, pyaniNumber, result = 0;
-  scanf("%ld", &remainingPyanis);
+  int remainingPyanis, pyaniNumber, result = 0;
+  scanf("%d", &remainingPyanis);
 
   while (remainingPyanis-- > 0)
   {
-    scanf("%ld", &pyaniNumber);
+    scanf("%d", &pyaniNumber);
     result ^= pyaniNumber;
   }
 
-  printf("%ld", result);
+  printf("%d", result);
 
   return 0;
 }

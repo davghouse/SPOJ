@@ -43,7 +43,7 @@ public interface IPrimeProvider
     IReadOnlyList<int> Primes { get; }
 }
 
-public sealed class SieveOfEratosthenesDecider : IPrimeDecider
+public class SieveOfEratosthenesDecider : IPrimeDecider
 {
     private readonly IReadOnlyList<bool> _sieve;
 

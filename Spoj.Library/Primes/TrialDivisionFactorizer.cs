@@ -11,7 +11,8 @@ namespace Spoj.Library.Primes
         {
             Limit = limit;
 
-            _sieveFactorizer = new SieveOfEratosthenesFactorizer(Convert.ToInt32(Math.Sqrt(Limit)), needsToProvide: true);
+            _sieveFactorizer = new SieveOfEratosthenesFactorizer(
+                Convert.ToInt32(Math.Sqrt(Limit)), needsToProvide: true);
         }
 
         public int Limit { get; }
@@ -46,7 +47,7 @@ namespace Spoj.Library.Primes
                         yield break;
                 }
 
-                // The loop above was broken out of, so the original n, or what remains of it, is prime.
+                // The loop above was broken out of (before n == 1), so the original n, or what remains of it, is prime.
                 yield return n;
             }
         }

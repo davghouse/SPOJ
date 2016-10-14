@@ -33,12 +33,19 @@
     <ClCompile Include="Solutions\4_Prince\SAMER08F.cpp">
       <Filter>Solutions\4_Prince</Filter>
     </ClCompile>
-    <ClCompile Include="Solutions\TEMPLATE.cpp">
-      <Filter>Solutions</Filter>
-    </ClCompile>
-    <ClCompile Include="Solutions\4_Prince\OLOLO.cpp">
+    <ClCompile Include="Solutions\5_King\OLOLO.cpp">
       <Filter>Solutions\5_King</Filter>
     </ClCompile>
+    <ClCompile Include="Solutions\6_Emperor\COMDIV.cpp">
+      <Filter>Solutions\6_Emperor</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\TEMPLATE1.cpp">
+      <Filter>Solutions</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\TEMPLATE2.cpp">
+      <Filter>Solutions</Filter>
+    </ClCompile>
+    <ClCompile Include="InputVerifier.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

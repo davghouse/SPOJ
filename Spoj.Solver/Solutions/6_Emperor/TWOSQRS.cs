@@ -68,7 +68,7 @@ public class TrialDivisionFactorizer
                     yield break;
             }
 
-            // The loop above was broken out of, so the original n, or what remains of it, is prime.
+            // The loop above was broken out of (before n == 1), so the original n, or what remains of it, is prime.
             yield return n;
         }
     }
