@@ -59,29 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\NHAY.cs" />
-    <None Include="Solutions\7_Immortal\GSS3.cs" />
-    <None Include="Solutions\7_Immortal\HORRIBLE_v2.cs" />
-    <None Include="Solutions\6_Emperor\BUGLIFE.cs" />
+    <None Include="Solutions\6 - Emperor\NHAY.cs" />
+    <None Include="Solutions\7 - Immortal\GSS3.cs" />
+    <None Include="Solutions\7 - Immortal\HORRIBLE_v2.cs" />
+    <None Include="Solutions\6 - Emperor\BUGLIFE.cs" />
     <None Include="Solutions\TEMPLATE.cs" />
-    <None Include="Solutions\1_Settler\TEST.cs" />
-    <None Include="Solutions\2_Chieftain\ADDREV.cs" />
-    <None Include="Solutions\2_Chieftain\NSTEPS.cs" />
-    <None Include="Solutions\3_Warlord\ACPC10A.cs" />
-    <None Include="Solutions\3_Warlord\CANDY.cs" />
-    <None Include="Solutions\3_Warlord\FASHION.cs" />
-    <None Include="Solutions\3_Warlord\ONP.cs" />
-    <None Include="Solutions\3_Warlord\TOANDFRO.cs" />
-    <None Include="Solutions\4_Prince\AE00.cs" />
-    <None Include="Solutions\5_King\FCTRL.cs" />
-    <None Include="Solutions\4_Prince\FCTRL2.cs" />
-    <None Include="Solutions\4_Prince\LASTDIG.cs" />
-    <None Include="Solutions\5_King\PRIME1.cs" />
-    <None Include="Solutions\4_Prince\SAMER08F.cs" />
+    <None Include="Solutions\1 - Settler\TEST.cs" />
+    <None Include="Solutions\2 - Chieftain\ADDREV.cs" />
+    <None Include="Solutions\2 - Chieftain\NSTEPS.cs" />
+    <None Include="Solutions\3 - Warlord\ACPC10A.cs" />
+    <None Include="Solutions\3 - Warlord\CANDY.cs" />
+    <None Include="Solutions\3 - Warlord\FASHION.cs" />
+    <None Include="Solutions\3 - Warlord\ONP.cs" />
+    <None Include="Solutions\3 - Warlord\TOANDFRO.cs" />
+    <None Include="Solutions\4 - Prince\AE00.cs" />
+    <None Include="Solutions\5 - King\FCTRL.cs" />
+    <None Include="Solutions\4 - Prince\FCTRL2.cs" />
+    <None Include="Solutions\4 - Prince\LASTDIG.cs" />
+    <None Include="Solutions\5 - King\PRIME1.cs" />
+    <None Include="Solutions\4 - Prince\SAMER08F.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Solutions\8_Deity\" />
+    <Folder Include="Solutions\8 - Deity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
@@ -93,121 +93,121 @@
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Solutions\2_Chieftain\GUESSING.txt" />
+    <Content Include="Solutions\2 - Chieftain\GUESSING.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\JULKA.cs" />
+    <None Include="Solutions\5 - King\JULKA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\COINS.cs" />
+    <None Include="Solutions\5 - King\COINS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\CANDY3.cs" />
+    <None Include="Solutions\4 - Prince\CANDY3.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\EIGHTS.cs" />
+    <None Include="Solutions\3 - Warlord\EIGHTS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\HANGOVER.cs" />
+    <None Include="Solutions\3 - Warlord\HANGOVER.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\PALIN.cs" />
+    <None Include="Solutions\5 - King\PALIN.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\ACODE_v1.cs" />
+    <None Include="Solutions\5 - King\ACODE_v1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\ACODE_v2.cs" />
+    <None Include="Solutions\5 - King\ACODE_v2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\ABSYS.cs" />
+    <None Include="Solutions\3 - Warlord\ABSYS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\WILLITST.cs" />
+    <None Include="Solutions\4 - Prince\WILLITST.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\CANTON.cs" />
+    <None Include="Solutions\4 - Prince\CANTON.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\STAMPS.cs" />
+    <None Include="Solutions\3 - Warlord\STAMPS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\PERMUT2.cs" />
+    <None Include="Solutions\3 - Warlord\PERMUT2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\2_Chieftain\ARMY.cs" />
+    <None Include="Solutions\2 - Chieftain\ARMY.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\TRICOUNT.cs" />
+    <None Include="Solutions\5 - King\TRICOUNT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\STPAR.cs" />
+    <None Include="Solutions\4 - Prince\STPAR.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\FENCE1.cs" />
+    <None Include="Solutions\3 - Warlord\FENCE1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\AP2.cs" />
+    <None Include="Solutions\4 - Prince\AP2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\PT07Y.cs" />
+    <None Include="Solutions\5 - King\PT07Y.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\GIRLSNBS.cs" />
+    <None Include="Solutions\3 - Warlord\GIRLSNBS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\INVCNT.cs" />
+    <None Include="Solutions\5 - King\INVCNT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\NGM.cs" />
+    <None Include="Solutions\4 - Prince\NGM.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\EDIST.cs" />
+    <None Include="Solutions\6 - Emperor\EDIST.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\CRDS.cs" />
+    <None Include="Solutions\3 - Warlord\CRDS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\BEENUMS.cs" />
+    <None Include="Solutions\4 - Prince\BEENUMS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\PT07Z.cs" />
+    <None Include="Solutions\6 - Emperor\PT07Z.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\AGGRCOW.cs" />
+    <None Include="Solutions\6 - Emperor\AGGRCOW.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\BYTESM2.cs" />
+    <None Include="Solutions\5 - King\BYTESM2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\BISHOPS.cs" />
+    <None Include="Solutions\3 - Warlord\BISHOPS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\OFFSIDE.cs" />
+    <None Include="Solutions\3 - Warlord\OFFSIDE.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\OLOLO.cs" />
+    <None Include="Solutions\5 - King\OLOLO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\MAXLN.cs" />
+    <None Include="Solutions\4 - Prince\MAXLN.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\HPYNOS.cs" />
+    <None Include="Solutions\3 - Warlord\HPYNOS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\NY10A.cs" />
+    <None Include="Solutions\3 - Warlord\NY10A.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\HUBULLU.cs" />
+    <None Include="Solutions\6 - Emperor\HUBULLU.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\LASTDIG2.cs" />
+    <None Include="Solutions\4 - Prince\LASTDIG2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\ARITH2.cs" />
+    <None Include="Solutions\4 - Prince\ARITH2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\EASYPROB.cs" />
+    <None Include="Solutions\4 - Prince\EASYPROB.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -222,91 +222,91 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\7_Immortal\GSS1.cs" />
+    <None Include="Solutions\7 - Immortal\GSS1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\PARTY.cs" />
+    <None Include="Solutions\5 - King\PARTY.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\BITMAP.cs" />
+    <None Include="Solutions\5 - King\BITMAP.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\ETF.cs" />
+    <None Include="Solutions\6 - Emperor\ETF.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\MARBLES.cs" />
+    <None Include="Solutions\5 - King\MARBLES.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\TRT_v1.cs" />
+    <None Include="Solutions\6 - Emperor\TRT_v1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\TRT_v2.cs" />
+    <None Include="Solutions\6 - Emperor\TRT_v2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\AMR10G.cs" />
+    <None Include="Solutions\4 - Prince\AMR10G.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\EGYPIZZA.cs" />
+    <None Include="Solutions\3 - Warlord\EGYPIZZA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\AIBOHP.cs" />
+    <None Include="Solutions\6 - Emperor\AIBOHP.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\FARIDA.cs" />
+    <None Include="Solutions\4 - Prince\FARIDA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\ANARC09A.cs" />
+    <None Include="Solutions\6 - Emperor\ANARC09A.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\PIGBANK_v1.cs" />
-    <None Include="Solutions\5_King\PIGBANK_v2.cs" />
+    <None Include="Solutions\5 - King\PIGBANK_v1.cs" />
+    <None Include="Solutions\5 - King\PIGBANK_v2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\MIXTURES.cs" />
+    <None Include="Solutions\6 - Emperor\MIXTURES.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3_Warlord\JAVAC.cs" />
+    <None Include="Solutions\3 - Warlord\JAVAC.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\SBANK.cs" />
+    <None Include="Solutions\6 - Emperor\SBANK.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\HOTELS.cs" />
+    <None Include="Solutions\5 - King\HOTELS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\2_Chieftain\QUADAREA.cs" />
+    <None Include="Solutions\2 - Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\COMDIV.cs" />
-    <None Include="Solutions\3_Warlord\PIR.cs" />
-    <None Include="Solutions\4_Prince\ENIGMATH.cs" />
-    <None Include="Solutions\6_Emperor\FIBOSUM.cs" />
-    <None Include="Solutions\5_King\MAJOR_v1.cs" />
-    <None Include="Solutions\5_King\TDPRIMES.cs" />
-    <None Include="Solutions\6_Emperor\TWOSQRS.cs" />
-    <None Include="Solutions\7_Immortal\HORRIBLE_v1.cs" />
-    <None Include="Solutions\5_King\ANARC05B.cs" />
-    <None Include="Solutions\5_King\ACPC11B.cs" />
+    <None Include="Solutions\6 - Emperor\COMDIV.cs" />
+    <None Include="Solutions\3 - Warlord\PIR.cs" />
+    <None Include="Solutions\4 - Prince\ENIGMATH.cs" />
+    <None Include="Solutions\6 - Emperor\FIBOSUM.cs" />
+    <None Include="Solutions\5 - King\MAJOR_v1.cs" />
+    <None Include="Solutions\5 - King\TDPRIMES.cs" />
+    <None Include="Solutions\6 - Emperor\TWOSQRS.cs" />
+    <None Include="Solutions\7 - Immortal\HORRIBLE_v1.cs" />
+    <None Include="Solutions\5 - King\ANARC05B.cs" />
+    <None Include="Solutions\5 - King\ACPC11B.cs" />
     <None Include="InputVerifier.cs" />
-    <None Include="Solutions\4_Prince\DOTAA.cs" />
+    <None Include="Solutions\4 - Prince\DOTAA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\GCD2.cs" />
+    <None Include="Solutions\4 - Prince\GCD2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4_Prince\FACEFRND.cs" />
+    <None Include="Solutions\4 - Prince\FACEFRND.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\ARRAYSUB.cs" />
+    <None Include="Solutions\6 - Emperor\ARRAYSUB.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\ABCDEF.cs" />
+    <None Include="Solutions\6 - Emperor\ABCDEF.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5_King\MAJOR_v2.cs" />
+    <None Include="Solutions\5 - King\MAJOR_v2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\6_Emperor\PPATH.cs" />
+    <None Include="Solutions\6 - Emperor\PPATH.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

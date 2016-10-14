@@ -4,41 +4,32 @@
     <Filter Include="Solutions">
       <UniqueIdentifier>{9c647c78-7543-4e29-831c-638adc393ba3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\1_Settler">
+    <Filter Include="Solutions\1 - Settler">
       <UniqueIdentifier>{1a2483d1-0466-403f-b78c-323b56c5462b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\2_Chieftain">
+    <Filter Include="Solutions\2 - Chieftain">
       <UniqueIdentifier>{bd3dc30f-bede-485c-94e8-05e6c2422448}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\3_Warlord">
+    <Filter Include="Solutions\3 - Warlord">
       <UniqueIdentifier>{6dc64db0-6475-474f-933e-3fcc578d34df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\4_Prince">
+    <Filter Include="Solutions\4 - Prince">
       <UniqueIdentifier>{eb5490d9-9f6d-47ea-a569-cb35b2bb32b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\5_King">
+    <Filter Include="Solutions\5 - King">
       <UniqueIdentifier>{9b486302-641f-4be6-9698-dded23a8000c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\6_Emperor">
+    <Filter Include="Solutions\6 - Emperor">
       <UniqueIdentifier>{d8d06f2d-0a90-481d-b292-3d8eed94f0e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\7_Immortal">
+    <Filter Include="Solutions\7 - Immortal">
       <UniqueIdentifier>{369b8838-c150-4bbb-b557-23a070af89c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Solutions\8_Deity">
+    <Filter Include="Solutions\8 - Deity">
       <UniqueIdentifier>{15684bec-1473-436b-9c95-4306bc469f60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Solutions\4_Prince\SAMER08F.cpp">
-      <Filter>Solutions\4_Prince</Filter>
-    </ClCompile>
-    <ClCompile Include="Solutions\5_King\OLOLO.cpp">
-      <Filter>Solutions\5_King</Filter>
-    </ClCompile>
-    <ClCompile Include="Solutions\6_Emperor\COMDIV.cpp">
-      <Filter>Solutions\6_Emperor</Filter>
-    </ClCompile>
     <ClCompile Include="Solutions\TEMPLATE1.cpp">
       <Filter>Solutions</Filter>
     </ClCompile>
@@ -46,6 +37,15 @@
       <Filter>Solutions</Filter>
     </ClCompile>
     <ClCompile Include="InputVerifier.cpp" />
+    <ClCompile Include="Solutions\4 - Prince\SAMER08F.cpp">
+      <Filter>Solutions\4 - Prince</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\5 - King\OLOLO.cpp">
+      <Filter>Solutions\5 - King</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\6 - Emperor\COMDIV.cpp">
+      <Filter>Solutions\6 - Emperor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
