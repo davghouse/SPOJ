@@ -159,7 +159,7 @@
     <None Include="Solutions\5 - King\INVCNT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\NGM.cs" />
+    <None Include="Solutions\5 - King\NGM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\6 - Emperor\EDIST.cs" />
@@ -319,6 +319,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\AMR12D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\MCOINS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

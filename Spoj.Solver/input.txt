@@ -1,6 +1,2 @@
-5
-aba
-ab
-galadriel
-galadrieleirdalag
-galadrielairdalag
+2 3 1
+4 3
