@@ -1,28 +1,20 @@
 ﻿using System;
-using System.Linq;
 
 // Too many problems have improperly formatted input... random whitespace,
 // missing newlines... things that C# doesn't deal well with by default.
 // It's good to verify the input format on an alt account so you don't get frustrated.
-// Currently verifying for: http://www.spoj.com/problems/COMDIV/
-// Can't even read parse all the input without a TLE, so...
+// Currently verifying for: http://www.spoj.com/problems/GLJIVE/
 public static class InputVerifier
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
+        int[] points = new int[10];
 
-        if (remainingTestCases < 1 || remainingTestCases > 1000000)
-            throw new FormatException();
-
-        while (remainingTestCases-- > 0)
+        for (int i = 0; i < 10; ++i)
         {
-            int[] ab = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            points[i] = int.Parse(Console.ReadLine());
 
-            if (ab.Length != 2)
-                throw new FormatException();
-
-            if (ab.Any(n => n < 1 || n > 1000000))
+            if (points[i] < 0 || points[i] > 100)
                 throw new FormatException();
         }
     }
