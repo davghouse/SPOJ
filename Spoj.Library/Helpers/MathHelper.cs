@@ -19,6 +19,17 @@ namespace Spoj.Library.Helpers
             return result;
         }
 
+        public static int FirstPowerOfTwoEqualOrLess(int value)
+        {
+            int result = 2;
+            while (result <= value)
+            {
+                result <<= 1;
+            }
+
+            return result >> 1;
+        }
+
         // C(n, k)
         // = [n * (n - 1) * ... * (n - k + 1)] / [k * (k - 1) * ... * 1]
         // = (n / 1) * ((n - 1) / 2) * ... * ((n - k + 1) / k).

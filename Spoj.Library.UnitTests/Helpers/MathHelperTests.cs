@@ -25,15 +25,39 @@ namespace Spoj.Library.UnitTests.Helpers
         [TestMethod]
         public void VerifiesFirstPowerOfTwoEqualOrGreater()
         {
+            // Not exactly accurate. Really first integral power of two (non-negative exponent), but kind of implied.
             Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(-1));
             Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(0));
+
             Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(1));
             Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrGreater(2));
             Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrGreater(3));
             Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrGreater(4));
             Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrGreater(5));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrGreater(6));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrGreater(7));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrGreater(8));
+            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrGreater(9));
             Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrGreater(13));
             Assert.AreEqual(32, MathHelper.FirstPowerOfTwoEqualOrGreater(25));
+            Assert.AreEqual(32, MathHelper.FirstPowerOfTwoEqualOrGreater(32));
+        }
+
+        [TestMethod]
+        public void VerifiesFirstPowerOfTwoEqualOrLess()
+        {
+            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrLess(1));
+            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrLess(2));
+            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrLess(3));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(4));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(5));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(6));
+            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(7));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrLess(8));
+            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrLess(9));
+            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrLess(19));
+            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrLess(31));
+            Assert.AreEqual(32, MathHelper.FirstPowerOfTwoEqualOrLess(33));
         }
 
         [TestMethod]
