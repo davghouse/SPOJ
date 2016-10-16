@@ -6,7 +6,7 @@ using System.Linq;
 // Finds the longest path in a tree.
 public static class PT07Z
 {
-    // See image for details: http://i.imgur.com/hWnw1N9.jpg.
+    // See image for details: http://i.imgur.com/hWnw1N9.jpg
     public static int Solve(int nodeCount, int[,] edges)
     {
         if (nodeCount == 1)
