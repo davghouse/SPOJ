@@ -180,7 +180,7 @@
     <None Include="Solutions\5 - King\BYTESM2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\BISHOPS.cs" />
+    <None Include="Solutions\4 - Prince\BISHOPS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3 - Warlord\OFFSIDE.cs" />
@@ -325,6 +325,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\7 - Immortal\HISTOGRA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\ALICESIE.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
