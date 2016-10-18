@@ -75,6 +75,7 @@
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="StringMatchers\KmpStringMatcher.cs" />
     <Compile Include="StringMatchers\NaiveStringMatcher.cs" />
+    <Compile Include="Trie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

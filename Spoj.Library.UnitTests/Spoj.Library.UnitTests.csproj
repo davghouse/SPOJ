@@ -66,6 +66,7 @@
     <Compile Include="SimpleGraphTests.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="StringMatchers\StringMatcherTests.cs" />
+    <Compile Include="TrieTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
