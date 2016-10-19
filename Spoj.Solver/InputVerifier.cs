@@ -4,31 +4,30 @@ using System.Linq;
 // Too many problems have improperly formatted input... random whitespace,
 // missing newlines... things that C# doesn't deal well with by default.
 // It's good to verify the input format on an alt account so you don't get frustrated.
-// Currently verifying for: http://www.spoj.com/problems/PHONELST/
+// Currently verifying for: http://www.spoj.com/problems/MISERMAN/ (it's improperly formatted)
 public static class InputVerifier
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
+        string[] line = Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+        int cityCount = int.Parse(line[0]);
+        int busCount = int.Parse(line[1]);
 
-        if (remainingTestCases < 1 || remainingTestCases > 40)
+        if (cityCount < 1 || cityCount > 100)
             throw new FormatException();
 
-        while(remainingTestCases-- > 0)
+        if (busCount < 1 || busCount > 100)
+            throw new FormatException();
+
+        for (int c = 0; c < cityCount; ++c)
         {
-            int phoneNumberCount = int.Parse(Console.ReadLine());
+            line = Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
 
-            if (phoneNumberCount < 1 || phoneNumberCount > 10000)
-                throw new FormatException();
-
-            for (int p = 0; p < phoneNumberCount; ++p)
+            for (int b = 0; b < busCount; ++b)
             {
-                string phoneNumber = Console.ReadLine();
+                int busFare = int.Parse(line[b]);
 
-                if (phoneNumber.Any(d => d < '0' || d > '9'))
-                    throw new FormatException();
-
-                if (phoneNumber.Length < 1 || phoneNumber.Length > 10)
+                if (busFare < 1 || busFare > 100)
                     throw new FormatException();
             }
         }
