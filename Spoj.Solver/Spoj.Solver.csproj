@@ -277,6 +277,7 @@
     <None Include="Solutions\2 - Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\4 - Prince\CPRMT.cs" />
     <None Include="Solutions\5 - King\MISERMAN.cs" />
     <None Include="Solutions\6 - Emperor\PHONELST.cs" />
     <None Include="Solutions\6 - Emperor\COMDIV.cs" />
