@@ -130,7 +130,7 @@ public static class Program
         var output = new StringBuilder();
 
         string[] line;
-        while((line = Console.ReadLine().Split())[0] != "0")
+        while ((line = Console.ReadLine().Split())[0] != "0")
         {
             int rectangleCount = int.Parse(line[0]);
             int[] rectangleHeights = new int[rectangleCount];

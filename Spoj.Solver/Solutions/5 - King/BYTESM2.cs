@@ -49,7 +49,7 @@ public static class Program
         // Unfortunately the input is malformed which forces us to do some weird handling.
         var input = new List<int>();
         string line;
-        while((line = Console.ReadLine()) != null)
+        while ((line = Console.ReadLine()) != null)
         {
             int[] ints = Array.ConvertAll(
                 line.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),

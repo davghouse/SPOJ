@@ -46,7 +46,7 @@ public static class Program
 
         int testCase = 1;
         int rowCount;
-        while((rowCount = int.Parse(Console.ReadLine())) != 0)
+        while ((rowCount = int.Parse(Console.ReadLine())) != 0)
         {
             for (int r = 0; r < rowCount; ++r)
             {

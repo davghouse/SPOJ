@@ -101,7 +101,7 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         string[] phoneNumbers = new string[10000];
 
-        while(remainingTestCases-- > 0)
+        while (remainingTestCases-- > 0)
         {
             int phoneNumberCount = int.Parse(Console.ReadLine());
 

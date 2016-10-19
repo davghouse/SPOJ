@@ -9,7 +9,7 @@ public static class TEST
     public static void Solve()
     {
         string line;
-        while((line = Console.ReadLine()) != _answerToEverything)
+        while ((line = Console.ReadLine()) != _answerToEverything)
         {
             Console.WriteLine(line);
         }
