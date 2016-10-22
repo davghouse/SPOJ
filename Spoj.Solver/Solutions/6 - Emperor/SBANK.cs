@@ -98,14 +98,14 @@ public static class SBANK
 
             // ASCII value for '9' is 57, we don't want to have to perform subtraction (- '0') to reference
             // array positions, so though there are only 10 characters we care about, make it convenient.
-            int[] characterCounts = new int[59];
+            int[] characterCounts = new int['9' + 2];
 
             // Compute character frequency counts, for the characters '0' to '9' (but stored one index after).
             for (int a = 0; a < accountCount; ++a)
                 ++characterCounts[accountsCurrent[a][digit] + 1];
 
             // For those 10 characters, transform their counts to indices: where their matching accounts begin.
-            for (int c = 48; c <= 57; ++c)
+            for (int c = '0'; c <= '9'; ++c)
                 characterCounts[c + 1] += characterCounts[c];
 
             // Distribute the accounts using the computed character counts (which are now indices/running sums).

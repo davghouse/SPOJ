@@ -51,6 +51,7 @@
     <Compile Include="Tester.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="TestScenario.cs" />
+    <Compile Include="TestSuites\StringSortingTestSuite.cs" />
     <Compile Include="TestSuites\StringMatchersTestSuite.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +68,7 @@
     <Content Include="TestSuites\Results\SegmentTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\PrimesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringMatchersTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\StringSortingTestSuiteResults.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

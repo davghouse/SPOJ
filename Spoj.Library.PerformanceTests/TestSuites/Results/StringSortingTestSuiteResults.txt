@@ -1,0 +1,7 @@
+﻿Array.Sort, string length 10000:
+  Random string suffixes (as indices):   x1.00000 (0 minutes 0.00406 seconds)
+  10000 random strings, ordinal:         x16.71561 (0 minutes 0.06798 seconds)
+  10000 binary strings:                  x17.09454 (0 minutes 0.06952 seconds)
+  Random string suffixes (as strings):   x17.65825 (0 minutes 0.07181 seconds)
+  10000 equal strings:                   x52.06233 (0 minutes 0.21173 seconds)
+  10000 random strings, current culture: x123.21372 (0 minutes 0.50111 seconds)
