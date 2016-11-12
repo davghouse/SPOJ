@@ -24,6 +24,8 @@ public static class DIEHARD
     public static int Solve(int health, int armor)
         => 1 + SolveWithMemoization(health + _airHealthDelta, armor + _airArmorDelta);
 
+    // Could do it with tabulation but would have to figure out the upper bound for armor.
+    // A cell's answer would depend on everything above it (less health, less or more armor).
     private static int SolveWithMemoization(int health, int armor)
     {
         Tuple<int, int> healthAndArmor = Tuple.Create(health, armor);
