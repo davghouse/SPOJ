@@ -1,11 +1,4 @@
-10
-a
-aaa
-ab
-ac
-abba
-adx
-CCCCC
-ABABA
-asdfavadsffdaDFJ
-afaeefaeasdfajsdjfajsdjfasdf
+3
+2 10
+4 4
+20 8
