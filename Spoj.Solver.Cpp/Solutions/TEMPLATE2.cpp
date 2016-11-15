@@ -1,7 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+using namespace std;
 
-// See TEMPLATE.cs--this solution was submitted using C++ because C# I/O is too slow.
+// See TEMPLATE.cs for details--this solution was submitted using C++ because C# I/O is too slow.
 class TEMPLATE
 {
 public:
@@ -26,7 +27,7 @@ int main()
     int a, b;
     scanf("%d %d", &a, &b);
 
-    printf("%d", solver.Solve(a, b));
+    printf("%d\n", solver.Solve(a, b));
   }
 
   return 0;

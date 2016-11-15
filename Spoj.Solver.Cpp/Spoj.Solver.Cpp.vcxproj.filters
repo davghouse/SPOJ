@@ -46,6 +46,9 @@
     <ClCompile Include="Solutions\6 - Emperor\COMDIV.cpp">
       <Filter>Solutions\6 - Emperor</Filter>
     </ClCompile>
+    <ClCompile Include="Solutions\8 - Deity\DQUERY.cpp">
+      <Filter>Solutions\8 - Deity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

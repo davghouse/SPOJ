@@ -6,7 +6,7 @@ using namespace std;
 
 int GreatestCommonDivisor(int a, int b);
 
-// See COMDIV.cs--this solution was submitted using C++ because C# I/O is too slow.
+// See COMDIV.cs for details--this solution was submitted using C++ because C# I/O is too slow.
 class COMDIV
 {
 public:
@@ -94,9 +94,9 @@ public:
 
 private:
   static const int _limit = 1000000;
-  static const int _sieveLimit = 10000; //(int)ceil(sqrt(_limit))
+  static const int _sieveLimit = 10000; // (int)ceil(sqrt(_limit))
   vector<int> _factorSieve;
-  vector <int> _primes;
+  vector<int> _primes;
 };
 
 int GreatestCommonDivisor(int a, int b)

@@ -29,7 +29,7 @@ public static class DIEHARD
     private static int SolveWithMemoization(int health, int armor)
     {
         Tuple<int, int> healthAndArmor = Tuple.Create(health, armor);
-        int timeUntilDeath = 0;
+        int timeUntilDeath;
         if (_timesUntilDeath.TryGetValue(healthAndArmor, out timeUntilDeath))
             return timeUntilDeath;
 

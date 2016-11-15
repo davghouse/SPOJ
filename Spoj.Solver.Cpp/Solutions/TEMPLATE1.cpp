@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// See TEMPLATE.cs--this solution was submitted using C++ because C# I/O is too slow.
+// See TEMPLATE.cs for details--this solution was submitted using C++ because C# I/O is too slow.
 class TEMPLATE
 {
 public:

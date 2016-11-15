@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// See SAMER08F.cs--this solution was submitted using C++ because C# was unavailable.
+// See SAMER08F.cs for details--this solution was submitted using C++ because C# was unavailable.
 class SAMER08F
 {
 public:

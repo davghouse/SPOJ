@@ -48,16 +48,55 @@ namespace Spoj.Library.UnitTests
             Assert.AreEqual(1000, evenOddPairs.GetLength(0));
             for (int p = 0; p < 1000; ++p)
             {
-                Assert.IsTrue(evenOddPairs[p, 0] % 2 == 0);
-                Assert.IsTrue(evenOddPairs[p, 1] % 2 == 1);
+                int even = evenOddPairs[p, 0];
+                int odd = evenOddPairs[p, 1];
+
+                Assert.IsTrue(even % 2 == 0);
+                Assert.IsTrue(odd % 2 == 1);
+                Assert.IsTrue(even >= 1 && even <= 1000);
+                Assert.IsTrue(odd >= 1 && odd <= 1000);
             }
 
             evenOddPairs = InputGenerator.GenerateRandomEvenOddPairs(1000, 0, 1);
+
             Assert.AreEqual(1000, evenOddPairs.GetLength(0));
             for (int p = 0; p < 1000; ++p)
             {
-                Assert.AreEqual(0, evenOddPairs[p, 0]);
-                Assert.AreEqual(1, evenOddPairs[p, 1]);
+                int even = evenOddPairs[p, 0];
+                int odd = evenOddPairs[p, 1];
+
+                Assert.AreEqual(0, even);
+                Assert.AreEqual(1, odd);
+            }
+        }
+
+        [TestMethod]
+        public void GeneratesMinMaxPairs()
+        {
+            int[,] minMaxPairs = InputGenerator.GenerateRandomMinMaxPairs(1000, 1, 1000);
+
+            Assert.AreEqual(1000, minMaxPairs.GetLength(0));
+            for (int p = 0; p < 1000; ++p)
+            {
+                int min = minMaxPairs[p, 0];
+                int max = minMaxPairs[p, 1];
+
+                Assert.IsTrue(min <= max);
+                Assert.IsTrue(min >= 1 && min <= 1000);
+                Assert.IsTrue(max >= 1 && max <= 1000);
+            }
+
+            minMaxPairs = InputGenerator.GenerateRandomMinMaxPairs(1000, 0, 1);
+
+            Assert.AreEqual(1000, minMaxPairs.GetLength(0));
+            for (int p = 0; p < 1000; ++p)
+            {
+                int min = minMaxPairs[p, 0];
+                int max = minMaxPairs[p, 1];
+
+                Assert.IsTrue(min <= max);
+                Assert.IsTrue(min >= 0 && min <= 1);
+                Assert.IsTrue(max >= 0 && max <= 1);
             }
         }
     }

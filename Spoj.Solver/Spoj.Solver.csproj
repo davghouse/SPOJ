@@ -81,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Solutions\8 - Deity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
@@ -277,6 +276,7 @@
     <None Include="Solutions\2 - Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Solutions\8 - Deity\DQUERY.cs" />
     <None Include="Solutions\4 - Prince\CPRMT.cs" />
     <None Include="Solutions\5 - King\MISERMAN.cs" />
     <None Include="Solutions\6 - Emperor\PHONELST.cs" />

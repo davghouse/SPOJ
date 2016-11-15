@@ -75,5 +75,21 @@ namespace Spoj.Library
 
             return evenOddPairs;
         }
+
+        public static int[,] GenerateRandomMinMaxPairs(int count, int minValue = 0, int maxValue = int.MaxValue - 1)
+        {
+            var rand = new Random();
+
+            int[,] minMaxPairs = new int[count, 2];
+            for (int i = 0; i < count; ++i)
+            {
+                var num1 = rand.Next(minValue, maxValue + 1);
+                var num2 = rand.Next(minValue, maxValue + 1);
+                minMaxPairs[i, 0] = Math.Min(num1, num2);
+                minMaxPairs[i, 1] = Math.Max(num1, num2);
+            }
+
+            return minMaxPairs;
+        }
     }
 }
