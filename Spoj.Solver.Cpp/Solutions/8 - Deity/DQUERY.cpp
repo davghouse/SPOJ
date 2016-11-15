@@ -83,7 +83,7 @@ public:
         valuesLatestOccurrenceIndices[endValue] = phaseEndIndex;
 
         DistinctCountQuery query;
-        while (queryIndex < queryCount 
+        while (queryIndex < queryCount
             && (query = queries[queryIndex]).QueryEndIndex == phaseEndIndex)
         {
             queryResults[query.ResultIndex] = purqBinaryIndexedTree.SumQuery(query.QueryStartIndex, query.QueryEndIndex);
