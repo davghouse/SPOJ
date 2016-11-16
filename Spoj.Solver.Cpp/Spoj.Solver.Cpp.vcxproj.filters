@@ -40,14 +40,17 @@
     <ClCompile Include="Solutions\4 - Prince\SAMER08F.cpp">
       <Filter>Solutions\4 - Prince</Filter>
     </ClCompile>
-    <ClCompile Include="Solutions\5 - King\OLOLO.cpp">
-      <Filter>Solutions\5 - King</Filter>
-    </ClCompile>
     <ClCompile Include="Solutions\6 - Emperor\COMDIV.cpp">
       <Filter>Solutions\6 - Emperor</Filter>
     </ClCompile>
     <ClCompile Include="Solutions\8 - Deity\DQUERY.cpp">
       <Filter>Solutions\8 - Deity</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\6 - Emperor\OLOLO.cpp">
+      <Filter>Solutions\6 - Emperor</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\5 - King\SUMITR.cpp">
+      <Filter>Solutions\5 - King</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

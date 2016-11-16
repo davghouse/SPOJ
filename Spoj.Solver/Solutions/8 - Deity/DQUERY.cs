@@ -5,6 +5,8 @@ using System.Text;
 
 // 3267 http://www.spoj.com/problems/DQUERY/ D-query
 // Finds the number of distinct elements in a subrange of an array.
+// See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
+// it's almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
 public static class DQUERY
 {
     // Needed hints to solve this one, this technique is kind of explained in lots of places but never clearly.
@@ -17,9 +19,6 @@ public static class DQUERY
     // If you still need help after thinking about that a lot, consider querying and updating 0s and 1s in the BIT, where 1s
     // signify the last/latest occurrence (or first, depending on how you traverse & order things) of the value at that index
     // in the source array. How will you order the queries? How/when will you update the BIT (just a small update each time)?
-
-    // See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
-    // it's almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
     public static int[] SolveOffline(int[] sourceArray, DistinctCountQuery[] queries)
     {
         int[] queryResults = new int[queries.Length];
