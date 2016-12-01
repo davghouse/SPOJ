@@ -1,6 +1,6 @@
 using System;
 
-// 1112 http://www.spoj.com/problems/NSTEPS/ Number Steps
+// http://www.spoj.com/problems/NSTEPS/: ad hoc, plane
 // Given an x and y coordinate, returns the value on the plane at that point.
 public static class NSTEPS
 {
@@ -21,7 +21,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

@@ -5,7 +5,7 @@ using System.Text;
 // Counts the number of distinct substrings in a string.
 public static class DISUBSTR
 {
-    // This uses the well-known concept of a suffix array. The string were given is pretty short and there
+    // This uses the well-known concept of a suffix array. The string we're given is pretty short and there
     // aren't many test cases, so it's fine to create the sorted suffix start indices in O(nWlogn). I don't
     // actually create the substrings though. We don't need to create the LCP array, but the same concept
     // is used to count distinct substrings.

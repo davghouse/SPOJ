@@ -13,6 +13,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Spoj.Solver.Cpp", "Spoj.Sol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library.PerformanceTests", "Spoj.Library.PerformanceTests\Spoj.Library.PerformanceTests.csproj", "{F3416C1B-AA2D-4028-9997-22F0FED2866D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{466E5B88-D17B-4626-9F5E-42E823AFD62C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,28 +1,28 @@
 using System;
 using System.Linq;
 
-// 7974 http://www.spoj.com/problems/ACPC10A/ What's Next
+// http://www.spoj.com/problems/ACPC10A/: sequence
 // Given three successive numbers in a sequence, returns the type of sequence and the next number.
 public static class ACPC10A
 {
     public static string Solve(int first, int second, int third)
     {
-        if (NumberSequence.IsArithmeticSequence(first, second, third))
+        if (SequenceHelper.IsArithmeticSequence(first, second, third))
             return $"AP {third + (third - second)}";
 
         return $"GP {third * (third / second)}";
     }
 }
 
-public static class NumberSequence
+public static class SequenceHelper
 {
-    public static bool IsArithmeticSequence(params int[] numbers)
+    public static bool IsArithmeticSequence(params int[] sequence)
     {
-        int firstDifference = numbers[1] - numbers[0];
+        int firstDifference = sequence[1] - sequence[0];
 
-        for (int i = 2; i < numbers.Length; ++i)
+        for (int i = 2; i < sequence.Length; ++i)
         {
-            if (numbers[i] - numbers[i - 1] != firstDifference)
+            if (sequence[i] - sequence[i - 1] != firstDifference)
                 return false;
         }
 
@@ -37,7 +37,6 @@ public static class Program
         while (true)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-
             if (line.All(i => i == 0)) return;
 
             Console.WriteLine(

@@ -1,0 +1,25 @@
+﻿ad hoc
+binary search
+dictionary
+digits
+division
+experiment
+extrema
+formula
+I/O
+inspection
+intuition
+math
+mod
+numbers
+parsing
+plane
+recursion
+research
+sequence
+sieve
+simulation
+sorting
+stack
+strings
+trap

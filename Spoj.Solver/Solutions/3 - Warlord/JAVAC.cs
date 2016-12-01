@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-// 1163 http://www.spoj.com/problems/JAVAC/ Java vs C++
+// http://www.spoj.com/problems/JAVAC/: ad hoc, strings
 // Turns Java-like identifiers into C++-like identifiers, and vice versa.
 public static class JAVAC
 {

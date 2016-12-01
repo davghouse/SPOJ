@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 10509 http://www.spoj.com/problems/CRDS/ Cards
+// http://www.spoj.com/problems/CRDS/: inspection, sequence
 // Counts cards in a typical card pyramid, modulo 1000007.
 public static class CRDS
 {
@@ -21,7 +21,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// 7185 http://www.spoj.com/problems/BYECAKES/ Bye Bye Cakes
+// http://www.spoj.com/problems/BYECAKES/: experiment, extrema, mod, trap
 // Finds the minimal amount of cake ingredients to buy to use all of them completely up.
 public static class BYECAKES
 {

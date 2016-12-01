@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 3375 http://www.spoj.com/problems/STAMPS/ Stamps
+// http://www.spoj.com/problems/STAMPS/: extrema, sorting
 // Figures out if Lucy can borrow enough stamps from a certain number of her friends.
 public static class STAMPS
 {
@@ -28,7 +28,6 @@ public static class Program
     private static void Main()
     {
         int totalTestCases = int.Parse(Console.ReadLine());
-
         for (int i = 0; i < totalTestCases; ++i)
         {
             int[] line1 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// 2727 http://www.spoj.com/problems/ARMY/ Army Strength
+// http://www.spoj.com/problems/ARMY/: ad hoc
 // Figures out if the army of Godzilla or the army of MechaGodzilla wins the war.
 public static class ARMY
 {
@@ -17,7 +17,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();

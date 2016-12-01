@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
 
-// 7733 http://www.spoj.com/problems/HPYNOS/ Happy Numbers I
+// http://www.spoj.com/problems/HPYNOS/: digits, numbers, simulation
 // Determines if repeatedly adding the squared digits of a number eventually gets to 1.
 public static class HPYNOS
 {
     // n is limited to 2,147,483,647, so by inspection 1,999,999,999 will give us the
     // limit of the numbers we can get after at least one breaking. That is:
-    // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bit array to keep track of already seen.
+    // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bool array to keep track of what's already seen.
     public static int Solve(int n)
     {
         bool[] numbersAlreadySeen = new bool[731];
@@ -19,9 +19,13 @@ public static class HPYNOS
             ++breakCount;
 
             if (numbersAlreadySeen[n])
-                return -1;
+            {
+                return -1; // Caught in a cycle that will never terminate.
+            }
             else
+            {
                 numbersAlreadySeen[n] = true;
+            }
         }
 
         return breakCount;

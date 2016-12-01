@@ -7,7 +7,7 @@ public static class PHONELST
 {
     // This uses a modified trie, where the trie's Add method returns a bool indicating
     // whether the string added was a prefix of a string already present, or prefixed
-    // by string already preset. In either case, the phone numbers aren't consistent,
+    // by a string already present. In either case, the phone numbers aren't consistent,
     // so we short-circuit and just remember to consume the rest of the input.
     public static bool Solve(int phoneNumberCount, string[] phoneNumbers)
     {

@@ -1,6 +1,6 @@
 using System;
 
-// 42 http://www.spoj.com/problems/ADDREV/ Adding Reversed Numbers
+// http://www.spoj.com/problems/ADDREV/: ad hoc, mod
 // Returns the reversed sum of two reversed integers.
 public static class ADDREV
 {
@@ -10,7 +10,6 @@ public static class ADDREV
     private static int Reverse(this int a)
     {
         int reverse = 0;
-
         while (a != 0)
         {
             reverse = reverse * 10 + a % 10; // Make room for the next digit, and then add it.
@@ -26,7 +25,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

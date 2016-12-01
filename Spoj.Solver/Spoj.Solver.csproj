@@ -69,8 +69,8 @@
     <None Include="Solutions\2 - Chieftain\NSTEPS.cs" />
     <None Include="Solutions\3 - Warlord\ACPC10A.cs" />
     <None Include="Solutions\3 - Warlord\CANDY.cs" />
-    <None Include="Solutions\3 - Warlord\FASHION.cs" />
-    <None Include="Solutions\3 - Warlord\ONP.cs" />
+    <None Include="Solutions\4 - Prince\FASHION.cs" />
+    <None Include="Solutions\4 - Prince\ONP.cs" />
     <None Include="Solutions\3 - Warlord\TOANDFRO.cs" />
     <None Include="Solutions\4 - Prince\AE00.cs" />
     <None Include="Solutions\5 - King\FCTRL.cs" />
@@ -92,7 +92,8 @@
     <Content Include="input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Solutions\2 - Chieftain\GUESSING.txt" />
+    <None Include="Solutions\2 - Chieftain\GUESSING.txt" />
+    <None Include="tags.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\JULKA.cs" />
@@ -131,7 +132,7 @@
     <None Include="Solutions\3 - Warlord\STAMPS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\PERMUT2.cs" />
+    <None Include="Solutions\4 - Prince\PERMUT2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\2 - Chieftain\ARMY.cs" />
@@ -191,7 +192,7 @@
     <None Include="Solutions\4 - Prince\MAXLN.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\HPYNOS.cs" />
+    <None Include="Solutions\4 - Prince\HPYNOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3 - Warlord\NY10A.cs" />

@@ -1,7 +1,7 @@
 ﻿using System;
 
-// <Number> http://www.spoj.com/problems/TEMPLATE/ <Name>
-// <Description>
+// http://www.spoj.com/problems/TEMPLATE/: <tags>
+// <description>
 public static class TEMPLATE
 {
     public static int Solve(int a, int b)
@@ -13,7 +13,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

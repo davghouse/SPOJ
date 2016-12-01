@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// 10565 http://www.spoj.com/problems/ALICESIE/ Alice Sieve
+// http://www.spoj.com/problems/ALICESIE/: division, experiment, sieve
 // Finds how many numbers remaining after sieving like Alice.
 public static class ALICESIE
 {
@@ -34,9 +34,9 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
 
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             output.Append(ALICESIE.Solve(

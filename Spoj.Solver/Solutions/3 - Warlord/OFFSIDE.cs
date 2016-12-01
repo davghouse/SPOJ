@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// 2178 http://www.spoj.com/problems/OFFSIDE/ He is offside!
+// http://www.spoj.com/problems/OFFSIDE/: ad hoc, research
 // Determines if an attacker is offsides (using player positions only).
 public static class OFFSIDE
 {
@@ -12,7 +12,7 @@ public static class OFFSIDE
         int closestAttacker = attackers.Min();
 
         // Rather than finding the closest and second closest defenders, note that the
-        // attacker is offsides if he is cleanly before all the defenders except at most one.
+        // attacker is offsides if he is cleanly before all the defenders except at most one (the goalie).
         int defendersFurtherThanClosestAttacker = defenders.Count(d => d > closestAttacker);
 
         return defendersFurtherThanClosestAttacker >= defenders.Length - 1 ? "Y" : "N";

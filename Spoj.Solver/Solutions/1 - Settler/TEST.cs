@@ -1,6 +1,6 @@
 using System;
 
-// 1 http://www.spoj.com/problems/TEST/ Life, the Universe, and Everything
+// http://www.spoj.com/problems/TEST/: I/O
 // Reads and prints console input until the answer to life, the universe, and everything is found.
 public static class TEST
 {
@@ -19,7 +19,5 @@ public static class TEST
 public static class Program
 {
     private static void Main()
-    {
-        TEST.Solve();
-    }
+        => TEST.Solve();
 }

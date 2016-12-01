@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// 23 http://www.spoj.com/problems/PIR/ Pyramids
+// http://www.spoj.com/problems/PIR/: formula, math, research
 // Calculates the volume of a triangular pyramid, given its side lengths.
 public static class PIR
 {
@@ -39,9 +39,9 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
 
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] wvuUVW = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

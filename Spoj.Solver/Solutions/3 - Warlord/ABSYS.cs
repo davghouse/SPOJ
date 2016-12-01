@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 2157 http://www.spoj.com/problems/ABSYS/ Anti-Blot System
+// http://www.spoj.com/problems/ABSYS/: ad hoc, strings
 // Takes an equation with an inkblot over one number, and removes the blot.
 public static class ABSYS
 {
@@ -39,7 +39,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();

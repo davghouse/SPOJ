@@ -1,9 +1,8 @@
 using System;
 using System.Linq;
 
-// 2123 http://www.spoj.com/problems/CANDY/ Candy I
-// Given packets containing different numbers of candies,
-// count the fewest moves needed to split them up fairly, if possible.
+// http://www.spoj.com/problems/CANDY/: ad hoc, mod
+// Given packets containing different numbers of candies, count the fewest moves needed to split them up fairly, if possible.
 public static class CANDY
 {
     public static int Solve(int[] packetCandyCounts)
@@ -16,8 +15,9 @@ public static class CANDY
 
         int fairCandyCount = totalCandies / packetCount;
 
-        // It's necessary to remove the extra candies from each packet exceeding the fair candy count.
-        // One move is required for each of these removals, so it's easy to find the total required moves.
+        // It's necessary to remove the extra candies from each packet exceeding the fair candy count,
+        // putting them into the packets deceeding the fair candy count. Everything balances, so for
+        // every extra candy there's definitely a place to put it. And it's a single move for each removal.
         return packetCandyCounts
             .Where(c => c > fairCandyCount)
             .Select(c => c - fairCandyCount)
