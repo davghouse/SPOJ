@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-// 2906 http://www.spoj.com/problems/GCD2/ GCD2
+// http://www.spoj.com/problems/GCD2/ #gcd #math #research #trap
 // Finds the GCD of two numbers, one of which can be really big.
 public static class GCD2
 {
@@ -32,7 +32,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             string[] line = Console.ReadLine().Split();

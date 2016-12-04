@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-// 328 http://www.spoj.com/problems/BISHOPS/ Bishops
+// http://www.spoj.com/problems/BISHOPS/ #ad-hoc #experiment #math
 // Finds the maximum number of bishops that can be (safely) placed on a given-size chessboard.
 public static class BISHOPS
 {

@@ -161,7 +161,7 @@ public static class Program
 {
     private static void Main()
     {
-        Console.ReadLine(); // Consume n.
+        Console.ReadLine();
         int[] sourceArray = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
 
         int queryCount = int.Parse(Console.ReadLine());

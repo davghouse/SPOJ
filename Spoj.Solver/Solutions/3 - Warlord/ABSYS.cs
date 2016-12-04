@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/ABSYS/: ad hoc, strings
+// http://www.spoj.com/problems/ABSYS/ #ad-hoc #strings
 // Takes an equation with an inkblot over one number, and removes the blot.
 public static class ABSYS
 {
@@ -42,6 +42,7 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();
+
             Console.WriteLine(
                 ABSYS.Solve(Console.ReadLine()));
         }

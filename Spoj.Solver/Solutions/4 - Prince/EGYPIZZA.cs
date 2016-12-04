@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 7169 http://www.spoj.com/problems/EGYPIZZA/ Pizza
+// http://www.spoj.com/problems/EGYPIZZA/ #ad-hoc #division
 // Orders pizza for people who need 1/4, 1/2, or 3/4 size slices (all from the same pie, single slices).
 public static class EGYPIZZA
 {

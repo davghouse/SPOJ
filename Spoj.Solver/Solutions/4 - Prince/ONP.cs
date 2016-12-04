@@ -1,6 +1,6 @@
 using System;
 
-// http://www.spoj.com/problems/ONP/: parsing, recursion, stack, strings
+// http://www.spoj.com/problems/ONP/ #parsing #recursion #stack #strings
 // Returns the RPN form of the expression with binary operators and parentheses.
 public static class ONP
 {

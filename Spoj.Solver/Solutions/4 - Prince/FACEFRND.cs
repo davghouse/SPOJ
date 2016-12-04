@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 9788 http://www.spoj.com/problems/FACEFRND/ Friends of Friends
+// http://www.spoj.com/problems/FACEFRND/ #ad-hoc #hashset
 // Finds friends of someone's friends given their friends and their friends' friends.
 public static class FACEFRND
 {
@@ -58,7 +58,6 @@ public static class Program
     {
         int friendCount = int.Parse(Console.ReadLine());
         int[][] friendDefinitions = new int[friendCount][];
-
         for (int f = 0; f < friendCount; ++f)
         {
             friendDefinitions[f] = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

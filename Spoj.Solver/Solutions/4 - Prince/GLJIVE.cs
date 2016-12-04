@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 8319 http://www.spoj.com/problems/GLJIVE/ GLJIVE
+// http://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets #trap
 // Finds the contiguous subsequence starting from 1 that most closely adds to 100.
 public static class GLJIVE
 {
@@ -45,9 +45,9 @@ public static class GLJIVE
         int bestResult = 0;
         int bestDistance = 100;
 
-        // Each index corresponds to a different subset, based upon the number's binary
-        // representation. For example, 17 = 0000010001, 0th and 4th points included,
-        // 1023 = 1111111111, all points included.
+        // Each i corresponds to a different subset, based upon its binary representation
+        // For example, 17 = 0000010001, 0th and 4th points included, 1023 = 1111111111,
+        // all points included.
         for (int i = 1; i <= 1023 && bestDistance != 0; ++i)
         {
             int result = 0;
@@ -79,7 +79,6 @@ public static class Program
     private static void Main()
     {
         int[] points = new int[10];
-
         for (int i = 0; i < 10; ++i)
         {
             points[i] = int.Parse(Console.ReadLine());

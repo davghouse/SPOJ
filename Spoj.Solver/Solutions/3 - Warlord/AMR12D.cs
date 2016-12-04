@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 13043 http://www.spoj.com/problems/AMR12D/ The Mirror of Galadriel
+// http://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings #trap
 // Determines if the reverse of every substring exists in a string.
 public static class AMR12D
 {
@@ -28,7 +28,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

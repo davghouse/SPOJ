@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/ARMY/: ad hoc
+// http://www.spoj.com/problems/ARMY/ #ad-hoc
 // Figures out if the army of Godzilla or the army of MechaGodzilla wins the war.
 public static class ARMY
 {
@@ -21,6 +21,7 @@ public static class Program
         {
             Console.ReadLine();
             Console.ReadLine();
+
             int[] strengthsOfGodzillasArmy = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int[] strengthsOfMechaGodzillasArmy = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 

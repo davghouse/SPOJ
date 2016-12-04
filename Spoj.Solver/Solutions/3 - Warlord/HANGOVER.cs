@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/HANGOVER/: binary search, sequence
+// http://www.spoj.com/problems/HANGOVER/ #binary-search #sequence
 // Finds the number of cards necessary to achieve a given overhang value (less than 5.2).
 public static class HANGOVER
 {

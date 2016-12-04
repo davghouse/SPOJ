@@ -1,6 +1,6 @@
 using System;
 
-// http://www.spoj.com/problems/NSTEPS/: ad hoc, plane
+// http://www.spoj.com/problems/NSTEPS/ #ad-hoc
 // Given an x and y coordinate, returns the value on the plane at that point.
 public static class NSTEPS
 {

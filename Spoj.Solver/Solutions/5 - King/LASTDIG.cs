@@ -1,12 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Numerics;
 
-// 5699 http://www.spoj.com/problems/LASTDIG2/ The last digit re-visited
-// For big integer b and long e, compute b^e mod 10 (the last digit of b^e).
-public static class LASTDIG2
+// http://www.spoj.com/problems/LASTDIG/ #digits #mod-math
+// For a base b from 0 through 20 and an exponent e, compute b^e mod 10 (the last digit of b^e).
+public static class LASTDIG
 {
-    public static int Solve(BigInteger b, long e)
+    public static int Solve(int b, int e)
         => Mod10Exponentiator.Compute(b, e);
 }
 
@@ -38,20 +37,20 @@ public static class Mod10Exponentiator
         };
     }
 
-    public static int Compute(BigInteger b, long e)
+    public static int Compute(int b, int e)
     {
         if (e == 0) return 1;
 
         // The parts 10 or above of b don't impact the last digit of b^e; only the last digit d matters.
         // It's easy to see this by imagining the polynomial expansion of b^e = ((b - d) + d)^e,
         // where (b - d) is divisible by 10 (0 mod 10), so only the d^e term in the expansion matters.
-        int d = (int)(b % 10);
+        int d = b % 10;
 
         var lastDigitExponentiationPattern = _bases0To9LastDigitExponentiationPatterns[d];
 
         // Pattern starts at exponent of 1 and ends at exponent of lastDigitExponentiationPattern.Count,
         // so e mod the count almost gives the correct position, just have to move zero back to the end.
-        int patternPosition = (int)(e % lastDigitExponentiationPattern.Count);
+        int patternPosition = e % lastDigitExponentiationPattern.Count;
         if (patternPosition == 0)
         {
             patternPosition = lastDigitExponentiationPattern.Count;
@@ -66,15 +65,12 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
-            string[] line = Console.ReadLine().Split();
-            BigInteger b = BigInteger.Parse(line[0]);
-            long e = long.Parse(line[1]);
+            int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
             Console.WriteLine(
-                LASTDIG2.Solve(b, e));
+                LASTDIG.Solve(line[0], line[1]));
         }
     }
 }

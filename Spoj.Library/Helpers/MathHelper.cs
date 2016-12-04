@@ -19,7 +19,7 @@ namespace Spoj.Library.Helpers
             return result;
         }
 
-        public static int FirstPowerOfTwoEqualOrLess(int value)
+        public static int GreatestPowerOfTwoEqualOrLess(int value)
         {
             int result = 2;
             while (result <= value)

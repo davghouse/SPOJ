@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Spoj.Library
 {
-    // NOTE: System.Numerics is referenced by SPOJ now, so this is hopefully deprecated.
+    // NOTE: Seems like System.Numerics is referenced by SPOJ now.
     // TODO: Support negatives, comparison operators, division, and lots of other stuff.
     public struct BigInteger : IEquatable<BigInteger>
     {

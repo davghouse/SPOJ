@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 10286 http://www.spoj.com/problems/DOTAA/ DOTA HEROES
+// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #I/O
 // Figures out if the heroes can make it past the towers without anyone dying.
 public static class DOTAA
 {
@@ -11,7 +11,6 @@ public static class DOTAA
     public static string Solve(int heroCount, int towerCount, int towerDamage)
     {
         int totalSurvivableHits = 0;
-
         for (int h = 0; h < heroCount; ++h)
         {
             int heroHealth = int.Parse(Console.ReadLine());
@@ -29,7 +28,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

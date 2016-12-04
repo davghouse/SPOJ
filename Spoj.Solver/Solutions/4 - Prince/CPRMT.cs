@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// 1728 http://www.spoj.com/problems/CPRMT/ Common Permutation
+// http://www.spoj.com/problems/CPRMT/ #ad-hoc #buckets #strings
 // From two strings finds the longest string with some permutation being a subsequence of both.
 public static class CPRMT
 {
@@ -13,32 +13,32 @@ public static class CPRMT
     // therefore no subsequence containing those characters could exist. The problem
     // says if there's more than one x print in alphabetical order, and of course there will be
     // if they have more than one unique character in common, since any permutation of x is an x.
-    public static string Solve(string a, string b)
+    public static string Solve(string first, string second)
     {
-        var x = new StringBuilder();
+        var common = new StringBuilder();
 
         // Gonna take some care to do this in a single pass, rather than 26 passes with LINQ's Count().
         // We know they're lowercase so buckets are convenient. For unbucketable we might need to sort both,
         // then emulate a merge while counting up, or O(n) w/ overhead from a HashSet may be worth it.
-        int[] aCharacterCounts = new int[26];
-        int[] bCharacterCounts = new int[26];
+        int[] firstCharacterCounts = new int[26];
+        int[] secondCharacterCounts = new int[26];
 
-        foreach (char c in a)
+        foreach (char c in first)
         {
-            ++aCharacterCounts[c - 'a'];
+            ++firstCharacterCounts[c - 'a'];
         }
 
-        foreach (char c in b)
+        foreach (char c in second)
         {
-            ++bCharacterCounts[c - 'a'];
+            ++secondCharacterCounts[c - 'a'];
         }
 
         for (char c = 'a'; c <= 'z'; ++c)
         {
-            x.Append(c, Math.Min(aCharacterCounts[c - 'a'], bCharacterCounts[c - 'a']));
+            common.Append(c, repeatCount: Math.Min(firstCharacterCounts[c - 'a'], secondCharacterCounts[c - 'a']));
         }
 
-        return x.ToString();
+        return common.ToString();
     }
 }
 
@@ -46,15 +46,15 @@ public static class Program
 {
     private static void Main()
     {
-        string a, b;
         var output = new StringBuilder();
 
-        while ((a = Console.ReadLine()) != null)
+        string first, second;
+        while ((first = Console.ReadLine()) != null)
         {
-            b = Console.ReadLine();
+            second = Console.ReadLine();
 
             output.AppendLine(
-                CPRMT.Solve(a, b));
+                CPRMT.Solve(first, second));
         }
 
         Console.Write(output);

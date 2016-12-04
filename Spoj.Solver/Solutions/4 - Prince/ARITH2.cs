@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 4452 http://www.spoj.com/problems/ARITH2/ Simple Arithmetics II
+// http://www.spoj.com/problems/ARITH2/ #ad-hoc #parsing #strings
 // Parses a math expression and computes the result as if it were streamed in, ignoring precedence.
 public static class ARITH2
 {
@@ -21,10 +21,22 @@ public static class ARITH2
             string @operator = tokens[i];
             long value = long.Parse(tokens[++i]);
 
-            if (@operator == "+") result += value;
-            else if (@operator == "-") result -= value;
-            else if (@operator == "*") result *= value;
-            else if (@operator == "/") result /= value;
+            if (@operator == "+")
+            {
+                result += value;
+            }
+            else if (@operator == "-")
+            {
+                result -= value;
+            }
+            else if (@operator == "*")
+            {
+                result *= value;
+            }
+            else if (@operator == "/")
+            {
+                result /= value;
+            }
         }
 
         return result;
@@ -65,7 +77,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();

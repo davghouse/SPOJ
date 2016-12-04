@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 95 http://www.spoj.com/problems/STPAR/ Street Parade
+// http://www.spoj.com/problems/STPAR/ #ad-hoc #greedy #stack
 // Given the order of some love mobiles on an approach street, figures out if it's possible to
 // put them in their final parade order using a side street (as a stack).
 public static class STPAR
@@ -46,9 +46,9 @@ public static class STPAR
 
         // Don't need further checks here. Nothing returned "no" up to this point. The parade street
         // only grows in the correct order (consecutively). The side street is always ordered (but not
-        // necessarily consecutively). Except at the end of the loop the side street must have all the love
-        // mobiles not already on the parade street, so it has a contiguous range of integers and must also
-        // be consecutive, and hence pop-able to the parade street in the correct order.
+        // necessarily consecutively)--except at the end of the loop. Then the side street must have all the love
+        // mobiles not already on the parade street, so it has a contiguous and consecutive range of integers and
+        // that are hence pop-able to the parade street in the correct order.
         return "yes";
     }
 }

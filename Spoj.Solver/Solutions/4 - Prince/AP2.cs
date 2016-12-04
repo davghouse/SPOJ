@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 11063 http://www.spoj.com/problems/AP2/ AP - Complete The Series (Easy)
+// http://www.spoj.com/problems/AP2/ #experiment #math #sequence
 // Given the third term, third-to-last term, and sum of an arithmetic progression, finds the whole series.
 public static class AP2
 {
@@ -15,7 +15,7 @@ public static class AP2
         long termDifference = (thirdToLastTerm - thirdTerm) / progressionsBetweenGivenTerms;
         long firstTerm = thirdTerm - 2 * termDifference;
 
-        var series = new long[n];
+        long[] series = new long[n];
         series[0] = firstTerm;
         for (int i = 1; i < n; ++i)
         {

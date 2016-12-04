@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// 15965 http://www.spoj.com/problems/ENIGMATH/ PLAY WITH MATH
+// http://www.spoj.com/problems/ENIGMATH/ #gcd #math #research
 // Solves Ax - By = 0 with x and y the smallest possible positive integers.
 public static class ENIGMATH
 {
@@ -19,7 +19,7 @@ public static class ENIGMATH
         ab[0] = b / gcd; // mapping to x
         ab[1] = a / gcd; // mapping to y
 
-        return ab; // returning xy
+        return ab; // returning x and y
     }
 
     // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
@@ -45,9 +45,9 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
 
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] ab = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);

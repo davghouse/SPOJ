@@ -44,20 +44,20 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesFirstPowerOfTwoEqualOrLess()
+        public void VerifiesGreatestPowerOfTwoEqualOrLess()
         {
-            Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrLess(1));
-            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrLess(2));
-            Assert.AreEqual(2, MathHelper.FirstPowerOfTwoEqualOrLess(3));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(4));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(5));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(6));
-            Assert.AreEqual(4, MathHelper.FirstPowerOfTwoEqualOrLess(7));
-            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrLess(8));
-            Assert.AreEqual(8, MathHelper.FirstPowerOfTwoEqualOrLess(9));
-            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrLess(19));
-            Assert.AreEqual(16, MathHelper.FirstPowerOfTwoEqualOrLess(31));
-            Assert.AreEqual(32, MathHelper.FirstPowerOfTwoEqualOrLess(33));
+            Assert.AreEqual(1, MathHelper.GreatestPowerOfTwoEqualOrLess(1));
+            Assert.AreEqual(2, MathHelper.GreatestPowerOfTwoEqualOrLess(2));
+            Assert.AreEqual(2, MathHelper.GreatestPowerOfTwoEqualOrLess(3));
+            Assert.AreEqual(4, MathHelper.GreatestPowerOfTwoEqualOrLess(4));
+            Assert.AreEqual(4, MathHelper.GreatestPowerOfTwoEqualOrLess(5));
+            Assert.AreEqual(4, MathHelper.GreatestPowerOfTwoEqualOrLess(6));
+            Assert.AreEqual(4, MathHelper.GreatestPowerOfTwoEqualOrLess(7));
+            Assert.AreEqual(8, MathHelper.GreatestPowerOfTwoEqualOrLess(8));
+            Assert.AreEqual(8, MathHelper.GreatestPowerOfTwoEqualOrLess(9));
+            Assert.AreEqual(16, MathHelper.GreatestPowerOfTwoEqualOrLess(19));
+            Assert.AreEqual(16, MathHelper.GreatestPowerOfTwoEqualOrLess(31));
+            Assert.AreEqual(32, MathHelper.GreatestPowerOfTwoEqualOrLess(33));
         }
 
         [TestMethod]

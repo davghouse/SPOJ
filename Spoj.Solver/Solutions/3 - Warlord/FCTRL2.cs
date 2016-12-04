@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-// 24 http://www.spoj.com/problems/FCTRL2/ Small factorials
-// Returns n! for 1 <= n <= 100.
+// http://www.spoj.com/problems/FCTRL2/ #big-numbers #factorial
+// Returns n! for 1 <= n <= 100 (and I think you can just use System.Numerics for this now).
 public static class FCTRL2
 {
     private const int _limit = 100;
@@ -171,7 +171,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

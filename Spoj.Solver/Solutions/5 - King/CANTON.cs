@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 302 http://www.spoj.com/problems/CANTON/ Count on Cantor
+// http://www.spoj.com/problems/CANTON/ #ad-hoc #math #sequence
 // Finds the nth term in Cantor's enumeration of the rational numbers.
 public static class CANTON
 {
@@ -53,7 +53,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

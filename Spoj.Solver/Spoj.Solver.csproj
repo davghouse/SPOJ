@@ -74,10 +74,10 @@
     <None Include="Solutions\3 - Warlord\TOANDFRO.cs" />
     <None Include="Solutions\4 - Prince\AE00.cs" />
     <None Include="Solutions\5 - King\FCTRL.cs" />
-    <None Include="Solutions\4 - Prince\FCTRL2.cs" />
-    <None Include="Solutions\4 - Prince\LASTDIG.cs" />
+    <None Include="Solutions\3 - Warlord\FCTRL2.cs" />
+    <None Include="Solutions\5 - King\LASTDIG.cs" />
     <None Include="Solutions\5 - King\PRIME1.cs" />
-    <None Include="Solutions\4 - Prince\SAMER08F.cs" />
+    <None Include="Solutions\5 - King\SAMER08F.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -102,10 +102,10 @@
     <None Include="Solutions\5 - King\COINS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\CANDY3.cs" />
+    <None Include="Solutions\3 - Warlord\CANDY3.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\EIGHTS.cs" />
+    <None Include="Solutions\4 - Prince\EIGHTS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3 - Warlord\HANGOVER.cs" />
@@ -126,7 +126,7 @@
     <None Include="Solutions\4 - Prince\WILLITST.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\CANTON.cs" />
+    <None Include="Solutions\5 - King\CANTON.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3 - Warlord\STAMPS.cs" />
@@ -141,7 +141,7 @@
     <None Include="Solutions\5 - King\TRICOUNT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\STPAR.cs" />
+    <None Include="Solutions\5 - King\STPAR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\3 - Warlord\FENCE1.cs" />
@@ -168,7 +168,7 @@
     <None Include="Solutions\3 - Warlord\CRDS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\BEENUMS.cs" />
+    <None Include="Solutions\5 - King\BEENUMS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\7 - Immortal\PT07Z.cs" />
@@ -189,7 +189,7 @@
     <None Include="Solutions\6 - Emperor\OLOLO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\MAXLN.cs" />
+    <None Include="Solutions\5 - King\MAXLN.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\HPYNOS.cs" />
@@ -201,7 +201,7 @@
     <None Include="Solutions\6 - Emperor\HUBULLU.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\LASTDIG2.cs" />
+    <None Include="Solutions\5 - King\LASTDIG2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\ARITH2.cs" />
@@ -292,7 +292,7 @@
     <None Include="Solutions\5 - King\ANARC05B.cs" />
     <None Include="Solutions\5 - King\ACPC11B.cs" />
     <None Include="InputVerifier.cs" />
-    <None Include="Solutions\4 - Prince\DOTAA.cs" />
+    <None Include="Solutions\3 - Warlord\DOTAA.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\GCD2.cs" />
@@ -322,7 +322,7 @@
     <None Include="Solutions\4 - Prince\GLJIVE.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\AMR12D.cs" />
+    <None Include="Solutions\3 - Warlord\AMR12D.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\MCOINS.cs" />

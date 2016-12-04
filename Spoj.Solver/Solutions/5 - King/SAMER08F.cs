@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// 3410 http://www.spoj.com/problems/SAMER08F/ Feynman
+// http://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math
 // Returns the number of squares in a grid of n x n squares, for 1 <= n <= 100.
 // See SAMER08F.cpp--this solution was submitted using C++ because C# was unavailable.
 public static class SAMER08F
@@ -21,7 +21,7 @@ public static class SAMER08F
             // Add the parent square as a whole.
             squareCounts[n] += 1;
 
-            // Add the squares the touch only one of the parent square's four corners.
+            // Add the squares that touch only one of the parent square's four corners.
             // For example, growing from the top left for n = 3 there's square n = 1, and square n = 2, and this repeats for each corner.
             squareCounts[n] += 4 * (n - 1);
 

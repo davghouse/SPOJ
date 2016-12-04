@@ -72,7 +72,7 @@ public static class Program
 
         while (remainingTestCases-- > 0)
         {
-            Console.ReadLine(); // transmissionCount
+            Console.ReadLine();
             string[] transmissions = Console.ReadLine().Split();
 
             output.AppendLine(

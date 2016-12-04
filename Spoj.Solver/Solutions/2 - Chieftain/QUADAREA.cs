@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/QUADAREA/: formula, research
+// http://www.spoj.com/problems/QUADAREA/ #formula #research
 // Compute the max area possible for any quadrilateral with the given side lengths.
 public static class QUADAREA
 {
