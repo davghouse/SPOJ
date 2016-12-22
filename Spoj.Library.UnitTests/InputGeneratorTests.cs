@@ -15,7 +15,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void GeneratesDistinctRandomInts()
+        public void GenerateDistinctRandomInts()
         {
             int[] ints = InputGenerator.GenerateDistinctRandomInts(1000, 1, 1000);
 
@@ -23,7 +23,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void GeneratesRandomStrings()
+        public void GenerateRandomStrings()
         {
             string s = InputGenerator.GenerateRandomString(1000);
 
@@ -41,7 +41,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void GeneratesEvenOddPairs()
+        public void GenerateEvenOddPairs()
         {
             int[,] evenOddPairs = InputGenerator.GenerateRandomEvenOddPairs(1000, 1, 100);
 
@@ -71,7 +71,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void GeneratesMinMaxPairs()
+        public void GenerateMinMaxPairs()
         {
             int[,] minMaxPairs = InputGenerator.GenerateRandomMinMaxPairs(1000, 1, 1000);
 
