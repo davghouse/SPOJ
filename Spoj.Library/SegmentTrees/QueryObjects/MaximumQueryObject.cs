@@ -4,9 +4,6 @@ namespace Spoj.Library.SegmentTrees.QueryObjects
 {
     public sealed class MaximumQueryObject : SegmentTreeQueryObject<MaximumQueryObject, int>
     {
-        public override void Reinitialize(Func<int, int> updater)
-            => Maximum = updater(Maximum);
-
         public override int QueryValue
         {
             get { return Maximum; }

@@ -6,9 +6,9 @@ using System.Linq;
 namespace Spoj.Library.UnitTests.Primes
 {
     [TestClass]
-    public class PrimeFactorizerTests
+    public sealed class PrimeFactorizerTests
     {
-        private static Tuple<int, int[]>[] numberPrimeFactorsPairs = new[]
+        private static Tuple<int, int[]>[] _numberPrimeFactorsPairs = new[]
         {
             Tuple.Create(0, new int[] { }),
             Tuple.Create(1, new int[] { }),
@@ -34,7 +34,7 @@ namespace Spoj.Library.UnitTests.Primes
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
 
-            foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
+            foreach (var numberPrimeFactorsPair in _numberPrimeFactorsPairs)
             {
                 int number = numberPrimeFactorsPair.Item1;
                 int[] primeFactors = numberPrimeFactorsPair.Item2;
@@ -51,7 +51,7 @@ namespace Spoj.Library.UnitTests.Primes
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
 
-            foreach (var numberPrimeFactorsPair in numberPrimeFactorsPairs)
+            foreach (var numberPrimeFactorsPair in _numberPrimeFactorsPairs)
             {
                 int number = numberPrimeFactorsPair.Item1;
                 int[] distinctPrimeFactors = numberPrimeFactorsPair.Item2.Distinct().ToArray();

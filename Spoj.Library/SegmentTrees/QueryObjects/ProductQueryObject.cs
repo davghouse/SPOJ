@@ -4,9 +4,6 @@ namespace Spoj.Library.SegmentTrees.QueryObjects
 {
     public sealed class ProductQueryObject : SegmentTreeQueryObject<ProductQueryObject, int>
     {
-        public override void Reinitialize(Func<int, int> updater)
-            => Product = updater(Product);
-
         public override int QueryValue
         {
             get { return Product; }

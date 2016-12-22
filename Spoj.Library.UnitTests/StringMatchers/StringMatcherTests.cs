@@ -7,7 +7,7 @@ using System.Linq;
 namespace Spoj.Library.UnitTests.StringMatchers
 {
     [TestClass]
-    public class StringMatcherTests
+    public sealed class StringMatcherTests
     {
         [TestMethod]
         public void VerifiesMatchesForSmallStrings()

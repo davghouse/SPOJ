@@ -202,8 +202,6 @@ namespace Spoj.Library
         public override string ToString()
             => string.Concat(_digits.Reverse());
 
-        #region IEquatable<BigInteger>
-
         public bool Equals(BigInteger other)
             => _digits.SequenceEqual(other._digits);
 
@@ -220,7 +218,5 @@ namespace Spoj.Library
 
         public static bool operator !=(BigInteger a, BigInteger b)
             => !(a == b);
-
-        #endregion IEquatable<BigInteger>
     }
 }

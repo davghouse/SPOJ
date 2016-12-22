@@ -3,7 +3,7 @@
 namespace Spoj.Library.UnitTests
 {
     [TestClass]
-    public class BigIntegerTests
+    public sealed class BigIntegerTests
     {
         #region Addition
 

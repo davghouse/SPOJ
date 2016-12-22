@@ -4,7 +4,7 @@ using Spoj.Library.Helpers;
 namespace Spoj.Library.UnitTests.Helpers
 {
     [TestClass]
-    public class IEnumerableHelperTests
+    public sealed class IEnumerableHelperTests
     {
         [TestMethod]
         public void VerifiesSetEqual()

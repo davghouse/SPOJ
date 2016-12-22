@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class StringMatchersTestSuite : ITestSuite
+    public sealed class StringMatchersTestSuite : ITestSuite
     {
         private readonly string aaPatternLength2;
         private readonly string aaPatternLength5;

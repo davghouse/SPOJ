@@ -4,9 +4,6 @@ namespace Spoj.Library.SegmentTrees.QueryObjects
 {
     public sealed class MinimumQueryObject : SegmentTreeQueryObject<MinimumQueryObject, int>
     {
-        public override void Reinitialize(Func<int, int> updater)
-            => Minimum = updater(Minimum);
-
         public override int QueryValue
         {
             get { return Minimum; }

@@ -22,7 +22,9 @@ namespace Spoj.Library.Primes
             if (n <= _sieveFactorizer.Limit)
             {
                 foreach (int primeFactor in _sieveFactorizer.GetPrimeFactors(n))
+                {
                     yield return primeFactor;
+                }
             }
             else
             {
@@ -57,7 +59,9 @@ namespace Spoj.Library.Primes
             if (n <= _sieveFactorizer.Limit)
             {
                 foreach (int primeFactor in _sieveFactorizer.GetDistinctPrimeFactors(n))
+                {
                     yield return primeFactor;
+                }
             }
             else
             {

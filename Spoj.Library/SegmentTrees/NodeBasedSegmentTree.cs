@@ -79,7 +79,7 @@ namespace Spoj.Library.SegmentTrees
             node.QueryObject.Update(node.LeftChild.QueryObject, node.RightChild.QueryObject);
         }
 
-        private class Node
+        private sealed class Node
         {
             public Node(int index, TQueryValue value)
             {

@@ -54,12 +54,18 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             QueryObject childrenQueryObject;
 
             if (isLeftHalfOverlapped && isRightHalfOverlapped)
+            {
                 childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                     .Combine(SumQuery(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
+            }
             else if (isLeftHalfOverlapped)
+            {
                 childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+            }
             else
+            {
                 childrenQueryObject = SumQuery(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+            }
 
             return new QueryObject(
                 childrenQueryObject.SegmentStartIndex,

@@ -4,7 +4,7 @@ using System;
 namespace Spoj.Library.UnitTests
 {
     [TestClass]
-    public class Mod10ExponentiatorTests
+    public sealed class Mod10ExponentiatorTests
     {
         [TestMethod]
         public void VerifiesSmallMod10Exponentiation()

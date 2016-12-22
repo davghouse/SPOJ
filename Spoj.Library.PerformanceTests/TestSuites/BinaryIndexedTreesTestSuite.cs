@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class BinaryIndexedTreesTestSuite : ITestSuite
+    public sealed class BinaryIndexedTreesTestSuite : ITestSuite
     {
         private readonly int[] _array;
         private readonly IReadOnlyList<Tuple<int, int>> _randomRanges;

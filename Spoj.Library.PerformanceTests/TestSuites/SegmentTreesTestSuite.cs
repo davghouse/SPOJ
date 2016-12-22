@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class SegmentTreesTestSuite : ITestSuite
+    public sealed class SegmentTreesTestSuite : ITestSuite
     {
         private readonly IReadOnlyList<int> _allRangesArray;
         private readonly IReadOnlyList<int> _rightEndingRangesArray;

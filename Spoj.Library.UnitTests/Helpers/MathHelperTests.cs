@@ -4,7 +4,7 @@ using Spoj.Library.Helpers;
 namespace Spoj.Library.UnitTests.Helpers
 {
     [TestClass]
-    public class MathHelperTests
+    public sealed class MathHelperTests
     {
         [TestMethod]
         public void VerifiesIsPowerOfTwo()

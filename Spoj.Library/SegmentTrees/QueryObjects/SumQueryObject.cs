@@ -4,9 +4,6 @@ namespace Spoj.Library.SegmentTrees.QueryObjects
 {
     public sealed class SumQueryObject : SegmentTreeQueryObject<SumQueryObject, int>
     {
-        public override void Reinitialize(Func<int, int> updater)
-            => Sum = updater(Sum);
-
         public override int QueryValue
         {
             get { return Sum; }

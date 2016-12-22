@@ -79,9 +79,7 @@
     <None Include="Solutions\5 - King\PRIME1.cs" />
     <None Include="Solutions\5 - King\SAMER08F.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Spoj.Library\Spoj.Library.csproj">
       <Project>{4d10bf86-2d13-462e-9de5-c67d759a0772}</Project>
@@ -350,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\SUMITR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

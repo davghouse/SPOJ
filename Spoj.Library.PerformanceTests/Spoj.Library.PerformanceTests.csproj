@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITestSuite.cs" />
     <Compile Include="TestSuites\BinaryIndexedTreesTestSuite.cs" />
     <Compile Include="TestSuites\PrimesTestSuite.cs" />
@@ -60,9 +61,7 @@
       <Name>Spoj.Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="TestSuites\Results\BinaryIndexedTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\SegmentTreesTestSuiteResults.txt" />

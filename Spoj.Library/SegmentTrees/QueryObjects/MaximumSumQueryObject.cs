@@ -10,6 +10,7 @@ namespace Spoj.Library.SegmentTrees.QueryObjects
             base.Initialize(index, value);
             Sum = MaximumLeftStartingSum = MaximumRightStartingSum = value;
         }
+
         public override void Reinitialize(Func<int, int> updater)
             => Sum = MaximumSum = MaximumLeftStartingSum = MaximumRightStartingSum = updater(MaximumSum);
 

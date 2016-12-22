@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Spoj.Library.PerformanceTests.TestSuites
 {
-    public class PrimesTestSuite : ITestSuite
+    public sealed class PrimesTestSuite : ITestSuite
     {
         private const int _tenMillion = 10000000;
         private const int _fiveMillion = 5000000;

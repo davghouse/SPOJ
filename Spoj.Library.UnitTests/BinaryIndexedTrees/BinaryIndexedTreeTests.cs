@@ -5,7 +5,7 @@ using System;
 namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 {
     [TestClass]
-    public class BinaryIndexedTreeTests
+    public sealed class BinaryIndexedTreeTests
     {
         private int[][] _sourceArrays;
 

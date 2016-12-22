@@ -5,15 +5,15 @@ using System.Linq;
 namespace Spoj.Library.UnitTests.Helpers
 {
     [TestClass]
-    public class StringHelperTests
+    public sealed class StringHelperTests
     {
-        private static char[] delimiters = new[] { '+', '-', '*', '/', '=' };
+        private static char[] _delimiters = new[] { '+', '-', '*', '/', '=' };
 
         private string s;
         private string[] res;
 
         private string[] SplitAndKeep(string s)
-            => s.SplitAndKeep(delimiters).ToArray();
+            => s.SplitAndKeep(_delimiters).ToArray();
 
         [TestMethod]
         public void SplitAndKeep_WhenStringContainsNoDelimiters()

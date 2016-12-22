@@ -5,10 +5,10 @@ using System.Linq;
 namespace Spoj.Library.UnitTests.Primes
 {
     [TestClass]
-    public class PrimeDeciderTests
+    public sealed class PrimeDeciderTests
     {
-        private static int[] primesUpTo2 = new[] { 2 };
-        private static int[] primesUpTo49 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
+        private static int[] _primesUpTo2 = new[] { 2 };
+        private static int[] _primesUpTo49 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
         [TestMethod]
         public void VerifiesDecidersAgainstKnownOutput()
@@ -19,11 +19,11 @@ namespace Spoj.Library.UnitTests.Primes
             var trialDivisionDecider = new TrialDivisionDecider(2);
             for (int n = 0; n <= 2; ++n)
             {
-                Assert.AreEqual(primesUpTo2.Contains(n), sieveDecider.IsPrime(n));
-                Assert.AreEqual(primesUpTo2.Contains(n), sieveProvider.IsPrime(n));
-                Assert.AreEqual(primesUpTo2.Contains(n), sieveFactorizer.IsPrime(n));
-                Assert.AreEqual(primesUpTo2.Contains(n), trialDivisionDecider.IsPrime(n));
-                Assert.AreEqual(primesUpTo2.Contains(n), NaivePrimeDeciderProviderFactorizer.IsPrime(n));
+                Assert.AreEqual(_primesUpTo2.Contains(n), sieveDecider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo2.Contains(n), sieveProvider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo2.Contains(n), sieveFactorizer.IsPrime(n));
+                Assert.AreEqual(_primesUpTo2.Contains(n), trialDivisionDecider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo2.Contains(n), NaivePrimeDeciderProviderFactorizer.IsPrime(n));
             }
 
             sieveDecider = new SieveOfEratosthenesDecider(49);
@@ -32,11 +32,11 @@ namespace Spoj.Library.UnitTests.Primes
             trialDivisionDecider = new TrialDivisionDecider(49);
             for (int n = 0; n <= 49; ++n)
             {
-                Assert.AreEqual(primesUpTo49.Contains(n), sieveDecider.IsPrime(n));
-                Assert.AreEqual(primesUpTo49.Contains(n), sieveProvider.IsPrime(n));
-                Assert.AreEqual(primesUpTo49.Contains(n), sieveFactorizer.IsPrime(n));
-                Assert.AreEqual(primesUpTo49.Contains(n), trialDivisionDecider.IsPrime(n));
-                Assert.AreEqual(primesUpTo49.Contains(n), NaivePrimeDeciderProviderFactorizer.IsPrime(n));
+                Assert.AreEqual(_primesUpTo49.Contains(n), sieveDecider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo49.Contains(n), sieveProvider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo49.Contains(n), sieveFactorizer.IsPrime(n));
+                Assert.AreEqual(_primesUpTo49.Contains(n), trialDivisionDecider.IsPrime(n));
+                Assert.AreEqual(_primesUpTo49.Contains(n), NaivePrimeDeciderProviderFactorizer.IsPrime(n));
             }
         }
 

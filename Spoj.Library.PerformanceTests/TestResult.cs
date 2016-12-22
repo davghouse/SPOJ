@@ -2,7 +2,7 @@
 
 namespace Spoj.Library.PerformanceTests
 {
-    public class TestResult
+    public sealed class TestResult
     {
         public TestResult(TestCase testCase, TimeSpan elapsedTime)
         {

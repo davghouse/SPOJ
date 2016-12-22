@@ -3,7 +3,7 @@
 namespace Spoj.Library.UnitTests
 {
     [TestClass]
-    public class BinarySearchTests
+    public sealed class BinarySearchTests
     {
         [TestMethod]
         public void Searches_FalseToTrue_Unsuccessfully()

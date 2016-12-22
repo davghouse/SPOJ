@@ -2,7 +2,7 @@
 
 namespace Spoj.Library.PerformanceTests
 {
-    public class TestCase
+    public sealed class TestCase
     {
         public TestCase(string name, Action run)
         {

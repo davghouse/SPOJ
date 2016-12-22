@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BigInteger.cs" />
     <Compile Include="BinaryIndexedTrees\NaiveBinaryIndexedTreeAlternatives.cs" />
     <Compile Include="BinaryIndexedTrees\PURQBinaryIndexedTree.cs" />
@@ -75,11 +76,11 @@
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="StringMatchers\KmpStringMatcher.cs" />
     <Compile Include="StringMatchers\NaiveStringMatcher.cs" />
-    <Compile Include="Trie.cs" />
+    <Compile Include="Tries\Trie.cs" />
+    <Compile Include="Tries\TrieNode.cs" />
+    <Compile Include="Tries\TrieSearchResult.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

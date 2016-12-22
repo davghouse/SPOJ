@@ -4,7 +4,7 @@ using System;
 namespace Spoj.Library.UnitTests
 {
     [TestClass]
-    public class SimpleGraphTests
+    public sealed class SimpleGraphTests
     {
         [TestMethod]
         public void ValidatesAGraph1()

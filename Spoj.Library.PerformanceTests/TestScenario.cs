@@ -2,7 +2,7 @@
 
 namespace Spoj.Library.PerformanceTests
 {
-    public class TestScenario
+    public sealed class TestScenario
     {
         public TestScenario(string name, IReadOnlyList<TestCase> testCases)
         {

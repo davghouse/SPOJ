@@ -19,7 +19,8 @@ namespace Spoj.Library.SegmentTrees
         public int SegmentEndIndex { get; protected set; }
 
         // For constructing leaves, given an index of the source array and the corresponding value.
-        // It would be nice if we could have some actual constructors but we're using these objects as generic 
+        // It would be nice if we could have some actual constructors but we're using these objects
+        // as generic type parameters so it'd be annoying to support that (activator or factory).
         public virtual void Initialize(int index, TQueryValue value)
         {
             SegmentStartIndex = SegmentEndIndex = index;
@@ -27,15 +28,16 @@ namespace Spoj.Library.SegmentTrees
         }
 
         // When the source array is updated, it's necessary for leaf nodes to reinitialize themselves.
-        // The updater is provided in case the new value is defined in terms of its current value.
-        public abstract void Reinitialize(Func<TQueryValue, TQueryValue> updater);
+        // The updater is provided in case the new query value is defined in terms of its current value.
+        public virtual void Reinitialize(Func<TQueryValue, TQueryValue> updater)
+            => QueryValue = updater(QueryValue);
 
         // A query object can combine into a new object with query objects from segments adjacent and to the right.
         public abstract TQueryObject Combine(TQueryObject rightAdjacentObject);
 
-        // A query object needs to update itself when the source array gets updated, given
-        // its children after they've been updated. Like combine, but from a different perspective.
-        // It's easy to use Update to implement combine; see MaximumSumQueryObject.
+        // A query object needs to update itself when the source array gets updated, given its children
+        // after they've been updated. Like Combine, but from a different perspective. It's easy to use
+        // Update to implement Combine; see MaximumSumQueryObject.
         public abstract void Update(TQueryObject updatedLeftChild, TQueryObject updatedRightChild);
 
         // The given range starts before the segment starts and ends after the segment ends.
