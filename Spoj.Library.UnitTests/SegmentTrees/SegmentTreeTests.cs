@@ -43,23 +43,23 @@ namespace Spoj.Library.UnitTests.SegmentTrees
         }
 
         [TestMethod]
-        public void VerifiesMinimumQueries()
+        public void MinimumQueries()
             => VerifiesQueries<MinimumQueryObject>(NaiveSegmentTreeAlternatives.MinimumQuery);
 
         [TestMethod]
-        public void VerifiesMaximumQueries()
+        public void MaximumQueries()
             => VerifiesQueries<MaximumQueryObject>(NaiveSegmentTreeAlternatives.MaximumQuery);
 
         [TestMethod]
-        public void VerifiesSumQueries()
+        public void SumQueries()
             => VerifiesQueries<SumQueryObject>(NaiveSegmentTreeAlternatives.SumQuery);
 
         [TestMethod]
-        public void VerifiesProductQueries()
+        public void ProductQueries()
             => VerifiesQueries<ProductQueryObject>(NaiveSegmentTreeAlternatives.ProductQuery);
 
         [TestMethod]
-        public void VerifiesMaximumSumQueries()
+        public void MaximumSumQueries()
             => VerifiesQueries<MaximumSumQueryObject>(NaiveSegmentTreeAlternatives.MaximumSumQuery);
 
         private void VerifiesQueries<TQueryObject>(Func<IReadOnlyList<int>, int, int, int> naiveVerifier)
@@ -86,23 +86,23 @@ namespace Spoj.Library.UnitTests.SegmentTrees
         }
 
         [TestMethod]
-        public void VerifiesMinimumUpdates()
+        public void MinimumUpdates()
             => VerifiesUpdates<MinimumQueryObject>(NaiveSegmentTreeAlternatives.MinimumQuery);
 
         [TestMethod]
-        public void VerifiesMaximumUpdates()
+        public void MaximumUpdates()
             => VerifiesUpdates<MaximumQueryObject>(NaiveSegmentTreeAlternatives.MaximumQuery);
 
         [TestMethod]
-        public void VerifiesSumUpdates()
+        public void SumUpdates()
             => VerifiesUpdates<SumQueryObject>(NaiveSegmentTreeAlternatives.SumQuery);
 
         [TestMethod]
-        public void VerifiesProductUpdates()
+        public void ProductUpdates()
             => VerifiesUpdates<ProductQueryObject>(NaiveSegmentTreeAlternatives.ProductQuery);
 
         [TestMethod]
-        public void VerifiesMaximumSumUpdates()
+        public void MaximumSumUpdates()
             => VerifiesUpdates<MaximumSumQueryObject>(NaiveSegmentTreeAlternatives.MaximumSumQuery);
 
         private void VerifiesUpdates<TQueryObject>(Func<IReadOnlyList<int>, int, int, int> naiveVerifier)
@@ -136,7 +136,7 @@ namespace Spoj.Library.UnitTests.SegmentTrees
         }
 
         [TestMethod]
-        public void VerifiesLazySumSegmentTreeWithRandomOperations()
+        public void LazySumSegmentTree_ForRandomOperations()
         {
             var rand = new Random();
 

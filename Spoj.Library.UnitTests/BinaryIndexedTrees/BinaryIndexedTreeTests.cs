@@ -40,7 +40,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
         }
 
         [TestMethod]
-        public void VerifiesPURQBinaryIndexedTree()
+        public void PURQBinaryIndexedTree()
         {
             var rand = new Random();
 
@@ -73,7 +73,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
         }
 
         [TestMethod]
-        public void VerifiesRUPQBinaryIndexedTree()
+        public void RUPQBinaryIndexedTree()
         {
             var rand = new Random();
 
@@ -105,7 +105,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
         }
 
         [TestMethod]
-        public void VerifiesRURQBinaryIndexedTree()
+        public void RURQBinaryIndexedTree()
         {
             var rand = new Random();
 

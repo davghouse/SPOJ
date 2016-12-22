@@ -10,13 +10,13 @@ namespace Spoj.Library.UnitTests.StringMatchers
     public sealed class StringMatcherTests
     {
         [TestMethod]
-        public void VerifiesMatchesForSmallStrings()
+        public void StringMatchers_ForSmallStrings()
         {
-            VerifiesMatchesForSmallStrings(NaiveStringMatcher.GetMatchIndices);
-            VerifiesMatchesForSmallStrings(KmpStringMatcher.GetMatchIndices);
+            StringMatchers_ForSmallStrings(NaiveStringMatcher.GetMatchIndices);
+            StringMatchers_ForSmallStrings(KmpStringMatcher.GetMatchIndices);
         }
 
-        private void VerifiesMatchesForSmallStrings(Func<string, string, IEnumerable<int>> getMatches)
+        private void StringMatchers_ForSmallStrings(Func<string, string, IEnumerable<int>> getMatches)
         {
             string text;
 
@@ -61,7 +61,7 @@ namespace Spoj.Library.UnitTests.StringMatchers
 
 
         [TestMethod]
-        public void VerifiesAgainstEachOtherForLargeStrings()
+        public void StringMatchers_ForLargeStrings_AgreeWithEachOther()
         {
             var text = InputGenerator.GenerateRandomString(1000);
             var pattern = InputGenerator.GenerateRandomString(3);
@@ -79,7 +79,7 @@ namespace Spoj.Library.UnitTests.StringMatchers
         }
 
         [TestMethod]
-        public void VerifiesPrefixesLengthOfLongestProperSuffixThatIsItselfAPrefix()
+        public void ComputePrefixesLengthOfLongestProperSuffixThatIsItselfAPrefix()
         {
             // This verifies the example shown in CLRS on page 1005.
             CollectionAssert.AreEqual(

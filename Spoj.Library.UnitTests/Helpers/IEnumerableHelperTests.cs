@@ -7,7 +7,7 @@ namespace Spoj.Library.UnitTests.Helpers
     public sealed class IEnumerableHelperTests
     {
         [TestMethod]
-        public void VerifiesSetEqual()
+        public void SetEqual()
         {
             Assert.IsTrue(new int[] { 1, 2, 3 }.SetEqual(new int[] { 3, 2, 1 }));
             Assert.IsTrue(new int[] { 1, 2, 3 }.SetEqual(new int[] { 1, 2, 2, 3, 3, 3 }));

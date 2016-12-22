@@ -29,7 +29,7 @@ namespace Spoj.Library.UnitTests.Primes
         };
 
         [TestMethod]
-        public void VerifiesPrimeFactorsAgainstKnownOutput()
+        public void GetPrimeFactors_AgreesWithKnownOutput()
         {
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
@@ -46,7 +46,7 @@ namespace Spoj.Library.UnitTests.Primes
         }
 
         [TestMethod]
-        public void VerifiesDistinctPrimeFactorsAgainstKnownOutput()
+        public void GetDistinctPrimeFactors_AgreesWithKnownOutput()
         {
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(1000);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(1000);
@@ -63,7 +63,7 @@ namespace Spoj.Library.UnitTests.Primes
         }
 
         [TestMethod]
-        public void VerifiesPrimeFactorsAgainstNaiveFactorizer()
+        public void GetPrimeFactors_AgreesWithNaiveFactorizer()
         {
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(3481);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(3481);
@@ -79,7 +79,7 @@ namespace Spoj.Library.UnitTests.Primes
         }
 
         [TestMethod]
-        public void VerifiesDistinctPrimeFactorsAgainstNaiveFactorizer()
+        public void GetDistinctPrimeFactors_AgreesWithNaiveFactorizer()
         {
             var sieveFactorizer = new SieveOfEratosthenesFactorizer(3481);
             var trialDivisionFactorizer = new TrialDivisionFactorizer(3481);

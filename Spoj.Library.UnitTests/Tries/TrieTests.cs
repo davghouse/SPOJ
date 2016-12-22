@@ -24,7 +24,7 @@ namespace Spoj.Library.UnitTests.Tries
         };
 
         [TestMethod]
-        public void VerifiesContainsWordForSmallTries()
+        public void ContainsWord_ForSmallTries()
         {
             var trie = new Trie(_strings);
             Assert.IsTrue(_strings.All(trie.ContainsWord));
@@ -44,7 +44,7 @@ namespace Spoj.Library.UnitTests.Tries
         }
 
         [TestMethod]
-        public void VerifiesContainsPrefixForSmallTries()
+        public void ContainsPrefix_ForSmallTries()
         {
             var trie = new Trie(_strings);
             for (int i = 0; i < _strings.Length; ++i)
@@ -86,7 +86,7 @@ namespace Spoj.Library.UnitTests.Tries
         }
 
         [TestMethod]
-        public void VerifiesSearchForSmallTries()
+        public void Search_ForSmallTries()
         {
             var trie = new Trie(_strings);
             for (int i = 0; i < _strings.Length; ++i)
@@ -143,7 +143,7 @@ namespace Spoj.Library.UnitTests.Tries
         }
 
         [TestMethod]
-        public void VerifiesSearchTraversalForSmallTries()
+        public void SearchTraversal_ForSmallTries()
         {
             TrieSearchResult result = new TrieSearchResult();
             var trie = new Trie(_strings);

@@ -6,7 +6,7 @@ namespace Spoj.Library.UnitTests
     public sealed class BinarySearchTests
     {
         [TestMethod]
-        public void Searches_FalseToTrue_Unsuccessfully()
+        public void SearchesFalseToTrueUnsuccessfully()
         {
             var mode = BinarySearch.Mode.FalseToTrue;
             int[] arr;
@@ -33,7 +33,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void Searches_TrueToFalse_Unsuccessfully()
+        public void SearchesTrueToFalseUnsuccessfully()
         {
             var mode = BinarySearch.Mode.TrueToFalse;
             int[] arr;
@@ -60,7 +60,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void Searches_FalseToTrue_Successfully()
+        public void SearchesFalseToTrueSuccessfully()
         {
             var mode = BinarySearch.Mode.FalseToTrue;
             int[] arr;
@@ -88,7 +88,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void Searches_TrueToFalse_Successfully()
+        public void SearchesTrueToFalseSuccessfully()
         {
             var mode = BinarySearch.Mode.TrueToFalse;
             int[] arr;

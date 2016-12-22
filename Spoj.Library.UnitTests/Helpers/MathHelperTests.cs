@@ -7,7 +7,7 @@ namespace Spoj.Library.UnitTests.Helpers
     public sealed class MathHelperTests
     {
         [TestMethod]
-        public void VerifiesIsPowerOfTwo()
+        public void IsPowerOfTwo()
         {
             Assert.IsFalse(MathHelper.IsPowerOfTwo(-1));
             Assert.IsFalse(MathHelper.IsPowerOfTwo(0));
@@ -23,7 +23,7 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesFirstPowerOfTwoEqualOrGreater()
+        public void FirstPowerOfTwoEqualOrGreater()
         {
             // Not exactly accurate. Really first integral power of two (non-negative exponent), but kind of implied.
             Assert.AreEqual(1, MathHelper.FirstPowerOfTwoEqualOrGreater(-1));
@@ -44,7 +44,7 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesGreatestPowerOfTwoEqualOrLess()
+        public void GreatestPowerOfTwoEqualOrLess()
         {
             Assert.AreEqual(1, MathHelper.GreatestPowerOfTwoEqualOrLess(1));
             Assert.AreEqual(2, MathHelper.GreatestPowerOfTwoEqualOrLess(2));
@@ -61,7 +61,7 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesNumberOfCombinations()
+        public void NumberOfCombinations()
         {
             Assert.AreEqual(1, MathHelper.NumberOfCombinations(1, 0));
             Assert.AreEqual(1, MathHelper.NumberOfCombinations(1, 1));
@@ -100,7 +100,7 @@ namespace Spoj.Library.UnitTests.Helpers
         }
 
         [TestMethod]
-        public void VerifiesGreatestCommonDivisor()
+        public void GreatestCommonDivisor()
         {
             Assert.AreEqual(0, MathHelper.GreatestCommonDivisor(0, 0));
             Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(1, 0));

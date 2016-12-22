@@ -7,7 +7,7 @@ namespace Spoj.Library.UnitTests
     public sealed class Mod10ExponentiatorTests
     {
         [TestMethod]
-        public void VerifiesSmallMod10Exponentiation()
+        public void SmallMod10Exponentiation()
         {
             Assert.AreEqual(0, Mod10Exponentiator.Compute(0, 1));
             Assert.AreEqual(0, Mod10Exponentiator.Compute(0, 2));
@@ -22,7 +22,7 @@ namespace Spoj.Library.UnitTests
         }
 
         [TestMethod]
-        public void VerifiesBigMod10Exponentiation()
+        public void BigMod10Exponentiation()
         {
             Assert.AreEqual(0, Mod10Exponentiator.Compute(10, 23409823));
             Assert.AreEqual(1, Mod10Exponentiator.Compute(11, 234094829));

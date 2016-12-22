@@ -11,7 +11,7 @@ namespace Spoj.Library.UnitTests.Primes
         private static int[] _primesUpTo49 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
         [TestMethod]
-        public void VerifiesDecidersAgainstKnownOutput()
+        public void PrimeDeciders_AgreeWithKnownOutput()
         {
             var sieveDecider = new SieveOfEratosthenesDecider(2);
             var sieveProvider = new SieveOfEratosthenesProvider(2);
@@ -41,7 +41,7 @@ namespace Spoj.Library.UnitTests.Primes
         }
 
         [TestMethod]
-        public void VerifiesDecidersAgainstNaiveDecider()
+        public void PrimeDeciders_AgreeWithNaiveDecider()
         {
             for (int i = 1000; i <= 10000; i += 1000)
             {
