@@ -41,7 +41,7 @@ namespace Spoj.Library.SegmentTrees
 
         private TQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
-            var queryObject = _treeArray[treeArrayIndex];
+            TQueryObject queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
                 return queryObject;
@@ -68,7 +68,7 @@ namespace Spoj.Library.SegmentTrees
 
         private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, Func<TQueryValue, TQueryValue> updater)
         {
-            var queryObject = _treeArray[treeArrayIndex];
+            TQueryObject queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.SegmentStartIndex == queryObject.SegmentEndIndex)
             {

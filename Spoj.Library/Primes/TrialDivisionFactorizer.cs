@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Spoj.Library.Primes
 {
@@ -30,11 +31,11 @@ namespace Spoj.Library.Primes
             {
                 foreach (int prime in _sieveFactorizer.Primes)
                 {
-                    // Check for factors up to sqrt(n), as non-primes with such a factor must've had
-                    // a factor seen earlier < sqrt(n) (otherwise multiplied together they'd be > n).
-                    // The fact that n is getting smaller doesn't matter. If this condition makes the
-                    // loop stop, the current value of n must be a prime greater than 'prime', since
-                    // n's only other option (multiple prime factors > 'prime') doesn't stop the loop.
+                    // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have a factor
+                    // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
+                    // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
+                    // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
+                    // factors they'd have to all be greater than 'prime', but in that case the loop wouldn't stop here.
                     if (prime * prime > n)
                         break;
 

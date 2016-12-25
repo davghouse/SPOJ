@@ -2,9 +2,9 @@
 
 namespace Spoj.Library.PerformanceTests
 {
-    public sealed class TestResult
+    public sealed class TestCaseResult
     {
-        public TestResult(TestCase testCase, TimeSpan elapsedTime)
+        public TestCaseResult(TestCase testCase, TimeSpan elapsedTime)
         {
             TestCase = testCase;
             ElapsedTime = elapsedTime;
@@ -12,5 +12,8 @@ namespace Spoj.Library.PerformanceTests
 
         public TestCase TestCase { get; }
         public TimeSpan ElapsedTime { get; }
+
+        public double GetElapsedTimeMultiplier(TimeSpan minElapsedTime)
+            => ElapsedTime.Ticks / (double)minElapsedTime.Ticks;
     }
 }

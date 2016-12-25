@@ -4,13 +4,13 @@ namespace Spoj.Library.PerformanceTests
 {
     public sealed class TestScenario
     {
-        public TestScenario(string name, IReadOnlyList<TestCase> testCases)
+        public TestScenario(string name, IEnumerable<TestCase> testCases)
         {
             Name = name;
             TestCases = testCases;
         }
 
-        public string Name { get; set; }
-        public IReadOnlyList<TestCase> TestCases { get; }
+        public string Name { get; }
+        public IEnumerable<TestCase> TestCases { get; }
     }
 }

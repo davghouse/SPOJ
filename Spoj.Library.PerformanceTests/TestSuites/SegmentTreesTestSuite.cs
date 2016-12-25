@@ -8,38 +8,39 @@ namespace Spoj.Library.PerformanceTests.TestSuites
 {
     public sealed class SegmentTreesTestSuite : ITestSuite
     {
+        private const int _allRangesArraySize = 1000;
+        private const int _rightEndingRangesArraySize = 50000;
+        private const int _randomRangesArraySize = 50000;
+        private const int _randomRangesCount = 10000;
         private readonly IReadOnlyList<int> _allRangesArray;
         private readonly IReadOnlyList<int> _rightEndingRangesArray;
         private readonly IReadOnlyList<int> _randomRangesArray;
         private readonly IReadOnlyList<Tuple<int, int>> _randomRanges;
-        private const int _randomRangesCount = 10000;
 
         public SegmentTreesTestSuite()
         {
-            _allRangesArray = InputGenerator.GenerateRandomInts(1000, -200, 200);
-            _rightEndingRangesArray = InputGenerator.GenerateRandomInts(50000, -300, 300);
-            _randomRangesArray = InputGenerator.GenerateRandomInts(50000, -15007, 15007);
-
-            var randomRanges = new Tuple<int, int>[_randomRangesCount];
+            _allRangesArray = InputGenerator.GenerateRandomInts(_allRangesArraySize, -1000, 1000);
+            _rightEndingRangesArray = InputGenerator.GenerateRandomInts(_rightEndingRangesArraySize, -1000, 1000);
+            _randomRangesArray = InputGenerator.GenerateRandomInts(_randomRangesArraySize, -1000, 1000);
 
             var rand = new Random();
-
+            var randomRanges = new Tuple<int, int>[_randomRangesCount];
             for (int i = 0; i < _randomRangesCount; ++i)
             {
-                int firstIndex = rand.Next(0, _randomRangesArray.Count);
-                int secondIndex = rand.Next(0, _randomRangesArray.Count);
+                int firstIndex = rand.Next(0, _randomRangesArraySize);
+                int secondIndex = rand.Next(0, _randomRangesArraySize);
 
                 randomRanges[i] = Tuple.Create(
                     Math.Min(firstIndex, secondIndex),
                     Math.Max(firstIndex, secondIndex));
             }
 
-            _randomRanges = Array.AsReadOnly(randomRanges);
+            _randomRanges = randomRanges;
         }
 
-        public IReadOnlyList<TestScenario> TestScenarios => new TestScenario[]
+        public IEnumerable<TestScenario> TestScenarios => new TestScenario[]
         {
-            new TestScenario($"All ranges, array size {_allRangesArray.Count}, minimum", new TestCase[]
+            new TestScenario($"All ranges, array size {_allRangesArraySize}, minimum operations", new TestCase[]
                 {
                     new TestCase("Naive query", () => NaiveQuery(NaiveSegmentTreeAlternatives.MinimumQuery, ArrayMode.AllRanges)),
                     new TestCase("Node-based query", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.AllRanges)),
@@ -49,54 +50,54 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                     new TestCase("Array-based update", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.AllRanges)),
                     new TestCase("Non-recursive update", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.AllRanges)),
                 }),
-            new TestScenario($"All ranges, array size {_allRangesArray.Count}, maximum sum query", new TestCase[]
+            new TestScenario($"All ranges, array size {_allRangesArraySize}, maximum sum query", new TestCase[]
                 {
                     new TestCase("Naive", () => NaiveQuery(NaiveSegmentTreeAlternatives.MaximumSumQuery, ArrayMode.AllRanges)),
                     new TestCase("Node-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.AllRanges)),
                     new TestCase("Array-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.AllRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.AllRanges)),
                 }),
-            new TestScenario($"Right-ending ranges, array size {_rightEndingRangesArray.Count}, minimum query", new TestCase[]
+            new TestScenario($"Right-ending ranges, array size {_rightEndingRangesArraySize}, minimum query", new TestCase[]
                 {
                     new TestCase("Naive", () => NaiveQuery(NaiveSegmentTreeAlternatives.MinimumQuery, ArrayMode.RightEndingRanges)),
                     new TestCase("Node-based", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RightEndingRanges)),
                     new TestCase("Array-based", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RightEndingRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RightEndingRanges)),
                 }),
-            new TestScenario($"Right-ending ranges, array size {_rightEndingRangesArray.Count}, maximum sum query", new TestCase[]
+            new TestScenario($"Right-ending ranges, array size {_rightEndingRangesArraySize}, maximum sum query", new TestCase[]
                 {
                     new TestCase("Naive", () => NaiveQuery(NaiveSegmentTreeAlternatives.MaximumSumQuery, ArrayMode.RightEndingRanges)),
                     new TestCase("Node-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RightEndingRanges)),
                     new TestCase("Array-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RightEndingRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RightEndingRanges)),
                 }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArray.Count}, minimum query", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArraySize}, minimum query", new TestCase[]
                 {
                     new TestCase("Naive", () => NaiveQuery(NaiveSegmentTreeAlternatives.MinimumQuery, ArrayMode.RandomRanges)),
                     new TestCase("Node-based", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RandomRanges)),
                     new TestCase("Array-based", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RandomRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeQuery<MinimumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RandomRanges)),
                 }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArray.Count}, maximum sum query", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArraySize}, maximum sum query", new TestCase[]
                 {
                     new TestCase("Naive", () => NaiveQuery(NaiveSegmentTreeAlternatives.MaximumSumQuery, ArrayMode.RandomRanges)),
                     new TestCase("Node-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RandomRanges)),
                     new TestCase("Array-based", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RandomRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeQuery<MaximumSumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RandomRanges)),
                 }),
-            new TestScenario($"{_randomRangesCount} random points, array size {_randomRangesArray.Count}, minimum update", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random points, array size {_randomRangesArraySize}, minimum update", new TestCase[]
                 {
                     new TestCase("Node-based", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RandomRanges, randomPoints: true)),
                     new TestCase("Array-based", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RandomRanges, randomPoints: true)),
                     new TestCase("Non-recursive", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RandomRanges, randomPoints: true)),
                 }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArray.Count}, minimum update", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArraySize}, minimum update", new TestCase[]
                 {
                     new TestCase("Node-based", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.NodeBased, ArrayMode.RandomRanges)),
                     new TestCase("Array-based", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.ArrayBased, ArrayMode.RandomRanges)),
                     new TestCase("Non-recursive", () => SegmentTreeUpdate<MinimumQueryObject>(SegmentTreeMode.NonRecursive, ArrayMode.RandomRanges)),
                 }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArray.Count}, sum random operation", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_randomRangesArraySize}, sum random operation", new TestCase[]
                 {
                     new TestCase("Node-based", () => SegmentTreeSumRandomOperation(SegmentTreeMode.NodeBased)),
                     new TestCase("Array-based", () => SegmentTreeSumRandomOperation(SegmentTreeMode.ArrayBased)),
@@ -124,9 +125,9 @@ namespace Spoj.Library.PerformanceTests.TestSuites
         {
             if (arrayMode == ArrayMode.AllRanges)
             {
-                for (int i = 0; i < _allRangesArray.Count; ++i)
+                for (int i = 0; i < _allRangesArraySize; ++i)
                 {
-                    for (int j = i; j < _allRangesArray.Count; ++j)
+                    for (int j = i; j < _allRangesArraySize; ++j)
                     {
                         naiveQuerier(_allRangesArray, i, j);
                     }
@@ -134,9 +135,9 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             }
             else if (arrayMode == ArrayMode.RightEndingRanges)
             {
-                for (int i = 0; i < _rightEndingRangesArray.Count; ++i)
+                for (int i = 0; i < _rightEndingRangesArraySize; ++i)
                 {
-                    naiveQuerier(_rightEndingRangesArray, i, _rightEndingRangesArray.Count - 1);
+                    naiveQuerier(_rightEndingRangesArray, i, _rightEndingRangesArraySize - 1);
                 }
             }
             else

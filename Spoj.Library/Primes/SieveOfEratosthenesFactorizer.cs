@@ -16,7 +16,7 @@ namespace Spoj.Library.Primes
         {
             Limit = limit;
 
-            int?[] sieveWithSomePrimeFactor = new int?[Limit + 1];
+            var sieveWithSomePrimeFactor = new int?[Limit + 1];
             sieveWithSomePrimeFactor[0] = 0;
             sieveWithSomePrimeFactor[1] = 1;
 

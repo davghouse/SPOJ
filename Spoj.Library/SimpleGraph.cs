@@ -12,23 +12,21 @@ namespace Spoj.Library
     // instead of the vertices themselves to maintain state during searching.
     public sealed class SimpleGraph
     {
-        private readonly Vertex[] _vertices;
-
         private SimpleGraph(int vertexCount)
         {
-            _vertices = new Vertex[vertexCount];
+            var vertices = new Vertex[vertexCount];
+            for (int id = 0; id < vertexCount; ++id)
+            {
+                vertices[id] = new Vertex(this, id);
+            }
+
+            Vertices = Array.AsReadOnly(vertices);
         }
 
         // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
         public static SimpleGraph CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
         {
             var graph = new SimpleGraph(vertexCount);
-
-            for (int id = 0; id < vertexCount; ++id)
-            {
-                graph._vertices[id] = new Vertex(graph, id);
-            }
-
             for (int i = 0; i < edges.GetLength(0); ++i)
             {
                 graph.AddEdge(edges[i, 0], edges[i, 1]);
@@ -41,12 +39,6 @@ namespace Spoj.Library
         public static SimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
         {
             var graph = new SimpleGraph(vertexCount);
-
-            for (int id = 0; id < vertexCount; ++id)
-            {
-                graph._vertices[id] = new Vertex(graph, id);
-            }
-
             for (int i = 0; i < edges.GetLength(0); ++i)
             {
                 graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1);
@@ -55,14 +47,11 @@ namespace Spoj.Library
             return graph;
         }
 
-        public int VertexCount
-            => _vertices.Length;
-
-        public IReadOnlyList<Vertex> Vertices
-            => Array.AsReadOnly(_vertices);
+        public IReadOnlyList<Vertex> Vertices { get; }
+        public int VertexCount => Vertices.Count;
 
         private void AddEdge(int firstVertexID, int secondVertexID)
-            => AddEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
+            => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
         private void AddEdge(Vertex firstVertex, Vertex secondVertex)
         {
@@ -71,7 +60,7 @@ namespace Spoj.Library
         }
 
         public bool HasEdge(int firstVertexID, int secondVertexID)
-            => HasEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
+            => HasEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
         public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
             => firstVertex.HasNeighbor(secondVertex);
@@ -79,7 +68,7 @@ namespace Spoj.Library
         // This performs a DFS from an arbitrary start vertex, to determine if the whole graph is reachable from it.
         public bool IsConnected()
         {
-            var arbitraryStartVertex = _vertices[VertexCount / 2];
+            var arbitraryStartVertex = Vertices[VertexCount / 2];
             var discoveredVertexIDs = new HashSet<int> { arbitraryStartVertex.ID };
             var verticesToVisit = new Stack<Vertex>();
             verticesToVisit.Push(arbitraryStartVertex);
@@ -105,18 +94,18 @@ namespace Spoj.Library
         // Don't need the count property from a hash set, so using two parallel bool arrays, one for discovery, one for 2-coloring.
         public bool IsBipartite()
         {
-            bool[] discoveredVertexIDs = new bool[VertexCount];
-            bool[] discoveredVertexColors = new bool[VertexCount];
+            var discoveredVertexIDs = new bool[VertexCount];
+            var discoveredVertexColors = new bool[VertexCount];
             var verticesToVisit = new Stack<Vertex>();
 
-            for (int i = 0; i < _vertices.Length; ++i)
+            for (int i = 0; i < VertexCount; ++i)
             {
                 if (discoveredVertexIDs[i])
                     continue; // Already explored this component.
 
                 discoveredVertexIDs[i] = true;
                 discoveredVertexColors[i] = true;
-                verticesToVisit.Push(_vertices[i]);
+                verticesToVisit.Push(Vertices[i]);
 
                 while (verticesToVisit.Count > 0)
                 {
@@ -143,13 +132,13 @@ namespace Spoj.Library
         }
 
         public Tuple<Vertex, int> FindFurthestVertex(int startVertexID)
-            => FindFurthestVertex(_vertices[startVertexID]);
+            => FindFurthestVertex(Vertices[startVertexID]);
 
         // This finds a furthest vertex from the start vertex, that is, a vertex whose (shortest) path
         // to the start is the longest, and returns that vertex and its distance (path length) from the start.
         public Tuple<Vertex, int> FindFurthestVertex(Vertex startVertex)
         {
-            bool[] discoveredVertexIDs = new bool[VertexCount];
+            var discoveredVertexIDs = new bool[VertexCount];
             var verticesToVisit = new Queue<Vertex>();
             discoveredVertexIDs[startVertex.ID] = true;
             verticesToVisit.Enqueue(startVertex);
@@ -186,13 +175,13 @@ namespace Spoj.Library
         }
 
         public int GetShortestPathLength(int startVertexID, int endVertexID)
-            => GetShortestPathLength(_vertices[startVertexID], _vertices[endVertexID]);
+            => GetShortestPathLength(Vertices[startVertexID], Vertices[endVertexID]);
 
         public int GetShortestPathLength(Vertex startVertex, Vertex endVertex)
         {
             if (startVertex == endVertex) return 0;
 
-            bool[] discoveredVertexIDs = new bool[VertexCount];
+            var discoveredVertexIDs = new bool[VertexCount];
             var verticesToVisit = new Queue<Vertex>();
             discoveredVertexIDs[startVertex.ID] = true;
             verticesToVisit.Enqueue(startVertex);
@@ -242,20 +231,17 @@ namespace Spoj.Library
 
             public int ID { get; }
 
-            public int Degree
-                => _neighbors.Count;
-
-            public IEnumerable<Vertex> Neighbors
-                => _neighbors.Skip(0);
+            public IEnumerable<Vertex> Neighbors => _neighbors.Skip(0);
+            public int Degree => _neighbors.Count;
 
             internal void AddNeighbor(int neighborID)
-                => AddNeighbor(_graph._vertices[neighborID]);
+                => AddNeighbor(_graph.Vertices[neighborID]);
 
             internal void AddNeighbor(Vertex neighbor)
                 => _neighbors.Add(neighbor);
 
             public bool HasNeighbor(int neighborID)
-                => HasNeighbor(_graph._vertices[neighborID]);
+                => HasNeighbor(_graph.Vertices[neighborID]);
 
             public bool HasNeighbor(Vertex neighbor)
                 => _neighbors.Contains(neighbor);

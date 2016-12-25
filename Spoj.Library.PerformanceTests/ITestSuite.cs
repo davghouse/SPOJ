@@ -4,6 +4,6 @@ namespace Spoj.Library.PerformanceTests
 {
     public interface ITestSuite
     {
-        IReadOnlyList<TestScenario> TestScenarios { get; }
+        IEnumerable<TestScenario> TestScenarios { get; }
     }
 }

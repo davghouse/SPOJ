@@ -42,7 +42,7 @@ namespace Spoj.Library.SegmentTrees.AdHoc
         // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
         private QueryObject SumQuery(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
-            var parentQueryObject = _treeArray[treeArrayIndex];
+            QueryObject parentQueryObject = _treeArray[treeArrayIndex];
 
             if (parentQueryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
                 return parentQueryObject;
@@ -84,7 +84,7 @@ namespace Spoj.Library.SegmentTrees.AdHoc
 
         private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, int rangeAddition)
         {
-            var queryObject = _treeArray[treeArrayIndex];
+            QueryObject queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.IsTotallyOverlappedBy(updateStartIndex, updateEndIndex))
             {

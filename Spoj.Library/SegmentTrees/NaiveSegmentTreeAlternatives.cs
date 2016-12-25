@@ -32,10 +32,10 @@ namespace Spoj.Library.SegmentTrees
         // This is the common dynamic programming solution.
         public static int MaximumSumQuery(IReadOnlyList<int> sourceArray, int queryStartIndex, int queryEndIndex)
         {
-            int[] maximumSumEndingAt = new int[sourceArray.Count];
+            var maximumSumEndingAt = new int[sourceArray.Count];
             maximumSumEndingAt[queryStartIndex] = sourceArray[queryStartIndex];
-            int maximumSum = maximumSumEndingAt[queryStartIndex];
 
+            int maximumSum = maximumSumEndingAt[queryStartIndex];
             for (int i = queryStartIndex + 1; i <= queryEndIndex; ++i)
             {
                 maximumSumEndingAt[i] = Math.Max(

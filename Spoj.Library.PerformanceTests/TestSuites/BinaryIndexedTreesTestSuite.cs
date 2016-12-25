@@ -7,55 +7,55 @@ namespace Spoj.Library.PerformanceTests.TestSuites
 {
     public sealed class BinaryIndexedTreesTestSuite : ITestSuite
     {
+        private const int _arraySize = 100000;
+        private const int _randomRangesCount = 50000;
         private readonly int[] _array;
         private readonly IReadOnlyList<Tuple<int, int>> _randomRanges;
-        private const int _randomRangesCount = 20000;
 
         public BinaryIndexedTreesTestSuite()
         {
-            _array = InputGenerator.GenerateRandomInts(50000, -15007, 15007);
-            var randomRanges = new Tuple<int, int>[_randomRangesCount];
+            _array = InputGenerator.GenerateRandomInts(_arraySize, -1000, 1000);
 
             var rand = new Random();
-
+            var randomRanges = new Tuple<int, int>[_randomRangesCount];
             for (int i = 0; i < _randomRangesCount; ++i)
             {
-                int firstIndex = rand.Next(0, _array.Length);
-                int secondIndex = rand.Next(0, _array.Length);
+                int firstIndex = rand.Next(0, _arraySize);
+                int secondIndex = rand.Next(0, _arraySize);
 
                 randomRanges[i] = Tuple.Create(
                     Math.Min(firstIndex, secondIndex),
                     Math.Max(firstIndex, secondIndex));
             }
 
-            _randomRanges = Array.AsReadOnly(randomRanges);
+            _randomRanges = randomRanges;
         }
 
-        public IReadOnlyList<TestScenario> TestScenarios => new TestScenario[]
+        public IEnumerable<TestScenario> TestScenarios => new TestScenario[]
         {
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_array.Length}, sum query", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_arraySize}, sum query", new TestCase[]
             {
-                    new TestCase("Naive", NaiveSumQuery),
-                    new TestCase("PURQ", PURQSumQuery),
-                    new TestCase("RUPQ", RUPQSumQuery),
-                    new TestCase("RURQ", RURQSumQuery),
-                    new TestCase("Segment tree", SegmentTreeSumQuery),
+                new TestCase("Naive", NaiveSumQuery),
+                new TestCase("PURQ", PURQSumQuery),
+                new TestCase("RUPQ", RUPQSumQuery),
+                new TestCase("RURQ", RURQSumQuery),
+                new TestCase("Segment tree", SegmentTreeSumQuery),
             }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_array.Length}, range update", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_arraySize}, range update", new TestCase[]
             {
-                    new TestCase("Naive", NaiveRangeUpdate),
-                    new TestCase("PURQ", PURQRangeUpdate),
-                    new TestCase("RUPQ", RUPQRangeUpdate),
-                    new TestCase("RURQ", RURQRangeUpdate),
-                    new TestCase("Segment tree", SegmentTreeRangeUpdate),
+                new TestCase("Naive", NaiveRangeUpdate),
+                new TestCase("PURQ", PURQRangeUpdate),
+                new TestCase("RUPQ", RUPQRangeUpdate),
+                new TestCase("RURQ", RURQRangeUpdate),
+                new TestCase("Segment tree", SegmentTreeRangeUpdate),
             }),
-            new TestScenario($"{_randomRangesCount} random ranges, array size {_array.Length}, random operation", new TestCase[]
+            new TestScenario($"{_randomRangesCount} random ranges, array size {_arraySize}, random operation", new TestCase[]
             {
-                    new TestCase("Naive", NaiveRandomOperation),
-                    new TestCase("PURQ", PURQRandomOperation),
-                    new TestCase("RUPQ", RUPQRandomOperation),
-                    new TestCase("RURQ", RURQRandomOperation),
-                    new TestCase("Segment tree", SegmentTreeRandomOperation),
+                new TestCase("Naive", NaiveRandomOperation),
+                new TestCase("PURQ", PURQRandomOperation),
+                new TestCase("RUPQ", RUPQRandomOperation),
+                new TestCase("RURQ", RURQRandomOperation),
+                new TestCase("Segment tree", SegmentTreeRandomOperation),
             })
         };
 

@@ -13,8 +13,7 @@ namespace Spoj.Library
                 throw new NotSupportedException("Random.Next has an exclusive upper bound, so can't include int.MaxValue.");
 
             var rand = new Random();
-
-            int[] ints = new int[count];
+            var ints = new int[count];
             for (int i = 0; i < count; ++i)
             {
                 ints[i] = rand.Next(minValue, maxValue + 1);
@@ -30,15 +29,14 @@ namespace Spoj.Library
                 throw new NotSupportedException("Random.Next has an exclusive upper bound, so can't include int.MaxValue.");
 
             var rand = new Random();
-
             var distinctRandomInts = new HashSet<int>();
-            int[] ints = new int[count];
+            var ints = new int[count];
             while (distinctRandomInts.Count < count)
             {
-                int randInt = rand.Next(minValue, maxValue + 1);
-                if (distinctRandomInts.Add(randInt))
+                int num = rand.Next(minValue, maxValue + 1);
+                if (distinctRandomInts.Add(num))
                 {
-                    ints[distinctRandomInts.Count - 1] = randInt;
+                    ints[distinctRandomInts.Count - 1] = num;
                 }
             }
 
@@ -59,12 +57,11 @@ namespace Spoj.Library
                 throw new NotSupportedException("Can't generate even and odd numbers from a single number.");
 
             var rand = new Random();
-
-            int[,] evenOddPairs = new int[count, 2];
+            var evenOddPairs = new int[count, 2];
             for (int i = 0; i < count; ++i)
             {
-                var even = rand.Next(minValue, maxValue + 1);
-                var odd = rand.Next(minValue, maxValue + 1);
+                int even = rand.Next(minValue, maxValue + 1);
+                int odd = rand.Next(minValue, maxValue + 1);
                 evenOddPairs[i, 0] = even % 2 == 0 ? even
                     : even - 1 >= minValue ? even - 1
                     : even + 1;
@@ -79,12 +76,11 @@ namespace Spoj.Library
         public static int[,] GenerateRandomMinMaxPairs(int count, int minValue = 0, int maxValue = int.MaxValue - 1)
         {
             var rand = new Random();
-
-            int[,] minMaxPairs = new int[count, 2];
+            var minMaxPairs = new int[count, 2];
             for (int i = 0; i < count; ++i)
             {
-                var num1 = rand.Next(minValue, maxValue + 1);
-                var num2 = rand.Next(minValue, maxValue + 1);
+                int num1 = rand.Next(minValue, maxValue + 1);
+                int num2 = rand.Next(minValue, maxValue + 1);
                 minMaxPairs[i, 0] = Math.Min(num1, num2);
                 minMaxPairs[i, 1] = Math.Max(num1, num2);
             }

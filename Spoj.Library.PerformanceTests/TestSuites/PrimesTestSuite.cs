@@ -8,8 +8,11 @@ namespace Spoj.Library.PerformanceTests.TestSuites
     {
         private const int _tenMillion = 10000000;
         private const int _fiveMillion = 5000000;
+        private const int _fiveMillionAnd100Thousand = 5100000;
+        private const int _fiveMillionAnd1Thousand = 5001000;
+        private const int _sixMillion = 6000000;
 
-        public IReadOnlyList<TestScenario> TestScenarios => new TestScenario[]
+        public IEnumerable<TestScenario> TestScenarios => new TestScenario[]
         {
             new TestScenario("Up to ten million, one full-width pass", new TestCase[]
                 {
@@ -27,45 +30,45 @@ namespace Spoj.Library.PerformanceTests.TestSuites
                 }),
             new TestScenario("Up to ten million, one 1-million-width pass", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, 6000000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, 6000000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, 6000000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, 6000000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, _sixMillion)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, _sixMillion)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, _sixMillion)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, _sixMillion)),
                 }),
             new TestScenario("Up to ten million, ten 1-million-width passes", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, 6000000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, 6000000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, 6000000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, 6000000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, _sixMillion)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, _sixMillion)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, _sixMillion)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, _sixMillion)),
                 }),
             new TestScenario("Up to ten million, one 100k-width pass", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, 5100000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, 5100000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, 5100000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, 5100000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, _fiveMillionAnd100Thousand)),
                 }),
             new TestScenario("Up to ten million, ten 100k-width passes", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, 5100000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, 5100000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, 5100000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, 5100000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, _fiveMillionAnd100Thousand)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, _fiveMillionAnd100Thousand)),
                 }),
             new TestScenario("Up to ten million, one 1000-width passes", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, 5001000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, 5001000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, 5001000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, 5001000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 1, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 1, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 1, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 1, _fiveMillion, _fiveMillionAnd1Thousand)),
                 }),
             new TestScenario("Up to ten million, ten 1000-width passes", new TestCase[]
                 {
-                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, 5001000)),
-                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, 5001000)),
-                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, 5001000)),
-                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, 5001000)),
+                    new TestCase("Deciding w/ Sieve of Eratosthenes", () => SieveOfEratosthenesDecider(_tenMillion, 10, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Deciding w/ trial division", () => TrialDivisionDecider(_tenMillion, 10, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Factoring w/ Sieve of Eratosthenes", () => SieveOfEratosthenesFactorizer(_tenMillion, 10, _fiveMillion, _fiveMillionAnd1Thousand)),
+                    new TestCase("Factoring w/ trial division", () => TrialDivisionFactorizer(_tenMillion, 10, _fiveMillion, _fiveMillionAnd1Thousand)),
                 }),
         };
 

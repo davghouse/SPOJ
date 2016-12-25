@@ -53,7 +53,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             azTextLength1m = InputGenerator.GenerateRandomString(1000000);
         }
 
-        public IReadOnlyList<TestScenario> TestScenarios => new TestScenario[]
+        public IEnumerable<TestScenario> TestScenarios => new TestScenario[]
         {
             new TestScenario("a-a text, pattern length 2", new TestCase[]
                 {
