@@ -10,7 +10,7 @@ public static class HPYNOS
     // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bool array to keep track of what's already seen.
     public static int Solve(int n)
     {
-        bool[] numbersAlreadySeen = new bool[731];
+        var numbersAlreadySeen = new bool[731];
         int breakCount = 0;
 
         while (n != 1)

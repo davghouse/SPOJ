@@ -8,8 +8,10 @@ public static class NSTEPS
     {
         if (x == y || x == y + 2)
         {
-            if (x % 2 == 0) return (x + y).ToString();
-            else return (x + y - 1).ToString();
+            if (x % 2 == 0)
+                return (x + y).ToString();
+            else
+                return (x + y - 1).ToString();
         }
 
         return "No Number";

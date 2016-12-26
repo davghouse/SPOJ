@@ -4,8 +4,7 @@ using System.Linq;
 
 namespace Spoj.Library
 {
-    // NOTE: Seems like System.Numerics is referenced by SPOJ now.
-    // TODO: Support negatives, comparison operators, division, and lots of other stuff.
+    // Lots of work needed here, but deprecated because System.Numerics is now referenced by SPOJ.
     public struct BigInteger : IEquatable<BigInteger>
     {
         private static readonly BigInteger _zero = new BigInteger(0);
@@ -29,7 +28,6 @@ namespace Spoj.Library
         public BigInteger(string digits)
         {
             var digitsArray = new byte[digits.Length];
-
             for (int i = 0; i < digits.Length; ++i)
             {
                 digitsArray[i] = byte.Parse(digits[digits.Length - i - 1].ToString());
@@ -46,8 +44,8 @@ namespace Spoj.Library
             // No more than multiplying the larger by 2, so can't require more than one extra digit.
             int maxDigitCount = Math.Max(a._digits.Count, b._digits.Count);
             var result = new List<byte>(maxDigitCount + 1);
-
             byte carry = 0;
+
             for (int i = 0; i < maxDigitCount; ++i)
             {
                 byte value = carry;
@@ -62,6 +60,7 @@ namespace Spoj.Library
                 result.Add((byte)(value % 10));
                 carry = (byte)(value / 10);
             }
+
             if (carry != 0)
             {
                 result.Add(carry);
@@ -74,9 +73,9 @@ namespace Spoj.Library
         {
             // Assumption right now that a > b, since negatives aren't supported.
             var result = new List<byte>(a._digits.Count);
+            byte carry = 0;
 
             // Rather than calculate a - b = result, we'll calculate the result such that b + result = a.
-            byte carry = 0;
             for (int i = 0; i < a._digits.Count; ++i)
             {
                 byte bAndCarry = carry;
@@ -109,7 +108,6 @@ namespace Spoj.Library
         public static BigInteger operator *(BigInteger a, BigInteger b)
         {
             var result = BigInteger.Zero;
-
             for (int i = 0; i < b._digits.Count; ++i)
             {
                 result += a.MultiplyByDigit(b._digits[i]).MultiplyByPowerOfTen(i);
@@ -125,14 +123,15 @@ namespace Spoj.Library
 
             // Digit is less than 10 so the result can't require more than one extra digit.
             var result = new List<byte>(_digits.Count + 1);
-
             byte carry = 0;
+
             for (int i = 0; i < _digits.Count; i++)
             {
                 byte value = (byte)(_digits[i] * digit + carry);
                 result.Add((byte)(value % 10));
                 carry = (byte)(value / 10);
             }
+
             if (carry != 0)
             {
                 result.Add(carry);
@@ -151,6 +150,7 @@ namespace Spoj.Library
             {
                 result[i] = 0;
             }
+
             for (int i = 0; i < _digits.Count; ++i)
             {
                 result[power + i] = _digits[i];
@@ -162,9 +162,9 @@ namespace Spoj.Library
         public BigInteger DivideByTwo()
         {
             var result = new List<byte>(_digits.Count);
-
-            // Rather than calculate this/2 = result, we'll calculate result + result = this.
             byte carry = 0;
+
+            // Rather than calculate this / 2 = result, we'll calculate result + result = this.
             for (int i = 0; i < _digits.Count; ++i)
             {
                 byte sum = (byte)(_digits[i] - carry);

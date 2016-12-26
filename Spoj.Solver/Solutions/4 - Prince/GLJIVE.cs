@@ -37,7 +37,7 @@ public static class GLJIVE
     // brute force over the 2^10 - 1 subsets, - 1 since at least one value is needed.
     public static int SolveIncorrectly(int[] points)
     {
-        int[] powersOfTwoTo512 = new[]
+        var powersOfTwoTo512 = new[]
         {
             1, 1 << 1, 1 << 2, 1 << 3, 1 << 4, 1 << 5, 1 << 6, 1 << 7, 1 << 8, 1 << 9
         };
@@ -78,7 +78,7 @@ public static class Program
 {
     private static void Main()
     {
-        int[] points = new int[10];
+        var points = new int[10];
         for (int i = 0; i < 10; ++i)
         {
             points[i] = int.Parse(Console.ReadLine());

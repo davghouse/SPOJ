@@ -25,6 +25,7 @@ public static class JAVAC
         }
 
         var output = new StringBuilder();
+
         if (isJavaIdentifier)
         {
             for (int i = 0; i < identifier.Length; ++i)

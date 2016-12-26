@@ -7,8 +7,10 @@ public static class CRDS
     public static int Solve(int n)
     {
         long m = n;
+
         // There are m - 1 floors with card counts 1, 2, ... m - 1, for:
         long cardsFromFloors = m * (m - 1) / 2;
+
         // There are m levels with card counts of 2, 4, ..., 2m, for (cancelling the 2s):
         long cardsFromWalls = (m + 1) * m;
 

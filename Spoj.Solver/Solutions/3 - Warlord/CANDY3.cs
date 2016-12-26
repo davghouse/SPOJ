@@ -32,7 +32,7 @@ public static class Program
             Console.ReadLine();
 
             int backpackCount = int.Parse(Console.ReadLine());
-            ulong[] backpackCandyCounts = new ulong[backpackCount];
+            var backpackCandyCounts = new ulong[backpackCount];
             for (int i = 0; i < backpackCount; ++i)
             {
                 backpackCandyCounts[i] = ulong.Parse(Console.ReadLine());

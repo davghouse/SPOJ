@@ -44,10 +44,11 @@ public struct BigInteger : IEquatable<BigInteger>
         : this(n.ToString())
     { }
 
+    // For a  number string, the first character is the most significant digit. For our _digits array, it's most
+    // convenient if the first element is the least significant digit, so reverse the order here.
     public BigInteger(string digits)
     {
         var digitsArray = new byte[digits.Length];
-
         for (int i = 0; i < digits.Length; ++i)
         {
             digitsArray[i] = byte.Parse(digits[digits.Length - i - 1].ToString());
@@ -64,8 +65,8 @@ public struct BigInteger : IEquatable<BigInteger>
         // No more than multiplying the larger by 2, so can't require more than one extra digit.
         int maxDigitCount = Math.Max(a._digits.Count, b._digits.Count);
         var result = new List<byte>(maxDigitCount + 1);
-
         byte carry = 0;
+
         for (int i = 0; i < maxDigitCount; ++i)
         {
             byte value = carry;
@@ -80,6 +81,7 @@ public struct BigInteger : IEquatable<BigInteger>
             result.Add((byte)(value % 10));
             carry = (byte)(value / 10);
         }
+
         if (carry != 0)
         {
             result.Add(carry);
@@ -91,7 +93,6 @@ public struct BigInteger : IEquatable<BigInteger>
     public static BigInteger operator *(BigInteger a, BigInteger b)
     {
         var result = BigInteger.Zero;
-
         for (int i = 0; i < b._digits.Count; ++i)
         {
             result += a.MultiplyByDigit(b._digits[i]).MultiplyByPowerOfTen(i);
@@ -107,14 +108,15 @@ public struct BigInteger : IEquatable<BigInteger>
 
         // Digit is less than 10 so the result can't require more than one extra digit.
         var result = new List<byte>(_digits.Count + 1);
-
         byte carry = 0;
+
         for (int i = 0; i < _digits.Count; i++)
         {
             byte value = (byte)(_digits[i] * digit + carry);
             result.Add((byte)(value % 10));
             carry = (byte)(value / 10);
         }
+
         if (carry != 0)
         {
             result.Add(carry);
@@ -133,6 +135,7 @@ public struct BigInteger : IEquatable<BigInteger>
         {
             result[i] = 0;
         }
+
         for (int i = 0; i < _digits.Count; ++i)
         {
             result[power + i] = _digits[i];
@@ -143,8 +146,6 @@ public struct BigInteger : IEquatable<BigInteger>
 
     public override string ToString()
         => string.Concat(_digits.Reverse());
-
-    #region IEquatable<BigInteger>
 
     public bool Equals(BigInteger other)
         => _digits.SequenceEqual(other._digits);
@@ -162,8 +163,6 @@ public struct BigInteger : IEquatable<BigInteger>
 
     public static bool operator !=(BigInteger a, BigInteger b)
         => !(a == b);
-
-    #endregion IEquatable<BigInteger>
 }
 
 public static class Program

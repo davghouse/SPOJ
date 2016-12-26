@@ -43,7 +43,6 @@ public static class Program
     private static void Main()
     {
         int friendCount = int.Parse(Console.ReadLine());
-
         int quarterSizedCount = 0, halfSizedCount = 0, threeQuarterSizedCount;
         for (int f = 0; f < friendCount; ++f)
         {

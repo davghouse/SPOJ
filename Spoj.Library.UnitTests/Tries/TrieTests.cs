@@ -145,7 +145,7 @@ namespace Spoj.Library.UnitTests.Tries
         [TestMethod]
         public void SearchTraversal_ForSmallTries()
         {
-            TrieSearchResult result = new TrieSearchResult();
+            var result = new TrieSearchResult();
             var trie = new Trie(_strings);
 
             result = trie.Search("di", result.TerminalNode);

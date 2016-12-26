@@ -7,15 +7,12 @@ public static class ACPC10A
 {
     public static string Solve(int first, int second, int third)
     {
-        if (SequenceHelper.IsArithmeticSequence(first, second, third))
+        if (IsArithmeticSequence(first, second, third))
             return $"AP {third + (third - second)}";
 
         return $"GP {third * (third / second)}";
     }
-}
 
-public static class SequenceHelper
-{
     public static bool IsArithmeticSequence(params int[] sequence)
     {
         int firstDifference = sequence[1] - sequence[0];

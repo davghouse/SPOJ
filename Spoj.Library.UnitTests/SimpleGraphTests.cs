@@ -12,7 +12,7 @@ namespace Spoj.Library.UnitTests
             // This graph is a triangle.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
-                {0, 1}, {0, 2}, {1, 2}
+                { 0, 1 }, { 0, 2 }, { 1, 2 }
             });
 
             Assert.AreEqual(graph.Vertices[0].Degree, 2);
@@ -44,7 +44,7 @@ namespace Spoj.Library.UnitTests
             // This graph is two lines and a point.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
-                {0, 1}, {2, 3}
+                { 0, 1 }, { 2, 3 }
             });
 
             Assert.AreEqual(graph.Vertices[0].Degree, 1);
@@ -101,7 +101,7 @@ namespace Spoj.Library.UnitTests
         {
             var graph = SimpleGraph.CreateFromOneBasedEdges(3, new[,]
             {
-                {1, 2}, {2, 3}
+                { 1, 2 }, { 2, 3 }
             });
 
             Assert.IsTrue(graph.Vertices[0].HasNeighbor(1));
@@ -123,7 +123,7 @@ namespace Spoj.Library.UnitTests
             // This graph is a triangle.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
-                {0, 1}, {0, 2}, {1, 2}
+                { 0, 1 }, { 0, 2 }, { 1, 2 }
             });
 
             Assert.IsTrue(graph.IsConnected());
@@ -135,7 +135,7 @@ namespace Spoj.Library.UnitTests
             // This graph is two lines and a point.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
-                {0, 1}, {2, 3}
+                { 0, 1 }, { 2, 3 }
             });
 
             Assert.IsFalse(graph.IsConnected());
@@ -147,14 +147,14 @@ namespace Spoj.Library.UnitTests
             // This graph is B-shaped.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}, {2, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }, { 2, 5 }
             });
 
             Assert.IsTrue(graph.IsConnected());
 
             var graphWithOneExtra = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}, {2, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }, { 2, 5 }
             });
 
             Assert.IsFalse(graphWithOneExtra.IsConnected());
@@ -166,14 +166,14 @@ namespace Spoj.Library.UnitTests
             // This graph is a line.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
 
             Assert.IsTrue(graph.IsConnected());
 
             var graphBrokenInTwo = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 3, 4 }, { 4, 5 }
             });
 
             Assert.IsFalse(graphBrokenInTwo.IsConnected());
@@ -195,7 +195,7 @@ namespace Spoj.Library.UnitTests
             // This graph is a line.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
 
             Assert.AreEqual(5, graph.FindFurthestVertex(0).Item1.ID);
@@ -223,7 +223,7 @@ namespace Spoj.Library.UnitTests
             // This graph is a line broken in two.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 3, 4 }, { 4, 5 }
             });
 
             Assert.AreEqual(2, graph.FindFurthestVertex(0).Item1.ID);
@@ -253,7 +253,7 @@ namespace Spoj.Library.UnitTests
             // This graph is complete with four vertices.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(4, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 0}, {0, 2}, {3, 1}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 0 }, { 0, 2 }, { 3, 1 }
             });
 
             Assert.AreEqual(1, graph.FindFurthestVertex(0).Item2);
@@ -268,7 +268,8 @@ namespace Spoj.Library.UnitTests
             // This graph is a weird mess: http://i.imgur.com/kbeOrqA.png.
             var graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
             {
-                {0, 1}, {0, 3}, {0, 4}, {0, 5}, {1, 2}, {1, 3}, {1, 6}, {2, 3}, {2, 4}, {3, 4}, {4, 5}, {4, 8}, {5, 7}
+                { 0, 1 }, { 0, 3 }, { 0, 4 }, { 0, 5 }, { 1, 2 }, { 1, 3 }, { 1, 6 },
+                { 2, 3 }, { 2, 4 }, { 3, 4 }, { 4, 5 }, { 4, 8 }, { 5, 7 }
             });
 
             Assert.AreEqual(2, graph.FindFurthestVertex(0).Item2);
@@ -300,56 +301,56 @@ namespace Spoj.Library.UnitTests
             // This graph has two vertices connected by an edge.
             graph = SimpleGraph.CreateFromZeroBasedEdges(2, new[,]
             {
-                {0, 1}
+                { 0, 1 }
             });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has 6 vertices, with pairs connected.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {2, 3}, {4, 5}
+                { 0, 1 }, { 2, 3 }, { 4, 5 }
             });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has 6 vertices, connected in a line.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has 6 vertices, connected in a circle.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }
             });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has 7 vertices, connected in a circle.
             graph = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 0}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 6 }, { 6, 0 }
             });
             Assert.IsFalse(graph.IsBipartite());
 
             // This graph has 9 vertices, 6 connected in a line, 3 in a triangle.
             graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 6}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 6, 7 }, { 7, 8 }, { 8, 6 }
             });
             Assert.IsFalse(graph.IsBipartite());
 
             // This graph has 12 vertices, 6 connected in a line, 4 in a square, 2 in a line.
             graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 9}, {9, 6}, {10, 11}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 6, 7 }, { 7, 8 }, { 8, 9 }, { 9, 6 }, { 10, 11 }
             });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has 7 vertices, 2 connected in a line, 2 in a line, 3 in a triangle
             graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
             {
-                {0, 1}, {2, 3}, {4, 5}, {5, 6}, {6, 4}
+                { 0, 1 }, { 2, 3 }, { 4, 5 }, { 5, 6 }, { 6, 4 }
             });
             Assert.IsFalse(graph.IsBipartite());
         }
@@ -406,7 +407,7 @@ namespace Spoj.Library.UnitTests
             // This graph has two vertices connected by an edge.
             graph = SimpleGraph.CreateFromZeroBasedEdges(2, new[,]
             {
-                {0, 1}
+                { 0, 1 }
             });
             Assert.AreEqual(0, graph.GetShortestPathLength(1, 1));
             Assert.AreEqual(1, graph.GetShortestPathLength(0, 1));
@@ -414,7 +415,7 @@ namespace Spoj.Library.UnitTests
             // This graph has 6 vertices, with pairs connected.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {2, 3}, {4, 5}
+                { 0, 1 }, { 2, 3 }, { 4, 5 }
             });
             Assert.AreEqual(1, graph.GetShortestPathLength(0, 1));
             Assert.AreEqual(1, graph.GetShortestPathLength(2, 3));
@@ -424,7 +425,7 @@ namespace Spoj.Library.UnitTests
             // This graph has 6 vertices, connected in a line.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
             for (int i = 0; i <= 5; ++i)
             {
@@ -437,7 +438,7 @@ namespace Spoj.Library.UnitTests
             // This graph has 6 vertices, connected in a circle.
             graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 0}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }
             });
             Assert.AreEqual(1, graph.GetShortestPathLength(3, 2));
             Assert.AreEqual(1, graph.GetShortestPathLength(5, 0));
@@ -447,7 +448,7 @@ namespace Spoj.Library.UnitTests
             // This graph has 9 vertices, 6 connected in a line, 3 in a triangle.
             graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 6}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 6, 7 }, { 7, 8 }, { 8, 6 }
             });
             for (int i = 0; i <= 5; ++i)
             {
@@ -464,7 +465,7 @@ namespace Spoj.Library.UnitTests
             // This graph has 12 vertices, 6 connected in a line, 4 in a square, 2 in a line.
             graph = SimpleGraph.CreateFromZeroBasedEdges(12, new[,]
             {
-                {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {6, 7}, {7, 8}, {8, 9}, {9, 6}, {10, 11}
+                { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 6, 7 }, { 7, 8 }, { 8, 9 }, { 9, 6 }, { 10, 11 }
             });
             Assert.AreEqual(1, graph.GetShortestPathLength(10, 11));
             Assert.AreEqual(2, graph.GetShortestPathLength(6, 8));
