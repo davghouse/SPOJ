@@ -28,7 +28,7 @@ It's not a linear scale from 1 to 8. Settler through Warlord are really easy.
 Prince is easy, and King is almost easy.
 Emperor can be hard at least at the start.
 Immortal is hard or really hard if you don't get a good start.
-Deity you (or I, at least) need a really good start and probably a lot of save reloads and some cheesing.
+Deity you (or I, at least, but not MadDjinn) need a really good start and probably a lot of save reloads and some cheesing.
 
 It's hard to come up with rankings I feel comfortable with for each problem, and after reflection I tend to move solutions around once or twice.
 But the idea is to rank them on an absolute scale, not relative to my growing skill level.
