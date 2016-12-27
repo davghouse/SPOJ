@@ -14,7 +14,7 @@ For example, I just go with arrays instead of IReadOnlyLists, IReadOnlyCollectio
 To do otherwise would be kind of annoying and would introduce some overhead.
 The annoyances result when I want to consume the input array in-place and use it as a workspace.
 The solver's job conceptually won't necessitate changing the array in any way, it'll just be convenient.
-The overhead results from [http://stackoverflow.com/q/4256928](slower iteration times), even with no change to the underlying object, just exposing it through an interface.
+The overhead results from [slower iteration times](http://stackoverflow.com/q/4256928]), even with no change to the underlying object, just exposing it through an interface.
 That may never matter, but it's enough for me to justify taking the input in whatever form the I/O handler builds it.
 I **do** worry about that stuff for any reusable components, which are housed in the Spoj.Library project.
 
