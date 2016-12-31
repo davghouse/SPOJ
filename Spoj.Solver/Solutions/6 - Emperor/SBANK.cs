@@ -83,8 +83,8 @@ public static class SBANK
     // radix sort is like O(2Wn), and n is large so that logn above will matter (W is word length).
     public static void SolveEvenFaster(int accountCount, StringBuilder output)
     {
-        var accountsCurrent = new string[accountCount];
-        var accountsPrevious = new string[accountCount];
+        string[] accountsCurrent = new string[accountCount];
+        string[] accountsPrevious = new string[accountCount];
         for (int a = 0; a < accountCount; ++a)
         {
             accountsCurrent[a] = Console.ReadLine();

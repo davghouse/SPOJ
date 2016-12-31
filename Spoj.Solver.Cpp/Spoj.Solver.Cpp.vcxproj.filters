@@ -37,9 +37,6 @@
       <Filter>Solutions</Filter>
     </ClCompile>
     <ClCompile Include="InputVerifier.cpp" />
-    <ClCompile Include="Solutions\4 - Prince\SAMER08F.cpp">
-      <Filter>Solutions\4 - Prince</Filter>
-    </ClCompile>
     <ClCompile Include="Solutions\6 - Emperor\COMDIV.cpp">
       <Filter>Solutions\6 - Emperor</Filter>
     </ClCompile>
@@ -50,6 +47,9 @@
       <Filter>Solutions\6 - Emperor</Filter>
     </ClCompile>
     <ClCompile Include="Solutions\5 - King\SUMITR.cpp">
+      <Filter>Solutions\5 - King</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\5 - King\SAMER08F.cpp">
       <Filter>Solutions\5 - King</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,7 +8,7 @@ public static class BEENUMS
     // That shows that for "number" to be a beehive number, it must equal 3(n - 1)n + 1 for some integer n,
     // called the index. The quadratic equation lets us solve for the positive n index given "number", and then
     // we just need to verify it's actually an integer. That's done in a roundabout way by rounding it to an
-    // integer, computing the beehive number from that index, and checking to see if it's equal to "number".
+    // integer, computing the beehive number from that index, and checking to see if it's equal to "number"...
     public static string Solve(int number)
     {
         // 4.0 to avoid integer overflow as the input number can be a billion.

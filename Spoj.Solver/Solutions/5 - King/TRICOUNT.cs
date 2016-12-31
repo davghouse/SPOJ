@@ -11,7 +11,7 @@ public static class TRICOUNT
     // See image for details: http://i.imgur.com/Sa2yh7R.jpg.
     static TRICOUNT()
     {
-        var triangleCounts = new long[_maxLevel + 1];
+        long[] triangleCounts = new long[_maxLevel + 1];
         triangleCounts[0] = 0;
 
         // Important that n starts out as a long here as intermediate calculations will exceed int.MaxValue.

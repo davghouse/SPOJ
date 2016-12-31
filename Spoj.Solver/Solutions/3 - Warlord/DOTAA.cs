@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #I/O
+// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #i/o
 // Figures out if the heroes can make it past the towers without anyone dying.
 public static class DOTAA
 {
@@ -8,7 +8,7 @@ public static class DOTAA
     // tower hits before dying. We can calculate how many survivable hits for
     // each individual hero as they are read, then compare that total to the tower
     // count to see if it's possible for all heroes to survive.
-    public static string Solve(int heroCount, int towerCount, int towerDamage)
+    public static bool Solve(int heroCount, int towerCount, int towerDamage)
     {
         int totalSurvivableHits = 0;
         for (int h = 0; h < heroCount; ++h)
@@ -19,7 +19,7 @@ public static class DOTAA
             totalSurvivableHits += (heroHealth - 1) / towerDamage;
         }
 
-        return totalSurvivableHits >= towerCount ? "YES" : "NO";
+        return totalSurvivableHits >= towerCount;
     }
 }
 
@@ -33,7 +33,7 @@ public static class Program
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
             Console.WriteLine(
-                DOTAA.Solve(heroCount: line[0], towerCount: line[1], towerDamage: line[2]));
+                DOTAA.Solve(heroCount: line[0], towerCount: line[1], towerDamage: line[2]) ? "YES" : "NO");
         }
     }
 }

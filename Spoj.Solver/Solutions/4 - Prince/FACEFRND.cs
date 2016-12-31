@@ -57,7 +57,7 @@ public static class Program
     private static void Main()
     {
         int friendCount = int.Parse(Console.ReadLine());
-        var friendDefinitions = new int[friendCount][];
+        int[][] friendDefinitions = new int[friendCount][];
         for (int f = 0; f < friendCount; ++f)
         {
             friendDefinitions[f] = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

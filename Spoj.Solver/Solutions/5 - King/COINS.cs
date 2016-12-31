@@ -15,7 +15,7 @@ public static class COINS
 
     static COINS()
     {
-        var exchangeValues = new long[_cachedLimit + 1];
+        long[] exchangeValues = new long[_cachedLimit + 1];
         exchangeValues[0] = 0;
 
         for (int n = 1; n <= _cachedLimit; ++n)

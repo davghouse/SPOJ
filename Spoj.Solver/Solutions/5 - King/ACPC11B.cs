@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// 10239 http://www.spoj.com/problems/ACPC11B/ Between the Mountains
+// http://www.spoj.com/problems/ACPC11B/ #binary-search #merge #sorting
 // Finds the closest pair of altitudes, one from each of two mountains.
 public static class ACPC11B
 {
@@ -72,9 +72,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             string[] firstLine = Console.ReadLine().Split();

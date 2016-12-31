@@ -20,16 +20,16 @@ public static class Mod10Exponentiator
 
     static Mod10Exponentiator()
     {
-        var base0Pattern = new[] { 0 }; // 0, (0).
-        var base1Pattern = new[] { 1 }; // 1, (1).
-        var base2Pattern = new[] { 2, 4, 8, 6 }; // 2, 4, 8, 16, (32)
-        var base3Pattern = new[] { 3, 9, 7, 1 }; // 3, 9, 27, 81, (243)
-        var base4Pattern = new[] { 4, 6 }; // 4, 16, (64)
-        var base5Pattern = new[] { 5 }; // 5, (25)
-        var base6Pattern = new[] { 6 }; // 6, (36)
-        var base7Pattern = new[] { 7, 9, 3, 1 }; // 7, 49, 343, 2401, (16807)
-        var base8Pattern = new[] { 8, 4, 2, 6 }; // 8, 64, 512, 4096, (32768)
-        var base9Pattern = new[] { 9, 1 }; // 9, 81, (729)
+        int[] base0Pattern = new[] { 0 }; // 0, (0).
+        int[] base1Pattern = new[] { 1 }; // 1, (1).
+        int[] base2Pattern = new[] { 2, 4, 8, 6 }; // 2, 4, 8, 16, (32)
+        int[] base3Pattern = new[] { 3, 9, 7, 1 }; // 3, 9, 27, 81, (243)
+        int[] base4Pattern = new[] { 4, 6 }; // 4, 16, (64)
+        int[] base5Pattern = new[] { 5 }; // 5, (25)
+        int[] base6Pattern = new[] { 6 }; // 6, (36)
+        int[] base7Pattern = new[] { 7, 9, 3, 1 }; // 7, 49, 343, 2401, (16807)
+        int[] base8Pattern = new[] { 8, 4, 2, 6 }; // 8, 64, 512, 4096, (32768)
+        int[] base9Pattern = new[] { 9, 1 }; // 9, 81, (729)
 
         _bases0To9LastDigitExponentiationPatterns = new int[][]
         {
@@ -47,7 +47,7 @@ public static class Mod10Exponentiator
         // where (b - d) is divisible by 10 (0 mod 10), so only the d^e term in the expansion matters.
         int d = (int)(b % 10);
 
-        var lastDigitExponentiationPattern = _bases0To9LastDigitExponentiationPatterns[d];
+        IReadOnlyList<int> lastDigitExponentiationPattern = _bases0To9LastDigitExponentiationPatterns[d];
 
         // Pattern starts at exponent of 1 and ends at exponent of lastDigitExponentiationPattern.Count,
         // so e mod the count almost gives the correct position, just have to move zero back to the end.

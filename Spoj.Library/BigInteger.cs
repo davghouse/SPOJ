@@ -27,7 +27,7 @@ namespace Spoj.Library
         // convenient if the first element is the least significant digit, so reverse the order here.
         public BigInteger(string digits)
         {
-            var digitsArray = new byte[digits.Length];
+            byte[] digitsArray = new byte[digits.Length];
             for (int i = 0; i < digits.Length; ++i)
             {
                 digitsArray[i] = byte.Parse(digits[digits.Length - i - 1].ToString());
@@ -144,7 +144,7 @@ namespace Spoj.Library
         {
             if (IsZero || power == 0) return this;
 
-            var result = new byte[_digits.Count + power];
+            byte[] result = new byte[_digits.Count + power];
 
             for (int i = 0; i < power; ++i)
             {

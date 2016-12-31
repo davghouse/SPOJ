@@ -15,7 +15,7 @@ public static class AP2
         long termDifference = (thirdToLastTerm - thirdTerm) / progressionsBetweenGivenTerms;
         long firstTerm = thirdTerm - 2 * termDifference;
 
-        var series = new long[n];
+        long[] series = new long[n];
         series[0] = firstTerm;
         for (int i = 1; i < n; ++i)
         {

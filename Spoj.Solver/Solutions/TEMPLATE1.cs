@@ -1,8 +1,8 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/TEMPLATE/ <tags>
+// http://www.spoj.com/problems/TEMPLATE1/ <tags>
 // <description>
-public static class TEMPLATE
+public static class TEMPLATE1
 {
     public static int Solve(int a, int b)
         => a * b;

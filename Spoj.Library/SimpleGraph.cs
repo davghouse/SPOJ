@@ -94,8 +94,8 @@ namespace Spoj.Library
         // Don't need the count property from a hash set, so using two parallel bool arrays, one for discovery, one for 2-coloring.
         public bool IsBipartite()
         {
-            var discoveredVertexIDs = new bool[VertexCount];
-            var discoveredVertexColors = new bool[VertexCount];
+            bool[] discoveredVertexIDs = new bool[VertexCount];
+            bool[] discoveredVertexColors = new bool[VertexCount];
             var verticesToVisit = new Stack<Vertex>();
 
             for (int i = 0; i < VertexCount; ++i)
@@ -138,7 +138,7 @@ namespace Spoj.Library
         // to the start is the longest, and returns that vertex and its distance (path length) from the start.
         public Tuple<Vertex, int> FindFurthestVertex(Vertex startVertex)
         {
-            var discoveredVertexIDs = new bool[VertexCount];
+            bool[] discoveredVertexIDs = new bool[VertexCount];
             var verticesToVisit = new Queue<Vertex>();
             discoveredVertexIDs[startVertex.ID] = true;
             verticesToVisit.Enqueue(startVertex);
@@ -181,7 +181,7 @@ namespace Spoj.Library
         {
             if (startVertex == endVertex) return 0;
 
-            var discoveredVertexIDs = new bool[VertexCount];
+            bool[] discoveredVertexIDs = new bool[VertexCount];
             var verticesToVisit = new Queue<Vertex>();
             discoveredVertexIDs[startVertex.ID] = true;
             verticesToVisit.Enqueue(startVertex);

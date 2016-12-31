@@ -40,7 +40,6 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {

@@ -51,7 +51,7 @@ public class SieveOfEratosthenesDecider : IPrimeDecider
     {
         Limit = limit;
 
-        var sieve = new bool[(Limit + 1) >> 1];
+        bool[] sieve = new bool[(Limit + 1) >> 1];
         sieve[0] = true; // 1 (which maps to index [1 / 2] == [0]) is not a prime, so sieve it out.
 
         // Check for n up to sqrt(Limit), as any non-primes <= Limit with a factor > sqrt(Limit)

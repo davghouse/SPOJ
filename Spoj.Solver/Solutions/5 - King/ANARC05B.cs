@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 4560 http://www.spoj.com/problems/ANARC05B/ The Double HeLiX
+// http://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting 
 // Maximizes the sum while traversing a pair of intersecting, ordered sequences.
 public static class ANARC05B
 {
@@ -15,13 +15,13 @@ public static class ANARC05B
         int secondSequenceLength = secondSequence[0];
         var intersectionPoints = new Queue<Tuple<int, int>>();
 
-        for (int fi = 1; fi <= firstSequenceLength; ++fi)
+        for (int firstSequenceIndex = 1; firstSequenceIndex <= firstSequenceLength; ++firstSequenceIndex)
         {
             // Could save work by only searching from the previous intersection point (w/o queue), nah.
-            int si = Array.BinarySearch(secondSequence, 1, secondSequenceLength, firstSequence[fi]);
-            if (si > 0)
+            int secondSequenceIndex = Array.BinarySearch(secondSequence, 1, secondSequenceLength, firstSequence[firstSequenceIndex]);
+            if (secondSequenceIndex > 0)
             {
-                intersectionPoints.Enqueue(Tuple.Create(fi, si));
+                intersectionPoints.Enqueue(Tuple.Create(firstSequenceIndex, secondSequenceIndex));
             }
         }
 
@@ -75,7 +75,6 @@ public static class Program
     {
         int[] firstSequence;
         int[] secondSequence;
-
         while ((firstSequence = Array.ConvertAll(
             Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
             int.Parse)).Length != 1)

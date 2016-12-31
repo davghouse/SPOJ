@@ -41,7 +41,7 @@ public struct BigInteger : IEquatable<BigInteger>
 
     public BigInteger(string digits)
     {
-        var digitsArray = new byte[digits.Length];
+        byte[] digitsArray = new byte[digits.Length];
 
         for (int i = 0; i < digits.Length; ++i)
         {
@@ -185,7 +185,7 @@ public struct BigInteger : IEquatable<BigInteger>
     {
         if (IsZero || power == 0) return this;
 
-        var result = new byte[_digits.Count + power];
+        byte[] result = new byte[_digits.Count + power];
 
         for (int i = 0; i < power; ++i)
         {

@@ -13,7 +13,7 @@ namespace Spoj.Library
                 throw new NotSupportedException("Random.Next has an exclusive upper bound, so can't include int.MaxValue.");
 
             var rand = new Random();
-            var ints = new int[count];
+            int[] ints = new int[count];
             for (int i = 0; i < count; ++i)
             {
                 ints[i] = rand.Next(minValue, maxValue + 1);
@@ -30,7 +30,7 @@ namespace Spoj.Library
 
             var rand = new Random();
             var distinctRandomInts = new HashSet<int>();
-            var ints = new int[count];
+            int[] ints = new int[count];
             while (distinctRandomInts.Count < count)
             {
                 int num = rand.Next(minValue, maxValue + 1);
@@ -57,7 +57,7 @@ namespace Spoj.Library
                 throw new NotSupportedException("Can't generate even and odd numbers from a single number.");
 
             var rand = new Random();
-            var evenOddPairs = new int[count, 2];
+            int[,] evenOddPairs = new int[count, 2];
             for (int i = 0; i < count; ++i)
             {
                 int even = rand.Next(minValue, maxValue + 1);
@@ -76,7 +76,7 @@ namespace Spoj.Library
         public static int[,] GenerateRandomMinMaxPairs(int count, int minValue = 0, int maxValue = int.MaxValue - 1)
         {
             var rand = new Random();
-            var minMaxPairs = new int[count, 2];
+            int[,] minMaxPairs = new int[count, 2];
             for (int i = 0; i < count; ++i)
             {
                 int num1 = rand.Next(minValue, maxValue + 1);

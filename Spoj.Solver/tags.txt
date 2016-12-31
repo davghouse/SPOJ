@@ -2,10 +2,13 @@
 #binary
 #binary-search
 #big-numbers
+#bfs
 #buckets
 #digits
 #division
+#dynamic-programming
 #dynamic-programming-1d
+#dynamic-programming-2d
 #experiment
 #extrema
 #factorial
@@ -16,9 +19,13 @@
 #hashset
 #I/O
 #inspection
+#intersection
 #intuition
 #math
+#memoization
+#merge
 #mod-math
+#multi-source
 #parsing
 #permutations
 #plane

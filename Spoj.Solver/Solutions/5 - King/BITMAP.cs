@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 206 http://www.spoj.com/problems/BITMAP/ Bitmap
+// http://www.spoj.com/problems/BITMAP/ #bfs #experiment #multi-source
 // For all black and white pixels in a grid, finds the distance to the closest white pixel.
 public static class BITMAP
 {
@@ -14,7 +14,7 @@ public static class BITMAP
     public static int?[,] Solve(int rowCount, int columnCount, string[] zeroOneRows)
     {
         int?[,] nearestWhitePixelDistances = new int?[rowCount, columnCount];
-        Queue<Tuple<int, int>> pixelsToFloodFrom = new Queue<Tuple<int, int>>();
+        var pixelsToFloodFrom = new Queue<Tuple<int, int>>();
 
         // First pass to initialize distance for white pixels (represented by 1) to zero, and enqueue them.
         for (int r = 0; r < rowCount; ++r)
@@ -75,22 +75,20 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int rowCount = line[0];
             int columnCount = line[1];
-            var zeroOneRows = new string[rowCount];
 
+            string[] zeroOneRows = new string[rowCount];
             for (int r = 0; r < rowCount; ++r)
             {
                 zeroOneRows[r] = Console.ReadLine();
             }
 
-            int?[,] nearestWhitePixelDistances = BITMAP.Solve(rowCount, columnCount, zeroOneRows);
-
             var output = new StringBuilder();
+            int?[,] nearestWhitePixelDistances = BITMAP.Solve(rowCount, columnCount, zeroOneRows);
             for (int r = 0; r < rowCount; ++r)
             {
                 output.Append(nearestWhitePixelDistances[r, 0]);
@@ -100,8 +98,8 @@ public static class Program
                 }
                 output.AppendLine();
             }
-            Console.Write(output);
 
+            Console.Write(output);
             Console.ReadLine();
         }
     }

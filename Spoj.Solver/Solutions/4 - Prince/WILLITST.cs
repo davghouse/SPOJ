@@ -8,8 +8,8 @@ public static class WILLITST
     // That means that second branch eventually gets hit again, even if a lot of factors of 2 get divided out.
     // And when it's hit again, it still has a factor of 3 after mapping to 3(n + 1), and the process repeats...
     // So, only powers of two will ever stop.
-    public static string Solve(long n)
-        => n <= 1 || MathHelper.IsPowerOfTwo(n) ? "TAK" : "NIE";
+    public static bool Solve(long n)
+        => n <= 1 || MathHelper.IsPowerOfTwo(n);
 }
 
 public static class MathHelper
@@ -24,6 +24,6 @@ public static class Program
     private static void Main()
     {
         Console.WriteLine(
-            WILLITST.Solve(long.Parse(Console.ReadLine())));
+            WILLITST.Solve(long.Parse(Console.ReadLine())) ? "TAK" : "NIE");
     }
 }

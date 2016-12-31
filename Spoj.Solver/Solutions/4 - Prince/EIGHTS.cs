@@ -15,6 +15,7 @@ public static class EIGHTS
     {
         // k is indexed from 1, subtracting by 1 here makes the modulo result map directly to a list index.
         int finalThreeDigits = threeDigitCubesEndingIn888[(int)((k - 1) % 4)];
+
         // There are four cubes for each 1000 numbers as seen above, so calculate how many 1000s need to get added before the final three digits.
         long countOf1000s = (k - 1) / 4;
 

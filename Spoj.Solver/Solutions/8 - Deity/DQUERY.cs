@@ -165,7 +165,7 @@ public static class Program
         int[] sourceArray = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
 
         int queryCount = int.Parse(Console.ReadLine());
-        DistinctCountQuery[] queries = new DistinctCountQuery[queryCount];
+        var queries = new DistinctCountQuery[queryCount];
 
         for (int q = 0; q < queryCount; ++q)
         {

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Text;
 
-// 7975 http://www.spoj.com/problems/ACPC10D/ Tri graphs
-// Finds the shortest path between two specific vertices in a 'tri graph.'
+// http://www.spoj.com/problems/ACPC10D/ #dynamic-programming-2d
+// Finds the shortest path between top and bottom middle vertices in a 'tri graph.'
 public static class ACPC10D
 {
-    // This problem is screaming DP, with the vertices carrying the travel cost and what-not.
-    // Framing it as a graph is just an easy way to specify the possible moves. With that in
-    // mind it's really similar to BYTESM2. Need to be a little careful to consider all moves,
+    // Really similar to BYTESM2. Need to be a little careful to consider all moves,
     // not just downward and diagonal, since vertices can have negative values. And we start
     // at the top middle, so can't let impossible moves from the top left impact results.
     // For example, recursively the answer for the bottom middle vertex is its vertex
@@ -41,9 +39,8 @@ public static class Program
 {
     private static void Main()
     {
-        int[,] vertexCosts = new int[100000, 3];
         var output = new StringBuilder();
-
+        int[,] vertexCosts = new int[100000, 3];
         int testCase = 1;
         int rowCount;
         while ((rowCount = int.Parse(Console.ReadLine())) != 0)

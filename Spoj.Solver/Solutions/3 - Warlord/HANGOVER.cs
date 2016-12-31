@@ -20,18 +20,19 @@ public static class HANGOVER
         while (overhangTotal < _overhangLimit)
         {
             ++cardCounter;
+
             // The nth card adds 1 / (n + 1) to the overhang total.
             overhangTotal += 1f / (cardCounter + 1);
             _runningOverhangTotals.Add(overhangTotal);
         }
     }
 
-    public static string Solve(float overhang)
+    public static int Solve(float overhang)
     {
         int cardCount = _runningOverhangTotals.BinarySearch(overhang);
         cardCount = cardCount < 0 ? ~cardCount : cardCount;
 
-        return $"{cardCount} card(s)";
+        return cardCount;
     }
 }
 
@@ -43,7 +44,7 @@ public static class Program
         while ((overhang = float.Parse(Console.ReadLine())) != 0f)
         {
             Console.WriteLine(
-                HANGOVER.Solve(overhang));
+                $"{HANGOVER.Solve(overhang)} card(s)");
         }
     }
 }

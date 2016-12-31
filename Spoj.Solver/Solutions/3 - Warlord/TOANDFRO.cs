@@ -9,7 +9,7 @@ public static class TOANDFRO
     public static string Solve(int columnCount, string encodedMessage)
     {
         int rowCount = encodedMessage.Length / columnCount;
-        var messageArray = new char[rowCount, columnCount];
+        char[,] messageArray = new char[rowCount, columnCount];
 
         // Traverse the array as it was traversed to create the encoded message,
         // but now instead of filling in the message, fill in the array.

@@ -1,10 +1,10 @@
 ﻿using System;
 
 // http://www.spoj.com/problems/PERMUT2/ #ad-hoc #permutations
-// Figures out if a permutation of n integers is the same as its inverse permutation.
+// Figures out if a permutation of n integers is the same as its inverse permutation (AKA ambiguous).
 public static class PERMUT2
 {
-    public static string Solve(int[] permutation)
+    public static bool Solve(int[] permutation)
     {
         // Given is a permutation like 5, 1, 2, 3, 4.
         // This (obviously) tells us the value 5 is at index 1, the value 1 is at index 2, and so on.
@@ -15,17 +15,19 @@ public static class PERMUT2
         {
             // For example, from the above permutation, the inverse value of 1...
             int inverseValue = i + 1;
-            // Is at index 5 (but actually 4 because we're zero-indexed, sigh)...
+
+            // Is at index 5 (but actually 4 because we're zero-indexed)...
             int indexOfInverseValue = permutation[i] - 1;
+
             // And the value at that index in the normal permutation is 4...
             int valueAtThatIndexInNormalPermutation = permutation[indexOfInverseValue];
 
             // So they differ, and the permutations aren't ambiguous.
             if (inverseValue != valueAtThatIndexInNormalPermutation)
-                return "not ambiguous";
+                return false;
         }
 
-        return "ambiguous";
+        return true;
     }
 }
 
@@ -39,7 +41,7 @@ public static class Program
             int[] permutation = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
             Console.WriteLine(
-                PERMUT2.Solve(permutation));
+                PERMUT2.Solve(permutation) ? "ambiguous" : "not ambiguous");
         }
     }
 }

@@ -63,7 +63,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
 
         public void SortBinaryStringSuffixesAsIndices()
         {
-            var randomStringSuffixIndices = new int[_stringLengthAndCount];
+            int[] randomStringSuffixIndices = new int[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
                 randomStringSuffixIndices[i] = i;
@@ -73,7 +73,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
 
         public void SortBinaryStringSuffixesAsStrings()
         {
-            var randomStringSuffixes = new string[_stringLengthAndCount];
+            string[] randomStringSuffixes = new string[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
                 randomStringSuffixes[i] = randomString.Substring(i);

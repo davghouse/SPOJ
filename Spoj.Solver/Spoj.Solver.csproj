@@ -63,7 +63,7 @@
     <None Include="Solutions\7 - Immortal\GSS3.cs" />
     <None Include="Solutions\7 - Immortal\HORRIBLE_v2.cs" />
     <None Include="Solutions\6 - Emperor\BUGLIFE.cs" />
-    <None Include="Solutions\TEMPLATE.cs" />
+    <None Include="Solutions\TEMPLATE1.cs" />
     <None Include="Solutions\1 - Settler\TEST.cs" />
     <None Include="Solutions\2 - Chieftain\ADDREV.cs" />
     <None Include="Solutions\2 - Chieftain\NSTEPS.cs" />
@@ -351,6 +351,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Solutions\TEMPLATE2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
