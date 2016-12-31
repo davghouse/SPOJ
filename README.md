@@ -16,7 +16,7 @@ The annoyances result when I want to consume the input array in-place and use it
 The solver's job conceptually won't necessitate changing the array in any way, it'll just be convenient.
 The overhead results from [slower iteration times](http://stackoverflow.com/q/4256928), even with no change to the underlying object, just exposing it through an interface.
 That may never matter, but it's enough for me to justify taking the input in whatever form the I/O handler builds it.
-It's going to get thrown away immediately after anyway.
+It's going to get thrown out immediately after anyway.
 I **do** bother thinking about parameter types (and lots of other details) for any reusable components, which are housed in the Spoj.Library project.
 
 On the rare occasion that C# is too slow (usually due to I/O speed), I use C++.
