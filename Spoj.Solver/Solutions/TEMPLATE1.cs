@@ -18,7 +18,7 @@ public static class Program
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
             Console.WriteLine(
-                TEMPLATE.Solve(line[0], line[1]));
+                TEMPLATE1.Solve(line[0], line[1]));
         }
     }
 }

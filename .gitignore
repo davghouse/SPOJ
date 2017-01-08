@@ -6,6 +6,7 @@
 *.user
 *.sln.docstates
 !Spoj.Solver.csproj.user
+!Spoj.SolverCpp.vcxproj.user
 
 # Build results
 [Dd]ebug/

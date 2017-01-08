@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -124,6 +125,11 @@
     <None Include="Solutions\4 - Prince\WILLITST.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="Solutions\5 - King\CANTON.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +187,7 @@
     <None Include="Solutions\4 - Prince\BISHOPS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\OFFSIDE.cs" />
+    <None Include="Solutions\4 - Prince\OFFSIDE.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\6 - Emperor\OLOLO.cs" />
@@ -241,7 +247,7 @@
     <None Include="Solutions\6 - Emperor\TRT_v2.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\4 - Prince\AMR10G.cs" />
+    <None Include="Solutions\5 - King\AMR10G.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\EGYPIZZA.cs" />
@@ -314,6 +320,11 @@
     <None Include="Solutions\6 - Emperor\SILVER.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Solutions\4 - Prince\DANGER.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -329,7 +340,7 @@
     <None Include="Solutions\7 - Immortal\HISTOGRA.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\3 - Warlord\ALICESIE.cs" />
+    <None Include="Solutions\4 - Prince\ALICESIE.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\ACPC10D.cs" />
@@ -351,7 +362,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Solutions\TEMPLATE2.cs" />
+    <Compile Include="Solutions\TEMPLATE2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

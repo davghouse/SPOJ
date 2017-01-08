@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ABCDEF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\ABCDEF.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ABSYS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\ABSYS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ACODE_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\ACODE_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ACODE_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\ACODE_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ACPC10A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\ACPC10A.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ACPC10D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\ACPC10D.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ACPC11B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\ACPC11B.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ADDREV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\2 - Chieftain\ADDREV.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AE00" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\AE00.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AGGRCOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\AGGRCOW.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AIBOHP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\AIBOHP.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ALICESIE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\ALICESIE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AMR10G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\AMR10G.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AMR12D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\AMR12D.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ANARC05B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\ANARC05B.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ANARC09A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\ANARC09A.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\AP2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ARITH2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\ARITH2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ARMY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\2 - Chieftain\ARMY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ARRAYSUB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\ARRAYSUB.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BEENUMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\BEENUMS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BISHOPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\BISHOPS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BITMAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\BITMAP.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BUGLIFE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\BUGLIFE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BYECAKES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\BYECAKES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BYTESM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\BYTESM2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BYTESM21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\BYTESM2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CANDY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\CANDY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CANDY3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\CANDY3.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CANTON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\CANTON.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="COINS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\COINS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="COMDIV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\COMDIV.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CPRMT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\CPRMT.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CRDS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\CRDS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DANGER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\DANGER.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DIEHARD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\DIEHARD.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DISUBSTR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\DISUBSTR.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DOTAA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\DOTAA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="DQUERY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\8 - Deity\DQUERY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EASYPROB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\EASYPROB.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EDIST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\EDIST.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EGYPIZZA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\EGYPIZZA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EIGHTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\EIGHTS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ENIGMATH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\ENIGMATH.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ETF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\ETF.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FACEFRND" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\FACEFRND.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FARIDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\FARIDA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FASHION" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\FASHION.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FAVDICE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\FAVDICE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FCTRL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\FCTRL.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FCTRL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\FCTRL2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FENCE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\FENCE1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FIBOSUM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\FIBOSUM.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GCD2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\GCD2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GIRLSNBS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\GIRLSNBS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GLJIVE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\GLJIVE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GSS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\GSS1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GSS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\GSS3.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GUESSING" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\2 - Chieftain\GUESSING.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HANGOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\HANGOVER.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HISTOGRA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\HISTOGRA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HORRIBLE_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\HORRIBLE_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HORRIBLE_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\HORRIBLE_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HOTELS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\HOTELS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HPYNOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\HPYNOS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HUBULLU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\HUBULLU.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="INVCNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\INVCNT.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="JAVAC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\JAVAC.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="JULKA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\JULKA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LASTDIG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\LASTDIG.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LASTDIG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\LASTDIG2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MAJOR_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MAJOR_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MAJOR_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MAJOR_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MARBLES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MARBLES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MAXLN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MAXLN.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MCOINS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MCOINS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MISERMAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\MISERMAN.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MIXTURES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\MIXTURES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NGM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\NGM.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NHAY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\NHAY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NSTEPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\2 - Chieftain\NSTEPS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NY10A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\NY10A.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OFFSIDE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\OFFSIDE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="OLOLO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\OLOLO.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ONP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\ONP.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PALIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PALIN.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PARTY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PARTY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PERMUT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\PERMUT2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PHONELST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\PHONELST.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PIGBANK_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PIGBANK_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PIGBANK_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PIGBANK_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\PIR.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PPATH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\PPATH.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PRIME1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PRIME1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PT07Y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\PT07Y.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PT07Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\7 - Immortal\PT07Z.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QUADAREA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\2 - Chieftain\QUADAREA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SAMER08F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\SAMER08F.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SBANK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\SBANK.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SILVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\SILVER.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="STAMPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\STAMPS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="STPAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\STPAR.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SUMITR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\SUMITR.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TDPRIMES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\TDPRIMES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TEST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\1 - Settler\TEST.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TOANDFRO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\3 - Warlord\TOANDFRO.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TRICOUNT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\5 - King\TRICOUNT.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TRT_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\TRT_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TRT_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\TRT_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TWOSQRS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\6 - Emperor\TWOSQRS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="WILLITST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Solutions\4 - Prince\WILLITST.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+</root>

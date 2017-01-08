@@ -68,7 +68,7 @@ public static class Program
 {
     private static void Main()
     {
-        Console.WriteLine(
+        Console.Write(
             TDPRIMES.Solve());
     }
 }

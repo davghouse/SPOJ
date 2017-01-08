@@ -9,7 +9,7 @@ public static class BISHOPS
     // possible by placing n along the top and n - 2 along the base (none in the corners).
     // Might be easy to show 2n isn't possible.
     public static BigInteger Solve(BigInteger size)
-        => size == 1 ? 1 : 2*size - 2;
+        => size == 1 ? 1 : 2 * size - 2;
 }
 
 public static class Program

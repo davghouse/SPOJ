@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 3923 http://www.spoj.com/problems/BYTESM2/ Philosophers Stone
+// http://www.spoj.com/problems/BYTESM2/ #dynamic-programming-2d
 // Finds the (downward) path of most stones in a grid of stones.
 public static class BYTESM2
 {
@@ -9,12 +9,12 @@ public static class BYTESM2
     // of the values of the best paths of the squares in the previous row it's reachable from.
     public static int Solve(int height, int width, int[,] stones)
     {
-        // We could use the stones array to hold these values, but let's not be dumb.
+        // We could use the stones array to hold these values, but let's not.
         int[,] bestPathValues = new int[height, width];
 
+        // Initialize the first row of best path values to the corresponding square values.
         for (int c = 0; c < width; ++c)
         {
-            // Initialize the first row of best path values to corresponding square values.
             bestPathValues[0, c] = stones[0, c];
         }
 
@@ -31,10 +31,10 @@ public static class BYTESM2
             }
         }
 
+        // Find the overall best path value by taking the max of the last row's values.
         int bestPathValue = 0;
         for (int c = 0; c < width; ++c)
         {
-            // Find the overall best path value by taking the max of the last row's values.
             bestPathValue = Math.Max(bestPathValue, bestPathValues[height - 1, c]);
         }
 
@@ -46,7 +46,7 @@ public static class Program
 {
     private static void Main()
     {
-        // Unfortunately the input is malformed which forces us to do some weird handling.
+        // The input is malformed which forces us to do some weird handling.
         var input = new List<int>();
         string line;
         while ((line = Console.ReadLine()) != null)
@@ -56,8 +56,8 @@ public static class Program
                 int.Parse);
             input.AddRange(ints);
         }
-        int inputIndex = 0;
 
+        int inputIndex = 0;
         int remainingTestCases = input[inputIndex++];
         while (remainingTestCases-- > 0)
         {

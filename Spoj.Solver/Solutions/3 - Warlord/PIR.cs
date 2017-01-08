@@ -49,6 +49,6 @@ public static class Program
                 PIR.Solve(wvuUVW).ToString("F4"));
         }
 
-        Console.WriteLine(output);
+        Console.Write(output);
     }
 }

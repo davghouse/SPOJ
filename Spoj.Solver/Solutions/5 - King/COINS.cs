@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 // 346 http://www.spoj.com/problems/COINS/ Bytelandian gold coins
 // Figures out if it's better to exchange a coin of value n directly for USD at a 1:1 rate,
@@ -11,23 +10,18 @@ public static class COINS
     // Cache some of the first 500 million values necessary to do this without recursive calls.
     // The limit for the cache was picked through experimentation; doesn't take too long to
     // create the cache, and trims the exponentially growing recursion enough to be fast for the problem's input.
-    private static readonly IReadOnlyList<long> _exchangeValues;
+    private static readonly long[] _exchangeValues;
 
     static COINS()
     {
-        long[] exchangeValues = new long[_cachedLimit + 1];
-        exchangeValues[0] = 0;
+        _exchangeValues = new long[_cachedLimit + 1];
+        _exchangeValues[0] = 0;
 
         for (int n = 1; n <= _cachedLimit; ++n)
         {
-            exchangeValues[n] = Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
+            _exchangeValues[n] = Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
         }
-
-        _exchangeValues = exchangeValues;
     }
-
-    public static long Solve(int n)
-        => GetExchangeValue(n);
 
     private static long GetExchangeValue(int n)
     {
@@ -36,6 +30,9 @@ public static class COINS
 
         return Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
     }
+
+    public static long Solve(int n)
+        => GetExchangeValue(n);
 }
 
 public static class Program

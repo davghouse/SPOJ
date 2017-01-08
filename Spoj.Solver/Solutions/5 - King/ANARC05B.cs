@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting 
+// http://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting
 // Maximizes the sum while traversing a pair of intersecting, ordered sequences.
 public static class ANARC05B
 {
@@ -17,7 +17,7 @@ public static class ANARC05B
 
         for (int firstSequenceIndex = 1; firstSequenceIndex <= firstSequenceLength; ++firstSequenceIndex)
         {
-            // Could save work by only searching from the previous intersection point (w/o queue), nah.
+            // Could save work by only searching from the previous intersection point (w/o queue).
             int secondSequenceIndex = Array.BinarySearch(secondSequence, 1, secondSequenceLength, firstSequence[firstSequenceIndex]);
             if (secondSequenceIndex > 0)
             {

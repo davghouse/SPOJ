@@ -14,13 +14,13 @@ public static class ONP
         // Now RPN(expression) = RPN(firstSubexpression)RPN(secondSubexpression)@, so our job is just to identify
         // the substrings of the two subexpressions, and solve recursively.
 
+        // Starts at index 1, immediately after the ( at the 0th index, and has some calculated length.
         string firstSubexpression = expression.Substring(
-            // Starts at index 1, immediately after the ( at the 0th index, and has some calculated length.
             startIndex: 1,
             length: GetSubexpressionLength(expression, subexpressionStartIndex: 1));
 
+        // Starts at the index after (firstSubexpression@, and runs up to but not including the ending ).
         string secondSubexpression = expression.Substring(
-            // Starts at the index after (firstSubexpression@, and runs up to but not including the ending ).
             startIndex: 1 + firstSubexpression.Length + 1,
             length: expression.Length - (1 + firstSubexpression.Length + 1) - 1);
 

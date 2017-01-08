@@ -4,7 +4,7 @@
 // Finds the nth term in Cantor's enumeration of the rational numbers.
 public static class CANTON
 {
-    public static string Solve(int n)
+    public static Tuple<int, int> Solve(int n)
     {
         // The enumeration progresses along diagonals of the rectangle. The first diagonal has
         // one term, the second two, the third three, and so on. Hence, the total number of terms
@@ -14,12 +14,8 @@ public static class CANTON
         int positionOfFurthestTermAlongDiagonal = ((diagonal + 1) * diagonal) / 2;
         int termsBackFromFurthestTermAlongDiagonal = positionOfFurthestTermAlongDiagonal - n;
         var diagonalEndPosition = diagonal % 2 == 0 ? DiagonalEndPosition.SideEdge : DiagonalEndPosition.TopEdge;
-        int numeratorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.SideEdge
-            ? diagonal
-            : 1;
-        int denominatorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.TopEdge
-            ? diagonal
-            : 1;
+        int numeratorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.SideEdge ? diagonal : 1;
+        int denominatorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.TopEdge ? diagonal : 1;
 
         int numeratorOfNthTerm;
         int denominatorOfNthTerm;
@@ -38,7 +34,7 @@ public static class CANTON
             denominatorOfNthTerm = denominatorOfFurthestTermAlongDiagonal - termsBackFromFurthestTermAlongDiagonal;
         }
 
-        return $"TERM {n} IS {numeratorOfNthTerm}/{denominatorOfNthTerm}";
+        return Tuple.Create(numeratorOfNthTerm, denominatorOfNthTerm);
     }
 
     private enum DiagonalEndPosition
@@ -55,8 +51,11 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
+            int n = int.Parse(Console.ReadLine());
+            Tuple<int, int> nthTerm = CANTON.Solve(n);
+
             Console.WriteLine(
-                CANTON.Solve(int.Parse(Console.ReadLine())));
+                $"TERM {n} IS {nthTerm.Item1}/{nthTerm.Item2}");
         }
     }
 }

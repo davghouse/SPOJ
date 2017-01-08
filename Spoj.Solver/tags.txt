@@ -3,6 +3,7 @@
 #binary-search
 #big-numbers
 #bfs
+#bfs-multi-source
 #buckets
 #digits
 #division
@@ -25,7 +26,6 @@
 #memoization
 #merge
 #mod-math
-#multi-source
 #parsing
 #permutations
 #plane

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/BITMAP/ #bfs #experiment #multi-source
+// http://www.spoj.com/problems/BITMAP/ #bfs-multi-source #experiment
 // For all black and white pixels in a grid, finds the distance to the closest white pixel.
 public static class BITMAP
 {

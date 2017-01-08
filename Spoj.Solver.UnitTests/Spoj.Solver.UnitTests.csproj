@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F31D2A5-5A1D-4C35-8CC2-C3900959F832}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spoj.Solver.UnitTests</RootNamespace>
+    <AssemblyName>Spoj.Solver.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Solutions\1 - Settler\TESTTests.cs" />
+    <Compile Include="Solutions\2 - Chieftain\ADDREVTests.cs" />
+    <Compile Include="Solutions\2 - Chieftain\ARMYTests.cs" />
+    <Compile Include="Solutions\2 - Chieftain\NSTEPSTests.cs" />
+    <Compile Include="Solutions\2 - Chieftain\QUADAREATests.cs" />
+    <Compile Include="Solutions\3 - Warlord\ABSYSTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\ACPC10ATests.cs" />
+    <Compile Include="Solutions\4 - Prince\AE00Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\ALICESIETests.cs" />
+    <Compile Include="Solutions\3 - Warlord\AMR12DTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\BYECAKESTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\CANDY3Tests.cs" />
+    <Compile Include="Solutions\3 - Warlord\CANDYTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\CRDSTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\DOTAATests.cs" />
+    <Compile Include="Solutions\3 - Warlord\FCTRL2Tests.cs" />
+    <Compile Include="Solutions\3 - Warlord\FENCE1Tests.cs" />
+    <Compile Include="Solutions\3 - Warlord\GIRLSNBSTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\HANGOVERTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\JAVACTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\NY10ATests.cs" />
+    <Compile Include="Solutions\3 - Warlord\PIRTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\STAMPSTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\TOANDFROTests.cs" />
+    <Compile Include="Solutions\4 - Prince\AP2Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\ARITH2Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\BISHOPSTests.cs" />
+    <Compile Include="Solutions\4 - Prince\CPRMTTests.cs" />
+    <Compile Include="Solutions\4 - Prince\DANGERTests.cs" />
+    <Compile Include="Solutions\4 - Prince\EASYPROBTests.cs" />
+    <Compile Include="Solutions\4 - Prince\EGYPIZZATests.cs" />
+    <Compile Include="Solutions\4 - Prince\EIGHTSTests.cs" />
+    <Compile Include="Solutions\4 - Prince\ENIGMATHTests.cs" />
+    <Compile Include="Solutions\4 - Prince\FACEFRNDTests.cs" />
+    <Compile Include="Solutions\4 - Prince\FARIDATests.cs" />
+    <Compile Include="Solutions\4 - Prince\FASHIONTests.cs" />
+    <Compile Include="Solutions\4 - Prince\GCD2Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\GLJIVETests.cs" />
+    <Compile Include="Solutions\4 - Prince\HPYNOSTests.cs" />
+    <Compile Include="Solutions\4 - Prince\OFFSIDETests.cs" />
+    <Compile Include="Solutions\4 - Prince\ONPTests.cs" />
+    <Compile Include="Solutions\4 - Prince\PERMUT2Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\WILLITSTTests.cs" />
+    <Compile Include="Solutions\5 - King\ACODE_v1Tests.cs" />
+    <Compile Include="Solutions\5 - King\ACODE_v2Tests.cs" />
+    <Compile Include="Solutions\5 - King\ACPC10DTests.cs" />
+    <Compile Include="Solutions\5 - King\ACPC11BTests.cs" />
+    <Compile Include="Solutions\5 - King\AMR10GTests.cs" />
+    <Compile Include="Solutions\5 - King\ANARC05BTests.cs" />
+    <Compile Include="Solutions\5 - King\BEENUMSTests.cs" />
+    <Compile Include="Solutions\5 - King\BITMAPTests.cs" />
+    <Compile Include="Solutions\5 - King\BYTESM2Tests.cs" />
+    <Compile Include="Solutions\5 - King\CANTONTests.cs" />
+    <Compile Include="Solutions\5 - King\COINSTests.cs" />
+    <Compile Include="Solutions\5 - King\DIEHARDTests.cs" />
+    <Compile Include="Solutions\5 - King\FCTRLTests.cs" />
+    <Compile Include="Solutions\5 - King\HOTELSTests.cs" />
+    <Compile Include="Solutions\5 - King\INVCNTTests.cs" />
+    <Compile Include="Solutions\5 - King\JULKATests.cs" />
+    <Compile Include="Solutions\5 - King\LASTDIG2Tests.cs" />
+    <Compile Include="Solutions\5 - King\LASTDIGTests.cs" />
+    <Compile Include="Solutions\5 - King\MAJOR_v1Tests.cs" />
+    <Compile Include="Solutions\5 - King\MAJOR_v2Tests.cs" />
+    <Compile Include="Solutions\5 - King\MARBLESTests.cs" />
+    <Compile Include="Solutions\5 - King\MAXLNTests.cs" />
+    <Compile Include="Solutions\5 - King\MCOINSTests.cs" />
+    <Compile Include="Solutions\5 - King\MISERMANTests.cs" />
+    <Compile Include="Solutions\5 - King\NGMTests.cs" />
+    <Compile Include="Solutions\5 - King\PALINTests.cs" />
+    <Compile Include="Solutions\5 - King\PARTYTests.cs" />
+    <Compile Include="Solutions\5 - King\PIGBANK_v1Tests.cs" />
+    <Compile Include="Solutions\5 - King\PIGBANK_v2Tests.cs" />
+    <Compile Include="Solutions\5 - King\PRIME1Tests.cs" />
+    <Compile Include="Solutions\5 - King\PT07YTests.cs" />
+    <Compile Include="Solutions\5 - King\SAMER08FTests.cs" />
+    <Compile Include="Solutions\5 - King\STPARTests.cs" />
+    <Compile Include="Solutions\5 - King\SUMITRTests.cs" />
+    <Compile Include="Solutions\5 - King\TDPRIMESTests.cs" />
+    <Compile Include="Solutions\5 - King\TRICOUNTTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ABCDEFTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\AGGRCOWTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\AIBOHPTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ANARC09ATests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ARRAYSUBTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\BUGLIFETests.cs" />
+    <Compile Include="Solutions\6 - Emperor\COMDIVTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\DISUBSTRTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\EDISTTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ETFTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\FAVDICETests.cs" />
+    <Compile Include="Solutions\6 - Emperor\FIBOSUMTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\HUBULLUTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\MIXTURESTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\NHAYTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\OLOLOTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\PHONELSTTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\PPATHTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\SBANKTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\SILVERTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\TRT_v1Tests.cs" />
+    <Compile Include="Solutions\6 - Emperor\TRT_v2Tests.cs" />
+    <Compile Include="Solutions\6 - Emperor\TWOSQRSTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\GSS1Tests.cs" />
+    <Compile Include="Solutions\7 - Immortal\GSS3Tests.cs" />
+    <Compile Include="Solutions\7 - Immortal\HISTOGRATests.cs" />
+    <Compile Include="Solutions\7 - Immortal\HORRIBLE_v1Tests.cs" />
+    <Compile Include="Solutions\7 - Immortal\HORRIBLE_v2Tests.cs" />
+    <Compile Include="Solutions\7 - Immortal\PT07ZTests.cs" />
+    <Compile Include="Solutions\8 - Deity\DQUERYTests.cs" />
+    <Compile Include="Solutions\SolutionTestsBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Spoj.Solver\Spoj.Solver.csproj">
+      <Project>{598e4f60-d90c-4c90-ab7a-a17ccb32ae4a}</Project>
+      <Name>Spoj.Solver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

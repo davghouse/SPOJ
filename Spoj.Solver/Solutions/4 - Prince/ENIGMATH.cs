@@ -5,12 +5,11 @@ using System.Text;
 // Solves Ax - By = 0 with x and y the smallest possible positive integers.
 public static class ENIGMATH
 {
-    // Ax = By => y = (A/B)x. A and B might not be in lowest terms, but we
-    // can divide each by their GCD so that they are. So assume they are in
-    // lowest terms, A', B'. y must be an integer, so x has to be a multiple of B'
-    // to make (A'/B')x an integer (since B' has no factors in common with A').
-    // Choosing x = B' then minimizes y as A', and also minimizes x. Therefore,
-    // x = B' = B / GCD(A,B) and y = A' = A / GCD(A,B). Consuming the array for convenience.
+    // Ax = By => y = (A/B)x. A and B might not be in lowest terms, but we can divide each by
+    // their GCD so that they are. So assume they are in lowest terms, A', B'. y must be an
+    // integer, so x has to be a multiple of B' to make (A'/B')x an integer (since B' has
+    // no factors in common with A'). Choosing x = B' then minimizes y as A', and also minimizes
+    // x. Therefore, x = B' = B / GCD(A,B) and y = A' = A / GCD(A,B). Consuming the array for convenience.
     public static int[] Solve(int[] ab)
     {
         int a = ab[0];
@@ -57,6 +56,6 @@ public static class Program
             output.AppendLine();
         }
 
-        Console.WriteLine(output);
+        Console.Write(output);
     }
 }
