@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 6171 http://www.spoj.com/problems/MAJOR/ Majority
-// Determines if any data is properly transmitted, i.e., the majority of what's sent.
+// http://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+// Determines if any number makes up the majority of all the numbers sent.
 public static class MAJOR // v1, using a dictionary and no more than one full pass.
 {
     // TLE is strict here, don't even have time to parse the transmissions into ints.
@@ -22,8 +22,8 @@ public static class MAJOR // v1, using a dictionary and no more than one full pa
         // If there were majorityCount unique transmissions, there'd be no way for a
         // a single transmission to have majorityCount occurrences (since then the total
         // transmission count would exceed how many transmissions there actually are).
-        // That is, we'll short-circuit before we can ever get more than majorityCount
-        // keys in this dictionary, so we only need to reseve a capacity of majorityCount.
+        // So, we'll short-circuit before we can ever get more than majorityCount
+        // keys in this dictionary, so we only need to reserve a capacity of majorityCount.
         // Actually that's only true for an even total count, so should add 1, but add 2 for safety.
         var transmissionCounts = new Dictionary<string, int>(majorityCount + 2) { { transmissions[0], 1 } };
         string mostCountedTransmission = transmissions[0];
@@ -67,9 +67,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();

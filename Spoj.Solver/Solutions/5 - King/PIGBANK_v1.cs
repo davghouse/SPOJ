@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 39 http://www.spoj.com/problems/PIGBANK/ Piggy-Bank
+// http://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
 // Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
 public static class PIGBANK // v1, 1D as an unbounded knapsack problem.
 {
@@ -62,7 +62,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

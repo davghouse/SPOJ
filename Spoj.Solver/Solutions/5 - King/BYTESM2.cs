@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/BYTESM2/ #dynamic-programming-2d
+// http://www.spoj.com/problems/BYTESM2/ #dynamic-programming-2d #path-optimization
 // Finds the (downward) path of most stones in a grid of stones.
 public static class BYTESM2
 {

@@ -73,7 +73,7 @@
     <Compile Include="Solutions\3 - Warlord\CANDYTests.cs" />
     <Compile Include="Solutions\3 - Warlord\CRDSTests.cs" />
     <Compile Include="Solutions\3 - Warlord\DOTAATests.cs" />
-    <Compile Include="Solutions\3 - Warlord\FCTRL2Tests.cs" />
+    <Compile Include="Solutions\4 - Prince\FCTRL2Tests.cs" />
     <Compile Include="Solutions\3 - Warlord\FENCE1Tests.cs" />
     <Compile Include="Solutions\3 - Warlord\GIRLSNBSTests.cs" />
     <Compile Include="Solutions\3 - Warlord\HANGOVERTests.cs" />

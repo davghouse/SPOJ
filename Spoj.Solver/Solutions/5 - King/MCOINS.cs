@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-// 3885 http://www.spoj.com/problems/MCOINS/ Coins Game
+// http://www.spoj.com/problems/MCOINS/ #game #research
 // Plays a finite, perfect information 2-player game where coins are removed from a stack.
 public static class MCOINS
 {
@@ -26,7 +26,7 @@ public static class MCOINS
 
         for (int coinCount = 2; coinCount <= maxCoinCount; ++coinCount)
         {
-            bool existsAStartMoveThatForcesSecondPlayerToLose = 
+            bool existsAStartMoveThatForcesSecondPlayerToLose =
                 !firstPlayerWins[coinCount - 1]
                 || coinCount - k >= 0 && !firstPlayerWins[coinCount - k]
                 || coinCount - l >= 0 && !firstPlayerWins[coinCount - l];

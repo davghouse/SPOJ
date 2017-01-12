@@ -1,11 +1,11 @@
 ﻿using System;
 
-// 97 http://www.spoj.com/problems/PARTY/ Party Schedule
+// http://www.spoj.com/problems/PARTY/ #dynamic-programming-2d #knapsack #optimization
 // Chooses parties to maximize fun for the given party budget (0/1 knapsack).
 public static class PARTY
 {
     // If you don't know 0/1 knapsack and need a hint, knowing the DP is two-dimensional
-    // on the number of parties considered and the amount of budget used should be enough.
+    // on the parties being considered and the amount of budget used should be enough.
     // (If we're using i parties for some budget, the maximum fun value is the max of the value for i - 1
     // parties at that budget, and the value for i - 1 parties at [the budget minus the ith party's fee]
     // plus the fun value for the ith party.) We can't just read the lower right corner of the table
@@ -75,7 +75,7 @@ public static class Program
                 partyEntranceFeesAndFunValues[i, 1] = line[1]; // fun value
             }
 
-            var budgetAndFunValueResult = PARTY.Solve(partyBudget, partyCount, partyEntranceFeesAndFunValues);
+            Tuple<int, int> budgetAndFunValueResult = PARTY.Solve(partyBudget, partyCount, partyEntranceFeesAndFunValues);
             Console.WriteLine($"{budgetAndFunValueResult.Item1} {budgetAndFunValueResult.Item2}");
 
             Console.ReadLine();

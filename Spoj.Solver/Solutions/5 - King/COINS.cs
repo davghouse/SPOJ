@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-// 346 http://www.spoj.com/problems/COINS/ Bytelandian gold coins
+// http://www.spoj.com/problems/COINS/ #dynamic-programming-1d #recursion
 // Figures out if it's better to exchange a coin of value n directly for USD at a 1:1 rate,
 // or split the coins up as Byteland banks allow (n/2, n/3, n/4 coins and then recursively on those...).
 public static class COINS
@@ -10,29 +11,28 @@ public static class COINS
     // Cache some of the first 500 million values necessary to do this without recursive calls.
     // The limit for the cache was picked through experimentation; doesn't take too long to
     // create the cache, and trims the exponentially growing recursion enough to be fast for the problem's input.
-    private static readonly long[] _exchangeValues;
+    private static readonly IReadOnlyList<long> _exchangeValues;
 
     static COINS()
     {
-        _exchangeValues = new long[_cachedLimit + 1];
-        _exchangeValues[0] = 0;
+        long[] exchangeValues = new long[_cachedLimit + 1];
+        exchangeValues[0] = 0;
 
         for (int n = 1; n <= _cachedLimit; ++n)
         {
-            _exchangeValues[n] = Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
+            exchangeValues[n] = Math.Max(n, exchangeValues[n / 2] + exchangeValues[n / 3] + exchangeValues[n / 4]);
         }
+
+        _exchangeValues = exchangeValues;
     }
 
-    private static long GetExchangeValue(int n)
+    public static long Solve(int n)
     {
         if (n <= _cachedLimit)
             return _exchangeValues[n];
 
-        return Math.Max(n, GetExchangeValue(n / 2) + GetExchangeValue(n / 3) + GetExchangeValue(n / 4));
+        return Math.Max(n, Solve(n / 2) + Solve(n / 3) + Solve(n / 4));
     }
-
-    public static long Solve(int n)
-        => GetExchangeValue(n);
 }
 
 public static class Program

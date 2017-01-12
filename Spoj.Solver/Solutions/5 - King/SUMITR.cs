@@ -3,8 +3,8 @@
 
 using System;
 
-// 237 http://www.spoj.com/problems/SUMITR/ Sums in a Triangle
-// Finds greatest path sum in a triangular grid, while minimizing bytes.
+// http://www.spoj.com/problems/SUMITR/ #dynamic-programming-2d #golf #path-optimization
+// Finds greatest path sum in a triangular grid, while minimizing bytes of code.
 // See SUMITR.cpp--this solution was submitted using C++ because I couldn't get C# under 256 bytes.
 public static class SUMITR
 {
@@ -36,7 +36,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 1419 http://www.spoj.com/problems/NGM/ A Game with Numbers
+// http://www.spoj.com/problems/NGM/ #game
 // For a game between two players where digits are subtracted from a number
 // in turn, finds who wins the game and what player one's first move should be if he can win.
 public static class NGM
@@ -36,7 +36,7 @@ public static class Program
 {
     private static void Main()
     {
-        var gameResults = NGM.Solve(int.Parse(Console.ReadLine()));
+        Tuple<int, int?> gameResults = NGM.Solve(int.Parse(Console.ReadLine()));
 
         Console.WriteLine(gameResults.Item1);
         if (gameResults.Item2.HasValue)

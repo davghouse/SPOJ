@@ -9,7 +9,7 @@ public static class STPAR
     // The array here might be something like 5 1 2 4 3, meaning the love mobile that's
     // 1st on the approach street needs to be 5th on the parade street, the love mobile
     // that's 2nd on the approach street needs to be 1st on the parade street, and so on.
-    public static string Solve(int[] approachStreetLoveMobiles)
+    public static bool Solve(int[] approachStreetLoveMobiles)
     {
         // Due to street widths, love mobiles can't go around each other. As each love mobile arrives on
         // the approach street, we can either push it down the side street, or move it into
@@ -41,7 +41,7 @@ public static class STPAR
                 sideStreetLoveMobiles.Push(nextLoveMobileOnTheApproachStreet);
             }
             // We can't move the love mobile to the parade street or to the side street!
-            else return "no";
+            else return false;
         }
 
         // Don't need further checks here. Nothing returned "no" up to this point. The parade street
@@ -49,7 +49,7 @@ public static class STPAR
         // necessarily consecutively)--except at the end of the loop. Then the side street must have all the love
         // mobiles not already on the parade street, so it has a contiguous and consecutive range of integers and
         // that are hence pop-able to the parade street in the correct order.
-        return "yes";
+        return true;
     }
 }
 
@@ -63,7 +63,7 @@ public static class Program
             int[] approachStreetLoveMobiles = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
             Console.WriteLine(
-                STPAR.Solve(approachStreetLoveMobiles));
+                STPAR.Solve(approachStreetLoveMobiles) ? "yes" : "no");
         }
     }
 }

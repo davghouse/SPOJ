@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-// 2 http://www.spoj.com/problems/PRIME1/ Prime Generator
+// http://www.spoj.com/problems/PRIME1/ #primes #sieve
 // Returns all the primes between two numbers m and n (inclusive), where 1 <= m <= n <= 1,000,000,000.
 public static class PRIME1
 {
@@ -17,7 +17,7 @@ public static class PRIME1
     // This is still pretty slow, looks like we might want a segmented sieve?
     public static IEnumerable<int> Solve(int m, int n)
     {
-        // Check for the only even prime manually, and move m and n to odds.
+        // Check for the only even prime manually, and move m and n to odds to make iteration convenient.
         if (m <= 2) yield return 2;
         if (m % 2 == 0) ++m;
         if (n % 2 == 0) --n;
@@ -43,7 +43,9 @@ public interface IPrimeProvider
     IReadOnlyList<int> Primes { get; }
 }
 
-public class SieveOfEratosthenesDecider : IPrimeDecider
+// This sieve has some optimizations to avoid storing results for even integers; the result for an odd
+// integer n is stored at index n / 2. IsOddPrime is supplied for convenience (input n assumed to be odd).
+public sealed class SieveOfEratosthenesDecider : IPrimeDecider
 {
     private readonly IReadOnlyList<bool> _sieve;
 
@@ -83,7 +85,7 @@ public class SieveOfEratosthenesDecider : IPrimeDecider
         => !_sieve[n >> 1];
 }
 
-public class SieveOfEratosthenesProvider : IPrimeDecider, IPrimeProvider
+public sealed class SieveOfEratosthenesProvider : IPrimeDecider, IPrimeProvider
 {
     private readonly SieveOfEratosthenesDecider _decider;
 
@@ -94,7 +96,7 @@ public class SieveOfEratosthenesProvider : IPrimeDecider, IPrimeProvider
         _decider = new SieveOfEratosthenesDecider(Limit);
 
         var primes = 2 <= Limit
-            ? new List<int>() { 2 }
+            ? new List<int> { 2 }
             : new List<int>();
 
         for (int n = 3; n <= Limit; n += 2)
@@ -118,24 +120,28 @@ public class SieveOfEratosthenesProvider : IPrimeDecider, IPrimeProvider
     public IReadOnlyList<int> Primes { get; }
 }
 
-public class TrialDivisionDecider : IPrimeDecider
+public sealed class TrialDivisionDecider : IPrimeDecider
 {
-    private readonly SieveOfEratosthenesProvider _sieve;
+    private readonly SieveOfEratosthenesProvider _sieveProvider;
 
     public TrialDivisionDecider(int limit)
     {
-        _sieve = new SieveOfEratosthenesProvider(Convert.ToInt32(Math.Sqrt(limit)));
+        Limit = limit;
+
+        _sieveProvider = new SieveOfEratosthenesProvider(Convert.ToInt32(Math.Sqrt(Limit)));
     }
+
+    public int Limit { get; }
 
     public bool IsPrime(int n)
     {
-        if (n <= _sieve.Limit)
-            return _sieve.IsPrime(n);
+        if (n <= _sieveProvider.Limit)
+            return _sieveProvider.IsPrime(n);
 
-        foreach (int prime in _sieve.Primes)
+        foreach (int prime in _sieveProvider.Primes)
         {
-            // Check for factors up to sqrt(n), as non-primes with such a factor must've had
-            // a factor seen earlier < sqrt(n) (otherwise multiplied together they'd be > n).
+            // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have
+            // a factor less than that, otherwise they'd multiply together to make a number greater than n.
             if (prime * prime > n)
                 break;
 
@@ -151,9 +157,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
-// 6471 http://www.spoj.com/problems/TDPRIMES/ Printing some primes
+// http://www.spoj.com/problems/TDPRIMES/ #primes #sieve
 // Prints some of the primes up to 100 million.
 public static class TDPRIMES
 {
@@ -10,12 +11,12 @@ public static class TDPRIMES
     public static string Solve()
     {
         var decider = new SieveOfEratosthenesDecider(_100Million);
-        var output = new StringBuilder();
 
+        var output = new StringBuilder();
         output.Append(2);
         output.AppendLine();
-        int count = 1;
 
+        int count = 1;
         for (int n = 3; n <= _100Million; n += 2)
         {
             if (decider.IsOddPrime(n) && ++count == 101)
@@ -30,32 +31,40 @@ public static class TDPRIMES
     }
 }
 
-public class SieveOfEratosthenesDecider
+// This sieve has some optimizations to avoid storing results for even integers; the result for an odd
+// integer n is stored at index n / 2. IsOddPrime is supplied for convenience (input n assumed to be odd).
+public sealed class SieveOfEratosthenesDecider
 {
-    private readonly bool[] _sieve;
+    private readonly IReadOnlyList<bool> _sieve;
 
     public SieveOfEratosthenesDecider(int limit)
     {
-        _sieve = new bool[(limit + 1) >> 1];
-        _sieve[0] = true; // 1 (which maps to index [1 / 2] == [0]) is not a prime.
+        Limit = limit;
+
+        bool[] sieve = new bool[(Limit + 1) >> 1];
+        sieve[0] = true; // 1 (which maps to index [1 / 2] == [0]) is not a prime, so sieve it out.
 
         // Check for n up to sqrt(Limit), as any non-primes <= Limit with a factor > sqrt(Limit)
         // must also have a factor < sqrt(Limit) (otherwise they'd be > Limit), and so already sieved.
-        for (int n = 3; n * n <= limit; n += 2)
+        for (int n = 3; n * n <= Limit; n += 2)
         {
-            // It's a prime if we haven't sieve it yet, so sieve its multiples.
-            if (IsOddPrime(n))
+            // If we haven't sieved it yet then it's a prime, so sieve its multiples.
+            if (!sieve[n >> 1])
             {
-                // Multiples of n less than n * n were already sieved from lower primes.
+                // Multiples of n less than n * n were already sieved from lower primes. Add twice
+                // n for each iteration, as otherwise it's odd + odd = even.
                 for (int nextPotentiallyUnsievedMultiple = n * n;
-                    nextPotentiallyUnsievedMultiple <= limit;
-                    nextPotentiallyUnsievedMultiple += n << 1)
+                    nextPotentiallyUnsievedMultiple <= Limit;
+                    nextPotentiallyUnsievedMultiple += (n << 1))
                 {
-                    _sieve[nextPotentiallyUnsievedMultiple >> 1] = true;
+                    sieve[nextPotentiallyUnsievedMultiple >> 1] = true;
                 }
             }
         }
+        _sieve = Array.AsReadOnly(sieve);
     }
+
+    public int Limit { get; }
 
     public bool IsPrime(int n)
         => (n & 1) == 0 ? n == 2 : IsOddPrime(n);

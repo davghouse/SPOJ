@@ -2,44 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 1436 http://www.spoj.com/problems/PT07Y/ Is it a tree
+// 1436 http://www.spoj.com/problems/PT07Y/ #graph-theory #tree
 // Determines if the given graph is a tree.
 public static class PT07Y
 {
     // Skipping the details, a graph is a tree if it's connected and has (vertexCount - 1) edges.
-    public static string Solve(int vertexCount, int edgeCount, int[,] edges)
+    public static bool Solve(int vertexCount, int edgeCount, int[,] edges)
     {
         if (edgeCount != vertexCount - 1)
-            return "NO";
+            return false;
 
-        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(vertexCount, edges);
-        return graph.IsConnected() ? "YES" : "NO";
+        return SimpleGraph
+            .CreateFromOneBasedEdges(vertexCount, edges)
+            .IsConnected();
     }
 }
 
 // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
 // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
-// corresponds to its index in said array. Immutable so far but at least mutable edges later on probably.
-// Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
-public class SimpleGraph
+// corresponds to its index in said array.
+public sealed class SimpleGraph
 {
-    protected readonly Vertex[] _vertices;
-
-    protected SimpleGraph(int vertexCount)
+    private SimpleGraph(int vertexCount)
     {
-        _vertices = new Vertex[vertexCount];
+        var vertices = new Vertex[vertexCount];
+        for (int id = 0; id < vertexCount; ++id)
+        {
+            vertices[id] = new Vertex(this, id);
+        }
+
+        Vertices = Array.AsReadOnly(vertices);
     }
 
     // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
     public static SimpleGraph CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
     {
         var graph = new SimpleGraph(vertexCount);
-
-        for (int id = 0; id < vertexCount; ++id)
-        {
-            graph._vertices[id] = new Vertex(graph, id);
-        }
-
         for (int i = 0; i < edges.GetLength(0); ++i)
         {
             graph.AddEdge(edges[i, 0], edges[i, 1]);
@@ -52,12 +50,6 @@ public class SimpleGraph
     public static SimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
     {
         var graph = new SimpleGraph(vertexCount);
-
-        for (int id = 0; id < vertexCount; ++id)
-        {
-            graph._vertices[id] = new Vertex(graph, id);
-        }
-
         for (int i = 0; i < edges.GetLength(0); ++i)
         {
             graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1);
@@ -66,23 +58,20 @@ public class SimpleGraph
         return graph;
     }
 
-    public int VertexCount
-        => _vertices.Length;
+    public IReadOnlyList<Vertex> Vertices { get; }
+    public int VertexCount => Vertices.Count;
 
-    public IReadOnlyList<Vertex> Vertices
-        => Array.AsReadOnly(_vertices);
+    private void AddEdge(int firstVertexID, int secondVertexID)
+        => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
-    protected void AddEdge(int firstVertexID, int secondVertexID)
-        => AddEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
-
-    protected void AddEdge(Vertex firstVertex, Vertex secondVertex)
+    private void AddEdge(Vertex firstVertex, Vertex secondVertex)
     {
         firstVertex.AddNeighbor(secondVertex);
         secondVertex.AddNeighbor(firstVertex);
     }
 
     public bool HasEdge(int firstVertexID, int secondVertexID)
-        => HasEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
+        => HasEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
     public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
         => firstVertex.HasNeighbor(secondVertex);
@@ -90,7 +79,7 @@ public class SimpleGraph
     // This performs a DFS from an arbitrary start vertex, to determine if the whole graph is reachable from it.
     public bool IsConnected()
     {
-        var arbitraryStartVertex = _vertices[VertexCount / 2];
+        var arbitraryStartVertex = Vertices[VertexCount / 2];
         var discoveredVertexIDs = new HashSet<int> { arbitraryStartVertex.ID };
         var verticesToVisit = new Stack<Vertex>();
         verticesToVisit.Push(arbitraryStartVertex);
@@ -112,12 +101,12 @@ public class SimpleGraph
         return discoveredVertexIDs.Count == VertexCount;
     }
 
-    public class Vertex
+    public sealed class Vertex
     {
-        protected readonly SimpleGraph _graph;
-        protected readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
+        private readonly SimpleGraph _graph;
+        private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
 
-        protected internal Vertex(SimpleGraph graph, int ID)
+        internal Vertex(SimpleGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;
@@ -125,20 +114,17 @@ public class SimpleGraph
 
         public int ID { get; }
 
-        public int Degree
-            => _neighbors.Count;
+        public IEnumerable<Vertex> Neighbors => _neighbors.Skip(0);
+        public int Degree => _neighbors.Count;
 
-        public IEnumerable<Vertex> Neighbors
-            => _neighbors.Skip(0);
+        internal void AddNeighbor(int neighborID)
+            => AddNeighbor(_graph.Vertices[neighborID]);
 
-        protected internal void AddNeighbor(int neighborID)
-            => AddNeighbor(_graph._vertices[neighborID]);
-
-        protected internal void AddNeighbor(Vertex neighbor)
+        internal void AddNeighbor(Vertex neighbor)
             => _neighbors.Add(neighbor);
 
         public bool HasNeighbor(int neighborID)
-            => HasNeighbor(_graph._vertices[neighborID]);
+            => HasNeighbor(_graph.Vertices[neighborID]);
 
         public bool HasNeighbor(Vertex neighbor)
             => _neighbors.Contains(neighbor);
@@ -163,6 +149,6 @@ public static class Program
         }
 
         Console.WriteLine(
-            PT07Y.Solve(vertexCount, edgeCount, edges));
+            PT07Y.Solve(vertexCount, edgeCount, edges) ? "YES" : "NO");
     }
 }

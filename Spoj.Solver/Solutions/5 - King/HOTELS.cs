@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 9861 http://www.spoj.com/problems/HOTELS/ Hotels Along the Croatian Coast
+// http://www.spoj.com/problems/HOTELS/ #greedy #optimization #subarray #window
 // Finds the consecutive hotels that maximize the money spent (without going over).
 public static class HOTELS
 {
@@ -27,7 +27,7 @@ public static class HOTELS
             }
 
             // The next hotel doesn't exist or puts us over the limit, so mark what we've found so far...
-            // Have to do a <= check in case there are single hotels more costly than our costLimit.
+            // Have to be careful in case there are single hotels more costly than our costLimit.
             if (costFromStartToEnd < costLimit)
             {
                 maximumCostFromStartToEnd = Math.Max(maximumCostFromStartToEnd, costFromStartToEnd);
@@ -40,7 +40,7 @@ public static class HOTELS
                 break;
 
             // Prepare for the next iteration by bumping the start and removing its cost.
-            // But have to be extra careful--could've bumped start past end if window was a single hotel!
+            // But have to be careful--could've bumped start past end if window was a single hotel!
             costFromStartToEnd -= hotelCosts[startIndex++];
             if (startIndex > endIndex)
             {
@@ -60,6 +60,7 @@ public static class Program
         int[] line = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
         int hotelCount = line[0];
         int costLimit = line[1];
+
         int[] hotelCosts = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
 
         Console.WriteLine(

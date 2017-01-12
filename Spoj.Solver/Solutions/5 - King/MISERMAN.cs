@@ -1,7 +1,7 @@
 ﻿using System;
 
-// <Number> http://www.spoj.com/problems/MISERMAN/ Wise And Miser
-// Finds the cheapest way to take buses between two cities.
+// http://www.spoj.com/problems/MISERMAN/ #dynamic-programming-2d #path-optimization #trap
+// Finds the cheapest way to take buses between two cities, with constrained movement.
 public static class MISERMAN
 {
     // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of final bus we use

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
 
-// 6171 http://www.spoj.com/problems/MAJOR/ Majority
-// Determines if any data is properly transmitted, i.e., the majority of what's sent.
+// http://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+// Determines if any number makes up the majority of all the numbers sent.
 public static class MAJOR // v2, using the Boyer-Moore algorithm and two passes.
 {
     // https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
@@ -43,9 +43,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();

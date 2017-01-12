@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// 5 http://www.spoj.com/problems/PALIN/ The Next Palindrome
+// http://www.spoj.com/problems/PALIN/ #ad-hoc #experiment #inspection
 // Outputs the smallest palindrome larger than the given integer (as strings, since they can be very large).
 public static class PALIN
 {
@@ -55,7 +55,7 @@ public static class PALIN
         for (int l = middleIndex ?? leftHalfStartIndex; l >= 0; --l)
         {
             bool keepCarryingTheOne = ret[l] == '9';
-            ret[l] = keepCarryingTheOne ? '0' : Convert.ToChar(ret[l] + 1);
+            ret[l] = keepCarryingTheOne ? '0' : (char)(ret[l] + 1);
 
             if (!keepCarryingTheOne)
                 break;
@@ -74,7 +74,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

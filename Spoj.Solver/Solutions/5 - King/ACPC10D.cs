@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/ACPC10D/ #dynamic-programming-2d
+// http://www.spoj.com/problems/ACPC10D/ #dynamic-programming-2d #path-optimization
 // Finds the shortest path between top and bottom middle vertices in a 'tri graph.'
 public static class ACPC10D
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 1724 http://www.spoj.com/problems/TRICOUNT/ Counting Triangles
+// http://www.spoj.com/problems/TRICOUNT/ #inspection #math #proof
 // Counts triangles (of all sizes) for different levels of the given construction.
 public static class TRICOUNT
 {
@@ -32,7 +32,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(

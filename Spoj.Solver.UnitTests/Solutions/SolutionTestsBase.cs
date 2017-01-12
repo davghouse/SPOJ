@@ -5,10 +5,10 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Linq;
 
 namespace Spoj.Solver.UnitTests.Solutions
 {
-    [TestClass]
     public abstract class SolutionTestsBase
     {
         private static readonly CSharpCodeProvider _compiler = new CSharpCodeProvider();
@@ -47,8 +47,11 @@ namespace Spoj.Solver.UnitTests.Solutions
         {
             CompilerResults compilerResults = _compiler
                 .CompileAssemblyFromSource(_compilerParameters, SolutionSource);
+            var compilationErrors = compilerResults.Errors
+                .Cast<CompilerError>()
+                .Select(e => e.ErrorText);
 
-            Assert.IsFalse(compilerResults.Errors.HasErrors);
+            Assert.IsTrue(!compilationErrors.Any(), message: string.Join(Environment.NewLine, compilationErrors));
 
             for (int i = 0; i < TestInputs.Count; ++i)
             {

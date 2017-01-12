@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 12471 http://www.spoj.com/problems/DIEHARD/ DIE HARD
+// http://www.spoj.com/problems/DIEHARD/ #experiment #game #memoization
 // Finds how long we can survive while moving between fire, water, and air.
 public static class DIEHARD
 {
@@ -37,15 +37,22 @@ public static class DIEHARD
         bool canSurviveMovingIntoFire = health + _fireHealthDelta > 0 && armor + _fireArmorDelta > 0;
 
         if (canSurviveMovingIntoWater && canSurviveMovingIntoFire)
+        {
             timeUntilDeath = 2 + Math.Max(
                 SolveWithMemoization(health + _waterHealthDelta + _airHealthDelta, armor + _waterArmorDelta + _airArmorDelta),
                 SolveWithMemoization(health + _fireHealthDelta + _airHealthDelta, armor + _fireArmorDelta + _airArmorDelta));
+        }
         else if (canSurviveMovingIntoWater)
+        {
             timeUntilDeath = 2 + SolveWithMemoization(health + _waterHealthDelta + _airHealthDelta, armor + _waterArmorDelta + _airArmorDelta);
+        }
         else if (canSurviveMovingIntoFire)
+        {
             timeUntilDeath = 2 + SolveWithMemoization(health + _fireHealthDelta + _airHealthDelta, armor + _fireArmorDelta + _airArmorDelta);
+        }
 
         _timesUntilDeath[healthAndArmor] = timeUntilDeath;
+
         return timeUntilDeath;
     }
 }
@@ -55,7 +62,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

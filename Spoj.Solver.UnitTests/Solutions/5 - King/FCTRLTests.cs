@@ -10,10 +10,11 @@ namespace Spoj.Solver.UnitTests.Solutions._5___King
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
-@"6
+@"7
 3
 60
 100
+125
 1024
 23456
 8735373"
@@ -24,13 +25,13 @@ namespace Spoj.Solver.UnitTests.Solutions._5___King
 @"0
 14
 24
+31
 253
 5861
 2183837
 "
         };
 
-        // This test fails sporadically due to running out of memory (allocating an array of size 200 million).
         [TestMethod]
         public void FCTRL() => TestSolution();
     }

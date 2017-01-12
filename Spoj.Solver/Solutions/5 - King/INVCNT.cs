@@ -1,7 +1,7 @@
 ﻿using System;
 
-// 6256 http://www.spoj.com/problems/INVCNT/ Inversion Count
-// Finds the number of inversions (larger index, smaller value) in an array.
+// http://www.spoj.com/problems/INVCNT/ #ad-hoc #binary-search-tree
+// Finds the number of inversions (larger index, but smaller value) in an array.
 public static class INVCNT
 {
     // The array size is limited to 200k elements, but that could be
@@ -37,7 +37,7 @@ public static class INVCNT
     }
 }
 
-public class InversionBST
+public sealed class InversionBST
 {
     private Node _root;
 
@@ -107,7 +107,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.ReadLine();
