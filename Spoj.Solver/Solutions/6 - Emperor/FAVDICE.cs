@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 1026 http://www.spoj.com/problems/FAVDICE/ Favorite Dice
+// http://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof #research
 // Finds the expected number of rolls before rolling every side of an n-sided die.
 public static class FAVDICE
 {
@@ -8,7 +8,6 @@ public static class FAVDICE
     public static double Solve(int n)
     {
         double expectedRolls = 0;
-
         for (int i = 0; i <= n - 1; ++i)
         {
             expectedRolls += n / (double)(n - i);
@@ -23,7 +22,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int n = int.Parse(Console.ReadLine());

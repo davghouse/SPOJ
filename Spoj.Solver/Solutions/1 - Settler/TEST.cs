@@ -1,6 +1,6 @@
 using System;
 
-// http://www.spoj.com/problems/TEST/ #i/o
+// http://www.spoj.com/problems/TEST/ #io
 // Reads and prints console input until the answer to life, the universe, and everything is found.
 public static class TEST
 {

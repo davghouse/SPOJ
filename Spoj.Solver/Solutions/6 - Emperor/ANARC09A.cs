@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 5449 http://www.spoj.com/problems/ANARC09A/ Seinfeld
+// http://www.spoj.com/problems/ANARC09A/ #dynamic-programming-x #greedy #recursion #stack
 // Finds the minimum number of replacements needed to balance a string of brackets.
 public static class ANARC09A
 {
@@ -9,10 +9,10 @@ public static class ANARC09A
         => SolveUsingAStack(s);
 
     // This relies on a greedy strategy (I gave up and read the comments). Immediately when a } is found,
-    // pair it off with a { if one exists (by removing that { from the stack). {'s can only exist to the right of }'s.
-    // At the end we'll have one of the following that can be dealt with while popping & replacing til empty:
-    // {{{..., }}}..., or }}}...}{...{{{ (note the transition point).
-    // The problem with this approach is that we haven't shown it's optimal, but it's a reasonable guess.
+    // pair it off with a { if one exists (by removing that { from the stack). {'s can only exist above all
+    // }'s on the stack. At the end we'll have one of the following that can be dealt with while popping
+    // & replacing til empty: {{{... or }}}... or }}}...}{...{{{ (note the transition point).
+    // The problem with this approach is that I haven't shown it's optimal.
     private static int SolveUsingAStack(string s)
     {
         var unmatchedBrackets = new Stack<char>();

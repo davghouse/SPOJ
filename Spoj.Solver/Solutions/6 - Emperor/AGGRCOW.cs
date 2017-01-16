@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 297 http://www.spoj.com/problems/AGGRCOW/ Aggressive cows
+// http://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization #research
 // Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
 public static class AGGRCOW
 {
@@ -151,7 +151,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

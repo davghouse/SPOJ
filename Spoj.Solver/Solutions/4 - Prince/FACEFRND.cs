@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/FACEFRND/ #ad-hoc #hashset
+// http://www.spoj.com/problems/FACEFRND/ #ad-hoc #hash-table #network
 // Finds friends of someone's friends given their friends and their friends' friends.
 public static class FACEFRND
 {

@@ -13,6 +13,7 @@
 #dynamic-programming
 #dynamic-programming-1d
 #dynamic-programming-2d
+#dynamic-programming-x
 #experiment
 #extrema
 #factorial
@@ -23,8 +24,8 @@
 #golf
 #graph-theory
 #greedy
-#hashset
-#I/O
+#hash-table
+#io
 #inspection
 #intersection
 #intuition
@@ -33,12 +34,15 @@
 #memoization
 #merge
 #mod-math
+#network
 #optimization
 #parsing
 #path-optimization
 #permutations
 #plane
 #primes
+#probability
+#proof
 #recursion
 #research
 #sequence
@@ -48,7 +52,9 @@
 #sorting
 #stack
 #strings
+#substrings
 #subarray
+#suffixes
 #trap
 #trees
 #window

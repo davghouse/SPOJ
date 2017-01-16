@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 7718 http://www.spoj.com/problems/COMDIV/ Number of common divisors
+// http://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
 // Finds the number of common divisors shared by two numbers.
 // See COMDIV.cpp--this solution was submitted using C++ because C# I/O is too slow.
 public static class COMDIV
@@ -15,23 +15,20 @@ public static class COMDIV
         _factorizer = new TrialDivisionFactorizer(_limit);
     }
 
-    // If it's a common divisor, it must divide the GCD. Therefore, if we find
-    // the number of divisors of the GCD, we find the number of common divisors.
-    // To find the number of divisors of a number, we need to find its prime
-    // factorization. Each factor can be chosen a certain number of times, from
-    // 0 up to its power in the factorization, independently of all other factors.
-    // n = p1^e1 * p2^e2 * ... * pk^ek => (e1 + 1) * (e2 + 1) * ... * (ek + 1)
-    // different combinations of prime factors. This corresponds to the number of
-    // divisors, since each different combination has a different prime factorization
-    // and is therefore a different number. The case where no factors are chosen
-    // corresponds to the divisor 1, which divides everything.
+    // If it's a common divisor, it must divide the GCD. Therefore, if we find the number of divisors
+    // of the GCD, we find the number of common divisors. To find the number of divisors of a number,
+    // we need to find its prime factorization. Each factor can be chosen a certain number of times,
+    // from 0 up to its power in the factorization, independently of all other factors.
+    // n = p1^e1 * p2^e2 * ... * pk^ek => (e1 + 1) * (e2 + 1) * ... * (ek + 1) different combinations
+    // of prime factors. This corresponds to the number of divisors, since each different combination
+    // has a different prime factorization and is therefore a different number. The case where no
+    // factors are chosen corresponds to the divisor 1, which divides everything.
     public static int Solve(int a, int b)
         => _factorizer
         .GetPrimeFactors(MathHelper.GreatestCommonDivisor(a, b))
         .GroupBy(factor => factor)
         .Select(factorGroup => factorGroup.Count() + 1)
         .Aggregate(1, (current, next) => current * next);
-
 }
 
 public static class MathHelper
@@ -55,7 +52,7 @@ public static class MathHelper
     }
 }
 
-public class SieveOfEratosthenesFactorizer
+public sealed class SieveOfEratosthenesFactorizer
 {
     // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
     // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
@@ -126,7 +123,7 @@ public class SieveOfEratosthenesFactorizer
     }
 }
 
-public class TrialDivisionFactorizer
+public sealed class TrialDivisionFactorizer
 {
     private readonly SieveOfEratosthenesFactorizer _sieveFactorizer;
 
@@ -146,17 +143,19 @@ public class TrialDivisionFactorizer
         if (n <= _sieveFactorizer.Limit)
         {
             foreach (int primeFactor in _sieveFactorizer.GetPrimeFactors(n))
+            {
                 yield return primeFactor;
+            }
         }
         else
         {
             foreach (int prime in _sieveFactorizer.Primes)
             {
-                // Check for factors up to sqrt(n), as non-primes with such a factor must've had
-                // a factor seen earlier < sqrt(n) (otherwise multiplied together they'd be > n).
-                // The fact that n is getting smaller doesn't matter. If this condition makes the
-                // loop stop, the current value of n must be a prime greater than 'prime', since
-                // n's only other option (multiple prime factors > 'prime') doesn't stop the loop.
+                // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have a factor
+                // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
+                // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
+                // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
+                // factors they'd have to all be greater than 'prime', but in that case the loop wouldn't stop here.
                 if (prime * prime > n)
                     break;
 
@@ -182,7 +181,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

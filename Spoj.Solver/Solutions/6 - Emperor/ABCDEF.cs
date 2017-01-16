@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-// 4580 http://www.spoj.com/problems/ABCDEF/ ABCDEF
-// Counts all sextuples satisfying the given equation.
+// http://www.spoj.com/problems/ABCDEF/ #ad-hoc #combinatorics #hash-table #math
+// Counts all sextuples satisfying the equation (a * b + c) / d - e = f.
 public static class ABCDEF
 {
     // Naively we can generates all sextuples and test each. Generating them

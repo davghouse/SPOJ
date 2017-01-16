@@ -66,16 +66,15 @@ namespace Spoj.Solver.Properties {
         ///using System.Diagnostics;
         ///using System.Linq;
         ///
-        ///// 4580 http://www.spoj.com/problems/ABCDEF/ ABCDEF
-        ///// Counts all sextuples satisfying the given equation.
+        ///// http://www.spoj.com/problems/ABCDEF/ #ad-hoc #combinatorics #hash-table #math
+        ///// Counts all sextuples satisfying the equation (a * b + c) / d - e = f.
         ///public static class ABCDEF
         ///{
         ///    // Naively we can generates all sextuples and test each. Generating them
         ///    // is simple because repetitions are allowed (and nums are already distinct).
         ///    public static long SolveSlowly(int[] nums)
         ///    {
-        ///        long validSextupleCount = 0;
-        ///        foreach (in [rest of string was truncated]&quot;;.
+        ///        lo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABCDEF {
             get {
@@ -250,13 +249,13 @@ namespace Spoj.Solver.Properties {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// 297 http://www.spoj.com/problems/AGGRCOW/ Aggressive cows
+        ///// http://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization #research
         ///// Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
         ///public static class AGGRCOW
         ///{
         ///    // Given a potential shortest distance between stalls, it&apos;s easy to verify if the cows can be placed
         ///    // with at least that much distance between any two of them. To do this:
-        ///    // Put a cow in the first stall, put the next cow in the 𝐟𝐢𝐫𝐬𝐭 stall to t [rest of string was truncated]&quot;;.
+        ///    // Put a cow in the first stall, put the next cow i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AGGRCOW {
             get {
@@ -267,14 +266,14 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 1021 http://www.spoj.com/problems/AIBOHP/ Aibohphobia
+        ///// http://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
         ///// Finds the minimum number of character insertions needed to turn a string into a palindrome.
         ///public static class AIBOHP // bottom-up, dynamic programming with tabulation
         ///{
         ///    private static int[,] minimumInsertionCounts = new int[6100, 6100];
         ///
         ///    // If the string starts and ends in the same characters, the insertion count is whatever
-        ///    // the count is for the substring excluding those two characters. It wouldn&apos;t make sens [rest of string was truncated]&quot;;.
+        ///    // the count is for the substring excluding those two characters.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AIBOHP {
             get {
@@ -365,7 +364,7 @@ namespace Spoj.Solver.Properties {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// 5449 http://www.spoj.com/problems/ANARC09A/ Seinfeld
+        ///// http://www.spoj.com/problems/ANARC09A/ #dynamic-programming-x #greedy #recursion #stack
         ///// Finds the minimum number of replacements needed to balance a string of brackets.
         ///public static class ANARC09A
         ///{
@@ -373,7 +372,7 @@ namespace Spoj.Solver.Properties {
         ///        =&gt; SolveUsingAStack(s);
         ///
         ///    // This relies on a greedy strategy (I gave up and read the comments). Immediately when a } is found,
-        ///    // pair it off with a { if one exists (by removing that { from the stack). {&apos;s can only exist to the [rest of string was truncated]&quot;;.
+        ///    // pair it off with a { if one exists (by removing that { from th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC09A {
             get {
@@ -445,13 +444,13 @@ namespace Spoj.Solver.Properties {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// 10582 http://www.spoj.com/problems/ARRAYSUB/ subarrays
+        ///// http://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #window
         ///// Finds the maximum for all contiguous subarrays of a given size in an array.
         ///public static class ARRAYSUB
         ///{
         ///    // Looks like I ended up with the typical sliding-window deque solution. Here&apos;s an example for k = 3:
         ///    // 1 3 2 8 4 7 2, initialize left looking dominators like {3, 2}. These dominate everything to their
-        ///    // left until a bigger dominator. Leftmost dominato [rest of string was truncated]&quot;;.
+        ///    // left until a bigger dominator. Leftmost  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARRAYSUB {
             get {
@@ -522,13 +521,13 @@ namespace Spoj.Solver.Properties {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// 3377 http://www.spoj.com/problems/BUGLIFE/ A Bug&apos;s Life
+        ///// http://www.spoj.com/problems/BUGLIFE/ #dfs #graph-theory
         ///// Determines if a set of bugs can be divided into two non-interacting groups.
         ///public static class BUGLIFE
         ///{
         ///    // Best we can do is see if the ants can be divided into two groups, where members
         ///    // of one group only interact with members of the other group. Same as checking bipartiteness.
-        ///    // Not the actual code submit [rest of string was truncated]&quot;;.
+        ///    // Not the actual code submi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUGLIFE {
             get {
@@ -679,7 +678,7 @@ namespace Spoj.Solver.Properties {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// 7718 http://www.spoj.com/problems/COMDIV/ Number of common divisors
+        ///// http://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
         ///// Finds the number of common divisors shared by two numbers.
         ///// See COMDIV.cpp--this solution was submitted using C++ because C# I/O is too slow.
         ///public static class COMDIV
@@ -689,7 +688,7 @@ namespace Spoj.Solver.Properties {
         ///
         ///    static COMDIV()
         ///    {
-        ///        _factorizer = new TrialDivisionFactorizer(_ [rest of string was truncated]&quot;;.
+        ///        _factorizer = new TrialDivisio [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COMDIV {
             get {
@@ -798,13 +797,13 @@ namespace Spoj.Solver.Properties {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// 694 http://www.spoj.com/problems/DISUBSTR/ Distinct Substrings
+        ///// http://www.spoj.com/problems/DISUBSTR/ #sorting #strings #suffixes
         ///// Counts the number of distinct substrings in a string.
         ///public static class DISUBSTR
         ///{
         ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
         ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(nWlogn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the same c [rest of string was truncated]&quot;;.
+        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the sa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DISUBSTR {
             get {
@@ -815,7 +814,7 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #i/o
+        ///// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #io
         ///// Figures out if the heroes can make it past the towers without anyone dying.
         ///public static class DOTAA
         ///{
@@ -823,7 +822,7 @@ namespace Spoj.Solver.Properties {
         ///    // tower hits before dying. We can calculate how many survivable hits for
         ///    // each individual hero as they are read, then compare that total to the tower
         ///    // count to see if it&apos;s possible for all heroes to survive.
-        ///    public [rest of string was truncated]&quot;;.
+        ///    public  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DOTAA {
             get {
@@ -874,14 +873,14 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 6219 http://www.spoj.com/problems/EDIST/ Edit distance
+        ///// http://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #research #strings
         ///// Finds the minimum number of edits (inserts, deletes, replacements) to make two strings equal.
         ///public static class EDIST
         ///{
         ///    // This is just solved in the standard way using the Wagner-Fischer algorithm.
         ///    // Note that proceeds from the perspective of transforming a into b rather than
-        ///    // transforming a and b into a common third string c as this problem allows.
-        ///    // Sufficient though, as assume second way is faster, [rest of string was truncated]&quot;;.
+        ///    // transforming a and b into a common third string c as this problem permits.
+        ///    // Sufficient though, as ass [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDIST {
             get {
@@ -954,8 +953,8 @@ namespace Spoj.Solver.Properties {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// 4141 http://www.spoj.com/problems/ETF/ Euler Totient Function
-        ///// Calculates the value of the totient function for the given n, 1 &lt;= n &lt;= 10^6.
+        ///// http://www.spoj.com/problems/ETF/ #formula #math #primes #research #sieve
+        ///// Calculates the value of the totient function (count of relative primes) for the given n, 1 &lt;= n &lt;= 10^6.
         ///public static class ETF
         ///{
         ///    private const int _limit = 1000000;
@@ -964,9 +963,7 @@ namespace Spoj.Solver.Properties {
         ///    static ETF()
         ///    {
         ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
-        ///    }
-        ///
-        ///    // We know a sieve is pre [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -979,7 +976,7 @@ namespace Spoj.Solver.Properties {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// http://www.spoj.com/problems/FACEFRND/ #ad-hoc #hashset
+        ///// http://www.spoj.com/problems/FACEFRND/ #ad-hoc #hash-table #network
         ///// Finds friends of someone&apos;s friends given their friends and their friends&apos; friends.
         ///public static class FACEFRND
         ///{
@@ -989,9 +986,7 @@ namespace Spoj.Solver.Properties {
         ///        for (int f = 0; f &lt; friendCount; ++f)
         ///        {
         ///            friends.Add(friendDefinitions[f][0]);
-        ///        }
-        ///
-        ///    [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FACEFRND {
             get {
@@ -1039,7 +1034,7 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 1026 http://www.spoj.com/problems/FAVDICE/ Favorite Dice
+        ///// http://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof #research
         ///// Finds the expected number of rolls before rolling every side of an n-sided die.
         ///public static class FAVDICE
         ///{
@@ -1047,17 +1042,12 @@ namespace Spoj.Solver.Properties {
         ///    public static double Solve(int n)
         ///    {
         ///        double expectedRolls = 0;
-        ///
         ///        for (int i = 0; i &lt;= n - 1; ++i)
         ///        {
         ///            expectedRolls += n / (double)(n - i);
         ///        }
         ///
-        ///        return expectedRolls;
-        ///    }
-        ///}
-        ///
-        ///public stati [rest of string was truncated]&quot;;.
+        ///        return expectedRolls [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FAVDICE {
             get {
@@ -2217,7 +2207,7 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// http://www.spoj.com/problems/TEST/ #i/o
+        ///// http://www.spoj.com/problems/TEST/ #io
         ///// Reads and prints console input until the answer to life, the universe, and everything is found.
         ///public static class TEST
         ///{
@@ -2236,7 +2226,7 @@ namespace Spoj.Solver.Properties {
         ///public static class Program
         ///{
         ///    private static void Main()
-        ///  [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TEST {
             get {

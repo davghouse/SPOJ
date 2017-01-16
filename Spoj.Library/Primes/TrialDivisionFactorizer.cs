@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace Spoj.Library.Primes
 {
@@ -13,7 +12,8 @@ namespace Spoj.Library.Primes
             Limit = limit;
 
             _sieveFactorizer = new SieveOfEratosthenesFactorizer(
-                Convert.ToInt32(Math.Sqrt(Limit)), needsToProvide: true);
+                limit: Convert.ToInt32(Math.Sqrt(Limit)),
+                needsToProvide: true);
         }
 
         public int Limit { get; }

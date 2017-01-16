@@ -19,8 +19,8 @@ public static class PT07Y
 }
 
 // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
-// corresponds to its index in said array.
+// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
+// its index in that array.
 public sealed class SimpleGraph
 {
     private SimpleGraph(int vertexCount)
@@ -32,18 +32,6 @@ public sealed class SimpleGraph
         }
 
         Vertices = Array.AsReadOnly(vertices);
-    }
-
-    // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
-    public static SimpleGraph CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
-    {
-        var graph = new SimpleGraph(vertexCount);
-        for (int i = 0; i < edges.GetLength(0); ++i)
-        {
-            graph.AddEdge(edges[i, 0], edges[i, 1]);
-        }
-
-        return graph;
     }
 
     // For example, edges like (1, 2), (2, 3) => there's an edge between vertices 0 and 1 and 1 and 2.

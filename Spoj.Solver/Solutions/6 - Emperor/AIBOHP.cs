@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 1021 http://www.spoj.com/problems/AIBOHP/ Aibohphobia
+// http://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
 // Finds the minimum number of character insertions needed to turn a string into a palindrome.
 public static class AIBOHP // bottom-up, dynamic programming with tabulation
 {
@@ -54,7 +54,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             Console.WriteLine(
