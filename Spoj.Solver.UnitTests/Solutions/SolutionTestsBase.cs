@@ -11,6 +11,7 @@ namespace Spoj.Solver.UnitTests.Solutions
 {
     public abstract class SolutionTestsBase
     {
+        private static readonly string _tags = Spoj.Solver.Properties.Resources.tags;
         private static readonly CSharpCodeProvider _compiler = new CSharpCodeProvider();
         private static readonly CompilerParameters _compilerParameters = new CompilerParameters();
 
@@ -43,16 +44,49 @@ namespace Spoj.Solver.UnitTests.Solutions
         public abstract IReadOnlyList<string> TestInputs { get; }
         public abstract IReadOnlyList<string> TestOutputs { get; }
 
+        // Called from derived classes to allow descriptive names to appear in the Test Explorer.
         protected void TestSolution()
         {
+            TestFormatting();
+
             CompilerResults compilerResults = _compiler
                 .CompileAssemblyFromSource(_compilerParameters, SolutionSource);
+
+            TestCompilation(compilerResults);
+            TestExecution(compilerResults);
+        }
+
+        private void TestFormatting()
+        {
+            string tagsLine = null;
+            using (var solutionSource = new StringReader(SolutionSource))
+            {
+                while ((tagsLine = solutionSource.ReadLine()) != null)
+                {
+                    if (tagsLine.Contains(@"http://www.spoj.com/problems/"))
+                        break;
+                }
+            }
+
+            Assert.IsNotNull(tagsLine);
+            Assert.IsTrue(tagsLine
+                .Split()
+                .Where(s => s.StartsWith("#"))
+                .All(t => _tags.Contains(t)),
+                message: "Invalid tags.");
+        }
+
+        private void TestCompilation(CompilerResults compilerResults)
+        {
             var compilationErrors = compilerResults.Errors
                 .Cast<CompilerError>()
                 .Select(e => e.ErrorText);
 
             Assert.IsTrue(!compilationErrors.Any(), message: string.Join(Environment.NewLine, compilationErrors));
+        }
 
+        private void TestExecution(CompilerResults compilerResults)
+        {
             for (int i = 0; i < TestInputs.Count; ++i)
             {
                 using (var @in = new StringReader(TestInputs[i]))

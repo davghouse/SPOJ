@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 8001 http://www.spoj.com/problems/FIBOSUM/ Fibonacci Sum
+// http://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #research #sequence
 // Finds the sum of the fibonacci numbers in a range.
 public static class FIBOSUM
 {
     private const int _mod = 1000000007;
     private const int _precomputedLimit = 1000;
-    private static readonly int[] _precomputedFibNums = new int[_precomputedLimit + 1];
+    private static readonly IReadOnlyList<int> _precomputedFibNums;
     private static readonly Dictionary<int, int> _fibNumMemoizer = new Dictionary<int, int>();
 
     static FIBOSUM()
     {
-        _precomputedFibNums[0] = 0;
-        _precomputedFibNums[1] = 1;
+        int[] precomputedFibNums = new int[_precomputedLimit + 1];
+        precomputedFibNums[0] = 0;
+        precomputedFibNums[1] = 1;
 
         for (int i = 2; i <= _precomputedLimit; ++i)
         {
-            _precomputedFibNums[i] = (_precomputedFibNums[i - 1] + _precomputedFibNums[i - 2]) % _mod;
+            precomputedFibNums[i] = (precomputedFibNums[i - 1] + precomputedFibNums[i - 2]) % _mod;
         }
+
+        _precomputedFibNums = precomputedFibNums;
     }
 
     // https://en.wikipedia.org/wiki/Fibonacci_number
@@ -68,6 +71,7 @@ public static class FIBOSUM
         }
 
         _fibNumMemoizer[n] = nFibNum;
+
         return nFibNum;
     }
 }
@@ -76,9 +80,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] range = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

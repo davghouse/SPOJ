@@ -7,6 +7,7 @@
 #bfs-multi-source
 #buckets
 #combinatorics
+#deque
 #dfs
 #digits
 #division

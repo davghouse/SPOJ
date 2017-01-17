@@ -1121,16 +1121,14 @@ namespace Spoj.Solver.Properties {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 8001 http://www.spoj.com/problems/FIBOSUM/ Fibonacci Sum
+        ///// http://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #research #sequence
         ///// Finds the sum of the fibonacci numbers in a range.
         ///public static class FIBOSUM
         ///{
         ///    private const int _mod = 1000000007;
         ///    private const int _precomputedLimit = 1000;
-        ///    private static readonly int[] _precomputedFibNums = new int[_precomputedLimit + 1];
-        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;();
-        ///
-        ///    static FIB [rest of string was truncated]&quot;;.
+        ///    private static readonly IReadOnlyList&lt;int&gt; _precomputedFibNums;
+        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;() [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FIBOSUM {
             get {
@@ -1393,14 +1391,14 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 1028 http://www.spoj.com/problems/HUBULLU/ Hubulullu
+        ///// http://www.spoj.com/problems/HUBULLU/ #game #proof #trap
         ///// Determines who wins in a game where a number and all its divisors are removed each turn.
         ///public static class HUBULLU
         ///{
         ///    // Assume by contradication player two can win. Blah blah the players are playing
         ///    // optimally and the problem guarantees determining a winner is possible, or whatever,
         ///    // I don&apos;t know anything about game theory which is what made this problem tricky
-        ///    // (spent a couple hours before coming up w [rest of string was truncated]&quot;;.
+        ///    // (spent a couple hours before coming  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HUBULLU {
             get {
@@ -1637,13 +1635,13 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 345 http://www.spoj.com/problems/MIXTURES/ Mixtures
+        ///// http://www.spoj.com/problems/MIXTURES/ #dynamic-programming-2d #memoization #optimization
         ///// Helps Harry mix potions in the way that produces the least amount of smoke.
         ///public static class MIXTURES
         ///{
         ///    // Observation: the order the mixtures are mixed won&apos;t matter in the end. Adding up a bunch of numbers
         ///    // mod 100 doesn&apos;t depend on the order it&apos;s done (associativity), so the color of the final mixture will be
-        ///    // the same regardless (which makes sense, the colors are adding together like paint does). So a recu [rest of string was truncated]&quot;;.
+        ///    // the same regardless (which makes sense, the colors are addin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MIXTURES {
             get {
@@ -2173,6 +2171,55 @@ namespace Spoj.Solver.Properties {
         public static string SUMITR {
             get {
                 return ResourceManager.GetString("SUMITR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #ad-hoc
+        ///#binary
+        ///#binary-search
+        ///#binary-search-tree
+        ///#big-numbers
+        ///#bfs
+        ///#bfs-multi-source
+        ///#buckets
+        ///#combinatorics
+        ///#dfs
+        ///#digits
+        ///#division
+        ///#dynamic-programming
+        ///#dynamic-programming-1d
+        ///#dynamic-programming-2d
+        ///#dynamic-programming-x
+        ///#experiment
+        ///#extrema
+        ///#factorial
+        ///#factors
+        ///#formula
+        ///#game
+        ///#gcd
+        ///#golf
+        ///#graph-theory
+        ///#greedy
+        ///#hash-table
+        ///#io
+        ///#inspection
+        ///#intersection
+        ///#intuition
+        ///#knapsack
+        ///#math
+        ///#memoization
+        ///#merge
+        ///#mod-math
+        ///#network
+        ///#optimization
+        ///#parsing
+        ///#path-optimization
+        ///#permut [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tags {
+            get {
+                return ResourceManager.GetString("tags", resourceCulture);
             }
         }
         

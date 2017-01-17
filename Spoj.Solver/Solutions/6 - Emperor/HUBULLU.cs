@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 1028 http://www.spoj.com/problems/HUBULLU/ Hubulullu
+// http://www.spoj.com/problems/HUBULLU/ #game #proof #trap
 // Determines who wins in a game where a number and all its divisors are removed each turn.
 public static class HUBULLU
 {
@@ -13,8 +13,7 @@ public static class HUBULLU
     // the game state is as if only player two had played a move, and apparently it's a losing
     // position for player one. But player one could've put player two in that same position
     // by playing his move before he did, contradicting the assumption and showing player two can't win.
-    // In retrospect would've been less time-consuming and eureka-ey had I known anything about game theory:
-    // https://en.wikipedia.org/wiki/Strategy-stealing_argument
+    // Turns out this has a name: https://en.wikipedia.org/wiki/Strategy-stealing_argument
     public static string Solve(int numberOfHighestPiece, int firstPlayer)
         => firstPlayer == 0 ? "Airborne wins." : "Pagfloyd wins.";
 }
@@ -24,7 +23,6 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
