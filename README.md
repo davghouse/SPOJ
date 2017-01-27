@@ -1,4 +1,4 @@
-spoj
+SPOJ
 ============
 
 C# solutions to problems on SPOJ: http://www.spoj.com/users/davidgalehouse/.
