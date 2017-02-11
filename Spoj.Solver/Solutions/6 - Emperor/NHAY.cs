@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 32 http://www.spoj.com/problems/NHAY/ A Needle in the Haystack
+// http://www.spoj.com/problems/NHAY/ #research #strings
 // Finds all occurrences of a given pattern in a string.
 public static class NHAY
 {
-    // Kmp was a bit faster than naive. For more details, see chapter 32 in CLRS.
     public static IEnumerable<int> Solve(string text, string pattern)
         => KmpStringMatcher.GetMatchIndices(text, pattern);
 }
@@ -73,7 +72,6 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-
         int patternLength;
         while (int.TryParse(Console.ReadLine(), out patternLength))
         {
@@ -83,7 +81,8 @@ public static class Program
             int outputLengthBefore = output.Length;
             foreach (int matchIndex in NHAY.Solve(text, pattern))
             {
-                output.AppendLine(matchIndex.ToString());
+                output.Append(matchIndex);
+                output.AppendLine();
             }
 
             if (output.Length == outputLengthBefore)

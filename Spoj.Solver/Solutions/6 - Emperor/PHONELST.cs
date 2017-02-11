@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// 4033 http://www.spoj.com/problems/PHONELST/ Phone List
-// Determines if some phone numbers or consistent--none the prefix of another.
+// http://www.spoj.com/problems/PHONELST/ #research #strings #trie
+// Determines if some phone numbers are consistent--none the prefix of another.
 public static class PHONELST
 {
     // This uses a modified trie, where the trie's Add method returns a bool indicating
@@ -12,7 +12,6 @@ public static class PHONELST
     public static bool Solve(int phoneNumberCount, string[] phoneNumbers)
     {
         var trie = new Trie();
-
         for (int i = 0; i < phoneNumberCount; ++i)
         {
             if (trie.Add(phoneNumbers[i]))
@@ -29,20 +28,20 @@ public class Trie
     // Modified to return true if the string added was a prefix of or was prefixed by an already existing string.
     // Special care would need to be taken to avoid counting the same string added multiple times as not prefixing
     // the other, but the problem wants the opposite behavior apparently. So it simplies the code just a little.
-    public bool Add(string s)
+    public bool Add(string word)
     {
         bool isPrefixedByAWord = false;
         bool isPrefixOfAWord = false;
 
         Node currentNode = _root;
         Node nextNode;
-        int i = 0;
+        int index = 0;
 
-        // Traverse down into the trie until we run out of characters or get to a node that needs a new child.
-        while (i < s.Length && currentNode.Children.TryGetValue(s[i], out nextNode))
+        // Traverse down into the trie until running out of characters or getting to a node that needs a new child.
+        while (index < word.Length && currentNode.Children.TryGetValue(word[index], out nextNode))
         {
             currentNode = nextNode;
-            ++i;
+            ++index;
 
             if (currentNode.IsAWordEnd)
             {
@@ -52,7 +51,7 @@ public class Trie
             }
         }
 
-        if (i == s.Length)
+        if (index == word.Length)
         {
             if (currentNode.Children.Count != 0)
             {
@@ -62,13 +61,14 @@ public class Trie
         }
         else
         {
-            // We've now exhausted the prefix of s already in the trie, so we know all characters from this point
-            // forward will need to have nodes created be created and wired up.
-            for (; i < s.Length; ++i)
+            // The prefix of the word already in the trie has been exhausted, so we know all characters from this point
+            // forward will need to have nodes created and wired up.
+            while (index < word.Length)
             {
-                nextNode = new Node(s[i]);
-                currentNode.Children.Add(s[i], nextNode);
+                nextNode = new Node(word[index]);
+                currentNode.Children.Add(word[index], nextNode);
                 currentNode = nextNode;
+                ++index;
             }
         }
 
@@ -87,9 +87,7 @@ public class Trie
 
         // Storing this value isn't necessary, it just helps me debug and think clearly about what's going on.
         public char Value { get; }
-
         public bool IsAWordEnd { get; set; }
-
         public Dictionary<char, Node> Children { get; } = new Dictionary<char, Node>();
     }
 }
@@ -98,9 +96,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         string[] phoneNumbers = new string[10000];
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int phoneNumberCount = int.Parse(Console.ReadLine());

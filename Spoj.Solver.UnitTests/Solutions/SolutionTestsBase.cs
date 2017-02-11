@@ -58,22 +58,30 @@ namespace Spoj.Solver.UnitTests.Solutions
 
         private void TestFormatting()
         {
-            string tagsLine = null;
+            string linkAndTagsLine = null;
             using (var solutionSource = new StringReader(SolutionSource))
             {
-                while ((tagsLine = solutionSource.ReadLine()) != null)
+                while ((linkAndTagsLine = solutionSource.ReadLine()) != null)
                 {
-                    if (tagsLine.Contains(@"http://www.spoj.com/problems/"))
+                    if (linkAndTagsLine.Contains(@"http://www.spoj.com/problems/"))
                         break;
                 }
             }
 
-            Assert.IsNotNull(tagsLine);
-            Assert.IsTrue(tagsLine
+            Assert.IsNotNull(linkAndTagsLine);
+
+            string[] tags = linkAndTagsLine
                 .Split()
                 .Where(s => s.StartsWith("#"))
-                .All(t => _tags.Contains(t)),
-                message: "Invalid tags.");
+                .ToArray();
+            string[] orderedTags = tags
+                .OrderBy(t => t)
+                .ToArray();
+
+            Assert.IsTrue(tags.All(t => _tags.Contains(t)),
+                message: $"Invalid tags: {string.Join(" ", tags.Where(t => !_tags.Contains(t)))}.");
+            Assert.IsTrue(tags.SequenceEqual(orderedTags),
+                message: $"The tags need to be in alphabetical order: {string.Join(" ", orderedTags)}.");
         }
 
         private void TestCompilation(CompilerResults compilerResults)
@@ -82,7 +90,8 @@ namespace Spoj.Solver.UnitTests.Solutions
                 .Cast<CompilerError>()
                 .Select(e => e.ErrorText);
 
-            Assert.IsTrue(!compilationErrors.Any(), message: string.Join(Environment.NewLine, compilationErrors));
+            Assert.IsTrue(!compilationErrors.Any(),
+                message: string.Join(Environment.NewLine, compilationErrors));
         }
 
         private void TestExecution(CompilerResults compilerResults)

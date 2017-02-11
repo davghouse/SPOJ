@@ -539,7 +539,7 @@ namespace Spoj.Solver.Properties {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// http://www.spoj.com/problems/BYECAKES/ #experiment #division #optimization #trap
+        ///// http://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization #trap
         ///// Finds the minimal amount of cake ingredients to buy to use all of them completely up.
         ///public static class BYECAKES
         ///{
@@ -1673,16 +1673,16 @@ namespace Spoj.Solver.Properties {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 32 http://www.spoj.com/problems/NHAY/ A Needle in the Haystack
+        ///// http://www.spoj.com/problems/NHAY/ #research #strings
         ///// Finds all occurrences of a given pattern in a string.
         ///public static class NHAY
         ///{
-        ///    // Kmp was a bit faster than naive. For more details, see chapter 32 in CLRS.
         ///    public static IEnumerable&lt;int&gt; Solve(string text, string pattern)
         ///        =&gt; KmpStringMatcher.GetMatchIndices(text, pattern);
         ///}
         ///
-        ///// This is taken from CLRS. It maintains the one-based indexing us [rest of string was truncated]&quot;;.
+        ///// This is taken from CLRS. It maintains the one-based indexing used in it (since it&apos;s most natural), but gets a
+        ///// little ugly as the strings have to be zer [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NHAY {
             get {
@@ -1765,7 +1765,7 @@ namespace Spoj.Solver.Properties {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 7742 http://www.spoj.com/problems/OLOLO/ Onotole needs your help
+        ///// http://www.spoj.com/problems/OLOLO/ #binary #io #trap
         ///// Identifies the sole integer that occurs in the input once rather than twice.
         ///// See OLOLO.cpp--this solution was submitted using C++ because C# I/O is too slow.
         ///public static class OLOLO
@@ -1777,7 +1777,7 @@ namespace Spoj.Solver.Properties {
         ///
         ///        while (remainingPyanis-- &gt; 0)
         ///        {
-        ///            // It&apos;s easy to see XOR&apos;ing will work if all i [rest of string was truncated]&quot;;.
+        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pair [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OLOLO {
             get {
@@ -1868,14 +1868,14 @@ namespace Spoj.Solver.Properties {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// 4033 http://www.spoj.com/problems/PHONELST/ Phone List
-        ///// Determines if some phone numbers or consistent--none the prefix of another.
+        ///// http://www.spoj.com/problems/PHONELST/ #research #strings #trie
+        ///// Determines if some phone numbers are consistent--none the prefix of another.
         ///public static class PHONELST
         ///{
         ///    // This uses a modified trie, where the trie&apos;s Add method returns a bool indicating
         ///    // whether the string added was a prefix of a string already present, or prefixed
         ///    // by a string already present. In either case, the phone numbers aren&apos;t consistent,
-        ///    // so we short-cir [rest of string was truncated]&quot;;.
+        ///    // so we [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PHONELST {
             get {
@@ -2184,6 +2184,7 @@ namespace Spoj.Solver.Properties {
         ///#bfs-multi-source
         ///#buckets
         ///#combinatorics
+        ///#deque
         ///#dfs
         ///#digits
         ///#division
@@ -2215,7 +2216,7 @@ namespace Spoj.Solver.Properties {
         ///#optimization
         ///#parsing
         ///#path-optimization
-        ///#permut [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tags {
             get {
