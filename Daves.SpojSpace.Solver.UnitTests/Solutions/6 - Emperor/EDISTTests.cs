@@ -1,0 +1,27 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+
+namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
+{
+    [TestClass]
+    public sealed class EDISTTests : SolutionTestsBase
+    {
+        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.EDIST;
+
+        public override IReadOnlyList<string> TestInputs => new[]
+        {
+@"1
+FOOD
+MONEY"
+        };
+
+        public override IReadOnlyList<string> TestOutputs => new[]
+        {
+@"4
+"
+        };
+
+        [TestMethod]
+        public void EDIST() => TestSolution();
+    }
+}

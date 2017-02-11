@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D10BF86-2D13-462E-9DE5-C67D759A0772}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Daves.SpojSpace.Library</RootNamespace>
+    <AssemblyName>Daves.SpojSpace.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BigInteger.cs" />
+    <Compile Include="BinaryIndexedTrees\NaiveBinaryIndexedTreeAlternatives.cs" />
+    <Compile Include="BinaryIndexedTrees\PURQBinaryIndexedTree.cs" />
+    <Compile Include="BinaryIndexedTrees\RUPQBinaryIndexedTree.cs" />
+    <Compile Include="BinaryIndexedTrees\RURQBinaryIndexedTree.cs" />
+    <Compile Include="BinarySearch.cs" />
+    <Compile Include="Helpers\IEnumerableHelper.cs" />
+    <Compile Include="InputGenerator.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Mod10Exponentiator.cs" />
+    <Compile Include="Primes\IPrimeDecider.cs" />
+    <Compile Include="Primes\IPrimeFactorizer.cs" />
+    <Compile Include="Primes\IPrimeProvider.cs" />
+    <Compile Include="Primes\NaivePrimeDeciderProviderFactorizer.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesDecider.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesFactorizer.cs" />
+    <Compile Include="Primes\SieveOfEratosthenesProvider.cs" />
+    <Compile Include="Primes\TrialDivisionDecider.cs" />
+    <Compile Include="Primes\TrialDivisionFactorizer.cs" />
+    <Compile Include="SegmentTrees\AdHoc\LazySumSegmentTree.cs" />
+    <Compile Include="SegmentTrees\ArrayBasedSegmentTree.cs" />
+    <Compile Include="SegmentTrees\SegmentTreeQueryObject.cs" />
+    <Compile Include="SegmentTrees\NonRecursiveSegmentTree.cs" />
+    <Compile Include="SegmentTrees\QueryObjects\MaximumQueryObject.cs" />
+    <Compile Include="SegmentTrees\QueryObjects\MaximumSumQueryObject.cs" />
+    <Compile Include="SegmentTrees\QueryObjects\MinimumQueryObject.cs" />
+    <Compile Include="SegmentTrees\NaiveSegmentTreeAlternatives.cs" />
+    <Compile Include="SegmentTrees\QueryObjects\ProductQueryObject.cs" />
+    <Compile Include="SegmentTrees\SegmentTree.cs" />
+    <Compile Include="SegmentTrees\NodeBasedSegmentTree.cs" />
+    <Compile Include="SegmentTrees\QueryObjects\SumQueryObject.cs" />
+    <Compile Include="SimpleGraph.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="StringMatchers\KmpStringMatcher.cs" />
+    <Compile Include="StringMatchers\NaiveStringMatcher.cs" />
+    <Compile Include="Tries\Trie.cs" />
+    <Compile Include="Tries\TrieNode.cs" />
+    <Compile Include="Tries\TrieSearchResult.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,5 +1,5 @@
-SPOJ
-============
+Dave's SPOJ Space
+=================
 
 C# solutions to problems on SPOJ: http://www.spoj.com/users/davidgalehouse/.
 
@@ -17,7 +17,10 @@ The solver's job conceptually won't necessitate changing the array in any way, i
 The overhead results from [slower iteration times](http://stackoverflow.com/q/4256928), even with no change to the underlying object, just exposing it through an interface.
 That may never matter, but it's enough for me to justify taking the input in whatever form the I/O handler builds it.
 It's going to get thrown out immediately after anyway.
-I **do** bother thinking about parameter types (and lots of other details) for any reusable components, which are housed in the Spoj.Library project.
+
+
+I **do** bother thinking about parameter types (and lots of other details) for any reusable components, which are housed in the Daves.SpojSpace.Library project.
+However, due to similar performance concerns as above and YAGNI, I usually don't bother programming with extensibility in mind.
 
 On the rare occasion that C# is too slow (usually due to I/O speed), I use C++.
 Style-wise I try to make my C++ solutions look like my C# solutions, because I don't remember the more common conventions.

@@ -5,8 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
-!Spoj.Solver.csproj.user
-!Spoj.SolverCpp.vcxproj.user
+!Daves.SpojSpace.Solver.csproj.user
+!Daves.SpojSpace.SolverCpp.vcxproj.user
 
 # Build results
 [Dd]ebug/
@@ -69,6 +69,8 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.opendb
+*.db-shm
+*.db-wal
 
 # Visual Studio profiler
 *.psess
