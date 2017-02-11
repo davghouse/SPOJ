@@ -4,7 +4,7 @@
 #include <stdexcept>
 using namespace std;
 
-// See InputVerifier.cs, this might be used when C# is too slow to even verify.
+// See InputVerifier.cs, this is used when C# is too slow to even verify input.
 int main()
 {
   int remainingTestCases;
