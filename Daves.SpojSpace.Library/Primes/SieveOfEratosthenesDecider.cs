@@ -33,7 +33,7 @@ namespace Daves.SpojSpace.Library.Primes
                     }
                 }
             }
-            _sieve = Array.AsReadOnly(sieve);
+            _sieve = sieve;
         }
 
         public int Limit { get; }

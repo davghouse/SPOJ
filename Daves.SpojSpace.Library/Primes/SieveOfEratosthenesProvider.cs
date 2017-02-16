@@ -23,7 +23,7 @@ namespace Daves.SpojSpace.Library.Primes
                     primes.Add(n);
                 }
             }
-            Primes = primes.AsReadOnly();
+            Primes = primes;
         }
 
         public int Limit { get; }

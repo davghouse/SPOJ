@@ -33,7 +33,7 @@ namespace Daves.SpojSpace.Library
                 digitsArray[i] = byte.Parse(digits[digits.Length - i - 1].ToString());
             }
 
-            _digits = Array.AsReadOnly(digitsArray);
+            _digits = digitsArray;
         }
 
         public bool IsZero => this == Zero;
@@ -66,7 +66,7 @@ namespace Daves.SpojSpace.Library
                 result.Add(carry);
             }
 
-            return new BigInteger(result.AsReadOnly());
+            return new BigInteger(result);
         }
 
         public static BigInteger operator -(BigInteger a, BigInteger b)
@@ -102,7 +102,7 @@ namespace Daves.SpojSpace.Library
 
             RemoveTrailingZeros(result);
 
-            return new BigInteger(result.AsReadOnly());
+            return new BigInteger(result);
         }
 
         public static BigInteger operator *(BigInteger a, BigInteger b)
@@ -137,7 +137,7 @@ namespace Daves.SpojSpace.Library
                 result.Add(carry);
             }
 
-            return new BigInteger(result.AsReadOnly());
+            return new BigInteger(result);
         }
 
         private BigInteger MultiplyByPowerOfTen(int power)
@@ -156,7 +156,7 @@ namespace Daves.SpojSpace.Library
                 result[power + i] = _digits[i];
             }
 
-            return new BigInteger(Array.AsReadOnly(result));
+            return new BigInteger(result);
         }
 
         public BigInteger DivideByTwo()
@@ -183,7 +183,7 @@ namespace Daves.SpojSpace.Library
 
             RemoveTrailingZeros(result);
 
-            return new BigInteger(result.AsReadOnly());
+            return new BigInteger(result);
         }
 
         private static void RemoveTrailingZeros(List<byte> result)

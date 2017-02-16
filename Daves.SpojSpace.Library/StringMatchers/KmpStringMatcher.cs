@@ -56,7 +56,7 @@ namespace Daves.SpojSpace.Library.StringMatchers
                 prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix[i] = lengthOfLongestProperSuffixThatIsItselfAPrefix;
             }
 
-            return Array.AsReadOnly(prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix);
+            return prefixesLengthOfLongestProperSuffixThatIsItselfAPrefix;
         }
     }
 }

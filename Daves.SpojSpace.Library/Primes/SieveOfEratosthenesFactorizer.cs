@@ -36,7 +36,7 @@ namespace Daves.SpojSpace.Library.Primes
                     }
                 }
             }
-            _sieveWithSomePrimeFactor = Array.AsReadOnly(sieveWithSomePrimeFactor);
+            _sieveWithSomePrimeFactor = sieveWithSomePrimeFactor;
 
             if (needsToProvide)
             {
@@ -51,7 +51,7 @@ namespace Daves.SpojSpace.Library.Primes
                         primes.Add(n);
                     }
                 }
-                Primes = primes.AsReadOnly();
+                Primes = primes;
             }
         }
 

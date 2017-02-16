@@ -20,7 +20,7 @@ namespace Daves.SpojSpace.Library
                 vertices[id] = new Vertex(this, id);
             }
 
-            Vertices = Array.AsReadOnly(vertices);
+            Vertices = vertices;
         }
 
         // For example, edges like (0, 1), (1, 2) => there's an edge between vertices 0 and 1 and 1 and 2.
