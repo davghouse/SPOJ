@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class EGYPIZZATests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.EGYPIZZA;
+        public override string SolutionSource => Solver.Solutions.EGYPIZZA;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

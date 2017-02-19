@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class DOTAATests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.DOTAA;
+        public override string SolutionSource => Solver.Solutions.DOTAA;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

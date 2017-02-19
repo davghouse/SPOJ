@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class ONPTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ONP;
+        public override string SolutionSource => Solver.Solutions.ONP;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

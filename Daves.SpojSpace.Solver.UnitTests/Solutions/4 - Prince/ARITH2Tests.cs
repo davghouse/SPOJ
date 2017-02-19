@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class ARITH2Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ARITH2;
+        public override string SolutionSource => Solver.Solutions.ARITH2;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

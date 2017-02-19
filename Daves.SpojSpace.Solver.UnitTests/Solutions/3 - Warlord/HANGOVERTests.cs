@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class HANGOVERTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.HANGOVER;
+        public override string SolutionSource => Solver.Solutions.HANGOVER;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

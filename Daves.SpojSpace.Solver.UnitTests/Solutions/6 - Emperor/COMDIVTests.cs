@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class COMDIVTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.COMDIV;
+        public override string SolutionSource => Solver.Solutions.COMDIV;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

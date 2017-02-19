@@ -54,6 +54,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt" />
+    <Text Include="Input.txt" />
   </ItemGroup>
 </Project>

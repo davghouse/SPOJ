@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._2___Chieftain
     [TestClass]
     public sealed class NSTEPSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.NSTEPS;
+        public override string SolutionSource => Solver.Solutions.NSTEPS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

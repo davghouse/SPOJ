@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class NHAYTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.NHAY;
+        public override string SolutionSource => Solver.Solutions.NHAY;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

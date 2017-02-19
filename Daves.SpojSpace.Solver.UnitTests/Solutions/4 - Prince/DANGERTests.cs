@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class DANGERTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.DANGER;
+        public override string SolutionSource => Solver.Solutions.DANGER;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

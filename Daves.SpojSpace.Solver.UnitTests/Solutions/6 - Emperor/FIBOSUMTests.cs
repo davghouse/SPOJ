@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class FIBOSUMTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.FIBOSUM;
+        public override string SolutionSource => Solver.Solutions.FIBOSUM;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

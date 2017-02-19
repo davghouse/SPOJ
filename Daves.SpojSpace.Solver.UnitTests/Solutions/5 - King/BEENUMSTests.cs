@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class BEENUMSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.BEENUMS;
+        public override string SolutionSource => Solver.Solutions.BEENUMS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

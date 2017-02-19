@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class HUBULLUTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.HUBULLU;
+        public override string SolutionSource => Solver.Solutions.HUBULLU;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

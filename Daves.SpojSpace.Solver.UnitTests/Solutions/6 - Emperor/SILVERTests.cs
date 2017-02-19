@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class SILVERTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.SILVER;
+        public override string SolutionSource => Solver.Solutions.SILVER;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

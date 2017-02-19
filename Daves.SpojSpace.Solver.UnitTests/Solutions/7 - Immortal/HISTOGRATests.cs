@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._7___Immortal
     [TestClass]
     public sealed class HISTOGRATests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.HISTOGRA;
+        public override string SolutionSource => Solver.Solutions.HISTOGRA;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

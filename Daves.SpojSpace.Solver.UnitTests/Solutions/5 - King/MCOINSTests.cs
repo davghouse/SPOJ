@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class MCOINSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MCOINS;
+        public override string SolutionSource => Solver.Solutions.MCOINS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

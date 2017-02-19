@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class TWOSQRSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.TWOSQRS;
+        public override string SolutionSource => Solver.Solutions.TWOSQRS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

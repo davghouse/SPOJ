@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._7___Immortal
     [TestClass]
     public sealed class HORRIBLE_v2Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.HORRIBLE_v2;
+        public override string SolutionSource => Solver.Solutions.HORRIBLE_v2;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

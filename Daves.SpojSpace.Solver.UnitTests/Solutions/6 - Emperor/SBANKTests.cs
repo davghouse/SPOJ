@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class SBANKTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.SBANK;
+        public override string SolutionSource => Solver.Solutions.SBANK;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

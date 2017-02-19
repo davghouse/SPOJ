@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class AMR12DTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.AMR12D;
+        public override string SolutionSource => Solver.Solutions.AMR12D;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

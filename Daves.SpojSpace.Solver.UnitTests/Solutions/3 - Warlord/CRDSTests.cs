@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class CRDSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.CRDS;
+        public override string SolutionSource => Solver.Solutions.CRDS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

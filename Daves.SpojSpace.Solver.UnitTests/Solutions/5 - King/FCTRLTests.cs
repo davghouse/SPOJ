@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class FCTRLTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.FCTRL;
+        public override string SolutionSource => Solver.Solutions.FCTRL;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

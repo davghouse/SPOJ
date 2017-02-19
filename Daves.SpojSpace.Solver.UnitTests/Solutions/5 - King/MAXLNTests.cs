@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class MAXLNTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MAXLN;
+        public override string SolutionSource => Solver.Solutions.MAXLN;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

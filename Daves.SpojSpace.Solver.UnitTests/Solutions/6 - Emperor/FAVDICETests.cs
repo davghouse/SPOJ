@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class FAVDICETests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.FAVDICE;
+        public override string SolutionSource => Solver.Solutions.FAVDICE;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

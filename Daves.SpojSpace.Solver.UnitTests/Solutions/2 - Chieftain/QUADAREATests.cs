@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._2___Chieftain
     [TestClass]
     public sealed class QUADAREATests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.QUADAREA;
+        public override string SolutionSource => Solver.Solutions.QUADAREA;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

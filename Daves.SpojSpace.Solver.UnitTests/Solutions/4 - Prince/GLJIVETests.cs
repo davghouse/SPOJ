@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class GLJIVETests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.GLJIVE;
+        public override string SolutionSource => Solver.Solutions.GLJIVE;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

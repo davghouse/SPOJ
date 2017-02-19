@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class OLOLOTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.OLOLO;
+        public override string SolutionSource => Solver.Solutions.OLOLO;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

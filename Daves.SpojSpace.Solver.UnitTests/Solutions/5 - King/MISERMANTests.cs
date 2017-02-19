@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class MISERMANTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MISERMAN;
+        public override string SolutionSource => Solver.Solutions.MISERMAN;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Daves.SpojSpace.Solver.Properties {
+namespace Daves.SpojSpace.Solver {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Daves.SpojSpace.Solver.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    public class Solutions {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Solutions() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Daves.SpojSpace.Solver.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Daves.SpojSpace.Solver.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Daves.SpojSpace.Solver.Solutions", typeof(Solutions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -570,26 +570,6 @@ namespace Daves.SpojSpace.Solver.Properties {
         public static string BYTESM2 {
             get {
                 return ResourceManager.GetString("BYTESM2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///
-        ///// http://www.spoj.com/problems/BYTESM2/ #dynamic-programming-2d #path-optimization
-        ///// Finds the (downward) path of most stones in a grid of stones.
-        ///public static class BYTESM2
-        ///{
-        ///    // The value of the best path to a square is the square&apos;s value plus the max
-        ///    // of the values of the best paths of the squares in the previous row it&apos;s reachable from.
-        ///    public static int Solve(int height, int width, int[,] stones)
-        ///    {
-        ///        // We could use t [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string BYTESM21 {
-            get {
-                return ResourceManager.GetString("BYTESM21", resourceCulture);
             }
         }
         
@@ -2216,9 +2196,9 @@ namespace Daves.SpojSpace.Solver.Properties {
         ///#parsing
         ///#path-optimization        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string tags {
+        public static string Tags {
             get {
-                return ResourceManager.GetString("tags", resourceCulture);
+                return ResourceManager.GetString("Tags", resourceCulture);
             }
         }
         

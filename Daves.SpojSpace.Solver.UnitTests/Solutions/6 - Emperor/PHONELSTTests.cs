@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class PHONELSTTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PHONELST;
+        public override string SolutionSource => Solver.Solutions.PHONELST;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

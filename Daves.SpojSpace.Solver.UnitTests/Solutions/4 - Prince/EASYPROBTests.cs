@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class EASYPROBTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.EASYPROB;
+        public override string SolutionSource => Solver.Solutions.EASYPROB;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._8___Deity
     [TestClass]
     public sealed class DQUERYTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.DQUERY;
+        public override string SolutionSource => Solver.Solutions.DQUERY;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

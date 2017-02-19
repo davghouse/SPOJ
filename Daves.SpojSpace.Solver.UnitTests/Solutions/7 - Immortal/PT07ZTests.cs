@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._7___Immortal
     [TestClass]
     public sealed class PT07ZTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PT07Z;
+        public override string SolutionSource => Solver.Solutions.PT07Z;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

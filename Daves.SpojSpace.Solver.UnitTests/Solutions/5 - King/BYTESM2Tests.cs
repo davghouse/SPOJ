@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class BYTESM2Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.BYTESM2;
+        public override string SolutionSource => Solver.Solutions.BYTESM2;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

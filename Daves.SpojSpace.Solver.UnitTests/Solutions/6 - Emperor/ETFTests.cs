@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class ETFTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ETF;
+        public override string SolutionSource => Solver.Solutions.ETF;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

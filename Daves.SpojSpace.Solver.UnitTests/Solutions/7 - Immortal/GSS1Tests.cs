@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._7___Immortal
     [TestClass]
     public sealed class GSS1Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.GSS1;
+        public override string SolutionSource => Solver.Solutions.GSS1;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

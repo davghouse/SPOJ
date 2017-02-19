@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._1___Settler
     [TestClass]
     public sealed class TESTTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.TEST;
+        public override string SolutionSource => Solver.Solutions.TEST;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

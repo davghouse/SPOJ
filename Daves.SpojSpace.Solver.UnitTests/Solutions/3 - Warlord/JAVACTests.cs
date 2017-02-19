@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class JAVACTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.JAVAC;
+        public override string SolutionSource => Solver.Solutions.JAVAC;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

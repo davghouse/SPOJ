@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,11 +82,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="input.txt">
+    <Content Include="Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Solutions\2 - Chieftain\GUESSING.txt" />
-    <None Include="tags.txt" />
+    <None Include="Tags.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\JULKA.cs" />
@@ -119,11 +119,6 @@
     <None Include="Solutions\4 - Prince\WILLITST.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="Solutions\5 - King\CANTON.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +270,11 @@
     <None Include="Solutions\2 - Chieftain\QUADAREA.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Solutions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Solutions.resx</DependentUpon>
+    </Compile>
     <None Include="Solutions\8 - Deity\DQUERY.cs" />
     <None Include="Solutions\4 - Prince\CPRMT.cs" />
     <None Include="Solutions\5 - King\MISERMAN.cs" />
@@ -289,7 +289,7 @@
     <None Include="Solutions\7 - Immortal\HORRIBLE_v1.cs" />
     <None Include="Solutions\5 - King\ANARC05B.cs" />
     <None Include="Solutions\5 - King\ACPC11B.cs" />
-    <None Include="InputVerifier.cs" />
+    <Compile Include="InputVerifier.cs" />
     <None Include="Solutions\3 - Warlord\DOTAA.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,11 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Solutions\4 - Prince\DANGER.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +352,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\TEMPLATE2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Solutions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Solutions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class PIRTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PIR;
+        public override string SolutionSource => Solver.Solutions.PIR;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class ALICESIETests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ALICESIE;
+        public override string SolutionSource => Solver.Solutions.ALICESIE;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

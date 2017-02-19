@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._2___Chieftain
     [TestClass]
     public sealed class ARMYTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ARMY;
+        public override string SolutionSource => Solver.Solutions.ARMY;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

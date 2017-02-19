@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._2___Chieftain
     [TestClass]
     public sealed class ADDREVTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ADDREV;
+        public override string SolutionSource => Solver.Solutions.ADDREV;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

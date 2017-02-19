@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class DISUBSTRTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.DISUBSTR;
+        public override string SolutionSource => Solver.Solutions.DISUBSTR;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class DIEHARDTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.DIEHARD;
+        public override string SolutionSource => Solver.Solutions.DIEHARD;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class CANDY3Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.CANDY3;
+        public override string SolutionSource => Solver.Solutions.CANDY3;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

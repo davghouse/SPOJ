@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class MIXTURESTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MIXTURES;
+        public override string SolutionSource => Solver.Solutions.MIXTURES;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

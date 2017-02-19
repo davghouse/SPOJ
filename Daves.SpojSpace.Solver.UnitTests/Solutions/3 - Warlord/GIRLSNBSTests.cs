@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class GIRLSNBSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.GIRLSNBS;
+        public override string SolutionSource => Solver.Solutions.GIRLSNBS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

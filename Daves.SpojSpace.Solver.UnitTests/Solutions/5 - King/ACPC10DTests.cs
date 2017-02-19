@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class ACPC10DTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ACPC10D;
+        public override string SolutionSource => Solver.Solutions.ACPC10D;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

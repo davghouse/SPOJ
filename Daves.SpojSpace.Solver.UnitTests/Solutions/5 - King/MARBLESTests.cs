@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class MARBLESTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MARBLES;
+        public override string SolutionSource => Solver.Solutions.MARBLES;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class BYECAKESTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.BYECAKES;
+        public override string SolutionSource => Solver.Solutions.BYECAKES;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

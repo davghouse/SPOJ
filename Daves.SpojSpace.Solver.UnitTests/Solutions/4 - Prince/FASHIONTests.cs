@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class FASHIONTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.FASHION;
+        public override string SolutionSource => Solver.Solutions.FASHION;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

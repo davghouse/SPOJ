@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class PPATHTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PPATH;
+        public override string SolutionSource => Solver.Solutions.PPATH;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
     [TestClass]
     public sealed class ABCDEFTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ABCDEF;
+        public override string SolutionSource => Solver.Solutions.ABCDEF;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

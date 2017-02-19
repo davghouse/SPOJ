@@ -11,7 +11,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
 {
     public abstract class SolutionTestsBase
     {
-        private static readonly string _tags = Daves.SpojSpace.Solver.Properties.Resources.tags;
+        private static readonly string _tags = Solver.Solutions.Tags;
         private static readonly CSharpCodeProvider _compiler = new CSharpCodeProvider();
         private static readonly CompilerParameters _compilerParameters = new CompilerParameters();
 
@@ -56,7 +56,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
             TestExecution(compilerResults);
         }
 
-        private void TestFormatting()
+        protected void TestFormatting()
         {
             string linkAndTagsLine = null;
             using (var solutionSource = new StringReader(SolutionSource))

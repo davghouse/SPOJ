@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class STAMPSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.STAMPS;
+        public override string SolutionSource => Solver.Solutions.STAMPS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

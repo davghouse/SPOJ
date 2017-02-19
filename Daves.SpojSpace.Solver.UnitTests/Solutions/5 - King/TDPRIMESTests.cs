@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class TDPRIMESTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.TDPRIMES;
+        public override string SolutionSource => Solver.Solutions.TDPRIMES;
         public override IReadOnlyList<string> TestInputs => new[] { "" };
         public override IReadOnlyList<string> TestOutputs => new[] { "" };
 

@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class TOANDFROTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.TOANDFRO;
+        public override string SolutionSource => Solver.Solutions.TOANDFRO;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

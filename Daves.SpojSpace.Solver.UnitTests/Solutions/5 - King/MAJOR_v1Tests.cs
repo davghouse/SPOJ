@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class MAJOR_v1Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.MAJOR_v1;
+        public override string SolutionSource => Solver.Solutions.MAJOR_v1;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

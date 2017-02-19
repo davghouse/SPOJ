@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class ANARC05BTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ANARC05B;
+        public override string SolutionSource => Solver.Solutions.ANARC05B;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

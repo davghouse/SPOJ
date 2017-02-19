@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class PARTYTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PARTY;
+        public override string SolutionSource => Solver.Solutions.PARTY;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

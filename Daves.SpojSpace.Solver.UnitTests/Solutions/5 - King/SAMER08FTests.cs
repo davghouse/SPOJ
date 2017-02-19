@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class SAMER08FTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.SAMER08F;
+        public override string SolutionSource => Solver.Solutions.SAMER08F;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

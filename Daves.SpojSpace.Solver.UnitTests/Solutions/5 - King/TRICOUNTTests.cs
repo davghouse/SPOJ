@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class TRICOUNTTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.TRICOUNT;
+        public override string SolutionSource => Solver.Solutions.TRICOUNT;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

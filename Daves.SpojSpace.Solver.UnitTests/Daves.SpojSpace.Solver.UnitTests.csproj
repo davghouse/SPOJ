@@ -63,6 +63,7 @@
     <Compile Include="Solutions\1 - Settler\TESTTests.cs" />
     <Compile Include="Solutions\2 - Chieftain\ADDREVTests.cs" />
     <Compile Include="Solutions\2 - Chieftain\ARMYTests.cs" />
+    <Compile Include="Solutions\2 - Chieftain\GUESSINGTests.cs" />
     <Compile Include="Solutions\2 - Chieftain\NSTEPSTests.cs" />
     <Compile Include="Solutions\2 - Chieftain\QUADAREATests.cs" />
     <Compile Include="Solutions\3 - Warlord\ABSYSTests.cs" />

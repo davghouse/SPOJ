@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._5___King
     [TestClass]
     public sealed class PALINTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.PALIN;
+        public override string SolutionSource => Solver.Solutions.PALIN;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

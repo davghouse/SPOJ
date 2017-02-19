@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._4___Prince
     [TestClass]
     public sealed class WILLITSTTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.WILLITST;
+        public override string SolutionSource => Solver.Solutions.WILLITST;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {

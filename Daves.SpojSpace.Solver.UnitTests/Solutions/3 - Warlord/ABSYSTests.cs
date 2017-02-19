@@ -6,7 +6,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._3___Warlord
     [TestClass]
     public sealed class ABSYSTests : SolutionTestsBase
     {
-        public override string SolutionSource => Daves.SpojSpace.Solver.Properties.Resources.ABSYS;
+        public override string SolutionSource => Solver.Solutions.ABSYS;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
