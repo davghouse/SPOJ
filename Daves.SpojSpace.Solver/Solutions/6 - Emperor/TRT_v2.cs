@@ -1,17 +1,14 @@
 ﻿using System;
 
-// 740 http://www.spoj.com/problems/TRT/ Treats for the Cows
+// http://www.spoj.com/problems/TRT/ #dynamic-programming-2d #experiment #optimization
 // Finds the optimal order to sell cow treats that become more valuable over time.
 public static class TRT // v2, bottom-up, dynamic programming with tabulation
 {
-    private static int[,] maximumRevenues;
-
     // See TRT_v1 for the memoized solution that helps motivate this DP.
     // A 2D array is used for the DP, where the first index corresponds to a range's start index
     // and the second index corresponds to that range's end index. The value in the array isn't just
     // the maximum revenue of range, it's the maximum revenue given that the requisite number of days has
     // passed to allow us to choose all the treats outside the range. Details:
-    //
     // For the range from i (row) to j (column), i <= j (below the diagonal is N/A, as not valid ranges),
     // the maximum revenue for that range (given the starting age is i + ((treatCount.Length - 1) - j) + 1) is
     // = maximumRevenues[i, j]
@@ -20,7 +17,7 @@ public static class TRT // v2, bottom-up, dynamic programming with tabulation
     // So we need to fill the maximumRevenues table such that the value underneath and the value to the left are already calculated.
     public static int Solve(int treatCount, int[] treatValues)
     {
-        maximumRevenues = new int[treatCount, treatCount];
+        int[,] maximumRevenues = new int[treatCount, treatCount];
 
         // Initialize along the diagonal.
         for (int d = 0; d < treatCount; ++d)
@@ -59,12 +56,12 @@ public static class Program
     {
         int treatCount = int.Parse(Console.ReadLine());
         int[] treatValues = new int[treatCount];
-
         for (int i = 0; i < treatCount; ++i)
         {
             treatValues[i] = int.Parse(Console.ReadLine());
         }
 
-        Console.WriteLine(TRT.Solve(treatCount, treatValues));
+        Console.WriteLine(
+            TRT.Solve(treatCount, treatValues));
     }
 }

@@ -2,7 +2,7 @@
 
 // http://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
 // Finds the minimum number of character insertions needed to turn a string into a palindrome.
-public static class AIBOHP // bottom-up, dynamic programming with tabulation
+public static class AIBOHP
 {
     private static int[,] minimumInsertionCounts = new int[6100, 6100];
 

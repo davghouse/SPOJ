@@ -171,6 +171,7 @@
     <Compile Include="Solutions\7 - Immortal\PT07ZTests.cs" />
     <Compile Include="Solutions\8 - Deity\DQUERYTests.cs" />
     <Compile Include="Solutions\SolutionTestsBase.cs" />
+    <Compile Include="TagsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
