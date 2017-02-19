@@ -4,11 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-// 1841 http://www.spoj.com/problems/PPATH/ Prime Path
+// http://www.spoj.com/problems/PPATH/ #graph-theory #primes #sieve
 // Finds the shortest path to travel between primes, along primes, in one-digit swaps.
 public static class PPATH
 {
-    private static object startVertex;
     private static SimpleGraph _primeGraph;
 
     static PPATH()
@@ -24,13 +23,16 @@ public static class PPATH
         // greater than because lesser primes were already connected to it earlier in the loop.
         for (int n = 1001; n <= 9999; n += 2)
         {
-            if (!primeDecider.IsOddPrime(n)) continue;
+            if (!primeDecider.IsOddPrime(n))
+                continue;
 
             int nSwapped = n + 1000;
             while (nSwapped % 10000 > n)
             {
                 if (primeDecider.IsOddPrime(nSwapped))
+                {
                     _primeGraph.AddEdge(n, nSwapped);
+                }
 
                 nSwapped += 1000;
             }
@@ -39,7 +41,9 @@ public static class PPATH
             while (nSwapped % 1000 > n % 1000)
             {
                 if (primeDecider.IsOddPrime(nSwapped))
+                {
                     _primeGraph.AddEdge(n, nSwapped);
+                }
 
                 nSwapped += 100;
             }
@@ -48,7 +52,9 @@ public static class PPATH
             while (nSwapped % 100 > n % 100)
             {
                 if (primeDecider.IsOddPrime(nSwapped))
+                {
                     _primeGraph.AddEdge(n, nSwapped);
+                }
 
                 nSwapped += 10;
             }
@@ -57,7 +63,9 @@ public static class PPATH
             while (nSwapped % 10 > n % 10)
             {
                 if (primeDecider.IsOddPrime(nSwapped))
+                {
                     _primeGraph.AddEdge(n, nSwapped);
+                }
 
                 nSwapped += 2;
             }
@@ -69,30 +77,26 @@ public static class PPATH
 }
 
 // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
-// corresponds to its index in said array.
-public class SimpleGraph
+// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
+// its index in that array.
+public sealed class SimpleGraph
 {
-    private readonly Vertex[] _vertices;
-
     public SimpleGraph(int vertexCount)
     {
-        _vertices = new Vertex[vertexCount];
-
+        var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
         {
-            _vertices[id] = new Vertex(this, id);
+            vertices[id] = new Vertex(this, id);
         }
+
+        Vertices = vertices;
     }
 
-    public int VertexCount
-        => _vertices.Length;
-
-    public IReadOnlyList<Vertex> Vertices
-        => Array.AsReadOnly(_vertices);
+    public IReadOnlyList<Vertex> Vertices { get; }
+    public int VertexCount => Vertices.Count;
 
     public void AddEdge(int firstVertexID, int secondVertexID)
-        => AddEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
+        => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
     public void AddEdge(Vertex firstVertex, Vertex secondVertex)
     {
@@ -101,45 +105,13 @@ public class SimpleGraph
     }
 
     public bool HasEdge(int firstVertexID, int secondVertexID)
-        => HasEdge(_vertices[firstVertexID], _vertices[secondVertexID]);
+        => HasEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
     public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
         => firstVertex.HasNeighbor(secondVertex);
 
-    public class Vertex
-    {
-        private readonly SimpleGraph _graph;
-        private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
-
-        internal Vertex(SimpleGraph graph, int ID)
-        {
-            _graph = graph;
-            this.ID = ID;
-        }
-
-        public int ID { get; }
-
-        public int Degree
-            => _neighbors.Count;
-
-        public IEnumerable<Vertex> Neighbors
-            => _neighbors.Skip(0);
-
-        internal void AddNeighbor(int neighborID)
-            => AddNeighbor(_graph._vertices[neighborID]);
-
-        internal void AddNeighbor(Vertex neighbor)
-            => _neighbors.Add(neighbor);
-
-        public bool HasNeighbor(int neighborID)
-            => HasNeighbor(_graph._vertices[neighborID]);
-
-        public bool HasNeighbor(Vertex neighbor)
-            => _neighbors.Contains(neighbor);
-    }
-
     public int GetShortestPathLength(int startVertexID, int endVertexID)
-        => GetShortestPathLength(_vertices[startVertexID], _vertices[endVertexID]);
+        => GetShortestPathLength(Vertices[startVertexID], Vertices[endVertexID]);
 
     public int GetShortestPathLength(Vertex startVertex, Vertex endVertex)
     {
@@ -181,9 +153,40 @@ public class SimpleGraph
 
         return -1;
     }
+
+    public sealed class Vertex
+    {
+        private readonly SimpleGraph _graph;
+        private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
+
+        internal Vertex(SimpleGraph graph, int ID)
+        {
+            _graph = graph;
+            this.ID = ID;
+        }
+
+        public int ID { get; }
+
+        public IEnumerable<Vertex> Neighbors => _neighbors;
+        public int Degree => _neighbors.Count;
+
+        internal void AddNeighbor(int neighborID)
+            => AddNeighbor(_graph.Vertices[neighborID]);
+
+        internal void AddNeighbor(Vertex neighbor)
+            => _neighbors.Add(neighbor);
+
+        public bool HasNeighbor(int neighborID)
+            => HasNeighbor(_graph.Vertices[neighborID]);
+
+        public bool HasNeighbor(Vertex neighbor)
+            => _neighbors.Contains(neighbor);
+    }
 }
 
-public class SieveOfEratosthenesDecider
+// This sieve has some optimizations to avoid storing results for even integers; the result for an odd
+// integer n is stored at index n / 2. IsOddPrime is supplied for convenience (input n assumed to be odd).
+public sealed class SieveOfEratosthenesDecider
 {
     private readonly IReadOnlyList<bool> _sieve;
 
@@ -211,7 +214,7 @@ public class SieveOfEratosthenesDecider
                 }
             }
         }
-        _sieve = Array.AsReadOnly(sieve);
+        _sieve = sieve;
     }
 
     public int Limit { get; }
@@ -227,9 +230,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] primes = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

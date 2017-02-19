@@ -122,7 +122,7 @@ public sealed class SimpleGraph
 
         public int ID { get; }
 
-        public IEnumerable<Vertex> Neighbors => _neighbors.Skip(0);
+        public IEnumerable<Vertex> Neighbors => _neighbors;
         public int Degree => _neighbors.Count;
 
         internal void AddNeighbor(int neighborID)

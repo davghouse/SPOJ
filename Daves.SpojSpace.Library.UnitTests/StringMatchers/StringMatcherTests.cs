@@ -63,8 +63,8 @@ namespace Daves.SpojSpace.Library.UnitTests.StringMatchers
         [TestMethod]
         public void StringMatchers_ForLargeStrings_AgreeWithEachOther()
         {
-            var text = InputGenerator.GenerateRandomString(1000);
-            var pattern = InputGenerator.GenerateRandomString(3);
+            string text = InputGenerator.GenerateRandomString(1000);
+            string pattern = InputGenerator.GenerateRandomString(3);
 
             CollectionAssert.AreEqual(
                 NaiveStringMatcher.GetMatchIndices(text, pattern).ToArray(),
@@ -80,11 +80,9 @@ namespace Daves.SpojSpace.Library.UnitTests.StringMatchers
 
         [TestMethod]
         public void ComputePrefixesLengthOfLongestProperSuffixThatIsItselfAPrefix()
-        {
             // This verifies the example shown in CLRS on page 1005.
-            CollectionAssert.AreEqual(
+            => CollectionAssert.AreEqual(
                 new[] { 0, 0, 0, 1, 2, 3, 0, 1 },
                 KmpStringMatcher.ComputePrefixesLengthOfLongestProperSuffixThatIsItselfAPrefix("ababaca").ToArray());
-        }
     }
 }

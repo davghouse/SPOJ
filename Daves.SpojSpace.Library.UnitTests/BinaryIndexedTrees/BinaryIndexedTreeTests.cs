@@ -11,8 +11,7 @@ namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
 
         [TestInitialize]
         public void TestInitialize()
-        {
-            _sourceArrays = new int[][] {
+            => _sourceArrays = new int[][] {
                 new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
                 new[] { 3 },
                 new[] { -3, -2 },
@@ -37,7 +36,6 @@ namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
                     -45, -78, -20, -94, -10, -99, -49, -84, -25, 29, 100, 31, -34, 42, -51, 24, 94, -29, -85, 91, 37, 94, -37
                 }
             };
-        }
 
         [TestMethod]
         public void PURQBinaryIndexedTree()
@@ -65,7 +63,7 @@ namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
                         int startIndex = Math.Min(firstIndex, secondIndex);
                         int endIndex = Math.Max(firstIndex, secondIndex);
 
-                        var expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        int expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
                         Assert.AreEqual(expected, purqBinaryIndexedTree.SumQuery(startIndex, endIndex));
                     }
                 }
@@ -97,7 +95,7 @@ namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
                     }
                     else
                     {
-                        var expected = NaiveBinaryIndexedTreeAlternatives.ValueQuery(sourceArray, firstIndex);
+                        int expected = NaiveBinaryIndexedTreeAlternatives.ValueQuery(sourceArray, firstIndex);
                         Assert.AreEqual(expected, rupqBinaryIndexedTree.ValueQuery(firstIndex));
                     }
                 }
@@ -129,7 +127,7 @@ namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
                     }
                     else
                     {
-                        var expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        int expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
                         Assert.AreEqual(expected, rurqBinaryIndexedTree.SumQuery(startIndex, endIndex));
                     }
                 }

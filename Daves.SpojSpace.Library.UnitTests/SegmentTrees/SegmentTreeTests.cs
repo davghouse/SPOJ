@@ -14,8 +14,7 @@ namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
 
         [TestInitialize]
         public void TestInitialize()
-        {
-            _sourceArrays = new int[][] {
+            => _sourceArrays = new int[][] {
                 new[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
                 new[] { 3 },
                 new[] { -3, -2 },
@@ -40,7 +39,6 @@ namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
                     -45, -78, -20, -94, -10, -99, -49, -84, -25, 29, 100, 31, -34, 42, -51, 24, 94, -29, -85, 91, 37, 94, -37
                 }
             };
-        }
 
         [TestMethod]
         public void MinimumQueries()
@@ -76,7 +74,7 @@ namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
                 {
                     for (int j = i; j < sourceArray.Length; ++j)
                     {
-                        var expected = naiveVerifier(sourceArray, i, j);
+                        int expected = naiveVerifier(sourceArray, i, j);
                         Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j));
                         Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j));
                         Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j));
@@ -126,7 +124,7 @@ namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
                         arrayBasedSegmentTree.Update(i, j, updater);
                         nonRecursiveSegmentTree.Update(i, j, updater);
 
-                        var expected = naiveVerifier(sourceArray, i, j);
+                        int expected = naiveVerifier(sourceArray, i, j);
                         Assert.AreEqual(expected, nodeBasedSegmentTree.Query(i, j));
                         Assert.AreEqual(expected, arrayBasedSegmentTree.Query(i, j));
                         Assert.AreEqual(expected, nonRecursiveSegmentTree.Query(i, j));
@@ -162,7 +160,7 @@ namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
                     }
                     else
                     {
-                        var expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
+                        int expected = NaiveSegmentTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
                         Assert.AreEqual(expected, lazySumSegmentTree.SumQuery(startIndex, endIndex));
                         Assert.AreEqual(expected, arrayBasedSegmentTree.Query(startIndex, endIndex));
                     }

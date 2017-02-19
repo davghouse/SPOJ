@@ -241,15 +241,11 @@ namespace Daves.SpojSpace.Library.UnitTests
 
         [TestMethod]
         public void DividesZeroByTwo()
-        {
-            Assert.AreEqual(BigInteger.Zero, BigInteger.Zero.DivideByTwo());
-        }
+            => Assert.AreEqual(BigInteger.Zero, BigInteger.Zero.DivideByTwo());
 
         [TestMethod]
         public void DividesTwoByTwo()
-        {
-            Assert.AreEqual(BigInteger.One, (new BigInteger(2)).DivideByTwo());
-        }
+            => Assert.AreEqual(BigInteger.One, (new BigInteger(2)).DivideByTwo());
 
         [TestMethod]
         public void DividesSomeIntegersByTwo()

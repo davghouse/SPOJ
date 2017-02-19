@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Daves.SpojSpace.Library
 {
     // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
     // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-    // its index in said array. Immutable so far but at least mutable edges later on probably. Not bothering to throw
+    // its index in that array. Immutable so far but at least mutable edges later on probably. Not bothering to throw
     // exceptions in the case where vertices from other graphs are passed in. Hash sets in the vertices slow things
     // down (use list for some problems), as does using data structures instead of the vertices themselves to maintain
     // state during searching.
@@ -231,7 +230,7 @@ namespace Daves.SpojSpace.Library
 
             public int ID { get; }
 
-            public IEnumerable<Vertex> Neighbors => _neighbors.Skip(0);
+            public IEnumerable<Vertex> Neighbors => _neighbors;
             public int Degree => _neighbors.Count;
 
             internal void AddNeighbor(int neighborID)
