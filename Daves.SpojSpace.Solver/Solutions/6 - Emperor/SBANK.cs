@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 27 http://www.spoj.com/problems/SBANK/ Sorting Bank Accounts
-// Sorts bank accounts (all #s are the same length so we don't have to worry about how).
+// http://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #research #sorting #trap
+// Sorts bank accounts ascendingly (lexicographically, but all the same length so w/e).
 public static class SBANK
 {
     // TLE is an issue so I do the I/O inside of the Solve this time. At first I tried a
@@ -102,15 +102,21 @@ public static class SBANK
 
             // Compute character frequency counts, for the characters '0' to '9' (but stored one index after).
             for (int a = 0; a < accountCount; ++a)
+            {
                 ++characterCounts[accountsCurrent[a][digit] + 1];
+            }
 
             // For those 10 characters, transform their counts to indices: where their matching accounts begin.
             for (int c = '0'; c <= '9'; ++c)
+            {
                 characterCounts[c + 1] += characterCounts[c];
+            }
 
             // Distribute the accounts using the computed character counts (which are now indices/running sums).
             for (int a = 0; a < accountCount; ++a)
+            {
                 accountsPrevious[characterCounts[accountsCurrent[a][digit]]++] = accountsCurrent[a];
+            }
 
             // Now accountsPrevious has the current sorted progress, so swap with accountsCurrent.
             var accountsTemp = accountsPrevious;
@@ -146,9 +152,8 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             SBANK.SolveEvenFaster(
