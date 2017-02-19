@@ -1,6 +1,6 @@
 ﻿using System;
 
-// 8785 http://www.spoj.com/problems/SILVER/ Cut the Silver Bar
+// http://www.spoj.com/problems/SILVER/ #ad-hoc #binary #combinatorics #proof
 // Finds the way to pay someone a silver a day with the fewest cuts.
 public static class SILVER
 {

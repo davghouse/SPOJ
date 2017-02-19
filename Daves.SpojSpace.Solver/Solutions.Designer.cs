@@ -1928,17 +1928,16 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// 1841 http://www.spoj.com/problems/PPATH/ Prime Path
+        ///// http://www.spoj.com/problems/PPATH/ #graph-theory #primes #sieve
         ///// Finds the shortest path to travel between primes, along primes, in one-digit swaps.
         ///public static class PPATH
         ///{
-        ///    private static object startVertex;
         ///    private static SimpleGraph _primeGraph;
         ///
         ///    static PPATH()
         ///    {
         ///        // 10000 because zero-based indices. This isn&apos;t great as we don&apos;t need 10000
-        ///        // (as most [rest of string was truncated]&quot;;.
+        ///        // (as most #s don&apos;t represent primes) [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PPATH {
             get {
@@ -2066,13 +2065,13 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 27 http://www.spoj.com/problems/SBANK/ Sorting Bank Accounts
-        ///// Sorts bank accounts (all #s are the same length so we don&apos;t have to worry about how).
+        ///// http://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #research #sorting #trap
+        ///// Sorts bank accounts ascendingly (lexicographically, but all the same length so w/e).
         ///public static class SBANK
         ///{
         ///    // TLE is an issue so I do the I/O inside of the Solve this time. At first I tried a
         ///    // SortedDictionary and that was too slow. Then I tried a SortedList, too slow, then
-        ///    // just sorting an array of strings and iterating to get the counts, to [rest of string was truncated]&quot;;.
+        ///    // just sorting an array of strings and iteratin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SBANK {
             get {
@@ -2083,14 +2082,14 @@ namespace Daves.SpojSpace.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// 8785 http://www.spoj.com/problems/SILVER/ Cut the Silver Bar
+        ///// http://www.spoj.com/problems/SILVER/ #ad-hoc #binary #combinatorics #proof
         ///// Finds the way to pay someone a silver a day with the fewest cuts.
         ///public static class SILVER
         ///{
         ///    // First, note there could be a lot going on here (cuts on what&apos;s been cut) so DP or recursion
         ///    // is probably out and there&apos;s a better solution. Then try a few examples  by hand, progressing
         ///    // naturally/greedily, following certain guidelines that make sense like: only cut when needed,
-        ///    // always take back as  [rest of string was truncated]&quot;;.
+        ///    // always [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SILVER {
             get {
