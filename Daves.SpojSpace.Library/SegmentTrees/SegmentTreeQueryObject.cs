@@ -12,10 +12,10 @@ namespace Daves.SpojSpace.Library.SegmentTrees
         // the data type of the answer we're looking for when querying.
         public abstract TQueryValue QueryValue { get; protected set; }
 
-        // Readonly property for the start index of the array range this query object corresponds to.
+        // 'Readonly' property for the start index of the array range this query object corresponds to.
         public int SegmentStartIndex { get; protected set; }
 
-        // Readonly property for the end index of the array range this query object corresponds to.
+        // 'Readonly' property for the end index of the array range this query object corresponds to.
         public int SegmentEndIndex { get; protected set; }
 
         // For constructing leaves, given an index of the source array and the corresponding value.

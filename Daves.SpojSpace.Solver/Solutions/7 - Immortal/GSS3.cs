@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 1716 http://www.spoj.com/problems/GSS3/ Can you answer these queries III
+// http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
 // Does element updates and maximum sum subrange queries on an array (using a segment tree).
 public class GSS3
 {
@@ -107,7 +107,7 @@ public class ArrayBasedSegmentTree
 // Given a query range, this value represents the maximum sum for any contiguous subrange.
 public class MaximumSumQueryObject
 {
-    public MaximumSumQueryObject()
+    private MaximumSumQueryObject()
     { }
 
     public MaximumSumQueryObject(int index, int value)
@@ -204,11 +204,10 @@ public static class Program
     {
         int arrayLength = int.Parse(Console.ReadLine());
         int[] sourceArray = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
-        int operationCount = int.Parse(Console.ReadLine());
-
         var solver = new GSS3(sourceArray);
-        var output = new StringBuilder();
 
+        var output = new StringBuilder();
+        int operationCount = int.Parse(Console.ReadLine());
         for (int o = 0; o < operationCount; ++o)
         {
             int[] operation = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);

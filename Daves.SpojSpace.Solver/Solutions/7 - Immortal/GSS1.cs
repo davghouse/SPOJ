@@ -22,12 +22,12 @@ public class GSS1
 public class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
-    private readonly MaximumSumQueryValue[] _treeArray;
+    private readonly MaximumSumQueryObject[] _treeArray;
 
     public ArrayBasedSegmentTree(IReadOnlyList<int> sourceArray)
     {
         _sourceArray = sourceArray;
-        _treeArray = new MaximumSumQueryValue[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
+        _treeArray = new MaximumSumQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
         Build(0, 0, _sourceArray.Count - 1);
     }
 
@@ -35,7 +35,7 @@ public class ArrayBasedSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new MaximumSumQueryValue(_sourceArray[segmentStartIndex]);
+            _treeArray[treeArrayIndex] = new MaximumSumQueryObject(_sourceArray[segmentStartIndex]);
             return;
         }
 
@@ -48,10 +48,10 @@ public class ArrayBasedSegmentTree
         _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
 
-    public MaximumSumQueryValue Query(int queryStartIndex, int queryEndIndex)
+    public MaximumSumQueryObject Query(int queryStartIndex, int queryEndIndex)
         => Query(0, 0, _sourceArray.Count - 1, queryStartIndex, queryEndIndex);
 
-    private MaximumSumQueryValue Query(int treeArrayIndex, int segmentStartIndex, int segmentEndIndex, int queryStartIndex, int queryEndIndex)
+    private MaximumSumQueryObject Query(int treeArrayIndex, int segmentStartIndex, int segmentEndIndex, int queryStartIndex, int queryEndIndex)
     {
         if (queryStartIndex <= segmentStartIndex && queryEndIndex >= segmentEndIndex)
             return _treeArray[treeArrayIndex];
@@ -70,12 +70,12 @@ public class ArrayBasedSegmentTree
     }
 }
 
-public class MaximumSumQueryValue
+public class MaximumSumQueryObject
 {
-    public MaximumSumQueryValue()
+    private MaximumSumQueryObject()
     { }
 
-    public MaximumSumQueryValue(int value)
+    public MaximumSumQueryObject(int value)
     {
         Sum = value;
         MaximumSum = value;
@@ -88,8 +88,8 @@ public class MaximumSumQueryValue
     private int MaximumLeftStartingSum { get; set; }
     private int MaximumRightStartingSum { get; set; }
 
-    public MaximumSumQueryValue Combine(MaximumSumQueryValue rightAdjacentValue)
-        => new MaximumSumQueryValue
+    public MaximumSumQueryObject Combine(MaximumSumQueryObject rightAdjacentValue)
+        => new MaximumSumQueryObject
         {
             // The sum is just the sum of both.
             Sum = Sum + rightAdjacentValue.Sum,

@@ -1211,7 +1211,7 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 1716 http://www.spoj.com/problems/GSS3/ Can you answer these queries III
+        ///// http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
         ///// Does element updates and maximum sum subrange queries on an array (using a segment tree).
         ///public class GSS3
         ///{
@@ -1222,7 +1222,7 @@ namespace Daves.SpojSpace.Solver {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
-        ///    public int Query(int queryStartIndex, int queryEndInde [rest of string was truncated]&quot;;.
+        ///    public int Query(int queryStartIndex, int queryE [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS3 {
             get {
