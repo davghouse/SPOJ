@@ -110,7 +110,7 @@ public static class HISTOGRA
         return maximumArea;
     }
 
-    private class Block
+    private sealed class Block
     {
         public Block(int height, int startIndex)
         {

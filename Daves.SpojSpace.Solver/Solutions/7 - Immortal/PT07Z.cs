@@ -27,7 +27,7 @@ public static class PT07Z
 // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1)
 // corresponds to its index in said array. Immutable so far but at least mutable edges later on probably.
 // Not bothering to throw exceptions in the case where vertices from other graphs are passed in.
-public class SimpleGraph
+public sealed class SimpleGraph
 {
     protected readonly Vertex[] _vertices;
 
@@ -160,7 +160,7 @@ public class SimpleGraph
         return Tuple.Create(furthestVertex, furthestDistance);
     }
 
-    public class Vertex
+    public sealed class Vertex
     {
         protected readonly SimpleGraph _graph;
         protected readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();

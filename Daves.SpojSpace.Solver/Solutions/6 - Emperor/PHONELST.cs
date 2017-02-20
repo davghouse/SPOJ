@@ -21,7 +21,7 @@ public static class PHONELST
         return true; // No string prefixed another, so it's consistent.
     }
 }
-public class Trie
+public sealed class Trie
 {
     private Node _root = new Node((char)0);
 
@@ -78,7 +78,7 @@ public class Trie
         return isPrefixedByAWord || isPrefixOfAWord;
     }
 
-    private class Node
+    private sealed class Node
     {
         public Node(char value)
         {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-// 8002 http://www.spoj.com/problems/HORRIBLE/ Horrible Queries
+// http://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #research #segment-tree
 // Answers range sum queries and performs range additions.
-public class HORRIBLE // v1, using a segment tree
+public sealed class HORRIBLE // v1, using a segment tree
 {
     private readonly LazySumSegmentTree _segmentTree;
 
@@ -19,7 +19,7 @@ public class HORRIBLE // v1, using a segment tree
         => _segmentTree.Query(queryStartIndex, queryEndIndex);
 }
 
-public class LazySumSegmentTree
+public sealed class LazySumSegmentTree
 {
     // Using static arrays for performance reasons (okay, maybe premature).
     private static readonly long[] _sourceArray = new long[100000];
@@ -70,12 +70,18 @@ public class LazySumSegmentTree
         QueryObject childrenQueryObject;
 
         if (isLeftHalfOverlapped && isRightHalfOverlapped)
+        {
             childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                 .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
+        }
         else if (isLeftHalfOverlapped)
+        {
             childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+        }
         else
+        {
             childrenQueryObject = Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
+        }
 
         return new QueryObject(
             childrenQueryObject.SegmentStartIndex,
@@ -94,7 +100,7 @@ public class LazySumSegmentTree
 
     private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, long rangeAddition)
     {
-        var queryObject = _treeArray[treeArrayIndex];
+        QueryObject queryObject = _treeArray[treeArrayIndex];
 
         if (queryObject.IsTotallyOverlappedBy(updateStartIndex, updateEndIndex))
         {
@@ -118,7 +124,7 @@ public class LazySumSegmentTree
         queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
     }
 
-    private class QueryObject
+    private sealed class QueryObject
     {
         public long Sum
             => SumWithoutRangeAddition + SumFromRangeAddition;
@@ -131,9 +137,6 @@ public class LazySumSegmentTree
 
         public int SegmentStartIndex { get; }
         public int SegmentEndIndex { get; }
-
-        public QueryObject()
-        { }
 
         public QueryObject(int index, long value)
         {
@@ -176,17 +179,16 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int arrayLength = line[0];
-            int commandCount = line[1];
 
+            int arrayLength = line[0];
             var solver = new HORRIBLE(arrayLength);
 
+            int commandCount = line[1];
             for (int c = 0; c < commandCount; ++c)
             {
                 int[] command = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
@@ -198,7 +200,7 @@ public static class Program
                         updateEndIndex: command[2] - 1,
                         rangeAddition: command[3]);
                 }
-                else // command[0] == 1
+                else
                 {
                     output.Append(solver.Query(
                         queryStartIndex: command[1] - 1,

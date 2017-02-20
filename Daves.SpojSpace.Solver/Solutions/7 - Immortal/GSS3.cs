@@ -4,7 +4,7 @@ using System.Text;
 
 // http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
 // Does element updates and maximum sum subrange queries on an array (using a segment tree).
-public class GSS3
+public sealed class GSS3
 {
     private readonly ArrayBasedSegmentTree _segmentTree;
 
@@ -22,7 +22,7 @@ public class GSS3
 
 // Most guides online cover this approach, but here's one good one:
 // https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/
-public class ArrayBasedSegmentTree
+public sealed class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
     private readonly MaximumSumQueryObject[] _treeArray;
@@ -105,7 +105,7 @@ public class ArrayBasedSegmentTree
 }
 
 // Given a query range, this value represents the maximum sum for any contiguous subrange.
-public class MaximumSumQueryObject
+public sealed class MaximumSumQueryObject
 {
     private MaximumSumQueryObject()
     { }
@@ -212,13 +212,13 @@ public static class Program
         {
             int[] operation = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
 
-            if (operation[0] == 0) // Update
+            if (operation[0] == 0)
             {
                 solver.Update(
                     updateIndex: operation[1] - 1,
                     newValue: operation[2]);
             }
-            else // Query
+            else
             {
                 output.Append(solver.Query(
                     queryStartIndex: operation[1] - 1,

@@ -87,7 +87,7 @@ public sealed class InversionBST
         }
     }
 
-    private class Node
+    private sealed class Node
     {
         public Node(int value)
         {

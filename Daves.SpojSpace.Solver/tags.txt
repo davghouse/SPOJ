@@ -5,6 +5,7 @@
 #binary
 #binary-search
 #binary-search-tree
+#bit
 #buckets
 #combinatorics
 #deque
@@ -32,6 +33,7 @@
 #intuition
 #io
 #knapsack
+#lazy
 #math
 #memoization
 #merge

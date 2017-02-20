@@ -108,7 +108,7 @@ namespace Daves.SpojSpace.Library.SegmentTrees.AdHoc
             queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
         }
 
-        private class QueryObject
+        private sealed class QueryObject
         {
             public int Sum
                 => SumWithoutRangeAddition + SumFromRangeAddition;
@@ -121,9 +121,6 @@ namespace Daves.SpojSpace.Library.SegmentTrees.AdHoc
 
             public int SegmentStartIndex { get; }
             public int SegmentEndIndex { get; }
-
-            public QueryObject()
-            { }
 
             public QueryObject(int index, int value)
             {

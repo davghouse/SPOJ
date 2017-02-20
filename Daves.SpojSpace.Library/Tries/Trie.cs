@@ -4,11 +4,11 @@ namespace Daves.SpojSpace.Library.Tries
 {
     // Part-way implementation of a trie, here's a good video: https://www.youtube.com/watch?v=AXjmTQ8LEoI.
     // Designed with the use case of Wordament boards in mind. There, word discovery is done by searching for words
-    // that are prefixed by words just searched for, so it's useful to expose terminal TrieNodes of prior searches
+    // that are prefixed by words just searched for, so it's useful to expose terminal nodes of prior searches
     // in order to skip ahead down the trie.
-    public sealed class Trie
+    public sealed partial class Trie
     {
-        private readonly TrieNode _root = new TrieNode(
+        private readonly Node _root = new Node(
             value: default(char),
             depth: 0);
 
@@ -25,8 +25,8 @@ namespace Daves.SpojSpace.Library.Tries
 
         public void Add(string word)
         {
-            TrieNode currentNode = _root;
-            TrieNode nextNode;
+            Node currentNode = _root;
+            Node nextNode;
             int index = 0;
 
             // Traverse down into the trie until running out of characters or getting to a node that needs a new child.
@@ -40,7 +40,7 @@ namespace Daves.SpojSpace.Library.Tries
             // forward will need to have nodes created and wired up.
             while (index < word.Length)
             {
-                nextNode = new TrieNode(
+                nextNode = new Node(
                     value: word[index],
                     depth: index + 1);
                 currentNode.Children.Add(word[index], nextNode);
@@ -57,7 +57,7 @@ namespace Daves.SpojSpace.Library.Tries
          * Single-parameter overloads are provided to make writing LINQ statements more convenient (C() vs s => C(s)). */
 
         public bool ContainsPrefix(string prefix) => ContainsPrefix(prefix, _root);
-        public bool ContainsPrefix(string prefix, TrieNode currentNode)
+        public bool ContainsPrefix(string prefix, Node currentNode)
         {
             currentNode = currentNode ?? _root;
             int index = currentNode.Depth;
@@ -67,7 +67,7 @@ namespace Daves.SpojSpace.Library.Tries
         }
 
         public bool ContainsWord(string word) => ContainsWord(word, _root);
-        public bool ContainsWord(string word, TrieNode currentNode)
+        public bool ContainsWord(string word, Node currentNode)
         {
             currentNode = currentNode ?? _root;
             int index = currentNode.Depth;
@@ -77,7 +77,7 @@ namespace Daves.SpojSpace.Library.Tries
         }
 
         public TrieSearchResult Search(string s) => Search(s, _root);
-        public TrieSearchResult Search(string s, TrieNode currentNode)
+        public TrieSearchResult Search(string s, Node currentNode)
         {
             currentNode = currentNode ?? _root;
             int index = currentNode.Depth;
@@ -89,9 +89,9 @@ namespace Daves.SpojSpace.Library.Tries
                 containsWord: index == s.Length && currentNode.IsAWordEnd);
         }
 
-        private void ContainsHelper(string s, ref TrieNode currentNode, ref int index)
+        private void ContainsHelper(string s, ref Node currentNode, ref int index)
         {
-            TrieNode nextNode;
+            Node nextNode;
 
             // Traverse down into the trie until we run out of characters or get to a node that needs a new child.
             while (index < s.Length && currentNode.Children.TryGetValue(s[index], out nextNode))

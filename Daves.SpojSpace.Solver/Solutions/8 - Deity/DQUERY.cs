@@ -106,7 +106,7 @@ public struct DistinctCountQuery : IComparable<DistinctCountQuery>
 // https://www.youtube.com/watch?v=v_wj_mOAlig, https://www.youtube.com/watch?v=CWDQJGaN1gY.
 // Those make the querying part clear but don't really describe the update part very well.
 // For that, I'd go and read Fenwick's paper. This is all a lot less intuitive than segment trees.
-public class PURQBinaryIndexedTree
+public sealed class PURQBinaryIndexedTree
 {
     private readonly int[] _tree;
 

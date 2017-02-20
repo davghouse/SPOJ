@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-// 8002 http://www.spoj.com/problems/HORRIBLE/ Horrible Queries
+// http://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer #research
 // Answers range sum queries and performs range additions.
-public class HORRIBLE // v2, using a RURQ BIT
+public sealed class HORRIBLE // v2, using a RURQ BIT
 {
     private readonly RURQBinaryIndexedTree _binaryIndexedTree;
 
@@ -48,7 +48,7 @@ public class HORRIBLE // v2, using a RURQ BIT
 // the change of -delta * j is added to delta * (i - 1) to make a total change of delta * (i - 1 - j).
 // RURQQuery(k) negates that value though, so queries are increased by delta * (j - i + 1) as desired.
 // Using these two BITs, we can do RURQ in O(logn) time each (both PURQ/RUPQ could do RURQ, but half slowly).
-public class RURQBinaryIndexedTree
+public sealed class RURQBinaryIndexedTree
 {
     private readonly long[] _tree1;
     private readonly long[] _tree2;
@@ -101,17 +101,16 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
         var output = new StringBuilder();
-
+        int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int arrayLength = line[0];
-            int commandCount = line[1];
 
+            int arrayLength = line[0];
             var solver = new HORRIBLE(arrayLength);
 
+            int commandCount = line[1];
             for (int c = 0; c < commandCount; ++c)
             {
                 int[] command = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
@@ -123,7 +122,7 @@ public static class Program
                         updateEndIndex: command[2] - 1,
                         delta: command[3]);
                 }
-                else // command[0] == 1
+                else
                 {
                     output.Append(solver.Query(
                         queryStartIndex: command[1] - 1,

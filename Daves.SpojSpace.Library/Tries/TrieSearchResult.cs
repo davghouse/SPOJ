@@ -6,14 +6,14 @@
         public TrieSearchResult()
         { }
 
-        public TrieSearchResult(TrieNode terminalNode, bool containsPrefix, bool containsWord)
+        public TrieSearchResult(Trie.Node terminalNode, bool containsPrefix, bool containsWord)
         {
             TerminalNode = terminalNode;
             ContainsPrefix = containsPrefix;
             ContainsWord = containsWord;
         }
 
-        public TrieNode TerminalNode { get; }
+        public Trie.Node TerminalNode { get; }
         public bool ContainsPrefix { get; }
         public bool ContainsWord { get; }
     }

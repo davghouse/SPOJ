@@ -1188,7 +1188,7 @@ namespace Daves.SpojSpace.Solver {
         ///
         ///// http://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
         ///// Does maximum sum subrange queries on an array (using a segment tree).
-        ///public class GSS1
+        ///public sealed class GSS1
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
         ///
@@ -1198,7 +1198,7 @@ namespace Daves.SpojSpace.Solver {
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///        =&gt; [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS1 {
             get {
@@ -1213,7 +1213,7 @@ namespace Daves.SpojSpace.Solver {
         ///
         ///// http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
         ///// Does element updates and maximum sum subrange queries on an array (using a segment tree).
-        ///public class GSS3
+        ///public sealed class GSS3
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
         ///
@@ -1222,7 +1222,7 @@ namespace Daves.SpojSpace.Solver {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
-        ///    public int Query(int queryStartIndex, int queryE [rest of string was truncated]&quot;;.
+        ///    public int Query(int queryStartIndex, int [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS3 {
             get {
@@ -1287,9 +1287,9 @@ namespace Daves.SpojSpace.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// 8002 http://www.spoj.com/problems/HORRIBLE/ Horrible Queries
+        ///// http://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #research #segment-tree
         ///// Answers range sum queries and performs range additions.
-        ///public class HORRIBLE // v1, using a segment tree
+        ///public sealed class HORRIBLE // v1, using a segment tree
         ///{
         ///    private readonly LazySumSegmentTree _segmentTree;
         ///
@@ -1299,7 +1299,7 @@ namespace Daves.SpojSpace.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int rangeAddition)
-        ///        =&gt; _segmentTree.Update(updateSt [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v1 {
             get {
@@ -1311,9 +1311,9 @@ namespace Daves.SpojSpace.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// 8002 http://www.spoj.com/problems/HORRIBLE/ Horrible Queries
+        ///// http://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer #research
         ///// Answers range sum queries and performs range additions.
-        ///public class HORRIBLE // v2, using a RURQ BIT
+        ///public sealed class HORRIBLE // v2, using a RURQ BIT
         ///{
         ///    private readonly RURQBinaryIndexedTree _binaryIndexedTree;
         ///
@@ -1323,7 +1323,7 @@ namespace Daves.SpojSpace.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int delta)
-        ///        =&gt; _binaryIndexedTree.Ran [rest of string was truncated]&quot;;.
+        ///        =&gt; _b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v2 {
             get {
@@ -2161,6 +2161,7 @@ namespace Daves.SpojSpace.Solver {
         ///#binary
         ///#binary-search
         ///#binary-search-tree
+        ///#bit
         ///#buckets
         ///#combinatorics
         ///#deque
@@ -2188,13 +2189,13 @@ namespace Daves.SpojSpace.Solver {
         ///#intuition
         ///#io
         ///#knapsack
+        ///#lazy
         ///#math
         ///#memoization
         ///#merge
         ///#mod-math
         ///#network
-        ///#optimization
-        ///#parsing [rest of string was truncated]&quot;;.
+        ///#optimizat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

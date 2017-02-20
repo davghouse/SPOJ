@@ -4,7 +4,7 @@ using System.Text;
 
 // http://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
 // Does maximum sum subrange queries on an array (using a segment tree).
-public class GSS1
+public sealed class GSS1
 {
     private readonly ArrayBasedSegmentTree _segmentTree;
 
@@ -19,7 +19,7 @@ public class GSS1
 
 // Most guides online cover this approach, but here's one good one:
 // https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/
-public class ArrayBasedSegmentTree
+public sealed class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
     private readonly MaximumSumQueryObject[] _treeArray;
@@ -70,7 +70,7 @@ public class ArrayBasedSegmentTree
     }
 }
 
-public class MaximumSumQueryObject
+public sealed class MaximumSumQueryObject
 {
     private MaximumSumQueryObject()
     { }
@@ -138,7 +138,7 @@ public static class Program
 
         var output = new StringBuilder();
         int queryCount = int.Parse(Console.ReadLine());
-        for (int i = 0; i < queryCount; ++i)
+        for (int q = 0; q < queryCount; ++q)
         {
             int[] line = Array.ConvertAll(
                 Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
