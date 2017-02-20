@@ -2343,7 +2343,7 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// 91 http://www.spoj.com/problems/TWOSQRS/ Two squares or not two squares
+        ///// http://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #research #sieve
         ///// Determines if an integer can be expressed as the sum of two squared integers.
         ///public static class TWOSQRS
         ///{
@@ -2355,7 +2355,7 @@ namespace Daves.SpojSpace.Solver {
         ///        _factorizer = new TrialDivisionFactorizer(_oneTrillion);
         ///    }
         ///
-        ///    // See https://en.wi [rest of string was truncated]&quot;;.
+        ///    // See https: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TWOSQRS {
             get {

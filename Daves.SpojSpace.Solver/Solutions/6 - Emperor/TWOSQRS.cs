@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 91 http://www.spoj.com/problems/TWOSQRS/ Two squares or not two squares
+// http://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #research #sieve
 // Determines if an integer can be expressed as the sum of two squared integers.
 public static class TWOSQRS
 {
@@ -18,14 +18,14 @@ public static class TWOSQRS
     // specifically "if all the prime factors of n congruent to 3 modulo 4 occur to
     // an even exponent, then n is expressible as a sum of two squares." But yeah
     // I had to google that or brute force in O(sqrt(n)).
-    public static string Solve(long n)
+    public static bool Solve(long n)
         => _factorizer.GetPrimeFactors(n)
         .Where(f => f % 4 == 3)
         .GroupBy(f => f)
-        .All(fg => fg.Count() % 2 == 0) ? "Yes" : "No";
+        .All(fg => fg.Count() % 2 == 0);
 }
 
-public class TrialDivisionFactorizer
+public sealed class TrialDivisionFactorizer
 {
     private readonly SieveOfEratosthenesFactorizer _sieveFactorizer;
 
@@ -43,17 +43,19 @@ public class TrialDivisionFactorizer
         if (n <= _sieveFactorizer.Limit)
         {
             foreach (long primeFactor in _sieveFactorizer.GetPrimeFactors((int)n))
+            {
                 yield return primeFactor;
+            }
         }
         else
         {
             foreach (long prime in _sieveFactorizer.Primes)
             {
-                // Check for factors up to sqrt(n), as non-primes with such a factor must've had
-                // a factor seen earlier < sqrt(n) (otherwise multiplied together they'd be > n).
-                // The fact that n is getting smaller doesn't matter. If this condition makes the
-                // loop stop, the current value of n must be a prime greater than 'prime', since
-                // n's only other option (multiple prime factors > 'prime') doesn't stop the loop.
+                // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have a factor
+                // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
+                // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
+                // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
+                // factors they'd have to all be greater than 'prime', but in that case the loop wouldn't stop here.
                 if (prime * prime > n)
                     break;
 
@@ -74,12 +76,12 @@ public class TrialDivisionFactorizer
     }
 }
 
-public class SieveOfEratosthenesFactorizer
+public sealed class SieveOfEratosthenesFactorizer
 {
-    // The only thing different about this sieve is that rather than storing true for prime
-    // and false for not prime, it stores null for prime and some prime factor (doesn't matter which)
-    // that divides the number for not prime. Knowing some prime factor that divides n, we can divide
-    // by that factor, and then divide the result by its factor, and so on, until we reach one.
+    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
+    // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
+    // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
+    // can divide by that factor, and then divide the result by its own factor, and so on, until we reach one.
     private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
     public SieveOfEratosthenesFactorizer(int limit)
@@ -92,34 +94,34 @@ public class SieveOfEratosthenesFactorizer
 
         // Check for n up to sqrt(Limit), as any non-primes <= Limit with a factor > sqrt(Limit)
         // must also have a factor < sqrt(Limit) (otherwise they'd be > Limit), and so already sieved.
-        for (int n = 2; n*n <= Limit; ++n)
+        for (int n = 2; n * n <= Limit; ++n)
         {
-            // If true then n hasn't been sieved yet, so it's prime; sieve its multiples.
+            // If we haven't sieved it yet then it's a prime, so sieve its multiples.
             if (!sieveWithSomePrimeFactor[n].HasValue)
             {
                 // Multiples of n less than n * n were already sieved from lower primes.
-                int nextPotentiallyUnsievedMultiple = n * n;
-                while (nextPotentiallyUnsievedMultiple <= Limit)
+                for (int nextPotentiallyUnsievedMultiple = n * n;
+                    nextPotentiallyUnsievedMultiple <= Limit;
+                    nextPotentiallyUnsievedMultiple += n)
                 {
                     sieveWithSomePrimeFactor[nextPotentiallyUnsievedMultiple] = n;
-                    // Room for optimization here; could do += 2n except in the case where n is 2.
-                    nextPotentiallyUnsievedMultiple += n;
                 }
             }
         }
+        _sieveWithSomePrimeFactor = sieveWithSomePrimeFactor;
 
-        _sieveWithSomePrimeFactor = Array.AsReadOnly(sieveWithSomePrimeFactor);
+        var primes = 2 <= Limit
+            ? new List<int> { 2 }
+            : new List<int>();
 
-        var primes = new List<int>();
-        for (int n = 2; n <= Limit; ++n)
+        for (int n = 3; n <= Limit; n += 2)
         {
             if (IsPrime(n))
             {
                 primes.Add(n);
             }
         }
-
-        Primes = primes.AsReadOnly();
+        Primes = primes;
     }
 
     public int Limit { get; }
@@ -146,13 +148,12 @@ public static class Program
     private static void Main()
     {
         int remainingTestCases = int.Parse(Console.ReadLine());
-
         while (remainingTestCases-- > 0)
         {
             long n = long.Parse(Console.ReadLine());
 
             Console.WriteLine(
-                TWOSQRS.Solve(n));
+                TWOSQRS.Solve(n) ? "Yes" : "No");
         }
     }
 }

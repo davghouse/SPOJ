@@ -10,7 +10,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
-@"10
+@"11
 1
 2
 7
@@ -20,7 +20,8 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions._6___Emperor
 17
 76
 2888
-27"
+27
+999999999989"
         };
 
         public override IReadOnlyList<string> TestOutputs => new[]
@@ -35,6 +36,7 @@ Yes
 No
 Yes
 No
+Yes
 "
         };
 
