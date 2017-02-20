@@ -1269,13 +1269,13 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 1805 http://www.spoj.com/problems/HISTOGRA/ Largest Rectangle in a Histogram
+        ///// http://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #stack #window
         ///// Finds the largest rectangle (by area) in a histogram (rectangles w/ a common base).
         ///public static class HISTOGRA
         ///{
         ///    // I looked at times after debating (but not implementing) divide and conquer and O(n^2) approaches, and
         ///    // figured there must be an O(n) solution. Not sure if I got lucky thinking of a solution, I could imagine
-        ///    // it being  [rest of string was truncated]&quot;;.
+        ///    / [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HISTOGRA {
             get {
