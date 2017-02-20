@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// 1436 http://www.spoj.com/problems/PT07Y/ #graph-theory #tree
+// http://www.spoj.com/problems/PT07Y/ #graph-theory #tree
 // Determines if the given graph is a tree.
 public static class PT07Y
 {

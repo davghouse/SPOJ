@@ -62,6 +62,6 @@
 #substrings
 #suffixes
 #trap
-#trees
+#tree
 #trie
 #window

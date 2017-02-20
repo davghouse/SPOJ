@@ -11,12 +11,14 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
 {
     public abstract class SolutionTestsBase
     {
-        private static readonly string _tags = Solver.Solutions.Tags;
+        private static readonly string[] _tags;
         private static readonly CSharpCodeProvider _compiler = new CSharpCodeProvider();
         private static readonly CompilerParameters _compilerParameters = new CompilerParameters();
 
         static SolutionTestsBase()
         {
+            _tags = Solver.Solutions.Tags.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+
             // Little hack here, see http://stackoverflow.com/a/40311406/1676558.
             object compilerSettings = typeof(CSharpCodeProvider)
                 .GetField("_compilerSettings", BindingFlags.Instance | BindingFlags.NonPublic)
@@ -69,6 +71,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
             }
 
             Assert.IsNotNull(linkAndTagsLine);
+            Assert.IsTrue(linkAndTagsLine.StartsWith("// http:") || linkAndTagsLine.StartsWith("http:"));
 
             string[] tags = linkAndTagsLine
                 .Split()
@@ -81,7 +84,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
             Assert.IsTrue(tags.All(t => _tags.Contains(t)),
                 message: $"Invalid tags: {string.Join(" ", tags.Where(t => !_tags.Contains(t)))}.");
             Assert.IsTrue(tags.SequenceEqual(orderedTags),
-                message: $"The tags need to be in alphabetical order: {string.Join(" ", orderedTags)}.");
+                message: $"The tags need to be in alphabetical order, like: {string.Join(" ", orderedTags)}.");
         }
 
         private void TestCompilation(CompilerResults compilerResults)

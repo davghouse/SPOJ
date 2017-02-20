@@ -1976,7 +1976,7 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// 1436 http://www.spoj.com/problems/PT07Y/ #graph-theory #tree
+        ///// http://www.spoj.com/problems/PT07Y/ #graph-theory #tree
         ///// Determines if the given graph is a tree.
         ///public static class PT07Y
         ///{
@@ -1987,7 +1987,7 @@ namespace Daves.SpojSpace.Solver {
         ///            return false;
         ///
         ///        return SimpleGraph
-        ///            .Creat [rest of string was truncated]&quot;;.
+        ///            .CreateFrom [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Y {
             get {
@@ -2000,7 +2000,7 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// 1437 http://www.spoj.com/problems/PT07Z/ Longest path in a tree
+        ///// http://www.spoj.com/problems/PT07Z/ #bfs #graph-theory #proof #tree
         ///// Finds the longest path in a tree.
         ///public static class PT07Z
         ///{
@@ -2012,7 +2012,7 @@ namespace Daves.SpojSpace.Solver {
         ///
         ///        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
         ///
-        ///        // Proof relies on starting  [rest of string was truncated]&quot;;.
+        ///        var firstVertex = graph. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Z {
             get {
