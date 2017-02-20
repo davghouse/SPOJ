@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// 3267 http://www.spoj.com/problems/DQUERY/ D-query
+// http://www.spoj.com/problems/DQUERY/ #bit #offline #research #sorting
 // Finds the number of distinct elements in a subrange of an array.
 // See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
 // it's almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
@@ -17,7 +17,7 @@ public static class DQUERY
     // leverage the update operation on the BIT between query phases.
 
     // If you still need help after thinking about that a lot, consider querying and updating 0s and 1s in the BIT, where 1s
-    // signify the last/latest occurrence (or first, depending on how you traverse & order things) of the value at that index
+    // signify the latest occurrence (or first, depending on how you traverse & order things) of the value at that index
     // in the source array. How will you order the queries? How/when will you update the BIT (just a small update each time)?
     public static int[] SolveOffline(int[] sourceArray, DistinctCountQuery[] queries)
     {
@@ -29,10 +29,10 @@ public static class DQUERY
         // were sorted that way below. A PURQ BIT is queried within phases and updated between them. For
         // any given phase, the PURQ BIT is always in a state such that it can only answer distinct count queries
         // which have an end index equal to the phase's end index. The BIT's underlying array has 0s and 1s,
-        // where a 1 at an index means the value there is the last occurrence of the value up to the phase's
+        // where a 1 at an index means the value there is the latest occurrence of the value up to the phase's
         // end index. The BIT returns sums like normal, but with this construction the sums correspond to the
         // distinct count of values within the queried range. That's because for a given phase, all queries extend
-        // up to the phase's end index, so for any value known to be within the queried range, the last occurrence of
+        // up to the phase's end index, so for any value known to be within the queried range, the latest occurrence of
         // the value up to the phase's end index is definitely within the range, and its underlying BIT value accounts
         // for a single 1 added to the returned sum. After a phase is complete, we increment the query end index
         // for the next phase, update the BIT so the value there has a 1 (it's last, so definitely the latest for its
@@ -59,7 +59,7 @@ public static class DQUERY
             while (queryIndex < queries.Length
                 && (query = queries[queryIndex]).QueryEndIndex == phaseEndIndex)
             {
-                queryResults[query.ResultIndex] = purqBinaryIndexedTree.SumQuery(query.QueryStartIndex, query.QueryEndIndex);
+                queryResults[query.ResultIndex] = purqBinaryIndexedTree.SumQuery(query.QueryStartIndex, phaseEndIndex);
                 ++queryIndex;
             }
         }

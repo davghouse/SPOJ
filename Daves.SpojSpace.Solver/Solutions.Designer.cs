@@ -817,13 +817,13 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// 3267 http://www.spoj.com/problems/DQUERY/ D-query
+        ///// http://www.spoj.com/problems/DQUERY/ #bit #offline #research #sorting
         ///// Finds the number of distinct elements in a subrange of an array.
         ///// See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
         ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
         ///public static class DQUERY
         ///{
-        ///    // Needed hints to solve  [rest of string was truncated]&quot;;.
+        ///    // Ne [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
@@ -2195,7 +2195,8 @@ namespace Daves.SpojSpace.Solver {
         ///#merge
         ///#mod-math
         ///#network
-        ///#optimizat [rest of string was truncated]&quot;;.
+        ///#offline
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

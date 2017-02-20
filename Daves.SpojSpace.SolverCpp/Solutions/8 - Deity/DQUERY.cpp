@@ -86,7 +86,7 @@ public:
         while (queryIndex < queryCount
             && (query = queries[queryIndex]).QueryEndIndex == phaseEndIndex)
         {
-            queryResults[query.ResultIndex] = purqBinaryIndexedTree.SumQuery(query.QueryStartIndex, query.QueryEndIndex);
+            queryResults[query.ResultIndex] = purqBinaryIndexedTree.SumQuery(query.QueryStartIndex, phaseEndIndex);
             ++queryIndex;
         }
     }
