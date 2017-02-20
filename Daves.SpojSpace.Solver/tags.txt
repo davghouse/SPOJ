@@ -10,6 +10,7 @@
 #deque
 #dfs
 #digits
+#divide-and-conquer
 #division
 #dynamic-programming
 #dynamic-programming-1d
@@ -47,6 +48,7 @@
 #radix-sort
 #recursion
 #research
+#segment-tree
 #sequence
 #sets
 #sieve

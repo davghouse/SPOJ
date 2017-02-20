@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// 1043 http://www.spoj.com/problems/GSS1/ Can you answer these queries I
+// http://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
 // Does maximum sum subrange queries on an array (using a segment tree).
 public class GSS1
 {
@@ -134,11 +134,10 @@ public static class Program
         int[] sourceArray = Array.ConvertAll(
             Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
             int.Parse);
-        int queryCount = int.Parse(Console.ReadLine());
-
         var solver = new GSS1(sourceArray);
-        var output = new StringBuilder();
 
+        var output = new StringBuilder();
+        int queryCount = int.Parse(Console.ReadLine());
         for (int i = 0; i < queryCount; ++i)
         {
             int[] line = Array.ConvertAll(

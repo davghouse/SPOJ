@@ -1186,7 +1186,7 @@ namespace Daves.SpojSpace.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// 1043 http://www.spoj.com/problems/GSS1/ Can you answer these queries I
+        ///// http://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
         ///// Does maximum sum subrange queries on an array (using a segment tree).
         ///public class GSS1
         ///{
@@ -1198,7 +1198,7 @@ namespace Daves.SpojSpace.Solver {
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///        =&gt; _segmen [rest of string was truncated]&quot;;.
+        ///        =&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS1 {
             get {
@@ -2166,6 +2166,7 @@ namespace Daves.SpojSpace.Solver {
         ///#deque
         ///#dfs
         ///#digits
+        ///#divide-and-conquer
         ///#division
         ///#dynamic-programming
         ///#dynamic-programming-1d
@@ -2193,8 +2194,7 @@ namespace Daves.SpojSpace.Solver {
         ///#mod-math
         ///#network
         ///#optimization
-        ///#parsing
-        ///#path-optimization        /// [rest of string was truncated]&quot;;.
+        ///#parsing [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
