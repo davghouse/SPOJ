@@ -4,7 +4,7 @@ using Daves.SpojSpace.Library.Helpers;
 namespace Daves.SpojSpace.Library.UnitTests.Helpers
 {
     [TestClass]
-    public sealed class MathHelperTests
+    public class MathHelperTests
     {
         [TestMethod]
         public void IsPowerOfTwo()

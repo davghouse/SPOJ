@@ -2,7 +2,7 @@
 
 namespace Daves.SpojSpace.Library.BinaryIndexedTrees
 {
-    // See PURQ before trying to understand this. RUPQ just reinterprets which PURQ is doing without
+    // See PURQ before trying to understand this. RUPQ just reinterprets what PURQ is doing without
     // actually changing any of the code. We are bound by what PURQ is doing: when a single value is
     // updated, the queried value from that index onward is affected (increases by the value added).
     // That's because PURQ calculates cumulative sums. Here, we don't want cumulative sums, we want

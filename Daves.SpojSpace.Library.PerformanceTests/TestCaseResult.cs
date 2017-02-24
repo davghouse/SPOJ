@@ -2,7 +2,7 @@
 
 namespace Daves.SpojSpace.Library.PerformanceTests
 {
-    public sealed class TestCaseResult
+    public class TestCaseResult
     {
         public TestCaseResult(TestCase testCase, TimeSpan elapsedTime)
         {

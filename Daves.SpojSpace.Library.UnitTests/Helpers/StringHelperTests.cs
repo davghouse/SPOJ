@@ -5,7 +5,7 @@ using System.Linq;
 namespace Daves.SpojSpace.Library.UnitTests.Helpers
 {
     [TestClass]
-    public sealed class StringHelperTests
+    public class StringHelperTests
     {
         private static char[] _delimiters = new[] { '+', '-', '*', '/', '=' };
 

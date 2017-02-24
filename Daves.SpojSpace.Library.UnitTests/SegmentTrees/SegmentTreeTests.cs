@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Daves.SpojSpace.Library.UnitTests.SegmentTrees
 {
     [TestClass]
-    public sealed class SegmentTreeTests
+    public class SegmentTreeTests
     {
         private int[][] _sourceArrays;
 

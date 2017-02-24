@@ -4,7 +4,7 @@ using System;
 namespace Daves.SpojSpace.Library.UnitTests
 {
     [TestClass]
-    public sealed class Mod10ExponentiatorTests
+    public class Mod10ExponentiatorTests
     {
         [TestMethod]
         public void SmallMod10Exponentiation()

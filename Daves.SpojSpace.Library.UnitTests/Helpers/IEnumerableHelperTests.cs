@@ -4,7 +4,7 @@ using Daves.SpojSpace.Library.Helpers;
 namespace Daves.SpojSpace.Library.UnitTests.Helpers
 {
     [TestClass]
-    public sealed class IEnumerableHelperTests
+    public class IEnumerableHelperTests
     {
         [TestMethod]
         public void SetEqual()

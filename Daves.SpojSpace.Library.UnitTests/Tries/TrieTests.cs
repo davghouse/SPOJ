@@ -5,7 +5,7 @@ using System.Linq;
 namespace Daves.SpojSpace.Library.UnitTests.Tries
 {
     [TestClass]
-    public sealed class TrieTests
+    public class TrieTests
     {
         private static string[] _strings = new[]
         {

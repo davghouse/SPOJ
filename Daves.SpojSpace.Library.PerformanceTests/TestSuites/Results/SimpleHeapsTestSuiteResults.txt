@@ -1,0 +1,7 @@
+﻿100000 random operations, starting size of 0:
+  Simple binary heap:   x1.0000 (0 minutes 0.0061 seconds)
+  Simple naive heap:    x5.6354 (0 minutes 0.0344 seconds)
+
+100000 random operations, starting size of 10000:
+  Simple binary heap:   x1.0000 (0 minutes 0.0123 seconds)
+  Simple naive heap:  x274.6241 (0 minutes 3.3952 seconds)

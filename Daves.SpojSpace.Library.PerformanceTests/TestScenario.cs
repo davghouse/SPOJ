@@ -2,7 +2,7 @@
 
 namespace Daves.SpojSpace.Library.PerformanceTests
 {
-    public sealed class TestScenario
+    public class TestScenario
     {
         public TestScenario(string name, IEnumerable<TestCase> testCases)
         {

@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Heaps\SimpleHeapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BigIntegerTests.cs" />
     <Compile Include="BinaryIndexedTrees\BinaryIndexedTreeTests.cs" />
@@ -77,6 +78,7 @@
       <Name>Daves.SpojSpace.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
 {
-    public sealed class SegmentTreesTestSuite : ITestSuite
+    public class SegmentTreesTestSuite : ITestSuite
     {
         private const int _allRangesArraySize = 1000;
         private const int _rightEndingRangesArraySize = 50000;

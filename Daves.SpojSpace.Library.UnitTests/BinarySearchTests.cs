@@ -3,7 +3,7 @@
 namespace Daves.SpojSpace.Library.UnitTests
 {
     [TestClass]
-    public sealed class BinarySearchTests
+    public class BinarySearchTests
     {
         [TestMethod]
         public void SearchesFalseToTrueUnsuccessfully()

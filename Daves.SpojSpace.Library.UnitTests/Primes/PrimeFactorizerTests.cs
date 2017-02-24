@@ -6,7 +6,7 @@ using System.Linq;
 namespace Daves.SpojSpace.Library.UnitTests.Primes
 {
     [TestClass]
-    public sealed class PrimeFactorizerTests
+    public class PrimeFactorizerTests
     {
         private static Tuple<int, int[]>[] _numberPrimeFactorsPairs = new[]
         {

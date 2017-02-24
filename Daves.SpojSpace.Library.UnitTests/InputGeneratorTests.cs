@@ -4,7 +4,7 @@ using System.Linq;
 namespace Daves.SpojSpace.Library.UnitTests
 {
     [TestClass]
-    public sealed class InputGeneratorTests
+    public class InputGeneratorTests
     {
         [TestMethod]
         public void DoesntGenerateDistinctRandomInts()

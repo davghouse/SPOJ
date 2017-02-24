@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Daves.SpojSpace.Library.PerformanceTests
 {
-    public sealed class TestScenarioResult
+    public class TestScenarioResult
     {
         public TestScenarioResult(TestScenario testScenario, IReadOnlyList<TestCaseResult> testCaseResults)
         {

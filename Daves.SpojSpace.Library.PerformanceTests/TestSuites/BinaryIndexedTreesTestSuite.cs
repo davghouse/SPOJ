@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
 {
-    public sealed class BinaryIndexedTreesTestSuite : ITestSuite
+    public class BinaryIndexedTreesTestSuite : ITestSuite
     {
         private const int _arraySize = 100000;
         private const int _randomRangesCount = 50000;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
 {
-    public sealed class StringSortingTestSuite : ITestSuite
+    public class StringSortingTestSuite : ITestSuite
     {
         private const int _stringLengthAndCount = 20000;
         private readonly string[] randomStrings1;

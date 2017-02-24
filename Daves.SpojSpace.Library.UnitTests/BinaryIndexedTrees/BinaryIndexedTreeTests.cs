@@ -5,7 +5,7 @@ using System;
 namespace Daves.SpojSpace.Library.UnitTests.BinaryIndexedTrees
 {
     [TestClass]
-    public sealed class BinaryIndexedTreeTests
+    public class BinaryIndexedTreeTests
     {
         private int[][] _sourceArrays;
 

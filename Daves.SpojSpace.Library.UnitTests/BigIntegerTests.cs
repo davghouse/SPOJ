@@ -3,7 +3,7 @@
 namespace Daves.SpojSpace.Library.UnitTests
 {
     [TestClass]
-    public sealed class BigIntegerTests
+    public class BigIntegerTests
     {
         #region Addition
 

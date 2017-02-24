@@ -2,7 +2,7 @@
 
 namespace Daves.SpojSpace.Library.PerformanceTests
 {
-    public sealed class TestCase
+    public class TestCase
     {
         public TestCase(string name, Action run)
         {

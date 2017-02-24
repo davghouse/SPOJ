@@ -5,7 +5,7 @@ using System.Linq;
 namespace Daves.SpojSpace.Library.UnitTests.Primes
 {
     [TestClass]
-    public sealed class PrimeDeciderTests
+    public class PrimeDeciderTests
     {
         private static int[] _primesUpTo2 = new[] { 2 };
         private static int[] _primesUpTo49 = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
