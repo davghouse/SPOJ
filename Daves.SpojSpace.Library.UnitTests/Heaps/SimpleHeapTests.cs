@@ -12,7 +12,7 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private static readonly SimpleHeapFactory simpleNaiveHeapFactory = (values, comparer) => new SimpleNaiveHeap<int>(values, comparer);
         private static readonly SimpleHeapFactory simpleBinaryHeapFactory = (values, comparer) => new SimpleBinaryHeap<int>(values, comparer);
 
-        private static IReadOnlyList<int> _array = new[] { 3, 9, 1, 4, 12, 6, 8, 42, -13, 1, 22, 11, 1, 0, 22 };
+        private static IReadOnlyList<int> _sourceArray = new[] { 3, 9, 1, 4, 12, 6, 8, 42, -13, 1, 22, 11, 1, 0, 22 };
         private static Comparer<int> descendingComparer = Comparer<int>.Create((a, b) => b.CompareTo(a));
 
         [TestMethod]
@@ -38,8 +38,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
         private void CollectionConstruction(SimpleHeapFactory heapFactory)
         {
-            ISimpleHeap<int> heap = heapFactory(_array);
-            Assert.AreEqual(_array.Count, heap.Size);
+            ISimpleHeap<int> heap = heapFactory(_sourceArray);
+            Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(-13, heap.Top);
 
             heap = heapFactory(new[] { 2, 1 });
@@ -60,8 +60,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
         private void ComparerConstruction(SimpleHeapFactory heapFactory)
         {
-            ISimpleHeap<int> heap = heapFactory(_array, descendingComparer);
-            Assert.AreEqual(_array.Count, heap.Size);
+            ISimpleHeap<int> heap = heapFactory(_sourceArray, descendingComparer);
+            Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(42, heap.Top);
 
             heap = heapFactory(new[] { 2, 1 }, descendingComparer);
@@ -82,7 +82,7 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
         private void Insert1(SimpleHeapFactory heapFactory)
         {
-            ISimpleHeap<int> heap = heapFactory(_array, descendingComparer);
+            ISimpleHeap<int> heap = heapFactory(_sourceArray, descendingComparer);
             heap.Insert(13);
             Assert.AreEqual(42, heap.Top);
             heap.Insert(43);
@@ -91,7 +91,7 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
             Assert.AreEqual(43, heap.Top);
             heap.Insert(50);
             Assert.AreEqual(50, heap.Top);
-            Assert.AreEqual(_array.Count + 4, heap.Size);
+            Assert.AreEqual(_sourceArray.Count + 4, heap.Size);
         }
 
         [TestMethod]
@@ -160,12 +160,12 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
         private void Replace(SimpleHeapFactory heapFactory)
         {
-            ISimpleHeap<int> heap = heapFactory(_array);
+            ISimpleHeap<int> heap = heapFactory(_sourceArray);
             heap.Replace(33);
-            Assert.AreEqual(_array.Count, heap.Size);
+            Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(0, heap.Top);
             heap.Replace(-33);
-            Assert.AreEqual(_array.Count, heap.Size);
+            Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(-33, heap.Top);
         }
 
@@ -173,8 +173,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         public void VerifyRandomOperationsAgainstEachOther()
         {
             var rand = new Random();
-            var simpleNaiveHeap = new SimpleNaiveHeap<int>(_array);
-            var simpleBinaryHeap = new SimpleBinaryHeap<int>(_array);
+            var simpleNaiveHeap = new SimpleNaiveHeap<int>(_sourceArray);
+            var simpleBinaryHeap = new SimpleBinaryHeap<int>(_sourceArray);
 
             for (int i = 0; i < 10000; ++i)
             {

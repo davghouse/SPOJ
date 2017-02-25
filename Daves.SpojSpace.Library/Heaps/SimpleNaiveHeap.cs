@@ -10,7 +10,7 @@ namespace Daves.SpojSpace.Library.Heaps
 
         public SimpleNaiveHeap(IEnumerable<T> values = null, IComparer<T> comparer = null)
         {
-            _values = (values ?? new T[0]).ToList();
+            _values = values?.ToList() ?? new List<T>();
             _comparer = comparer ?? Comparer<T>.Default;
         }
 

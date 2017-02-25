@@ -59,7 +59,7 @@
     <Compile Include="Tester.cs" />
     <Compile Include="TestCaseResult.cs" />
     <Compile Include="TestScenario.cs" />
-    <Compile Include="TestSuites\SimpleHeapsTestSuite.cs" />
+    <Compile Include="TestSuites\HeapsTestSuite.cs" />
     <Compile Include="TestSuites\StringSortingTestSuite.cs" />
     <Compile Include="TestSuites\StringMatchersTestSuite.cs" />
   </ItemGroup>
@@ -79,7 +79,7 @@
     <Content Include="TestSuites\Results\BinaryIndexedTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\SegmentTreesTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\PrimesTestSuiteResults.txt" />
-    <Content Include="TestSuites\Results\SimpleHeapsTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\HeapsTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringMatchersTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringSortingTestSuiteResults.txt" />
   </ItemGroup>
