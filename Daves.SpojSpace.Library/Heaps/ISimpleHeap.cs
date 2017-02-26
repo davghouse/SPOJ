@@ -6,7 +6,7 @@
         bool IsEmpty { get; }
         T Top { get; }
 
-        void Insert(T value);
+        void Add(T value);
         T Extract();
         T Replace(T value);
     }

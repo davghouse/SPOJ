@@ -15,7 +15,7 @@ namespace Daves.SpojSpace.Solver.UnitTests
                 .OrderBy(t => t)
                 .ToArray();
             CollectionAssert.AreEqual(tags, orderedTags,
-                $"The tag need to be in alphabetical order, like: ${string.Join(Environment.NewLine, orderedTags)}");
+                $"The tags need to be in alphabetical order, like: ${string.Join(Environment.NewLine, orderedTags)}");
         }
     }
 }

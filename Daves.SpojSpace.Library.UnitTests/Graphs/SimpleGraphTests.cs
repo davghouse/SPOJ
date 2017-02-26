@@ -1,7 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Daves.SpojSpace.Library.Graphs;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 
-namespace Daves.SpojSpace.Library.UnitTests
+namespace Daves.SpojSpace.Library.UnitTests.Graphs
 {
     [TestClass]
     public class SimpleGraphTests
@@ -15,9 +17,9 @@ namespace Daves.SpojSpace.Library.UnitTests
                 { 0, 1 }, { 0, 2 }, { 1, 2 }
             });
 
-            Assert.AreEqual(graph.Vertices[0].Degree, 2);
-            Assert.AreEqual(graph.Vertices[1].Degree, 2);
-            Assert.AreEqual(graph.Vertices[2].Degree, 2);
+            Assert.AreEqual(2, graph.Vertices[0].Degree);
+            Assert.AreEqual(2, graph.Vertices[1].Degree);
+            Assert.AreEqual(2, graph.Vertices[2].Degree);
 
             Assert.IsTrue(graph.HasEdge(0, 1));
             Assert.IsTrue(graph.HasEdge(1, 0));
@@ -47,11 +49,11 @@ namespace Daves.SpojSpace.Library.UnitTests
                 { 0, 1 }, { 2, 3 }
             });
 
-            Assert.AreEqual(graph.Vertices[0].Degree, 1);
-            Assert.AreEqual(graph.Vertices[1].Degree, 1);
-            Assert.AreEqual(graph.Vertices[2].Degree, 1);
-            Assert.AreEqual(graph.Vertices[3].Degree, 1);
-            Assert.AreEqual(graph.Vertices[4].Degree, 0);
+            Assert.AreEqual(1, graph.Vertices[0].Degree);
+            Assert.AreEqual(1, graph.Vertices[1].Degree);
+            Assert.AreEqual(1, graph.Vertices[2].Degree);
+            Assert.AreEqual(1, graph.Vertices[3].Degree);
+            Assert.AreEqual(0, graph.Vertices[4].Degree);
 
             Assert.IsTrue(graph.HasEdge(0, 1));
             Assert.IsTrue(graph.HasEdge(2, 3));
@@ -112,9 +114,9 @@ namespace Daves.SpojSpace.Library.UnitTests
             Assert.IsTrue(graph.HasEdge(0, 1));
             Assert.IsTrue(graph.HasEdge(1, 2));
 
-            Assert.AreEqual(graph.Vertices[0].Degree, 1);
-            Assert.AreEqual(graph.Vertices[1].Degree, 2);
-            Assert.AreEqual(graph.Vertices[2].Degree, 1);
+            Assert.AreEqual(1, graph.Vertices[0].Degree);
+            Assert.AreEqual(2, graph.Vertices[1].Degree);
+            Assert.AreEqual(1, graph.Vertices[2].Degree);
         }
 
         [TestMethod]
@@ -471,6 +473,28 @@ namespace Daves.SpojSpace.Library.UnitTests
             Assert.AreEqual(2, graph.GetShortestPathLength(6, 8));
             Assert.AreEqual(-1, graph.GetShortestPathLength(6, 3));
             Assert.AreEqual(3, graph.GetShortestPathLength(4, 1));
+        }
+
+        [TestMethod]
+        public void AddsEdges()
+        {
+            SimpleGraph graph = new SimpleGraph(5);
+            Assert.AreEqual(0, graph.Vertices[0].Degree);
+            Assert.AreEqual(0, graph.Vertices[1].Degree);
+
+            graph.AddEdge(0, 1);
+            Assert.AreEqual(1, graph.Vertices[0].Degree);
+            Assert.AreEqual(1, graph.Vertices[1].Degree);
+            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().ID);
+            Assert.AreEqual(0, graph.Vertices[1].Neighbors.Single().ID);
+
+            graph.AddEdge(1, 4);
+            Assert.AreEqual(1, graph.Vertices[0].Degree);
+            Assert.AreEqual(2, graph.Vertices[1].Degree);
+            Assert.AreEqual(1, graph.Vertices[4].Degree);
+            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().ID);
+            CollectionAssert.AreEquivalent(new[] { 0, 4 }, graph.Vertices[1].Neighbors.Select(n => n.ID).ToArray());
+            Assert.AreEqual(1, graph.Vertices[4].Neighbors.Single().ID);
         }
     }
 }

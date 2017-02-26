@@ -154,7 +154,7 @@ public sealed class SimpleGraph
         return -1;
     }
 
-    public sealed class Vertex
+    public sealed class Vertex : IEquatable<Vertex>
     {
         private readonly SimpleGraph _graph;
         private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
@@ -171,16 +171,25 @@ public sealed class SimpleGraph
         public int Degree => _neighbors.Count;
 
         internal void AddNeighbor(int neighborID)
-            => AddNeighbor(_graph.Vertices[neighborID]);
+            => _neighbors.Add(_graph.Vertices[neighborID]);
 
         internal void AddNeighbor(Vertex neighbor)
             => _neighbors.Add(neighbor);
 
         public bool HasNeighbor(int neighborID)
-            => HasNeighbor(_graph.Vertices[neighborID]);
+            => _neighbors.Contains(_graph.Vertices[neighborID]);
 
         public bool HasNeighbor(Vertex neighbor)
             => _neighbors.Contains(neighbor);
+
+        public override bool Equals(object obj)
+            => (obj as Vertex)?.ID == ID;
+
+        public bool Equals(Vertex other)
+            => other.ID == ID;
+
+        public override int GetHashCode()
+            => ID;
     }
 }
 

@@ -27,7 +27,7 @@ public static class BUGLIFE
 // its index in that array.
 public sealed class SimpleGraph
 {
-    private SimpleGraph(int vertexCount)
+    public SimpleGraph(int vertexCount)
     {
         var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
@@ -53,10 +53,10 @@ public sealed class SimpleGraph
     public IReadOnlyList<Vertex> Vertices { get; }
     public int VertexCount => Vertices.Count;
 
-    private void AddEdge(int firstVertexID, int secondVertexID)
+    public void AddEdge(int firstVertexID, int secondVertexID)
         => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
-    private void AddEdge(Vertex firstVertex, Vertex secondVertex)
+    public void AddEdge(Vertex firstVertex, Vertex secondVertex)
     {
         firstVertex.AddNeighbor(secondVertex);
         secondVertex.AddNeighbor(firstVertex);
@@ -109,7 +109,7 @@ public sealed class SimpleGraph
         return true;
     }
 
-    public sealed class Vertex
+    public sealed class Vertex : IEquatable<Vertex>
     {
         private readonly SimpleGraph _graph;
         private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
@@ -126,16 +126,25 @@ public sealed class SimpleGraph
         public int Degree => _neighbors.Count;
 
         internal void AddNeighbor(int neighborID)
-            => AddNeighbor(_graph.Vertices[neighborID]);
+            => _neighbors.Add(_graph.Vertices[neighborID]);
 
         internal void AddNeighbor(Vertex neighbor)
             => _neighbors.Add(neighbor);
 
         public bool HasNeighbor(int neighborID)
-            => HasNeighbor(_graph.Vertices[neighborID]);
+            => _neighbors.Contains(_graph.Vertices[neighborID]);
 
         public bool HasNeighbor(Vertex neighbor)
             => _neighbors.Contains(neighbor);
+
+        public override bool Equals(object obj)
+            => (obj as Vertex)?.ID == ID;
+
+        public bool Equals(Vertex other)
+            => other.ID == ID;
+
+        public override int GetHashCode()
+            => ID;
     }
 }
 

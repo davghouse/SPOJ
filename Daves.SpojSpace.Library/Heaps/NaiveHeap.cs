@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Daves.SpojSpace.Library.Heaps
@@ -18,10 +19,10 @@ namespace Daves.SpojSpace.Library.Heaps
         public bool IsEmpty => Size == 0;
         public KeyValuePair<TKey, TValue> Top => _keyValuePairs[FindTopIndex()];
 
-        public void Insert(TKey key, TValue value)
-            => Insert(new KeyValuePair<TKey, TValue>(key, value));
+        public void Add(TKey key, TValue value)
+            => Add(new KeyValuePair<TKey, TValue>(key, value));
 
-        public void Insert(KeyValuePair<TKey, TValue> keyValuePair)
+        public void Add(KeyValuePair<TKey, TValue> keyValuePair)
             => _keyValuePairs.Add(keyValuePair);
 
         public KeyValuePair<TKey, TValue> Extract()
@@ -39,7 +40,7 @@ namespace Daves.SpojSpace.Library.Heaps
         public KeyValuePair<TKey, TValue> Replace(KeyValuePair<TKey, TValue> keyValuePair)
         {
             var top = Extract();
-            Insert(keyValuePair);
+            Add(keyValuePair);
 
             return top;
         }
@@ -49,6 +50,18 @@ namespace Daves.SpojSpace.Library.Heaps
 
         public TValue GetValue(TKey key)
             => _keyValuePairs.Single(kvp => kvp.Key.Equals(key)).Value;
+
+        public bool TryGetValue(TKey key, out TValue value)
+        {
+            if (_keyValuePairs.Any(kvp => kvp.Key.Equals(key)))
+            {
+                value = GetValue(key);
+                return true;
+            }
+
+            value = default(TValue);
+            return false;
+        }
 
         public TValue Update(TKey key, TValue value)
             => Update(new KeyValuePair<TKey, TValue>(key, value));

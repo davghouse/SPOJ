@@ -17,7 +17,7 @@ namespace Daves.SpojSpace.Library.Heaps
 
             foreach (var keyValuePair in keyValuePairs)
             {
-                Insert(keyValuePair);
+                Add(keyValuePair);
             }
         }
 
@@ -25,10 +25,10 @@ namespace Daves.SpojSpace.Library.Heaps
         public bool IsEmpty => Size == 0;
         public KeyValuePair<TKey, TValue> Top => _keyValuePairs[0];
 
-        public void Insert(TKey key, TValue value)
-            => Insert(new KeyValuePair<TKey, TValue>(key, value));
+        public void Add(TKey key, TValue value)
+            => Add(new KeyValuePair<TKey, TValue>(key, value));
 
-        public void Insert(KeyValuePair<TKey, TValue> keyValuePair)
+        public void Add(KeyValuePair<TKey, TValue> keyValuePair)
         {
             _keyValuePairs.Add(keyValuePair);
             _keyIndices.Add(keyValuePair.Key, _keyValuePairs.Count - 1);
@@ -75,6 +75,19 @@ namespace Daves.SpojSpace.Library.Heaps
 
         public TValue GetValue(TKey key)
             => _keyValuePairs[_keyIndices[key]].Value;
+
+        public bool TryGetValue(TKey key, out TValue value)
+        {
+            int keyIndex;
+            if (_keyIndices.TryGetValue(key, out keyIndex))
+            {
+                value = _keyValuePairs[keyIndex].Value;
+                return true;
+            }
+
+            value = default(TValue);
+            return false;
+        }
 
         public TValue Update(TKey key, TValue value)
             => Update(new KeyValuePair<TKey, TValue>(key, value));

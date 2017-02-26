@@ -25,7 +25,7 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void DefaultConstruction(SimpleHeapFactory heapFactory)
         {
             ISimpleHeap<int> heap = heapFactory();
-            heap.Insert(1);
+            heap.Add(1);
             Assert.AreEqual(1, heap.Top);
         }
 
@@ -74,51 +74,63 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         }
 
         [TestMethod]
-        public void Insert1()
+        public void Add1()
         {
-            Insert1(simpleNaiveHeapFactory);
-            Insert1(simpleBinaryHeapFactory);
+            Add1(simpleNaiveHeapFactory);
+            Add1(simpleBinaryHeapFactory);
         }
 
-        private void Insert1(SimpleHeapFactory heapFactory)
+        private void Add1(SimpleHeapFactory heapFactory)
         {
             ISimpleHeap<int> heap = heapFactory(_sourceArray, descendingComparer);
-            heap.Insert(13);
+
+            heap.Add(13);
             Assert.AreEqual(42, heap.Top);
-            heap.Insert(43);
+
+            heap.Add(43);
             Assert.AreEqual(43, heap.Top);
-            heap.Insert(-100);
+
+            heap.Add(-100);
             Assert.AreEqual(43, heap.Top);
-            heap.Insert(50);
+
+            heap.Add(50);
             Assert.AreEqual(50, heap.Top);
             Assert.AreEqual(_sourceArray.Count + 4, heap.Size);
         }
 
         [TestMethod]
-        public void Insert2()
+        public void Add2()
         {
-            Insert2(simpleNaiveHeapFactory);
-            Insert2(simpleBinaryHeapFactory);
+            Add2(simpleNaiveHeapFactory);
+            Add2(simpleBinaryHeapFactory);
         }
 
-        private void Insert2(SimpleHeapFactory heapFactory)
+        private void Add2(SimpleHeapFactory heapFactory)
         {
             ISimpleHeap<int> heap = heapFactory();
-            heap.Insert(43);
+
+            heap.Add(43);
             Assert.AreEqual(43, heap.Top);
-            heap.Insert(-11);
+
+            heap.Add(-11);
             Assert.AreEqual(-11, heap.Top);
-            heap.Insert(0);
+
+            heap.Add(0);
             Assert.AreEqual(-11, heap.Top);
-            heap.Insert(-13);
+
+            heap.Add(-13);
             Assert.AreEqual(-13, heap.Top);
-            heap.Insert(5);
+
+            heap.Add(5);
             Assert.AreEqual(-13, heap.Top);
-            heap.Insert(-50);
+
+            heap.Add(-50);
             Assert.AreEqual(-50, heap.Top);
-            heap.Insert(-50);
+
+            heap.Add(-50);
             Assert.AreEqual(-50, heap.Top);
-            heap.Insert(0);
+
+            heap.Add(0);
             Assert.AreEqual(-50, heap.Top);
             Assert.AreEqual(8, heap.Size);
         }
@@ -133,10 +145,10 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void Extract(SimpleHeapFactory heapFactory)
         {
             ISimpleHeap<int> heap = heapFactory(comparer: descendingComparer);
-            heap.Insert(13);
-            heap.Insert(43);
-            heap.Insert(-100);
-            heap.Insert(50);
+            heap.Add(13);
+            heap.Add(43);
+            heap.Add(-100);
+            heap.Add(50);
             Assert.AreEqual(50, heap.Extract());
             Assert.AreEqual(3, heap.Size);
             Assert.AreEqual(43, heap.Extract());
@@ -146,7 +158,7 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
             Assert.AreEqual(-100, heap.Extract());
             Assert.AreEqual(0, heap.Size);
 
-            heap.Insert(10);
+            heap.Add(10);
             Assert.AreEqual(10, heap.Extract());
             Assert.AreEqual(0, heap.Size);
         }
@@ -161,9 +173,11 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void Replace(SimpleHeapFactory heapFactory)
         {
             ISimpleHeap<int> heap = heapFactory(_sourceArray);
+
             heap.Replace(33);
             Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(0, heap.Top);
+
             heap.Replace(-33);
             Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(-33, heap.Top);
@@ -183,8 +197,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
                 if (operation == 1 || simpleNaiveHeap.Size <= 1)
                 {
                     int value = rand.Next();
-                    simpleNaiveHeap.Insert(value);
-                    simpleBinaryHeap.Insert(value);
+                    simpleNaiveHeap.Add(value);
+                    simpleBinaryHeap.Add(value);
                 }
                 else if (operation == 2)
                 {

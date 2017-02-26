@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Daves.SpojSpace.Library
+namespace Daves.SpojSpace.Library.Graphs
 {
     // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
     // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-    // its index in that array. Immutable so far but at least mutable edges later on probably. Not bothering to throw
-    // exceptions in the case where vertices from other graphs are passed in. Hash sets in the vertices slow things
-    // down (use list for some problems), as does using data structures instead of the vertices themselves to maintain
-    // state during searching.
+    // its index in that array. Hash sets in the vertices slow things down (use list for some problems), as does
+    // using data structures instead of the vertices themselves to maintain state during searching.
     public sealed class SimpleGraph
     {
-        private SimpleGraph(int vertexCount)
+        public SimpleGraph(int vertexCount)
         {
             var vertices = new Vertex[vertexCount];
             for (int id = 0; id < vertexCount; ++id)
@@ -49,10 +47,10 @@ namespace Daves.SpojSpace.Library
         public IReadOnlyList<Vertex> Vertices { get; }
         public int VertexCount => Vertices.Count;
 
-        private void AddEdge(int firstVertexID, int secondVertexID)
+        public void AddEdge(int firstVertexID, int secondVertexID)
             => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID]);
 
-        private void AddEdge(Vertex firstVertex, Vertex secondVertex)
+        public void AddEdge(Vertex firstVertex, Vertex secondVertex)
         {
             firstVertex.AddNeighbor(secondVertex);
             secondVertex.AddNeighbor(firstVertex);
@@ -217,7 +215,7 @@ namespace Daves.SpojSpace.Library
             return -1;
         }
 
-        public sealed class Vertex
+        public sealed class Vertex : IEquatable<Vertex>
         {
             private readonly SimpleGraph _graph;
             private readonly HashSet<Vertex> _neighbors = new HashSet<Vertex>();
@@ -234,16 +232,25 @@ namespace Daves.SpojSpace.Library
             public int Degree => _neighbors.Count;
 
             internal void AddNeighbor(int neighborID)
-                => AddNeighbor(_graph.Vertices[neighborID]);
+                => _neighbors.Add(_graph.Vertices[neighborID]);
 
             internal void AddNeighbor(Vertex neighbor)
                 => _neighbors.Add(neighbor);
 
             public bool HasNeighbor(int neighborID)
-                => HasNeighbor(_graph.Vertices[neighborID]);
+                => _neighbors.Contains(_graph.Vertices[neighborID]);
 
             public bool HasNeighbor(Vertex neighbor)
                 => _neighbors.Contains(neighbor);
+
+            public override bool Equals(object obj)
+                => (obj as Vertex)?.ID == ID;
+
+            public bool Equals(Vertex other)
+                => other.ID == ID;
+
+            public override int GetHashCode()
+                => ID;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Daves.SpojSpace.Library.Heaps
 
             foreach (T value in values)
             {
-                Insert(value);
+                Add(value);
             }
         }
 
@@ -23,7 +23,7 @@ namespace Daves.SpojSpace.Library.Heaps
         public bool IsEmpty => Size == 0;
         public T Top => _values[0];
 
-        public void Insert(T value)
+        public void Add(T value)
         {
             _values.Add(value);
             SiftUp(_values.Count - 1, value);

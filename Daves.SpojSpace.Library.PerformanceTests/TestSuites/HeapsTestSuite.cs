@@ -84,7 +84,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
             {
                 if (operation == 1 || simpleNaiveHeap.Size <= 1)
                 {
-                    simpleNaiveHeap.Insert(_randomValues[randomValuesIndex++]);
+                    simpleNaiveHeap.Add(_randomValues[randomValuesIndex++]);
                 }
                 else if (operation == 2)
                 {
@@ -110,7 +110,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
             {
                 if (operation == 1 || simpleBinaryHeap.Size <= 1)
                 {
-                    simpleBinaryHeap.Insert(_randomValues[randomValuesIndex++]);
+                    simpleBinaryHeap.Add(_randomValues[randomValuesIndex++]);
                 }
                 else if (operation == 2)
                 {
@@ -136,7 +136,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
             {
                 if (operation == 1 || naiveHeap.Size <= 1)
                 {
-                    naiveHeap.Insert(++_key, _randomValues[randomValuesIndex++]);
+                    naiveHeap.Add(++_key, _randomValues[randomValuesIndex++]);
                 }
                 else if (operation == 2)
                 {
@@ -162,7 +162,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
             {
                 if (operation == 1 || binaryHeap.Size <= 1)
                 {
-                    binaryHeap.Insert(++_key, _randomValues[randomValuesIndex++]);
+                    binaryHeap.Add(++_key, _randomValues[randomValuesIndex++]);
                 }
                 else if (operation == 2)
                 {

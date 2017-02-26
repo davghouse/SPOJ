@@ -723,6 +723,26 @@ namespace Daves.SpojSpace.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///
+        ///// http://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #research
+        ///// Finds the cheapest way to pave streets from any building to any building.
+        ///public static class CSTREET
+        ///{
+        ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
+        ///    // to build the MST, just get the total cost of the streets that compose it. The heap itself can be
+        ///    // used  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CSTREET {
+            get {
+                return ResourceManager.GetString("CSTREET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// http://www.spoj.com/problems/DANGER/ #experiment #formula #game #math
         ///// Finds the last survivor for n people in a circle, where every second person dies.
@@ -2184,6 +2204,7 @@ namespace Daves.SpojSpace.Solver {
         ///#graph-theory
         ///#greedy
         ///#hash-table
+        ///#heap
         ///#inspection
         ///#intersection
         ///#intuition
@@ -2194,9 +2215,8 @@ namespace Daves.SpojSpace.Solver {
         ///#memoization
         ///#merge
         ///#mod-math
-        ///#network
-        ///#offline
-        /// [rest of string was truncated]&quot;;.
+        ///#mst
+        ///#networ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

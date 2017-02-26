@@ -52,7 +52,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void DefaultConstruction(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory();
-            heap.Insert(new Key(1), 2);
+
+            heap.Add(new Key(1), 2);
             Assert.AreEqual(1, heap.Top.Key.ID);
             Assert.AreEqual(2, heap.Top.Value);
         }
@@ -108,62 +109,74 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         }
 
         [TestMethod]
-        public void Insert1()
+        public void Add1()
         {
-            Insert1(naiveHeapFactory);
-            Insert1(binaryHeapFactory);
+            Add1(naiveHeapFactory);
+            Add1(binaryHeapFactory);
         }
 
-        private void Insert1(HeapFactory heapFactory)
+        private void Add1(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
-            heap.Insert(new Key(16), 13);
+
+            heap.Add(new Key(16), 13);
             Assert.AreEqual(8, heap.Top.Key.ID);
             Assert.AreEqual(42, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(17), 43));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(17), 43));
             Assert.AreEqual(17, heap.Top.Key.ID);
             Assert.AreEqual(43, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(18), -100));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(18), -100));
             Assert.AreEqual(17, heap.Top.Key.ID);
             Assert.AreEqual(43, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(19), 50));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(19), 50));
             Assert.AreEqual(19, heap.Top.Key.ID);
             Assert.AreEqual(50, heap.Top.Value);
             Assert.AreEqual(_sourceArray.Count + 4, heap.Size);
         }
 
         [TestMethod]
-        public void Insert2()
+        public void Add2()
         {
-            Insert2(naiveHeapFactory);
-            Insert2(binaryHeapFactory);
+            Add2(naiveHeapFactory);
+            Add2(binaryHeapFactory);
         }
 
-        private void Insert2(HeapFactory heapFactory)
+        private void Add2(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory();
-            heap.Insert(new KeyValuePair<Key, int>(new Key(1), 43));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(1), 43));
             Assert.AreEqual(1, heap.Top.Key.ID);
             Assert.AreEqual(43, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(2), -11));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(2), -11));
             Assert.AreEqual(2, heap.Top.Key.ID);
             Assert.AreEqual(-11, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(3), 0));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(3), 0));
             Assert.AreEqual(2, heap.Top.Key.ID);
             Assert.AreEqual(-11, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(4), -13));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(4), -13));
             Assert.AreEqual(4, heap.Top.Key.ID);
             Assert.AreEqual(-13, heap.Top.Value);
-            heap.Insert(new Key(5), 5);
+
+            heap.Add(new Key(5), 5);
             Assert.AreEqual(4, heap.Top.Key.ID);
             Assert.AreEqual(-13, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(6), -50));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(6), -50));
             Assert.AreEqual(6, heap.Top.Key.ID);
             Assert.AreEqual(-50, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(7), -50));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(7), -50));
             Assert.AreEqual(6, heap.Top.Key.ID);
             Assert.AreEqual(-50, heap.Top.Value);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(8), 0));
+
+            heap.Add(new KeyValuePair<Key, int>(new Key(8), 0));
             Assert.AreEqual(6, heap.Top.Key.ID);
             Assert.AreEqual(-50, heap.Top.Value);
             Assert.AreEqual(8, heap.Size);
@@ -179,28 +192,32 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void Extract(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory(comparer: descendingComparer);
-            heap.Insert(new KeyValuePair<Key, int>(new Key(1), 13));
-            heap.Insert(new KeyValuePair<Key, int>(new Key(2), 43));
-            heap.Insert(new KeyValuePair<Key, int>(new Key(3), -100));
-            heap.Insert(new KeyValuePair<Key, int>(new Key(4), 50));
+            heap.Add(new KeyValuePair<Key, int>(new Key(1), 13));
+            heap.Add(new KeyValuePair<Key, int>(new Key(2), 43));
+            heap.Add(new KeyValuePair<Key, int>(new Key(3), -100));
+            heap.Add(new KeyValuePair<Key, int>(new Key(4), 50));
+
             var top = heap.Extract();
             Assert.AreEqual(4, top.Key.ID);
             Assert.AreEqual(50, top.Value);
             Assert.AreEqual(3, heap.Size);
+
             top = heap.Extract();
             Assert.AreEqual(2, top.Key.ID);
             Assert.AreEqual(43, top.Value);
             Assert.AreEqual(2, heap.Size);
+
             top = heap.Extract();
             Assert.AreEqual(1, top.Key.ID);
             Assert.AreEqual(13, top.Value);
             Assert.AreEqual(1, heap.Size);
+
             top = heap.Extract();
             Assert.AreEqual(3, top.Key.ID);
             Assert.AreEqual(-100, top.Value);
             Assert.AreEqual(0, heap.Size);
 
-            heap.Insert(new KeyValuePair<Key, int>(new Key(5), 10));
+            heap.Add(new KeyValuePair<Key, int>(new Key(5), 10));
             top = heap.Extract();
             Assert.AreEqual(5, top.Key.ID);
             Assert.AreEqual(10, top.Value);
@@ -217,10 +234,12 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void Replace(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory(_sourceArray);
+
             heap.Replace(new KeyValuePair<Key, int>(new Key(16), 33));
             Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(14, heap.Top.Key.ID);
             Assert.AreEqual(0, heap.Top.Value);
+
             heap.Replace(new KeyValuePair<Key, int>(new Key(17), -33));
             Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(17, heap.Top.Key.ID);
@@ -240,16 +259,17 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
             foreach (var keyValuePair in _sourceArray)
             {
-                Assert.AreEqual(heap.Contains(keyValuePair.Key), true);
+                Assert.IsTrue(heap.Contains(keyValuePair.Key));
             }
 
             heap.Replace(new Key(16), 33);
-            Assert.AreEqual(heap.Contains(new Key(16)), true);
-            Assert.AreEqual(heap.Contains(new Key(9)), false);
+            Assert.IsTrue(heap.Contains(new Key(16)));
+            Assert.IsFalse(heap.Contains(new Key(9)));
+
             heap.Replace(new Key(17), -33);
             Assert.AreEqual(_sourceArray.Count, heap.Size);
-            Assert.AreEqual(heap.Contains(new Key(17)), true);
-            Assert.AreEqual(heap.Contains(new Key(14)), false);
+            Assert.IsTrue(heap.Contains(new Key(17)));
+            Assert.IsFalse(heap.Contains(new Key(14)));
         }
 
         [TestMethod]
@@ -265,17 +285,70 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
 
             foreach (var keyValuePair in _sourceArray)
             {
-                Assert.AreEqual(heap.GetValue(keyValuePair.Key), keyValuePair.Value);
+                Assert.AreEqual(keyValuePair.Value, heap.GetValue(keyValuePair.Key));
             }
 
-            heap.Insert(new Key(16), -13);
-            Assert.AreEqual(heap.GetValue(new Key(16)), -13);
-            heap.Insert(new Key(17), 43);
-            Assert.AreEqual(heap.GetValue(new Key(17)), 43);
-            heap.Insert(new Key(18), -100);
-            Assert.AreEqual(heap.GetValue(new Key(18)), -100);
-            heap.Insert(new Key(19), 50);
-            Assert.AreEqual(heap.GetValue(new Key(19)), 50);
+            heap.Add(new Key(16), -13);
+            Assert.AreEqual(-13, heap.GetValue(new Key(16)));
+
+            heap.Add(new Key(17), 43);
+            Assert.AreEqual(43, heap.GetValue(new Key(17)));
+
+            heap.Add(new Key(18), -100);
+            Assert.AreEqual(-100, heap.GetValue(new Key(18)));
+
+            heap.Add(new Key(19), 50);
+            Assert.AreEqual(50, heap.GetValue(new Key(19)));
+        }
+
+        [TestMethod]
+        public void TryGetValue()
+        {
+            TryGetValue(naiveHeapFactory);
+            TryGetValue(binaryHeapFactory);
+        }
+
+        private void TryGetValue(HeapFactory heapFactory)
+        {
+            IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
+            int value;
+            bool hasValue;
+
+            foreach (var keyValuePair in _sourceArray)
+            {
+                hasValue = heap.TryGetValue(keyValuePair.Key, out value);
+                Assert.AreEqual(keyValuePair.Value, value);
+                Assert.IsTrue(hasValue);
+            }
+
+            hasValue = heap.TryGetValue(new Key(16), out value);
+            Assert.AreEqual(0, value);
+            Assert.IsFalse(hasValue);
+
+            heap.Add(new Key(16), -13);
+            hasValue = heap.TryGetValue(new Key(16), out value);
+            Assert.AreEqual(-13, value);
+            Assert.IsTrue(hasValue);
+
+            hasValue = heap.TryGetValue(new Key(17), out value);
+            Assert.AreEqual(0, value);
+            Assert.IsFalse(hasValue);
+
+            heap.Add(new Key(17), 43);
+            hasValue = heap.TryGetValue(new Key(17), out value);
+            Assert.AreEqual(43, value);
+            Assert.IsTrue(hasValue);
+
+            heap.Add(new Key(18), 100);
+            hasValue = heap.TryGetValue(new Key(18), out value);
+            Assert.AreEqual(100, value);
+            Assert.IsTrue(hasValue);
+
+            Assert.AreEqual(100, heap.Top.Value);
+            heap.Extract();
+            hasValue = heap.TryGetValue(new Key(18), out value);
+            Assert.AreEqual(0, value);
+            Assert.IsFalse(hasValue);
         }
 
         [TestMethod]
@@ -288,23 +361,28 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
         private void Update(HeapFactory heapFactory)
         {
             IHeap<Key, int> heap = heapFactory(_sourceArray);
+
             heap.Update(new Key(9), -16);
-            Assert.AreEqual(heap.Top.Key.ID, 9);
-            Assert.AreEqual(heap.Top.Value, -16);
+            Assert.AreEqual(9, heap.Top.Key.ID);
+            Assert.AreEqual(-16, heap.Top.Value);
+
             heap.Update(new Key(15), -17);
-            Assert.AreEqual(heap.Top.Key.ID, 15);
-            Assert.AreEqual(heap.Top.Value, -17);
-            heap.Insert(new Key(16), -30);
+            Assert.AreEqual(15, heap.Top.Key.ID);
+            Assert.AreEqual(-17, heap.Top.Value);
+
+            heap.Add(new Key(16), -30);
             heap.Update(new Key(16), -10);
-            Assert.AreEqual(heap.Top.Key.ID, 15);
-            Assert.AreEqual(heap.Top.Value, -17);
+            Assert.AreEqual(15, heap.Top.Key.ID);
+            Assert.AreEqual(-17, heap.Top.Value);
+
             heap.Update(new Key(16), -20);
             heap.Update(new Key(7), -30);
-            Assert.AreEqual(heap.Top.Key.ID, 7);
-            Assert.AreEqual(heap.Top.Value, -30);
+            Assert.AreEqual(7, heap.Top.Key.ID);
+            Assert.AreEqual(-30, heap.Top.Value);
+
             heap.Extract();
-            Assert.AreEqual(heap.Top.Key.ID, 16);
-            Assert.AreEqual(heap.Top.Value, -20);
+            Assert.AreEqual(16, heap.Top.Key.ID);
+            Assert.AreEqual(-20, heap.Top.Value);
         }
 
         [TestMethod]
@@ -324,8 +402,8 @@ namespace Daves.SpojSpace.Library.UnitTests.Heaps
                 {
                     int value = rand.Next();
                     keys.Add(new Key(++keyID));
-                    naiveHeap.Insert(new Key(keyID), value);
-                    binaryHeap.Insert(new Key(keyID), value);
+                    naiveHeap.Add(new Key(keyID), value);
+                    binaryHeap.Add(new Key(keyID), value);
                 }
                 else if (operation == 2)
                 {

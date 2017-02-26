@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Graphs\WeightedGraphTests.cs" />
     <Compile Include="Heaps\HeapTests.cs" />
     <Compile Include="Heaps\SimpleHeapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="Primes\PrimeFactorizerTests.cs" />
     <Compile Include="Primes\PrimeProviderTests.cs" />
     <Compile Include="SegmentTrees\SegmentTreeTests.cs" />
-    <Compile Include="SimpleGraphTests.cs" />
+    <Compile Include="Graphs\SimpleGraphTests.cs" />
     <Compile Include="Helpers\StringHelperTests.cs" />
     <Compile Include="StringMatchers\StringMatcherTests.cs" />
     <Compile Include="Tries\TrieTests.cs" />
