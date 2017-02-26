@@ -39,9 +39,10 @@ namespace Daves.SpojSpace.Library.Heaps
             }
             else
             {
-                _values[0] = _values[_values.Count - 1];
+                T bottom = _values[_values.Count - 1];
                 _values.RemoveAt(_values.Count - 1);
-                SiftDown(0, _values[0]);
+                _values[0] = bottom;
+                SiftDown(0, bottom);
             }
 
             return top;

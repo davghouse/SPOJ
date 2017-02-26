@@ -18,6 +18,9 @@ namespace Daves.SpojSpace.Library.Heaps
         public bool IsEmpty => Size == 0;
         public T Top => _values[FindTopIndex()];
 
+        public void Insert(T value)
+            => _values.Add(value);
+
         public T Extract()
         {
             int topIndex = FindTopIndex();
@@ -26,9 +29,6 @@ namespace Daves.SpojSpace.Library.Heaps
 
             return top;
         }
-
-        public void Insert(T value)
-            => _values.Add(value);
 
         public T Replace(T value)
         {

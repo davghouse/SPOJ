@@ -5,12 +5,14 @@ namespace Daves.SpojSpace.Library.Heaps
     public sealed class BinaryHeap<TKey, TValue> : IHeap<TKey, TValue>
     {
         private List<KeyValuePair<TKey, TValue>> _keyValuePairs;
+        private Dictionary<TKey, int> _keyIndices;
         private IComparer<TValue> _comparer;
 
         public BinaryHeap(IEnumerable<KeyValuePair<TKey, TValue>> keyValuePairs = null, IComparer<TValue> comparer = null)
         {
             keyValuePairs = keyValuePairs ?? new KeyValuePair<TKey, TValue>[0];
             _keyValuePairs = new List<KeyValuePair<TKey, TValue>>((keyValuePairs as ICollection<KeyValuePair<TKey, TValue>>)?.Count + 0 ?? 0);
+            _keyIndices = new Dictionary<TKey, int>(_keyValuePairs.Count);
             _comparer = comparer ?? Comparer<TValue>.Default;
 
             foreach (var keyValuePair in keyValuePairs)
@@ -23,15 +25,20 @@ namespace Daves.SpojSpace.Library.Heaps
         public bool IsEmpty => Size == 0;
         public KeyValuePair<TKey, TValue> Top => _keyValuePairs[0];
 
+        public void Insert(TKey key, TValue value)
+            => Insert(new KeyValuePair<TKey, TValue>(key, value));
+
         public void Insert(KeyValuePair<TKey, TValue> keyValuePair)
         {
             _keyValuePairs.Add(keyValuePair);
+            _keyIndices.Add(keyValuePair.Key, _keyValuePairs.Count - 1);
             SiftUp(_keyValuePairs.Count - 1, keyValuePair);
         }
 
         public KeyValuePair<TKey, TValue> Extract()
         {
             var top = _keyValuePairs[0];
+            _keyIndices.Remove(top.Key);
 
             if (_keyValuePairs.Count == 1)
             {
@@ -39,21 +46,56 @@ namespace Daves.SpojSpace.Library.Heaps
             }
             else
             {
-                _keyValuePairs[0] = _keyValuePairs[_keyValuePairs.Count - 1];
+                var bottom = _keyValuePairs[_keyValuePairs.Count - 1];
                 _keyValuePairs.RemoveAt(_keyValuePairs.Count - 1);
-                SiftDown(0, _keyValuePairs[0]);
+                _keyValuePairs[0] = bottom;
+                _keyIndices[bottom.Key] = 0;
+                SiftDown(0, bottom);
             }
 
             return top;
         }
 
+        public KeyValuePair<TKey, TValue> Replace(TKey key, TValue value)
+            => Replace(new KeyValuePair<TKey, TValue>(key, value));
+
         public KeyValuePair<TKey, TValue> Replace(KeyValuePair<TKey, TValue> keyValuePair)
         {
             var top = _keyValuePairs[0];
+            _keyIndices.Remove(top.Key);
             _keyValuePairs[0] = keyValuePair;
+            _keyIndices.Add(keyValuePair.Key, 0);
             SiftDown(0, keyValuePair);
 
             return top;
+        }
+
+        public bool Contains(TKey key)
+            => _keyIndices.ContainsKey(key);
+
+        public TValue GetValue(TKey key)
+            => _keyValuePairs[_keyIndices[key]].Value;
+
+        public TValue Update(TKey key, TValue value)
+            => Update(new KeyValuePair<TKey, TValue>(key, value));
+
+        public TValue Update(KeyValuePair<TKey, TValue> keyValuePair)
+        {
+            int index = _keyIndices[keyValuePair.Key];
+            TValue oldValue = _keyValuePairs[index].Value;
+            _keyValuePairs[index] = keyValuePair;
+
+            // If the old value was larger than the updated value, try sifting the updated value up.
+            if (_comparer.Compare(oldValue, keyValuePair.Value) > 0)
+            {
+                SiftUp(index, keyValuePair);
+            }
+            else
+            {
+                SiftDown(index, keyValuePair);
+            }
+
+            return oldValue;
         }
 
         private void SiftUp(int index, KeyValuePair<TKey, TValue> keyValuePair)
@@ -69,7 +111,9 @@ namespace Daves.SpojSpace.Library.Heaps
             if (_comparer.Compare(parentKeyValuePair.Value, keyValuePair.Value) > 0)
             {
                 _keyValuePairs[index] = parentKeyValuePair;
+                _keyIndices[parentKeyValuePair.Key] = index;
                 _keyValuePairs[parentIndex] = keyValuePair;
+                _keyIndices[keyValuePair.Key] = parentIndex;
                 SiftUp(parentIndex, keyValuePair);
             }
         }
@@ -92,7 +136,9 @@ namespace Daves.SpojSpace.Library.Heaps
                     if (_comparer.Compare(keyValuePair.Value, leftChildKeyValuePair.Value) > 0)
                     {
                         _keyValuePairs[index] = leftChildKeyValuePair;
+                        _keyIndices[leftChildKeyValuePair.Key] = index;
                         _keyValuePairs[leftChildIndex] = keyValuePair;
+                        _keyIndices[keyValuePair.Key] = leftChildIndex;
                         SiftDown(leftChildIndex, keyValuePair);
                     }
                 }
@@ -103,7 +149,9 @@ namespace Daves.SpojSpace.Library.Heaps
                     if (_comparer.Compare(keyValuePair.Value, rightChildKeyValuePair.Value) > 0)
                     {
                         _keyValuePairs[index] = rightChildKeyValuePair;
+                        _keyIndices[rightChildKeyValuePair.Key] = index;
                         _keyValuePairs[rightChildIndex] = keyValuePair;
+                        _keyIndices[keyValuePair.Key] = rightChildIndex;
                         SiftDown(rightChildIndex, keyValuePair);
                     }
                 }
@@ -117,7 +165,9 @@ namespace Daves.SpojSpace.Library.Heaps
                 if (_comparer.Compare(keyValuePair.Value, leftChildKeyValuePair.Value) > 0)
                 {
                     _keyValuePairs[index] = leftChildKeyValuePair;
+                    _keyIndices[leftChildKeyValuePair.Key] = index;
                     _keyValuePairs[leftChildIndex] = keyValuePair;
+                    _keyIndices[keyValuePair.Key] = leftChildIndex;
                 }
             }
         }

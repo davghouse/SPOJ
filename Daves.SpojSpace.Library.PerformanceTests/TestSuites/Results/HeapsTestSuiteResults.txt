@@ -1,11 +1,15 @@
-﻿100000 random operations, starting size of 0:
-  Simple binary heap:   x1.0000 (0 minutes 0.0070 seconds)
-  Binary heap:          x1.2632 (0 minutes 0.0088 seconds)
-  Naive heap:          x15.4981 (0 minutes 0.1084 seconds)
-  Simple naive heap:   x16.5221 (0 minutes 0.1156 seconds)
+﻿200000 random operations, starting size of 10:
+  Simple binary heap:   x1.0000 (0 minutes 0.0148 seconds)
+  Binary heap:          x2.6936 (0 minutes 0.0400 seconds)
+  Naive heap:          x13.9821 (0 minutes 0.2078 seconds)
+  Simple naive heap:   x14.7695 (0 minutes 0.2195 seconds)
 
-100000 random operations, starting size of 10000:
-  Simple binary heap:   x1.0000 (0 minutes 0.0122 seconds)
-  Binary heap:          x1.1974 (0 minutes 0.0147 seconds)
-  Naive heap:         x272.3749 (0 minutes 3.3443 seconds)
-  Simple naive heap:  x288.3515 (0 minutes 3.5405 seconds)
+200000 random operations, starting size of 10000:
+  Simple binary heap:   x1.0000 (0 minutes 0.0247 seconds)
+  Binary heap:          x2.9028 (0 minutes 0.0718 seconds)
+  Naive heap:         x278.4746 (0 minutes 6.8919 seconds)
+  Simple naive heap:  x295.5257 (0 minutes 7.3139 seconds)
+
+5:1 update/extract operations, starting size of 10000 (Prim simulation):
+  Binary heap:          x1.0000 (0 minutes 0.0131 seconds)
+  Naive heap:         x256.4320 (0 minutes 3.3633 seconds)
