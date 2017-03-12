@@ -1,0 +1,38 @@
+﻿When the character set ranges from 'A' to 'z' and we use ToUpperInvariant for insensitivity (~= ToLowerInvariant):
+Adding 100000 random strings up to length 20:
+  Case-sensitive hash set:    x1.0000 (0 minutes 0.0084 seconds)
+  Case-insensitive hash set:  x2.0966 (0 minutes 0.0176 seconds)
+  Case-insensitive trie:     x62.1173 (0 minutes 0.5229 seconds)
+  Case-sensitive trie:       x85.8577 (0 minutes 0.7228 seconds)
+
+Searching for 100000 random strings up to length 20:
+  Case-sensitive hash set:    x1.0000 (0 minutes 0.0066 seconds)
+  Case-insensitive hash set:  x2.8579 (0 minutes 0.0191 seconds)
+  Case-sensitive trie:        x3.5287 (0 minutes 0.0236 seconds)
+  Case-insensitive trie:      x6.6162 (0 minutes 0.0443 seconds)
+
+Searching for 100000 strings up to length 20, in 1000 prefix groups of size 100 with prefix length 4:
+  Case-sensitive trie:        x1.0000 (0 minutes 0.0006 seconds)
+  Case-insensitive trie:      x4.4544 (0 minutes 0.0029 seconds)
+  Case-sensitive hash set:    x8.8895 (0 minutes 0.0059 seconds)
+  Case-insensitive hash set: x25.0582 (0 minutes 0.0166 seconds)
+
+
+When the character set ranges from 'A' to 'Z' and we use ToUpperInvariant for insensitivity (~= ToLowerInvariant):
+Adding 100000 random strings up to length 20:
+  Case-sensitive hash set:    x1.0000 (0 minutes 0.0083 seconds)
+  Case-insensitive hash set:  x1.6859 (0 minutes 0.0141 seconds)
+  Case-insensitive trie:     x63.0622 (0 minutes 0.5295 seconds)
+  Case-sensitive trie:       x78.4269 (0 minutes 0.6586 seconds)
+
+Searching for 100000 random strings up to length 20:
+  Case-sensitive hash set:    x1.0000 (0 minutes 0.0071 seconds)
+  Case-insensitive hash set:  x1.9061 (0 minutes 0.0135 seconds)
+  Case-sensitive trie:        x3.7371 (0 minutes 0.0266 seconds)
+  Case-insensitive trie:      x5.6015 (0 minutes 0.0398 seconds)
+
+Searching for 100000 strings up to length 20, in 1000 prefix groups of size 100 with prefix length 4:
+  Case-sensitive trie:        x1.0000 (0 minutes 0.0028 seconds)
+  Case-insensitive trie:      x1.6708 (0 minutes 0.0046 seconds)
+  Case-sensitive hash set:    x2.5907 (0 minutes 0.0072 seconds)
+  Case-insensitive hash set:  x6.0345 (0 minutes 0.0169 seconds)

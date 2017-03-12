@@ -8,14 +8,17 @@ namespace Daves.SpojSpace.Library.Tries
     // in order to skip ahead down the trie.
     public sealed partial class Trie
     {
-        private readonly Node _root = new Node(
-            value: default(char),
-            depth: 0);
+        private readonly IEqualityComparer<char> _charEqualityComparer;
+        private readonly Node _root;
 
-        public Trie()
-        { }
+        public Trie(IEqualityComparer<char> charEqualityComparer = null)
+        {
+            _charEqualityComparer = charEqualityComparer;
+            _root = new Node(default(char), 0, _charEqualityComparer);
+        }
 
-        public Trie(IEnumerable<string> words)
+        public Trie(IEnumerable<string> words, IEqualityComparer<char> charEqualityComparer = null)
+            : this(charEqualityComparer)
         {
             foreach (string word in words)
             {
@@ -40,9 +43,7 @@ namespace Daves.SpojSpace.Library.Tries
             // forward will need to have nodes created and wired up.
             while (index < word.Length)
             {
-                nextNode = new Node(
-                    value: word[index],
-                    depth: index + 1);
+                nextNode = new Node(word[index], index + 1, _charEqualityComparer);
                 currentNode.Children.Add(word[index], nextNode);
                 currentNode = nextNode;
                 ++index;

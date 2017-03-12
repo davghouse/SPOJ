@@ -23,7 +23,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
             _rightEndingRangesArray = InputGenerator.GenerateRandomInts(_rightEndingRangesArraySize, -1000, 1000);
             _randomRangesArray = InputGenerator.GenerateRandomInts(_randomRangesArraySize, -1000, 1000);
 
-            var rand = new Random();
+            var rand = InputGenerator.Rand;
             var randomRanges = new Tuple<int, int>[_randomRangesCount];
             for (int i = 0; i < _randomRangesCount; ++i)
             {

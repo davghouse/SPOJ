@@ -187,5 +187,28 @@ namespace Daves.SpojSpace.Library.UnitTests.Tries
             Assert.IsTrue(result.TerminalNode.Value == 'd');
             Assert.IsTrue(result.TerminalNode.IsAWordEnd);
         }
+
+        [TestMethod]
+        public void SupportsCaseInsensitivity()
+        {
+            var trie = new Trie(new CaseInsensitiveCharEqualityComparer());
+
+            trie.Add("HELLO");
+
+            Assert.IsTrue(trie.ContainsPrefix("hell"));
+            Assert.IsTrue(trie.ContainsPrefix("hElL"));
+            Assert.IsTrue(trie.ContainsPrefix("HELL"));
+            Assert.IsTrue(trie.ContainsWord("hello"));
+            Assert.IsTrue(trie.ContainsWord("HELLO"));
+            Assert.IsTrue(trie.ContainsWord("HeLlO"));
+
+            trie.Add("help");
+            var searchResult = trie.Search("hel");
+            Assert.AreEqual(2, searchResult.TerminalNode.Children.Count);
+            Assert.IsTrue(searchResult.TerminalNode.Children.ContainsKey('l'));
+            Assert.IsTrue(searchResult.TerminalNode.Children.ContainsKey('L'));
+            Assert.IsTrue(searchResult.TerminalNode.Children.ContainsKey('p'));
+            Assert.IsTrue(searchResult.TerminalNode.Children.ContainsKey('P'));
+        }
     }
 }

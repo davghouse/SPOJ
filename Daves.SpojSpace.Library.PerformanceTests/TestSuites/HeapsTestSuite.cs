@@ -35,7 +35,7 @@ namespace Daves.SpojSpace.Library.PerformanceTests.TestSuites
 
             var randomPrimOperations = new List<Tuple<int, int>>();
             int extractOperationCount = 0;
-            var rand = new Random();
+            var rand = InputGenerator.Rand;
             while (extractOperationCount != _startingValuesCountBig)
             {
                 int operation = rand.Next(1, 6 + 1);

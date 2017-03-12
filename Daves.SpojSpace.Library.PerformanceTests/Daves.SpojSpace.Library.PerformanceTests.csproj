@@ -62,6 +62,7 @@
     <Compile Include="TestSuites\HeapsTestSuite.cs" />
     <Compile Include="TestSuites\StringSortingTestSuite.cs" />
     <Compile Include="TestSuites\StringMatchersTestSuite.cs" />
+    <Compile Include="TestSuites\TriesTestSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -82,6 +83,7 @@
     <Content Include="TestSuites\Results\HeapsTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringMatchersTestSuiteResults.txt" />
     <Content Include="TestSuites\Results\StringSortingTestSuiteResults.txt" />
+    <Content Include="TestSuites\Results\TriesTestSuiteResults.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Daves.SpojSpace.Library\Daves.SpojSpace.Library.csproj">

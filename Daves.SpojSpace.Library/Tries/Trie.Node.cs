@@ -6,17 +6,18 @@ namespace Daves.SpojSpace.Library.Tries
     {
         public sealed class Node
         {
-            internal Node(char value, int depth)
+            internal Node(char value, int depth, IEqualityComparer<char> charEqualityComparer = null)
             {
                 Value = value;
                 Depth = depth;
+                Children = new Dictionary<char, Node>(charEqualityComparer);
             }
 
             // Storing Value isn't necessary, it just helps me debug and think clearly about what's going on.
             internal char Value { get; }
             internal int Depth { get; }
             internal bool IsAWordEnd { get; set; }
-            internal Dictionary<char, Node> Children { get; } = new Dictionary<char, Node>();
+            internal Dictionary<char, Node> Children { get; }
 
             public override string ToString()
                 => Depth == 0 ? "root"
