@@ -19,7 +19,7 @@ namespace Daves.SpojSpace.Solver.UnitTests.Solutions
         {
             _tags = Solver.Solutions.Tags.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
 
-            // Little hack here, see http://stackoverflow.com/a/40311406/1676558.
+            // Little hack here, see http://stackoverflow.com/a/40311406.
             object compilerSettings = typeof(CSharpCodeProvider)
                 .GetField("_compilerSettings", BindingFlags.Instance | BindingFlags.NonPublic)
                 .GetValue(_compiler);

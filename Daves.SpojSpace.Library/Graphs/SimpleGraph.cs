@@ -189,7 +189,7 @@ namespace Daves.SpojSpace.Library.Graphs
             // from the start vertex, which BFS makes convenient. This allows us to avoid storing
             // distances to the start vertex at the level of individual vertices. To save work we
             // don't check the wave vertices for endVertex equality, but rather their neighbors.
-            // So that's why the distance start off as one rather than zero.
+            // So that's why the distance starts off as one rather than zero.
             while (verticesToVisit.Count > 0)
             {
                 int waveSize = verticesToVisit.Count;
