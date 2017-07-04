@@ -5,8 +5,8 @@
 *.suo
 *.user
 *.sln.docstates
-!Daves.SpojSpace.Solver.csproj.user
-!Daves.SpojSpace.SolverCpp.vcxproj.user
+!SpojSpace.Solver.csproj.user
+!SpojSpace.SolverCpp.vcxproj.user
 
 # Build results
 [Dd]ebug/

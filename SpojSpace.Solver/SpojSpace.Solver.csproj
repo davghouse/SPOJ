@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{598E4F60-D90C-4C90-AB7A-A17CCB32AE4A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpojSpace.Solver</RootNamespace>
+    <AssemblyName>SpojSpace.Solver</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\NHAY.cs" />
+    <None Include="Solutions\7 - Immortal\GSS3.cs" />
+    <None Include="Solutions\7 - Immortal\HORRIBLE_v2.cs" />
+    <None Include="Solutions\6 - Emperor\BUGLIFE.cs" />
+    <None Include="Solutions\TEMPLATE1.cs" />
+    <None Include="Solutions\1 - Settler\TEST.cs" />
+    <None Include="Solutions\2 - Chieftain\ADDREV.cs" />
+    <None Include="Solutions\2 - Chieftain\NSTEPS.cs" />
+    <None Include="Solutions\3 - Warlord\ACPC10A.cs" />
+    <None Include="Solutions\3 - Warlord\CANDY.cs" />
+    <None Include="Solutions\4 - Prince\FASHION.cs" />
+    <None Include="Solutions\4 - Prince\ONP.cs" />
+    <None Include="Solutions\3 - Warlord\TOANDFRO.cs" />
+    <None Include="Solutions\4 - Prince\AE00.cs" />
+    <None Include="Solutions\5 - King\FCTRL.cs" />
+    <None Include="Solutions\4 - Prince\FCTRL2.cs" />
+    <None Include="Solutions\5 - King\LASTDIG.cs" />
+    <None Include="Solutions\5 - King\PRIME1.cs" />
+    <None Include="Solutions\5 - King\SAMER08F.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpojSpace.Library\SpojSpace.Library.csproj">
+      <Project>{4d10bf86-2d13-462e-9de5-c67d759a0772}</Project>
+      <Name>SpojSpace.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Solutions\2 - Chieftain\GUESSING.txt" />
+    <None Include="Tags.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\JULKA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\COINS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\CANDY3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\EIGHTS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\HANGOVER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\PALIN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\ACODE_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\ACODE_v2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\ABSYS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\WILLITST.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\CANTON.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\STAMPS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\PERMUT2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\2 - Chieftain\ARMY.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\TRICOUNT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\STPAR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\FENCE1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\AP2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\PT07Y.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\GIRLSNBS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\INVCNT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\NGM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\EDIST.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\CRDS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\BEENUMS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\7 - Immortal\PT07Z.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\AGGRCOW.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\BYTESM2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\BISHOPS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\OFFSIDE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\OLOLO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\MAXLN.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\HPYNOS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\NY10A.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\HUBULLU.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\LASTDIG2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\ARITH2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\EASYPROB.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\7 - Immortal\GSS1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\PARTY.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\BITMAP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\ETF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\MARBLES.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\TRT_v1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\TRT_v2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\AMR10G.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\EGYPIZZA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\AIBOHP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\FARIDA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\ANARC09A.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\PIGBANK_v1.cs" />
+    <None Include="Solutions\5 - King\PIGBANK_v2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\MIXTURES.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\JAVAC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\SBANK.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\HOTELS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\2 - Chieftain\QUADAREA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Solutions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Solutions.resx</DependentUpon>
+    </Compile>
+    <None Include="Solutions\7 - Immortal\CSTREET.cs" />
+    <None Include="Solutions\8 - Deity\DQUERY.cs" />
+    <None Include="Solutions\4 - Prince\CPRMT.cs" />
+    <None Include="Solutions\5 - King\MISERMAN.cs" />
+    <None Include="Solutions\6 - Emperor\PHONELST.cs" />
+    <None Include="Solutions\6 - Emperor\COMDIV.cs" />
+    <None Include="Solutions\3 - Warlord\PIR.cs" />
+    <None Include="Solutions\4 - Prince\ENIGMATH.cs" />
+    <None Include="Solutions\6 - Emperor\FIBOSUM.cs" />
+    <None Include="Solutions\5 - King\MAJOR_v1.cs" />
+    <None Include="Solutions\5 - King\TDPRIMES.cs" />
+    <None Include="Solutions\6 - Emperor\TWOSQRS.cs" />
+    <None Include="Solutions\7 - Immortal\HORRIBLE_v1.cs" />
+    <None Include="Solutions\5 - King\ANARC05B.cs" />
+    <None Include="Solutions\5 - King\ACPC11B.cs" />
+    <Compile Include="InputVerifier.cs" />
+    <None Include="Solutions\3 - Warlord\DOTAA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\GCD2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\FACEFRND.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\ARRAYSUB.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\ABCDEF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\MAJOR_v2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\PPATH.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\SILVER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Solutions\4 - Prince\DANGER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\GLJIVE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\AMR12D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\MCOINS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\7 - Immortal\HISTOGRA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\4 - Prince\ALICESIE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\ACPC10D.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\DISUBSTR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\DIEHARD.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\6 - Emperor\FAVDICE.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\3 - Warlord\BYECAKES.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\5 - King\SUMITR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Solutions\TEMPLATE2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Solutions.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Solutions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

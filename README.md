@@ -1,4 +1,4 @@
-Dave's SPOJ Space
+SPOJ Space
 =================
 
 C# solutions to problems on SPOJ: http://www.spoj.com/users/davidgalehouse/.
@@ -16,7 +16,7 @@ The overhead results from [slower iteration times](http://stackoverflow.com/q/42
 That may never matter, but it's enough for me to justify taking the input in whatever form the I/O handler builds it.
 It's going to get thrown out immediately after anyway.
 
-I **do** bother thinking about parameter types (and lots of other details) for any reusable components, which are housed in the Daves.SpojSpace.Library project.
+I **do** bother thinking about parameter types (and lots of other details) for any reusable components, which are housed in the SpojSpace.Library project.
 However, due to similar performance concerns as above and YAGNI, I usually don't bother programming with extensibility or safety in mind.
 For example, I seal classes aggressively and expose collections through readonly interfaces without bothering to prevent casting back to the non-readonly implementations.
 
