@@ -2,7 +2,7 @@
 
 namespace SpojSpace.Library.Tries
 {
-    // Part-way implementation of a trie, here's a good video: https://www.youtube.com/watch?v=AXjmTQ8LEoI.
+    // Here's a good video on tries: https://www.youtube.com/watch?v=AXjmTQ8LEoI.
     // Designed with the use case of Wordament boards in mind. There, word discovery is done by searching for words
     // that are prefixed by words just searched for, so it's useful to expose terminal nodes of prior searches
     // in order to skip ahead down the trie.
