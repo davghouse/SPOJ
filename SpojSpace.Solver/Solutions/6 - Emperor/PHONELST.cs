@@ -21,6 +21,8 @@ public static class PHONELST
         return true; // No string prefixed another, so it's consistent.
     }
 }
+
+// Here's a good video on tries: https://www.youtube.com/watch?v=AXjmTQ8LEoI.
 public sealed class Trie
 {
     private Node _root = new Node((char)0);
