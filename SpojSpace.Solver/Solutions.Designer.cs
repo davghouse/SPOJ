@@ -19,7 +19,7 @@ namespace SpojSpace.Solver {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Solutions {
@@ -538,6 +538,34 @@ namespace SpojSpace.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// http://www.spoj.com/problems/BUSYMAN/ #greedy #sorting
+        ///// Finds the maximum number of activities that can fit into a schedule.
+        ///public static class BUSYMAN
+        ///{
+        ///    public static int Solve(int a, int b)
+        ///        =&gt; a * b;
+        ///}
+        ///
+        ///public static class Program
+        ///{
+        ///    private static void Main()
+        ///    {
+        ///        var output = new StringBuilder();
+        ///        int remainingTestCases = int.Parse(Console.ReadLine());
+        ///        while (remainingTestCases-- &gt; 0)
+        ///        {
+        ///             [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BUSYMAN {
+            get {
+                return ResourceManager.GetString("BUSYMAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
         ///// http://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization #trap
@@ -963,8 +991,7 @@ namespace SpojSpace.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
-        /// [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
