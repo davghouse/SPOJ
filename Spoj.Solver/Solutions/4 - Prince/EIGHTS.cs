@@ -9,12 +9,12 @@ public static class EIGHTS
     // digits of the numbers being multipled. These are all the three digit numbers whose
     // cubes end in 888. Any other, higher numbers whose cubes end in 888 must themselves
     // end in one of these four numbers (and it's an if and only if).
-    public static readonly IReadOnlyList<int> threeDigitCubesEndingIn888 = new[] { 192, 442, 692, 942 };
+    private static readonly IReadOnlyList<int> _threeDigitCubesEndingIn888 = new[] { 192, 442, 692, 942 };
 
     public static long Solve(long k)
     {
         // k is indexed from 1, subtracting by 1 here makes the modulo result map directly to a list index.
-        int finalThreeDigits = threeDigitCubesEndingIn888[(int)((k - 1) % 4)];
+        int finalThreeDigits = _threeDigitCubesEndingIn888[(int)((k - 1) % 4)];
 
         // There are four cubes for each 1000 numbers as seen above, so calculate how many 1000s need to get added before the final three digits.
         long countOf1000s = (k - 1) / 4;

@@ -24,8 +24,8 @@ namespace Spoj.Library.UnitTests.Heaps
         }
 
         private delegate IHeap<Key, int> HeapFactory(IEnumerable<KeyValuePair<Key, int>> keyValuePairs = null, IComparer<int> comparer = null);
-        private static readonly HeapFactory naiveHeapFactory = (keyValuePairs, comparer) => new NaiveHeap<Key, int>(keyValuePairs, comparer);
-        private static readonly HeapFactory binaryHeapFactory = (keyValuePairs, comparer) => new BinaryHeap<Key, int>(keyValuePairs, comparer);
+        private static readonly HeapFactory _naiveHeapFactory = (keyValuePairs, comparer) => new NaiveHeap<Key, int>(keyValuePairs, comparer);
+        private static readonly HeapFactory _binaryHeapFactory = (keyValuePairs, comparer) => new BinaryHeap<Key, int>(keyValuePairs, comparer);
 
         private static IReadOnlyList<KeyValuePair<Key, int>> CreateSourceArray(int[] valueArray)
         {
@@ -40,13 +40,13 @@ namespace Spoj.Library.UnitTests.Heaps
 
         //                                                                                       IDs: 1  2  3  4  5   6  7  8    9   10 11  12  13 14 15
         private static IReadOnlyList<KeyValuePair<Key, int>> _sourceArray = CreateSourceArray(new[] { 3, 9, 1, 4, 12, 6, 8, 42, -13, 1, 22, 11, 1, 0, 22 });
-        private static Comparer<int> descendingComparer = Comparer<int>.Create((a, b) => b.CompareTo(a));
+        private static Comparer<int> _descendingComparer = Comparer<int>.Create((a, b) => b.CompareTo(a));
 
         [TestMethod]
         public void DefaultConstruction()
         {
-            DefaultConstruction(naiveHeapFactory);
-            DefaultConstruction(binaryHeapFactory);
+            DefaultConstruction(_naiveHeapFactory);
+            DefaultConstruction(_binaryHeapFactory);
         }
 
         private void DefaultConstruction(HeapFactory heapFactory)
@@ -61,8 +61,8 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void CollectionCostruction()
         {
-            CollectionConstruction(naiveHeapFactory);
-            CollectionConstruction(binaryHeapFactory);
+            CollectionConstruction(_naiveHeapFactory);
+            CollectionConstruction(_binaryHeapFactory);
         }
 
         private void CollectionConstruction(HeapFactory heapFactory)
@@ -86,23 +86,23 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void ComparerConstruction()
         {
-            ComparerConstruction(naiveHeapFactory);
-            ComparerConstruction(binaryHeapFactory);
+            ComparerConstruction(_naiveHeapFactory);
+            ComparerConstruction(_binaryHeapFactory);
         }
 
         private void ComparerConstruction(HeapFactory heapFactory)
         {
-            IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
+            IHeap<Key, int> heap = heapFactory(_sourceArray, _descendingComparer);
             Assert.AreEqual(_sourceArray.Count, heap.Size);
             Assert.AreEqual(8, heap.Top.Key.ID);
             Assert.AreEqual(42, heap.Top.Value);
 
-            heap = heapFactory(CreateSourceArray(new[] { 2, 1 }), descendingComparer);
+            heap = heapFactory(CreateSourceArray(new[] { 2, 1 }), _descendingComparer);
             Assert.AreEqual(2, heap.Size);
             Assert.AreEqual(1, heap.Top.Key.ID);
             Assert.AreEqual(2, heap.Top.Value);
 
-            heap = heapFactory(CreateSourceArray(new[] { 2, 3 }), descendingComparer);
+            heap = heapFactory(CreateSourceArray(new[] { 2, 3 }), _descendingComparer);
             Assert.AreEqual(2, heap.Size);
             Assert.AreEqual(2, heap.Top.Key.ID);
             Assert.AreEqual(3, heap.Top.Value);
@@ -111,13 +111,13 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Add1()
         {
-            Add1(naiveHeapFactory);
-            Add1(binaryHeapFactory);
+            Add1(_naiveHeapFactory);
+            Add1(_binaryHeapFactory);
         }
 
         private void Add1(HeapFactory heapFactory)
         {
-            IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
+            IHeap<Key, int> heap = heapFactory(_sourceArray, _descendingComparer);
 
             heap.Add(new Key(16), 13);
             Assert.AreEqual(8, heap.Top.Key.ID);
@@ -140,8 +140,8 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Add2()
         {
-            Add2(naiveHeapFactory);
-            Add2(binaryHeapFactory);
+            Add2(_naiveHeapFactory);
+            Add2(_binaryHeapFactory);
         }
 
         private void Add2(HeapFactory heapFactory)
@@ -185,13 +185,13 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Extract()
         {
-            Extract(naiveHeapFactory);
-            Extract(binaryHeapFactory);
+            Extract(_naiveHeapFactory);
+            Extract(_binaryHeapFactory);
         }
 
         private void Extract(HeapFactory heapFactory)
         {
-            IHeap<Key, int> heap = heapFactory(comparer: descendingComparer);
+            IHeap<Key, int> heap = heapFactory(comparer: _descendingComparer);
             heap.Add(new KeyValuePair<Key, int>(new Key(1), 13));
             heap.Add(new KeyValuePair<Key, int>(new Key(2), 43));
             heap.Add(new KeyValuePair<Key, int>(new Key(3), -100));
@@ -227,8 +227,8 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Replace()
         {
-            Replace(naiveHeapFactory);
-            Replace(binaryHeapFactory);
+            Replace(_naiveHeapFactory);
+            Replace(_binaryHeapFactory);
         }
 
         private void Replace(HeapFactory heapFactory)
@@ -249,8 +249,8 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Contains()
         {
-            Contains(naiveHeapFactory);
-            Contains(binaryHeapFactory);
+            Contains(_naiveHeapFactory);
+            Contains(_binaryHeapFactory);
         }
 
         private void Contains(HeapFactory heapFactory)
@@ -275,13 +275,13 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void GetValue()
         {
-            GetValue(naiveHeapFactory);
-            GetValue(binaryHeapFactory);
+            GetValue(_naiveHeapFactory);
+            GetValue(_binaryHeapFactory);
         }
 
         private void GetValue(HeapFactory heapFactory)
         {
-            IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
+            IHeap<Key, int> heap = heapFactory(_sourceArray, _descendingComparer);
 
             foreach (var keyValuePair in _sourceArray)
             {
@@ -304,13 +304,13 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void TryGetValue()
         {
-            TryGetValue(naiveHeapFactory);
-            TryGetValue(binaryHeapFactory);
+            TryGetValue(_naiveHeapFactory);
+            TryGetValue(_binaryHeapFactory);
         }
 
         private void TryGetValue(HeapFactory heapFactory)
         {
-            IHeap<Key, int> heap = heapFactory(_sourceArray, descendingComparer);
+            IHeap<Key, int> heap = heapFactory(_sourceArray, _descendingComparer);
             int value;
             bool hasValue;
 
@@ -354,8 +354,8 @@ namespace Spoj.Library.UnitTests.Heaps
         [TestMethod]
         public void Update()
         {
-            Update(naiveHeapFactory);
-            Update(binaryHeapFactory);
+            Update(_naiveHeapFactory);
+            Update(_binaryHeapFactory);
         }
 
         private void Update(HeapFactory heapFactory)

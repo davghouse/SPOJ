@@ -6,34 +6,34 @@ namespace Spoj.Library.PerformanceTests.TestSuites
     public class StringSortingTestSuite : ITestSuite
     {
         private const int _stringLengthAndCount = 20000;
-        private readonly string[] randomStrings1;
-        private readonly string[] randomStrings2;
-        private readonly string[] binaryStrings;
-        private readonly string[] equalStrings;
-        private string randomString;
+        private readonly string[] _randomStrings1;
+        private readonly string[] _randomStrings2;
+        private readonly string[] _binaryStrings;
+        private readonly string[] _equalStrings;
+        private string _randomString;
 
         public StringSortingTestSuite()
         {
-            randomStrings1 = new string[_stringLengthAndCount];
-            randomStrings2 = new string[_stringLengthAndCount];
+            _randomStrings1 = new string[_stringLengthAndCount];
+            _randomStrings2 = new string[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
-                randomStrings1[i] = randomStrings2[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount);
+                _randomStrings1[i] = _randomStrings2[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount);
             }
 
-            binaryStrings = new string[_stringLengthAndCount];
+            _binaryStrings = new string[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
-                binaryStrings[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount, '0', '1');
+                _binaryStrings[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount, '0', '1');
             }
 
-            equalStrings = new string[_stringLengthAndCount];
+            _equalStrings = new string[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
-                equalStrings[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount, 'a', 'a');
+                _equalStrings[i] = InputGenerator.GenerateRandomString(_stringLengthAndCount, 'a', 'a');
             }
 
-            randomString = InputGenerator.GenerateRandomString(_stringLengthAndCount);
+            _randomString = InputGenerator.GenerateRandomString(_stringLengthAndCount);
         }
 
         public IEnumerable<TestScenario> TestScenarios => new TestScenario[]
@@ -50,16 +50,16 @@ namespace Spoj.Library.PerformanceTests.TestSuites
         };
 
         public void SortRandomStringsOrdinal()
-            => Array.Sort(randomStrings1, StringComparer.Ordinal);
+            => Array.Sort(_randomStrings1, StringComparer.Ordinal);
 
         public void SortRandomStringsCurrentCulture()
-            => Array.Sort(randomStrings2, StringComparer.CurrentCulture);
+            => Array.Sort(_randomStrings2, StringComparer.CurrentCulture);
 
         public void SortBinaryStrings()
-            => Array.Sort(binaryStrings, StringComparer.Ordinal);
+            => Array.Sort(_binaryStrings, StringComparer.Ordinal);
 
         public void SortEqualStrings()
-            => Array.Sort(equalStrings, StringComparer.Ordinal);
+            => Array.Sort(_equalStrings, StringComparer.Ordinal);
 
         public void SortBinaryStringSuffixesAsIndices()
         {
@@ -68,7 +68,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             {
                 randomStringSuffixIndices[i] = i;
             }
-            Array.Sort(randomStringSuffixIndices, (i, j) => string.CompareOrdinal(randomString, i, randomString, j, _stringLengthAndCount));
+            Array.Sort(randomStringSuffixIndices, (i, j) => string.CompareOrdinal(_randomString, i, _randomString, j, _stringLengthAndCount));
         }
 
         public void SortBinaryStringSuffixesAsStrings()
@@ -76,7 +76,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
             string[] randomStringSuffixes = new string[_stringLengthAndCount];
             for (int i = 0; i < _stringLengthAndCount; ++i)
             {
-                randomStringSuffixes[i] = randomString.Substring(i);
+                randomStringSuffixes[i] = _randomString.Substring(i);
             }
             Array.Sort(randomStringSuffixes, StringComparer.Ordinal);
         }

@@ -9,8 +9,8 @@ namespace Spoj.Library.UnitTests.Helpers
     {
         private static char[] _delimiters = new[] { '+', '-', '*', '/', '=' };
 
-        private string s;
-        private string[] res;
+        private string _s;
+        private string[] _res;
 
         private string[] SplitAndKeep(string s)
             => s.SplitAndKeep(_delimiters).ToArray();
@@ -18,132 +18,132 @@ namespace Spoj.Library.UnitTests.Helpers
         [TestMethod]
         public void SplitAndKeep_WhenStringContainsNoDelimiters()
         {
-            s = "1234";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(1, res.Length);
-            Assert.AreEqual("1234", res[0]);
+            _s = "1234";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(1, _res.Length);
+            Assert.AreEqual("1234", _res[0]);
 
-            s = "";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(0, res.Length);
+            _s = "";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(0, _res.Length);
 
-            s = "   ";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(1, res.Length);
-            Assert.AreEqual("   ", res[0]);
+            _s = "   ";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(1, _res.Length);
+            Assert.AreEqual("   ", _res[0]);
         }
 
         [TestMethod]
         public void SplitAndKeep_WhenStringContainsOneDelimiter()
         {
-            s = "12+34";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(3, res.Length);
-            Assert.AreEqual("12", res[0]);
-            Assert.AreEqual("+", res[1]);
-            Assert.AreEqual("34", res[2]);
+            _s = "12+34";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(3, _res.Length);
+            Assert.AreEqual("12", _res[0]);
+            Assert.AreEqual("+", _res[1]);
+            Assert.AreEqual("34", _res[2]);
 
-            s = "1*4";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(3, res.Length);
-            Assert.AreEqual("1", res[0]);
-            Assert.AreEqual("*", res[1]);
-            Assert.AreEqual("4", res[2]);
+            _s = "1*4";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(3, _res.Length);
+            Assert.AreEqual("1", _res[0]);
+            Assert.AreEqual("*", _res[1]);
+            Assert.AreEqual("4", _res[2]);
 
-            s = "-3";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(2, res.Length);
-            Assert.AreEqual("-", res[0]);
-            Assert.AreEqual("3", res[1]);
+            _s = "-3";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(2, _res.Length);
+            Assert.AreEqual("-", _res[0]);
+            Assert.AreEqual("3", _res[1]);
 
-            s = "3-";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(2, res.Length);
-            Assert.AreEqual("3", res[0]);
-            Assert.AreEqual("-", res[1]);
+            _s = "3-";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(2, _res.Length);
+            Assert.AreEqual("3", _res[0]);
+            Assert.AreEqual("-", _res[1]);
 
-            s = "/";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(1, res.Length);
-            Assert.AreEqual("/", res[0]);
+            _s = "/";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(1, _res.Length);
+            Assert.AreEqual("/", _res[0]);
         }
 
         [TestMethod]
         public void SplitAndKeep_WhenStringContainsTwoDelimiters()
         {
-            s = "1+23+4";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(5, res.Length);
-            Assert.AreEqual("1", res[0]);
-            Assert.AreEqual("+", res[1]);
-            Assert.AreEqual("23", res[2]);
-            Assert.AreEqual("+", res[3]);
-            Assert.AreEqual("4", res[4]);
+            _s = "1+23+4";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(5, _res.Length);
+            Assert.AreEqual("1", _res[0]);
+            Assert.AreEqual("+", _res[1]);
+            Assert.AreEqual("23", _res[2]);
+            Assert.AreEqual("+", _res[3]);
+            Assert.AreEqual("4", _res[4]);
 
-            s = "1++4";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(4, res.Length);
-            Assert.AreEqual("1", res[0]);
-            Assert.AreEqual("+", res[1]);
-            Assert.AreEqual("+", res[2]);
-            Assert.AreEqual("4", res[3]);
+            _s = "1++4";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(4, _res.Length);
+            Assert.AreEqual("1", _res[0]);
+            Assert.AreEqual("+", _res[1]);
+            Assert.AreEqual("+", _res[2]);
+            Assert.AreEqual("4", _res[3]);
 
-            s = "*1*";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(3, res.Length);
-            Assert.AreEqual("*", res[0]);
-            Assert.AreEqual("1", res[1]);
-            Assert.AreEqual("*", res[2]);
+            _s = "*1*";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(3, _res.Length);
+            Assert.AreEqual("*", _res[0]);
+            Assert.AreEqual("1", _res[1]);
+            Assert.AreEqual("*", _res[2]);
 
-            s = "+12+13";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(4, res.Length);
-            Assert.AreEqual("+", res[0]);
-            Assert.AreEqual("12", res[1]);
-            Assert.AreEqual("+", res[2]);
-            Assert.AreEqual("13", res[3]);
+            _s = "+12+13";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(4, _res.Length);
+            Assert.AreEqual("+", _res[0]);
+            Assert.AreEqual("12", _res[1]);
+            Assert.AreEqual("+", _res[2]);
+            Assert.AreEqual("13", _res[3]);
 
-            s = "+-33";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(3, res.Length);
-            Assert.AreEqual("+", res[0]);
-            Assert.AreEqual("-", res[1]);
-            Assert.AreEqual("33", res[2]);
+            _s = "+-33";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(3, _res.Length);
+            Assert.AreEqual("+", _res[0]);
+            Assert.AreEqual("-", _res[1]);
+            Assert.AreEqual("33", _res[2]);
 
-            s = "33+=";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(3, res.Length);
-            Assert.AreEqual("33", res[0]);
-            Assert.AreEqual("+", res[1]);
-            Assert.AreEqual("=", res[2]);
+            _s = "33+=";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(3, _res.Length);
+            Assert.AreEqual("33", _res[0]);
+            Assert.AreEqual("+", _res[1]);
+            Assert.AreEqual("=", _res[2]);
 
-            s = "3+3+3";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(5, res.Length);
-            Assert.AreEqual("3", res[0]);
-            Assert.AreEqual("+", res[1]);
-            Assert.AreEqual("3", res[2]);
-            Assert.AreEqual("+", res[3]);
-            Assert.AreEqual("3", res[4]);
+            _s = "3+3+3";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(5, _res.Length);
+            Assert.AreEqual("3", _res[0]);
+            Assert.AreEqual("+", _res[1]);
+            Assert.AreEqual("3", _res[2]);
+            Assert.AreEqual("+", _res[3]);
+            Assert.AreEqual("3", _res[4]);
 
-            s = "*/";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(2, res.Length);
-            Assert.AreEqual("*", res[0]);
-            Assert.AreEqual("/", res[1]);
+            _s = "*/";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(2, _res.Length);
+            Assert.AreEqual("*", _res[0]);
+            Assert.AreEqual("/", _res[1]);
         }
 
         [TestMethod]
         public void SplitAndKeep_WhenStringContainsAllDelimiters()
         {
-            s = "*=+-/";
-            res = SplitAndKeep(s);
-            Assert.AreEqual(5, res.Length);
-            Assert.AreEqual("*", res[0]);
-            Assert.AreEqual("=", res[1]);
-            Assert.AreEqual("+", res[2]);
-            Assert.AreEqual("-", res[3]);
-            Assert.AreEqual("/", res[4]);
+            _s = "*=+-/";
+            _res = SplitAndKeep(_s);
+            Assert.AreEqual(5, _res.Length);
+            Assert.AreEqual("*", _res[0]);
+            Assert.AreEqual("=", _res[1]);
+            Assert.AreEqual("+", _res[2]);
+            Assert.AreEqual("-", _res[3]);
+            Assert.AreEqual("/", _res[4]);
         }
     }
 }

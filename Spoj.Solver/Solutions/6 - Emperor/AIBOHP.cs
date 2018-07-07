@@ -4,7 +4,7 @@
 // Finds the minimum number of character insertions needed to turn a string into a palindrome.
 public static class AIBOHP
 {
-    private static int[,] minimumInsertionCounts = new int[6100, 6100];
+    private static int[,] _minimumInsertionCounts = new int[6100, 6100];
 
     // If the string starts and ends in the same characters, the insertion count is whatever
     // the count is for the substring excluding those two characters. It wouldn't make sense
@@ -33,19 +33,19 @@ public static class AIBOHP
             {
                 if (s[ri] == s[cj])
                 {
-                    minimumInsertionCounts[ri, cj] = minimumInsertionCounts[ri + 1, cj - 1];
+                    _minimumInsertionCounts[ri, cj] = _minimumInsertionCounts[ri + 1, cj - 1];
                 }
                 else
                 {
-                    minimumInsertionCounts[ri, cj] = 1 + Math.Min(
-                        minimumInsertionCounts[ri + 1, cj],  // Visualize inserting the start character at the end.
-                        minimumInsertionCounts[ri, cj - 1]); // Visualize inserting the end character at the start.
+                    _minimumInsertionCounts[ri, cj] = 1 + Math.Min(
+                        _minimumInsertionCounts[ri + 1, cj],  // Visualize inserting the start character at the end.
+                        _minimumInsertionCounts[ri, cj - 1]); // Visualize inserting the end character at the start.
                 }
             }
         }
 
         // Return the insertion count for the full string, which is in the top right corner of the table.
-        return minimumInsertionCounts[0, s.Length - 1];
+        return _minimumInsertionCounts[0, s.Length - 1];
     }
 }
 
