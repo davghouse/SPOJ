@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 // https://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
-// Does maximum sum subrange queries on an array (using a segment tree).
+// Does maximum sum subrange queries on an array.
 public sealed class GSS1
 {
     private readonly ArrayBasedSegmentTree _segmentTree;
