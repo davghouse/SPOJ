@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-// http://www.spoj.com/problems/PPATH/ #graph-theory #primes #sieve
+// https://www.spoj.com/problems/PPATH/ #graph-theory #primes #sieve
 // Finds the shortest path to travel between primes, along primes, in one-digit swaps.
 public static class PPATH
 {

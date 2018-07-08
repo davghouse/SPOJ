@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/FARIDA/ #dynamic-programming-1d
+// https://www.spoj.com/problems/FARIDA/ #dynamic-programming-1d
 // Takes the most coins from a series of monsters, where it's not possible to take from adjacent monsters.
 public static class FARIDA
 {

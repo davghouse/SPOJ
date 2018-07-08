@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema #research
+// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema #research
 // Determines if an attacker is offsides (using player positions only).
 public static class OFFSIDE
 {

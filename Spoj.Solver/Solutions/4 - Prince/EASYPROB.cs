@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/EASYPROB/ #binary #experiment #recursion
+// https://www.spoj.com/problems/EASYPROB/ #binary #experiment #recursion
 // Transforms a number into its base 2 representation in a weird recursive way.
 public static class EASYPROB
 {

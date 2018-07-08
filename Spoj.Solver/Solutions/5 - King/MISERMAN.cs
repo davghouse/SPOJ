@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/MISERMAN/ #dynamic-programming-2d #path-optimization #trap
+// https://www.spoj.com/problems/MISERMAN/ #dynamic-programming-2d #path-optimization #trap
 // Finds the cheapest way to take buses between two cities, with constrained movement.
 public static class MISERMAN
 {

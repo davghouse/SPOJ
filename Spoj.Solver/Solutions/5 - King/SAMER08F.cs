@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math
+// https://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math
 // Returns the number of squares in a grid of n x n squares, for 1 <= n <= 100.
 // See SAMER08F.cpp--this solution was submitted using C++ because C# was unavailable.
 public static class SAMER08F

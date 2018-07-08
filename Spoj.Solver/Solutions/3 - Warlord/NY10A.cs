@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/NY10A/ #buckets #sorting #strings
+// https://www.spoj.com/problems/NY10A/ #buckets #sorting #strings
 // Counts the 8 different length 3 H/T substrings in a string of coin flips.
 public static class NY10A
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// http://www.spoj.com/problems/ETF/ #formula #math #primes #research #sieve
+// https://www.spoj.com/problems/ETF/ #formula #math #primes #research #sieve
 // Calculates the value of the totient function (count of relative primes) for the given n, 1 <= n <= 10^6.
 public static class ETF
 {

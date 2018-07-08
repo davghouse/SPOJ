@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/ABSYS/ #ad-hoc #strings
+// https://www.spoj.com/problems/ABSYS/ #ad-hoc #strings
 // Takes an equation with an inkblot over one number, and removes the blot.
 public static class ABSYS
 {

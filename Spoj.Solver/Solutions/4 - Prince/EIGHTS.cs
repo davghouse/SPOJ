@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/EIGHTS/ #digits #math
+// https://www.spoj.com/problems/EIGHTS/ #digits #math
 // Finds the kth cube that ends in 888 (the first such cube is 192).
 public static class EIGHTS
 {

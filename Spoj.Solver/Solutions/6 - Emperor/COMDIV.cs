@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
+// https://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
 // Finds the number of common divisors shared by two numbers.
 // See COMDIV.cpp--this solution was submitted using C++ because C# I/O is too slow.
 public static class COMDIV

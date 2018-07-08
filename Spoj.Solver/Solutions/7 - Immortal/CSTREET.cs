@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// http://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #research
+// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #research
 // Finds the cheapest way to pave streets from any building to any building.
 public static class CSTREET
 {

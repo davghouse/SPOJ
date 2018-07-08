@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/STAMPS/ #extrema #sorting
+// https://www.spoj.com/problems/STAMPS/ #extrema #sorting
 // Figures out if Lucy can borrow enough stamps from a certain number of her friends.
 public static class STAMPS
 {

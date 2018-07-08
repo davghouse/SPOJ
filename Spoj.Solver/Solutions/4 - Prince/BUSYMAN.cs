@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/BUSYMAN/ #ad-hoc #greedy #sorting
+// https://www.spoj.com/problems/BUSYMAN/ #ad-hoc #greedy #sorting
 // Finds the maximum number of activities that can fit into a schedule.
 public static class BUSYMAN
 {

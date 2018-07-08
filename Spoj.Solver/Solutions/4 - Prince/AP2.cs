@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/AP2/ #experiment #math #sequence
+// https://www.spoj.com/problems/AP2/ #experiment #math #sequence
 // Given the third term, third-to-last term, and sum of an arithmetic progression, finds the whole series.
 public static class AP2
 {

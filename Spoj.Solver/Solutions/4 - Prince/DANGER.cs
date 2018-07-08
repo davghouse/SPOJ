@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/DANGER/ #experiment #formula #game #math
+// https://www.spoj.com/problems/DANGER/ #experiment #formula #game #math
 // Finds the last survivor for n people in a circle, where every second person dies.
 public static class DANGER
 {

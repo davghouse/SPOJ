@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/HUBULLU/ #game #proof #trap
+// https://www.spoj.com/problems/HUBULLU/ #game #proof #trap
 // Determines who wins in a game where a number and all its divisors are removed each turn.
 public static class HUBULLU
 {

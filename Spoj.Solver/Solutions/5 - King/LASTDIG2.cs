@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 
-// http://www.spoj.com/problems/LASTDIG2/ #digits #mod-math
+// https://www.spoj.com/problems/LASTDIG2/ #digits #mod-math
 // For big integer b and long e, compute b^e mod 10 (the last digit of b^e).
 public static class LASTDIG2
 {

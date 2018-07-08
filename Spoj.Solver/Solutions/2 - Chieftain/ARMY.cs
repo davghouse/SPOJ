@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/ARMY/ #ad-hoc
+// https://www.spoj.com/problems/ARMY/ #ad-hoc
 // Figures out if the army of Godzilla or the army of MechaGodzilla wins the war.
 public static class ARMY
 {

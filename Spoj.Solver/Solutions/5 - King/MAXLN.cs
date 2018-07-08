@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/MAXLN/ #math #proof
+// https://www.spoj.com/problems/MAXLN/ #math #proof
 // Finds the max value of a formula given in terms of the side lengths of an inscribed triangle.
 public static class MAXLN
 {

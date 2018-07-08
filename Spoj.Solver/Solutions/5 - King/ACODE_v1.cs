@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/ACODE/ #dynamic-programming #memoization #recursion
+// https://www.spoj.com/problems/ACODE/ #dynamic-programming #memoization #recursion
 // Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
 public static class ACODE
 {

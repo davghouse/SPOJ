@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/NGM/ #game
+// https://www.spoj.com/problems/NGM/ #game
 // For a game between two players where digits are subtracted from a number
 // in turn, finds who wins the game and what player one's first move should be if he can win.
 public static class NGM

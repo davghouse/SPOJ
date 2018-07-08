@@ -1,7 +1,7 @@
 SPOJ
 =================
 
-C# solutions to problems on SPOJ: http://www.spoj.com/users/davidgalehouse/.
+C# solutions to problems on SPOJ: https://www.spoj.com/users/davidgalehouse/.
 
 Initially I want to solve the first 200 most solved problems, as recommended by some guides on Quora.
 Then if I'm not there already I want to keep going until I'm past the tons of kids who spam the comment sections with "AC 1 go", "easy one :)", and "cakewalk".

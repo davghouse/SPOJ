@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/WILLITST/ #experiment #game #math
+// https://www.spoj.com/problems/WILLITST/ #experiment #game #math
 // Determines if the specified algorithm ever stops for a given input.
 public static class WILLITST
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/TEMPLATE2/ <tags>
+// https://www.spoj.com/problems/TEMPLATE2/ <tags>
 // <description>
 public static class TEMPLATE2
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/SILVER/ #ad-hoc #binary #combinatorics #proof
+// https://www.spoj.com/problems/SILVER/ #ad-hoc #binary #combinatorics #proof
 // Finds the way to pay someone a silver a day with the fewest cuts.
 public static class SILVER
 {

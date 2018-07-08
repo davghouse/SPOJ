@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #io
+// https://www.spoj.com/problems/DOTAA/ #ad-hoc #division #game #io
 // Figures out if the heroes can make it past the towers without anyone dying.
 public static class DOTAA
 {

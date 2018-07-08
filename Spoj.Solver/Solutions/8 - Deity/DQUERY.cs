@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// http://www.spoj.com/problems/DQUERY/ #bit #offline #research #sorting
+// https://www.spoj.com/problems/DQUERY/ #bit #offline #research #sorting
 // Finds the number of distinct elements in a subrange of an array.
 // See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
 // it's almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.

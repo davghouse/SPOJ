@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/GIRLSNBS/ #division #experiment
+// https://www.spoj.com/problems/GIRLSNBS/ #division #experiment
 // Minimizes the maximum consecutive genders for some girls and boys sitting in a row.
 public static class GIRLSNBS
 {

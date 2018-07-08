@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// http://www.spoj.com/problems/BUGLIFE/ #dfs #graph-theory
+// https://www.spoj.com/problems/BUGLIFE/ #dfs #graph-theory
 // Determines if a set of bugs can be divided into two non-interacting groups.
 public static class BUGLIFE
 {

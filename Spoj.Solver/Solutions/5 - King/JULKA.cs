@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/JULKA/ #big-numbers #math
+// https://www.spoj.com/problems/JULKA/ #big-numbers #math
 // Given the apples two girls have together and how many one has over the other,
 // returns how many apples each girl has individually.
 public static class JULKA

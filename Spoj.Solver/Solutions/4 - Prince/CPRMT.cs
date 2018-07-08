@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/CPRMT/ #ad-hoc #buckets #strings
+// https://www.spoj.com/problems/CPRMT/ #ad-hoc #buckets #strings
 // From two strings finds the longest string with some permutation being a subsequence of both.
 public static class CPRMT
 {

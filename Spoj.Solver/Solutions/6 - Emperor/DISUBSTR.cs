@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/DISUBSTR/ #sorting #strings #suffixes
+// https://www.spoj.com/problems/DISUBSTR/ #sorting #strings #suffixes
 // Counts the number of distinct substrings in a string.
 public static class DISUBSTR
 {

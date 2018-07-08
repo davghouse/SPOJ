@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-// http://www.spoj.com/problems/ABCDEF/ #ad-hoc #combinatorics #hash-table #math
+// https://www.spoj.com/problems/ABCDEF/ #ad-hoc #combinatorics #hash-table #math
 // Counts all sextuples satisfying the equation (a * b + c) / d - e = f.
 public static class ABCDEF
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/TDPRIMES/ #primes #sieve
+// https://www.spoj.com/problems/TDPRIMES/ #primes #sieve
 // Prints some of the primes up to 100 million.
 public static class TDPRIMES
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
+// https://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
 // Does element updates and maximum sum subrange queries on an array (using a segment tree).
 public sealed class GSS3
 {

@@ -1,6 +1,6 @@
 using System;
 
-// http://www.spoj.com/problems/ADDREV/ #ad-hoc #digits
+// https://www.spoj.com/problems/ADDREV/ #ad-hoc #digits
 // Returns the reversed sum of two reversed integers.
 public static class ADDREV
 {

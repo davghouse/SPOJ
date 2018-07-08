@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets #trap
+// https://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets #trap
 // Finds the contiguous subsequence starting from 1 that most closely adds to 100.
 public static class GLJIVE
 {

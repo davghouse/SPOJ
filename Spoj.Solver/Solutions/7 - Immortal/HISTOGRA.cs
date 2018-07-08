@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #stack #window
+// https://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #stack #window
 // Finds the largest rectangle (by area) in a histogram (rectangles w/ a common base).
 public static class HISTOGRA
 {

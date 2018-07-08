@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting
+// https://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting
 // Maximizes the sum while traversing a pair of intersecting, ordered sequences.
 public static class ANARC05B
 {

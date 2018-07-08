@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/DIEHARD/ #experiment #game #memoization
+// https://www.spoj.com/problems/DIEHARD/ #experiment #game #memoization
 // Finds how long we can survive while moving between fire, water, and air.
 public static class DIEHARD
 {

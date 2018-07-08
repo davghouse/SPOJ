@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/FENCE1/ #intuition #math
+// https://www.spoj.com/problems/FENCE1/ #intuition #math
 // Calculates how much area can be fenced in using a specified length of fence connected to a big wall.
 public static class FENCE1
 {

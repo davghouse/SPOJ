@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/ENIGMATH/ #gcd #math #research
+// https://www.spoj.com/problems/ENIGMATH/ #gcd #math #research
 // Solves Ax - By = 0 with x and y the smallest possible positive integers.
 public static class ENIGMATH
 {

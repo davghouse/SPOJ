@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-// http://www.spoj.com/problems/TOANDFRO/ #ad-hoc #strings
+// https://www.spoj.com/problems/TOANDFRO/ #ad-hoc #strings
 // Given an encoded message and the number of columns used to encode the message,
 // transform the message to the array used for the encoding, and then to the original (padded) message.
 public static class TOANDFRO

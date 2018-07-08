@@ -3,7 +3,7 @@
 
 using System;
 
-// http://www.spoj.com/problems/SUMITR/ #dynamic-programming-2d #golf #path-optimization
+// https://www.spoj.com/problems/SUMITR/ #dynamic-programming-2d #golf #path-optimization
 // Finds greatest path sum in a triangular grid, while minimizing bytes of code.
 // See SUMITR.cpp--this solution was submitted using C++ because I couldn't get C# under 256 bytes.
 public static class SUMITR

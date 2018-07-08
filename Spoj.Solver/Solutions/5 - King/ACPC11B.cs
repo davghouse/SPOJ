@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/ACPC11B/ #binary-search #merge #sorting
+// https://www.spoj.com/problems/ACPC11B/ #binary-search #merge #sorting
 // Finds the closest pair of altitudes, one from each of two mountains.
 public static class ACPC11B
 {

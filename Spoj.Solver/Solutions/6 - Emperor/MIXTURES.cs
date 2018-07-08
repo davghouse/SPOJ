@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/MIXTURES/ #dynamic-programming-2d #memoization #optimization
+// https://www.spoj.com/problems/MIXTURES/ #dynamic-programming-2d #memoization #optimization
 // Helps Harry mix potions in the way that produces the least amount of smoke.
 public static class MIXTURES
 {

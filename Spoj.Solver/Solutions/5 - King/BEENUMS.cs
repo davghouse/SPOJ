@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/BEENUMS/ #formula #math #proof
+// https://www.spoj.com/problems/BEENUMS/ #formula #math #proof
 // Determines if the given number is a beehive number.
 public static class BEENUMS
 {

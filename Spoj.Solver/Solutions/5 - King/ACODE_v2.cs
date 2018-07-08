@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/ACODE/ #dynamic-programming-1d
+// https://www.spoj.com/problems/ACODE/ #dynamic-programming-1d
 // Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
 public static class ACODE
 {

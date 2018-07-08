@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// http://www.spoj.com/problems/STPAR/ #ad-hoc #greedy #stack
+// https://www.spoj.com/problems/STPAR/ #ad-hoc #greedy #stack
 // Given the order of some love mobiles on an approach street, figures out if it's possible to
 // put them in their final parade order using a side street (as a stack).
 public static class STPAR

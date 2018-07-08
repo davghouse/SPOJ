@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/PARTY/ #dynamic-programming-2d #knapsack #optimization
+// https://www.spoj.com/problems/PARTY/ #dynamic-programming-2d #knapsack #optimization
 // Chooses parties to maximize fun for the given party budget (0/1 knapsack).
 public static class PARTY
 {

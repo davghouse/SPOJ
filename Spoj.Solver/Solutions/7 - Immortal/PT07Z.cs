@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/PT07Z/ #bfs #graph-theory #proof #tree
+// https://www.spoj.com/problems/PT07Z/ #bfs #graph-theory #proof #tree
 // Finds the longest path in a tree.
 public static class PT07Z
 {

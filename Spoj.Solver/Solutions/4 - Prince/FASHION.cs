@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting #trap
+// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting #trap
 // Given parallel arrays of hotness levels, calculate the sum of the values of the hotness bonds.
 public static class FASHION
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-// http://www.spoj.com/problems/HPYNOS/ #digits #simulation
+// https://www.spoj.com/problems/HPYNOS/ #digits #simulation
 // Determines if repeatedly adding the squared digits of a number eventually gets to 1.
 public static class HPYNOS
 {

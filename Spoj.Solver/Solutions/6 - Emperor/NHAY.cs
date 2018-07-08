@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/NHAY/ #research #strings
+// https://www.spoj.com/problems/NHAY/ #research #strings
 // Finds all occurrences of a given pattern in a string.
 public static class NHAY
 {

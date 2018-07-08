@@ -65,13 +65,13 @@ namespace Spoj.Solver.UnitTests.Solutions
             {
                 while ((linkAndTagsLine = solutionSource.ReadLine()) != null)
                 {
-                    if (linkAndTagsLine.Contains(@"http://www.spoj.com/problems/"))
+                    if (linkAndTagsLine.Contains(@"https://www.spoj.com/problems/"))
                         break;
                 }
             }
 
             Assert.IsNotNull(linkAndTagsLine);
-            Assert.IsTrue(linkAndTagsLine.StartsWith("// http:") || linkAndTagsLine.StartsWith("http:"));
+            Assert.IsTrue(linkAndTagsLine.StartsWith("// https:") || linkAndTagsLine.StartsWith("https:"));
 
             string[] tags = linkAndTagsLine
                 .Split()

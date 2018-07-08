@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/PALIN/ #ad-hoc #experiment #inspection
+// https://www.spoj.com/problems/PALIN/ #ad-hoc #experiment #inspection
 // Outputs the smallest palindrome larger than the given integer (as strings, since they can be very large).
 public static class PALIN
 {

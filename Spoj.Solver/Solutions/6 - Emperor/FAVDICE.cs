@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof #research
+// https://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof #research
 // Finds the expected number of rolls before rolling every side of an n-sided die.
 public static class FAVDICE
 {

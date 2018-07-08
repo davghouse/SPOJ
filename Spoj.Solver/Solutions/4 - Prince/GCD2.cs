@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-// http://www.spoj.com/problems/GCD2/ #gcd #math #research #trap
+// https://www.spoj.com/problems/GCD2/ #gcd #math #research #trap
 // Finds the GCD of two numbers, one of which can be really big.
 public static class GCD2
 {

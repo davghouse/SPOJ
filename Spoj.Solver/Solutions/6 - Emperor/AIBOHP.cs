@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
+// https://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
 // Finds the minimum number of character insertions needed to turn a string into a palindrome.
 public static class AIBOHP
 {

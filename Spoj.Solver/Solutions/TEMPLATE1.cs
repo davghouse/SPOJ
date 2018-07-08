@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/TEMPLATE1/ <tags>
+// https://www.spoj.com/problems/TEMPLATE1/ <tags>
 // <description>
 public static class TEMPLATE1
 {

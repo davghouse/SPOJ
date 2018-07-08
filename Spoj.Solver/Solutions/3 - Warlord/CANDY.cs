@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-// http://www.spoj.com/problems/CANDY/ #ad-hoc #division
+// https://www.spoj.com/problems/CANDY/ #ad-hoc #division
 // Given packets containing different numbers of candies, count the fewest moves needed to split them up fairly, if possible.
 public static class CANDY
 {

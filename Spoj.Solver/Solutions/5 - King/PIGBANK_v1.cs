@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
+// https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
 // Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
 public static class PIGBANK // v1, 1D as an unbounded knapsack problem.
 {

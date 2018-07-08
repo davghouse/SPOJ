@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #research #strings
+// https://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #research #strings
 // Finds the minimum number of edits (inserts, deletes, replacements) to make two strings equal.
 public static class EDIST
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/HOTELS/ #greedy #optimization #subarray #window
+// https://www.spoj.com/problems/HOTELS/ #greedy #optimization #subarray #window
 // Finds the consecutive hotels that maximize the money spent (without going over).
 public static class HOTELS
 {

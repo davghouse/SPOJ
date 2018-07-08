@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/OLOLO/ #binary #io #trap
+// https://www.spoj.com/problems/OLOLO/ #binary #io #trap
 // Identifies the sole integer that occurs in the input once rather than twice.
 // See OLOLO.cpp--this solution was submitted using C++ because C# I/O is too slow.
 public static class OLOLO

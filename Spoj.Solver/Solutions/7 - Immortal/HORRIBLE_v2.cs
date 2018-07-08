@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// http://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer #research
+// https://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer #research
 // Answers range sum queries and performs range additions.
 public sealed class HORRIBLE // v2, using a RURQ BIT
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/CANTON/ #ad-hoc #math #sequence
+// https://www.spoj.com/problems/CANTON/ #ad-hoc #math #sequence
 // Finds the nth term in Cantor's enumeration of the rational numbers.
 public static class CANTON
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// http://www.spoj.com/problems/CANDY3/ #division #mod-math #trap
+// https://www.spoj.com/problems/CANDY3/ #division #mod-math #trap
 // Determines if N bags full of candies can have their contents redistributed equally amongst N children.
 public static class CANDY3
 {

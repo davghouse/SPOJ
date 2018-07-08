@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// http://www.spoj.com/problems/ARITH2/ #ad-hoc #parsing #strings
+// https://www.spoj.com/problems/ARITH2/ #ad-hoc #parsing #strings
 // Parses a math expression and computes the result as if it were streamed in, ignoring precedence.
 public static class ARITH2
 {
