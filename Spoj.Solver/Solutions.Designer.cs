@@ -74,11 +74,30 @@ namespace Spoj.Solver {
         ///    // is simple because repetitions are allowed (and nums are already distinct).
         ///    public static long SolveSlowly(int[] nums)
         ///    {
-        ///        lo [rest of string was truncated]&quot;;.
+        ///        l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABCDEF {
             get {
                 return ResourceManager.GetString("ABCDEF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/ABCPATH/ #dag #dfs #greedy #memoization
+        ///// Finds the longest sequential path in a grid of letters (starting at A).
+        ///public static class ABCPATH
+        ///{
+        ///    // Unlike an arbitrary DAG, no matter how we get to a letter the path length to it is the
+        ///    // same. So once we get to a letter we can throw it out, only exploring to/from it once.
+        ///    public static int Solve(int height, int width, char[,] letterGrid [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ABCPATH {
+            get {
+                return ResourceManager.GetString("ABCPATH", resourceCulture);
             }
         }
         
@@ -95,7 +114,7 @@ namespace Spoj.Solver {
         ///    // For an equation of the form &apos;number + number = number&apos;, just identify
         ///    // over what number the blot exists and solve for it using algebra.
         ///    public static string Solve(string line)
-        ///    { [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABSYS {
             get {
@@ -114,7 +133,7 @@ namespace Spoj.Solver {
         ///    // For example, 1 decodes into A, 10 decodes into J, and 15 decodes into AE and O.
         ///    private static readonly IReadOnlyDictionary&lt;string, long&gt; _codedLetterDecodeCounts = new Dictionary&lt;string, long&gt;
         ///    {
-        ///        { &quot;1 [rest of string was truncated]&quot;;.
+        ///        { &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACODE_v1 {
             get {
@@ -133,7 +152,7 @@ namespace Spoj.Solver {
         ///    // of the given number. The number is guaranteed to have no more than 5000 digits.
         ///    private static long[] _decodeCounts = new long[5001];
         ///
-        ///    public static long Solve(st [rest of string was truncated]&quot;;.
+        ///    public static long Solve(s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACODE_v2 {
             get {
@@ -157,7 +176,7 @@ namespace Spoj.Solver {
         ///        return $&quot;GP {third * (third / second)}&quot;;
         ///    }
         ///
-        ///    public static bool IsArithmeticSequence(pa [rest of string was truncated]&quot;;.
+        ///    public static bool IsArithmeticSequence(p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACPC10A {
             get {
@@ -176,7 +195,7 @@ namespace Spoj.Solver {
         ///    // Really similar to BYTESM2. Need to be a little careful to consider all moves,
         ///    // not just downward and diagonal, since vertices can have negative values. And we start
         ///    // at the top middle, so can&apos;t let impossible moves from the top left impact results.
-        ///   [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACPC10D {
             get {
@@ -195,7 +214,7 @@ namespace Spoj.Solver {
         ///    // Knowing where an altitude on one mountain goes relative to the sort of the other mountain&apos;s
         ///    // altitudes effectively tells us the closest altitudes (the ones to its left and right).
         ///    // One option is to sort both and then perform a merge basically, but it&apos;s only necessary
-        ///    //  [rest of string was truncated]&quot;;.
+        ///    // [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACPC11B {
             get {
@@ -219,7 +238,7 @@ namespace Spoj.Solver {
         ///        while (a != 0)
         ///        {
         ///            reverse = reverse * 10 + a % 10; // Make room for the next digit, and then add it.
-        ///            a = a / 10; // Remove the digit just [rest of string was truncated]&quot;;.
+        ///            a = a / 10; // Remove the digit jus [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ADDREV {
             get {
@@ -237,7 +256,7 @@ namespace Spoj.Solver {
         ///{
         ///    public static int Solve(int n)
         ///    {
-        ///        // Rectangles from n squares can use any number of squares, that is, n squares can make [rest of string was truncated]&quot;;.
+        ///        // Rectangles from n squares can use any number of squares, that is, n squares can mak [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AE00 {
             get {
@@ -255,7 +274,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Given a potential shortest distance between stalls, it&apos;s easy to verify if the cows can be placed
         ///    // with at least that much distance between any two of them. To do this:
-        ///    // Put a cow in the first stall, put the next cow i [rest of string was truncated]&quot;;.
+        ///    // Put a cow in the first stall, put the next cow  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AGGRCOW {
             get {
@@ -274,7 +293,7 @@ namespace Spoj.Solver {
         ///
         ///    // If the string starts and ends in the same characters, the insertion count is whatever
         ///    // the count is for the substring excluding those two characters. It wouldn&apos;t make sense
-        ///    // to add characters  [rest of string was truncated]&quot;;.
+        ///    // to add characters [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AIBOHP {
             get {
@@ -299,7 +318,7 @@ namespace Spoj.Solver {
         ///    //       X
         ///    // 3 2
         ///    //
-        ///    // The numbers that get crossed out are those th [rest of string was truncated]&quot;;.
+        ///    // The numbers that get crossed out are those t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ALICESIE {
             get {
@@ -317,7 +336,7 @@ namespace Spoj.Solver {
         ///    // There are potentially many subsets of size costumeCount, but it doesn&apos;t make sense
         ///    // to consider all of them. Ignoring non-distinct heights (because it won&apos;t matter), every
         ///    // set of size costumeCount has a tallest student. There must be at least costumeCount - 1
-        ///    // stude [rest of string was truncated]&quot;;.
+        ///    // stud [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR10G {
             get {
@@ -335,7 +354,7 @@ namespace Spoj.Solver {
         ///    // One substring is the entire string. For the reverse of the entire string
         ///    // to be in the string, the reverse would need to be the same as the string,
         ///    // since the string is the only substring long enough to match the reversed string.
-        ///    // But given it&apos;s a palindrome, the reverse of all other sub [rest of string was truncated]&quot;;.
+        ///    // But given it&apos;s a palindrome, the reverse of all other su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR12D {
             get {
@@ -353,7 +372,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Sequences are effectively one-indexed as the first element is the sequence size.
         ///    // And they&apos;re strictly increasing. And there&apos;s no cost for jumping between sequences,
-        ///    // so we can just do this greedily. The sequence to use from each intersection point [rest of string was truncated]&quot;;.
+        ///    // so we can just do this greedily. The sequence to use from each intersection poin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC05B {
             get {
@@ -373,7 +392,7 @@ namespace Spoj.Solver {
         ///        =&gt; SolveUsingAStack(s);
         ///
         ///    // This relies on a greedy strategy (I gave up and read the comments). Immediately when a } is found,
-        ///    // pair it off with a { if one exists (by removing that { from th [rest of string was truncated]&quot;;.
+        ///    // pair it off with a { if one exists (by removing that { from t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC09A {
             get {
@@ -392,7 +411,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // In an AP, note that pairs like (a_1, a_n), (a_2, a_n-1) always add up to the same thing.
         ///        // A little more work shows (a_b + a_n-b) * (n/2) = sum, so n = 2 * sum / (a_b + a_n-b).
-        ///        [rest of string was truncated]&quot;;.
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AP2 {
             get {
@@ -413,7 +432,7 @@ namespace Spoj.Solver {
         ///    {
         ///        string[] spacelessSubexpressions = expression.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
         ///        string[] tokens = spacelessSubexpressions
-        ///            .Sel [rest of string was truncated]&quot;;.
+        ///            .Se [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARITH2 {
             get {
@@ -432,7 +451,7 @@ namespace Spoj.Solver {
         ///    // Each battle a random weakest unit dies, cross-army ties lost by MechaGodzilla&apos;s army.
         ///    // The battles continue until one army is depleted. In effect, the victor is determined
         ///    // by the strongest unit in each army, a tie going Godzilla&apos;s way.
-        ///    public static string Solve(int[] strengthsOfGodzillas [rest of string was truncated]&quot;;.
+        ///    public static string Solve(int[] strengthsOfGodzilla [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARMY {
             get {
@@ -451,7 +470,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Looks like I ended up with the typical sliding-window deque solution. Here&apos;s an example for k = 3:
         ///    // 1 3 2 8 4 7 2, initialize left looking dominators like {3, 2}. These dominate everything to their
-        ///    // left until a bigger dominator. Leftmost  [rest of string was truncated]&quot;;.
+        ///    // left until a bigger dominator. Leftmost [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARRAYSUB {
             get {
@@ -469,7 +488,7 @@ namespace Spoj.Solver {
         ///    // See image for details: http://i.imgur.com/ELtDEAU.jpg.
         ///    // That shows that for &quot;number&quot; to be a beehive number, it must equal 3(n - 1)n + 1 for some integer n,
         ///    // called the index. The quadratic equation lets us solve for the positive n index given &quot;number&quot;, and then
-        ///    // we just need to verify it&apos;s actually an integer. Th [rest of string was truncated]&quot;;.
+        ///    // we just need to verify it&apos;s actually an integer. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BEENUMS {
             get {
@@ -488,7 +507,7 @@ namespace Spoj.Solver {
         ///    // I didn&apos;t prove optimality but it&apos;s easy to show at least 2n - 2 bishops is always
         ///    // possible by placing n along the top and n - 2 along the base (none in the corners).
         ///    // Might be easy to show 2n isn&apos;t possible.
-        ///    public static BigInteger Solve(BigIntege [rest of string was truncated]&quot;;.
+        ///    public static BigInteger Solve(BigInteg [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BISHOPS {
             get {
@@ -507,7 +526,7 @@ namespace Spoj.Solver {
         ///{
         ///    // White pixels are within zero of a white pixel. All black pixels adjacent to a white pixel
         ///    // are within 1. All black pixels adjacent to those black pixels are within 2 (unless we already
-        ///    // know they&apos;re within 1). Easy to visual [rest of string was truncated]&quot;;.
+        ///    // know they&apos;re within 1). Easy to visua [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BITMAP {
             get {
@@ -528,7 +547,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Best we can do is see if the ants can be divided into two groups, where members
         ///    // of one group only interact with members of the other group. Same as checking bipartiteness.
-        ///    // Not the actual code submi [rest of string was truncated]&quot;;.
+        ///    // Not the actual code subm [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUGLIFE {
             get {
@@ -547,7 +566,7 @@ namespace Spoj.Solver {
         ///    // to t=activity&apos;s end time. Best to greedily choose the activity ending the
         ///    // soonest. That activity is at least as good as any other since it keeps
         ///    // as much of the remaining schedule open as possible. Whatever a different
-        ///   [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUSYMAN {
             get {
@@ -565,7 +584,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Find the greatest number of cakes needed to deplete any one of the starting ingredients.
         ///    // This is the total number of cakes to bake, buying (across each ingredient) any missing
-        ///    // ingredients necessary to support that number of cakes. Pretty clear  [rest of string was truncated]&quot;;.
+        ///    // ingredients necessary to support that number of cakes. Pretty clear [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BYECAKES {
             get {
@@ -585,7 +604,7 @@ namespace Spoj.Solver {
         ///    // of the values of the best paths of the squares in the previous row it&apos;s reachable from.
         ///    public static int Solve(int height, int width, int[,] stones)
         ///    {
-        ///        // We could use t [rest of string was truncated]&quot;;.
+        ///        // We could use  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BYTESM2 {
             get {
@@ -607,7 +626,7 @@ namespace Spoj.Solver {
         ///        int totalCandies = packetCandyCounts.Sum();
         ///
         ///        if (totalCandies % packetCount != 0)
-        ///            return -1; // Splitting the candi [rest of string was truncated]&quot;;.
+        ///            return -1; // Splitting the cand [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANDY {
             get {
@@ -627,7 +646,7 @@ namespace Spoj.Solver {
         ///    public static bool Solve(ulong[] backpackCandyCounts)
         ///    {
         ///        uint N = (uint)backpackCandyCounts.Length;
-        ///        ul [rest of string was truncated]&quot;;.
+        ///        u [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANDY3 {
             get {
@@ -646,7 +665,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // The enumeration progresses along diagonals of the rectangle. The first diagonal has
         ///        // one term, the second two, the third three, and so on. Hence, the total number of terms
-        ///        // in the first d diagonals is 1 + 2 + ... + d = (d + 1)d/2. The nth  [rest of string was truncated]&quot;;.
+        ///        // in the first d diagonals is 1 + 2 + ... + d = (d + 1)d/2. The nth [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANTON {
             get {
@@ -665,7 +684,7 @@ namespace Spoj.Solver {
         ///{
         ///    private const int _cachedLimit = 15258; // 1 billion / 2^16
         ///
-        ///    // Cache some of the first 500 million values necessary to do this without recursive  [rest of string was truncated]&quot;;.
+        ///    // Cache some of the first 500 million values necessary to do this without recursive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COINS {
             get {
@@ -688,7 +707,7 @@ namespace Spoj.Solver {
         ///
         ///    static COMDIV()
         ///    {
-        ///        _factorizer = new TrialDivisio [rest of string was truncated]&quot;;.
+        ///        _factorizer = new TrialDivisi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COMDIV {
             get {
@@ -707,7 +726,7 @@ namespace Spoj.Solver {
         ///    // Note the subsequence doesn&apos;t have to be contiguous. Since we can take any permutation of
         ///    // the string, the string from all common characters between the two strings is the
         ///    // best possible. Each string has all the characters, so in whatever order they appear
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CPRMT {
             get {
@@ -732,7 +751,7 @@ namespace Spoj.Solver {
         ///        // There are m levels with card counts of 2, 4, ..., 2m, for (cancelling the 2s):
         ///        long cardsFromWalls = (m + 1) * m;
         ///
-        ///        return (i [rest of string was truncated]&quot;;.
+        ///        return ( [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CRDS {
             get {
@@ -752,7 +771,7 @@ namespace Spoj.Solver {
         ///{
         ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
         ///    // to build the MST, just get the total cost of the streets that compose it. The heap itself can be
-        ///    // used  [rest of string was truncated]&quot;;.
+        ///    // used [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CSTREET {
             get {
@@ -782,7 +801,7 @@ namespace Spoj.Solver {
         ///    // And so on, like:
         ///    // n: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17...
         ///    // s: 1 1 3 1 3 5 7 1 3 5  7  9  11 13 15 1  3...
-        ///    // For a proof that thi [rest of string was truncated]&quot;;.
+        ///    // For a proof that th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DANGER {
             get {
@@ -805,7 +824,7 @@ namespace Spoj.Solver {
         ///    private const int _fireHealthDelta = -20;
         ///    private const int _fireArmorDelta = 5;
         ///
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DIEHARD {
             get {
@@ -823,7 +842,7 @@ namespace Spoj.Solver {
         ///{
         ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
         ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(nWlogn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the sa [rest of string was truncated]&quot;;.
+        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DISUBSTR {
             get {
@@ -842,7 +861,7 @@ namespace Spoj.Solver {
         ///    // tower hits before dying. We can calculate how many survivable hits for
         ///    // each individual hero as they are read, then compare that total to the tower
         ///    // count to see if it&apos;s possible for all heroes to survive.
-        ///    public  [rest of string was truncated]&quot;;.
+        ///    public [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DOTAA {
             get {
@@ -862,7 +881,7 @@ namespace Spoj.Solver {
         ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
         ///public static class DQUERY
         ///{
-        ///    // Ne [rest of string was truncated]&quot;;.
+        ///    // N [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
@@ -882,7 +901,7 @@ namespace Spoj.Solver {
         ///
         ///    // Say n = 137. The binary representation of n is 10001001, or in other words:
         ///    // 2^7 + 2^3 + 2^0, but those exponents get defined recursively using the same procedure:
-        ///    // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0, [rest of string was truncated]&quot;;.
+        ///    // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EASYPROB {
             get {
@@ -900,7 +919,7 @@ namespace Spoj.Solver {
         ///    // This is just solved in the standard way using the Wagner-Fischer algorithm.
         ///    // Note that proceeds from the perspective of transforming a into b rather than
         ///    // transforming a and b into a common third string c as this problem permits.
-        ///    // Sufficient though, as ass [rest of string was truncated]&quot;;.
+        ///    // Sufficient though, as as [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDIST {
             get {
@@ -921,7 +940,7 @@ namespace Spoj.Solver {
         ///        int pizzaCount = 1;
         ///
         ///        // Every 3/4 slice demands a whole pizza, but can be paired off with a 1/4 slice.
-        ///        pizzaCount += th [rest of string was truncated]&quot;;.
+        ///        pizzaCount += t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EGYPIZZA {
             get {
@@ -940,7 +959,7 @@ namespace Spoj.Solver {
         ///    // Only part that affects the last three digits of a multiplied number are the last three
         ///    // digits of the numbers being multipled. These are all the three digit numbers whose
         ///    // cubes end in 888. Any other, higher numbers whose cubes end in 888 must themselves
-        ///    // end in one of these  [rest of string was truncated]&quot;;.
+        ///    // end in one of these [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EIGHTS {
             get {
@@ -959,7 +978,7 @@ namespace Spoj.Solver {
         ///    // Ax = By =&gt; y = (A/B)x. A and B might not be in lowest terms, but we can divide each by
         ///    // their GCD so that they are. So assume they are in lowest terms, A&apos;, B&apos;. y must be an
         ///    // integer, so x has to be a multiple of B&apos; to make (A&apos;/B&apos;)x an integer (since B&apos; has
-        ///    // no factors in c [rest of string was truncated]&quot;;.
+        ///    // no factors in  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ENIGMATH {
             get {
@@ -982,8 +1001,7 @@ namespace Spoj.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
-        /// [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit); [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -1006,7 +1024,7 @@ namespace Spoj.Solver {
         ///        for (int f = 0; f &lt; friendCount; ++f)
         ///        {
         ///            friends.Add(friendDefinitions[f][0]);
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FACEFRND {
             get {
@@ -1025,7 +1043,7 @@ namespace Spoj.Solver {
         ///
         ///    // The max coins collected through the first k monsters is max of: the coin count for the kth monster
         ///    // plus the solution through k - 2 monsters (so the (k - 1)th monster definitely isn&apos;t chosen),
-        ///    // and the [rest of string was truncated]&quot;;.
+        ///    // and th [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FARIDA {
             get {
@@ -1043,7 +1061,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Problem statement leads one to believe these arrays are already in parallel;
         ///    // each pair already chosen. That&apos;s not the case, so it&apos;s necessary to figure out the
-        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the hig [rest of string was truncated]&quot;;.
+        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the hi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FASHION {
             get {
@@ -1067,7 +1085,7 @@ namespace Spoj.Solver {
         ///            expectedRolls += n / (double)(n - i);
         ///        }
         ///
-        ///        return expectedRolls [rest of string was truncated]&quot;;.
+        ///        return expectedRoll [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FAVDICE {
             get {
@@ -1086,7 +1104,7 @@ namespace Spoj.Solver {
         ///    // n! has as many zeros as it has factors of 10. n! has as many factors of 10 as it has
         ///    // min(factors of 2, factors of 5). Looking at some numbers, it&apos;s clear n! is picking up
         ///    // factors of 2 a lot faster than factors of 5. So we need to find the number of factors
-        ///   [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FCTRL {
             get {
@@ -1111,7 +1129,7 @@ namespace Spoj.Solver {
         ///        var factorials = new BigInteger[_limit + 1];
         ///        factorials[0] = BigInteger.One;
         ///
-        ///        for (int i [rest of string was truncated]&quot;;.
+        ///        for (int  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FCTRL2 {
             get {
@@ -1128,7 +1146,7 @@ namespace Spoj.Solver {
         ///{
         ///    // So the answer here is to make a half circle with the fence, the wall forming the straight side.
         ///    // Not sure how to prove it but it makes sense intuitively; convex, uses a lot of the free wall.
-        ///    // For the whole circle, C/2 = pi*r = length =&gt; r = length/pi, =&gt; A/2 = pi * r^2 / 2 = leng [rest of string was truncated]&quot;;.
+        ///    // For the whole circle, C/2 = pi*r = length =&gt; r = length/pi, =&gt; A/2 = pi * r^2 / 2 = len [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FENCE1 {
             get {
@@ -1148,7 +1166,7 @@ namespace Spoj.Solver {
         ///    private const int _mod = 1000000007;
         ///    private const int _precomputedLimit = 1000;
         ///    private static readonly IReadOnlyList&lt;int&gt; _precomputedFibNums;
-        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;() [rest of string was truncated]&quot;;.
+        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;( [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FIBOSUM {
             get {
@@ -1169,7 +1187,7 @@ namespace Spoj.Solver {
         ///
         ///    // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
         ///    // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
-        ///    // And it divides b, so it divides b [rest of string was truncated]&quot;;.
+        ///    // And it divides b, so it divides  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GCD2 {
             get {
@@ -1190,7 +1208,7 @@ namespace Spoj.Solver {
         ///        int minCount = Math.Min(girlCount, boyCount);
         ///
         ///        // This happens to work for the case where both are equal (including both zero).
-        ///        // For normal cases where maxCount [rest of string was truncated]&quot;;.
+        ///        // For normal cases where maxCoun [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GIRLSNBS {
             get {
@@ -1213,7 +1231,7 @@ namespace Spoj.Solver {
         ///
         ///        for (int i = 0; i &lt; 10; ++i)
         ///        {
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GLJIVE {
             get {
@@ -1227,7 +1245,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
-        ///// Does maximum sum subrange queries on an array (using a segment tree).
+        ///// Does maximum sum subrange queries on an array.
         ///public sealed class GSS1
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
@@ -1238,7 +1256,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///    [rest of string was truncated]&quot;;.
+        ///        =&gt; _segmentTree.Q [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS1 {
             get {
@@ -1252,7 +1270,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
-        ///// Does element updates and maximum sum subrange queries on an array (using a segment tree).
+        ///// Does element updates and maximum sum subrange queries on an array.
         ///public sealed class GSS3
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
@@ -1262,7 +1280,8 @@ namespace Spoj.Solver {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
-        ///    public int Query(int queryStartIndex, int [rest of string was truncated]&quot;;.
+        ///    public int Query(int queryStartIndex, int queryEndIndex)
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS3 {
             get {
@@ -1295,8 +1314,7 @@ namespace Spoj.Solver {
         ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t be a problem here (at least for the first 277 terms).
         ///    private static readonly List&lt;float&gt; _runningOverhangTotals;
         ///
-        ///    static HANGOVER()
-        /// [rest of string was truncated]&quot;;.
+        ///    static HANGOVER()        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HANGOVER {
             get {
@@ -1315,7 +1333,7 @@ namespace Spoj.Solver {
         ///{
         ///    // I looked at times after debating (but not implementing) divide and conquer and O(n^2) approaches, and
         ///    // figured there must be an O(n) solution. Not sure if I got lucky thinking of a solution, I could imagine
-        ///    / [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HISTOGRA {
             get {
@@ -1339,7 +1357,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int rangeAddition)
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v1 {
             get {
@@ -1363,7 +1381,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int delta)
-        ///        =&gt; _b [rest of string was truncated]&quot;;.
+        ///        =&gt; _ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v2 {
             get {
@@ -1381,7 +1399,7 @@ namespace Spoj.Solver {
         ///    // Gonna have a start hotel and an end hotel. The end hotel for a given start
         ///    // hotel is the one immediately before the hotel that would put us over the spend limit.
         ///    // Once we find that, we move the start hotel to the next hotel, and try pushing the
-        ///    // end hotel again. Wheneve [rest of string was truncated]&quot;;.
+        ///    // end hotel again. Whenev [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HOTELS {
             get {
@@ -1400,7 +1418,7 @@ namespace Spoj.Solver {
         ///    // n is limited to 2,147,483,647, so by inspection 1,999,999,999 will give us the
         ///    // limit of the numbers we can get after at least one breaking. That is:
         ///    // 1^2 + 9 * 9^2 = 730. So we&apos;ll have a size 731 bool array to keep track of what&apos;s already seen.
-        ///    public static i [rest of string was truncated]&quot;;.
+        ///    public static  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HPYNOS {
             get {
@@ -1418,7 +1436,7 @@ namespace Spoj.Solver {
         ///    // Assume by contradication player two can win. Blah blah the players are playing
         ///    // optimally and the problem guarantees determining a winner is possible, or whatever,
         ///    // I don&apos;t know anything about game theory which is what made this problem tricky
-        ///    // (spent a couple hours before coming  [rest of string was truncated]&quot;;.
+        ///    // (spent a couple hours before coming [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HUBULLU {
             get {
@@ -1440,7 +1458,7 @@ namespace Spoj.Solver {
         ///        var inversionBST = new InversionBST(array[0]);
         ///
         ///        long inversionCount = 0;
-        ///        for (int i =  [rest of string was truncated]&quot;;.
+        ///        for (int i = [rest of string was truncated]&quot;;.
         /// </summary>
         public static string INVCNT {
             get {
@@ -1463,7 +1481,7 @@ namespace Spoj.Solver {
         ///            &amp;&amp; identifier.All(c =&gt; char.IsLetter(c));
         ///
         ///        // Just doing !isJavaIdentifier to save work here; technically the identifier could be both.
-        ///        bool is [rest of string was truncated]&quot;;.
+        ///        bool i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string JAVAC {
             get {
@@ -1485,7 +1503,7 @@ namespace Spoj.Solver {
         ///        BigInteger totalApples, BigInteger extraKlaudiaApples)
         ///    {
         ///        // totalApples = nataliaApples + klaudiaApples
-        ///        // klaudiaApples = nat [rest of string was truncated]&quot;;.
+        ///        // klaudiaApples = na [rest of string was truncated]&quot;;.
         /// </summary>
         public static string JULKA {
             get {
@@ -1499,7 +1517,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/KGSS/ #divide-and-conquer #research #segment-tree
-        ///// Does element updates and 2-maximum subrange queries on an array (using a segment tree).
+        ///// Does element updates and second maximum (sum) subrange queries on an array.
         ///public sealed class KGSS
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
@@ -1509,7 +1527,7 @@ namespace Spoj.Solver {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
-        ///    public int Query(int queryStartIndex, int q [rest of string was truncated]&quot;;.
+        ///    public int Query(int queryStartIndex, int queryEndInde [rest of string was truncated]&quot;;.
         /// </summary>
         public static string KGSS {
             get {
@@ -1532,7 +1550,7 @@ namespace Spoj.Solver {
         ///public static class Mod10Exponentiator
         ///{
         ///    // Last digit patterns for repeated exponentiations of bases 0 through 9.
-        ///    // A repeating last digit establishes the pattern, [rest of string was truncated]&quot;;.
+        ///    // A repeating last digit establishes the pattern [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LASTDIG {
             get {
@@ -1556,7 +1574,7 @@ namespace Spoj.Solver {
         ///public static class Mod10Exponentiator
         ///{
         ///    // Last digit patterns for repeated exponentiations of bases 0 through 9.
-        ///    // A repeating last digit establishe [rest of string was truncated]&quot;;.
+        ///    // A repeating last digit establish [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LASTDIG2 {
             get {
@@ -1575,7 +1593,7 @@ namespace Spoj.Solver {
         ///{
         ///    // TLE is strict here, don&apos;t even have time to parse the transmissions into ints.
         ///    // Don&apos;t have time to sort and traverse the array either, but dictionary of counts
-        ///    // might work. And we can optimize that  [rest of string was truncated]&quot;;.
+        ///    // might work. And we can optimize that [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAJOR_v1 {
             get {
@@ -1596,7 +1614,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // Attempt to get the majority transmission.
         ///        string winningTransmission = null;
-        ///        for (i [rest of string was truncated]&quot;;.
+        ///        for ( [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAJOR_v2 {
             get {
@@ -1614,7 +1632,7 @@ namespace Spoj.Solver {
         ///public static class MARBLES
         ///{
         ///    // Knowing how to solve the problem without the requirement of a marble for each color is useful
-        ///    // (and it&apos;s a common problem). Effectively we need to distribute the marbles [rest of string was truncated]&quot;;.
+        ///    // (and it&apos;s a common problem). Effectively we need to distribute the marble [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MARBLES {
             get {
@@ -1631,7 +1649,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Note by drawing a line from the center to the off-diameter corner we can create two isoceles
         ///    // triangles, one with angle x and one with angle y. Then x + (x + y) + y = 180 =&gt; x + y = 90 (angle A)
-        ///    // =&gt; the inscribed triangle is always a right triangle. Then AB^2 + AC^2 = (2r)^2 =&gt; AB^2 = 4r^2 -  [rest of string was truncated]&quot;;.
+        ///    // =&gt; the inscribed triangle is always a right triangle. Then AB^2 + AC^2 = (2r)^2 =&gt; AB^2 = 4r^2 - [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAXLN {
             get {
@@ -1651,7 +1669,7 @@ namespace Spoj.Solver {
         ///    // This ties back to HUBULLU and NGM and the idea of a determinate game, for background see:
         ///    // https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)
         ///    // http://www.math.harvard.edu/~elkies/FS23j.03/zermelo.pdf
-        ///    // I think about it like, if the fir [rest of string was truncated]&quot;;.
+        ///    // I think about it like, if the fi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MCOINS {
             get {
@@ -1668,7 +1686,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of final bus we use
         ///    // to get there, plus cheapest way to get to that final bus, knowing we can arrive at it by taking
-        ///    // any one of the adjacent buses in the previous city (so recursively [rest of string was truncated]&quot;;.
+        ///    // any one of the adjacent buses in the previous city (so recursivel [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MISERMAN {
             get {
@@ -1685,7 +1703,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Observation: the order the mixtures are mixed won&apos;t matter in the end. Adding up a bunch of numbers
         ///    // mod 100 doesn&apos;t depend on the order it&apos;s done (associativity), so the color of the final mixture will be
-        ///    // the same regardless (which makes sense, the colors are addin [rest of string was truncated]&quot;;.
+        ///    // the same regardless (which makes sense, the colors are addi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MIXTURES {
             get {
@@ -1704,7 +1722,7 @@ namespace Spoj.Solver {
         ///    // If the number doesn&apos;t end in zero then the first player guarantees
         ///    // victory by subtracting the final digit to make a number that does end in zero.
         ///    // Then the second player has to subtract less than 10 from that number, so the
-        ///     [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NGM {
             get {
@@ -1726,7 +1744,7 @@ namespace Spoj.Solver {
         ///}
         ///
         ///// This is taken from CLRS. It maintains the one-based indexing used in it (since it&apos;s most natural), but gets a
-        ///// little ugly as the strings have to be zer [rest of string was truncated]&quot;;.
+        ///// little ugly as the strings have to be ze [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NHAY {
             get {
@@ -1757,7 +1775,7 @@ namespace Spoj.Solver {
         ///
         ///public static class Program
         ///{
-        ///    private  [rest of string was truncated]&quot;;.
+        ///    private [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NSTEPS {
             get {
@@ -1778,7 +1796,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // The sequence counts happen to be wanted in reverse alphabetical order,
         ///        // so it&apos;s useful to have a sorted dictionary here, but we won&apos;t bother with a comparer.
-        ///        var threeFlip [rest of string was truncated]&quot;;.
+        ///        var threeFli [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NY10A {
             get {
@@ -1798,7 +1816,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // There may be attackers further than the closest attacker who are also offsides,
         ///        // but that doesn&apos;t matter here. If anyone&apos;s offsides, the closest attacker is too.
-        ///        int closestAttacker = attackers.Min() [rest of string was truncated]&quot;;.
+        ///        int closestAttacker = attackers.Min( [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OFFSIDE {
             get {
@@ -1821,7 +1839,7 @@ namespace Spoj.Solver {
         ///
         ///        while (remainingPyanis-- &gt; 0)
         ///        {
-        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pair [rest of string was truncated]&quot;;.
+        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pai [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OLOLO {
             get {
@@ -1843,7 +1861,7 @@ namespace Spoj.Solver {
         ///            return expression;
         ///
         ///        // expression is of the form (firstSubexpression@secondSubexpression), where @ represents an arbitrary operator.
-        ///        // Now RPN( [rest of string was truncated]&quot;;.
+        ///        // Now RPN [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ONP {
             get {
@@ -1863,7 +1881,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // Need to handle even-length and odd-length arrays a bit differently, since odds have a middle index.
         ///        int? middleIndex = k.Length % 2 == 0 ? (int?)null : k.Length / 2;
-        ///        int leftHalfStartIn [rest of string was truncated]&quot;;.
+        ///        int leftHalfStartI [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PALIN {
             get {
@@ -1881,7 +1899,7 @@ namespace Spoj.Solver {
         ///    // If you don&apos;t know 0/1 knapsack and need a hint, knowing the DP is two-dimensional
         ///    // on the parties being considered and the amount of budget used should be enough.
         ///    // (If we&apos;re using i parties for some budget, the maximum fun value is the max of the value for i - 1
-        ///    // partie [rest of string was truncated]&quot;;.
+        ///    // parti [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PARTY {
             get {
@@ -1900,7 +1918,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // Given is a permutation like 5, 1, 2, 3, 4.
         ///        // This (obviously) tells us the value 5 is at index 1, the value 1 is at index 2, and so on.
-        ///        // We can also interpret the permutation as specifying an inverse permutat [rest of string was truncated]&quot;;.
+        ///        // We can also interpret the permutation as specifying an inverse permuta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PERMUT2 {
             get {
@@ -1919,7 +1937,7 @@ namespace Spoj.Solver {
         ///    // This uses a modified trie, where the trie&apos;s Add method returns a bool indicating
         ///    // whether the string added was a prefix of a string already present, or prefixed
         ///    // by a string already present. In either case, the phone numbers aren&apos;t consistent,
-        ///    // so we [rest of string was truncated]&quot;;.
+        ///    // so w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PHONELST {
             get {
@@ -1939,7 +1957,7 @@ namespace Spoj.Solver {
         ///    static PIGBANK()
         ///    {
         ///        // No matter our available coin types, a weight of zero is attainable by (and only by)
-        ///        // leaving the piggy bank empty,  [rest of string was truncated]&quot;;.
+        ///        // leaving the piggy bank empty, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIGBANK_v1 {
             get {
@@ -1959,7 +1977,7 @@ namespace Spoj.Solver {
         ///    static PIGBANK()
         ///    {
         ///        // No matter our available coin types, a weight of zero is attainable by (and only by)
-        ///        // leaving the piggy ba [rest of string was truncated]&quot;;.
+        ///        // leaving the piggy b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIGBANK_v2 {
             get {
@@ -1978,7 +1996,7 @@ namespace Spoj.Solver {
         ///    // See https://en.wikipedia.org/wiki/Tetrahedron#Heron-type_formula_for_the_volume_of_a_tetrahedron.
         ///    // References a paper talking about a lot of numerical analysis issues, but for
         ///    // us the main problem will be making sure we line up the input to match the
-        ///    // side lengths needed by the fo [rest of string was truncated]&quot;;.
+        ///    // side lengths needed by the f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIR {
             get {
@@ -2002,7 +2020,7 @@ namespace Spoj.Solver {
         ///    static PPATH()
         ///    {
         ///        // 10000 because zero-based indices. This isn&apos;t great as we don&apos;t need 10000
-        ///        // (as most #s don&apos;t represent primes) [rest of string was truncated]&quot;;.
+        ///        // (as most #s don&apos;t represent primes [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PPATH {
             get {
@@ -2027,7 +2045,7 @@ namespace Spoj.Solver {
         ///        _decider = new TrialDivisionDecider(_limit);
         ///    }
         ///
-        ///    // This is still pretty slow, looks like we migh [rest of string was truncated]&quot;;.
+        ///    // This is still pretty slow, looks like we mig [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PRIME1 {
             get {
@@ -2051,7 +2069,7 @@ namespace Spoj.Solver {
         ///            return false;
         ///
         ///        return SimpleGraph
-        ///            .CreateFrom [rest of string was truncated]&quot;;.
+        ///            .CreateFro [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Y {
             get {
@@ -2076,7 +2094,7 @@ namespace Spoj.Solver {
         ///
         ///        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
         ///
-        ///        var firstVertex = graph. [rest of string was truncated]&quot;;.
+        ///        var firstVertex = graph [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Z {
             get {
@@ -2095,7 +2113,7 @@ namespace Spoj.Solver {
         ///    // Some facts on the Wikipedia page for cyclic quadrilateral mention they have the
         ///    // most area of any quadrilateral with the same sequence of side lengths. Not sure
         ///    // but I guess no matter the side lengths, we can assume a cyclic quadrilteral with
-        ///    // those side lengths exis [rest of string was truncated]&quot;;.
+        ///    // those side lengths exi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string QUADAREA {
             get {
@@ -2117,7 +2135,7 @@ namespace Spoj.Solver {
         ///
         ///    static SAMER08F()
         ///    {
-        ///        int[] squareCounts = new  [rest of string was truncated]&quot;;.
+        ///        int[] squareCounts = new [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SAMER08F {
             get {
@@ -2136,7 +2154,7 @@ namespace Spoj.Solver {
         ///{
         ///    // TLE is an issue so I do the I/O inside of the Solve this time. At first I tried a
         ///    // SortedDictionary and that was too slow. Then I tried a SortedList, too slow, then
-        ///    // just sorting an array of strings and iteratin [rest of string was truncated]&quot;;.
+        ///    // just sorting an array of strings and iterati [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SBANK {
             get {
@@ -2154,7 +2172,7 @@ namespace Spoj.Solver {
         ///    // First, note there could be a lot going on here (cuts on what&apos;s been cut) so DP or recursion
         ///    // is probably out and there&apos;s a better solution. Then try a few examples  by hand, progressing
         ///    // naturally/greedily, following certain guidelines that make sense like: only cut when needed,
-        ///    // always [rest of string was truncated]&quot;;.
+        ///    // alway [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SILVER {
             get {
@@ -2175,7 +2193,7 @@ namespace Spoj.Solver {
         ///        Array.Sort(friendsStampCounts);
         ///
         ///        int borrowedStamps = 0;
-        ///        // Borrow stamps from the remaini [rest of string was truncated]&quot;;.
+        ///        // Borrow stamps from the remain [rest of string was truncated]&quot;;.
         /// </summary>
         public static string STAMPS {
             get {
@@ -2194,7 +2212,7 @@ namespace Spoj.Solver {
         ///{
         ///    // The array here might be something like 5 1 2 4 3, meaning the love mobile that&apos;s
         ///    // 1st on the approach street needs to be 5th on the parade street, the love mobile
-        ///    // that&apos;s 2nd  [rest of string was truncated]&quot;;.
+        ///    // that&apos;s 2nd [rest of string was truncated]&quot;;.
         /// </summary>
         public static string STPAR {
             get {
@@ -2209,7 +2227,7 @@ namespace Spoj.Solver {
         ///using System;
         ///
         ///// https://www.spoj.com/problems/SUMITR/ #dynamic-programming-2d #golf #path-optimization
-        ///// Finds greatest path sum in a triangular grid, while  [rest of string was truncated]&quot;;.
+        ///// Finds greatest path sum in a triangular grid, while [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SUMITR {
             get {
@@ -2228,6 +2246,7 @@ namespace Spoj.Solver {
         ///#bit
         ///#buckets
         ///#combinatorics
+        ///#dag
         ///#deque
         ///#dfs
         ///#digits
@@ -2260,7 +2279,7 @@ namespace Spoj.Solver {
         ///#merge
         ///#mod-math
         ///#mst
-        ///#networ [rest of string was truncated]&quot;;.
+        ///# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
@@ -2288,7 +2307,7 @@ namespace Spoj.Solver {
         ///        output.AppendLine();
         ///
         ///        int count = 1;
-        ///        for ( [rest of string was truncated]&quot;;.
+        ///        for  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TDPRIMES {
             get {
@@ -2318,7 +2337,7 @@ namespace Spoj.Solver {
         ///public static class Program
         ///{
         ///    private static void Main()
-        ///   [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TEST {
             get {
@@ -2338,7 +2357,7 @@ namespace Spoj.Solver {
         ///    public static string Solve(int columnCount, string encodedMessage)
         ///    {
         ///        int rowCount = encodedMessage.Length / columnCount;
-        ///        char[,] messageArray = new char[rowCount, colu [rest of string was truncated]&quot;;.
+        ///        char[,] messageArray = new char[rowCount, col [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TOANDFRO {
             get {
@@ -2361,7 +2380,7 @@ namespace Spoj.Solver {
         ///    static TRICOUNT()
         ///    {
         ///        long[] triangleCounts = new long[_maxLevel + 1];
-        ///        tria [rest of string was truncated]&quot;;.
+        ///        tri [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRICOUNT {
             get {
@@ -2379,7 +2398,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Observation: for a given range, the starting age is always the same. That&apos;s because the starting age
         ///    // corresponds to the number of treats chosen before arriving at the range, and to arrive at a range
-        ///  [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v1 {
             get {
@@ -2396,7 +2415,7 @@ namespace Spoj.Solver {
         ///{
         ///    // See TRT_v1 for the memoized solution that helps motivate this DP.
         ///    // A 2D array is used for the DP, where the first index corresponds to a range&apos;s start index
-        ///    // and the second index corresponds to that range&apos;s end index. Th [rest of string was truncated]&quot;;.
+        ///    // and the second index corresponds to that range&apos;s end index. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v2 {
             get {
@@ -2421,7 +2440,7 @@ namespace Spoj.Solver {
         ///        _factorizer = new TrialDivisionFactorizer(_oneTrillion);
         ///    }
         ///
-        ///    // See https: [rest of string was truncated]&quot;;.
+        ///    // See https [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TWOSQRS {
             get {
@@ -2438,7 +2457,7 @@ namespace Spoj.Solver {
         ///{
         ///    // If the second branch gets hit, the number maps to 3(n + 1) and definitely has a factor of 3.
         ///    // That means that second branch eventually gets hit again, even if a lot of factors of 2 get divided out.
-        ///    // And when it&apos;s hit again, it still has a factor of 3 after mapping to 3(n + 1), and the process repeats. [rest of string was truncated]&quot;;.
+        ///    // And when it&apos;s hit again, it still has a factor of 3 after mapping to 3(n + 1), and the process repeats [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WILLITST {
             get {

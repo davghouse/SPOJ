@@ -105,6 +105,7 @@
     <Compile Include="Solutions\4 - Prince\ONPTests.cs" />
     <Compile Include="Solutions\4 - Prince\PERMUT2Tests.cs" />
     <Compile Include="Solutions\4 - Prince\WILLITSTTests.cs" />
+    <Compile Include="Solutions\5 - King\ABCPATHTests.cs" />
     <Compile Include="Solutions\5 - King\ACODE_v1Tests.cs" />
     <Compile Include="Solutions\5 - King\ACODE_v2Tests.cs" />
     <Compile Include="Solutions\5 - King\ACPC10DTests.cs" />
