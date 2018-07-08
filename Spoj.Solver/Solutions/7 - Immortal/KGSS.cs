@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-// http://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
-// Does element updates and maximum sum subrange queries on an array (using a segment tree).
-public sealed class GSS3
+// http://www.spoj.com/problems/KGSS/ #divide-and-conquer #research #segment-tree
+// Does element updates and second maximum (sum) subrange queries on an array (using a segment tree).
+public sealed class KGSS
 {
     private readonly ArrayBasedSegmentTree _segmentTree;
 
-    public GSS3(IReadOnlyList<int> sourceArray)
+    public KGSS(IReadOnlyList<int> sourceArray)
     {
         _segmentTree = new ArrayBasedSegmentTree(sourceArray);
     }
@@ -25,12 +25,12 @@ public sealed class GSS3
 public sealed class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;
-    private readonly MaximumSumQueryObject[] _treeArray;
+    private readonly SecondMaximumQueryObject[] _treeArray;
 
     public ArrayBasedSegmentTree(IReadOnlyList<int> sourceArray)
     {
         _sourceArray = sourceArray;
-        _treeArray = new MaximumSumQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
+        _treeArray = new SecondMaximumQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
         Build(0, 0, _sourceArray.Count - 1);
     }
 
@@ -38,7 +38,7 @@ public sealed class ArrayBasedSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new MaximumSumQueryObject(segmentStartIndex, _sourceArray[segmentStartIndex]);
+            _treeArray[treeArrayIndex] = new SecondMaximumQueryObject(segmentStartIndex, _sourceArray[segmentStartIndex]);
             return;
         }
 
@@ -52,9 +52,12 @@ public sealed class ArrayBasedSegmentTree
     }
 
     public int Query(int queryStartIndex, int queryEndIndex)
-        => Query(0, queryStartIndex, queryEndIndex).MaximumSum;
+    {
+        var result = Query(0, queryStartIndex, queryEndIndex);
+        return result.Maximum + (result.SecondMaximum ?? 0);
+    }
 
-    private MaximumSumQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
+    private SecondMaximumQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
     {
         var queryObject = _treeArray[treeArrayIndex];
 
@@ -104,20 +107,20 @@ public sealed class ArrayBasedSegmentTree
     }
 }
 
-// Given a query range, this stores the maximum sum for any contiguous subrange.
-public sealed class MaximumSumQueryObject
+// Given a query range, this stores the maximum and second maximum.
+public sealed class SecondMaximumQueryObject
 {
-    private MaximumSumQueryObject()
+    private SecondMaximumQueryObject()
     { }
 
-    public MaximumSumQueryObject(int index, int value)
+    public SecondMaximumQueryObject(int index, int value)
     {
         SegmentStartIndex = SegmentEndIndex = index;
-        Sum = MaximumSum = MaximumLeftStartingSum = MaximumRightStartingSum = value;
+        Maximum = value;
     }
 
     public void Reinitialize(int value)
-        => Sum = MaximumSum = MaximumLeftStartingSum = MaximumRightStartingSum = value;
+        => Maximum = value;
 
     // 'Readonly' property for the start index of the array range this query object corresponds to.
     public int SegmentStartIndex { get; private set; }
@@ -125,29 +128,31 @@ public sealed class MaximumSumQueryObject
     // 'Readonly' property for the end index of the array range this query object corresponds to.
     public int SegmentEndIndex { get; private set; }
 
-    private int Sum { get; set; }
-    public int MaximumSum { get; private set; }
-    private int MaximumLeftStartingSum { get; set; }  // [-> ... ]
-    private int MaximumRightStartingSum { get; set; } // [ ... <-]
+    public int Maximum { get; private set; }
+    public int? SecondMaximum { get; private set; }
 
-    public MaximumSumQueryObject Combine(MaximumSumQueryObject rightAdjacentObject)
-        => new MaximumSumQueryObject()
+    public SecondMaximumQueryObject Combine(SecondMaximumQueryObject rightAdjacentObject)
+        => new SecondMaximumQueryObject
         {
             SegmentStartIndex = SegmentStartIndex,
             SegmentEndIndex = rightAdjacentObject.SegmentEndIndex,
-            Sum = GetCombinedSum(this, rightAdjacentObject),
-            MaximumSum = GetCombinedMaximumSum(this, rightAdjacentObject),
-            MaximumLeftStartingSum = GetCombinedMaximumLeftStartingSum(this, rightAdjacentObject),
-            MaximumRightStartingSum = GetCombinedMaximumRightStartingSum(this, rightAdjacentObject)
+            Maximum = GetCombinedMaximum(this, rightAdjacentObject),
+            SecondMaximum = GetCombinedSecondMaximum(this, rightAdjacentObject)
         };
 
-    public void Update(MaximumSumQueryObject updatedLeftChild, MaximumSumQueryObject updatedRightChild)
+    public void Update(SecondMaximumQueryObject updatedLeftChild, SecondMaximumQueryObject updatedRightChild)
     {
-        Sum = GetCombinedSum(updatedLeftChild, updatedRightChild);
-        MaximumSum = GetCombinedMaximumSum(updatedLeftChild, updatedRightChild);
-        MaximumLeftStartingSum = GetCombinedMaximumLeftStartingSum(updatedLeftChild, updatedRightChild);
-        MaximumRightStartingSum = GetCombinedMaximumRightStartingSum(updatedLeftChild, updatedRightChild);
+        Maximum = GetCombinedMaximum(updatedLeftChild, updatedRightChild);
+        SecondMaximum = GetCombinedSecondMaximum(updatedLeftChild, updatedRightChild);
     }
+
+    private static int GetCombinedMaximum(SecondMaximumQueryObject leftAdjacentObject, SecondMaximumQueryObject rightAdjacentObject)
+        => Math.Max(leftAdjacentObject.Maximum, rightAdjacentObject.Maximum);
+
+    private static int GetCombinedSecondMaximum(SecondMaximumQueryObject leftAdjacentObject, SecondMaximumQueryObject rightAdjacentObject)
+        => Math.Max(
+            Math.Min(leftAdjacentObject.Maximum, rightAdjacentObject.Maximum),
+            Math.Max(leftAdjacentObject.SecondMaximum ?? 0, rightAdjacentObject.SecondMaximum ?? 0));
 
     // The given range starts before the segment starts and ends after the segment ends.
     public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
@@ -160,28 +165,6 @@ public sealed class MaximumSumQueryObject
     // Assumed that some overlap exists, just not necessarily over the right half.
     public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
         => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
-
-    private static int GetCombinedSum(MaximumSumQueryObject leftAdjacentObject, MaximumSumQueryObject rightAdjacentObject)
-        // The sum is just the sum of both.
-        => leftAdjacentObject.Sum + rightAdjacentObject.Sum;
-
-    private static int GetCombinedMaximumSum(MaximumSumQueryObject leftAdjacentObject, MaximumSumQueryObject rightAdjacentObject)
-        // The maximum sum either intersects both segments, or is entirely in one.
-        => Math.Max(
-            leftAdjacentObject.MaximumRightStartingSum + rightAdjacentObject.MaximumLeftStartingSum,
-            Math.Max(leftAdjacentObject.MaximumSum, rightAdjacentObject.MaximumSum));
-
-    private static int GetCombinedMaximumLeftStartingSum(MaximumSumQueryObject leftAdjacentObject, MaximumSumQueryObject rightAdjacentObject)
-        // The maximum left starting sum starts at the left, and may or may not cross into the right.
-        => Math.Max(
-            leftAdjacentObject.Sum + rightAdjacentObject.MaximumLeftStartingSum,
-            leftAdjacentObject.MaximumLeftStartingSum);
-
-    private static int GetCombinedMaximumRightStartingSum(MaximumSumQueryObject leftAdjacentObject, MaximumSumQueryObject rightAdjacentObject)
-        // The maximum right starting sum starts at the right, and may or may not cross into the left.
-        => Math.Max(
-            rightAdjacentObject.Sum + leftAdjacentObject.MaximumRightStartingSum,
-            rightAdjacentObject.MaximumRightStartingSum);
 }
 
 public static class MathHelper
@@ -203,27 +186,27 @@ public static class Program
     private static void Main()
     {
         int arrayLength = int.Parse(Console.ReadLine());
-        int[] sourceArray = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
-        var solver = new GSS3(sourceArray);
+        int[] sourceArray = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        var solver = new KGSS(sourceArray);
 
         var output = new StringBuilder();
         int operationCount = int.Parse(Console.ReadLine());
         for (int o = 0; o < operationCount; ++o)
         {
-            int[] operation = Array.ConvertAll(Console.ReadLine().Trim().Split(), int.Parse);
+            string[] operation = Console.ReadLine().Split();
 
-            if (operation[0] == 0)
+            if (operation[0] == "Q")
             {
-                solver.Update(
-                    updateIndex: operation[1] - 1,
-                    newValue: operation[2]);
+                output.Append(solver.Query(
+                    queryStartIndex: int.Parse(operation[1]) - 1,
+                    queryEndIndex: int.Parse(operation[2]) - 1));
+                output.AppendLine();
             }
             else
             {
-                output.Append(solver.Query(
-                    queryStartIndex: operation[1] - 1,
-                    queryEndIndex: operation[2] - 1));
-                output.AppendLine();
+                solver.Update(
+                    updateIndex: int.Parse(operation[1]) - 1,
+                    newValue: int.Parse(operation[2]));
             }
         }
 

@@ -270,11 +270,11 @@ namespace Spoj.Solver {
         ///// Finds the minimum number of character insertions needed to turn a string into a palindrome.
         ///public static class AIBOHP
         ///{
-        ///    private static int[,] minimumInsertionCounts = new int[6100, 6100];
+        ///    private static int[,] _minimumInsertionCounts = new int[6100, 6100];
         ///
         ///    // If the string starts and ends in the same characters, the insertion count is whatever
         ///    // the count is for the substring excluding those two characters. It wouldn&apos;t make sense
-        ///    // to add characters b [rest of string was truncated]&quot;;.
+        ///    // to add characters  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AIBOHP {
             get {
@@ -538,25 +538,16 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///using System.Text;
         ///
-        ///// http://www.spoj.com/problems/BUSYMAN/ #greedy #sorting
+        ///// http://www.spoj.com/problems/BUSYMAN/ #ad-hoc #greedy #sorting
         ///// Finds the maximum number of activities that can fit into a schedule.
         ///public static class BUSYMAN
         ///{
-        ///    public static int Solve(int a, int b)
-        ///        =&gt; a * b;
-        ///}
-        ///
-        ///public static class Program
-        ///{
-        ///    private static void Main()
-        ///    {
-        ///        var output = new StringBuilder();
-        ///        int remainingTestCases = int.Parse(Console.ReadLine());
-        ///        while (remainingTestCases-- &gt; 0)
-        ///        {
-        ///             [rest of string was truncated]&quot;;.
+        ///    // We start off needing to choose the activity that&apos;ll occupy us from t=0
+        ///    // to t=activity&apos;s end time. Best to greedily choose the activity ending the
+        ///    // soonest. That activity is at least as good as any other since it keeps
+        ///    // as much of the remaining schedule open as possible. Whatever a different
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUSYMAN {
             get {
@@ -991,8 +982,7 @@ namespace Spoj.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
-        /// [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -1499,6 +1489,30 @@ namespace Spoj.Solver {
         public static string JULKA {
             get {
                 return ResourceManager.GetString("JULKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// http://www.spoj.com/problems/KGSS/ #divide-and-conquer #research #segment-tree
+        ///// Does element updates and 2-maximum subrange queries on an array (using a segment tree).
+        ///public sealed class KGSS
+        ///{
+        ///    private readonly ArrayBasedSegmentTree _segmentTree;
+        ///
+        ///    public KGSS(IReadOnlyList&lt;int&gt; sourceArray)
+        ///    {
+        ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
+        ///    }
+        ///
+        ///    public int Query(int queryStartIndex, int q [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KGSS {
+            get {
+                return ResourceManager.GetString("KGSS", resourceCulture);
             }
         }
         
