@@ -119,6 +119,8 @@
     <Compile Include="Solutions\5 - King\COINSTests.cs" />
     <Compile Include="Solutions\5 - King\DIEHARDTests.cs" />
     <Compile Include="Solutions\5 - King\FCTRLTests.cs" />
+    <Compile Include="Solutions\5 - King\HACKRNDM_v2Tests.cs" />
+    <Compile Include="Solutions\5 - King\HACKRNDM_v1Tests.cs" />
     <Compile Include="Solutions\5 - King\HOTELSTests.cs" />
     <Compile Include="Solutions\5 - King\INVCNTTests.cs" />
     <Compile Include="Solutions\5 - King\JULKATests.cs" />

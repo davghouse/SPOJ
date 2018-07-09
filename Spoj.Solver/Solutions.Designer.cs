@@ -1303,6 +1303,41 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/HACKRNDM/ #sorting #window
+        ///// Finds the number of pairs of numbers that are a certain distance away from each other.
+        ///public static class HACKRNDM // v1, by sorting an array and then two passes.
+        ///{
+        ///    // Sort the array, then traverse it in descending order with two indices. The small
+        ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
+        ///    // small index can be decreased because there&apos;s no way decreasing the big index [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HACKRNDM_v1 {
+            get {
+                return ResourceManager.GetString("HACKRNDM_v1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/HACKRNDM/ #hash-table
+        ///// Finds the number of pairs of numbers that are a certain distance away from each other.
+        ///public static class HACKRNDM // v2, using a hash table.
+        ///{
+        ///    // Sort the array, then traverse it in descending order with two indices. The small
+        ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
+        ///    // small index can be decreased because there&apos;s no way decreasing the big index
+        ///    // would help, the n [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HACKRNDM_v2 {
+            get {
+                return ResourceManager.GetString("HACKRNDM_v2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/HANGOVER/ #binary-search #sequence

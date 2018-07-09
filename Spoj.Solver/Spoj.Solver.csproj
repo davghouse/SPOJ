@@ -275,6 +275,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\5 - King\HACKRNDM_v2.cs" />
+    <None Include="Solutions\5 - King\HACKRNDM_v1.cs" />
     <None Include="Solutions\5 - King\ABCPATH.cs" />
     <None Include="Solutions\7 - Immortal\KGSS.cs" />
     <None Include="Solutions\4 - Prince\BUSYMAN.cs" />
