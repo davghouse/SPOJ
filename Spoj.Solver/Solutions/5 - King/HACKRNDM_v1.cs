@@ -2,7 +2,7 @@
 
 // https://www.spoj.com/problems/HACKRNDM/ #sorting #window
 // Finds the number of pairs of numbers that are a certain distance away from each other.
-public static class HACKRNDM // v1, by sorting an array and then two passes.
+public static class HACKRNDM // v1, by sorting an array and then two passes
 {
     // Sort the array, then traverse it in descending order with two indices. The small
     // index is always <= the big index. If the numbers aren't far apart enough yet, the

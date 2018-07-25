@@ -4,8 +4,9 @@ using System.Collections.Generic;
 namespace Spoj.Library.Graphs
 {
     // Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored in an array
-    // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Hash sets in
-    // the vertices slow things down (use list for some problems).
+    // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
+    // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
+    // search state inside of the vertices themselves can also help.
     public sealed class WeightedGraph<T>
     {
         public WeightedGraph(int vertexCount)
@@ -43,7 +44,6 @@ namespace Spoj.Library.Graphs
             return graph;
         }
 
-
         public IReadOnlyList<Vertex> Vertices { get; }
         public int VertexCount => Vertices.Count;
 
@@ -65,7 +65,7 @@ namespace Spoj.Library.Graphs
         public sealed class Vertex : IEquatable<Vertex>
         {
             private readonly WeightedGraph<T> _graph;
-            private readonly Dictionary<Vertex, T> _neighbors = new Dictionary<Vertex, T>();
+            private readonly Dictionary<Vertex, T> _edges = new Dictionary<Vertex, T>();
 
             internal Vertex(WeightedGraph<T> graph, int ID)
             {
@@ -75,32 +75,32 @@ namespace Spoj.Library.Graphs
 
             public int ID { get; }
 
-            public IReadOnlyDictionary<Vertex, T> Neighbors => _neighbors;
-            public int Degree => _neighbors.Count;
+            public IReadOnlyCollection<Vertex> Neighbors => _edges.Keys;
+            public int Degree => _edges.Count;
 
             internal void AddNeighbor(int neighborID, T weight)
-                => _neighbors.Add(_graph.Vertices[neighborID], weight);
+                => _edges.Add(_graph.Vertices[neighborID], weight);
 
             internal void AddNeighbor(Vertex neighbor, T weight)
-                => _neighbors.Add(neighbor, weight);
+                => _edges.Add(neighbor, weight);
 
             public bool HasNeighbor(int neighborID)
-                => _neighbors.ContainsKey(_graph.Vertices[neighborID]);
+                => _edges.ContainsKey(_graph.Vertices[neighborID]);
 
             public bool HasNeighbor(Vertex neighbor)
-                => _neighbors.ContainsKey(neighbor);
+                => _edges.ContainsKey(neighbor);
 
             public T GetEdgeWeight(int neighborID)
-                => _neighbors[_graph.Vertices[neighborID]];
+                => _edges[_graph.Vertices[neighborID]];
 
             public T GetEdgeWeight(Vertex neighbor)
-                => _neighbors[neighbor];
+                => _edges[neighbor];
 
             public bool TryGetEdgeWeight(int neighborID, out T edgeWeight)
-                => _neighbors.TryGetValue(_graph.Vertices[neighborID], out edgeWeight);
+                => _edges.TryGetValue(_graph.Vertices[neighborID], out edgeWeight);
 
             public bool TryGetEdgeWeight(Vertex neighbor, out T edgeWeight)
-                => _neighbors.TryGetValue(neighbor, out edgeWeight);
+                => _edges.TryGetValue(neighbor, out edgeWeight);
 
             public override bool Equals(object obj)
                 => (obj as Vertex)?.ID == ID;

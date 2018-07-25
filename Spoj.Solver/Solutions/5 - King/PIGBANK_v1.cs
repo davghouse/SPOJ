@@ -2,7 +2,7 @@
 
 // https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
 // Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
-public static class PIGBANK // v1, 1D as an unbounded knapsack problem.
+public static class PIGBANK // v1, 1D as an unbounded knapsack problem
 {
     private static int?[] _minimumMoneyAmounts = new int?[10001];
 

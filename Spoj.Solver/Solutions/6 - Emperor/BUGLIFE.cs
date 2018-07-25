@@ -8,14 +8,16 @@ using System.Text;
 // Determines if a set of bugs can be divided into two non-interacting groups.
 public static class BUGLIFE
 {
-    // Best we can do is see if the ants can be divided into two groups, where members
-    // of one group only interact with members of the other group. Same as checking bipartiteness.
-    // Not the actual code submitted. Had to strip everything down and have vertices store their
-    // own search state but the biggest part was using a List instead of a HashSet to store neighbors
-    // (not making use of the HashSet functionality for this problem, and even if removing it leads to
+    // Best we can do is see if the ants can be divided into two groups, where members of one group
+    // group only interact with members of the other group. Same as checking bipartiteness. Not the
+    // actual code submitted. Had to strip everything down and have vertices store their own search
+    // state but the biggest part was using a List instead of a HashSet to store neighbors (not
+    // making use of the HashSet functionality for this problem, and even if removing it leads to
     // creating a multigraph (a pair of ants going on more than one date), doesn't matter). I observed
-    // no time difference when swapping search start position from first to last vertex. TLE when using
-    // BFS instead of DFS. And this solution gets AC and TLE across different submits so...
+    // no time difference when swapping search start position from first to last vertex. TLE when
+    // using BFS instead of DFS. And this solution gets AC and TLE across different submits so...
+    // Here's a sketchy one-off submission that actually passed:
+    // https://gist.github.com/davghouse/9e9be6dbaa60037c02bd46730f3e4851
     public static bool Solve(int bugCount, int[,] interactions)
         => SimpleGraph
         .CreateFromOneBasedEdges(bugCount, interactions)

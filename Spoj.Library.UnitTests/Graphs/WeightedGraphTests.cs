@@ -117,21 +117,21 @@ namespace Spoj.Library.UnitTests.Graphs
             graph.AddEdge(0, 1, 99);
             Assert.AreEqual(1, graph.Vertices[0].Degree);
             Assert.AreEqual(1, graph.Vertices[1].Degree);
-            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().Key.ID);
-            Assert.AreEqual(0, graph.Vertices[1].Neighbors.Single().Key.ID);
-            Assert.AreEqual(99, graph.Vertices[0].Neighbors.Single().Value);
-            Assert.AreEqual(99, graph.Vertices[1].Neighbors.Single().Value);
+            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().ID);
+            Assert.AreEqual(0, graph.Vertices[1].Neighbors.Single().ID);
+            Assert.AreEqual(99,  graph.Vertices[0].Neighbors.Single().GetEdgeWeight(0));
+            Assert.AreEqual(99, graph.Vertices[1].Neighbors.Single().GetEdgeWeight(1));
 
             graph.AddEdge(1, 4, 100);
             Assert.AreEqual(1, graph.Vertices[0].Degree);
             Assert.AreEqual(2, graph.Vertices[1].Degree);
             Assert.AreEqual(1, graph.Vertices[4].Degree);
-            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().Key.ID);
-            Assert.AreEqual(99, graph.Vertices[0].Neighbors.Single().Value);
-            CollectionAssert.AreEquivalent(new[] { 0, 4 }, graph.Vertices[1].Neighbors.Select(n => n.Key.ID).ToArray());
-            CollectionAssert.AreEquivalent(new[] { 99, 100 }, graph.Vertices[1].Neighbors.Select(n => n.Value).ToArray());
-            Assert.AreEqual(1, graph.Vertices[4].Neighbors.Single().Key.ID);
-            Assert.AreEqual(100, graph.Vertices[4].Neighbors.Single().Value);
+            Assert.AreEqual(1, graph.Vertices[0].Neighbors.Single().ID);
+            Assert.AreEqual(99, graph.Vertices[0].Neighbors.Single().GetEdgeWeight(0));
+            CollectionAssert.AreEquivalent(new[] { 0, 4 }, graph.Vertices[1].Neighbors.Select(n => n.ID).ToArray());
+            CollectionAssert.AreEquivalent(new[] { 99, 100 }, graph.Vertices[1].Neighbors.Select(n => n.GetEdgeWeight(1)).ToArray());
+            Assert.AreEqual(1, graph.Vertices[4].Neighbors.Single().ID);
+            Assert.AreEqual(100, graph.Vertices[4].Neighbors.Single().GetEdgeWeight(4));
         }
 
         [TestMethod]

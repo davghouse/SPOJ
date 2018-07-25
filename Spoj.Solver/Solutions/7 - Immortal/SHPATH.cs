@@ -1,50 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Vertex = WeightedGraph.Vertex;
 
-// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims #research
-// Finds the cheapest way to pave streets from any building to any building.
-public static class CSTREET
+// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research
+// Finds the cheapest path between pairs of cities.
+public static class SHPATH
 {
-    // This uses Prim's algorithm: "https://en.wikipedia.org/wiki/Prim's_algorithm. We don't actually need
-    // to build the MST, just need the total cost of the streets that compose it. The heap itself can be
-    // used to keep track of which vertices are in the MST. Arbitrarily choose the building/vertex with ID 0
-    // to begin creating the MST from. Using int.MaxValue as a sentinel value to represent the street cost
-    // for a building into the growing MST when that building actually has no street into the MST. Hopefully
-    // that doesn't lead to problems, otherwise would need nullable ints w/ a custom comparer, or something.
-    public static long Solve(int buildingCount, int[,] streets)
+    // This uses Dijkstra's algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
+    // This solution gets TLE, but it has the main features of the submitted solution, just
+    // more overhead. Importantly, we return immediately upon visiting the destination city,
+    // and we don't initialize the heap with all cities. We only add cities to the heap when
+    // reaching one of their neighbor cities. Without a pre-filled heap to rely on, we track
+    // what cities have been visited using an array of bools. I played around unsuccessfully
+    // with memoization, with an instance of a solver for each unique source city and a
+    // dictionary of destination costs. Here's a sketchy one-off submission that actually
+    // passed: https://gist.github.com/davghouse/972d12b21957b57c1fbe14576675162e
+    public static int Solve(WeightedGraph cityGraph, Vertex sourceCity, Vertex destinationCity)
     {
-        var buildingGraph = WeightedGraph.CreateFromOneBasedEdges(buildingCount, streets);
-        var connectionCosts = new BinaryHeap(buildingGraph, buildingGraph.Vertices[0]);
-        long totalStreetCost = 0;
+        var pathCosts = new BinaryHeap(sourceCity);
+        bool[] visited = new bool[cityGraph.VertexCount];
 
-        while (!connectionCosts.IsEmpty)
+        while (!pathCosts.IsEmpty)
         {
-            var cheapestConnection = connectionCosts.Extract();
-            var building = cheapestConnection.Key;
-            int costToConnectBuilding = cheapestConnection.Value;
-            totalStreetCost += costToConnectBuilding;
+            var cheapestPath = pathCosts.Extract();
+            var city = cheapestPath.Key;
+            int pathCostToCity = cheapestPath.Value;
 
-            foreach (var neighbor in building.Neighbors)
+            if (city == destinationCity)
+                return pathCostToCity;
+
+            foreach (var neighbor in city.Neighbors.Where(n => !visited[n.ID]))
             {
-                int costToConnectNeighborFromBuilding = building.GetEdgeWeight(neighbor);
-                int currentCostToConnectNeighbor;
+                int pathCostToNeighborThroughCity = pathCostToCity + city.GetEdgeWeight(neighbor);
+                int currentPathCostToNeighbor;
 
-                // The neighboring building may still be in the heap, or it might already be in the MST. If
-                // it's still in the heap, check to see if we can improve its cost to get into the MST by
-                // utilizing its street to the building just added.
-                if (connectionCosts.TryGetValue(neighbor, out currentCostToConnectNeighbor))
+                // We know the neighboring city hasn't been visited yet, so we need to maintain its
+                // path cost in the heap. If it's already in the heap, see if a cheaper path exists
+                // to it through the city we're visiting. If it isn't in the heap yet, add it.
+                if (pathCosts.TryGetValue(neighbor, out currentPathCostToNeighbor))
                 {
-                    if (costToConnectNeighborFromBuilding < currentCostToConnectNeighbor)
+                    if (pathCostToNeighborThroughCity < currentPathCostToNeighbor)
                     {
-                        connectionCosts.Update(neighbor, costToConnectNeighborFromBuilding);
+                        pathCosts.Update(neighbor, pathCostToNeighborThroughCity);
                     }
                 }
+                else
+                {
+                    pathCosts.Add(neighbor, pathCostToNeighborThroughCity);
+                }
             }
+
+            visited[city.ID] = true;
         }
 
-        return totalStreetCost;
+        throw new NotSupportedException();
     }
 }
 
@@ -63,18 +74,6 @@ public sealed class WeightedGraph
         }
 
         Vertices = vertices;
-    }
-
-    // For example, an edge like (1, 2, 4) => there's an edge between vertices 0 and 1 with weight 4.
-    public static WeightedGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
-    {
-        var graph = new WeightedGraph(vertexCount);
-        for (int i = 0; i < edges.GetLength(0); ++i)
-        {
-            graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1, edges[i, 2]);
-        }
-
-        return graph;
     }
 
     public IReadOnlyList<Vertex> Vertices { get; }
@@ -130,22 +129,13 @@ public sealed class WeightedGraph
 
 public sealed class BinaryHeap
 {
-    private List<KeyValuePair<Vertex, int>> _keyValuePairs = new List<KeyValuePair<Vertex, int>>();
-    private Dictionary<Vertex, int> _keyIndices = new Dictionary<Vertex, int>();
+    private readonly List<KeyValuePair<Vertex, int>> _keyValuePairs = new List<KeyValuePair<Vertex, int>>();
+    private readonly Dictionary<Vertex, int> _keyIndices = new Dictionary<Vertex, int>();
 
-    public BinaryHeap(WeightedGraph graph, Vertex topKey, int topValue = 0)
+    public BinaryHeap(Vertex topKey, int topValue = 0)
     {
         _keyValuePairs.Add(new KeyValuePair<Vertex, int>(topKey, topValue));
         _keyIndices.Add(topKey, 0);
-
-        foreach (var vertex in graph.Vertices)
-        {
-            if (vertex.Equals(topKey))
-                continue;
-
-            _keyValuePairs.Add(new KeyValuePair<Vertex, int>(vertex, int.MaxValue));
-            _keyIndices.Add(vertex, _keyValuePairs.Count - 1);
-        }
     }
 
     public int Size => _keyValuePairs.Count;
@@ -304,25 +294,46 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-        int remainingTestCases = int.Parse(Console.ReadLine());
-        while (remainingTestCases-- > 0)
+        int testCount = int.Parse(Console.ReadLine());
+        for (int t = 0; t < testCount; ++t)
         {
-            int pricePerFurlong = int.Parse(Console.ReadLine());
-            int buildingCount = int.Parse(Console.ReadLine());
-            int streetCount = int.Parse(Console.ReadLine());
+            int cityCount = int.Parse(Console.ReadLine());
+            var cityIndices = new Dictionary<string, int>(cityCount);
+            var cityGraph = new WeightedGraph(cityCount);
 
-            var streets = new int[streetCount, 3];
-            for (int s = 0; s < streetCount; ++s)
+            for (int c = 0; c < cityCount; ++c)
             {
-                int[] street = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-                streets[s, 0] = street[0];
-                streets[s, 1] = street[1];
-                streets[s, 2] = street[2] * pricePerFurlong; // length in furlongs * price per furlong = cost.
+                string cityName = Console.ReadLine();
+                cityIndices.Add(cityName, c);
+
+                int neighborCount = int.Parse(Console.ReadLine());
+                for (int n = 0; n < neighborCount; ++n)
+                {
+                    string[] line = Console.ReadLine().Split();
+                    int neighborIndex = int.Parse(line[0]) - 1;
+                    int connectionCost = int.Parse(line[1]);
+
+                    // E.g., we'll be told about both (2, 5) and (5, 2). They're equivalent, so
+                    // only add (2, 5) (the first one we came across), where c < neighborIndex.
+                    if (c > neighborIndex)
+                        continue;
+
+                    cityGraph.AddEdge(c, neighborIndex, connectionCost);
+                }
             }
 
-            output.Append(
-                CSTREET.Solve(buildingCount, streets));
-            output.AppendLine();
+            int pathCount = int.Parse(Console.ReadLine());
+            for (int p = 0; p < pathCount; ++p)
+            {
+                string[] line = Console.ReadLine().Split();
+                var sourceCity = cityGraph.Vertices[cityIndices[line[0]]];
+                var destinationCity = cityGraph.Vertices[cityIndices[line[1]]];
+
+                output.Append(SHPATH.Solve(cityGraph, sourceCity, destinationCity));
+                output.AppendLine();
+            }
+
+            Console.ReadLine();
         }
 
         Console.Write(output);

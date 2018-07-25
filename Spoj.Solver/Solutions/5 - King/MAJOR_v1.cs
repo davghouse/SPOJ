@@ -4,7 +4,7 @@ using System.Text;
 
 // https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
 // Determines if any number makes up the majority of all the numbers sent.
-public static class MAJOR // v1, using a dictionary and no more than one full pass.
+public static class MAJOR // v1, using a dictionary and no more than one full pass
 {
     // TLE is strict here, don't even have time to parse the transmissions into ints.
     // Don't have time to sort and traverse the array either, but dictionary of counts

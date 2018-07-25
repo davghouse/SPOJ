@@ -12,6 +12,7 @@
 #deque
 #dfs
 #digits
+#dijkstras
 #divide-and-conquer
 #division
 #dynamic-programming
@@ -49,6 +50,7 @@
 #permutations
 #plane
 #primes
+#prims
 #probability
 #proof
 #radix-sort

@@ -545,9 +545,9 @@ namespace Spoj.Solver {
         ///// Determines if a set of bugs can be divided into two non-interacting groups.
         ///public static class BUGLIFE
         ///{
-        ///    // Best we can do is see if the ants can be divided into two groups, where members
-        ///    // of one group only interact with members of the other group. Same as checking bipartiteness.
-        ///    // Not the actual code subm [rest of string was truncated]&quot;;.
+        ///    // Best we can do is see if the ants can be divided into two groups, where members of one group
+        ///    // group only interact with members of the other group. Same as checking bipartiteness. Not the
+        ///    // actual cod [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUGLIFE {
             get {
@@ -765,13 +765,13 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #research
+        ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims #research
         ///// Finds the cheapest way to pave streets from any building to any building.
         ///public static class CSTREET
         ///{
         ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
-        ///    // to build the MST, just get the total cost of the streets that compose it. The heap itself can be
-        ///    // used [rest of string was truncated]&quot;;.
+        ///    // to build the MST, just need the total cost of the streets that compose it. The heap itself can be
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CSTREET {
             get {
@@ -1306,11 +1306,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/HACKRNDM/ #sorting #window
         ///// Finds the number of pairs of numbers that are a certain distance away from each other.
-        ///public static class HACKRNDM // v1, by sorting an array and then two passes.
+        ///public static class HACKRNDM // v1, by sorting an array and then two passes
         ///{
         ///    // Sort the array, then traverse it in descending order with two indices. The small
         ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
-        ///    // small index can be decreased because there&apos;s no way decreasing the big index [rest of string was truncated]&quot;;.
+        ///    // small index can be decreased because there&apos;s no way decreasing the big index        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HACKRNDM_v1 {
             get {
@@ -1320,15 +1320,17 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/HACKRNDM/ #hash-table
         ///// Finds the number of pairs of numbers that are a certain distance away from each other.
         ///public static class HACKRNDM // v2, using a hash table.
         ///{
-        ///    // Sort the array, then traverse it in descending order with two indices. The small
-        ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
-        ///    // small index can be decreased because there&apos;s no way decreasing the big index
-        ///    // would help, the n [rest of string was truncated]&quot;;.
+        ///    // Given a number we know the number that would create the desired difference with it,
+        ///    // so we can just check to see if that number exists in the set.
+        ///    public static int Solve(int difference, HashSet&lt;int&gt; numbers)
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HACKRNDM_v2 {
             get {
@@ -1624,11 +1626,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
         ///// Determines if any number makes up the majority of all the numbers sent.
-        ///public static class MAJOR // v1, using a dictionary and no more than one full pass.
+        ///public static class MAJOR // v1, using a dictionary and no more than one full pass
         ///{
         ///    // TLE is strict here, don&apos;t even have time to parse the transmissions into ints.
         ///    // Don&apos;t have time to sort and traverse the array either, but dictionary of counts
-        ///    // might work. And we can optimize that [rest of string was truncated]&quot;;.
+        ///    // might work. And we can optimize that  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAJOR_v1 {
             get {
@@ -1985,14 +1987,14 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
         ///// Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
-        ///public static class PIGBANK // v1, 1D as an unbounded knapsack problem.
+        ///public static class PIGBANK // v1, 1D as an unbounded knapsack problem
         ///{
         ///    private static int?[] _minimumMoneyAmounts = new int?[10001];
         ///
         ///    static PIGBANK()
         ///    {
         ///        // No matter our available coin types, a weight of zero is attainable by (and only by)
-        ///        // leaving the piggy bank empty, [rest of string was truncated]&quot;;.
+        ///        // leaving the piggy bank empty,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIGBANK_v1 {
             get {
@@ -2199,6 +2201,32 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras
+        ///// Finds the cheapest path between pairs of cities.
+        ///public static class SHPATH
+        ///{
+        ///    // 
+        ///    public static int Solve(
+        ///        WeightedGraph cityGraph,
+        ///        WeightedGraph.Vertex sourceCity,
+        ///        WeightedGraph.Vertex destinationCity)
+        ///    {
+        ///        var connectionCostHeap = new BinaryHeap(sourceCity);
+        ///        bool[] hasBeenVisited = new bool[cityGraph.VertexCount];
+        ///
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SHPATH {
+            get {
+                return ResourceManager.GetString("SHPATH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/SILVER/ #ad-hoc #binary #combinatorics #proof
         ///// Finds the way to pay someone a silver a day with the fewest cuts.
@@ -2285,6 +2313,7 @@ namespace Spoj.Solver {
         ///#deque
         ///#dfs
         ///#digits
+        ///#dijkstras
         ///#divide-and-conquer
         ///#division
         ///#dynamic-programming
@@ -2312,9 +2341,7 @@ namespace Spoj.Solver {
         ///#math
         ///#memoization
         ///#merge
-        ///#mod-math
-        ///#mst
-        ///# [rest of string was truncated]&quot;;.
+        ///#mod-m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

@@ -5,8 +5,8 @@ namespace Spoj.Library.Graphs
 {
     // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
     // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-    // its index in that array. Hash sets in the vertices slow things down (use list for some problems), as does
-    // using data structures instead of the vertices themselves to maintain state during searching.
+    // its index in that array. Using a list instead of a hash set for a vertex's neighbors can help avoid TLE for
+    // certain problems. Maintaining search state inside of the vertices themselves can also help.
     public sealed class SimpleGraph
     {
         public SimpleGraph(int vertexCount)

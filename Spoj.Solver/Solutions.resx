@@ -187,9 +187,6 @@
   <data name="BITMAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\BITMAP.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="BUGLIFE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\6 - Emperor\BUGLIFE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="BYECAKES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\3 - Warlord\BYECAKES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -468,5 +465,11 @@
   </data>
   <data name="HACKRNDM_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\HACKRNDM_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SHPATH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\7 - Immortal\SHPATH.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BUGLIFE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\BUGLIFE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
