@@ -762,16 +762,15 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
-        ///using System.Linq;
         ///using System.Text;
+        ///using Vertex = WeightedGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims #research
         ///// Finds the cheapest way to pave streets from any building to any building.
         ///public static class CSTREET
         ///{
         ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
-        ///    // to build the MST, just need the total cost of the streets that compose it. The heap itself can be
-        ///    [rest of string was truncated]&quot;;.
+        ///    // to build the MST, just need the total cost of the streets that compose it. The heap  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CSTREET {
             get {
@@ -2202,22 +2201,17 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///using System.Linq;
         ///using System.Text;
+        ///using Vertex = WeightedGraph.Vertex;
         ///
-        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras
+        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research
         ///// Finds the cheapest path between pairs of cities.
         ///public static class SHPATH
         ///{
-        ///    // 
-        ///    public static int Solve(
-        ///        WeightedGraph cityGraph,
-        ///        WeightedGraph.Vertex sourceCity,
-        ///        WeightedGraph.Vertex destinationCity)
-        ///    {
-        ///        var connectionCostHeap = new BinaryHeap(sourceCity);
-        ///        bool[] hasBeenVisited = new bool[cityGraph.VertexCount];
-        ///
-        ///     [rest of string was truncated]&quot;;.
+        ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
+        ///    // This solution gets TLE, but it has the main features of the submitted solution, just
+        ///    // more overhead [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SHPATH {
             get {
@@ -2280,6 +2274,25 @@ namespace Spoj.Solver {
         public static string STPAR {
             get {
                 return ResourceManager.GetString("STPAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/SUMFOUR/ #ad-hoc #binary-search #combinatorics #hash-table
+        ///// Counts all 4-tuples adding up to zero, a + b + c + d = 0.
+        ///public static class SUMFOUR
+        ///{
+        ///    // The arrays don&apos;t necessarily contain distinct elements, but duplicate
+        ///    // tuples (across different indices) must be counted separately anyway.
+        ///    // a + b + c + d = 0 =&gt; a + b = -(c + d). The size of the arrays is limited
+        ///    // to 2500, and 2500 * 2500 isn&apos;t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SUMFOUR {
+            get {
+                return ResourceManager.GetString("SUMFOUR", resourceCulture);
             }
         }
         
