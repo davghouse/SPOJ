@@ -1141,7 +1141,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/FCTRL2/ #big-numbers #factorial
-        ///// Returns n! for 1 &lt;= n &lt;= 100 (and I think you can just use System.Numerics for this now).
+        ///// Returns n! for 1 &lt;= n &lt;= 100 (you can just use System.Numerics for this now).
         ///public static class FCTRL2
         ///{
         ///    private const int _limit = 100;
@@ -1152,7 +1152,7 @@ namespace Spoj.Solver {
         ///        var factorials = new BigInteger[_limit + 1];
         ///        factorials[0] = BigInteger.One;
         ///
-        ///        for (int  [rest of string was truncated]&quot;;.
+        ///        for (int i = 1; i &lt;=  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FCTRL2 {
             get {
@@ -1555,15 +1555,14 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/JULKA/ #big-numbers #math
-        ///// Given the apples two girls have together and how many one has over the other,
-        ///// returns how many apples each girl has individually.
+        ///// Given the apples two girls have together and how many one has over the other, returns
+        ///// how many apples each girl has individually (you can just use System.Numerics for this now).
         ///public static class JULKA
         ///{
         ///    public static Tuple&lt;BigInteger, BigInteger&gt; Solve(
         ///        BigInteger totalApples, BigInteger extraKlaudiaApples)
         ///    {
-        ///        // totalApples = nataliaApples + klaudiaApples
-        ///        // klaudiaApples = na [rest of string was truncated]&quot;;.
+        ///        // totalApples = nataliaApple [rest of string was truncated]&quot;;.
         /// </summary>
         public static string JULKA {
             get {

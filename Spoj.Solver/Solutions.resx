@@ -262,9 +262,6 @@
   <data name="FCTRL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\FCTRL.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="FCTRL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\4 - Prince\FCTRL2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="FENCE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\3 - Warlord\FENCE1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -477,5 +474,8 @@
   </data>
   <data name="AMR11E" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\AMR11E.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FCTRL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\5 - King\FCTRL2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>
