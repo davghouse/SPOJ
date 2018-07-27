@@ -1772,6 +1772,34 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Numerics;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/MUL/ #big-numbers
+        ///// Multiplies big numbers.
+        ///public static class MUL
+        ///{
+        ///    public static BigInteger Solve(string a, string b)
+        ///        =&gt; BigInteger.Parse(a) * BigInteger.Parse(b);
+        ///}
+        ///
+        ///public static class Program
+        ///{
+        ///    private static void Main()
+        ///    {
+        ///        var output = new StringBuilder();
+        ///        int remainingTestCases = int.Parse(Console.ReadLine());
+        ///        while (remainingTestCases-- &gt; 0)
+        ///       [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MUL {
+            get {
+                return ResourceManager.GetString("MUL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/NGM/ #game
         ///// For a game between two players where digits are subtracted from a number
