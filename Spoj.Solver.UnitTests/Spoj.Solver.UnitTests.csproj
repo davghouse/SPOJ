@@ -109,6 +109,7 @@
     <Compile Include="Solutions\5 - King\ACPC10DTests.cs" />
     <Compile Include="Solutions\5 - King\ACPC11BTests.cs" />
     <Compile Include="Solutions\5 - King\AMR10GTests.cs" />
+    <Compile Include="Solutions\5 - King\AMR11ETests.cs" />
     <Compile Include="Solutions\5 - King\ANARC05BTests.cs" />
     <Compile Include="Solutions\5 - King\BEENUMSTests.cs" />
     <Compile Include="Solutions\5 - King\BITMAPTests.cs" />

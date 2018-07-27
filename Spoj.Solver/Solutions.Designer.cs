@@ -346,6 +346,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/AMR11E/ #factors #math #primes #sieve
+        ///// Finds the first 1000 numbers with at least 3 distinct prime factors (&apos;lucky&apos; numbers).
+        ///public static class AMR11E
+        ///{
+        ///    // Calculated beforehand (via exploration) that 2664 is the 1000th lucky number.
+        ///    private static readonly int[] _sieve = new int[2665];
+        ///    private static readonly int[] _luckyNumbers = new int[1001];
+        ///
+        ///    static AMR11E()
+        ///    {
+        ///        int n = 0;
+        ///
+        ///        // Store t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string AMR11E {
+            get {
+                return ResourceManager.GetString("AMR11E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings #trap
         ///// Determines if the reverse of every substring exists in a string.
