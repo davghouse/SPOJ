@@ -70,7 +70,7 @@
     <None Include="Solutions\3 - Warlord\TOANDFRO.cs" />
     <None Include="Solutions\4 - Prince\AE00.cs" />
     <None Include="Solutions\5 - King\FCTRL.cs" />
-    <None Include="Solutions\4 - Prince\FCTRL2.cs" />
+    <None Include="Solutions\5 - King\FCTRL2.cs" />
     <None Include="Solutions\5 - King\LASTDIG.cs" />
     <None Include="Solutions\5 - King\PRIME1.cs" />
     <None Include="Solutions\5 - King\SAMER08F.cs" />

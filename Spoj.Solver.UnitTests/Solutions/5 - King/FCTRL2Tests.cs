@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Spoj.Solver.UnitTests.Solutions._3___Warlord
+namespace Spoj.Solver.UnitTests.Solutions._5___King
 {
     [TestClass]
     public sealed class FCTRL2Tests : SolutionTestsBase
