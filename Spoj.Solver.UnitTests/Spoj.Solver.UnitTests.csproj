@@ -152,6 +152,7 @@
     <Compile Include="Solutions\6 - Emperor\BUGLIFETests.cs" />
     <Compile Include="Solutions\6 - Emperor\COMDIVTests.cs" />
     <Compile Include="Solutions\6 - Emperor\SUMFOURTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\BRCKTSTests.cs" />
     <Compile Include="Solutions\7 - Immortal\CSTREETTests.cs" />
     <Compile Include="Solutions\6 - Emperor\DISUBSTRTests.cs" />
     <Compile Include="Solutions\6 - Emperor\EDISTTests.cs" />

@@ -560,6 +560,35 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/BRCKTS/ &lt;tags&gt;
+        ///// &lt;description&gt;
+        ///public sealed class BRCKTS
+        ///{
+        ///    private readonly string _brackets;
+        ///    private readonly ArrayBasedSegmentTree _segmentTree;
+        ///
+        ///    public BRCKTS(string brackets)
+        ///    {
+        ///        _brackets = brackets;
+        ///        _segmentTree = new ArrayBasedSegmentTree(brackets);
+        ///    }
+        ///
+        ///    public bool IsBalanced()
+        ///        =&gt; _segmentTree.Query(0, _brackets.Length - 1);
+        ///
+        ///    public void Flip(int index)
+        ///        =&gt;  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BRCKTS {
+            get {
+                return ResourceManager.GetString("BRCKTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections;
         ///using System.Collections.Generic;
         ///using System.Linq;

@@ -19,6 +19,7 @@ public sealed class GSS1
 
 // Most guides online cover this approach, but here's one good one:
 // https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/
+// This segment tree has some minor optimizations (compared to say, GSS3) to avoid TLE.
 public sealed class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<int> _sourceArray;

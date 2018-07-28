@@ -149,18 +149,6 @@ public sealed class MaximumSumQueryObject
         MaximumRightStartingSum = GetCombinedMaximumRightStartingSum(updatedLeftChild, updatedRightChild);
     }
 
-    // The given range starts before the segment starts and ends after the segment ends.
-    public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
-        => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
-
-    // Assumed that some overlap exists, just not necessarily over the left half.
-    public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
-        => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
-
-    // Assumed that some overlap exists, just not necessarily over the right half.
-    public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
-        => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
-
     private static int GetCombinedSum(MaximumSumQueryObject leftAdjacentObject, MaximumSumQueryObject rightAdjacentObject)
         // The sum is just the sum of both.
         => leftAdjacentObject.Sum + rightAdjacentObject.Sum;
@@ -182,6 +170,18 @@ public sealed class MaximumSumQueryObject
         => Math.Max(
             rightAdjacentObject.Sum + leftAdjacentObject.MaximumRightStartingSum,
             rightAdjacentObject.MaximumRightStartingSum);
+
+    // The given range starts before the segment starts and ends after the segment ends.
+    public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
+        => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
+
+    // Assumed that some overlap exists, just not necessarily over the left half.
+    public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+        => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
+
+    // Assumed that some overlap exists, just not necessarily over the right half.
+    public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+        => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
 }
 
 public static class MathHelper
