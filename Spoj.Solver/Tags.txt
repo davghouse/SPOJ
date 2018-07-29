@@ -37,6 +37,7 @@
 #io
 #knapsack
 #lazy
+#longest-path
 #math
 #memoization
 #merge
@@ -59,6 +60,7 @@
 #segment-tree
 #sequence
 #sets
+#shortest-path
 #sieve
 #simulation
 #sorting

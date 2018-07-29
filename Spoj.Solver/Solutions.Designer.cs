@@ -562,8 +562,8 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/BRCKTS/ &lt;tags&gt;
-        ///// &lt;description&gt;
+        ///// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #research #segment-tree
+        ///// Determines (across frequent updates) if an expression has balanced brackets.
         ///public sealed class BRCKTS
         ///{
         ///    private readonly string _brackets;
@@ -576,10 +576,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public bool IsBalanced()
-        ///        =&gt; _segmentTree.Query(0, _brackets.Length - 1);
-        ///
-        ///    public void Flip(int index)
-        ///        =&gt;  [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BRCKTS {
             get {
@@ -1626,6 +1623,30 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/LABYR1/ #bfs #graph-theory #longest-path #proof #tree
+        ///// Finds the longest path between &apos;free&apos; blocks in a labyrinth (a tree).
+        ///public static class LABYR1
+        ///{
+        ///    // See image for details: http://i.imgur.com/hWnw1N9.jpg.
+        ///    public static int Solve(string[] labyrinth)
+        ///    {
+        ///        var startBlock = FindAnyFreeBlock(labyrinth);
+        ///        if (startBlock == null) return 0;
+        ///
+        ///        int distance;
+        ///      [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LABYR1 {
+            get {
+                return ResourceManager.GetString("LABYR1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/LASTDIG/ #digits #mod-math
         ///// For a base b from 0 through 20 and an exponent e, compute b^e mod 10 (the last digit of b^e).
@@ -2198,7 +2219,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/PT07Z/ #bfs #graph-theory #proof #tree
+        ///// https://www.spoj.com/problems/PT07Z/ #bfs #graph-theory #longest-path #proof #tree
         ///// Finds the longest path in a tree.
         ///public static class PT07Z
         ///{
@@ -2210,7 +2231,7 @@ namespace Spoj.Solver {
         ///
         ///        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
         ///
-        ///        var firstVertex = graph [rest of string was truncated]&quot;;.
+        ///        var first [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Z {
             get {
@@ -2285,13 +2306,13 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///using Vertex = WeightedGraph.Vertex;
         ///
-        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research
+        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
         ///// Finds the cheapest path between pairs of cities.
         ///public static class SHPATH
         ///{
         ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
         ///    // This solution gets TLE, but it has the main features of the submitted solution, just
-        ///    // more overhead [rest of string was truncated]&quot;;.
+        ///    / [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SHPATH {
             get {
@@ -2431,10 +2452,9 @@ namespace Spoj.Solver {
         ///#io
         ///#knapsack
         ///#lazy
+        ///#longest-path
         ///#math
-        ///#memoization
-        ///#merge
-        ///#mod-m [rest of string was truncated]&quot;;.
+        ///#memoization        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

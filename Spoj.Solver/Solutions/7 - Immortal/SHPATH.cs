@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Vertex = WeightedGraph.Vertex;
 
-// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research
+// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
 // Finds the cheapest path between pairs of cities.
 public static class SHPATH
 {

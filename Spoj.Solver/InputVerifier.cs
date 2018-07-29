@@ -4,27 +4,31 @@ using System.Linq;
 // Too many problems have improperly formatted input, like random whitespace, missing newlines
 // and other things that C# doesn't deal well with by default. It seems fine to allow verifying
 // the input format on an alt account to prevent frustration and misrepresentative profile stats.
-// Currently verifying for: https://www.spoj.com/problems/BRCKTS/
+// Currently verifying for: https://www.spoj.com/problems/LABYR1/
 public static class InputVerifier
 {
     private static void Main()
     {
-        for (int t = 1; t <= 10; ++t)
+        int remainingTestCases = int.Parse(Console.ReadLine());
+        while (remainingTestCases-- > 0)
         {
-            int bracketCount = int.Parse(Console.ReadLine());
-            if (bracketCount < 1 || bracketCount > 30000)
+            string[] line = Console.ReadLine().Split();
+            int columnCount = int.Parse(line[0]);
+            int rowCount = int.Parse(line[1]);
+
+            if (columnCount < 3 || rowCount < 3)
                 throw new ArgumentOutOfRangeException();
 
-            string brackets = Console.ReadLine();
-            if (brackets.Length != bracketCount || brackets.Any(c => c != '(' && c != ')'))
-                throw new ArgumentException();
+            if (columnCount > 1000 || rowCount > 1000)
+                throw new ArgumentOutOfRangeException();
 
-            int operationCount = int.Parse(Console.ReadLine());
-            for (int o = 1; o <= operationCount; ++o)
+            for (int r = 1; r <= rowCount; ++r)
             {
-                int operation = int.Parse(Console.ReadLine());
-                if (operation < 0 || operation > bracketCount)
-                    throw new ArgumentOutOfRangeException();
+                string row = Console.ReadLine();
+                if (row.Length != columnCount)
+                    throw new ArgumentException();
+                if (row.Any(b => b != '#' && b != '.'))
+                    throw new ArgumentException();
             }
         }
     }
