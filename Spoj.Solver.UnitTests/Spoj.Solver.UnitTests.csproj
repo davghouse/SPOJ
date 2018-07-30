@@ -177,6 +177,7 @@
     <Compile Include="Solutions\7 - Immortal\HORRIBLE_v2Tests.cs" />
     <Compile Include="Solutions\7 - Immortal\KGSSTests.cs" />
     <Compile Include="Solutions\7 - Immortal\LABYR1Tests.cs" />
+    <Compile Include="Solutions\7 - Immortal\MICEMAZETests.cs" />
     <Compile Include="Solutions\7 - Immortal\PT07ZTests.cs" />
     <Compile Include="Solutions\7 - Immortal\SHPATHTests.cs" />
     <Compile Include="Solutions\8 - Deity\DQUERYTests.cs" />

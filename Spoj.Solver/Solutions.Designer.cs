@@ -1771,18 +1771,37 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/MCOINS/ #game #research
+        ///// https://www.spoj.com/problems/MCOINS/ #dynamic-programming #game #research
         ///// Plays a finite, perfect information 2-player game where coins are removed from a stack.
         ///public static class MCOINS
         ///{
         ///    // This ties back to HUBULLU and NGM and the idea of a determinate game, for background see:
         ///    // https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)
         ///    // http://www.math.harvard.edu/~elkies/FS23j.03/zermelo.pdf
-        ///    // I think about it like, if the fi [rest of string was truncated]&quot;;.
+        ///    // I think abo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MCOINS {
             get {
                 return ResourceManager.GetString("MCOINS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using Vertex = WeightedGraph.Vertex;
+        ///
+        ///// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
+        ///// Finds the number of mice that can reach the end of a maze in time.
+        ///public static class MICEMAZE
+        ///{
+        ///    // We use Dijkstra&apos;s algorithm from the exit cell. It&apos;s like starting at our destination and
+        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection di [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MICEMAZE {
+            get {
+                return ResourceManager.GetString("MICEMAZE", resourceCulture);
             }
         }
         

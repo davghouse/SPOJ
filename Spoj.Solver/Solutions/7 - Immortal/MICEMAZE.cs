@@ -1,65 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Vertex = WeightedGraph.Vertex;
 
-// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
-// Finds the cheapest path between pairs of cities.
-public static class SHPATH
+// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
+// Finds the number of mice that can reach the end of a maze in time.
+public static class MICEMAZE
 {
-    // This uses Dijkstra's algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
-    // This solution gets TLE, but it has the main features of the submitted solution, just
-    // more overhead. Importantly, we return immediately upon visiting the destination city,
-    // and we don't initialize the heap with all cities. We only add cities to the heap when
-    // reaching one of their neighbor cities. Without a pre-filled heap to rely on, we track
-    // what cities have been visited using an array of bools. I played around unsuccessfully
-    // with memoization, with an instance of a solver for each unique source city and a
-    // dictionary of destination costs. Here's a sketchy one-off submission that actually
-    // passed: https://gist.github.com/davghouse/972d12b21957b57c1fbe14576675162e
-    public static int Solve(WeightedGraph cityGraph, Vertex sourceCity, Vertex destinationCity)
+    // We use Dijkstra's algorithm from the exit cell. It's like starting at our destination and
+    // then running time backwards to see where we could've gotten there from. Connection directions
+    // need to be reversed. Like, we can spend forward time to go in one direction, or backwards
+    // time to go in the opposite direction. A --> B --> C becomes A <-- B <-- C. As a little
+    // optimization we don't initialize the heap w/ all cells. Once the best path time is over our
+    // limit, we can just break out of the loop w/o ever putting later cells onto the heap.
+    public static int Solve(int cellCount, int exitCell, int timeLimit, int connectionCount, int[,] connections)
     {
-        var pathCosts = new BinaryHeap(sourceCity);
-        bool[] visitedCities = new bool[cityGraph.VertexCount];
-
-        while (!pathCosts.IsEmpty)
+        var graph = new WeightedGraph(cellCount);
+        for (int c = 0; c < connectionCount; ++c)
         {
-            var cheapestPath = pathCosts.Extract();
-            var city = cheapestPath.Key;
-            int pathCostToCity = cheapestPath.Value;
+            graph.AddEdge(connections[c, 1], connections[c, 0], connections[c, 2]);
+        }
 
-            if (city == destinationCity)
-                return pathCostToCity;
+        int mouseCount = 0;
+        var pathTimes = new BinaryHeap(graph.Vertices[exitCell]);
+        bool[] visitedCells = new bool[cellCount];
 
-            foreach (var neighbor in city.Neighbors.Where(n => !visitedCities[n.ID]))
+        while (!pathTimes.IsEmpty)
+        {
+            var closestPath = pathTimes.Extract();
+            var cell = closestPath.Key;
+            int pathTimeFromCell = closestPath.Value;
+
+            if (pathTimeFromCell > timeLimit)
+                break;
+
+            ++mouseCount;
+
+            foreach (var neighbor in cell.Neighbors.Where(n => !visitedCells[n.ID]))
             {
-                int pathCostToNeighborThroughCity = pathCostToCity + city.GetEdgeWeight(neighbor);
-                int currentPathCostToNeighbor;
+                int pathTimeFromNeighborThroughCell = pathTimeFromCell + cell.GetEdgeWeight(neighbor);
+                int currentPathTimeFromNeighbor;
 
-                // We know the neighboring city hasn't been visited yet, so we need to maintain its
+                // We know the neighboring cell hasn't been visited yet, so we need to maintain its
                 // path cost in the heap. If it's already in the heap, see if a cheaper path exists
-                // to it through the city we're visiting. If it isn't in the heap yet, add it.
-                if (pathCosts.TryGetValue(neighbor, out currentPathCostToNeighbor))
+                // to it through the cell we're visiting. If it isn't in the heap yet, add it.
+                if (pathTimes.TryGetValue(neighbor, out currentPathTimeFromNeighbor))
                 {
-                    if (pathCostToNeighborThroughCity < currentPathCostToNeighbor)
+                    if (pathTimeFromNeighborThroughCell < currentPathTimeFromNeighbor)
                     {
-                        pathCosts.Update(neighbor, pathCostToNeighborThroughCity);
+                        pathTimes.Update(neighbor, pathTimeFromNeighborThroughCell);
                     }
                 }
                 else
                 {
-                    pathCosts.Add(neighbor, pathCostToNeighborThroughCity);
+                    pathTimes.Add(neighbor, pathTimeFromNeighborThroughCell);
                 }
             }
 
-            visitedCities[city.ID] = true;
+            visitedCells[cell.ID] = true;
         }
 
-        throw new NotSupportedException();
+        return mouseCount;
     }
 }
 
-// Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored in an array
+// Directed, weighted graph with no loops or multiple edges. The graph's vertices are stored in an array
 // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
 // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
 // search state inside of the vertices themselves can also help.
@@ -83,10 +88,7 @@ public sealed class WeightedGraph
         => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID], weight);
 
     public void AddEdge(Vertex firstVertex, Vertex secondVertex, int weight)
-    {
-        firstVertex.AddNeighbor(secondVertex, weight);
-        secondVertex.AddNeighbor(firstVertex, weight);
-    }
+        => firstVertex.AddNeighbor(secondVertex, weight);
 
     public sealed class Vertex : IEquatable<Vertex>
     {
@@ -293,49 +295,24 @@ public static class Program
 {
     private static void Main()
     {
-        var output = new StringBuilder();
-        int testCount = int.Parse(Console.ReadLine());
-        for (int t = 0; t < testCount; ++t)
+        int cellCount = int.Parse(Console.ReadLine());
+        int exitCell = int.Parse(Console.ReadLine()) - 1;
+        int timeLimit = int.Parse(Console.ReadLine());
+        int connectionCount = int.Parse(Console.ReadLine());
+
+        int[,] connections = new int[connectionCount, 3];
+        for (int c = 0; c < connectionCount; ++c)
         {
-            int cityCount = int.Parse(Console.ReadLine());
-            var cityIndices = new Dictionary<string, int>(cityCount);
-            var cityGraph = new WeightedGraph(cityCount);
-
-            for (int c = 0; c < cityCount; ++c)
-            {
-                string cityName = Console.ReadLine();
-                cityIndices.Add(cityName, c);
-
-                int neighborCount = int.Parse(Console.ReadLine());
-                for (int n = 0; n < neighborCount; ++n)
-                {
-                    string[] line = Console.ReadLine().Split();
-                    int neighborIndex = int.Parse(line[0]) - 1;
-                    int connectionCost = int.Parse(line[1]);
-
-                    // E.g., we'll be told about both (2, 5) and (5, 2). They're equivalent, so
-                    // only add (2, 5) (the first one we came across), where c < neighborIndex.
-                    if (c > neighborIndex)
-                        continue;
-
-                    cityGraph.AddEdge(c, neighborIndex, connectionCost);
-                }
-            }
-
-            int pathCount = int.Parse(Console.ReadLine());
-            for (int p = 0; p < pathCount; ++p)
-            {
-                string[] line = Console.ReadLine().Split();
-                var sourceCity = cityGraph.Vertices[cityIndices[line[0]]];
-                var destinationCity = cityGraph.Vertices[cityIndices[line[1]]];
-
-                output.Append(SHPATH.Solve(cityGraph, sourceCity, destinationCity));
-                output.AppendLine();
-            }
-
-            Console.ReadLine();
+            string[] line = Console.ReadLine().Split();
+            int startCell = int.Parse(line[0]) - 1;
+            int endCell = int.Parse(line[1]) - 1;
+            int timeCost = int.Parse(line[2]);
+            connections[c, 0] = startCell;
+            connections[c, 1] = endCell;
+            connections[c, 2] = timeCost;
         }
 
-        Console.Write(output);
+        Console.Write(
+            MICEMAZE.Solve(cellCount, exitCell, timeLimit, connectionCount, connections));
     }
 }
