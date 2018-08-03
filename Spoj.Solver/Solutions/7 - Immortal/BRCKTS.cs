@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #research #segment-tree
+// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #segment-tree
 // Determines (across frequent updates) if an expression has balanced brackets.
 public sealed class BRCKTS
 {

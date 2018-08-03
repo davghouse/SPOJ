@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-// https://www.spoj.com/problems/MARBLES/ #big-numbers #combinatorics #math #research
+// https://www.spoj.com/problems/MARBLES/ #big-numbers #combinatorics #math
 // From k differently colored, infinite sets of marbles, counts the number of ways to choose n marbles s.t.
 // there's always at least one marble of each color chosen.
 public static class MARBLES

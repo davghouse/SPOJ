@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-// https://www.spoj.com/problems/MCOINS/ #dynamic-programming #game #research
+// https://www.spoj.com/problems/MCOINS/ #dynamic-programming #game
 // Plays a finite, perfect information 2-player game where coins are removed from a stack.
 public static class MCOINS
 {

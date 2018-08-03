@@ -99,5 +99,47 @@ namespace Spoj.Library.UnitTests
                 Assert.IsTrue(max >= 0 && max <= 1);
             }
         }
+
+        [TestMethod]
+        public void GenerateRandomRootedTrees()
+        {
+            var lineTree = InputGenerator.GenerateRandomRootedTree(5, 1, 1);
+            Assert.AreEqual(0, lineTree.Root.ID);
+            Assert.AreEqual(5, lineTree.VertexCount);
+            Assert.AreEqual(1, lineTree.Vertices[0].Children.Count);
+            Assert.AreEqual(1, lineTree.Vertices[1].Children.Count);
+            Assert.AreEqual(1, lineTree.Vertices[2].Children.Count);
+            Assert.AreEqual(1, lineTree.Vertices[3].Children.Count);
+            Assert.AreEqual(0, lineTree.Vertices[4].Children.Count);
+            Assert.AreEqual(3, lineTree.Vertices[2].Children[0].ID);
+
+            var binaryTree = InputGenerator.GenerateRandomRootedTree(6, 2, 2);
+            Assert.AreEqual(0, binaryTree.Root.ID);
+            Assert.AreEqual(6, binaryTree.VertexCount);
+            Assert.AreEqual(2, binaryTree.Vertices[0].Children.Count);
+            Assert.AreEqual(2, binaryTree.Vertices[1].Children.Count);
+            Assert.AreEqual(1, binaryTree.Vertices[2].Children.Count);
+            Assert.AreEqual(0, binaryTree.Vertices[3].Children.Count);
+            Assert.AreEqual(0, binaryTree.Vertices[4].Children.Count);
+            Assert.AreEqual(0, binaryTree.Vertices[5].Children.Count);
+            Assert.AreEqual(5, binaryTree.Vertices[2].Children[0].ID);
+
+            var starTree = InputGenerator.GenerateRandomRootedTree(6, 5, 10);
+            Assert.AreEqual(0, starTree.Root.ID);
+            Assert.AreEqual(6, starTree.VertexCount);
+            Assert.AreEqual(5, starTree.Vertices[0].Children.Count);
+            Assert.AreEqual(0, starTree.Vertices[1].Children.Count);
+            Assert.AreEqual(0, starTree.Vertices[2].Children.Count);
+            Assert.AreEqual(0, starTree.Vertices[3].Children.Count);
+            Assert.AreEqual(0, starTree.Vertices[4].Children.Count);
+            Assert.AreEqual(0, starTree.Vertices[5].Children.Count);
+
+            var randomTree = InputGenerator.GenerateRandomRootedTree(100, 1, 3);
+            randomTree.InitializeDepthsAndSubtreeSizes();
+            Assert.IsTrue(randomTree.Vertices
+                .All(v => v.Children.All(c => c.Depth == v.Depth + 1)));
+            Assert.IsTrue(randomTree.Vertices
+                .All(v => randomTree.Vertices.Where(v2 => v2.ID > v.ID).All(v2 => v2.Depth >= v.Depth)));
+        }
     }
 }

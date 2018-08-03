@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// https://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #research #segment-tree
+// https://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #segment-tree
 // Answers range sum queries and performs range additions.
 public sealed class HORRIBLE // v1, using a segment tree
 {

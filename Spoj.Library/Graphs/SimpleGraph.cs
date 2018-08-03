@@ -228,7 +228,7 @@ namespace Spoj.Library.Graphs
 
             public int ID { get; }
 
-            public IEnumerable<Vertex> Neighbors => _neighbors;
+            public IReadOnlyCollection<Vertex> Neighbors => _neighbors;
             public int Degree => _neighbors.Count;
 
             internal void AddNeighbor(int neighborID)

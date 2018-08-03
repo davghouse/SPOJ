@@ -28,12 +28,12 @@ public static class Program
     private static void Main()
     {
         int totalTestCases = int.Parse(Console.ReadLine());
-        for (int i = 0; i < totalTestCases; ++i)
+        for (int t = 0; t < totalTestCases; ++t)
         {
             int[] line1 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int[] line2 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-            Console.WriteLine($"Scenario #{i + 1}:");
+            Console.WriteLine($"Scenario #{t + 1}:");
             Console.WriteLine(
                 STAMPS.Solve(line1[0], line2));
             Console.WriteLine();

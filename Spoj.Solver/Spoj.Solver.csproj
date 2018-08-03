@@ -6,7 +6,6 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{598E4F60-D90C-4C90-AB7A-A17CCB32AE4A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Spoj.Solver</RootNamespace>
     <AssemblyName>Spoj.Solver</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
@@ -275,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\7 - Immortal\LCA.cs" />
     <None Include="Solutions\7 - Immortal\MICEMAZE.cs" />
     <None Include="Solutions\7 - Immortal\LABYR1.cs" />
     <None Include="Solutions\7 - Immortal\BRCKTS.cs" />
@@ -327,7 +327,6 @@
     <None Include="Solutions\6 - Emperor\SILVER.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Solutions\4 - Prince\DANGER.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/PHONELST/ #research #strings #trie
+// https://www.spoj.com/problems/PHONELST/ #strings #trie
 // Determines if some phone numbers are consistent--none the prefix of another.
 public static class PHONELST
 {

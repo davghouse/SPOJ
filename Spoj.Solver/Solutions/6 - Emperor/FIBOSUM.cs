@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// https://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #research #sequence
+// https://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #sequence
 // Finds the sum of the fibonacci numbers in a range.
 public static class FIBOSUM
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// https://www.spoj.com/problems/KGSS/ #divide-and-conquer #research #segment-tree
+// https://www.spoj.com/problems/KGSS/ #divide-and-conquer #segment-tree
 // Does element updates and second maximum (sum) subrange queries on an array.
 public sealed class KGSS
 {

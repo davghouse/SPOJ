@@ -1,0 +1,5 @@
+﻿Euler tours on 100 trees, size 10000:
+  Stack, 1 to 10 children:     x1.0000 (0 minutes 0.0358 seconds)
+  Stack, 1 to 2 children:      x1.1868 (0 minutes 0.0425 seconds)
+  Recursion, 1 to 10 children: x1.5888 (0 minutes 0.0570 seconds)
+  Recursion, 1 to 2 children:  x1.8640 (0 minutes 0.0668 seconds)

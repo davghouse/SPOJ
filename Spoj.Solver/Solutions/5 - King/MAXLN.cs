@@ -18,9 +18,9 @@ public static class Program
     private static void Main()
     {
         int totalTestCases = int.Parse(Console.ReadLine());
-        for (int i = 1; i <= totalTestCases; ++i)
+        for (int t = 1; t <= totalTestCases; ++t)
         {
-            Console.WriteLine($"Case {i}: {MAXLN.Solve(int.Parse(Console.ReadLine()))}");
+            Console.WriteLine($"Case {t}: {MAXLN.Solve(int.Parse(Console.ReadLine()))}");
         }
     }
 }

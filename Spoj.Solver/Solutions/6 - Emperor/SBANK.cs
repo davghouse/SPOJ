@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #research #sorting #trap
+// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #sorting #trap
 // Sorts bank accounts ascendingly (lexicographically, but all the same length so w/e).
 public static class SBANK
 {

@@ -17,7 +17,7 @@ namespace Spoj.Library.BinaryIndexedTrees
 
     // Say a RURQUpdate has just run (and assume inductively RURQQuery was correctly computing sums before):
     // Querying before i isn't affected, since BIT updates only affect from an index onward, and all of
-    // the indexes affected by RURQUpdate were >= i. Good, so querying before i is still correct.
+    // the indices affected by RURQUpdate were >= i. Good, so querying before i is still correct.
 
     // Querying between i and j should be affected; say we're querying at i <= k <= j, then the
     // query result should be increased by (k - i + 1) * delta, as that's how the cumulative sum

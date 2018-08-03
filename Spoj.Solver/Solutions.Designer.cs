@@ -268,7 +268,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization #research
+        ///// https://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization
         ///// Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
         ///public static class AGGRCOW
         ///{
@@ -562,7 +562,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #research #segment-tree
+        ///// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #segment-tree
         ///// Determines (across frequent updates) if an expression has balanced brackets.
         ///public sealed class BRCKTS
         ///{
@@ -815,7 +815,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///using Vertex = WeightedGraph.Vertex;
         ///
-        ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims #research
+        ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims
         ///// Finds the cheapest way to pave streets from any building to any building.
         ///public static class CSTREET
         ///{
@@ -924,7 +924,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/DQUERY/ #bit #offline #research #sorting
+        ///// https://www.spoj.com/problems/DQUERY/ #bit #offline #sorting
         ///// Finds the number of distinct elements in a subrange of an array.
         ///// See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
         ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
@@ -961,7 +961,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #research #strings
+        ///// https://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #strings
         ///// Finds the minimum number of edits (inserts, deletes, replacements) to make two strings equal.
         ///public static class EDIST
         ///{
@@ -1020,7 +1020,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/ENIGMATH/ #gcd #math #research
+        ///// https://www.spoj.com/problems/ENIGMATH/ #gcd #math
         ///// Solves Ax - By = 0 with x and y the smallest possible positive integers.
         ///public static class ENIGMATH
         ///{
@@ -1041,7 +1041,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/ETF/ #formula #math #primes #research #sieve
+        ///// https://www.spoj.com/problems/ETF/ #formula #math #primes #sieve
         ///// Calculates the value of the totient function (count of relative primes) for the given n, 1 &lt;= n &lt;= 10^6.
         ///public static class ETF
         ///{
@@ -1121,7 +1121,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof #research
+        ///// https://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof
         ///// Finds the expected number of rolls before rolling every side of an n-sided die.
         ///public static class FAVDICE
         ///{
@@ -1208,7 +1208,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #research #sequence
+        ///// https://www.spoj.com/problems/FIBOSUM/ #formula #math #memoization #mod-math #sequence
         ///// Finds the sum of the fibonacci numbers in a range.
         ///public static class FIBOSUM
         ///{
@@ -1227,7 +1227,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/GCD2/ #gcd #math #research #trap
+        ///// https://www.spoj.com/problems/GCD2/ #gcd #math #trap
         ///// Finds the GCD of two numbers, one of which can be really big.
         ///public static class GCD2
         ///{
@@ -1293,7 +1293,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/GSS1/ #divide-and-conquer #research #segment-tree
+        ///// https://www.spoj.com/problems/GSS1/ #divide-and-conquer #segment-tree
         ///// Does maximum sum subrange queries on an array.
         ///public sealed class GSS1
         ///{
@@ -1318,7 +1318,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/GSS3/ #divide-and-conquer #research #segment-tree
+        ///// https://www.spoj.com/problems/GSS3/ #divide-and-conquer #segment-tree
         ///// Does element updates and maximum sum subrange queries on an array.
         ///public sealed class GSS3
         ///{
@@ -1359,7 +1359,8 @@ namespace Spoj.Solver {
         ///{
         ///    // Sort the array, then traverse it in descending order with two indices. The small
         ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
-        ///    // small index can be decreased because there&apos;s no way decreasing the big index        /// [rest of string was truncated]&quot;;.
+        ///    // small index can be decreased because there&apos;s no way decreasing the big index
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HACKRNDM_v1 {
             get {
@@ -1400,7 +1401,8 @@ namespace Spoj.Solver {
         ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t be a problem here (at least for the first 277 terms).
         ///    private static readonly List&lt;float&gt; _runningOverhangTotals;
         ///
-        ///    static HANGOVER()        /// [rest of string was truncated]&quot;;.
+        ///    static HANGOVER()
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HANGOVER {
             get {
@@ -1431,7 +1433,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #research #segment-tree
+        ///// https://www.spoj.com/problems/HORRIBLE/ #divide-and-conquer #lazy #segment-tree
         ///// Answers range sum queries and performs range additions.
         ///public sealed class HORRIBLE // v1, using a segment tree
         ///{
@@ -1455,7 +1457,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer #research
+        ///// https://www.spoj.com/problems/HORRIBLE/ #bit #divide-and-conquer
         ///// Answers range sum queries and performs range additions.
         ///public sealed class HORRIBLE // v2, using a RURQ BIT
         ///{
@@ -1601,7 +1603,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/KGSS/ #divide-and-conquer #research #segment-tree
+        ///// https://www.spoj.com/problems/KGSS/ #divide-and-conquer #segment-tree
         ///// Does element updates and second maximum (sum) subrange queries on an array.
         ///public sealed class KGSS
         ///{
@@ -1693,6 +1695,34 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/TEMPLATE2/ &lt;tags&gt;
+        ///// &lt;description&gt;
+        ///public static class TEMPLATE2
+        ///{
+        ///    public static int Solve(int a, int b)
+        ///        =&gt; a * b;
+        ///}
+        ///
+        ///public static class Program
+        ///{
+        ///    private static void Main()
+        ///    {
+        ///        var output = new StringBuilder();
+        ///        int remainingTestCases = int.Parse(Console.ReadLine());
+        ///        while (remainingTestCases-- &gt; 0)
+        ///        {
+        ///            int[] line = Array.ConvertAll(Console.ReadLine().Split(), in [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LCA {
+            get {
+                return ResourceManager.GetString("LCA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
@@ -1735,7 +1765,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/MARBLES/ #big-numbers #combinatorics #math #research
+        ///// https://www.spoj.com/problems/MARBLES/ #big-numbers #combinatorics #math
         ///// From k differently colored, infinite sets of marbles, counts the number of ways to choose n marbles s.t.
         ///// there&apos;s always at least one marble of each color chosen.
         ///public static class MARBLES
@@ -1771,7 +1801,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/MCOINS/ #dynamic-programming #game #research
+        ///// https://www.spoj.com/problems/MCOINS/ #dynamic-programming #game
         ///// Plays a finite, perfect information 2-player game where coins are removed from a stack.
         ///public static class MCOINS
         ///{
@@ -1792,7 +1822,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using Vertex = WeightedGraph.Vertex;
         ///
-        ///// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
+        ///// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the number of mice that can reach the end of a maze in time.
         ///public static class MICEMAZE
         ///{
@@ -1891,7 +1921,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/NHAY/ #research #strings
+        ///// https://www.spoj.com/problems/NHAY/ #strings
         ///// Finds all occurrences of a given pattern in a string.
         ///public static class NHAY
         ///{
@@ -1964,7 +1994,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema #research
+        ///// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema
         ///// Determines if an attacker is offsides (using player positions only).
         ///public static class OFFSIDE
         ///{
@@ -2086,7 +2116,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/PHONELST/ #research #strings #trie
+        ///// https://www.spoj.com/problems/PHONELST/ #strings #trie
         ///// Determines if some phone numbers are consistent--none the prefix of another.
         ///public static class PHONELST
         ///{
@@ -2145,7 +2175,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/PIR/ #formula #math #research
+        ///// https://www.spoj.com/problems/PIR/ #formula #math
         ///// Calculates the volume of a triangular pyramid, given its side lengths.
         ///public static class PIR
         ///{
@@ -2262,7 +2292,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/QUADAREA/ #formula #research
+        ///// https://www.spoj.com/problems/QUADAREA/ #formula
         ///// Compute the max area possible for any quadrilateral with the given side lengths.
         ///public static class QUADAREA
         ///{
@@ -2304,7 +2334,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #research #sorting #trap
+        ///// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #sorting #trap
         ///// Sorts bank accounts ascendingly (lexicographically, but all the same length so w/e).
         ///public static class SBANK
         ///{
@@ -2325,7 +2355,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///using Vertex = WeightedGraph.Vertex;
         ///
-        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
+        ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the cheapest path between pairs of cities.
         ///public static class SHPATH
         ///{
@@ -2473,7 +2503,8 @@ namespace Spoj.Solver {
         ///#lazy
         ///#longest-path
         ///#math
-        ///#memoization        /// [rest of string was truncated]&quot;;.
+        ///#memoization
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
@@ -2622,7 +2653,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #research #sieve
+        ///// https://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #sieve
         ///// Determines if an integer can be expressed as the sum of two squared integers.
         ///public static class TWOSQRS
         ///{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization #research
+// https://www.spoj.com/problems/AGGRCOW/ #binary-search #greedy #optimization
 // Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
 public static class AGGRCOW
 {

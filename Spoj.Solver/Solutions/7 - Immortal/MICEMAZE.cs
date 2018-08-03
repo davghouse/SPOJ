@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Vertex = WeightedGraph.Vertex;
 
-// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #research #shortest-path
+// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
 // Finds the number of mice that can reach the end of a maze in time.
 public static class MICEMAZE
 {
