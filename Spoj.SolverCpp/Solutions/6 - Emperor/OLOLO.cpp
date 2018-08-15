@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-// See OLOLO.cs for details--this solution was submitted using C++ because C# I/O is too slow.
+// Here for reference--initially submitted using C++, but now OLOLO.cs is fast enough.
 int main()
 {
   int remainingPyanis, pyaniNumber, result = 0;

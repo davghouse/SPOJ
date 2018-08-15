@@ -1,4 +1,5 @@
 ﻿using Spoj.Library.BinaryIndexedTrees;
+using Spoj.Library.Helpers;
 using Spoj.Library.SegmentTrees.AdHoc;
 using System;
 using System.Collections.Generic;

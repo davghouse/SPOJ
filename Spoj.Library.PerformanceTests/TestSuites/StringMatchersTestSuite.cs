@@ -1,4 +1,5 @@
-﻿using Spoj.Library.StringMatchers;
+﻿using Spoj.Library.Helpers;
+using Spoj.Library.StringMatchers;
 using System.Collections.Generic;
 using System.Linq;
 

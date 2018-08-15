@@ -40,7 +40,7 @@ public sealed class SieveOfEratosthenesFactorizer
     // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
     // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
     // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
-    // can divide by that factor, and then divide the result by its own factor, and so on, until we reach one.
+    // can enumerate all its prime factors by dividing it by that factor, the quotient by its factor, etc.
     private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
     // TODO: A bool controlling proper inteface implementation seems bad, but providing isn't always needed...

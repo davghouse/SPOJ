@@ -274,7 +274,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Given a potential shortest distance between stalls, it&apos;s easy to verify if the cows can be placed
         ///    // with at least that much distance between any two of them. To do this:
-        ///    // Put a cow in the first stall, put the next cow  [rest of string was truncated]&quot;;.
+        ///    // Put a cow in the first stall, put the next cow in the 𝐟� [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AGGRCOW {
             get {
@@ -576,7 +576,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public bool IsBalanced()
-        ///    [rest of string was truncated]&quot;;.
+        ///        =&gt; _s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BRCKTS {
             get {
@@ -820,7 +820,7 @@ namespace Spoj.Solver {
         ///public static class CSTREET
         ///{
         ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
-        ///    // to build the MST, just need the total cost of the streets that compose it. The heap  [rest of string was truncated]&quot;;.
+        ///    // to build the MST, just need the total cost of the streets that compose it. The heap itself can [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CSTREET {
             get {
@@ -930,7 +930,7 @@ namespace Spoj.Solver {
         ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
         ///public static class DQUERY
         ///{
-        ///    // N [rest of string was truncated]&quot;;.
+        ///    // Needed hint [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
@@ -968,7 +968,7 @@ namespace Spoj.Solver {
         ///    // This is just solved in the standard way using the Wagner-Fischer algorithm.
         ///    // Note that proceeds from the perspective of transforming a into b rather than
         ///    // transforming a and b into a common third string c as this problem permits.
-        ///    // Sufficient though, as as [rest of string was truncated]&quot;;.
+        ///    // Sufficient though, as assume secon [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDIST {
             get {
@@ -1027,7 +1027,7 @@ namespace Spoj.Solver {
         ///    // Ax = By =&gt; y = (A/B)x. A and B might not be in lowest terms, but we can divide each by
         ///    // their GCD so that they are. So assume they are in lowest terms, A&apos;, B&apos;. y must be an
         ///    // integer, so x has to be a multiple of B&apos; to make (A&apos;/B&apos;)x an integer (since B&apos; has
-        ///    // no factors in  [rest of string was truncated]&quot;;.
+        ///    // no factors in common wit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ENIGMATH {
             get {
@@ -1050,7 +1050,9 @@ namespace Spoj.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit); [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
+        ///    }
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -1134,7 +1136,8 @@ namespace Spoj.Solver {
         ///            expectedRolls += n / (double)(n - i);
         ///        }
         ///
-        ///        return expectedRoll [rest of string was truncated]&quot;;.
+        ///        return expectedRolls;
+        ///    }        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FAVDICE {
             get {
@@ -1215,7 +1218,9 @@ namespace Spoj.Solver {
         ///    private const int _mod = 1000000007;
         ///    private const int _precomputedLimit = 1000;
         ///    private static readonly IReadOnlyList&lt;int&gt; _precomputedFibNums;
-        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;( [rest of string was truncated]&quot;;.
+        ///    private static readonly Dictionary&lt;int, int&gt; _fibNumMemoizer = new Dictionary&lt;int, int&gt;();
+        ///
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FIBOSUM {
             get {
@@ -1236,7 +1241,7 @@ namespace Spoj.Solver {
         ///
         ///    // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
         ///    // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
-        ///    // And it divides b, so it divides  [rest of string was truncated]&quot;;.
+        ///    // And it divides b, so it divides bt, which  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GCD2 {
             get {
@@ -1305,7 +1310,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///        =&gt; _segmentTree.Q [rest of string was truncated]&quot;;.
+        ///        =&gt; _segmentTree.Query(query [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS1 {
             get {
@@ -1330,7 +1335,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///      [rest of string was truncated]&quot;;.
+        ///        =&gt; _seg [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS3 {
             get {
@@ -1359,8 +1364,7 @@ namespace Spoj.Solver {
         ///{
         ///    // Sort the array, then traverse it in descending order with two indices. The small
         ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
-        ///    // small index can be decreased because there&apos;s no way decreasing the big index
-        /// [rest of string was truncated]&quot;;.
+        ///    // small index can be decreased because there&apos;s no way decreasing the big index        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HACKRNDM_v1 {
             get {
@@ -1401,8 +1405,7 @@ namespace Spoj.Solver {
         ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t be a problem here (at least for the first 277 terms).
         ///    private static readonly List&lt;float&gt; _runningOverhangTotals;
         ///
-        ///    static HANGOVER()
-        /// [rest of string was truncated]&quot;;.
+        ///    static HANGOVER()        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HANGOVER {
             get {
@@ -1445,7 +1448,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int rangeAddition)
-        ///    [rest of string was truncated]&quot;;.
+        ///        =&gt; _s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v1 {
             get {
@@ -1469,7 +1472,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    public void Update(int updateStartIndex, int updateEndIndex, int delta)
-        ///        =&gt; _ [rest of string was truncated]&quot;;.
+        ///        =&gt; _binaryInde [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HORRIBLE_v2 {
             get {
@@ -1529,6 +1532,63 @@ namespace Spoj.Solver {
         public static string HUBULLU {
             get {
                 return ResourceManager.GetString("HUBULLU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/INOUTEST/ #io
+        ///// Reads input and writes input quickly (and computes something simple about it).
+        ///public static class INOUTEST
+        ///{
+        ///    private static void Main()
+        ///    {
+        ///        int n = FastIO.ReadPositiveInt();
+        ///        for (int i = 0; i &lt; n; ++i)
+        ///        {
+        ///            FastIO.WriteLine(FastIO.ReadInt() * FastIO.ReadInt());
+        ///        }
+        ///
+        ///        FastIO.Flush();
+        ///    }
+        ///}
+        ///
+        ///// This is based in part on submissions from https://www.codechef [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string INOUTEST {
+            get {
+                return ResourceManager.GetString("INOUTEST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/INTEST/ #io
+        ///// Reads input quickly (and computes something simple about it).
+        ///public static class INTEST
+        ///{
+        ///    private static void Main()
+        ///    {
+        ///        int n = FastIO.ReadPositiveInt();
+        ///        int k = FastIO.ReadPositiveInt();
+        ///        int count = 0;
+        ///        for (int i = 0; i &lt; n; ++i)
+        ///        {
+        ///            if (FastIO.ReadPositiveInt() % k == 0)
+        ///            {
+        ///                ++count;
+        ///            }
+        ///        }
+        ///
+        ///        FastIO.W [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string INTEST {
+            get {
+                return ResourceManager.GetString("INTEST", resourceCulture);
             }
         }
         
@@ -1614,7 +1674,8 @@ namespace Spoj.Solver {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
-        ///    public int Query(int queryStartIndex, int queryEndInde [rest of string was truncated]&quot;;.
+        ///    public int Query(int queryStartIndex, int queryEndIndex)
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         public static string KGSS {
             get {
@@ -1695,25 +1756,20 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
         ///using System.Text;
+        ///using Vertex = RootedTree.Vertex;
         ///
-        ///// https://www.spoj.com/problems/TEMPLATE2/ &lt;tags&gt;
-        ///// &lt;description&gt;
-        ///public static class TEMPLATE2
+        ///// https://www.spoj.com/problems/LCA/ #divide-and-conquer #graph-theory #lca #segment-tree #stack #tree
+        ///// Finds the lowest common ancestor of two vertices in a rooted tree.
+        ///public sealed class LCA
         ///{
-        ///    public static int Solve(int a, int b)
-        ///        =&gt; a * b;
-        ///}
+        ///    private readonly RootedTree _tree;
+        ///    private readonly Vertex[] _eulerTour;
+        ///    private readonly ArrayBasedSegmentTree _segmentTree;
         ///
-        ///public static class Program
-        ///{
-        ///    private static void Main()
-        ///    {
-        ///        var output = new StringBuilder();
-        ///        int remainingTestCases = int.Parse(Console.ReadLine());
-        ///        while (remainingTestCases-- &gt; 0)
-        ///        {
-        ///            int[] line = Array.ConvertAll(Console.ReadLine().Split(), in [rest of string was truncated]&quot;;.
+        ///    public LCA(int vertexCount, List&lt;i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LCA {
             get {
@@ -1771,7 +1827,7 @@ namespace Spoj.Solver {
         ///public static class MARBLES
         ///{
         ///    // Knowing how to solve the problem without the requirement of a marble for each color is useful
-        ///    // (and it&apos;s a common problem). Effectively we need to distribute the marble [rest of string was truncated]&quot;;.
+        ///    // (and it&apos;s a common problem). Effectively we need to distribute the marbles across c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MARBLES {
             get {
@@ -1808,7 +1864,7 @@ namespace Spoj.Solver {
         ///    // This ties back to HUBULLU and NGM and the idea of a determinate game, for background see:
         ///    // https://en.wikipedia.org/wiki/Zermelo%27s_theorem_(game_theory)
         ///    // http://www.math.harvard.edu/~elkies/FS23j.03/zermelo.pdf
-        ///    // I think abo [rest of string was truncated]&quot;;.
+        ///    // I think about it like [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MCOINS {
             get {
@@ -1827,7 +1883,8 @@ namespace Spoj.Solver {
         ///public static class MICEMAZE
         ///{
         ///    // We use Dijkstra&apos;s algorithm from the exit cell. It&apos;s like starting at our destination and
-        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection di [rest of string was truncated]&quot;;.
+        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection directions
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MICEMAZE {
             get {
@@ -1930,7 +1987,7 @@ namespace Spoj.Solver {
         ///}
         ///
         ///// This is taken from CLRS. It maintains the one-based indexing used in it (since it&apos;s most natural), but gets a
-        ///// little ugly as the strings have to be ze [rest of string was truncated]&quot;;.
+        ///// little ugly as the strings have to be zero-based.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NHAY {
             get {
@@ -2002,7 +2059,9 @@ namespace Spoj.Solver {
         ///    {
         ///        // There may be attackers further than the closest attacker who are also offsides,
         ///        // but that doesn&apos;t matter here. If anyone&apos;s offsides, the closest attacker is too.
-        ///        int closestAttacker = attackers.Min( [rest of string was truncated]&quot;;.
+        ///        int closestAttacker = attackers.Min();
+        ///
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OFFSIDE {
             get {
@@ -2123,7 +2182,7 @@ namespace Spoj.Solver {
         ///    // This uses a modified trie, where the trie&apos;s Add method returns a bool indicating
         ///    // whether the string added was a prefix of a string already present, or prefixed
         ///    // by a string already present. In either case, the phone numbers aren&apos;t consistent,
-        ///    // so w [rest of string was truncated]&quot;;.
+        ///    // so we short-ci [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PHONELST {
             get {
@@ -2182,7 +2241,7 @@ namespace Spoj.Solver {
         ///    // See https://en.wikipedia.org/wiki/Tetrahedron#Heron-type_formula_for_the_volume_of_a_tetrahedron.
         ///    // References a paper talking about a lot of numerical analysis issues, but for
         ///    // us the main problem will be making sure we line up the input to match the
-        ///    // side lengths needed by the f [rest of string was truncated]&quot;;.
+        ///    // side lengths needed by the formula. In [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIR {
             get {
@@ -2299,7 +2358,7 @@ namespace Spoj.Solver {
         ///    // Some facts on the Wikipedia page for cyclic quadrilateral mention they have the
         ///    // most area of any quadrilateral with the same sequence of side lengths. Not sure
         ///    // but I guess no matter the side lengths, we can assume a cyclic quadrilteral with
-        ///    // those side lengths exi [rest of string was truncated]&quot;;.
+        ///    // those side lengths exists =&gt; htt [rest of string was truncated]&quot;;.
         /// </summary>
         public static string QUADAREA {
             get {
@@ -2340,7 +2399,7 @@ namespace Spoj.Solver {
         ///{
         ///    // TLE is an issue so I do the I/O inside of the Solve this time. At first I tried a
         ///    // SortedDictionary and that was too slow. Then I tried a SortedList, too slow, then
-        ///    // just sorting an array of strings and iterati [rest of string was truncated]&quot;;.
+        ///    // just sorting an array of strings and iterating to get  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SBANK {
             get {
@@ -2361,7 +2420,7 @@ namespace Spoj.Solver {
         ///{
         ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
         ///    // This solution gets TLE, but it has the main features of the submitted solution, just
-        ///    / [rest of string was truncated]&quot;;.
+        ///    // more ove [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SHPATH {
             get {
@@ -2501,10 +2560,10 @@ namespace Spoj.Solver {
         ///#io
         ///#knapsack
         ///#lazy
+        ///#lca
         ///#longest-path
         ///#math
-        ///#memoization
-        /// [rest of string was truncated]&quot;;.
+        ///#memoiz [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
@@ -2665,7 +2724,7 @@ namespace Spoj.Solver {
         ///        _factorizer = new TrialDivisionFactorizer(_oneTrillion);
         ///    }
         ///
-        ///    // See https [rest of string was truncated]&quot;;.
+        ///    // See https://en.wiki [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TWOSQRS {
             get {

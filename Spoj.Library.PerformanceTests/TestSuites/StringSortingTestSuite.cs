@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spoj.Library.Helpers;
+using System;
 using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites

@@ -1,4 +1,5 @@
-﻿using Spoj.Library.SegmentTrees;
+﻿using Spoj.Library.Helpers;
+using Spoj.Library.SegmentTrees;
 using Spoj.Library.SegmentTrees.AdHoc;
 using Spoj.Library.SegmentTrees.QueryObjects;
 using System;
@@ -192,7 +193,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
         private void SegmentTreeUpdate<TQueryObject>(SegmentTreeMode segmentTreeMode, ArrayMode arrayMode, bool randomPoints = false)
             where TQueryObject : SegmentTreeQueryObject<TQueryObject, int>, new()
         {
-            Func<int, int> updater = x => x + 1;
+            int updater(int x) => x + 1;
 
             var array = arrayMode == ArrayMode.AllRanges ? _allRangesArray
                 : _randomRangesArray;
@@ -235,7 +236,7 @@ namespace Spoj.Library.PerformanceTests.TestSuites
 
         private void SegmentTreeSumRandomOperation(SegmentTreeMode segmentTreeMode)
         {
-            Func<int, int> updater = x => x + 1;
+            int updater(int x) => x + 1;
 
             var segmentTree = segmentTreeMode == SegmentTreeMode.NodeBased ? new NodeBasedSegmentTree<SumQueryObject, int>(_randomRangesArray)
                 : segmentTreeMode == SegmentTreeMode.ArrayBased ? new ArrayBasedSegmentTree<SumQueryObject, int>(_randomRangesArray)

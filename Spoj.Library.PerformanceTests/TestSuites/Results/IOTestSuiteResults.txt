@@ -1,0 +1,21 @@
+﻿Test done partially by hand, redirecting to/from a file:
+10000000 lines of input, no output:
+  FastIO:      x1.0000 (0 minutes 0.2524 seconds)
+  SlowestIO:  x10.8213 (0 minutes 2.7313 seconds)
+  SlowIO:     x10.8895 (0 minutes 2.7485 seconds)
+
+10000000 lines of input and output:
+  FastIO:      x1.0000 (0 minutes 0.7039 seconds)
+  SlowIO:      x7.4397 (0 minutes 5.2368 seconds)
+  SlowestIO:  x95.9439 (1 minutes 7.5349 seconds)
+
+Actual test as written:
+10000000 lines of input, no output:
+  FastIO:     x1.0000 (0 minutes  0.3404 seconds)
+  SlowestIO:  x8.5285 (0 minutes  2.9033 seconds)
+  SlowIO:     x8.5690 (0 minutes  2.9171 seconds)
+
+10000000 lines of input and output:
+  FastIO:     x1.0000 (0 minutes  0.6745 seconds)
+  SlowIO:     x6.9298 (0 minutes  4.6744 seconds)
+  SlowestIO: x64.5980 (0 minutes 43.5735 seconds)

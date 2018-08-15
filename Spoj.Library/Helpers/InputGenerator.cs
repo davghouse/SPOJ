@@ -3,12 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Spoj.Library
+namespace Spoj.Library.Helpers
 {
     public static class InputGenerator
     {
         // This isn't thread-safe, but it doesn't matter (yet): http://csharpindepth.com/Articles/Chapter12/Random.aspx.
         public static readonly Random Rand = new Random();
+
+        // Inclusive min and max values.
+        public static int GenerateRandomInt(int minValue = 0, int maxValue = int.MaxValue - 1)
+        {
+            if (maxValue == int.MaxValue)
+                throw new NotSupportedException("Random.Next has an exclusive upper bound, so can't include int.MaxValue.");
+
+            return Rand.Next(minValue, maxValue + 1);
+        }
 
         // Inclusive min and max values.
         public static int[] GenerateRandomInts(int count, int minValue = 0, int maxValue = int.MaxValue - 1)

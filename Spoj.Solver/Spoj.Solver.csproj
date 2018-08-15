@@ -274,6 +274,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\6 - Emperor\INOUTEST.cs" />
+    <None Include="Solutions\6 - Emperor\INTEST.cs" />
+    <None Include="Solutions\TEMPLATE3.cs" />
     <None Include="Solutions\7 - Immortal\LCA.cs" />
     <None Include="Solutions\7 - Immortal\MICEMAZE.cs" />
     <None Include="Solutions\7 - Immortal\LABYR1.cs" />

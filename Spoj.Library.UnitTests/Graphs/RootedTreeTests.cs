@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spoj.Library.Graphs;
+using Spoj.Library.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 

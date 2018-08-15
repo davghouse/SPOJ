@@ -1,4 +1,5 @@
 ﻿using Spoj.Library.Graphs;
+using Spoj.Library.Helpers;
 using System.Collections.Generic;
 
 namespace Spoj.Library.PerformanceTests.TestSuites

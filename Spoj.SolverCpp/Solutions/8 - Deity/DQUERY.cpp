@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-// See DQUERY.cs for details--this solution was submitted using C++ because C# is too slow.
+// Here for reference--initially submitted using C++, but now DQUERY.cs is fast enough.
 
 struct DistinctCountQuery
 {

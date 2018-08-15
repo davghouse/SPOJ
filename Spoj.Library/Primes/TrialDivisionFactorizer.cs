@@ -35,7 +35,7 @@ namespace Spoj.Library.Primes
                     // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
                     // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
                     // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
-                    // factors they'd have to all be greater than 'prime', but in that case the loop wouldn't stop here.
+                    // factors they'd have to all be >= 'prime', but in that case the loop wouldn't stop here.
                     if (prime * prime > n)
                         break;
 

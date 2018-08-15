@@ -69,7 +69,6 @@
 #subarray
 #substrings
 #suffixes
-#trap
 #tree
 #trie
 #window

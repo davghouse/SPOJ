@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Spoj.Library.Helpers;
 using Spoj.Library.StringMatchers;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
-﻿using Spoj.Library.Tries;
+﻿using Spoj.Library.Helpers;
+using Spoj.Library.Tries;
 using System;
 using System.Collections.Generic;
 

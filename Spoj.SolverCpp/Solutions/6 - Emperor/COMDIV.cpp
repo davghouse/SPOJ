@@ -6,7 +6,7 @@ using namespace std;
 
 int GreatestCommonDivisor(int a, int b);
 
-// See COMDIV.cs for details--this solution was submitted using C++ because C# I/O is too slow.
+// Here for reference--initially submitted using C++, but now COMDIV.cs is fast enough.
 class COMDIV
 {
 public:

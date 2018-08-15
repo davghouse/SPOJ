@@ -1,30 +1,21 @@
 ﻿using System;
 using System.IO;
 
-// https://www.spoj.com/problems/OLOLO/ #binary #io
-// Identifies the sole integer that occurs in the input once rather than twice.
-public static class OLOLO
+// https://www.spoj.com/problems/INOUTEST/ #io
+// Reads input and writes input quickly (and computes something simple about it).
+public static class INOUTEST
 {
     private static void Main()
     {
-        int remainingPyanis = FastIO.ReadPositiveInt();
-        int result = 0;
-
-        while (remainingPyanis-- > 0)
+        int n = FastIO.ReadPositiveInt();
+        for (int i = 0; i < n; ++i)
         {
-            // It's easy to see XOR'ing will work if all integer pairs arrive adjacent to each other.
-            // Since XOR is commutative and associative though, the order the integers arrive doesn't matter.
-            // For intuition, all columns of 1s and 0s are independent, and anything XOR'd with 0 is the same
-            // thing, so the 0s in a column don't matter, and then it's just a bunch of 1s, independent
-            // of the order in which the numbers arrive. The paired 1s cancel, leaving only the 1s from the unique.
-            result ^= FastIO.ReadPositiveInt();
+            FastIO.WriteLine(FastIO.ReadInt() * FastIO.ReadInt());
         }
 
-        FastIO.Write(result);
         FastIO.Flush();
     }
 }
-
 
 // This is based in part on submissions from https://www.codechef.com/status/INTEST.
 // It's assumed the input is well-formed, so if you try to read an integer when no
@@ -35,8 +26,8 @@ public static class FastIO
     private const byte _newLine = (byte)'\n';
     private const byte _minusSign = (byte)'-';
     private const byte _zero = (byte)'0';
-    private const int _inputBufferLimit = 65536;
-    private const int _outputBufferLimit = 128;
+    private const int _inputBufferLimit = 8192;
+    private const int _outputBufferLimit = 8192;
 
     private static readonly Stream _inputStream = Console.OpenStandardInput();
     private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];

@@ -16,6 +16,7 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +38,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Runtime" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -53,6 +57,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="IO\FastIOTests.cs" />
     <Compile Include="Graphs\RootedTreeTests.cs" />
     <Compile Include="Graphs\WeightedGraphTests.cs" />
     <Compile Include="Heaps\HeapTests.cs" />
@@ -61,8 +66,11 @@
     <Compile Include="BinaryIndexedTrees\BinaryIndexedTreeTests.cs" />
     <Compile Include="BinarySearchTests.cs" />
     <Compile Include="Helpers\IEnumerableHelperTests.cs" />
-    <Compile Include="InputGeneratorTests.cs" />
+    <Compile Include="Helpers\InputGeneratorTests.cs" />
     <Compile Include="Helpers\MathHelperTests.cs" />
+    <Compile Include="IO\IOTestsBase.cs" />
+    <Compile Include="IO\SlowestIOTests.cs" />
+    <Compile Include="IO\SlowIOTests.cs" />
     <Compile Include="Mod10ExponentiatorTests.cs" />
     <Compile Include="Primes\PrimeDeciderTests.cs" />
     <Compile Include="Primes\PrimeFactorizerTests.cs" />
@@ -79,7 +87,9 @@
       <Name>Spoj.Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -100,6 +110,13 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="ForceGenerationOfBindingRedirects" AfterTargets="ResolveAssemblyReferences" BeforeTargets="GenerateBindingRedirects" Condition="'$(AutoGenerateBindingRedirects)' == 'true'">
+    <PropertyGroup>
+      <!-- Needs to be set in a target because it has to be set after the initial evaluation in the common targets -->
+      <!-- https://github.com/dotnet/roslyn/issues/28600 -->
+      <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    </PropertyGroup>
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings #trap
+// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings
 // Determines if the reverse of every substring exists in a string.
 public static class AMR12D
 {

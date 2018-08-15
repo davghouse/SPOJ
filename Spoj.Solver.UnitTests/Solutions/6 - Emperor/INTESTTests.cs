@@ -4,24 +4,28 @@ using System.Collections.Generic;
 namespace Spoj.Solver.UnitTests.Solutions._6___Emperor
 {
     [TestClass]
-    public sealed class OLOLOTests : SolutionTestsBase
+    public sealed class INTESTTests : SolutionTestsBase
     {
-        public override string SolutionSource => Solver.Solutions.OLOLO;
+        public override string SolutionSource => Solver.Solutions.INTEST;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
-@"3
+@"7 3
 1
-8
-1"
+51
+966369
+7
+9
+999996
+11"
         };
 
         public override IReadOnlyList<string> TestOutputs => new[]
         {
-@"8"
+@"4"
         };
 
         [TestMethod]
-        public void OLOLO() => TestSolution();
+        public void INTEST() => TestSolution();
     }
 }
