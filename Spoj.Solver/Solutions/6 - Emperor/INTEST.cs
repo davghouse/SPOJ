@@ -7,18 +7,18 @@ public static class INTEST
 {
     private static void Main()
     {
-        int n = FastIO.ReadPositiveInt();
-        int k = FastIO.ReadPositiveInt();
+        int n = FastIO.ReadNonNegativeInt();
+        int k = FastIO.ReadNonNegativeInt();
         int count = 0;
         for (int i = 0; i < n; ++i)
         {
-            if (FastIO.ReadPositiveInt() % k == 0)
+            if (FastIO.ReadNonNegativeInt() % k == 0)
             {
                 ++count;
             }
         }
 
-        FastIO.Write(count);
+        FastIO.WriteNonNegativeInt(count);
         FastIO.Flush();
     }
 }
@@ -56,7 +56,7 @@ public static class FastIO
         return _inputBuffer[_inputBufferIndex++];
     }
 
-    public static int ReadPositiveInt()
+    public static int ReadNonNegativeInt()
     {
         byte digit;
 
@@ -107,7 +107,29 @@ public static class FastIO
         return isNegative ? -result : result;
     }
 
-    public static void Write(int value)
+    public static void WriteNonNegativeInt(int value)
+    {
+        int digitCount = 0;
+        do
+        {
+            int digit = value % 10;
+            _digitsBuffer[digitCount++] = (byte)(digit + _zero);
+            value /= 10;
+        } while (value > 0);
+
+        if (_outputBufferSize + digitCount > _outputBufferLimit)
+        {
+            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
+            _outputBufferSize = 0;
+        }
+
+        while (digitCount > 0)
+        {
+            _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
+        }
+    }
+
+    public static void WriteInt(int value)
     {
         bool isNegative = value < 0;
         if (isNegative)
@@ -140,11 +162,9 @@ public static class FastIO
         }
     }
 
-    public static void WriteLine(int value)
+    public static void WriteLine()
     {
-        Write(value);
-
-        if (_outputBufferSize + 1 > _outputBufferLimit)
+        if (_outputBufferSize == _outputBufferLimit) // else _outputBufferSize < _outputBufferLimit.
         {
             _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
             _outputBufferSize = 0;

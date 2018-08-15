@@ -36,7 +36,7 @@ namespace Spoj.Library.IO
             return _inputBuffer[_inputBufferIndex++];
         }
 
-        public static int ReadPositiveInt()
+        public static int ReadNonNegativeInt()
         {
             byte digit;
 
@@ -87,7 +87,29 @@ namespace Spoj.Library.IO
             return isNegative ? -result : result;
         }
 
-        public static void Write(int value)
+        public static void WriteNonNegativeInt(int value)
+        {
+            int digitCount = 0;
+            do
+            {
+                int digit = value % 10;
+                _digitsBuffer[digitCount++] = (byte)(digit + _zero);
+                value /= 10;
+            } while (value > 0);
+
+            if (_outputBufferSize + digitCount > _outputBufferLimit)
+            {
+                _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
+                _outputBufferSize = 0;
+            }
+
+            while (digitCount > 0)
+            {
+                _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
+            }
+        }
+
+        public static void WriteInt(int value)
         {
             bool isNegative = value < 0;
             if (isNegative)
@@ -120,11 +142,9 @@ namespace Spoj.Library.IO
             }
         }
 
-        public static void WriteLine(int value)
+        public static void WriteLine()
         {
-            Write(value);
-
-            if (_outputBufferSize + 1 > _outputBufferLimit)
+            if (_outputBufferSize == _outputBufferLimit) // else _outputBufferSize < _outputBufferLimit.
             {
                 _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
                 _outputBufferSize = 0;

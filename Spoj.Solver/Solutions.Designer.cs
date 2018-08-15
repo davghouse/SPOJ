@@ -371,14 +371,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings #trap
+        ///// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings
         ///// Determines if the reverse of every substring exists in a string.
         ///public static class AMR12D
         ///{
         ///    // One substring is the entire string. For the reverse of the entire string
         ///    // to be in the string, the reverse would need to be the same as the string,
         ///    // since the string is the only substring long enough to match the reversed string.
-        ///    // But given it&apos;s a palindrome, the reverse of all other su [rest of string was truncated]&quot;;.
+        ///    // But given it&apos;s a palindrome, the reverse of all other substrin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR12D {
             get {
@@ -628,13 +628,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization #trap
+        ///// https://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization
         ///// Finds the minimal amount of cake ingredients to buy to use all of them completely up.
         ///public static class BYECAKES
         ///{
         ///    // Find the greatest number of cakes needed to deplete any one of the starting ingredients.
         ///    // This is the total number of cakes to bake, buying (across each ingredient) any missing
-        ///    // ingredients necessary to support that number of cakes. Pretty clear [rest of string was truncated]&quot;;.
+        ///    // ingredients necessary to support that number of cakes. Pretty clear that  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BYECAKES {
             get {
@@ -687,7 +687,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/CANDY3/ #division #mod-math #trap
+        ///// https://www.spoj.com/problems/CANDY3/ #division #mod-math
         ///// Determines if N bags full of candies can have their contents redistributed equally amongst N children.
         ///public static class CANDY3
         ///{
@@ -696,7 +696,7 @@ namespace Spoj.Solver {
         ///    public static bool Solve(ulong[] backpackCandyCounts)
         ///    {
         ///        uint N = (uint)backpackCandyCounts.Length;
-        ///        u [rest of string was truncated]&quot;;.
+        ///        ulong m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANDY3 {
             get {
@@ -745,7 +745,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
-        ///using System.Linq;
+        ///using System.IO;
         ///
         ///// https://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
         ///// Finds the number of common divisors shared by two numbers.
@@ -753,11 +753,8 @@ namespace Spoj.Solver {
         ///public static class COMDIV
         ///{
         ///    private const int _limit = 1000000;
-        ///    private static readonly TrialDivisionFactorizer _factorizer;
-        ///
-        ///    static COMDIV()
-        ///    {
-        ///        _factorizer = new TrialDivisi [rest of string was truncated]&quot;;.
+        ///    private const int _sieveLimit = 10000; // (int)ceil(sqrt(_limit))
+        ///    // This sieve is slightly different, rather than storing fal [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COMDIV {
             get {
@@ -921,6 +918,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///using System.IO;
         ///using System.Linq;
         ///using System.Text;
         ///
@@ -930,7 +928,7 @@ namespace Spoj.Solver {
         ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
         ///public static class DQUERY
         ///{
-        ///    // Needed hint [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
@@ -1106,13 +1104,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting #trap
+        ///// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting
         ///// Given parallel arrays of hotness levels, calculate the sum of the values of the hotness bonds.
         ///public static class FASHION
         ///{
         ///    // Problem statement leads one to believe these arrays are already in parallel;
         ///    // each pair already chosen. That&apos;s not the case, so it&apos;s necessary to figure out the
-        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the hi [rest of string was truncated]&quot;;.
+        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the highest        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FASHION {
             get {
@@ -1149,14 +1147,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/FCTRL/ #experiment #factorial #factors #inspection #math #trap
+        ///// https://www.spoj.com/problems/FCTRL/ #experiment #factorial #factors #inspection #math
         ///// Returns the number of trailing zeros of n!, for very large n.
         ///public static class FCTRL
         ///{
         ///    // n! has as many zeros as it has factors of 10. n! has as many factors of 10 as it has
         ///    // min(factors of 2, factors of 5). Looking at some numbers, it&apos;s clear n! is picking up
         ///    // factors of 2 a lot faster than factors of 5. So we need to find the number of factors
-        ///  [rest of string was truncated]&quot;;.
+        ///    //  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FCTRL {
             get {
@@ -1232,7 +1230,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/GCD2/ #gcd #math #trap
+        ///// https://www.spoj.com/problems/GCD2/ #gcd #math
         ///// Finds the GCD of two numbers, one of which can be really big.
         ///public static class GCD2
         ///{
@@ -1241,7 +1239,7 @@ namespace Spoj.Solver {
         ///
         ///    // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
         ///    // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
-        ///    // And it divides b, so it divides bt, which  [rest of string was truncated]&quot;;.
+        ///    // And it divides b, so it divides bt, which means  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GCD2 {
             get {
@@ -1273,7 +1271,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets #trap
+        ///// https://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets
         ///// Finds the contiguous subsequence starting from 1 that most closely adds to 100.
         ///public static class GLJIVE
         ///{
@@ -1285,7 +1283,7 @@ namespace Spoj.Solver {
         ///
         ///        for (int i = 0; i &lt; 10; ++i)
         ///        {
-        ///    [rest of string was truncated]&quot;;.
+        ///          [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GLJIVE {
             get {
@@ -1520,14 +1518,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/HUBULLU/ #game #proof #trap
+        ///// https://www.spoj.com/problems/HUBULLU/ #game #proof
         ///// Determines who wins in a game where a number and all its divisors are removed each turn.
         ///public static class HUBULLU
         ///{
         ///    // Assume by contradication player two can win. Blah blah the players are playing
         ///    // optimally and the problem guarantees determining a winner is possible, or whatever,
         ///    // I don&apos;t know anything about game theory which is what made this problem tricky
-        ///    // (spent a couple hours before coming [rest of string was truncated]&quot;;.
+        ///    // (spent a couple hours before coming up wi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HUBULLU {
             get {
@@ -1545,17 +1543,18 @@ namespace Spoj.Solver {
         ///{
         ///    private static void Main()
         ///    {
-        ///        int n = FastIO.ReadPositiveInt();
+        ///        int n = FastIO.ReadNonNegativeInt();
         ///        for (int i = 0; i &lt; n; ++i)
         ///        {
-        ///            FastIO.WriteLine(FastIO.ReadInt() * FastIO.ReadInt());
+        ///            FastIO.WriteInt(FastIO.ReadInt() * FastIO.ReadInt());
+        ///            FastIO.WriteLine();
         ///        }
         ///
         ///        FastIO.Flush();
         ///    }
         ///}
         ///
-        ///// This is based in part on submissions from https://www.codechef [rest of string was truncated]&quot;;.
+        ///// This is based in part on su [rest of string was truncated]&quot;;.
         /// </summary>
         public static string INOUTEST {
             get {
@@ -1573,18 +1572,18 @@ namespace Spoj.Solver {
         ///{
         ///    private static void Main()
         ///    {
-        ///        int n = FastIO.ReadPositiveInt();
-        ///        int k = FastIO.ReadPositiveInt();
+        ///        int n = FastIO.ReadNonNegativeInt();
+        ///        int k = FastIO.ReadNonNegativeInt();
         ///        int count = 0;
         ///        for (int i = 0; i &lt; n; ++i)
         ///        {
-        ///            if (FastIO.ReadPositiveInt() % k == 0)
+        ///            if (FastIO.ReadNonNegativeInt() % k == 0)
         ///            {
         ///                ++count;
         ///            }
         ///        }
         ///
-        ///        FastIO.W [rest of string was truncated]&quot;;.
+        ///        [rest of string was truncated]&quot;;.
         /// </summary>
         public static string INTEST {
             get {
@@ -1895,13 +1894,13 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/MISERMAN/ #dynamic-programming-2d #path-optimization #trap
+        ///// https://www.spoj.com/problems/MISERMAN/ #dynamic-programming-2d #path-optimization
         ///// Finds the cheapest way to take buses between two cities, with constrained movement.
         ///public static class MISERMAN
         ///{
         ///    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of final bus we use
         ///    // to get there, plus cheapest way to get to that final bus, knowing we can arrive at it by taking
-        ///    // any one of the adjacent buses in the previous city (so recursivel [rest of string was truncated]&quot;;.
+        ///    // any one of the adjacent buses in the previous city (so recursively find [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MISERMAN {
             get {
@@ -2071,20 +2070,21 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
         ///
-        ///// https://www.spoj.com/problems/OLOLO/ #binary #io #trap
+        ///// https://www.spoj.com/problems/OLOLO/ #binary #io
         ///// Identifies the sole integer that occurs in the input once rather than twice.
-        ///// See OLOLO.cpp--this solution was submitted using C++ because C# I/O is too slow.
         ///public static class OLOLO
         ///{
-        ///    public static int Solve(int pyaniCount)
+        ///    private static void Main()
         ///    {
-        ///        int remainingPyanis = pyaniCount;
+        ///        int remainingPyanis = FastIO.ReadNonNegativeInt();
         ///        int result = 0;
         ///
         ///        while (remainingPyanis-- &gt; 0)
         ///        {
-        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pai [rest of string was truncated]&quot;;.
+        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pairs arrive adjacent to each other.
+        ///            // Since XOR is commut [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OLOLO {
             get {
@@ -2393,13 +2393,13 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #sorting #trap
+        ///// https://www.spoj.com/problems/SBANK/ #hash-table #radix-sort #sorting
         ///// Sorts bank accounts ascendingly (lexicographically, but all the same length so w/e).
         ///public static class SBANK
         ///{
         ///    // TLE is an issue so I do the I/O inside of the Solve this time. At first I tried a
         ///    // SortedDictionary and that was too slow. Then I tried a SortedList, too slow, then
-        ///    // just sorting an array of strings and iterating to get  [rest of string was truncated]&quot;;.
+        ///    // just sorting an array of strings and iterating to get the co [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SBANK {
             get {

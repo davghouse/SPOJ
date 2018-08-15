@@ -17,10 +17,10 @@ public static class Program
 {
     private static void Main()
     {
-        int n = FastIO.ReadPositiveInt();
+        int n = FastIO.ReadNonNegativeInt();
         for (int i = 0; i < n; ++i)
         {
-            FastIO.ReadPositiveInt();
+            FastIO.ReadNonNegativeInt();
         }
     }
 }";
@@ -33,10 +33,11 @@ public static class Program
 {
     private static void Main()
     {
-        int n = FastIO.ReadPositiveInt();
+        int n = FastIO.ReadNonNegativeInt();
         for (int i = 0; i < n; ++i)
         {
-            FastIO.WriteLine(FastIO.ReadPositiveInt());
+            FastIO.WriteNonNegativeInt(FastIO.ReadNonNegativeInt());
+            FastIO.WriteLine();
         }
 
         FastIO.Flush();

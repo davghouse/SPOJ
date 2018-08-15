@@ -162,28 +162,29 @@ public static class Program
 {
     private static void Main()
     {
-        int sourceArraySize = FastIO.ReadPositiveInt();
+        int sourceArraySize = FastIO.ReadNonNegativeInt();
         int[] sourceArray = new int[sourceArraySize];
         for (int i = 0; i < sourceArraySize; ++i)
         {
-            sourceArray[i] = FastIO.ReadPositiveInt();
+            sourceArray[i] = FastIO.ReadNonNegativeInt();
         }
 
-        int queryCount = FastIO.ReadPositiveInt();
+        int queryCount = FastIO.ReadNonNegativeInt();
         var queries = new DistinctCountQuery[queryCount];
 
         for (int q = 0; q < queryCount; ++q)
         {
             queries[q] = new DistinctCountQuery(
-                queryStartIndex: FastIO.ReadPositiveInt() - 1,
-                queryEndIndex: FastIO.ReadPositiveInt() - 1,
+                queryStartIndex: FastIO.ReadNonNegativeInt() - 1,
+                queryEndIndex: FastIO.ReadNonNegativeInt() - 1,
                 resultIndex: q);
         }
 
         int[] queryResults = DQUERY.SolveOffline(sourceArray, queries);
         foreach (int queryResult in queryResults)
         {
-            FastIO.WriteLine(queryResult);
+            FastIO.WriteNonNegativeInt(queryResult);
+            FastIO.WriteLine();
         }
 
         FastIO.Flush();
@@ -223,7 +224,7 @@ public static class FastIO
         return _inputBuffer[_inputBufferIndex++];
     }
 
-    public static int ReadPositiveInt()
+    public static int ReadNonNegativeInt()
     {
         byte digit;
 
@@ -274,7 +275,29 @@ public static class FastIO
         return isNegative ? -result : result;
     }
 
-    public static void Write(int value)
+    public static void WriteNonNegativeInt(int value)
+    {
+        int digitCount = 0;
+        do
+        {
+            int digit = value % 10;
+            _digitsBuffer[digitCount++] = (byte)(digit + _zero);
+            value /= 10;
+        } while (value > 0);
+
+        if (_outputBufferSize + digitCount > _outputBufferLimit)
+        {
+            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
+            _outputBufferSize = 0;
+        }
+
+        while (digitCount > 0)
+        {
+            _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
+        }
+    }
+
+    public static void WriteInt(int value)
     {
         bool isNegative = value < 0;
         if (isNegative)
@@ -307,11 +330,9 @@ public static class FastIO
         }
     }
 
-    public static void WriteLine(int value)
+    public static void WriteLine()
     {
-        Write(value);
-
-        if (_outputBufferSize + 1 > _outputBufferLimit)
+        if (_outputBufferSize == _outputBufferLimit) // else _outputBufferSize < _outputBufferLimit.
         {
             _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
             _outputBufferSize = 0;

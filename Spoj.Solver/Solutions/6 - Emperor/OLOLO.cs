@@ -7,7 +7,7 @@ public static class OLOLO
 {
     private static void Main()
     {
-        int remainingPyanis = FastIO.ReadPositiveInt();
+        int remainingPyanis = FastIO.ReadNonNegativeInt();
         int result = 0;
 
         while (remainingPyanis-- > 0)
@@ -17,10 +17,10 @@ public static class OLOLO
             // For intuition, all columns of 1s and 0s are independent, and anything XOR'd with 0 is the same
             // thing, so the 0s in a column don't matter, and then it's just a bunch of 1s, independent
             // of the order in which the numbers arrive. The paired 1s cancel, leaving only the 1s from the unique.
-            result ^= FastIO.ReadPositiveInt();
+            result ^= FastIO.ReadNonNegativeInt();
         }
 
-        FastIO.Write(result);
+        FastIO.WriteNonNegativeInt(result);
         FastIO.Flush();
     }
 }
@@ -35,8 +35,8 @@ public static class FastIO
     private const byte _newLine = (byte)'\n';
     private const byte _minusSign = (byte)'-';
     private const byte _zero = (byte)'0';
-    private const int _inputBufferLimit = 65536;
-    private const int _outputBufferLimit = 128;
+    private const int _inputBufferLimit = 8192;
+    private const int _outputBufferLimit = 8192;
 
     private static readonly Stream _inputStream = Console.OpenStandardInput();
     private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
@@ -59,7 +59,7 @@ public static class FastIO
         return _inputBuffer[_inputBufferIndex++];
     }
 
-    public static int ReadPositiveInt()
+    public static int ReadNonNegativeInt()
     {
         byte digit;
 
@@ -110,7 +110,29 @@ public static class FastIO
         return isNegative ? -result : result;
     }
 
-    public static void Write(int value)
+    public static void WriteNonNegativeInt(int value)
+    {
+        int digitCount = 0;
+        do
+        {
+            int digit = value % 10;
+            _digitsBuffer[digitCount++] = (byte)(digit + _zero);
+            value /= 10;
+        } while (value > 0);
+
+        if (_outputBufferSize + digitCount > _outputBufferLimit)
+        {
+            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
+            _outputBufferSize = 0;
+        }
+
+        while (digitCount > 0)
+        {
+            _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
+        }
+    }
+
+    public static void WriteInt(int value)
     {
         bool isNegative = value < 0;
         if (isNegative)
@@ -143,11 +165,9 @@ public static class FastIO
         }
     }
 
-    public static void WriteLine(int value)
+    public static void WriteLine()
     {
-        Write(value);
-
-        if (_outputBufferSize + 1 > _outputBufferLimit)
+        if (_outputBufferSize == _outputBufferLimit) // else _outputBufferSize < _outputBufferLimit.
         {
             _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
             _outputBufferSize = 0;

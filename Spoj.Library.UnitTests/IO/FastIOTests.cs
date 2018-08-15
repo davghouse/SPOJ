@@ -19,10 +19,11 @@ public static class Program
 {
     private static void Main()
     {
-        int n = FastIO.ReadPositiveInt();
+        int n = FastIO.ReadNonNegativeInt();
         for (int i = 0; i < n; ++i)
         {
-            FastIO.WriteLine(FastIO.ReadInt());
+            FastIO.WriteInt(FastIO.ReadInt());
+            FastIO.WriteLine();
         }
 
         FastIO.Flush();
