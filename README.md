@@ -18,5 +18,4 @@ For example, I seal classes aggressively and expose collections through readonly
 On the rare occasions that C# is unavailable or insufficient, I use C++.
 Style-wise I try to make my C++ solutions look like my C# solutions, because I don't remember the more common conventions.
 
-Problems are organized by difficulty, using [Civ V's difficulty levels](https://www.civfanatics.com/civ5/info/difficulties/).
-I'm trying to rank them on an absolute scale, not relative to my changing skill level.
+Problems are organized by difficulty using [the levels from Civ V](https://www.civfanatics.com/civ5/info/difficulties/).
