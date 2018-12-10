@@ -15,7 +15,7 @@ Reusable components are housed in the Spoj.Library project.
 Due to performance concerns I usually don't bother programming with extensibility or safety in mind.
 For example, I seal classes aggressively and expose collections through readonly interfaces without bothering to prevent casting back to their non-readonly implementations.
 
-On the rare occasions that C# is unavailable or insufficient, I use C++.
+On the rare occasion that C# is unavailable or insufficient, I use C++.
 Style-wise I try to make my C++ solutions look like my C# solutions, because I don't remember the more common conventions.
 
 Problems are organized by difficulty using [the levels from Civ V](https://www.civfanatics.com/civ5/info/difficulties/).
