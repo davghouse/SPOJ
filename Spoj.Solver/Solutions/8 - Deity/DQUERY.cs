@@ -213,8 +213,10 @@ public static class FastIO
     private static readonly byte[] _digitsBuffer = new byte[11];
     private static int _outputBufferSize = 0;
 
-    private static byte ReadByte() {
-        if (_inputBufferIndex == _inputBufferSize) {
+    private static byte ReadByte()
+    {
+        if (_inputBufferIndex == _inputBufferSize)
+        {
             _inputBufferIndex = 0;
             _inputBufferSize = _inputStream.Read(_inputBuffer, 0, _inputBufferLimit);
             if (_inputBufferSize == 0)
@@ -247,34 +249,6 @@ public static class FastIO
         return result;
     }
 
-    public static int ReadInt()
-    {
-        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
-        byte digit;
-        do
-        {
-            digit = ReadByte();
-        }
-        while (digit < _minusSign);
-
-        bool isNegative = digit == _minusSign;
-        if (isNegative)
-        {
-            digit = ReadByte();
-        }
-
-        // Build up the integer from its digits, until we run into whitespace or the null byte.
-        int result = digit - _zero;
-        while (true)
-        {
-            digit = ReadByte();
-            if (digit < _zero) break;
-            result = result * 10 + (digit - _zero);
-        }
-
-        return isNegative ? -result : result;
-    }
-
     public static void WriteNonNegativeInt(int value)
     {
         int digitCount = 0;
@@ -284,39 +258,6 @@ public static class FastIO
             _digitsBuffer[digitCount++] = (byte)(digit + _zero);
             value /= 10;
         } while (value > 0);
-
-        if (_outputBufferSize + digitCount > _outputBufferLimit)
-        {
-            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
-            _outputBufferSize = 0;
-        }
-
-        while (digitCount > 0)
-        {
-            _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
-        }
-    }
-
-    public static void WriteInt(int value)
-    {
-        bool isNegative = value < 0;
-        if (isNegative)
-        {
-            value = -value;
-        }
-
-        int digitCount = 0;
-        do
-        {
-            int digit = value % 10;
-            _digitsBuffer[digitCount++] = (byte)(digit + _zero);
-            value /= 10;
-        } while (value > 0);
-
-        if (isNegative)
-        {
-            _digitsBuffer[digitCount++] = _minusSign;
-        }
 
         if (_outputBufferSize + digitCount > _outputBufferLimit)
         {

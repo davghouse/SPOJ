@@ -47,8 +47,10 @@ public static class FastIO
     private static readonly byte[] _digitsBuffer = new byte[11];
     private static int _outputBufferSize = 0;
 
-    private static byte ReadByte() {
-        if (_inputBufferIndex == _inputBufferSize) {
+    private static byte ReadByte()
+    {
+        if (_inputBufferIndex == _inputBufferSize)
+        {
             _inputBufferIndex = 0;
             _inputBufferSize = _inputStream.Read(_inputBuffer, 0, _inputBufferLimit);
             if (_inputBufferSize == 0)
