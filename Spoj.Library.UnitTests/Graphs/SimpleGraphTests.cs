@@ -12,7 +12,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void ValidatesAGraph1()
         {
             // This graph is a triangle.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
                 { 0, 1 }, { 0, 2 }, { 1, 2 }
             });
@@ -44,7 +44,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void ValidatesAGraph2()
         {
             // This graph is two lines and a point.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
                 { 0, 1 }, { 2, 3 }
             });
@@ -101,7 +101,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesAGraph3()
         {
-            SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(3, new[,]
+            var graph = SimpleGraph.CreateFromOneBasedEdges(3, new[,]
             {
                 { 1, 2 }, { 2, 3 }
             });
@@ -123,7 +123,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsConnected1()
         {
             // This graph is a triangle.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(3, new[,]
             {
                 { 0, 1 }, { 0, 2 }, { 1, 2 }
             });
@@ -135,7 +135,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsConnected2()
         {
             // This graph is two lines and a point.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(5, new[,]
             {
                 { 0, 1 }, { 2, 3 }
             });
@@ -147,14 +147,14 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsConnected3()
         {
             // This graph is B-shaped.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }, { 2, 5 }
             });
 
             Assert.IsTrue(graph.IsConnected());
 
-            SimpleGraph graphWithOneExtra = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
+            var graphWithOneExtra = SimpleGraph.CreateFromZeroBasedEdges(7, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 5, 0 }, { 2, 5 }
             });
@@ -166,14 +166,14 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsConnected4()
         {
             // This graph is a line.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
 
             Assert.IsTrue(graph.IsConnected());
 
-            SimpleGraph graphBrokenInTwo = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            var graphBrokenInTwo = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 3, 4 }, { 4, 5 }
             });
@@ -185,7 +185,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void FindFurthestVertex1()
         {
             // This graph is a point.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
 
             Assert.AreEqual(0, graph.FindFurthestVertex(0).Item1.ID);
             Assert.AreEqual(0, graph.FindFurthestVertex(0).Item2);
@@ -195,7 +195,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void FindFurthestVertex2()
         {
             // This graph is a line.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }
             });
@@ -223,7 +223,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void FindFurthestVertex3()
         {
             // This graph is a line broken in two.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(6, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 3, 4 }, { 4, 5 }
             });
@@ -253,7 +253,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void FindFurthestVertex4()
         {
             // This graph is complete with four vertices.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(4, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(4, new[,]
             {
                 { 0, 1 }, { 1, 2 }, { 2, 3 }, { 3, 0 }, { 0, 2 }, { 3, 1 }
             });
@@ -268,7 +268,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void FindFurthestVertex5()
         {
             // This graph is a weird mess: http://i.imgur.com/kbeOrqA.png.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(9, new[,]
             {
                 { 0, 1 }, { 0, 3 }, { 0, 4 }, { 0, 5 }, { 1, 2 }, { 1, 3 }, { 1, 6 },
                 { 2, 3 }, { 2, 4 }, { 3, 4 }, { 4, 5 }, { 4, 8 }, { 5, 7 }
@@ -289,7 +289,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsBipartite_ForSmallGraphs()
         {
             // This graph is empty.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(0, new int[,] { });
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(0, new int[,] { });
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph has a single vertex.
@@ -361,7 +361,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void IsBipartite_ForBiggerGraphs()
         {
             // This graph is some bipartite mess. Odds and evens go in their own set, edges between them haphazardly.
-            SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(22, new int[,]
+            var graph = SimpleGraph.CreateFromOneBasedEdges(22, new[,]
             {
                 { 2, 3 }, { 2, 9 }, { 2, 11 }, { 2, 15 },
                 { 4, 1 }, { 4, 7 }, { 4, 11 }, { 4, 17 },
@@ -377,7 +377,7 @@ namespace Spoj.Library.UnitTests.Graphs
             Assert.IsTrue(graph.IsBipartite());
 
             // This graph is like above, except I threw in an edge between an even pair of vertices.
-            graph = SimpleGraph.CreateFromOneBasedEdges(22, new int[,]
+            graph = SimpleGraph.CreateFromOneBasedEdges(22, new[,]
             {
                 { 2, 3 }, { 2, 9 }, { 2, 11 }, { 2, 15 },
                 { 4, 1 }, { 4, 7 }, { 4, 11 }, { 4, 17 },
@@ -397,7 +397,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void GetShortestPathLength_ForSmallGraphs()
         {
             // This graph has a single vertex.
-            SimpleGraph graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
+            var graph = SimpleGraph.CreateFromZeroBasedEdges(1, new int[,] { });
             Assert.AreEqual(0, graph.GetShortestPathLength(0, 0));
 
             // This graph has two vertices.
@@ -478,7 +478,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void AddsEdges()
         {
-            SimpleGraph graph = new SimpleGraph(5);
+            var graph = new SimpleGraph(5);
             Assert.AreEqual(0, graph.Vertices[0].Degree);
             Assert.AreEqual(0, graph.Vertices[1].Degree);
 

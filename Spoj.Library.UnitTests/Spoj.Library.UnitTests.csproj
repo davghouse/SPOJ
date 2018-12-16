@@ -57,9 +57,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Graphs\WeightedRootedTreeTests.cs" />
     <Compile Include="IO\FastIOTests.cs" />
     <Compile Include="Graphs\RootedTreeTests.cs" />
-    <Compile Include="Graphs\WeightedGraphTests.cs" />
+    <Compile Include="Graphs\WeightedSimpleGraphTests.cs" />
     <Compile Include="Heaps\HeapTests.cs" />
     <Compile Include="Heaps\SimpleHeapTests.cs" />
     <Compile Include="BigIntegerTests.cs" />

@@ -810,14 +810,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Text;
-        ///using Vertex = WeightedGraph.Vertex;
+        ///using Vertex = WeightedSimpleGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims
         ///// Finds the cheapest way to pave streets from any building to any building.
         ///public static class CSTREET
         ///{
         ///    // This uses Prim&apos;s algorithm: &quot;https://en.wikipedia.org/wiki/Prim&apos;s_algorithm. We don&apos;t actually need
-        ///    // to build the MST, just need the total cost of the streets that compose it. The heap itself can [rest of string was truncated]&quot;;.
+        ///    // to build the MST, just need the total cost of the streets that compose it. The heap itse [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CSTREET {
             get {
@@ -1875,15 +1875,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Linq;
-        ///using Vertex = WeightedGraph.Vertex;
+        ///using Vertex = WeightedSimpleGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the number of mice that can reach the end of a maze in time.
         ///public static class MICEMAZE
         ///{
         ///    // We use Dijkstra&apos;s algorithm from the exit cell. It&apos;s like starting at our destination and
-        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection directions
-        /// [rest of string was truncated]&quot;;.
+        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection direct [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MICEMAZE {
             get {
@@ -2337,13 +2336,37 @@ namespace Spoj.Solver {
         ///        if (nodeCount == 1)
         ///            return 0;
         ///
-        ///        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
+        ///        var graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
         ///
-        ///        var first [rest of string was truncated]&quot;;.
+        ///        var firstVertex = [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PT07Z {
             get {
                 return ResourceManager.GetString("PT07Z", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/QTREE/ #divide-and-conquer #graph-theory #hld #lca #segment-tree #tree
+        ///// Finds the edge of maximum weight between two vertices in a tree w/ updatable weights.
+        ///public sealed class QTREE
+        ///{
+        ///    private readonly int[,] _edges;
+        ///    private readonly WeightedRootedTree _tree;
+        ///
+        ///    public QTREE(int vertexCount, int[,] edges)
+        ///    {
+        ///        _edges = edges;
+        ///        _tree = WeightedRoote [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string QTREE {
+            get {
+                return ResourceManager.GetString("QTREE", resourceCulture);
             }
         }
         
@@ -2412,7 +2435,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///using System.Text;
-        ///using Vertex = WeightedGraph.Vertex;
+        ///using Vertex = WeightedSimpleGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the cheapest path between pairs of cities.
@@ -2420,7 +2443,7 @@ namespace Spoj.Solver {
         ///{
         ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
         ///    // This solution gets TLE, but it has the main features of the submitted solution, just
-        ///    // more ove [rest of string was truncated]&quot;;.
+        ///    // mo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SHPATH {
             get {
@@ -2554,6 +2577,7 @@ namespace Spoj.Solver {
         ///#greedy
         ///#hash-table
         ///#heap
+        ///#hld
         ///#inspection
         ///#intersection
         ///#intuition
@@ -2563,7 +2587,7 @@ namespace Spoj.Solver {
         ///#lca
         ///#longest-path
         ///#math
-        ///#memoiz [rest of string was truncated]&quot;;.
+        ///# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {

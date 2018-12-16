@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <Compile Include="Solutions\8 - Deity\QTREE.cs" />
     <None Include="Solutions\6 - Emperor\INOUTEST.cs" />
     <None Include="Solutions\6 - Emperor\INTEST.cs" />
     <None Include="Solutions\TEMPLATE3.cs" />
@@ -305,7 +306,7 @@
     <None Include="Solutions\7 - Immortal\HORRIBLE_v1.cs" />
     <None Include="Solutions\5 - King\ANARC05B.cs" />
     <None Include="Solutions\5 - King\ACPC11B.cs" />
-    <Compile Include="InputVerifier.cs" />
+    <None Include="InputVerifier.cs" />
     <None Include="Solutions\3 - Warlord\DOTAA.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Vertex = WeightedGraph.Vertex;
+using Vertex = WeightedSimpleGraph.Vertex;
 
 // https://www.spoj.com/problems/CSTREET/ #graph-theory #greedy #heap #mst #prims
 // Finds the cheapest way to pave streets from any building to any building.
@@ -15,7 +15,7 @@ public static class CSTREET
     // that doesn't lead to problems, otherwise would need nullable ints w/ a custom comparer, or something.
     public static long Solve(int buildingCount, int[,] streets)
     {
-        var buildingGraph = WeightedGraph.CreateFromOneBasedEdges(buildingCount, streets);
+        var buildingGraph = WeightedSimpleGraph.CreateFromOneBasedEdges(buildingCount, streets);
         var connectionCosts = new BinaryHeap(buildingGraph, buildingGraph.Vertices[0]);
         long totalStreetCost = 0;
 
@@ -52,9 +52,9 @@ public static class CSTREET
 // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
 // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
 // search state inside of the vertices themselves can also help.
-public sealed class WeightedGraph
+public sealed class WeightedSimpleGraph
 {
-    public WeightedGraph(int vertexCount)
+    public WeightedSimpleGraph(int vertexCount)
     {
         var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
@@ -66,9 +66,9 @@ public sealed class WeightedGraph
     }
 
     // For example, an edge like (1, 2, 4) => there's an edge between vertices 0 and 1 with weight 4.
-    public static WeightedGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
+    public static WeightedSimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
     {
-        var graph = new WeightedGraph(vertexCount);
+        var graph = new WeightedSimpleGraph(vertexCount);
         for (int i = 0; i < edges.GetLength(0); ++i)
         {
             graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1, edges[i, 2]);
@@ -91,10 +91,10 @@ public sealed class WeightedGraph
 
     public sealed class Vertex : IEquatable<Vertex>
     {
-        private readonly WeightedGraph _graph;
+        private readonly WeightedSimpleGraph _graph;
         private readonly Dictionary<Vertex, int> _edges = new Dictionary<Vertex, int>();
 
-        internal Vertex(WeightedGraph graph, int ID)
+        internal Vertex(WeightedSimpleGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;
@@ -133,7 +133,7 @@ public sealed class BinaryHeap
     private List<KeyValuePair<Vertex, int>> _keyValuePairs = new List<KeyValuePair<Vertex, int>>();
     private Dictionary<Vertex, int> _keyIndices = new Dictionary<Vertex, int>();
 
-    public BinaryHeap(WeightedGraph graph, Vertex topKey, int topValue = 0)
+    public BinaryHeap(WeightedSimpleGraph graph, Vertex topKey, int topValue = 0)
     {
         _keyValuePairs.Add(new KeyValuePair<Vertex, int>(topKey, topValue));
         _keyIndices.Add(topKey, 0);

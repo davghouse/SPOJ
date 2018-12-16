@@ -38,8 +38,8 @@ public sealed class LCA
     }
 }
 
-// Undirected, connected, rooted graph with no cycles. The tree's vertices are stored in an array
-// and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array.
+// Undirected, connected, rooted graph with no cycles. The tree's vertices are stored in an
+// array with the ID of a vertex (from 0 to vertexCount - 1) correpsonding to its index.
 public sealed class RootedTree
 {
     private RootedTree(int vertexCount, int rootID)
@@ -76,7 +76,7 @@ public sealed class RootedTree
     public IReadOnlyList<Vertex> Vertices { get; }
     public int VertexCount => Vertices.Count;
 
-    public Vertex Root { get; private set; }
+    public Vertex Root { get; }
 
     public Vertex[] GetEulerTour()
     {
@@ -124,7 +124,7 @@ public sealed class RootedTree
     public sealed class Vertex : IEquatable<Vertex>
     {
         private readonly RootedTree _tree;
-        private List<Vertex> _children = new List<Vertex>();
+        private readonly List<Vertex> _children = new List<Vertex>();
 
         internal Vertex(RootedTree tree, int ID)
         {

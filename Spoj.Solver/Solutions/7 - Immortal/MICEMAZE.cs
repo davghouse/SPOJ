@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Vertex = WeightedGraph.Vertex;
+using Vertex = WeightedSimpleGraph.Vertex;
 
 // https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
 // Finds the number of mice that can reach the end of a maze in time.
@@ -15,7 +15,7 @@ public static class MICEMAZE
     // limit, we can just break out of the loop w/o ever putting later cells onto the heap.
     public static int Solve(int cellCount, int exitCell, int timeLimit, int connectionCount, int[,] connections)
     {
-        var graph = new WeightedGraph(cellCount);
+        var graph = new WeightedSimpleGraph(cellCount);
         for (int c = 0; c < connectionCount; ++c)
         {
             graph.AddEdge(connections[c, 1], connections[c, 0], connections[c, 2]);
@@ -68,9 +68,9 @@ public static class MICEMAZE
 // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
 // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
 // search state inside of the vertices themselves can also help.
-public sealed class WeightedGraph
+public sealed class WeightedSimpleGraph
 {
-    public WeightedGraph(int vertexCount)
+    public WeightedSimpleGraph(int vertexCount)
     {
         var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
@@ -92,10 +92,10 @@ public sealed class WeightedGraph
 
     public sealed class Vertex : IEquatable<Vertex>
     {
-        private readonly WeightedGraph _graph;
+        private readonly WeightedSimpleGraph _graph;
         private readonly Dictionary<Vertex, int> _edges = new Dictionary<Vertex, int>();
 
-        internal Vertex(WeightedGraph graph, int ID)
+        internal Vertex(WeightedSimpleGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;

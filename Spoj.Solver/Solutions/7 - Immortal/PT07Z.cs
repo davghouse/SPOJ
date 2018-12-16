@@ -12,7 +12,7 @@ public static class PT07Z
         if (nodeCount == 1)
             return 0;
 
-        SimpleGraph graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
+        var graph = SimpleGraph.CreateFromOneBasedEdges(nodeCount, edges);
 
         var firstVertex = graph.Vertices.First(v => v.Degree == 1);
         var secondVertex = graph.FindFurthestVertex(firstVertex).Item1;

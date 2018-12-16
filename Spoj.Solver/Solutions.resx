@@ -499,4 +499,7 @@
   <data name="INOUTEST" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\6 - Emperor\INOUTEST.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="QTREE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\8 - Deity\QTREE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

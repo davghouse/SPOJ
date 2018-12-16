@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Vertex = WeightedGraph.Vertex;
+using Vertex = WeightedSimpleGraph.Vertex;
 
 // https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
 // Finds the cheapest path between pairs of cities.
@@ -17,7 +17,7 @@ public static class SHPATH
     // with memoization, with an instance of a solver for each unique source city and a
     // dictionary of destination costs. Here's a sketchy one-off submission that actually
     // passed: https://gist.github.com/davghouse/972d12b21957b57c1fbe14576675162e
-    public static int Solve(WeightedGraph cityGraph, Vertex sourceCity, Vertex destinationCity)
+    public static int Solve(WeightedSimpleGraph cityGraph, Vertex sourceCity, Vertex destinationCity)
     {
         var pathCosts = new BinaryHeap(sourceCity);
         bool[] visitedCities = new bool[cityGraph.VertexCount];
@@ -63,9 +63,9 @@ public static class SHPATH
 // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
 // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
 // search state inside of the vertices themselves can also help.
-public sealed class WeightedGraph
+public sealed class WeightedSimpleGraph
 {
-    public WeightedGraph(int vertexCount)
+    public WeightedSimpleGraph(int vertexCount)
     {
         var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
@@ -90,10 +90,10 @@ public sealed class WeightedGraph
 
     public sealed class Vertex : IEquatable<Vertex>
     {
-        private readonly WeightedGraph _graph;
+        private readonly WeightedSimpleGraph _graph;
         private readonly Dictionary<Vertex, int> _edges = new Dictionary<Vertex, int>();
 
-        internal Vertex(WeightedGraph graph, int ID)
+        internal Vertex(WeightedSimpleGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;
@@ -299,7 +299,7 @@ public static class Program
         {
             int cityCount = int.Parse(Console.ReadLine());
             var cityIndices = new Dictionary<string, int>(cityCount);
-            var cityGraph = new WeightedGraph(cityCount);
+            var cityGraph = new WeightedSimpleGraph(cityCount);
 
             for (int c = 0; c < cityCount; ++c)
             {

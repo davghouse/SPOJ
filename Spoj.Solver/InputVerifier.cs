@@ -26,7 +26,7 @@ public static class InputVerifier
                     throw new ArgumentException();
                 if (secondVertexID < 1 || secondVertexID > vertexCount)
                     throw new ArgumentException();
-                if (edgeWeight > 1000000)
+                if (edgeWeight < 0 || edgeWeight > 1000000)
                     throw new ArgumentException();
                 // Edges aren't ordered in any way, so this would throw.
                 //if (firstVertexID != i + 1)
@@ -43,7 +43,7 @@ public static class InputVerifier
 
                     if (edgeNumber < 1 || edgeNumber >= vertexCount)
                         throw new ArgumentException();
-                    if (edgeWeight > 1000000)
+                    if (edgeWeight < 0 || edgeWeight > 1000000)
                         throw new ArgumentException();
                 }
                 else if (instruction == 'Q')

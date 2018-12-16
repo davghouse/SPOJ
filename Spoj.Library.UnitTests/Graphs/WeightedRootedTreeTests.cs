@@ -1,30 +1,32 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spoj.Library.Graphs;
-using Spoj.Library.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Spoj.Library.UnitTests.Graphs
 {
     [TestClass]
-    public class RootedTreeTests
+    public class WeightedRootedTreeTests
     {
+        private static KeyValuePair<int, int> KVP(int a, int b)
+            => new KeyValuePair<int, int>(a, b);
+
         [TestMethod]
         public void ValidatesATree1()
         {
-            // This is the tree pictured here (but zero-based): https://www.spoj.com/problems/LCA/.
-            var tree = RootedTree.CreateFromExplicitChildren(13, 0, new[]
+            // This is the tree pictured here (but zero-based w/ weights): https://www.spoj.com/problems/LCA/.
+            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(13, 0, new[]
             {
-                new List<int> { 1, 2, 3 },
+                new List<KeyValuePair<int, int>> { KVP(1, 1), KVP(2, 2), KVP(3, 3) },
                 null,
-                new List<int> { 4, 5, 6 },
-                null,
-                null,
-                new List<int> { 7, 8 },
-                new List<int> { 9, 10 },
+                new List<KeyValuePair<int, int>> { KVP(4, -1),  KVP(5, -2), KVP(6, -3) },
                 null,
                 null,
-                new List<int> { 11, 12 },
+                new List<KeyValuePair<int, int>> { KVP(7, 0), KVP(8, 10) },
+                new List<KeyValuePair<int, int>> { KVP(9, 1), KVP(10, 2) },
+                null,
+                null,
+                new List<KeyValuePair<int, int>> { KVP(11, 3), KVP(12, 4) },
                 null,
                 null,
                 null
@@ -32,18 +34,18 @@ namespace Spoj.Library.UnitTests.Graphs
             tree.InitializeDepthsAndSubtreeSizes();
             ValidatesATree1(tree);
 
-            tree = RootedTree.CreateFromEdges(13, 0, new[,]
+            tree = WeightedRootedTree<int>.CreateFromEdges(13, 0, new[,]
             {
-                { 0, 1 }, { 0, 2 }, { 0, 3 },
-                { 2, 4 }, { 2, 5 }, { 2, 6 },
-                { 9, 6 }, { 10, 6 },
-                { 5, 7 }, { 5, 8 },
-                { 9, 11 }, { 9, 12 }
+                { 0, 1, 1 }, { 0, 2, 2 }, { 0, 3, 3 },
+                { 2, 4, -1 }, { 2, 5, -2 }, { 2, 6, -3 },
+                { 9, 6, 1 }, { 10, 6, 2 },
+                { 5, 7, 0 }, { 5, 8, 10 },
+                { 9, 11, 3 }, { 9, 12, 4 }
             });
             ValidatesATree1(tree);
         }
 
-        private void ValidatesATree1(RootedTree tree)
+        private void ValidatesATree1(WeightedRootedTree<int> tree)
         {
             Assert.AreEqual(13, tree.VertexCount);
             CollectionAssert.AreEquivalent(
@@ -90,20 +92,33 @@ namespace Spoj.Library.UnitTests.Graphs
             Assert.AreEqual(1, tree.Vertices[10].SubtreeSize);
             Assert.AreEqual(1, tree.Vertices[11].SubtreeSize);
             Assert.AreEqual(1, tree.Vertices[12].SubtreeSize);
+            Assert.AreEqual(null, tree.Vertices[0].Parent);
+            Assert.AreEqual(1, tree.Vertices[1].Weight);
+            Assert.AreEqual(2, tree.Vertices[2].Weight);
+            Assert.AreEqual(3, tree.Vertices[3].Weight);
+            Assert.AreEqual(-1, tree.Vertices[4].Weight);
+            Assert.AreEqual(-2, tree.Vertices[5].Weight);
+            Assert.AreEqual(-3, tree.Vertices[6].Weight);
+            Assert.AreEqual(0, tree.Vertices[7].Weight);
+            Assert.AreEqual(10, tree.Vertices[8].Weight);
+            Assert.AreEqual(1, tree.Vertices[9].Weight);
+            Assert.AreEqual(2, tree.Vertices[10].Weight);
+            Assert.AreEqual(3, tree.Vertices[11].Weight);
+            Assert.AreEqual(4, tree.Vertices[12].Weight);
         }
 
         [TestMethod]
         public void ValidatesATree2()
         {
-            var tree = RootedTree.CreateFromExplicitChildren(1, 0, new List<int>[] { null });
+            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(1, 0, new List<KeyValuePair<int, int>>[] { null });
             tree.InitializeDepthsAndSubtreeSizes();
             ValidatesATree2(tree);
 
-            tree = RootedTree.CreateFromEdges(1, 0, new int[,] { });
+            tree = WeightedRootedTree<int>.CreateFromEdges(1, 0, new int[,] { });
             ValidatesATree2(tree);
         }
 
-        private void ValidatesATree2(RootedTree tree)
+        private void ValidatesATree2(WeightedRootedTree<int> tree)
         {
             Assert.AreEqual(1, tree.VertexCount);
             Assert.AreEqual(0, tree.Vertices[0].Children.Count);
@@ -114,24 +129,24 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesATree3()
         {
-            var tree = RootedTree.CreateFromExplicitChildren(3, 0, new[]
+            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(3, 0, new[]
             {
-                new List<int> { 1 },
-                new List<int> { 2 },
+                new List<KeyValuePair<int, int>> { KVP(1, 10) },
+                new List<KeyValuePair<int, int>> { KVP(2, 11) },
                 null
             });
             tree.InitializeDepthsAndSubtreeSizes();
             ValidatesATree3(tree);
 
-            tree = RootedTree.CreateFromEdges(3, 0, new[,]
+            tree = WeightedRootedTree<int>.CreateFromEdges(3, 0, new[,]
             {
-                { 2, 1 },
-                { 1, 0 }
+                { 2, 1, 11 },
+                { 1, 0, 10 }
             });
             ValidatesATree3(tree);
         }
 
-        private void ValidatesATree3(RootedTree tree)
+        private void ValidatesATree3(WeightedRootedTree<int> tree)
         {
             Assert.AreEqual(3, tree.VertexCount);
             Assert.AreEqual(1, tree.Vertices[0].Children.Count);
@@ -145,37 +160,24 @@ namespace Spoj.Library.UnitTests.Graphs
             Assert.AreEqual(3, tree.Vertices[0].SubtreeSize);
             Assert.AreEqual(2, tree.Vertices[1].SubtreeSize);
             Assert.AreEqual(1, tree.Vertices[2].SubtreeSize);
+            Assert.AreEqual(null, tree.Vertices[0].Parent);
+            Assert.AreEqual(10, tree.Vertices[1].Weight);
+            Assert.AreEqual(11, tree.Vertices[2].Weight);
         }
 
         [TestMethod]
-        public void GetEulerTour1()
+        private void GetEulerTour1()
         {
-            GetEulerTour1(useStack: true);
-            GetEulerTour1(useStack: false);
-        }
-
-        private void GetEulerTour1(bool useStack)
-        {
-            // This is the tree pictured here (but zero-based): https://www.spoj.com/problems/LCA/.
-            var tree = RootedTree.CreateFromExplicitChildren(13, 0, new[]
+            // This is the tree pictured here (but zero-based w/ weights): https://www.spoj.com/problems/LCA/.
+            var tree = WeightedRootedTree<int>.CreateFromEdges(13, 0, new[,]
             {
-                new List<int> { 1, 2, 3 },
-                null,
-                new List<int> { 4, 5, 6 },
-                null,
-                null,
-                new List<int> { 7, 8 },
-                new List<int> { 9, 10 },
-                null,
-                null,
-                new List<int> { 11, 12 },
-                null,
-                null,
-                null
+                { 0, 1, 1 }, { 0, 2, 2 }, { 0, 3, 3 },
+                { 2, 4, -1 }, { 2, 5, -2 }, { 2, 6, -3 },
+                { 9, 6, 1 }, { 10, 6, 2 },
+                { 5, 7, 0 }, { 5, 8, 10 },
+                { 9, 11, 3 }, { 9, 12, 4 }
             });
-            var eulerTour = useStack
-                ? tree.GetEulerTourUsingStack()
-                : tree.GetEulerTourUsingRecursion();
+            var eulerTour = tree.GetEulerTour();
 
             CollectionAssert.AreEqual(
                 new[] { 0, 1, 0, 2, 4, 2, 5, 7, 5, 8, 5, 2, 6, 9, 11, 9, 12, 9, 6, 10, 6, 2, 0, 3, 0 },
@@ -202,55 +204,29 @@ namespace Spoj.Library.UnitTests.Graphs
         }
 
         [TestMethod]
-        public void GetEulerTour2()
+        private void GetEulerTour2()
         {
-            GetEulerTour2(useStack: true);
-            GetEulerTour2(useStack: false);
-        }
-
-        private void GetEulerTour2(bool useStack)
-        {
-            var tree = RootedTree.CreateFromExplicitChildren(1, 0, new List<int>[] { null });
-            var eulerTour = useStack
-                ? tree.GetEulerTourUsingStack()
-                : tree.GetEulerTourUsingRecursion();
+            var tree = WeightedRootedTree<int>.CreateFromEdges(1, 0, new int[,] { });
+            var eulerTour = tree.GetEulerTour();
 
             CollectionAssert.AreEqual(new[] { 0 }, eulerTour.Select(v => v.ID).ToArray());
             Assert.AreEqual(0, tree.Vertices[0].Depth);
         }
 
         [TestMethod]
-        public void GetEulerTour3()
+        private void GetEulerTour3()
         {
-            GetEulerTour3(useStack: true);
-            GetEulerTour3(useStack: false);
-        }
-
-        private void GetEulerTour3(bool useStack)
-        {
-            var tree = RootedTree.CreateFromExplicitChildren(3, 0, new[]
+            var tree = WeightedRootedTree<int>.CreateFromEdges(3, 0, new[,]
             {
-                new List<int> { 1 },
-                new List<int> { 2 },
-                null
+                { 2, 1, 11 },
+                { 1, 0, 10 }
             });
-            var eulerTour = useStack
-                ? tree.GetEulerTourUsingStack()
-                : tree.GetEulerTourUsingRecursion();
+            var eulerTour = tree.GetEulerTour();
 
             CollectionAssert.AreEqual(new[] { 0, 1, 2, 1, 0 }, eulerTour.Select(v => v.ID).ToArray());
             Assert.AreEqual(0, tree.Vertices[0].Depth);
             Assert.AreEqual(1, tree.Vertices[1].Depth);
             Assert.AreEqual(2, tree.Vertices[2].Depth);
-        }
-
-        [TestMethod]
-        public void CompareEulerTours()
-        {
-            var randomTree = InputGenerator.GenerateRandomRootedTree(1000, 1, 3);
-            CollectionAssert.AreEqual(
-                randomTree.GetEulerTourUsingStack().ToArray(),
-                randomTree.GetEulerTourUsingRecursion());
         }
     }
 }

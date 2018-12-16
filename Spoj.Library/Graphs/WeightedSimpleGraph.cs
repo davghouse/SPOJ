@@ -7,9 +7,9 @@ namespace Spoj.Library.Graphs
     // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
     // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
     // search state inside of the vertices themselves can also help.
-    public sealed class WeightedGraph<T>
+    public sealed class WeightedSimpleGraph<T>
     {
-        public WeightedGraph(int vertexCount)
+        public WeightedSimpleGraph(int vertexCount)
         {
             var vertices = new Vertex[vertexCount];
             for (int id = 0; id < vertexCount; ++id)
@@ -21,9 +21,9 @@ namespace Spoj.Library.Graphs
         }
 
         // For example, an edge like (0, 1, 4) => there's an edge between vertices 0 and 1 with weight 4.
-        public static WeightedGraph<int> CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
+        public static WeightedSimpleGraph<int> CreateFromZeroBasedEdges(int vertexCount, int[,] edges)
         {
-            var graph = new WeightedGraph<int>(vertexCount);
+            var graph = new WeightedSimpleGraph<int>(vertexCount);
             for (int i = 0; i < edges.GetLength(0); ++i)
             {
                 graph.AddEdge(edges[i, 0], edges[i, 1], edges[i, 2]);
@@ -33,9 +33,9 @@ namespace Spoj.Library.Graphs
         }
 
         // For example, an edge like (1, 2, 4) => there's an edge between vertices 0 and 1 with weight 4.
-        public static WeightedGraph<int> CreateFromOneBasedEdges(int vertexCount, int[,] edges)
+        public static WeightedSimpleGraph<int> CreateFromOneBasedEdges(int vertexCount, int[,] edges)
         {
-            var graph = new WeightedGraph<int>(vertexCount);
+            var graph = new WeightedSimpleGraph<int>(vertexCount);
             for (int i = 0; i < edges.GetLength(0); ++i)
             {
                 graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1, edges[i, 2]);
@@ -64,10 +64,10 @@ namespace Spoj.Library.Graphs
 
         public sealed class Vertex : IEquatable<Vertex>
         {
-            private readonly WeightedGraph<T> _graph;
+            private readonly WeightedSimpleGraph<T> _graph;
             private readonly Dictionary<Vertex, T> _edges = new Dictionary<Vertex, T>();
 
-            internal Vertex(WeightedGraph<T> graph, int ID)
+            internal Vertex(WeightedSimpleGraph<T> graph, int ID)
             {
                 _graph = graph;
                 this.ID = ID;

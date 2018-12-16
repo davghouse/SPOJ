@@ -5,13 +5,13 @@ using System.Linq;
 namespace Spoj.Library.UnitTests.Graphs
 {
     [TestClass]
-    public class WeightedGraphTests
+    public class WeightedSimpleGraphTests
     {
         [TestMethod]
         public void ValidatesAGraph1()
         {
             // This graph is a triangle.
-            WeightedGraph<int> graph = WeightedGraph<int>.CreateFromZeroBasedEdges(3, new[,]
+            var graph = WeightedSimpleGraph<int>.CreateFromZeroBasedEdges(3, new[,]
             {
                 { 0, 1, 1 }, { 0, 2, 2 }, { 1, 2, 3 }
             });
@@ -50,7 +50,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void ValidatesAGraph2()
         {
             // This graph is two lines and a point.
-            WeightedGraph<int> graph = WeightedGraph<int>.CreateFromOneBasedEdges(5, new[,]
+            var graph = WeightedSimpleGraph<int>.CreateFromOneBasedEdges(5, new[,]
             {
                 { 1, 2, 10 }, { 3, 4, 11 }
             });
@@ -110,7 +110,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void AddsEdges()
         {
-            WeightedGraph<int> graph = new WeightedGraph<int>(5);
+            var graph = new WeightedSimpleGraph<int>(5);
             Assert.AreEqual(0, graph.Vertices[0].Degree);
             Assert.AreEqual(0, graph.Vertices[1].Degree);
 
@@ -137,7 +137,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void TryGetEdgeWeight()
         {
-            WeightedGraph<int> graph = new WeightedGraph<int>(5);
+            var graph = new WeightedSimpleGraph<int>(5);
             int value;
             bool hasValue;
 
@@ -155,7 +155,6 @@ namespace Spoj.Library.UnitTests.Graphs
             hasValue = graph.Vertices[0].TryGetEdgeWeight(1, out value);
             Assert.AreEqual(0, value);
             Assert.IsFalse(hasValue);
-
         }
     }
 }
