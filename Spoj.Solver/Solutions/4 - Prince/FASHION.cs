@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 
 // https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting
-// Given parallel arrays of hotness levels, calculate the sum of the values of the hotness bonds.
+// Given two arrays of hotness levels, pair them off to maximize the total hotness product.
 public static class FASHION
 {
     // Problem statement leads one to believe these arrays are already in parallel;

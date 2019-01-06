@@ -666,6 +666,27 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
+        ///// https://www.spoj.com/problems/CADYDIST/ #ad-hoc #experiment #sorting
+        ///// Given class sizes and candy prices, feed all students in the cheapest way possible.
+        ///public static class CADYDIST
+        ///{
+        ///    // Similar to FASHION. One type of candy is bought per class. In order to minimize
+        ///    // cost, buy the cheapest candy for the biggest class, and so on.
+        ///    public static long Solve(int[] classSizes, int[] candyPrices)
+        ///    {
+        ///        Array.Sort(classSizes);
+        ///        Array.S [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CADYDIST {
+            get {
+                return ResourceManager.GetString("CADYDIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
         ///// https://www.spoj.com/problems/CANDY/ #ad-hoc #division
         ///// Given packets containing different numbers of candies, count the fewest moves needed to split them up fairly, if possible.
         ///public static class CANDY
@@ -1129,12 +1150,13 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting
-        ///// Given parallel arrays of hotness levels, calculate the sum of the values of the hotness bonds.
+        ///// Given two arrays of hotness levels, pair them off to maximize the total hotness product.
         ///public static class FASHION
         ///{
         ///    // Problem statement leads one to believe these arrays are already in parallel;
         ///    // each pair already chosen. That&apos;s not the case, so it&apos;s necessary to figure out the
-        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the highest        /// [rest of string was truncated]&quot;;.
+        ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the highest
+        ///    / [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FASHION {
             get {
