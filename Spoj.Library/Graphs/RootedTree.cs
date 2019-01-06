@@ -20,18 +20,18 @@ namespace Spoj.Library.Graphs
             Root = vertices[rootID];
         }
 
-        // For example, if children[1] = (3, 4, 6) then vertices w/ ID 3, 4, 6 are the children of vertex w/ ID 1.
-        // Creating from explicit children doesn't initialize depths or subtree sizes; do that separately if needed.
-        public static RootedTree CreateFromExplicitChildren(int vertexCount, int rootID, List<int>[] children)
+        // E.g. if verticesChildren[1] = (3, 4, 6), vertices w/ ID 3, 4, 6 are children of vertex w/ ID 1.
+        // Creating from children doesn't initialize depths or subtree sizes; do that separately if needed.
+        public static RootedTree CreateFromChildren(int vertexCount, int rootID, List<int>[] verticesChildren)
         {
             var tree = new RootedTree(vertexCount, rootID);
             for (int id = 0; id < vertexCount; ++id)
             {
-                if (!children[id]?.Any() ?? true)
+                if (!verticesChildren[id]?.Any() ?? true)
                     continue;
 
                 var parent = tree.Vertices[id];
-                foreach (int childID in children[id])
+                foreach (int childID in verticesChildren[id])
                 {
                     tree.Vertices[childID].SetParent(parent);
                 }

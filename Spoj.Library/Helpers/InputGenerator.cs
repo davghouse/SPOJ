@@ -102,7 +102,7 @@ namespace Spoj.Library.Helpers
             if (minChildCount < 1 || maxChildCount < 1 || minChildCount > maxChildCount)
                 throw new ArgumentException();
 
-            var children = new List<int>[vertexCount];
+            var verticesChildren = new List<int>[vertexCount];
             // The number of children a vertex has is random, but IDs aren't random. The root is always 0
             // and if ID1 < ID2, ID1's depth <= ID2's depth. Once an ID is added as a child, it gets in
             // line to become a parent. The tree isn't going to be very deep for any maxChildCount except
@@ -114,13 +114,13 @@ namespace Spoj.Library.Helpers
             while (true)
             {
                 int parentID = availableParentIDs.Dequeue();
-                var parentsChildren = children[parentID] = new List<int>();
+                var parentsChildren = verticesChildren[parentID] = new List<int>();
                 int childCount = Rand.Next(minChildCount, maxChildCount + 1);
 
                 for (int i = 0; i < childCount; ++i)
                 {
                     if (availableChildIDs.Count == 0)
-                        return RootedTree.CreateFromExplicitChildren(vertexCount, 0, children);
+                        return RootedTree.CreateFromChildren(vertexCount, 0, verticesChildren);
 
                     int childID = availableChildIDs.Dequeue();
                     parentsChildren.Add(childID);

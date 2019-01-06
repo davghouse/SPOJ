@@ -41,9 +41,10 @@ public sealed class LazySumSegmentTree
 
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
+        int leftChildSegmentEndIndex = (segmentStartIndex + segmentEndIndex) / 2;
 
-        Build(leftChildTreeArrayIndex, segmentStartIndex, (segmentStartIndex + segmentEndIndex) / 2);
-        Build(rightChildTreeArrayIndex, (segmentStartIndex + segmentEndIndex) / 2 + 1, segmentEndIndex);
+        Build(leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex);
+        Build(rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex);
 
         _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
@@ -63,18 +64,18 @@ public sealed class LazySumSegmentTree
         if (parentQueryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
             return parentQueryObject;
 
-        bool isLeftHalfOverlapped = parentQueryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-        bool isRightHalfOverlapped = parentQueryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+        bool leftHalfOverlaps = parentQueryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+        bool rightHalfOverlaps = parentQueryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
         QueryObject childrenQueryObject;
 
-        if (isLeftHalfOverlapped && isRightHalfOverlapped)
+        if (leftHalfOverlaps && rightHalfOverlaps)
         {
             childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                 .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
         }
-        else if (isLeftHalfOverlapped)
+        else if (leftHalfOverlaps)
         {
             childrenQueryObject = Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
         }
@@ -100,7 +101,7 @@ public sealed class LazySumSegmentTree
 
     private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, long rangeAddition)
     {
-        QueryObject queryObject = _treeArray[treeArrayIndex];
+        var queryObject = _treeArray[treeArrayIndex];
 
         if (queryObject.IsTotallyOverlappedBy(updateStartIndex, updateEndIndex))
         {
@@ -111,12 +112,12 @@ public sealed class LazySumSegmentTree
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-        if (queryObject.IsLeftHalfOverlappedBy(updateStartIndex, updateEndIndex))
+        if (queryObject.DoesLeftHalfOverlapWith(updateStartIndex, updateEndIndex))
         {
             Update(leftChildTreeArrayIndex, updateStartIndex, updateEndIndex, rangeAddition);
         }
 
-        if (queryObject.IsRightHalfOverlappedBy(updateStartIndex, updateEndIndex))
+        if (queryObject.DoesRightHalfOverlapWith(updateStartIndex, updateEndIndex))
         {
             Update(rightChildTreeArrayIndex, updateStartIndex, updateEndIndex, rangeAddition);
         }
@@ -167,10 +168,10 @@ public sealed class LazySumSegmentTree
         public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
             => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
 
-        public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+        public bool DoesLeftHalfOverlapWith(int startIndex, int endIndex)
             => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
 
-        public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+        public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
             => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
     }
 }

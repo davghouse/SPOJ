@@ -41,20 +41,20 @@ namespace Spoj.Library.SegmentTrees
 
         private TQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
-            TQueryObject queryObject = _treeArray[treeArrayIndex];
+            var queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
                 return queryObject;
 
-            bool isLeftHalfOverlapped = queryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-            bool isRightHalfOverlapped = queryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+            bool leftHalfOverlaps = queryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+            bool rightHalfOverlaps = queryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
             int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
             int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-            if (isLeftHalfOverlapped && isRightHalfOverlapped)
+            if (leftHalfOverlaps && rightHalfOverlaps)
                 return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                     .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
-            else if (isLeftHalfOverlapped)
+            else if (leftHalfOverlaps)
                 return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
             else
                 return Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
@@ -68,7 +68,7 @@ namespace Spoj.Library.SegmentTrees
 
         private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, Func<TQueryValue, TQueryValue> updater)
         {
-            TQueryObject queryObject = _treeArray[treeArrayIndex];
+            var queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.SegmentStartIndex == queryObject.SegmentEndIndex)
             {
@@ -79,12 +79,12 @@ namespace Spoj.Library.SegmentTrees
             int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
             int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-            if (queryObject.IsLeftHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (queryObject.DoesLeftHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(leftChildTreeArrayIndex, updateStartIndex, updateEndIndex, updater);
             }
 
-            if (queryObject.IsRightHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (queryObject.DoesRightHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(rightChildTreeArrayIndex, updateStartIndex, updateEndIndex, updater);
             }

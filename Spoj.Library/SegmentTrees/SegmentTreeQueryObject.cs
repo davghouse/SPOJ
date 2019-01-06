@@ -45,11 +45,11 @@ namespace Spoj.Library.SegmentTrees
             => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
 
         // Assumed that some overlap exists, just not necessarily over the left half.
-        public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+        public bool DoesLeftHalfOverlapWith(int startIndex, int endIndex)
             => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
 
         // Assumed that some overlap exists, just not necessarily over the right half.
-        public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+        public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
             => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
     }
 }

@@ -42,9 +42,10 @@ public sealed class ArrayBasedSegmentTree
 
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
+        int leftChildSegmentEndIndex = (segmentStartIndex + segmentEndIndex) / 2;
 
-        Build(leftChildTreeArrayIndex, segmentStartIndex, (segmentStartIndex + segmentEndIndex) / 2);
-        Build(rightChildTreeArrayIndex, (segmentStartIndex + segmentEndIndex) / 2 + 1, segmentEndIndex);
+        Build(leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex);
+        Build(rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex);
 
         _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
@@ -52,7 +53,9 @@ public sealed class ArrayBasedSegmentTree
     public MaximumSumQueryObject Query(int queryStartIndex, int queryEndIndex)
         => Query(0, 0, _sourceArray.Count - 1, queryStartIndex, queryEndIndex);
 
-    private MaximumSumQueryObject Query(int treeArrayIndex, int segmentStartIndex, int segmentEndIndex, int queryStartIndex, int queryEndIndex)
+    private MaximumSumQueryObject Query(
+        int treeArrayIndex, int segmentStartIndex, int segmentEndIndex,
+        int queryStartIndex, int queryEndIndex)
     {
         if (queryStartIndex <= segmentStartIndex && queryEndIndex >= segmentEndIndex)
             return _treeArray[treeArrayIndex];

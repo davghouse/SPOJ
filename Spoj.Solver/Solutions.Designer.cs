@@ -2351,22 +2351,38 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.IO;
         ///using System.Linq;
+        ///using Vertex = WeightedRootedTree.Vertex;
         ///
         ///// https://www.spoj.com/problems/QTREE/ #divide-and-conquer #graph-theory #hld #lca #segment-tree #tree
         ///// Finds the edge of maximum weight between two vertices in a tree w/ updatable weights.
-        ///public sealed class QTREE
+        ///public sealed class QTREE // v1, same big O as v2 but too much overhead to get AC
         ///{
         ///    private readonly int[,] _edges;
         ///    private readonly WeightedRootedTree _tree;
-        ///
-        ///    public QTREE(int vertexCount, int[,] edges)
-        ///    {
-        ///        _edges = edges;
-        ///        _tree = WeightedRoote [rest of string was truncated]&quot;;.
+        ///    private r [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string QTREE {
+        public static string QTREE_v1 {
             get {
-                return ResourceManager.GetString("QTREE", resourceCulture);
+                return ResourceManager.GetString("QTREE_v1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/QTREE/ #divide-and-conquer #graph-theory #hld #lca #segment-tree #tree
+        ///// Finds the edge of maximum weight between two vertices in a tree w/ updatable weights.
+        ///public static class QTREE // v2, trading code quality/readability for better performance
+        ///{
+        ///    private static int _vertexCount, _chainIndex, _baseArrayIndex;
+        ///    private static readonly List&lt;int&gt;[]
+        ///        _verticesNeighbors = new List&lt;int&gt;[10 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string QTREE_v2 {
+            get {
+                return ResourceManager.GetString("QTREE_v2", resourceCulture);
             }
         }
         

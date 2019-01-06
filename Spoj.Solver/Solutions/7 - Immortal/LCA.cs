@@ -12,9 +12,9 @@ public sealed class LCA
     private readonly Vertex[] _eulerTour;
     private readonly ArrayBasedSegmentTree _segmentTree;
 
-    public LCA(int vertexCount, List<int>[] children)
+    public LCA(int vertexCount, List<int>[] verticesChildren)
     {
-        _tree = RootedTree.CreateFromExplicitChildren(vertexCount, 0, children);
+        _tree = RootedTree.CreateFromChildren(vertexCount, 0, verticesChildren);
         _eulerTour = _tree.GetEulerTour();
         _segmentTree = new ArrayBasedSegmentTree(_eulerTour);
     }
@@ -54,17 +54,17 @@ public sealed class RootedTree
         Root = vertices[rootID];
     }
 
-    // For example, if children[1] = (3, 4, 6) then vertices w/ ID 3, 4, 6 are the children of vertex w/ ID 1.
-    public static RootedTree CreateFromExplicitChildren(int vertexCount, int rootID, List<int>[] children)
+    // E.g. if verticesChildren[1] = (3, 4, 6), vertices w/ ID 3, 4, 6 are children of vertex w/ ID 1.
+    public static RootedTree CreateFromChildren(int vertexCount, int rootID, List<int>[] verticesChildren)
     {
         var tree = new RootedTree(vertexCount, rootID);
         for (int id = 0; id < vertexCount; ++id)
         {
-            if (!children[id]?.Any() ?? true)
+            if (!verticesChildren[id]?.Any() ?? true)
                 continue;
 
             var parent = tree.Vertices[id];
-            foreach (int childID in children[id])
+            foreach (int childID in verticesChildren[id])
             {
                 tree.Vertices[childID].SetParent(parent);
             }
@@ -100,14 +100,6 @@ public sealed class RootedTree
                 vertex.EulerTourInitialIndex = eulerTourIndex;
             }
 
-            // Only pop the vertex once we've visited all its children. At first I was popping
-            // no matter what, and then re-pushing for each child, like follows. This degrades
-            // performance by about a factor of 2, and is even slower than the recursive solution.
-            //        foreach (var child in vertex.Children)
-            //        {
-            //            verticesToVisit.Push(vertex);
-            //            verticesToVisit.Push(child);
-            //        }
             if (vertex.EulerTourChildCounter == vertex.Children.Count)
             {
                 verticesToVisit.Pop();
@@ -165,12 +157,12 @@ public sealed class RootedTree
 public sealed class ArrayBasedSegmentTree
 {
     private readonly IReadOnlyList<Vertex> _sourceArray;
-    private readonly MinimumDepthVertexQueryObject[] _treeArray;
+    private readonly MinimumDepthQueryObject[] _treeArray;
 
     public ArrayBasedSegmentTree(IReadOnlyList<Vertex> sourceArray)
     {
         _sourceArray = sourceArray;
-        _treeArray = new MinimumDepthVertexQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
+        _treeArray = new MinimumDepthQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(_sourceArray.Count) - 1];
         Build(0, 0, _sourceArray.Count - 1);
     }
 
@@ -178,15 +170,16 @@ public sealed class ArrayBasedSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new MinimumDepthVertexQueryObject(segmentStartIndex, _sourceArray[segmentStartIndex]);
+            _treeArray[treeArrayIndex] = new MinimumDepthQueryObject(segmentStartIndex, _sourceArray[segmentStartIndex]);
             return;
         }
 
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
+        int leftChildSegmentEndIndex = (segmentStartIndex + segmentEndIndex) / 2;
 
-        Build(leftChildTreeArrayIndex, segmentStartIndex, (segmentStartIndex + segmentEndIndex) / 2);
-        Build(rightChildTreeArrayIndex, (segmentStartIndex + segmentEndIndex) / 2 + 1, segmentEndIndex);
+        Build(leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex);
+        Build(rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex);
 
         _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
@@ -194,22 +187,22 @@ public sealed class ArrayBasedSegmentTree
     public int Query(int queryStartIndex, int queryEndIndex)
         => Query(0, queryStartIndex, queryEndIndex).MinimumDepthVertex.ID;
 
-    private MinimumDepthVertexQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
+    private MinimumDepthQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
     {
         var queryObject = _treeArray[treeArrayIndex];
 
         if (queryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
             return queryObject;
 
-        bool isLeftHalfOverlapped = queryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-        bool isRightHalfOverlapped = queryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+        bool leftHalfOverlaps = queryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+        bool rightHalfOverlaps = queryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-        if (isLeftHalfOverlapped && isRightHalfOverlapped)
+        if (leftHalfOverlaps && rightHalfOverlaps)
             return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                 .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
-        else if (isLeftHalfOverlapped)
+        else if (leftHalfOverlaps)
             return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
         else
             return Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
@@ -217,12 +210,12 @@ public sealed class ArrayBasedSegmentTree
 }
 
 // Given a query range, this stores the vertex of minimum depth across that range in the Euler tour.
-public sealed class MinimumDepthVertexQueryObject
+public sealed class MinimumDepthQueryObject
 {
-    private MinimumDepthVertexQueryObject()
+    private MinimumDepthQueryObject()
     { }
 
-    public MinimumDepthVertexQueryObject(int index, Vertex value)
+    public MinimumDepthQueryObject(int index, Vertex value)
     {
         SegmentStartIndex = SegmentEndIndex = index;
         MinimumDepthVertex = value;
@@ -236,8 +229,8 @@ public sealed class MinimumDepthVertexQueryObject
 
     public Vertex MinimumDepthVertex { get; private set; }
 
-    public MinimumDepthVertexQueryObject Combine(MinimumDepthVertexQueryObject rightAdjacentObject)
-        => new MinimumDepthVertexQueryObject
+    public MinimumDepthQueryObject Combine(MinimumDepthQueryObject rightAdjacentObject)
+        => new MinimumDepthQueryObject
         {
             SegmentStartIndex = SegmentStartIndex,
             SegmentEndIndex = rightAdjacentObject.SegmentEndIndex,
@@ -250,11 +243,11 @@ public sealed class MinimumDepthVertexQueryObject
         => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
 
     // Assumed that some overlap exists, just not necessarily over the left half.
-    public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+    public bool DoesLeftHalfOverlapWith(int startIndex, int endIndex)
         => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
 
     // Assumed that some overlap exists, just not necessarily over the right half.
-    public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+    public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
         => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
 }
 
@@ -276,10 +269,10 @@ public static class Program
 {
     private static void Main()
     {
-        var children = new List<int>[1000];
+        var verticesChildren = new List<int>[1000];
         for (int i = 0; i < 1000; ++i)
         {
-            children[i] = new List<int>();
+            verticesChildren[i] = new List<int>();
         }
 
         var output = new StringBuilder();
@@ -293,15 +286,15 @@ public static class Program
             {
                 int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-                var vertexChildren = children[id];
-                vertexChildren.Clear();
+                var children = verticesChildren[id];
+                children.Clear();
                 for (int i = 1; i < line.Length; ++i)
                 {
-                    vertexChildren.Add(line[i] - 1);
+                    children.Add(line[i] - 1);
                 }
             }
 
-            var solver = new LCA(vertexCount, children);
+            var solver = new LCA(vertexCount, verticesChildren);
             int queryCount = int.Parse(Console.ReadLine());
             for (int q = 0; q < queryCount; ++q)
             {

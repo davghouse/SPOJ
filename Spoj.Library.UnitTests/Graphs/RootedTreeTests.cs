@@ -13,7 +13,7 @@ namespace Spoj.Library.UnitTests.Graphs
         public void ValidatesATree1()
         {
             // This is the tree pictured here (but zero-based): https://www.spoj.com/problems/LCA/.
-            var tree = RootedTree.CreateFromExplicitChildren(13, 0, new[]
+            var tree = RootedTree.CreateFromChildren(13, 0, new[]
             {
                 new List<int> { 1, 2, 3 },
                 null,
@@ -95,7 +95,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesATree2()
         {
-            var tree = RootedTree.CreateFromExplicitChildren(1, 0, new List<int>[] { null });
+            var tree = RootedTree.CreateFromChildren(1, 0, new List<int>[] { null });
             tree.InitializeDepthsAndSubtreeSizes();
             ValidatesATree2(tree);
 
@@ -114,7 +114,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesATree3()
         {
-            var tree = RootedTree.CreateFromExplicitChildren(3, 0, new[]
+            var tree = RootedTree.CreateFromChildren(3, 0, new[]
             {
                 new List<int> { 1 },
                 new List<int> { 2 },
@@ -157,7 +157,7 @@ namespace Spoj.Library.UnitTests.Graphs
         private void GetEulerTour1(bool useStack)
         {
             // This is the tree pictured here (but zero-based): https://www.spoj.com/problems/LCA/.
-            var tree = RootedTree.CreateFromExplicitChildren(13, 0, new[]
+            var tree = RootedTree.CreateFromChildren(13, 0, new[]
             {
                 new List<int> { 1, 2, 3 },
                 null,
@@ -210,7 +210,7 @@ namespace Spoj.Library.UnitTests.Graphs
 
         private void GetEulerTour2(bool useStack)
         {
-            var tree = RootedTree.CreateFromExplicitChildren(1, 0, new List<int>[] { null });
+            var tree = RootedTree.CreateFromChildren(1, 0, new List<int>[] { null });
             var eulerTour = useStack
                 ? tree.GetEulerTourUsingStack()
                 : tree.GetEulerTourUsingRecursion();
@@ -228,7 +228,7 @@ namespace Spoj.Library.UnitTests.Graphs
 
         private void GetEulerTour3(bool useStack)
         {
-            var tree = RootedTree.CreateFromExplicitChildren(3, 0, new[]
+            var tree = RootedTree.CreateFromChildren(3, 0, new[]
             {
                 new List<int> { 1 },
                 new List<int> { 2 },

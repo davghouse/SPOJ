@@ -44,9 +44,10 @@ public sealed class ArrayBasedSegmentTree
 
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
+        int leftChildSegmentEndIndex = (segmentStartIndex + segmentEndIndex) / 2;
 
-        Build(leftChildTreeArrayIndex, segmentStartIndex, (segmentStartIndex + segmentEndIndex) / 2);
-        Build(rightChildTreeArrayIndex, (segmentStartIndex + segmentEndIndex) / 2 + 1, segmentEndIndex);
+        Build(leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex);
+        Build(rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex);
 
         _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
@@ -64,15 +65,15 @@ public sealed class ArrayBasedSegmentTree
         if (queryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
             return queryObject;
 
-        bool isLeftHalfOverlapped = queryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-        bool isRightHalfOverlapped = queryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+        bool leftHalfOverlaps = queryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+        bool rightHalfOverlaps = queryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-        if (isLeftHalfOverlapped && isRightHalfOverlapped)
+        if (leftHalfOverlaps && rightHalfOverlaps)
             return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                 .Combine(Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
-        else if (isLeftHalfOverlapped)
+        else if (leftHalfOverlaps)
             return Query(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
         else
             return Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
@@ -94,7 +95,7 @@ public sealed class ArrayBasedSegmentTree
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-        if (queryObject.IsLeftHalfOverlappedBy(updateIndex, updateIndex))
+        if (queryObject.DoesLeftHalfOverlapWith(updateIndex, updateIndex))
         {
             Update(leftChildTreeArrayIndex, updateIndex, newValue);
         }
@@ -159,11 +160,11 @@ public sealed class SecondMaximumQueryObject
         => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
 
     // Assumed that some overlap exists, just not necessarily over the left half.
-    public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+    public bool DoesLeftHalfOverlapWith(int startIndex, int endIndex)
         => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
 
     // Assumed that some overlap exists, just not necessarily over the right half.
-    public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+    public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
         => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
 }
 

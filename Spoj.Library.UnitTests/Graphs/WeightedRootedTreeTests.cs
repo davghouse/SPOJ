@@ -8,14 +8,14 @@ namespace Spoj.Library.UnitTests.Graphs
     [TestClass]
     public class WeightedRootedTreeTests
     {
-        private static KeyValuePair<int, int> KVP(int a, int b)
-            => new KeyValuePair<int, int>(a, b);
+        private static KeyValuePair<int, int> KVP(int id, int weight)
+            => new KeyValuePair<int, int>(id, weight);
 
         [TestMethod]
         public void ValidatesATree1()
         {
             // This is the tree pictured here (but zero-based w/ weights): https://www.spoj.com/problems/LCA/.
-            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(13, 0, new[]
+            var tree = WeightedRootedTree<int>.CreateFromChildren(13, 0, new[]
             {
                 new List<KeyValuePair<int, int>> { KVP(1, 1), KVP(2, 2), KVP(3, 3) },
                 null,
@@ -110,7 +110,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesATree2()
         {
-            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(1, 0, new List<KeyValuePair<int, int>>[] { null });
+            var tree = WeightedRootedTree<int>.CreateFromChildren(1, 0, new List<KeyValuePair<int, int>>[] { null });
             tree.InitializeDepthsAndSubtreeSizes();
             ValidatesATree2(tree);
 
@@ -129,7 +129,7 @@ namespace Spoj.Library.UnitTests.Graphs
         [TestMethod]
         public void ValidatesATree3()
         {
-            var tree = WeightedRootedTree<int>.CreateFromExplicitChildren(3, 0, new[]
+            var tree = WeightedRootedTree<int>.CreateFromChildren(3, 0, new[]
             {
                 new List<KeyValuePair<int, int>> { KVP(1, 10) },
                 new List<KeyValuePair<int, int>> { KVP(2, 11) },
@@ -166,7 +166,7 @@ namespace Spoj.Library.UnitTests.Graphs
         }
 
         [TestMethod]
-        private void GetEulerTour1()
+        public void GetEulerTour1()
         {
             // This is the tree pictured here (but zero-based w/ weights): https://www.spoj.com/problems/LCA/.
             var tree = WeightedRootedTree<int>.CreateFromEdges(13, 0, new[,]
@@ -204,7 +204,7 @@ namespace Spoj.Library.UnitTests.Graphs
         }
 
         [TestMethod]
-        private void GetEulerTour2()
+        public void GetEulerTour2()
         {
             var tree = WeightedRootedTree<int>.CreateFromEdges(1, 0, new int[,] { });
             var eulerTour = tree.GetEulerTour();
@@ -214,7 +214,7 @@ namespace Spoj.Library.UnitTests.Graphs
         }
 
         [TestMethod]
-        private void GetEulerTour3()
+        public void GetEulerTour3()
         {
             var tree = WeightedRootedTree<int>.CreateFromEdges(3, 0, new[,]
             {
@@ -227,6 +227,51 @@ namespace Spoj.Library.UnitTests.Graphs
             Assert.AreEqual(0, tree.Vertices[0].Depth);
             Assert.AreEqual(1, tree.Vertices[1].Depth);
             Assert.AreEqual(2, tree.Vertices[2].Depth);
+        }
+
+        [TestMethod]
+        public void RunHLD()
+        {
+            // This is the tree pictured here (but zero-based):
+            // https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/.
+            var tree = WeightedRootedTree<int>.CreateFromEdges(11, 0, new[,]
+            {
+                {0, 1, 13 }, {0, 2, 9 }, {0, 3, 23 },
+                {1, 4, 4 }, {1, 5, 25 },
+                {2, 6, 29 },
+                {5, 7, 5 },
+                {6, 8, 30 },
+                {7, 9, 1 }, { 7, 10, 6 }
+            });
+            tree.RunHLD();
+
+            CollectionAssert.AreEqual(new[] { 0, 10, 4, 2, 3 }, tree.HLDChainHeads.Select(v => v.ID).ToArray());
+            Assert.AreEqual(0, tree.Vertices[0].HLDChainIndex);
+            Assert.AreEqual(0, tree.Vertices[1].HLDChainIndex);
+            Assert.AreEqual(0, tree.Vertices[5].HLDChainIndex);
+            Assert.AreEqual(0, tree.Vertices[7].HLDChainIndex);
+            Assert.AreEqual(0, tree.Vertices[9].HLDChainIndex);
+            Assert.AreEqual(1, tree.Vertices[10].HLDChainIndex);
+            Assert.AreEqual(2, tree.Vertices[4].HLDChainIndex);
+            Assert.AreEqual(3, tree.Vertices[2].HLDChainIndex);
+            Assert.AreEqual(3, tree.Vertices[6].HLDChainIndex);
+            Assert.AreEqual(3, tree.Vertices[8].HLDChainIndex);
+            Assert.AreEqual(4, tree.Vertices[3].HLDChainIndex);
+
+            CollectionAssert.AreEqual(
+                new[] { 0, 1, 5, 7, 9, 10, 4, 2, 6, 8, 3},
+                tree.HLDBaseArray.Select(v => v.ID).ToArray());
+            Assert.AreEqual(0, tree.Vertices[0].HLDBaseArrayIndex);
+            Assert.AreEqual(1, tree.Vertices[1].HLDBaseArrayIndex);
+            Assert.AreEqual(2, tree.Vertices[5].HLDBaseArrayIndex);
+            Assert.AreEqual(3, tree.Vertices[7].HLDBaseArrayIndex);
+            Assert.AreEqual(4, tree.Vertices[9].HLDBaseArrayIndex);
+            Assert.AreEqual(5, tree.Vertices[10].HLDBaseArrayIndex);
+            Assert.AreEqual(6, tree.Vertices[4].HLDBaseArrayIndex);
+            Assert.AreEqual(7, tree.Vertices[2].HLDBaseArrayIndex);
+            Assert.AreEqual(8, tree.Vertices[6].HLDBaseArrayIndex);
+            Assert.AreEqual(9, tree.Vertices[8].HLDBaseArrayIndex);
+            Assert.AreEqual(10, tree.Vertices[3].HLDBaseArrayIndex);
         }
     }
 }

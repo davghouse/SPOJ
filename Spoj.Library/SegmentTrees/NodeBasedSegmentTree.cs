@@ -37,13 +37,13 @@ namespace Spoj.Library.SegmentTrees
             if (node.QueryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
                 return node.QueryObject;
 
-            bool isLeftHalfOverlapped = node.QueryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-            bool isRightHalfOverlapped = node.QueryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+            bool leftHalfOverlaps = node.QueryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+            bool rightHalfOverlaps = node.QueryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
 
-            if (isLeftHalfOverlapped && isRightHalfOverlapped)
+            if (leftHalfOverlaps && rightHalfOverlaps)
                 return Query(node.LeftChild, queryStartIndex, queryEndIndex)
                     .Combine(Query(node.RightChild, queryStartIndex, queryEndIndex));
-            else if (isLeftHalfOverlapped)
+            else if (leftHalfOverlaps)
                 return Query(node.LeftChild, queryStartIndex, queryEndIndex);
             else
                 return Query(node.RightChild, queryStartIndex, queryEndIndex);
@@ -66,12 +66,12 @@ namespace Spoj.Library.SegmentTrees
                 return;
             }
 
-            if (node.QueryObject.IsLeftHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (node.QueryObject.DoesLeftHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(node.LeftChild, updateStartIndex, updateEndIndex, updater);
             }
 
-            if (node.QueryObject.IsRightHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (node.QueryObject.DoesRightHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(node.RightChild, updateStartIndex, updateEndIndex, updater);
             }

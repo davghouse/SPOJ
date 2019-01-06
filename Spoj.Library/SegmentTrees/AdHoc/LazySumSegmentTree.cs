@@ -42,23 +42,23 @@ namespace Spoj.Library.SegmentTrees.AdHoc
         // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
         private QueryObject SumQuery(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
         {
-            QueryObject parentQueryObject = _treeArray[treeArrayIndex];
+            var parentQueryObject = _treeArray[treeArrayIndex];
 
             if (parentQueryObject.IsTotallyOverlappedBy(queryStartIndex, queryEndIndex))
                 return parentQueryObject;
 
-            bool isLeftHalfOverlapped = parentQueryObject.IsLeftHalfOverlappedBy(queryStartIndex, queryEndIndex);
-            bool isRightHalfOverlapped = parentQueryObject.IsRightHalfOverlappedBy(queryStartIndex, queryEndIndex);
+            bool leftHalfOverlaps = parentQueryObject.DoesLeftHalfOverlapWith(queryStartIndex, queryEndIndex);
+            bool rightHalfOverlaps = parentQueryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
             int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
             int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
             QueryObject childrenQueryObject;
 
-            if (isLeftHalfOverlapped && isRightHalfOverlapped)
+            if (leftHalfOverlaps && rightHalfOverlaps)
             {
                 childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex)
                     .Combine(SumQuery(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex));
             }
-            else if (isLeftHalfOverlapped)
+            else if (leftHalfOverlaps)
             {
                 childrenQueryObject = SumQuery(leftChildTreeArrayIndex, queryStartIndex, queryEndIndex);
             }
@@ -84,7 +84,7 @@ namespace Spoj.Library.SegmentTrees.AdHoc
 
         private void Update(int treeArrayIndex, int updateStartIndex, int updateEndIndex, int rangeAddition)
         {
-            QueryObject queryObject = _treeArray[treeArrayIndex];
+            var queryObject = _treeArray[treeArrayIndex];
 
             if (queryObject.IsTotallyOverlappedBy(updateStartIndex, updateEndIndex))
             {
@@ -95,12 +95,12 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
             int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
 
-            if (queryObject.IsLeftHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (queryObject.DoesLeftHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(leftChildTreeArrayIndex, updateStartIndex, updateEndIndex, rangeAddition);
             }
 
-            if (queryObject.IsRightHalfOverlappedBy(updateStartIndex, updateEndIndex))
+            if (queryObject.DoesRightHalfOverlapWith(updateStartIndex, updateEndIndex))
             {
                 Update(rightChildTreeArrayIndex, updateStartIndex, updateEndIndex, rangeAddition);
             }
@@ -150,10 +150,10 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
                 => startIndex <= SegmentStartIndex && endIndex >= SegmentEndIndex;
 
-            public bool IsLeftHalfOverlappedBy(int startIndex, int endIndex)
+            public bool DoesLeftHalfOverlapWith(int startIndex, int endIndex)
                 => startIndex <= (SegmentStartIndex + SegmentEndIndex) / 2;
 
-            public bool IsRightHalfOverlappedBy(int startIndex, int endIndex)
+            public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
                 => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
         }
     }

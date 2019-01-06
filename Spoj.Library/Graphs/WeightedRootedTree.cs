@@ -7,6 +7,7 @@ namespace Spoj.Library.Graphs
     // Undirected, connected, rooted, weighted graph with no cycles. The tree's vertices are stored
     // in an array with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
     public sealed class WeightedRootedTree<T>
+        where T : struct
     {
         private WeightedRootedTree(int vertexCount, int rootID)
         {
@@ -20,19 +21,19 @@ namespace Spoj.Library.Graphs
             Root = vertices[rootID];
         }
 
-        // For example, if children[1] = ((3, 99) (4, -3)) then vertices w/ ID 3, 4 are the children of vertex w/ ID 1.
+        // E.g. if verticesChildEdges[1] = ((3, 99) (4, -3)), vertices w/ ID 3, 4 are the children of vertex w/ ID 1.
         // Creating from explicit children doesn't initialize depths or subtree sizes; do that separately if needed.
-        public static WeightedRootedTree<int> CreateFromExplicitChildren(
-            int vertexCount, int rootID, List<KeyValuePair<int, int>>[] childEdges)
+        public static WeightedRootedTree<int> CreateFromChildren(
+            int vertexCount, int rootID, List<KeyValuePair<int, int>>[] verticesChildEdges)
         {
             var tree = new WeightedRootedTree<int>(vertexCount, rootID);
             for (int id = 0; id < vertexCount; ++id)
             {
-                if (!childEdges[id]?.Any() ?? true)
+                if (!verticesChildEdges[id]?.Any() ?? true)
                     continue;
 
                 var parent = tree.Vertices[id];
-                foreach (var childEdge in childEdges[id])
+                foreach (var childEdge in verticesChildEdges[id])
                 {
                     tree.Vertices[childEdge.Key].SetParent(parent, childEdge.Value);
                 }
@@ -83,6 +84,8 @@ namespace Spoj.Library.Graphs
                 }
             }
 
+            tree.HasInitializedDepthsAndSubtreeSizes = true;
+
             return tree;
         }
 
@@ -90,6 +93,8 @@ namespace Spoj.Library.Graphs
         public int VertexCount => Vertices.Count;
 
         public Vertex Root { get; }
+
+        public bool HasInitializedDepthsAndSubtreeSizes { get; private set; }
 
         public void InitializeDepthsAndSubtreeSizes()
         {
@@ -115,6 +120,66 @@ namespace Spoj.Library.Graphs
                 {
                     verticesToVisit.Pop();
                     vertex.SubtreeSize = 1 + vertex.Children.Sum(c => c.SubtreeSize);
+                }
+            }
+
+            HasInitializedDepthsAndSubtreeSizes = true;
+        }
+
+        private List<Vertex> _hldChainHeads;
+        public IReadOnlyList<Vertex> HLDChainHeads => _hldChainHeads;
+
+        private List<Vertex> _hldBaseArray;
+        public IReadOnlyList<Vertex> HLDBaseArray => _hldBaseArray;
+
+        public bool HasRunHLD { get; private set; }
+
+        // https://blog.anudeep2011.com/heavy-light-decomposition/
+        // https://www.geeksforgeeks.org/heavy-light-decomposition-set-2-implementation/
+        public void RunHLD()
+        {
+            if (!HasInitializedDepthsAndSubtreeSizes)
+            {
+                InitializeDepthsAndSubtreeSizes();
+            }
+
+            _hldChainHeads = new List<Vertex>();
+            _hldBaseArray = new List<Vertex>(VertexCount);
+            RunHLD(Root, startsNewChain: true);
+
+            HasRunHLD = true;
+        }
+
+        private void RunHLD(Vertex vertex, bool startsNewChain)
+        {
+            if (startsNewChain)
+            {
+                _hldChainHeads.Add(vertex);
+            }
+            vertex.HLDChainIndex = _hldChainHeads.Count - 1;
+
+            _hldBaseArray.Add(vertex);
+            vertex.HLDBaseArrayIndex = _hldBaseArray.Count - 1;
+
+            if (vertex.Children.Any())
+            {
+                var heaviestChild = vertex.Children[0];
+                for (int i = 1; i < vertex.Children.Count; ++i)
+                {
+                    if (vertex.Children[i].SubtreeSize > heaviestChild.SubtreeSize)
+                    {
+                        heaviestChild = vertex.Children[i];
+                    }
+                }
+
+                RunHLD(heaviestChild, startsNewChain: false);
+
+                for (int i = 0; i < vertex.Children.Count; ++i)
+                {
+                    if (vertex.Children[i] != heaviestChild)
+                    {
+                        RunHLD(vertex.Children[i], startsNewChain: true);
+                    }
                 }
             }
         }
@@ -177,11 +242,13 @@ namespace Spoj.Library.Graphs
             public int ID { get; }
 
             public Vertex Parent { get; private set; }
-            public T Weight { get; private set; } // Weight of the edge to the parent.
+            public T? Weight { get; set; } // Weight of the edge to the parent.
             internal IReadOnlyList<KeyValuePair<Vertex, T>> NeighborEdges => _neighborEdges;
             public IReadOnlyList<Vertex> Children => _children;
             public int? Depth { get; internal set; }
             public int? SubtreeSize { get; internal set; }
+            public int? HLDChainIndex { get; internal set; }
+            public int? HLDBaseArrayIndex { get; internal set; }
             public int? EulerTourInitialIndex { get; internal set; }
             internal int EulerTourChildCounter { get; set; }
 
