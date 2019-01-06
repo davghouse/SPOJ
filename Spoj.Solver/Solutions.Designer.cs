@@ -958,6 +958,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/EC_CONB/ #ad-hoc #binary
+        ///// Reverses the binary representation of even numbers.
+        ///public static class EC_CONB
+        ///{
+        ///    public static int Solve(int num)
+        ///    {
+        ///        if (num % 2 == 1)
+        ///            return num;
+        ///
+        ///        string binaryRepresentation = Convert.ToString(num, toBase: 2);
+        ///        string reversedbinaryRepresentation = new string(binaryRepresentation.Reverse().ToArray());
+        ///
+        ///        return Convert.ToInt32(reversedbinaryRepresen [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EC_CONB {
+            get {
+                return ResourceManager.GetString("EC_CONB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/EDIST/ #dynamic-programming-2d #strings
         ///// Finds the minimum number of edits (inserts, deletes, replacements) to make two strings equal.
