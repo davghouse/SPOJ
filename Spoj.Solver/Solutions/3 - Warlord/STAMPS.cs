@@ -27,8 +27,8 @@ public static class Program
 {
     private static void Main()
     {
-        int totalTestCases = int.Parse(Console.ReadLine());
-        for (int t = 0; t < totalTestCases; ++t)
+        int testCount = int.Parse(Console.ReadLine());
+        for (int t = 0; t < testCount; ++t)
         {
             int[] line1 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int[] line2 = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);

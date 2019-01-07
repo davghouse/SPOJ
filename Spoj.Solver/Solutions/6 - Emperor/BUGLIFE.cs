@@ -155,8 +155,8 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-        int totalTestCases = int.Parse(Console.ReadLine());
-        for (int t = 1; t <= totalTestCases; ++t)
+        int testCount = int.Parse(Console.ReadLine());
+        for (int t = 1; t <= testCount; ++t)
         {
             int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
             int bugCount = line[0];

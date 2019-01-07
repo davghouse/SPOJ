@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\3 - Warlord\RPLC.cs" />
     <None Include="Solutions\5 - King\CAM5.cs" />
     <None Include="Solutions\3 - Warlord\CADYDIST.cs" />
     <None Include="Solutions\3 - Warlord\EC_CONB.cs" />

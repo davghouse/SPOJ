@@ -276,8 +276,8 @@ public static class Program
         }
 
         var output = new StringBuilder();
-        int totalTestCases = int.Parse(Console.ReadLine());
-        for (int t = 1; t <= totalTestCases; ++t)
+        int testCount = int.Parse(Console.ReadLine());
+        for (int t = 1; t <= testCount; ++t)
         {
             output.AppendLine($"Case {t}:");
 

@@ -2475,6 +2475,29 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/RPLC/ #ad-hoc #extrema
+        ///// Finds the lowest possible starting energy level when drinking ordered +- cokes.
+        ///public static class RPLC
+        ///{
+        ///    public static long Solve(int[] cokes)
+        ///    {
+        ///        // Assuming we start with zero energy, how low would we go?
+        ///        long currentEnergyLevel = 0;
+        ///        long lowestEnergyLevel = 0;
+        ///        for (int i = 0; i &lt; cokes.Length; ++i)
+        ///        {
+        ///            currentEnergyLevel += cokes[i];
+        ///            if (currentEner [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string RPLC {
+            get {
+                return ResourceManager.GetString("RPLC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math
