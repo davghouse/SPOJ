@@ -150,6 +150,7 @@
     <Compile Include="Solutions\6 - Emperor\ANARC09ATests.cs" />
     <Compile Include="Solutions\6 - Emperor\ARRAYSUBTests.cs" />
     <Compile Include="Solutions\6 - Emperor\BUGLIFETests.cs" />
+    <Compile Include="Solutions\5 - King\CAM5Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\COMDIVTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INOUTESTTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INTESTTests.cs" />

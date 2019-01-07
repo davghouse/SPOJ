@@ -13,6 +13,7 @@
 #dfs
 #digits
 #dijkstras
+#disjoint-sets
 #divide-and-conquer
 #division
 #dynamic-programming

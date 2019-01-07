@@ -57,6 +57,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DisjointSetsTests.cs" />
     <Compile Include="Graphs\WeightedRootedTreeTests.cs" />
     <Compile Include="IO\FastIOTests.cs" />
     <Compile Include="Graphs\RootedTreeTests.cs" />

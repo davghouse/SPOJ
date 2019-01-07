@@ -670,16 +670,38 @@ namespace Spoj.Solver {
         ///// Given class sizes and candy prices, feed all students in the cheapest way possible.
         ///public static class CADYDIST
         ///{
-        ///    // Similar to FASHION. One type of candy is bought per class. In order to minimize
-        ///    // cost, buy the cheapest candy for the biggest class, and so on.
-        ///    public static long Solve(int[] classSizes, int[] candyPrices)
-        ///    {
-        ///        Array.Sort(classSizes);
-        ///        Array.S [rest of string was truncated]&quot;;.
+        ///    // Similar to FASHION (which is ranked higher because it&apos;s confusing). One type of
+        ///    // candy is bought per class. In order to minimize cost, buy the cheapest candy for
+        ///    // the biggest class, and so on.
+        ///    public static long Solve(int[] classSizes, int[] candyPrices)        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CADYDIST {
             get {
                 return ResourceManager.GetString("CADYDIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/CAM5/ #dfs #disjoint-sets
+        ///// Determines the number of friend components in a graph of peers.
+        ///public sealed class CAM5
+        ///{
+        ///    private readonly DisjointSets _disjointSets;
+        ///
+        ///    // This can be solved by DFSing to find the number of connected components in the
+        ///    // peer graph, but I went with a disjoint sets solution for the experience.
+        ///    public CAM5(int peerCount)
+        ///    {
+        ///        _disjointSets = new DisjointSets(peerCount);
+        ///    }
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CAM5 {
+            get {
+                return ResourceManager.GetString("CAM5", resourceCulture);
             }
         }
         
@@ -2621,6 +2643,7 @@ namespace Spoj.Solver {
         ///#dfs
         ///#digits
         ///#dijkstras
+        ///#disjoint-sets
         ///#divide-and-conquer
         ///#division
         ///#dynamic-programming
@@ -2647,9 +2670,7 @@ namespace Spoj.Solver {
         ///#knapsack
         ///#lazy
         ///#lca
-        ///#longest-path
-        ///#math
-        ///# [rest of string was truncated]&quot;;.
+        ///#longes [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
