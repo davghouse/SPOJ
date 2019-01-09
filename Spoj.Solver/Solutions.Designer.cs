@@ -560,6 +560,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/BOMARBLE/ #math
+        ///// Calculates the number of marbles in nested pentagons.
+        ///// See BOMARBLE.cpp--this solution was submitted using C++ because C# was unavailable.
+        ///public static class BOMARBLE
+        ///{
+        ///    // I don&apos;t know what&apos;s going on with the intersecting lines or whatever,
+        ///    // but n=4 is 35 I guess? If that&apos;s the case, then the second difference
+        ///    // (https://www.purplemath.com/modules/nextnumb2.htm) is always 3, so the
+        ///    // sequence is defined by a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BOMARBLE {
+            get {
+                return ResourceManager.GetString("BOMARBLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/BRCKTS/ #divide-and-conquer #segment-tree

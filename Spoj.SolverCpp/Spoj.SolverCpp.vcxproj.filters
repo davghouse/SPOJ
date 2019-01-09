@@ -52,6 +52,9 @@
     <ClCompile Include="Solutions\5 - King\SAMER08F.cpp">
       <Filter>Solutions\5 - King</Filter>
     </ClCompile>
+    <ClCompile Include="Solutions\3 - Warlord\BOMARBLE.cpp">
+      <Filter>Solutions\3 - Warlord</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Input.txt" />
