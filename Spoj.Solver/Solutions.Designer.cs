@@ -104,6 +104,27 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/ABSP1/ #ad-hoc #experiment #proof
+        ///// Sums up the absolute differences of all distinct pairs in a pre-sorted array.
+        ///public static class ABSP1
+        ///{
+        ///    // Consider A0, A1, A2, ..., An-1, in increasing order. As the guy&apos;s solution
+        ///    // attempt shows, the answer is:
+        ///    //   |A0 - A1| + |A0 - A2| + ... + |A0 - An-1|
+        ///    // + |A1 - A2| + |A1 - A3| + ... + |A1 - An-1|
+        ///    // ...
+        ///    // + |An-2 - An-1|
+        ///    // We can get rid of the absolute value notation b [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ABSP1 {
+            get {
+                return ResourceManager.GetString("ABSP1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/ABSYS/ #ad-hoc #strings
         ///// Takes an equation with an inkblot over one number, and removes the blot.
         ///public static class ABSYS

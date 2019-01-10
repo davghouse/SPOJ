@@ -4,27 +4,23 @@ using System.Linq;
 // Too many problems have improperly formatted input, like random whitespace, missing newlines
 // and other things that C# doesn't deal well with by default. It seems fine to allow verifying
 // the input format on an alt account to prevent frustration and misrepresentative profile stats.
-// Currently verifying for: https://www.spoj.com/problems/CADYDIST/
+// Currently verifying for: https://www.spoj.com/problems/ABSP1/
 public static class InputVerifier
 {
     private static void Main()
     {
-        int classCount;
-        while ((classCount = int.Parse(Console.ReadLine())) != 0)
+        int remainingTestCases = int.Parse(Console.ReadLine());
+        while (remainingTestCases-- > 0)
         {
-            if (classCount > 100000)
+            int numberCount = int.Parse(Console.ReadLine());
+            if (numberCount > 10000)
                 throw new Exception();
 
-            int[] classSizes = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int[] candyPrices = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-
-            if (classSizes.Length != classCount)
-                throw new Exception();
-            if (candyPrices.Length != classCount)
-                throw new Exception();
-            if (classSizes.Any(s => s > 100000))
-                throw new Exception();
-            if (candyPrices.Any(p => p > 100000))
+            int[] numbers = Array.ConvertAll(
+                Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries),
+                int.Parse);
+            // This throws?
+            if (numbers.Any(n => n < 1 || n > 1000000000))
                 throw new Exception();
         }
     }
