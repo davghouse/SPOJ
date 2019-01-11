@@ -4,7 +4,6 @@ using System.IO;
 
 // https://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
 // Finds the number of common divisors shared by two numbers.
-// See COMDIV.cpp--this solution was submitted using C++ because C# I/O is too slow.
 public static class COMDIV
 {
     private const int _limit = 1000000;

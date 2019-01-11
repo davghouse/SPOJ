@@ -832,12 +832,12 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/COMDIV/ #division #factors #io #math #primes #sieve
         ///// Finds the number of common divisors shared by two numbers.
-        ///// See COMDIV.cpp--this solution was submitted using C++ because C# I/O is too slow.
         ///public static class COMDIV
         ///{
         ///    private const int _limit = 1000000;
         ///    private const int _sieveLimit = 10000; // (int)ceil(sqrt(_limit))
-        ///    // This sieve is slightly different, rather than storing fal [rest of string was truncated]&quot;;.
+        ///    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
+        ///    // prime (sieved), it stores 0 for prime [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COMDIV {
             get {
@@ -1007,11 +1007,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/DQUERY/ #bit #offline #sorting
         ///// Finds the number of distinct elements in a subrange of an array.
-        ///// See DQUERY.cpp--this solution was submitted using C++ because C# is too slow. Benchmarking a 200k/30k case shows
-        ///// it&apos;s almost as good as the C++ solution on my local machine, and within the time limits of the problem, so oh well.
         ///public static class DQUERY
         ///{
-        /// [rest of string was truncated]&quot;;.
+        ///    // Needed hints to solve this one, this technique is kind of explained in lots of places but never clearly.
+        ///    // After looking through some links I was effectively solving with the following hints:
+        ///    // - Consider how to solve  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
