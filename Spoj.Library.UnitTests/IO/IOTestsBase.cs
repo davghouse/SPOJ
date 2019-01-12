@@ -19,7 +19,12 @@ namespace Spoj.Library.UnitTests.IO
 4
 -5",
 @"1
-0"
+0",
+@"4
+2147483647
+2147483646
+-2147483648
+-2147483647"
         };
 
         public virtual IReadOnlyList<string> TestOutputs => new[]
@@ -31,6 +36,11 @@ namespace Spoj.Library.UnitTests.IO
 -5
 ",
 @"0
+",
+@"2147483647
+2147483646
+-2147483648
+-2147483647
 "
         };
 

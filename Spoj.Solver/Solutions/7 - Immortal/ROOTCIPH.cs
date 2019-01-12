@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// https://www.spoj.com/problems/ROOTCIPH/ #factors #formula #math
+// https://www.spoj.com/problems/ROOTCIPH/ #factors #formula #io #math
 // Finds the sum of squared roots of an integer polynomial of the form x³ + ax² + bx + c.
 public static class ROOTCIPH
 {

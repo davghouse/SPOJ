@@ -93,32 +93,28 @@ public static class FastIO
         }
 
         // Build up the integer from its digits, until we run into whitespace or the null byte.
-        int result = digit - _zero;
+        int result = isNegative ? -(digit - _zero) : (digit - _zero);
         while (true)
         {
             digit = ReadByte();
             if (digit < _zero) break;
-            result = result * 10 + (digit - _zero);
+            result = result * 10 + (isNegative ? -(digit - _zero) : (digit - _zero));
         }
 
-        return isNegative ? -result : result;
+        return result;
     }
 
     public static void WriteInt(int value)
     {
         bool isNegative = value < 0;
-        if (isNegative)
-        {
-            value = -value;
-        }
 
         int digitCount = 0;
         do
         {
-            int digit = value % 10;
+            int digit = isNegative ? -(value % 10) : (value % 10);
             _digitsBuffer[digitCount++] = (byte)(digit + _zero);
             value /= 10;
-        } while (value > 0);
+        } while (value != 0);
 
         if (isNegative)
         {
