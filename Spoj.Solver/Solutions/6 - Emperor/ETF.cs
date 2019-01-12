@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-// https://www.spoj.com/problems/ETF/ #formula #math #primes #sieve
+// https://www.spoj.com/problems/ETF/ #factors #formula #math #primes #sieve
 // Calculates the value of the totient function (count of relative primes) for the given n, 1 <= n <= 10^6.
 public static class ETF
 {
@@ -43,8 +43,7 @@ public sealed class SieveOfEratosthenesFactorizer
     // can enumerate all its prime factors by dividing it by that factor, the quotient by its factor, etc.
     private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
-    // TODO: A bool controlling proper inteface implementation seems bad, but providing isn't always needed...
-    public SieveOfEratosthenesFactorizer(int limit, bool needsToProvide = false)
+    public SieveOfEratosthenesFactorizer(int limit)
     {
         Limit = limit;
 
@@ -69,22 +68,6 @@ public sealed class SieveOfEratosthenesFactorizer
             }
         }
         _sieveWithSomePrimeFactor = Array.AsReadOnly(sieveWithSomePrimeFactor);
-
-        if (needsToProvide)
-        {
-            var primes = 2 <= Limit
-                ? new List<int> { 2 }
-                : new List<int>();
-
-            for (int n = 3; n <= Limit; n += 2)
-            {
-                if (IsPrime(n))
-                {
-                    primes.Add(n);
-                }
-            }
-            Primes = primes.AsReadOnly();
-        }
     }
 
     public int Limit { get; }

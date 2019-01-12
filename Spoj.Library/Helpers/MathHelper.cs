@@ -68,5 +68,24 @@ namespace Spoj.Library.Helpers
 
             return a;
         }
+
+        // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+        // https://stackoverflow.com/questions/383587/how-do-you-do-integer-exponentiation-in-c
+        public static int IntPow(int n, int pow)
+        {
+            int ret = 1;
+            while (pow != 0)
+            {
+                if ((pow & 1) == 1)
+                {
+                    ret *= n;
+                }
+
+                n *= n;
+                pow >>= 1;
+            }
+
+            return ret;
+        }
     }
 }

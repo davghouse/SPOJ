@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// https://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #sieve
+// https://www.spoj.com/problems/TWOSQRS/ #factors #math #mod-math #primes #sieve
 // Determines if an integer can be expressed as the sum of two squared integers.
 public static class TWOSQRS
 {

@@ -1146,7 +1146,7 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/ETF/ #formula #math #primes #sieve
+        ///// https://www.spoj.com/problems/ETF/ #factors #formula #math #primes #sieve
         ///// Calculates the value of the totient function (count of relative primes) for the given n, 1 &lt;= n &lt;= 10^6.
         ///public static class ETF
         ///{
@@ -1155,9 +1155,7 @@ namespace Spoj.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
-        ///    }
-        ///        /// [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -2515,6 +2513,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/ROOTCIPH/ #factors #formula #math
+        ///// Finds the sum of squared roots of an integer polynomial of the form x³ + ax² + bx + c.
+        ///public static class ROOTCIPH
+        ///{
+        ///    private static readonly TrialDivisionFactorizer _factorizer;
+        ///
+        ///    static ROOTCIPH()
+        ///    {
+        ///        _factorizer = new TrialDivisionFactorizer(int.MaxValue);
+        ///    }
+        ///
+        ///    // Knowing the coefficients of the polynomial x³ + ax² + bx + c, we wan [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ROOTCIPH {
+            get {
+                return ResourceManager.GetString("ROOTCIPH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/RPLC/ #ad-hoc #extrema
         ///// Finds the lowest possible starting energy level when drinking ordered +- cokes.
@@ -2882,7 +2904,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/TWOSQRS/ #math #mod-math #primes #sieve
+        ///// https://www.spoj.com/problems/TWOSQRS/ #factors #math #mod-math #primes #sieve
         ///// Determines if an integer can be expressed as the sum of two squared integers.
         ///public static class TWOSQRS
         ///{
@@ -2894,7 +2916,7 @@ namespace Spoj.Solver {
         ///        _factorizer = new TrialDivisionFactorizer(_oneTrillion);
         ///    }
         ///
-        ///    // See https://en.wiki [rest of string was truncated]&quot;;.
+        ///    // See https: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TWOSQRS {
             get {

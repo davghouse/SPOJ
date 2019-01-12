@@ -118,5 +118,21 @@ namespace Spoj.Library.UnitTests.Helpers
             Assert.AreEqual(66, MathHelper.GreatestCommonDivisor(210763872, 7262574));
             Assert.AreEqual(1, MathHelper.GreatestCommonDivisor(17, 19));
         }
+
+        [TestMethod]
+        public void IntPow()
+        {
+            Assert.AreEqual(0, MathHelper.IntPow(0, 1));
+            Assert.AreEqual(0, MathHelper.IntPow(0, 2));
+            Assert.AreEqual(1, MathHelper.IntPow(1, 0));
+            Assert.AreEqual(1, MathHelper.IntPow(1, 1));
+            Assert.AreEqual(1, MathHelper.IntPow(1, 2));
+            Assert.AreEqual(1, MathHelper.IntPow(2, 0));
+            Assert.AreEqual(2, MathHelper.IntPow(2, 1));
+            Assert.AreEqual(4, MathHelper.IntPow(2, 2));
+            Assert.AreEqual(8, MathHelper.IntPow(2, 3));
+            Assert.AreEqual(14641, MathHelper.IntPow(11, 4));
+            Assert.AreEqual(161051, MathHelper.IntPow(11, 5));
+        }
     }
 }
