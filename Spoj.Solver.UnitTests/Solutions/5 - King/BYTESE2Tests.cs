@@ -1,54 +1,45 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Spoj.Solver.UnitTests.Solutions._4___Prince
+namespace Spoj.Solver.UnitTests.Solutions._5___King
 {
     [TestClass]
-    public sealed class BUSYMANTests : SolutionTestsBase
+    public sealed class BYTESE2Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Solver.Solutions.BUSYMAN;
+        public override string SolutionSource => Solver.Solutions.BYTESE2;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
 @"3
-3
-3 9
-2 8
-6 9
-4
+5
 1 7
-5 8
-7 8
-1 8
-6
-7 9
-0 10
-4 5
-8 9
-4 10
-5 7",
-@"1
-7
-1 4
-1 2
-2 9
-2 3
 2 4
+6 9
+3 8
+5 10
+5
+1 2
 3 4
-5 6"
+5 6
+7 8
+9 10
+5
+1 100
+2 101
+3 102
+4 103
+5 104"
         };
 
         public override IReadOnlyList<string> TestOutputs => new[]
         {
-@"1
-2
-3
-",
 @"4
+1
+5
 "
         };
 
         [TestMethod]
-        public void BUSYMAN() => TestSolution();
+        public void BYTESE2() => TestSolution();
     }
 }

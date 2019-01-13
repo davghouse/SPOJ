@@ -448,9 +448,6 @@
   <data name="CSTREET" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\7 - Immortal\CSTREET.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="BUSYMAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\4 - Prince\BUSYMAN.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="KGSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\7 - Immortal\KGSS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -528,5 +525,11 @@
   </data>
   <data name="TRGRID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\TRGRID.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BUSYMAN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\5 - King\BUSYMAN.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BYTESE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\5 - King\BYTESE2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

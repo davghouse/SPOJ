@@ -684,6 +684,24 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/BYTESE2/ #ad-hoc #sorting
+        ///// Finds out the maximum number of students in the Great Hall at once.
+        ///public static class BYTESE2
+        ///{
+        ///    // Students enter and students exit. The specific entrance and exit time pairs don&apos;t
+        ///    // matter: 2 4 and 3 5 might as well be 2 5 and 3 4 for our counting purposes.
+        ///    // Someone enters at 2, another at 3, someone exits at 4, and another exits at 5.
+        ///    // We just need to sort the entrance and exit times and traverse t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BYTESE2 {
+            get {
+                return ResourceManager.GetString("BYTESE2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/BYTESM2/ #dynamic-programming-2d #path-optimization
