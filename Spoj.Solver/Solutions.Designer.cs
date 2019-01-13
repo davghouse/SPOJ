@@ -2516,7 +2516,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/ROOTCIPH/ #factors #formula #math
+        ///// https://www.spoj.com/problems/ROOTCIPH/ #factors #formula #io #math
         ///// Finds the sum of squared roots of an integer polynomial of the form x³ + ax² + bx + c.
         ///public static class ROOTCIPH
         ///{
@@ -2527,7 +2527,7 @@ namespace Spoj.Solver {
         ///        _factorizer = new TrialDivisionFactorizer(int.MaxValue);
         ///    }
         ///
-        ///    // Knowing the coefficients of the polynomial x³ + ax² + bx + c, we wan [rest of string was truncated]&quot;;.
+        ///    // Knowing the coefficients of the polynomial x³ + ax² + bx + c, we [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ROOTCIPH {
             get {
@@ -2838,6 +2838,31 @@ namespace Spoj.Solver {
         public static string TOANDFRO {
             get {
                 return ResourceManager.GetString("TOANDFRO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/TRGRID/ #ad-hoc #experiment #recursion
+        ///// Finds the final direction you&apos;ll be facing when spiraling in towards the center of a grid.
+        ///public static class TRGRID
+        ///{
+        ///    // Experiment a bit to observe the following properties:
+        ///    // H=1,  L=1+ =&gt; always facing right. Examples:
+        ///    //   1) [&gt;]
+        ///    //   2) [-] ... [-][&gt;]
+        ///    // H=2+, L=1  =&gt; always facing down. Examples:
+        ///    //  1) [|]
+        ///    //     [V]
+        ///    //  2) [|]
+        ///    //      .
+        ///    //      .
+        ///    // [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TRGRID {
+            get {
+                return ResourceManager.GetString("TRGRID", resourceCulture);
             }
         }
         
