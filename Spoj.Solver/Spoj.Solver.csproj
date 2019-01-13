@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\3 - Warlord\MRECAMAN.cs" />
     <None Include="Solutions\7 - Immortal\UPDATEIT.cs" />
     <None Include="Solutions\5 - King\BYTESE2.cs" />
     <None Include="Solutions\5 - King\TRGRID.cs" />

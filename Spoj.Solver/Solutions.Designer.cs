@@ -2050,6 +2050,32 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/MRECAMAN/ #ad-hoc #memoization
+        ///// Computes a special sequence with an interesting recursive definition.
+        ///public static class MRECAMAN
+        ///{
+        ///    private const int _limit = 500000;
+        ///    private static readonly IReadOnlyList&lt;int&gt; _sequence;
+        ///
+        ///    static MRECAMAN()
+        ///    {
+        ///        int[] sequence = new int[_limit + 1];
+        ///        var sequenceSet = new HashSet&lt;int&gt; { 0 };
+        ///
+        ///        for (int i = 1; i &lt;= _limit; ++i)
+        ///        {
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MRECAMAN {
+            get {
+                return ResourceManager.GetString("MRECAMAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///using System.Text;
         ///
