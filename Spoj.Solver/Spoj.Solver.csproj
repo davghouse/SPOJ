@@ -274,9 +274,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\5 - King\BUSYMAN.cs" />
+    <None Include="Solutions\5 - King\BYTESE2.cs" />
+    <None Include="Solutions\5 - King\NY10E.cs" />
     <None Include="Solutions\3 - Warlord\MRECAMAN.cs" />
     <None Include="Solutions\7 - Immortal\UPDATEIT.cs" />
-    <None Include="Solutions\5 - King\BYTESE2.cs" />
     <None Include="Solutions\5 - King\TRGRID.cs" />
     <None Include="Solutions\7 - Immortal\ROOTCIPH.cs" />
     <None Include="Solutions\4 - Prince\ABSP1.cs" />
@@ -302,7 +304,6 @@
     <None Include="Solutions\5 - King\HACKRNDM_v1.cs" />
     <None Include="Solutions\5 - King\ABCPATH.cs" />
     <None Include="Solutions\7 - Immortal\KGSS.cs" />
-    <None Include="Solutions\5 - King\BUSYMAN.cs" />
     <None Include="Solutions\7 - Immortal\CSTREET.cs" />
     <None Include="Solutions\8 - Deity\DQUERY.cs" />
     <None Include="Solutions\4 - Prince\CPRMT.cs" />

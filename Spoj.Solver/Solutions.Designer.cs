@@ -2197,6 +2197,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/NY10E/ #dynamic-programming-2d
+        ///// Calculates how many non-decreasing digit strings exist for the given length.
+        ///public static class NY10E
+        ///{
+        ///    private static long[,] _endingDigitCounts = new long[65, 10];
+        ///
+        ///    // Note that for any non-decreasing digit string of length n, it&apos;s prefixed
+        ///    // by a non-decreasing digit string of length n - 1. We need to figure out a way
+        ///    // to build up the non-decreasing digit strings of length n using the digit
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NY10E {
+            get {
+                return ResourceManager.GetString("NY10E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema
