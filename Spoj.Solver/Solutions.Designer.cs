@@ -2969,6 +2969,28 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/UPDATEIT/ #bit
+        ///// Does a bunch of range updates followed by a bunch of point queries.
+        ///public sealed class UPDATEIT
+        ///{
+        ///    private readonly RUPQBinaryIndexedTree _binaryIndexedTree;
+        ///
+        ///    // I&apos;m using a RUPQ BIT for this, but perhaps there&apos;s something better to use
+        ///    // since we know the queries come after all the updates?
+        ///    public UPDATEIT(int arrayLength)
+        ///    {
+        ///        _binaryIndexedTree = new RUPQBinaryIndexedTree(arrayLength) [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string UPDATEIT {
+            get {
+                return ResourceManager.GetString("UPDATEIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/WILLITST/ #experiment #game #math
         ///// Determines if the specified algorithm ever stops for a given input.

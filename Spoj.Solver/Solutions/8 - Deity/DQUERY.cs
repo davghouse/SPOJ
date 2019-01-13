@@ -160,9 +160,9 @@ public static class Program
 {
     private static void Main()
     {
-        int sourceArraySize = FastIO.ReadNonNegativeInt();
-        int[] sourceArray = new int[sourceArraySize];
-        for (int i = 0; i < sourceArraySize; ++i)
+        int sourceArrayLength = FastIO.ReadNonNegativeInt();
+        int[] sourceArray = new int[sourceArrayLength];
+        for (int i = 0; i < sourceArrayLength; ++i)
         {
             sourceArray[i] = FastIO.ReadNonNegativeInt();
         }
