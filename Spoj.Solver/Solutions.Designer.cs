@@ -1762,6 +1762,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/JNEXT/ #ad-hoc #greedy #sorting
+        ///// Finds the smallest number larger than the given number, using the same digits.
+        ///public static class JNEXT
+        ///{
+        ///    // In order to minimize the number, we want to change digits starting as far right
+        ///    // as possible. Starting from the right, we check to see if we&apos;ve seen a bigger
+        ///    // digit than the current one. If so, we swap the smallest such digit into that
+        ///    // position. The number is now large [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string JNEXT {
+            get {
+                return ResourceManager.GetString("JNEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
