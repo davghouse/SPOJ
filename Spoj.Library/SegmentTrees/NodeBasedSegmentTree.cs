@@ -100,8 +100,7 @@ namespace Spoj.Library.SegmentTrees
             public Node RightChild { get; }
 
             // If it's not a leaf it has both children (segment's at least 2 in size), but null check both for completeness.
-            public bool IsLeaf =>
-                LeftChild == null && RightChild == null;
+            public bool IsLeaf => LeftChild == null && RightChild == null;
         }
     }
 }
