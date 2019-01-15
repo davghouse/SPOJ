@@ -152,6 +152,7 @@
     <Compile Include="Solutions\5 - King\SUMITRTests.cs" />
     <Compile Include="Solutions\5 - King\TDPRIMESTests.cs" />
     <Compile Include="Solutions\5 - King\TRICOUNTTests.cs" />
+    <Compile Include="Solutions\5 - King\ZSUMTests.cs" />
     <Compile Include="Solutions\6 - Emperor\ABCDEFTests.cs" />
     <Compile Include="Solutions\6 - Emperor\AGGRCOWTests.cs" />
     <Compile Include="Solutions\6 - Emperor\AIBOHPTests.cs" />

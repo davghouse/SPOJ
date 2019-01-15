@@ -111,7 +111,7 @@ public static class ROOTCIPH
 
         for (int power = 0; power <= factorCount; ++power)
         {
-            int primeFactorToPower = MathHelper.IntPow(primeFactor, power);
+            int primeFactorToPower = MathHelper.Pow(@base: primeFactor, exponent: power);
 
             foreach (int factor in GetPositiveFactors(primeFactorCounts, recursiveStartIndex + 1))
                 yield return primeFactorToPower * factor;
@@ -240,22 +240,22 @@ public sealed class SieveOfEratosthenesFactorizer
 public static class MathHelper
 {
     // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-    // https://stackoverflow.com/questions/383587/how-do-you-do-integer-exponentiation-in-c
-    public static int IntPow(int n, int pow)
+    // https://stackoverflow.com/a/383596
+    public static int Pow(int @base, int exponent)
     {
-        int ret = 1;
-        while (pow != 0)
+        int result = 1;
+        while (exponent != 0)
         {
-            if ((pow & 1) == 1)
+            if ((exponent & 1) == 1)
             {
-                ret *= n;
+                result *= @base;
             }
 
-            n *= n;
-            pow >>= 1;
+            @base *= @base;
+            exponent >>= 1;
         }
 
-        return ret;
+        return result;
     }
 }
 

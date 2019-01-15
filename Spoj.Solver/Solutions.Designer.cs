@@ -3070,5 +3070,26 @@ namespace Spoj.Solver {
                 return ResourceManager.GetString("WILLITST", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/ZSUM/ #ad-hoc #math #mod-math #sequence
+        ///// Calculates (mod a number) a sequence term defined in terms of big exponentations.
+        ///public static class ZSUM
+        ///{
+        ///    private const int _modulus = 10000007;
+        ///
+        ///    // Note that Z_n = Z_n-1 + n^k + n^n, so after a bit more work we see the
+        ///    // value we&apos;re looking for is n^k + n^n + 2((n - 1)^k + (n - 1)^(n - 1)).
+        ///    // Then it&apos;s just a matter of doing these huge exponentations efficiently,
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ZSUM {
+            get {
+                return ResourceManager.GetString("ZSUM", resourceCulture);
+            }
+        }
     }
 }

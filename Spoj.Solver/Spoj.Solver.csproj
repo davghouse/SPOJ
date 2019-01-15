@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\5 - King\ZSUM.cs" />
     <None Include="Solutions\5 - King\JNEXT.cs" />
     <None Include="Solutions\5 - King\BUSYMAN.cs" />
     <None Include="Solutions\5 - King\BYTESE2.cs" />

@@ -70,22 +70,46 @@ namespace Spoj.Library.Helpers
         }
 
         // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-        // https://stackoverflow.com/questions/383587/how-do-you-do-integer-exponentiation-in-c
-        public static int IntPow(int n, int pow)
+        // https://stackoverflow.com/a/383596
+        public static int Pow(int @base, int exponent)
         {
-            int ret = 1;
-            while (pow != 0)
+            int result = 1;
+            while (exponent != 0)
             {
-                if ((pow & 1) == 1)
+                if ((exponent & 1) == 1)
                 {
-                    ret *= n;
+                    result *= @base;
                 }
 
-                n *= n;
-                pow >>= 1;
+                @base *= @base;
+                exponent >>= 1;
             }
 
-            return ret;
+            return result;
+        }
+
+        // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
+        // https://stackoverflow.com/a/383596
+        // https://en.wikipedia.org/wiki/Modular_exponentiation#Right-to-left_binary_method
+        public static int ModularPow(int @base, int exponent, int modulus)
+        {
+            if (modulus == 1)
+                return 0;
+
+            int result = 1;
+            @base = @base % modulus;
+            while (exponent != 0)
+            {
+                if ((exponent & 1) == 1)
+                {
+                    result = result * @base % modulus;
+                }
+
+                @base = @base * @base % modulus;
+                exponent >>= 1;
+            }
+
+            return result;
         }
     }
 }
