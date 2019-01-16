@@ -2439,6 +2439,24 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/POUR1/ #ad-hoc #experiment #mod-math #simulation
+        ///// Given two jugs, figures out how to fill them to reach a certain water level.
+        ///public static class POUR1
+        ///{
+        ///    // Okay so, I just experimented with pen &amp; paper for an hour and convinced myself the following
+        ///    // was worth trying. It seems there are two options. You can start by using the small jug to
+        ///    // fill the large jug, or by using the large jug to fill the small jug. Once you start either
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string POUR1 {
+            get {
+                return ResourceManager.GetString("POUR1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Diagnostics;
         ///using System.Linq;

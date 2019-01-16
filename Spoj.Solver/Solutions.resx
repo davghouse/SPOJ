@@ -547,4 +547,7 @@
   <data name="ZSUM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\ZSUM.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="POUR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\POUR1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
