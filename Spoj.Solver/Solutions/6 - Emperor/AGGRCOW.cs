@@ -15,7 +15,6 @@ public static class AGGRCOW
     // This fits the criteria for predicate-based binary searching on all potential shortest distances.
     public static int Solve(int cowCount, int[] stallLocations)
     {
-        // The stall locations don't do us much good unless they're sorted.
         Array.Sort(stallLocations);
 
         int shortestDistanceBetweenAdjacentStalls = int.MaxValue;
@@ -36,10 +35,10 @@ public static class AGGRCOW
 
         // The preamble isn't necessary, it just helps us understand the problem. We could search from 1 to int.MaxValue.
         return BinarySearch.Search(
-            worstShortestDistance,
-            bestPotentialShortestDistance,
-            d => VerifyShortestDistanceIsAttainable(d, cowCount, stallLocations),
-            BinarySearch.Mode.TrueToFalse).Value;
+            start: worstShortestDistance,
+            end: bestPotentialShortestDistance,
+            verifier: d => VerifyShortestDistanceIsAttainable(d, cowCount, stallLocations),
+            mode: BinarySearch.Mode.TrueToFalse).Value;
     }
 
     private static bool VerifyShortestDistanceIsAttainable(int potentialShortestDistance, int cowCount, int[] stallLocations)

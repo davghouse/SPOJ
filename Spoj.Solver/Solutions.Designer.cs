@@ -2164,6 +2164,32 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/NOTATRI/ #binary-search #sorting #window
+        ///// Figures out how many combinations of 3 sticks can&apos;t form a triangle.
+        ///public static class NOTATRI
+        ///{
+        ///    // 
+        ///    public static int Solve(int stickCount, int[] stickLengths)
+        ///    {
+        ///        Array.Sort(stickLengths);
+        ///
+        ///        int nonTriangleCombinations = 0;
+        ///
+        ///        for (int smallStickIndex = 0;
+        ///            smallStickIndex &lt; stickCount - 2;
+        ///            ++smallStickIndex)
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NOTATRI {
+            get {
+                return ResourceManager.GetString("NOTATRI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/NSTEPS/ #ad-hoc
         ///// Given an x and y coordinate, returns the value on the plane at that point.
