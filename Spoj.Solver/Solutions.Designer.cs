@@ -909,6 +909,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/CRSCNTRY/ #dynamic-programming-2d
+        ///// Finds out how many times Tom can creep on Agnes if he chooses his race card correctly.
+        ///public sealed class CRSCNTRY
+        ///{
+        ///    private readonly int _agnesCheckpointCount;
+        ///    private readonly int[] _agnesCheckpoints;
+        ///
+        ///    public CRSCNTRY(int agnesCheckpointCount, int[] agnesCheckpoints)
+        ///    {
+        ///        _agnesCheckpointCount = agnesCheckpointCount;
+        ///        _agnesCheckpoints = agnesCheckpoints;
+        ///    }
+        ///
+        ///    public int M [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CRSCNTRY {
+            get {
+                return ResourceManager.GetString("CRSCNTRY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Text;
         ///using Vertex = WeightedSimpleGraph.Vertex;
@@ -2170,17 +2194,9 @@ namespace Spoj.Solver {
         ///// Figures out how many combinations of 3 sticks can&apos;t form a triangle.
         ///public static class NOTATRI
         ///{
-        ///    // 
-        ///    public static int Solve(int stickCount, int[] stickLengths)
-        ///    {
-        ///        Array.Sort(stickLengths);
-        ///
-        ///        int nonTriangleCombinations = 0;
-        ///
-        ///        for (int smallStickIndex = 0;
-        ///            smallStickIndex &lt; stickCount - 2;
-        ///            ++smallStickIndex)
-        /// [rest of string was truncated]&quot;;.
+        ///    // Imagine how we would brute force this. Three for loops, i=0, j=i+1, k=j+1. This considers
+        ///    // every combination (set of three sticks, order not important) exactly once. If we sort the
+        ///    // sticks by length first, then once we&apos;ve picked the short and medium-length st [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NOTATRI {
             get {
