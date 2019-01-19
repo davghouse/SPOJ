@@ -2404,6 +2404,29 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/PERMUT1/ #dynamic-programming-2d
+        ///// Finds the number of permutations of 1 ... n with k inversions.
+        ///public static class PERMUT1
+        ///{
+        ///    private static readonly int[,] _countOfSequencesOfLengthNWithKInversions = new int[13, 67];
+        ///
+        ///    // Consider sequences of length 3:
+        ///    // 1 2 3: 0 inversions
+        ///    // 1 3 2: 1 inversion  (3 &gt; 2)
+        ///    // 2 1 3: 1 inversion  (2 &gt; 1)
+        ///    // 2 3 1: 2 inversions (2 &gt; 1, 3 &gt; 1)
+        ///    // 3 1 2: 2 inversions (3 &gt; 1, 3 &gt; 2)
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PERMUT1 {
+            get {
+                return ResourceManager.GetString("PERMUT1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/PERMUT2/ #ad-hoc #permutations
         ///// Figures out if a permutation of n integers is the same as its inverse permutation (AKA ambiguous).
         ///public static class PERMUT2
