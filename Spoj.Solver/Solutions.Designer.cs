@@ -2166,6 +2166,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/NAKANJ/ #bfs
+        ///// Finds the minimum number of knight moves from one chess square to another.
+        ///public static class NAKANJ
+        ///{
+        ///    private static readonly SimpleGraph _knightMoveGraph;
+        ///    private static readonly Tuple&lt;int, int&gt;[] _knightMoveTransformations = new[]
+        ///    {
+        ///        Tuple.Create(-1, -2), Tuple.Create(-2, -1), /* top left of diagram */
+        ///        Tuple.Create(-2, 1), Tuple.Create(-1, 2), /* top right of diagram */ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NAKANJ {
+            get {
+                return ResourceManager.GetString("NAKANJ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/NGM/ #game
         ///// For a game between two players where digits are subtracted from a number

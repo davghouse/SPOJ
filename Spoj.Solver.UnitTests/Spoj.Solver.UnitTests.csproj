@@ -84,6 +84,7 @@
     <Compile Include="Solutions\5 - King\BYTESE2Tests.cs" />
     <Compile Include="Solutions\5 - King\CRSCNTRYTests.cs" />
     <Compile Include="Solutions\5 - King\JNEXTTests.cs" />
+    <Compile Include="Solutions\5 - King\NAKANJTests.cs" />
     <Compile Include="Solutions\5 - King\NY10ETests.cs" />
     <Compile Include="Solutions\5 - King\TRGRIDTests.cs" />
     <Compile Include="Solutions\5 - King\FCTRL2Tests.cs" />
