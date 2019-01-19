@@ -148,7 +148,7 @@
     <None Include="Solutions\3 - Warlord\GIRLSNBS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Solutions\5 - King\INVCNT.cs" />
+    <None Include="Solutions\6 - Emperor\INVCNT.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\5 - King\NGM.cs" />

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
-namespace Spoj.Solver.UnitTests.Solutions._5___King
+namespace Spoj.Solver.UnitTests.Solutions._6___Emperor
 {
     [TestClass]
     public sealed class INVCNTTests : SolutionTestsBase
