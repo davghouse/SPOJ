@@ -1,7 +1,7 @@
 ﻿using System;
 
 // https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
-// Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
+// Finds the minimum amount of money that could be inside a piggy bank of a certain weight.
 public static class PIGBANK // v1, 1D as an unbounded knapsack problem
 {
     private static int?[] _minimumMoneyAmounts = new int?[10001];
@@ -37,16 +37,9 @@ public static class PIGBANK // v1, 1D as an unbounded knapsack problem
 
                 if (minimumMoneyAmountUsingThisCoinType.HasValue)
                 {
-                    if (minimumMoneyAmountForThisTotalWeight.HasValue)
-                    {
-                        minimumMoneyAmountForThisTotalWeight = Math.Min(
-                            minimumMoneyAmountForThisTotalWeight.Value,
-                            minimumMoneyAmountUsingThisCoinType.Value);
-                    }
-                    else
-                    {
-                        minimumMoneyAmountForThisTotalWeight = minimumMoneyAmountUsingThisCoinType;
-                    }
+                    minimumMoneyAmountForThisTotalWeight = Math.Min(
+                        minimumMoneyAmountForThisTotalWeight ?? int.MaxValue,
+                        minimumMoneyAmountUsingThisCoinType.Value);
                 }
             }
 

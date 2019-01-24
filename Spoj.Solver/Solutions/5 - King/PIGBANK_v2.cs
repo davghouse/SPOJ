@@ -1,7 +1,7 @@
 ﻿using System;
 
 // https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-2d #knapsack #optimization
-// Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
+// Finds the minimum amount of money that could be inside a piggy bank of a certain weight.
 public static class PIGBANK // v2, 2D structured similarly as 0/1 knapsack.
 {
     private static int?[,] _minimumMoneyAmounts = new int?[501, 10001];

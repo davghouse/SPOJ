@@ -565,4 +565,7 @@
   <data name="NAKANJ" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\NAKANJ.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ABA12C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\ABA12C.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

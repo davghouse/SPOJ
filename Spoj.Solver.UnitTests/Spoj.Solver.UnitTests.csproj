@@ -133,6 +133,7 @@
     <Compile Include="Solutions\5 - King\HACKRNDM_v2Tests.cs" />
     <Compile Include="Solutions\5 - King\HACKRNDM_v1Tests.cs" />
     <Compile Include="Solutions\5 - King\HOTELSTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ABA12CTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INVCNTTests.cs" />
     <Compile Include="Solutions\5 - King\JULKATests.cs" />
     <Compile Include="Solutions\5 - King\LASTDIG2Tests.cs" />

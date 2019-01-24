@@ -62,6 +62,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/ABA12C/ #dynamic-programming-2d #knapsack #optimization
+        ///// Finds the cheapest way to buy an exact number of apples, without buying too many packs.
+        ///public class ABA12C
+        ///{
+        ///    public static int? Solve(int friendCount, int appleCount, int[] applePackCosts)
+        ///    {
+        ///        // This stores the minimum cost to achieve a certain number of apples a, using no
+        ///        // more than p packs--minCostForApples[p, a]. The number we&apos;re looking for is
+        ///        // minCostF [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ABA12C {
+            get {
+                return ResourceManager.GetString("ABA12C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Diagnostics;
         ///using System.Linq;
@@ -2486,7 +2505,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-1d #knapsack #optimization
-        ///// Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
+        ///// Finds the minimum amount of money that could be inside a piggy bank of a certain weight.
         ///public static class PIGBANK // v1, 1D as an unbounded knapsack problem
         ///{
         ///    private static int?[] _minimumMoneyAmounts = new int?[10001];
@@ -2494,7 +2513,7 @@ namespace Spoj.Solver {
         ///    static PIGBANK()
         ///    {
         ///        // No matter our available coin types, a weight of zero is attainable by (and only by)
-        ///        // leaving the piggy bank empty,  [rest of string was truncated]&quot;;.
+        ///        // leaving the piggy bank empty, w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIGBANK_v1 {
             get {
@@ -2506,7 +2525,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/PIGBANK/ #dynamic-programming-2d #knapsack #optimization
-        ///// Finds the minimum  amount of money that could be inside a piggy bank of a certain weight.
+        ///// Finds the minimum amount of money that could be inside a piggy bank of a certain weight.
         ///public static class PIGBANK // v2, 2D structured similarly as 0/1 knapsack.
         ///{
         ///    private static int?[,] _minimumMoneyAmounts = new int?[501, 10001];
@@ -2514,7 +2533,7 @@ namespace Spoj.Solver {
         ///    static PIGBANK()
         ///    {
         ///        // No matter our available coin types, a weight of zero is attainable by (and only by)
-        ///        // leaving the piggy b [rest of string was truncated]&quot;;.
+        ///        // leaving the piggy ba [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PIGBANK_v2 {
             get {
