@@ -65,13 +65,13 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/ABA12C/ #dynamic-programming-2d #knapsack #optimization
         ///// Finds the cheapest way to buy an exact number of apples, without buying too many packs.
-        ///public class ABA12C
+        ///public static class ABA12C
         ///{
         ///    public static int? Solve(int friendCount, int appleCount, int[] applePackCosts)
         ///    {
         ///        // This stores the minimum cost to achieve a certain number of apples a, using no
         ///        // more than p packs--minCostForApples[p, a]. The number we&apos;re looking for is
-        ///        // minCostF [rest of string was truncated]&quot;;.
+        ///        // m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABA12C {
             get {
@@ -3145,6 +3145,26 @@ namespace Spoj.Solver {
         public static string TRT_v2 {
             get {
                 return ResourceManager.GetString("TRT_v2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/TWENDS/ #dynamic-programming-2d #game #optimization
+        ///// Finds how bad a greedy strategy is when players take turns choosing end cards.
+        ///public static class TWENDS
+        ///{
+        ///    // Note the recursive solution: first player can choose either left or right
+        ///    // end. Once they do, the greedy player chooses the biggest of the ends. Take
+        ///    // the max of (those two options + the solution for their remaining cards). Can
+        ///    //  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TWENDS {
+            get {
+                return ResourceManager.GetString("TWENDS", resourceCulture);
             }
         }
         
