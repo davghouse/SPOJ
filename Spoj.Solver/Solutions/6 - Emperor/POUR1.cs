@@ -22,7 +22,7 @@ public static class POUR1
     {
         int smallJugLimit = Math.Min(firstJugLimit, secondJugLimit);
         int largeJugLimit = Math.Max(firstJugLimit, secondJugLimit);
-        int limitsGCD = MathHelper.GreatestCommonDivisor(smallJugLimit, largeJugLimit);
+        int limitsGCD = GreatestCommonDivisor(smallJugLimit, largeJugLimit);
 
         if (goal > largeJugLimit) return -1;
         if (goal == smallJugLimit || goal == largeJugLimit) return 1;
@@ -116,16 +116,13 @@ public static class POUR1
             ++pourCount;
         }
     }
-}
 
-public static class MathHelper
-{
     // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
     // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
     // And it divides b, so it divides bt, which means for bt + r to be divisible by it,
     // r also needs to be divisible by it. So it divides both b and r. And the article
     // notes the importance of showing not only does it divide b and r, it's also their gcd.
-    public static int GreatestCommonDivisor(int a, int b)
+    private static int GreatestCommonDivisor(int a, int b)
     {
         int temp;
         while (b != 0)

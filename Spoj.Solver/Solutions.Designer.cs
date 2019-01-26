@@ -1449,6 +1449,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/GAMES/ #ad-hoc #gcd #proof
+        ///// Finds the minimum number of integer scores that could&apos;ve produced the given average.
+        ///public static class GAMES
+        ///{
+        ///    // We&apos;re given the average, where average = sum of integer scores / # of games.
+        ///    // We want to find the fewest # of games possible. average * # of games has to
+        ///    // equal an integer. The non-fractional part of average can be ignored, since it
+        ///    // times an integer always contribut [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GAMES {
+            get {
+                return ResourceManager.GetString("GAMES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
         ///// https://www.spoj.com/problems/GCD2/ #gcd #math

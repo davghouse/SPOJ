@@ -55,7 +55,7 @@ public static class COMDIV
     // factors are chosen corresponds to the divisor 1, which divides everything.
     public static int Solve(int a, int b)
     {
-        int gcd = MathHelper.GreatestCommonDivisor(a, b);
+        int gcd = GreatestCommonDivisor(a, b);
         int result = 1;
 
         // We can use the sieve to extract the prime factors directly.
@@ -112,16 +112,13 @@ public static class COMDIV
 
         return result;
     }
-}
 
-public static class MathHelper
-{
     // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
     // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
     // And it divides b, so it divides bt, which means for bt + r to be divisible by it,
     // r also needs to be divisible by it. So it divides both b and r. And the article
     // notes the importance of showing not only does it divide b and r, it's also their gcd.
-    public static int GreatestCommonDivisor(int a, int b)
+    private static int GreatestCommonDivisor(int a, int b)
     {
         int temp;
         while (b != 0)

@@ -32,13 +32,10 @@ public static class DANGER
             n *= 10;
         }
 
-        return 2 * (n - MathHelper.GreatestPowerOfTwoEqualOrLess(n)) + 1;
+        return 2 * (n - GreatestPowerOfTwoEqualOrLess(n)) + 1;
     }
-}
 
-public static class MathHelper
-{
-    public static int GreatestPowerOfTwoEqualOrLess(int value)
+    private static int GreatestPowerOfTwoEqualOrLess(int value)
     {
         int result = 2;
         while (result <= value)

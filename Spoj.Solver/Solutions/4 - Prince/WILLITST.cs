@@ -9,13 +9,10 @@ public static class WILLITST
     // And when it's hit again, it still has a factor of 3 after mapping to 3(n + 1), and the process repeats...
     // So, only powers of two will ever stop.
     public static bool Solve(long n)
-        => n <= 1 || MathHelper.IsPowerOfTwo(n);
-}
+        => n <= 1 || IsPowerOfTwo(n);
 
-public static class MathHelper
-{
     // http://stackoverflow.com/a/600306
-    public static bool IsPowerOfTwo(long n)
+    private static bool IsPowerOfTwo(long n)
         => n <= 0 ? false : (n & (n - 1)) == 0;
 }
 

@@ -20,18 +20,15 @@ public static class MARBLES
     // = C(marbleCount - 1, colorCount - 1).
     // See https://en.wikipedia.org/wiki/Combination#Number_of_combinations_with_repetition.
     public static BigInteger Solve(int marbleCount, int colorCount)
-        => MathHelper.NumberOfCombinations(marbleCount - 1, colorCount - 1);
-}
+        => NumberOfCombinations(marbleCount - 1, colorCount - 1);
 
-public static class MathHelper
-{
     // C(n, k)
     // = [n * (n - 1) * ... * (n - k + 1)] / [k * (k - 1) * ... * 1]
     // = (n / 1) * ((n - 1) / 2) * ... * ((n - k + 1) / k).
     // As long as we multiply by the next term's numerator first it'll be an integer every step
     // of the way, since it'll correspond to a different combination (for a k equal to the denominator).
     // And C(n, k) = C(n, n - k), so choose whichever is smaller.
-    public static BigInteger NumberOfCombinations(int n, int k)
+    private static BigInteger NumberOfCombinations(int n, int k)
     {
         k = Math.Min(k, n - k);
         if (k == 0)
