@@ -368,6 +368,33 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/ALIEN/ #sliding-window
+        ///// Finds the maximum number of train stations an alien can tolerate.
+        ///public sealed class ALIEN
+        ///{
+        ///    private ALIEN(int humanCount, int stationCount)
+        ///    {
+        ///        HumansSeen = humanCount;
+        ///        StationsPassed = stationCount;
+        ///    }
+        ///
+        ///    public int HumansSeen { get; }
+        ///    public int StationsPassed { get; }
+        ///
+        ///    public static ALIEN Solve(int stationCount, int humanLimit, int[] stationHumanCounts)
+        ///    {
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ALIEN {
+            get {
+                return ResourceManager.GetString("ALIEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AMR10G/ #extrema #sorting
         ///// Finds a set of K students from N total having the minimum height difference between tallest and shortest.
@@ -528,13 +555,13 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #window
+        ///// https://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #sliding-window
         ///// Finds the maximum for all contiguous subarrays of a given size in an array.
         ///public static class ARRAYSUB
         ///{
         ///    // Looks like I ended up with the typical sliding-window deque solution. Here&apos;s an example for k = 3:
         ///    // 1 3 2 8 4 7 2, initialize left looking dominators like {3, 2}. These dominate everything to their
-        ///    // left until a bigger dominator. Leftmost [rest of string was truncated]&quot;;.
+        ///    // left until a bigger dominator.  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARRAYSUB {
             get {
@@ -1523,13 +1550,13 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/HACKRNDM/ #sorting #window
+        ///// https://www.spoj.com/problems/HACKRNDM/ #sliding-window #sorting
         ///// Finds the number of pairs of numbers that are a certain distance away from each other.
         ///public static class HACKRNDM // v1, by sorting an array and then two passes
         ///{
         ///    // Sort the array, then traverse it in descending order with two indices. The small
         ///    // index is always &lt;= the big index. If the numbers aren&apos;t far apart enough yet, the
-        ///    // small index can be decreased because there&apos;s no way decreasing the big index        /// [rest of string was truncated]&quot;;.
+        ///    // small index can be decreased because there&apos;s no way decreasing the bi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HACKRNDM_v1 {
             get {
@@ -1583,13 +1610,12 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #stack #window
+        ///// https://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #sliding-window #stack
         ///// Finds the largest rectangle (by area) in a histogram (rectangles w/ a common base).
         ///public static class HISTOGRA
         ///{
         ///    // I looked at times after debating (but not implementing) divide and conquer and O(n^2) approaches, and
-        ///    // figured there must be an O(n) solution. Not sure if I got lucky thinking of a solution, I could imagine
-        ///     [rest of string was truncated]&quot;;.
+        ///    // figured there must be an O(n) solution. Not sure if I got lucky thinking of a solution, I could imagi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HISTOGRA {
             get {
@@ -1648,14 +1674,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/HOTELS/ #greedy #optimization #subarray #window
+        ///// https://www.spoj.com/problems/HOTELS/ #greedy #optimization #sliding-window
         ///// Finds the consecutive hotels that maximize the money spent (without going over).
         ///public static class HOTELS
         ///{
         ///    // Gonna have a start hotel and an end hotel. The end hotel for a given start
         ///    // hotel is the one immediately before the hotel that would put us over the spend limit.
         ///    // Once we find that, we move the start hotel to the next hotel, and try pushing the
-        ///    // end hotel again. Whenev [rest of string was truncated]&quot;;.
+        ///    // end hotel again. Whenever [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HOTELS {
             get {
@@ -2248,13 +2274,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/NOTATRI/ #binary-search #sorting #window
+        ///// https://www.spoj.com/problems/NOTATRI/ #binary-search #sliding-window #sorting
         ///// Figures out how many combinations of 3 sticks can&apos;t form a triangle.
         ///public static class NOTATRI
         ///{
         ///    // Imagine how we would brute force this. Three for loops, i=0, j=i+1, k=j+1. This considers
         ///    // every combination (set of three sticks, order not important) exactly once. If we sort the
-        ///    // sticks by length first, then once we&apos;ve picked the short and medium-length st [rest of string was truncated]&quot;;.
+        ///    // sticks by length first, then once we&apos;ve picked the short and medium-l [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NOTATRI {
             get {

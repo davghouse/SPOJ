@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/NOTATRI/ #binary-search #sorting #window
+// https://www.spoj.com/problems/NOTATRI/ #binary-search #sliding-window #sorting
 // Figures out how many combinations of 3 sticks can't form a triangle.
 public static class NOTATRI
 {

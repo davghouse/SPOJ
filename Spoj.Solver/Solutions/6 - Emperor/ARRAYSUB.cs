@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// https://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #window
+// https://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #sliding-window
 // Finds the maximum for all contiguous subarrays of a given size in an array.
 public static class ARRAYSUB
 {

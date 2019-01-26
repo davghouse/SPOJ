@@ -42,8 +42,8 @@ public static class TRT // v1, top-down, recursion with memoization
             End = endIndex;
         }
 
-        public int Start { get; set; }
-        public int End { get; set; }
+        public int Start { get; }
+        public int End { get; }
     }
 }
 

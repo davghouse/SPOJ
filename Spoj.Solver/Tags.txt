@@ -65,12 +65,11 @@
 #shortest-path
 #sieve
 #simulation
+#sliding-window
 #sorting
 #stack
 #strings
-#subarray
 #substrings
 #suffixes
 #tree
 #trie
-#window

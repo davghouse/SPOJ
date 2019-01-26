@@ -80,6 +80,7 @@
     <Compile Include="Solutions\3 - Warlord\CRDSTests.cs" />
     <Compile Include="Solutions\3 - Warlord\DOTAATests.cs" />
     <Compile Include="Solutions\4 - Prince\LENGFACTTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\ALIENTests.cs" />
     <Compile Include="Solutions\5 - King\BUSYMANTests.cs" />
     <Compile Include="Solutions\5 - King\BYTESE2Tests.cs" />
     <Compile Include="Solutions\5 - King\CRSCNTRYTests.cs" />

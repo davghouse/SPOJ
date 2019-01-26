@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/HACKRNDM/ #sorting #window
+// https://www.spoj.com/problems/HACKRNDM/ #sliding-window #sorting
 // Finds the number of pairs of numbers that are a certain distance away from each other.
 public static class HACKRNDM // v1, by sorting an array and then two passes
 {
