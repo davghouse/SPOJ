@@ -998,6 +998,33 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/CUBEFR/ #sieve
+        ///// Determines if a number is cube free, and its index amongst the others if so.
+        ///public static class CUBEFR
+        ///{
+        ///    private const int _limit = 1000000;
+        ///    private const int _cubedRootOfLimit = 100;
+        ///    private static readonly int[] _sieve = new int[_limit + 1];
+        ///
+        ///    static CUBEFR()
+        ///    {
+        ///        int cubeFreeIndex = 1;
+        ///        _sieve[1] = cubeFreeIndex;
+        ///
+        ///        for (int n = 2; n &lt;= _limit; ++n)
+        ///        {
+        ///       [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CUBEFR {
+            get {
+                return ResourceManager.GetString("CUBEFR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/DANGER/ #experiment #formula #game #math
         ///// Finds the last survivor for n people in a circle, where every second person dies.

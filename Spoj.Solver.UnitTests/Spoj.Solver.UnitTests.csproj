@@ -79,6 +79,7 @@
     <Compile Include="Solutions\3 - Warlord\CANDYTests.cs" />
     <Compile Include="Solutions\3 - Warlord\CRDSTests.cs" />
     <Compile Include="Solutions\3 - Warlord\DOTAATests.cs" />
+    <Compile Include="Solutions\4 - Prince\CUBEFRTests.cs" />
     <Compile Include="Solutions\4 - Prince\LENGFACTTests.cs" />
     <Compile Include="Solutions\6 - Emperor\ALIENTests.cs" />
     <Compile Include="Solutions\5 - King\BUSYMANTests.cs" />
