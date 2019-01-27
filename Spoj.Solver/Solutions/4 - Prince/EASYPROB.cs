@@ -17,7 +17,7 @@ public static class EASYPROB
         // Normal base case.
         if (n == 0) return "0";
 
-        string nInBinary = Convert.ToString(n, 2);
+        string nInBinary = Convert.ToString(n, toBase: 2);
         string result = string.Empty;
 
         for (int i = 0; i < nInBinary.Length; ++i)

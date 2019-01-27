@@ -171,6 +171,7 @@
     <Compile Include="Solutions\6 - Emperor\INOUTESTTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INTESTTests.cs" />
     <Compile Include="Solutions\6 - Emperor\NOTATRITestscs.cs" />
+    <Compile Include="Solutions\6 - Emperor\ONEZEROTests.cs" />
     <Compile Include="Solutions\6 - Emperor\PERMUT1Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\POUR1Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\SUMFOURTests.cs" />

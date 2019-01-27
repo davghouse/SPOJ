@@ -573,7 +573,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
-        ///// https://www.spoj.com/problems/ASSIGN/ #dynamic-programming #bitmask
+        ///// https://www.spoj.com/problems/ASSIGN/ #bitmask #dynamic-programming
         ///// Finds the number of ways to assign topics such that all students are happy.
         ///public static class ASSIGN
         ///{
@@ -2468,6 +2468,31 @@ namespace Spoj.Solver {
         public static string OLOLO {
             get {
                 return ResourceManager.GetString("OLOLO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/ONEZERO/ #ad-hoc #bfs #bitmask #mod-math
+        ///// Finds the smallest multiple of a number that&apos;s composed of all 1s and 0s.
+        ///public static class ONEZERO
+        ///{
+        ///    public static string Solve(int n)
+        ///    {
+        ///        if (n == 1)
+        ///            return &quot;1&quot;;
+        ///
+        ///        bool[] discoveredNumbersModN = new bool[n];
+        ///        var numbersToVisit = new Queue&lt;NumberHaving1sAnd0s&gt;();
+        ///        discoveredNumbersModN[1] = true;
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ONEZERO {
+            get {
+                return ResourceManager.GetString("ONEZERO", resourceCulture);
             }
         }
         
