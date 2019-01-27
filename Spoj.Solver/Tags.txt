@@ -6,6 +6,7 @@
 #binary-search
 #binary-search-tree
 #bit
+#bitmask
 #buckets
 #combinatorics
 #dag

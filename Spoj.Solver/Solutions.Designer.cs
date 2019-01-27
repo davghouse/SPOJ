@@ -571,6 +571,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/ASSIGN/ #dynamic-programming #bitmask
+        ///// Finds the number of ways to assign topics such that all students are happy.
+        ///public static class ASSIGN
+        ///{
+        ///    // The number of students (== number of topics) only goes up to 20. There are 2^20 different
+        ///    // sets of students. These sets can be represented using the bits of an integer; 00...0 for
+        ///    // the empty set (integer value of 0), to 11...1 for the set of all students (integer value
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ASSIGN {
+            get {
+                return ResourceManager.GetString("ASSIGN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/BEENUMS/ #formula #math #proof
         ///// Determines if the given number is a beehive number.
@@ -3017,6 +3036,7 @@ namespace Spoj.Solver {
         ///#binary-search
         ///#binary-search-tree
         ///#bit
+        ///#bitmask
         ///#buckets
         ///#combinatorics
         ///#dag
@@ -3050,8 +3070,7 @@ namespace Spoj.Solver {
         ///#io
         ///#knapsack
         ///#lazy
-        ///#lca
-        ///#longes [rest of string was truncated]&quot;;.
+        ///#lc [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
