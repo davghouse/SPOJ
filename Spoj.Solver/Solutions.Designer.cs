@@ -1257,6 +1257,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/EKO/ #binary-search #sorting
+        ///// Finds the maximum height for a sawblade while still getting enough wood.
+        ///public static class EKO
+        ///{
+        ///    // Order the trees by height and get the running height sums. Given a tree, you can then figure
+        ///    // out (in constant time) if cutting it is necessary or not. If cutting a tree isn&apos;t necessary,
+        ///    // then setting the blade at exactly the tree&apos;s height (so none of the tree gets cut), and
+        ///    // cutt [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EKO {
+            get {
+                return ResourceManager.GetString("EKO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/ENIGMATH/ #gcd #math
