@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\6 - Emperor\CHOCOLA.cs" />
     <None Include="Solutions\6 - Emperor\EKO.cs" />
     <None Include="Solutions\6 - Emperor\ONEZERO.cs" />
     <None Include="Solutions\7 - Immortal\ASSIGN.cs" />

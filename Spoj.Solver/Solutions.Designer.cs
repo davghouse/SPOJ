@@ -891,6 +891,24 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/TEMPLATE1/ #ad-hoc #greedy #sorting
+        ///// Breaks a chocolate bar apart in the cheapest way possible.
+        ///public static class CHOCOLA
+        ///{
+        ///    // I don&apos;t know, convince yourself that greedy works. Maybe there&apos;s an inductive proof?
+        ///    // Assuming greedy works, it&apos;s important to see how to implement it. At first I went
+        ///    // down the wrong track and tried divide and conquer, where choosing an edge splits
+        ///    // the piece being considered into two. Then from thos [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CHOCOLA {
+            get {
+                return ResourceManager.GetString("CHOCOLA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/COINS/ #dynamic-programming-1d #recursion
