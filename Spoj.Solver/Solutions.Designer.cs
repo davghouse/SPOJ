@@ -3303,6 +3303,35 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/TSHOW1/ #binary #experiment #math
+        ///// Finds the kth number composed of only the digits 5 and 6.
+        ///public static class TSHOW1
+        ///{
+        ///    // Group 1: (1 digit)
+        ///    //  1:   5 | 0
+        ///    //  2:   6 | 1
+        ///    // Group 2: (2 digits)
+        ///    //  3:  55 | 00
+        ///    //  4:  56 | 01
+        ///    //  5:  65 | 10
+        ///    //  6:  66 | 11
+        ///    // Group 3: (3 digits)
+        ///    //  7: 555 | 000
+        ///    //  8: 556 | 001
+        ///    //  9: 565 | 010
+        ///    // 10: 566 | 011
+        ///    // 11: 655 | 100
+        ///    // 12: 656 |  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string TSHOW1 {
+            get {
+                return ResourceManager.GetString("TSHOW1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///using System.Text;
         ///

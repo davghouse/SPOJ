@@ -40,9 +40,7 @@ public static class SILVER
     // minus 1 because he has to have at least one bit, otherwise we wouldn't have given him anything. But that's only 7,
     // which is less than the 8 distinct values we need for each different day.
     public static int Solve(int n)
-        // Just worried about rounding errors, don't know enough about how those work. But:
-        // Limit is 20k, 16384 largest power of 2 < 20k, log2(16383) = 13.99991..., so this epsilon is small enough.
-        => (int)(Math.Log(n, 2) + .000000001);
+        => (int)Math.Log(n, 2);
 }
 
 public static class Program
