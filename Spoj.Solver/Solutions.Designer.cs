@@ -1173,6 +1173,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/DSUBSEQ/ #dynamic-programming #memoization #mod-math
+        ///// Finds the number of distinct subsequences of a string.
+        ///public static class DSUBSEQ
+        ///{
+        ///    // First, consider the sequence where all the characters are distinct, like ABCD.
+        ///    // 1 sequence ends in A--just A. How many end in B? 1--just B itself, plus however many
+        ///    // end in A. How many end in C? 1--just C itself, plus however many end in A, plus however
+        ///    // [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DSUBSEQ {
+            get {
+                return ResourceManager.GetString("DSUBSEQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/EASYPROB/ #binary #experiment #recursion
         ///// Transforms a number into its base 2 representation in a weird recursive way.
