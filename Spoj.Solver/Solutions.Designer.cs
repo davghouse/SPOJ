@@ -2802,6 +2802,27 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using Vertex = SimpleGraph.Vertex;
+        ///
+        ///// https://www.spoj.com/problems/PT07X/ #graph-theory #greedy
+        ///// Finds the vertex set of minimum size covering all edges in a tree.
+        ///public static class PT07X
+        ///{
+        ///    // The only way to cover a leaf&apos;s edge is by choosing the leaf, or by choosing
+        ///    // its parent. Choosing its parent is better since that&apos;ll cover other edges
+        ///    // as well. This solution chooses leaf parents, and  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PT07X {
+            get {
+                return ResourceManager.GetString("PT07X", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/PT07Y/ #graph-theory #tree

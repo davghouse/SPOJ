@@ -76,9 +76,9 @@ public static class PPATH
         => _primeGraph.GetShortestPathLength(startPrime, endPrime);
 }
 
-// Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-// its index in that array.
+// Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
+// stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
+// index in that array.
 public sealed class SimpleGraph
 {
     public SimpleGraph(int vertexCount)

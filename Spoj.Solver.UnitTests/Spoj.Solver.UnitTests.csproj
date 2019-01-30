@@ -178,6 +178,7 @@
     <Compile Include="Solutions\6 - Emperor\ONEZEROTests.cs" />
     <Compile Include="Solutions\6 - Emperor\PERMUT1Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\POUR1Tests.cs" />
+    <Compile Include="Solutions\6 - Emperor\PT07XTests.cs" />
     <Compile Include="Solutions\6 - Emperor\SUMFOURTests.cs" />
     <Compile Include="Solutions\6 - Emperor\TWENDSTests.cs" />
     <Compile Include="Solutions\7 - Immortal\ASSIGNTests.cs" />

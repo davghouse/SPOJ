@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.Graphs
 {
-    // Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-    // The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-    // its index in that array. Using a list instead of a hash set for a vertex's neighbors can help avoid TLE for
-    // certain problems. Maintaining search state inside of the vertices themselves can also help.
+    // Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
+    // stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
+    // index in that array. Using a list instead of a hash set for a vertex's neighbors can
+    // help avoid TLE for certain problems. Maintaining search state inside of the vertices
+    // themselves can also help.
     public sealed class SimpleGraph
     {
         public SimpleGraph(int vertexCount)
@@ -62,7 +63,7 @@ namespace Spoj.Library.Graphs
         public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
             => firstVertex.HasNeighbor(secondVertex);
 
-        // This performs a DFS from an arbitrary start vertex, to determine if the whole graph is reachable from it.
+        // DFSes from an arbitrary start vertex, to determine if the whole graph is reachable from it.
         public bool IsConnected()
         {
             var arbitraryStartVertex = Vertices[VertexCount / 2];
@@ -87,8 +88,9 @@ namespace Spoj.Library.Graphs
             return discoveredVertexIDs.Count == VertexCount;
         }
 
-        // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
-        // Don't need the count property from a hash set, so using two parallel bool arrays, one for discovery, one for 2-coloring.
+        // Performs a DFS from some vertex in every connected component of the graph, while
+        // attempting a 2-coloring. Don't need the count property from a hash set, so using
+        // two parallel bool arrays, one for discovery, one for 2-coloring.
         public bool IsBipartite()
         {
             bool[] discoveredVertexIDs = new bool[VertexCount];
@@ -111,14 +113,16 @@ namespace Spoj.Library.Graphs
 
                     foreach (var neighbor in vertex.Neighbors)
                     {
-                        // If undiscovered, discover it and color it opposite the vertex we're visiting from (put it in the other set).
+                        // If undiscovered, discover it and color it opposite the vertex we're
+                        // visiting from (put it in the other set).
                         if (!discoveredVertexIDs[neighbor.ID])
                         {
                             discoveredVertexIDs[neighbor.ID] = true;
                             discoveredVertexColors[neighbor.ID] = !vertexColor;
                             verticesToVisit.Push(neighbor);
                         }
-                        // Else, make sure its color isn't the same as the vertex we're visting from (verify its not in the same set).
+                        // Else, make sure its color isn't the same as the vertex we're visting
+                        // from (verify its not in the same set).
                         else if (discoveredVertexColors[neighbor.ID] == vertexColor)
                             return false;
                     }

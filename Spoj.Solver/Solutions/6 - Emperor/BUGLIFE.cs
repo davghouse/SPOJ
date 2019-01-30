@@ -24,9 +24,9 @@ public static class BUGLIFE
         .IsBipartite();
 }
 
-// Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-// its index in that array.
+// Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
+// stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
+// index in that array.
 public sealed class SimpleGraph
 {
     public SimpleGraph(int vertexCount)
@@ -70,8 +70,9 @@ public sealed class SimpleGraph
     public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
         => firstVertex.HasNeighbor(secondVertex);
 
-    // Performs a DFS from some vertex in every connected component of the graph, while attempting a 2-coloring.
-    // Don't need the count property from a hash set, so using two parallel bool arrays, one for discovery, one for 2-coloring.
+    // Performs a DFS from some vertex in every connected component of the graph, while
+    // attempting a 2-coloring. Don't need the count property from a hash set, so using
+    // two parallel bool arrays, one for discovery, one for 2-coloring.
     public bool IsBipartite()
     {
         bool[] discoveredVertexIDs = new bool[VertexCount];
@@ -94,14 +95,16 @@ public sealed class SimpleGraph
 
                 foreach (var neighbor in vertex.Neighbors)
                 {
-                    // If undiscovered, discover it and color it opposite the vertex we're visiting from (put it in the other set).
+                    // If undiscovered, discover it and color it opposite the vertex we're
+                    // visiting from (put it in the other set).
                     if (!discoveredVertexIDs[neighbor.ID])
                     {
                         discoveredVertexIDs[neighbor.ID] = true;
                         discoveredVertexColors[neighbor.ID] = !vertexColor;
                         verticesToVisit.Push(neighbor);
                     }
-                    // Else, make sure its color isn't the same as the vertex we're visting from (verify its not in the same set).
+                    // Else, make sure its color isn't the same as the vertex we're visting
+                    // from (verify its not in the same set).
                     else if (discoveredVertexColors[neighbor.ID] == vertexColor)
                         return false;
                 }

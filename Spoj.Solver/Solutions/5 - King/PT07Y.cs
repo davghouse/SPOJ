@@ -18,9 +18,9 @@ public static class PT07Y
     }
 }
 
-// Undirected, unweighted graph with no loops or multiple edges: http://mathworld.wolfram.com/SimpleGraph.html.
-// The graph's vertices are stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to
-// its index in that array.
+// Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
+// stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
+// index in that array.
 public sealed class SimpleGraph
 {
     public SimpleGraph(int vertexCount)
@@ -64,7 +64,7 @@ public sealed class SimpleGraph
     public bool HasEdge(Vertex firstVertex, Vertex secondVertex)
         => firstVertex.HasNeighbor(secondVertex);
 
-    // This performs a DFS from an arbitrary start vertex, to determine if the whole graph is reachable from it.
+    // DFSes from an arbitrary start vertex, to determine if the whole graph is reachable from it.
     public bool IsConnected()
     {
         var arbitraryStartVertex = Vertices[VertexCount / 2];
