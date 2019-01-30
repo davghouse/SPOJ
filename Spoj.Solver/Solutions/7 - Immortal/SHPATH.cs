@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using Vertex = WeightedSimpleGraph.Vertex;
 
 // https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
 // Finds the cheapest path between pairs of cities.
 public static class SHPATH
 {
     // This uses Dijkstra's algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
-    // This solution gets TLE, but it has the main features of the submitted solution, just
-    // more overhead. Importantly, we return immediately upon visiting the destination city,
-    // and we don't initialize the heap with all cities. We only add cities to the heap when
-    // reaching one of their neighbor cities. Without a pre-filled heap to rely on, we track
-    // what cities have been visited using an array of bools. I played around unsuccessfully
-    // with memoization, with an instance of a solver for each unique source city and a
-    // dictionary of destination costs. Here's a sketchy one-off submission that actually
-    // passed: https://gist.github.com/davghouse/972d12b21957b57c1fbe14576675162e
-    public static int Solve(WeightedSimpleGraph cityGraph, Vertex sourceCity, Vertex destinationCity)
+    // We return immediately upon visiting the destination city, and we don't initialize the
+    // heap with all cities. We only add cities to the heap when reaching one of their neighbor
+    // cities. Without a pre-filled heap to rely on, we track what cities have been visited
+    // using an array of bools.
+    public static int Solve(List<KeyValuePair<int, int>>[] cityGraph, int sourceCity, int destinationCity)
     {
         var pathCosts = new BinaryHeap(sourceCity);
-        bool[] visitedCities = new bool[cityGraph.VertexCount];
+        bool[] visitedCities = new bool[cityGraph.Length];
 
         while (!pathCosts.IsEmpty)
         {
@@ -31,9 +26,14 @@ public static class SHPATH
             if (city == destinationCity)
                 return pathCostToCity;
 
-            foreach (var neighbor in city.Neighbors.Where(n => !visitedCities[n.ID]))
+            var neighboringEdges = cityGraph[city];
+            for (int e = 0; e < neighboringEdges.Count; ++e)
             {
-                int pathCostToNeighborThroughCity = pathCostToCity + city.GetEdgeWeight(neighbor);
+                int neighbor = neighboringEdges[e].Key;
+                if (visitedCities[neighbor])
+                    continue;
+
+                int pathCostToNeighborThroughCity = pathCostToCity + neighboringEdges[e].Value;
                 int currentPathCostToNeighbor;
 
                 // We know the neighboring city hasn't been visited yet, so we need to maintain its
@@ -52,105 +52,39 @@ public static class SHPATH
                 }
             }
 
-            visitedCities[city.ID] = true;
+            visitedCities[city] = true;
         }
 
         throw new NotSupportedException();
     }
 }
 
-// Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored
-// in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
-public sealed class WeightedSimpleGraph
-{
-    public WeightedSimpleGraph(int vertexCount)
-    {
-        var vertices = new Vertex[vertexCount];
-        for (int id = 0; id < vertexCount; ++id)
-        {
-            vertices[id] = new Vertex(this, id);
-        }
-
-        Vertices = vertices;
-    }
-
-    public IReadOnlyList<Vertex> Vertices { get; }
-    public int VertexCount => Vertices.Count;
-
-    public void AddEdge(int firstVertexID, int secondVertexID, int weight)
-        => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID], weight);
-
-    public void AddEdge(Vertex firstVertex, Vertex secondVertex, int weight)
-    {
-        firstVertex.AddNeighbor(secondVertex, weight);
-        secondVertex.AddNeighbor(firstVertex, weight);
-    }
-
-    public sealed class Vertex : IEquatable<Vertex>
-    {
-        private readonly WeightedSimpleGraph _graph;
-        private readonly Dictionary<Vertex, int> _edges = new Dictionary<Vertex, int>();
-
-        internal Vertex(WeightedSimpleGraph graph, int ID)
-        {
-            _graph = graph;
-            this.ID = ID;
-        }
-
-        public int ID { get; }
-
-        public IReadOnlyCollection<Vertex> Neighbors => _edges.Keys;
-        public int Degree => _edges.Count;
-
-        internal void AddNeighbor(Vertex neighbor, int weight)
-            => _edges.Add(neighbor, weight);
-
-        public bool HasNeighbor(Vertex neighbor)
-            => _edges.ContainsKey(neighbor);
-
-        public int GetEdgeWeight(Vertex neighbor)
-            => _edges[neighbor];
-
-        public bool TryGetEdgeWeight(Vertex neighbor, out int edgeWeight)
-            => _edges.TryGetValue(neighbor, out edgeWeight);
-
-        public override bool Equals(object obj)
-            => (obj as Vertex)?.ID == ID;
-
-        public bool Equals(Vertex other)
-            => other.ID == ID;
-
-        public override int GetHashCode()
-            => ID;
-    }
-}
-
 public sealed class BinaryHeap
 {
-    private readonly List<KeyValuePair<Vertex, int>> _keyValuePairs = new List<KeyValuePair<Vertex, int>>();
-    private readonly Dictionary<Vertex, int> _keyIndices = new Dictionary<Vertex, int>();
+    private readonly List<KeyValuePair<int, int>> _keyValuePairs = new List<KeyValuePair<int, int>>();
+    private readonly Dictionary<int, int> _keyIndices = new Dictionary<int, int>();
 
-    public BinaryHeap(Vertex topKey, int topValue = 0)
+    public BinaryHeap(int topKey, int topValue = 0)
     {
-        _keyValuePairs.Add(new KeyValuePair<Vertex, int>(topKey, topValue));
+        _keyValuePairs.Add(new KeyValuePair<int, int>(topKey, topValue));
         _keyIndices.Add(topKey, 0);
     }
 
     public int Size => _keyValuePairs.Count;
     public bool IsEmpty => Size == 0;
-    public KeyValuePair<Vertex, int> Top => _keyValuePairs[0];
+    public KeyValuePair<int, int> Top => _keyValuePairs[0];
 
-    public void Add(Vertex key, int value)
-        => Add(new KeyValuePair<Vertex, int>(key, value));
+    public void Add(int key, int value)
+        => Add(new KeyValuePair<int, int>(key, value));
 
-    public void Add(KeyValuePair<Vertex, int> keyValuePair)
+    public void Add(KeyValuePair<int, int> keyValuePair)
     {
         _keyValuePairs.Add(keyValuePair);
         _keyIndices.Add(keyValuePair.Key, _keyValuePairs.Count - 1);
         SiftUp(_keyValuePairs.Count - 1, keyValuePair);
     }
 
-    public KeyValuePair<Vertex, int> Extract()
+    public KeyValuePair<int, int> Extract()
     {
         var top = _keyValuePairs[0];
         _keyIndices.Remove(top.Key);
@@ -171,13 +105,13 @@ public sealed class BinaryHeap
         return top;
     }
 
-    public bool Contains(Vertex key)
+    public bool Contains(int key)
         => _keyIndices.ContainsKey(key);
 
-    public int GetValue(Vertex key)
+    public int GetValue(int key)
         => _keyValuePairs[_keyIndices[key]].Value;
 
-    public bool TryGetValue(Vertex key, out int value)
+    public bool TryGetValue(int key, out int value)
     {
         int keyIndex;
         if (_keyIndices.TryGetValue(key, out keyIndex))
@@ -190,10 +124,10 @@ public sealed class BinaryHeap
         return false;
     }
 
-    public int Update(Vertex key, int value)
-        => Update(new KeyValuePair<Vertex, int>(key, value));
+    public int Update(int key, int value)
+        => Update(new KeyValuePair<int, int>(key, value));
 
-    public int Update(KeyValuePair<Vertex, int> keyValuePair)
+    public int Update(KeyValuePair<int, int> keyValuePair)
     {
         int index = _keyIndices[keyValuePair.Key];
         int oldValue = _keyValuePairs[index].Value;
@@ -212,7 +146,7 @@ public sealed class BinaryHeap
         return oldValue;
     }
 
-    private void SiftUp(int index, KeyValuePair<Vertex, int> keyValuePair)
+    private void SiftUp(int index, KeyValuePair<int, int> keyValuePair)
     {
         // Stop if we don't have a parent to sift up to.
         if (index == 0) return;
@@ -233,7 +167,7 @@ public sealed class BinaryHeap
         }
     }
 
-    private void SiftDown(int index, KeyValuePair<Vertex, int> keyValuePair)
+    private void SiftDown(int index, KeyValuePair<int, int> keyValuePair)
     {
         int leftChildIndex = 2 * index + 1;
         int rightChildIndex = 2 * index + 2;
@@ -296,48 +230,117 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-        int testCount = int.Parse(Console.ReadLine());
+        int testCount = FastIO.ReadNonNegativeInt();
         for (int t = 0; t < testCount; ++t)
         {
-            int cityCount = int.Parse(Console.ReadLine());
+            int cityCount = FastIO.ReadNonNegativeInt();
             var cityIndices = new Dictionary<string, int>(cityCount);
-            var cityGraph = new WeightedSimpleGraph(cityCount);
+            var cityGraph = new List<KeyValuePair<int, int>>[cityCount];
 
             for (int c = 0; c < cityCount; ++c)
             {
-                string cityName = Console.ReadLine();
-                cityIndices.Add(cityName, c);
+                cityIndices.Add(FastIO.ReadString(), c);
+                cityGraph[c] = new List<KeyValuePair<int, int>>();
 
-                int neighborCount = int.Parse(Console.ReadLine());
+                int neighborCount = FastIO.ReadNonNegativeInt();
                 for (int n = 0; n < neighborCount; ++n)
                 {
-                    string[] line = Console.ReadLine().Split();
-                    int neighborIndex = int.Parse(line[0]) - 1;
-                    int connectionCost = int.Parse(line[1]);
+                    int neighborIndex = FastIO.ReadNonNegativeInt() - 1;
+                    int connectionCost = FastIO.ReadNonNegativeInt();
 
-                    // E.g., we'll be told about both (2, 5) and (5, 2). They're equivalent, so
-                    // only add (2, 5) (the first one we came across), where c < neighborIndex.
-                    if (c > neighborIndex)
-                        continue;
-
-                    cityGraph.AddEdge(c, neighborIndex, connectionCost);
+                    cityGraph[c].Add(new KeyValuePair<int, int>(neighborIndex, connectionCost));
                 }
             }
 
-            int pathCount = int.Parse(Console.ReadLine());
+            int pathCount = FastIO.ReadNonNegativeInt();
             for (int p = 0; p < pathCount; ++p)
             {
-                string[] line = Console.ReadLine().Split();
-                var sourceCity = cityGraph.Vertices[cityIndices[line[0]]];
-                var destinationCity = cityGraph.Vertices[cityIndices[line[1]]];
+                int sourceCity = cityIndices[FastIO.ReadString()];
+                int destinationCity = cityIndices[FastIO.ReadString()];
 
                 output.Append(SHPATH.Solve(cityGraph, sourceCity, destinationCity));
                 output.AppendLine();
             }
-
-            Console.ReadLine();
         }
 
         Console.Write(output);
+    }
+}
+
+// This is based in part on submissions from https://www.codechef.com/status/INTEST.
+// It's assumed the input is well-formed, so if you try to read an integer when no
+// integers remain in the input, there's undefined behavior (infinite loop).
+public static class FastIO
+{
+    private const byte _null = (byte)'\0';
+    private const byte _newLine = (byte)'\n';
+    private const byte _minusSign = (byte)'-';
+    private const byte _zero = (byte)'0';
+    private const int _inputBufferLimit = 8192;
+    private const int _stringLengthLimit = 12;
+
+    private static readonly Stream _inputStream = Console.OpenStandardInput();
+    private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
+    private static int _inputBufferSize = 0;
+    private static int _inputBufferIndex = 0;
+    private static readonly char[] _stringBuilder = new char[_stringLengthLimit];
+
+    private static byte ReadByte()
+    {
+        if (_inputBufferIndex == _inputBufferSize)
+        {
+            _inputBufferIndex = 0;
+            _inputBufferSize = _inputStream.Read(_inputBuffer, 0, _inputBufferLimit);
+            if (_inputBufferSize == 0)
+                return _null; // All input has been read.
+        }
+
+        return _inputBuffer[_inputBufferIndex++];
+    }
+
+    public static int ReadNonNegativeInt()
+    {
+        byte digit;
+
+        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
+        do
+        {
+            digit = ReadByte();
+        }
+        while (digit < _minusSign);
+
+        // Build up the integer from its digits, until we run into whitespace or the null byte.
+        int result = digit - _zero;
+        while (true)
+        {
+            digit = ReadByte();
+            if (digit < _zero) break;
+            result = result * 10 + (digit - _zero);
+        }
+
+        return result;
+    }
+
+    public static string ReadString()
+    {
+        byte letter;
+
+        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
+        do
+        {
+            letter = ReadByte();
+        }
+        while (letter < _minusSign);
+
+        int stringLength = 0;
+        _stringBuilder[stringLength++] = (char)letter;
+        while (true)
+        {
+            letter = ReadByte();
+            if (letter < _zero) break;
+            _stringBuilder[stringLength++] = (char)letter;
+        }
+
+        return new string(_stringBuilder, 0, stringLength);
     }
 }

@@ -1,27 +1,16 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 
 // https://www.spoj.com/problems/BUGLIFE/ #dfs #graph-theory
 // Determines if a set of bugs can be divided into two non-interacting groups.
 public static class BUGLIFE
 {
-    // Best we can do is see if the ants can be divided into two groups, where members of one group
-    // group only interact with members of the other group. Same as checking bipartiteness. Not the
-    // actual code submitted. Had to strip everything down and have vertices store their own search
-    // state but the biggest part was using a List instead of a HashSet to store neighbors (not
-    // making use of the HashSet functionality for this problem, and even if removing it leads to
-    // creating a multigraph (a pair of ants going on more than one date), doesn't matter). I observed
-    // no time difference when swapping search start position from first to last vertex. TLE when
-    // using BFS instead of DFS. And this solution gets AC and TLE across different submits so...
-    // Here's a sketchy one-off submission that actually passed:
-    // https://gist.github.com/davghouse/9e9be6dbaa60037c02bd46730f3e4851
-    public static bool Solve(int bugCount, int[,] interactions)
-        => SimpleGraph
-        .CreateFromOneBasedEdges(bugCount, interactions)
-        .IsBipartite();
+    // Check to see if the ants can be divided into two groups, where members of one group
+    // group only interact with members of the other group: AKA check bipartiteness.
+    public static bool Solve(SimpleGraph interactionGraph)
+        => interactionGraph.IsBipartite();
 }
 
 // Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are stored
@@ -37,18 +26,6 @@ public sealed class SimpleGraph
         }
 
         Vertices = Array.AsReadOnly(vertices);
-    }
-
-    // For example, edges like (1, 2), (2, 3) => there's an edge between vertices 0 and 1 and 1 and 2.
-    public static SimpleGraph CreateFromOneBasedEdges(int vertexCount, int[,] edges)
-    {
-        var graph = new SimpleGraph(vertexCount);
-        for (int i = 0; i < edges.GetLength(0); ++i)
-        {
-            graph.AddEdge(edges[i, 0] - 1, edges[i, 1] - 1);
-        }
-
-        return graph;
     }
 
     public IReadOnlyList<Vertex> Vertices { get; }
@@ -157,27 +134,78 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-        int testCount = int.Parse(Console.ReadLine());
+        int testCount = FastIO.ReadNonNegativeInt();
         for (int t = 1; t <= testCount; ++t)
         {
-            int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-            int bugCount = line[0];
-            int interactionCount = line[1];
+            int bugCount = FastIO.ReadNonNegativeInt();
+            int interactionCount = FastIO.ReadNonNegativeInt();
+            var interactionGraph = new SimpleGraph(bugCount);
 
-            int[,] interactions = new int[interactionCount, 2];
             for (int i = 0; i < interactionCount; ++i)
             {
-                line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-
-                interactions[i, 0] = line[0];
-                interactions[i, 1] = line[1];
+                interactionGraph.AddEdge(
+                    firstVertexID: FastIO.ReadNonNegativeInt() - 1,
+                    secondVertexID: FastIO.ReadNonNegativeInt() - 1);
             }
 
             output.AppendLine($"Scenario #{t}:");
-            output.AppendLine(
-                BUGLIFE.Solve(bugCount, interactions) ? "No suspicious bugs found!" : "Suspicious bugs found!");
+            output.AppendLine(BUGLIFE.Solve(interactionGraph)
+                ? "No suspicious bugs found!" : "Suspicious bugs found!");
         }
 
         Console.Write(output);
+    }
+}
+
+// This is based in part on submissions from https://www.codechef.com/status/INTEST.
+// It's assumed the input is well-formed, so if you try to read an integer when no
+// integers remain in the input, there's undefined behavior (infinite loop).
+public static class FastIO
+{
+    private const byte _null = (byte)'\0';
+    private const byte _newLine = (byte)'\n';
+    private const byte _minusSign = (byte)'-';
+    private const byte _zero = (byte)'0';
+    private const int _inputBufferLimit = 8192;
+
+    private static readonly Stream _inputStream = Console.OpenStandardInput();
+    private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
+    private static int _inputBufferSize = 0;
+    private static int _inputBufferIndex = 0;
+
+    private static byte ReadByte()
+    {
+        if (_inputBufferIndex == _inputBufferSize)
+        {
+            _inputBufferIndex = 0;
+            _inputBufferSize = _inputStream.Read(_inputBuffer, 0, _inputBufferLimit);
+            if (_inputBufferSize == 0)
+                return _null; // All input has been read.
+        }
+
+        return _inputBuffer[_inputBufferIndex++];
+    }
+
+    public static int ReadNonNegativeInt()
+    {
+        byte digit;
+
+        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
+        do
+        {
+            digit = ReadByte();
+        }
+        while (digit < _minusSign);
+
+        // Build up the integer from its digits, until we run into whitespace or the null byte.
+        int result = digit - _zero;
+        while (true)
+        {
+            digit = ReadByte();
+            if (digit < _zero) break;
+            result = result * 10 + (digit - _zero);
+        }
+
+        return result;
     }
 }

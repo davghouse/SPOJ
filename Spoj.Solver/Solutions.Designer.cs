@@ -691,18 +691,18 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///using System.Collections;
         ///using System.Collections.Generic;
-        ///using System.Linq;
+        ///using System.IO;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/BUGLIFE/ #dfs #graph-theory
         ///// Determines if a set of bugs can be divided into two non-interacting groups.
         ///public static class BUGLIFE
         ///{
-        ///    // Best we can do is see if the ants can be divided into two groups, where members of one group
-        ///    // group only interact with members of the other group. Same as checking bipartiteness. Not the
-        ///    // actual cod [rest of string was truncated]&quot;;.
+        ///    // Check to see if the ants can be divided into two groups, where members of one group
+        ///    // group only interact with members of the other group: AKA check bipartiteness.
+        ///    public static bool Solve(SimpleGraph interactionGraph)
+        ///        =&gt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BUGLIFE {
             get {
@@ -3040,17 +3040,16 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
-        ///using System.Linq;
+        ///using System.IO;
         ///using System.Text;
-        ///using Vertex = WeightedSimpleGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the cheapest path between pairs of cities.
         ///public static class SHPATH
         ///{
         ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
-        ///    // This solution gets TLE, but it has the main features of the submitted solution, just
-        ///    // mo [rest of string was truncated]&quot;;.
+        ///    // We return immediately upon visiting the destination city, and we don&apos;t initialize the
+        ///    // heap with all cities. We only add cities to the [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SHPATH {
             get {
