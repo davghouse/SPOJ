@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\3 - Warlord\ATOMS.cs" />
     <None Include="Solutions\7 - Immortal\HIGHWAYS.cs" />
     <None Include="Solutions\6 - Emperor\PT07X.cs" />
     <None Include="Solutions\6 - Emperor\DSUBSEQ.cs" />

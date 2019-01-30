@@ -591,6 +591,29 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/ATOMS/ #math
+        ///// Finds the largest T such that N*K^T &lt;= M.
+        ///public static class ATOMS
+        ///{
+        ///    // N*K^T &lt;= M =&gt; logK(K^T) &lt;= logK(M/N) =&gt; T &lt;= logK(M/N).
+        ///    public static long Solve(long n, long k, long m)
+        ///    {
+        ///        if (n &gt;= m)
+        ///            return 0;
+        ///
+        ///        // I&apos;m not confident that this solution is robust, because double doesn&apos;t
+        ///        // have enough precision to exactly represent the numbers being worked with.
+        ///        return (long)Math.Log(m  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ATOMS {
+            get {
+                return ResourceManager.GetString("ATOMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/BEENUMS/ #formula #math #proof
         ///// Determines if the given number is a beehive number.
         ///public static class BEENUMS
