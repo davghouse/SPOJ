@@ -339,7 +339,6 @@ public static class FastIO
     private const byte _minusSign = (byte)'-';
     private const byte _zero = (byte)'0';
     private const int _inputBufferLimit = 8192;
-    private const int _outputBufferLimit = 8192;
 
     private static readonly Stream _inputStream = Console.OpenStandardInput();
     private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
