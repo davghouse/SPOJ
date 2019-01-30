@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.Graphs
 {
-    // Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
-    // stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
-    // index in that array. Using a list instead of a hash set for a vertex's neighbors can
-    // help avoid TLE for certain problems. Maintaining search state inside of the vertices
-    // themselves can also help.
+    // Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are stored
+    // in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
+    // Using a list instead of a hash set for a vertex's neighbors can help avoid TLE for certain
+    // problems. Maintaining search state inside of the vertices themselves can also help.
     public sealed class SimpleGraph
     {
         public SimpleGraph(int vertexCount)

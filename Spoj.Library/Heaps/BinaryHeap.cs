@@ -119,8 +119,9 @@ namespace Spoj.Library.Heaps
             int parentIndex = (index - 1) / 2;
             var parentKeyValuePair = _keyValuePairs[parentIndex];
 
-            // If the parent is larger, push the parent down and the value up--small rises to the top. We know this is okay (aka heap-preserving)
-            // because parent was smaller than the other child, as only one child gets out of order at a time. So both are larger than value.
+            // If the parent is larger, push the parent down and the value up--small rises to the
+            // top. We know this is okay (aka heap-preserving) because parent was smaller than the
+            // other child, as only one child gets out of order at a time. So both are larger than value.
             if (_comparer.Compare(parentKeyValuePair.Value, keyValuePair.Value) > 0)
             {
                 _keyValuePairs[index] = parentKeyValuePair;
@@ -142,10 +143,11 @@ namespace Spoj.Library.Heaps
                 var leftChildKeyValuePair = _keyValuePairs[leftChildIndex];
                 var rightChildKeyValuePair = _keyValuePairs[rightChildIndex];
 
-                // If the left child is smaller than the right child (so left can move above right, no problem)...
+                // If the left child is smaller than the right child (so left can move above right)...
                 if (_comparer.Compare(leftChildKeyValuePair.Value, rightChildKeyValuePair.Value) < 0)
                 {
-                    // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+                    // And the value is greater than its left child, push the left child up and
+                    // the value down--big falls to the bottom.
                     if (_comparer.Compare(keyValuePair.Value, leftChildKeyValuePair.Value) > 0)
                     {
                         _keyValuePairs[index] = leftChildKeyValuePair;
@@ -155,10 +157,11 @@ namespace Spoj.Library.Heaps
                         SiftDown(leftChildIndex, keyValuePair);
                     }
                 }
-                // If the right child is smaller or the same as the left child (so right can move above left, no problem)...
+                // If the right child is smaller or the same as the left child (so right can move above left)...
                 else
                 {
-                    // And the value is greater than its right child, push the right child up and the value down--big falls to the bottom.
+                    // And the value is greater than its right child, push the right child up and
+                    // the value down--big falls to the bottom.
                     if (_comparer.Compare(keyValuePair.Value, rightChildKeyValuePair.Value) > 0)
                     {
                         _keyValuePairs[index] = rightChildKeyValuePair;
@@ -174,7 +177,8 @@ namespace Spoj.Library.Heaps
             {
                 var leftChildKeyValuePair = _keyValuePairs[leftChildIndex];
 
-                // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+                // And the value is greater than its left child, push the left child up and
+                // the value down--big falls to the bottom.
                 if (_comparer.Compare(keyValuePair.Value, leftChildKeyValuePair.Value) > 0)
                 {
                     _keyValuePairs[index] = leftChildKeyValuePair;

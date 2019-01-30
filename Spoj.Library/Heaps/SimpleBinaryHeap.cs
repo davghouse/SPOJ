@@ -65,8 +65,9 @@ namespace Spoj.Library.Heaps
             int parentIndex = (index - 1) / 2;
             T parentValue = _values[parentIndex];
 
-            // If the parent is larger, push the parent down and the value up--small rises to the top. We know this is okay (aka heap-preserving)
-            // because parent was smaller than the other child, as only one child gets out of order at a time. So both are larger than value.
+            // If the parent is larger, push the parent down and the value up--small rises to the
+            // top. We know this is okay (aka heap-preserving) because parent was smaller than the
+            // other child, as only one child gets out of order at a time. So both are larger than value.
             if (_comparer.Compare(parentValue, value) > 0)
             {
                 _values[index] = parentValue;
@@ -86,10 +87,11 @@ namespace Spoj.Library.Heaps
                 T leftChildValue = _values[leftChildIndex];
                 T rightChildValue = _values[rightChildIndex];
 
-                // If the left child is smaller than the right child (so left can move above right, no problem)...
+                // If the left child is smaller than the right child (so left can move above right)...
                 if (_comparer.Compare(leftChildValue, rightChildValue) < 0)
                 {
-                    // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+                    // And the value is greater than its left child, push the left child up and
+                    // the value down--big falls to the bottom.
                     if (_comparer.Compare(value, leftChildValue) > 0)
                     {
                         _values[index] = leftChildValue;
@@ -97,10 +99,11 @@ namespace Spoj.Library.Heaps
                         SiftDown(leftChildIndex, value);
                     }
                 }
-                // If the right child is smaller or the same as the left child (so right can move above left, no problem)...
+                // If the right child is smaller or the same as the left child (so right can move above left)...
                 else
                 {
-                    // And the value is greater than its right child, push the right child up and the value down--big falls to the bottom.
+                    // And the value is greater than its right child, push the right child up and
+                    // the value down--big falls to the bottom.
                     if (_comparer.Compare(value, rightChildValue) > 0)
                     {
                         _values[index] = rightChildValue;
@@ -114,7 +117,8 @@ namespace Spoj.Library.Heaps
             {
                 T leftChildValue = _values[leftChildIndex];
 
-                // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+                // And the value is greater than its left child, push the left child up and
+                // the value down--big falls to the bottom.
                 if (_comparer.Compare(value, leftChildValue) > 0)
                 {
                     _values[index] = leftChildValue;

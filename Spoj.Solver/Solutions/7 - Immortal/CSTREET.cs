@@ -48,10 +48,8 @@ public static class CSTREET
     }
 }
 
-// Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored in an array
-// and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
-// instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
-// search state inside of the vertices themselves can also help.
+// Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored
+// in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
 public sealed class WeightedSimpleGraph
 {
     public WeightedSimpleGraph(int vertexCount)
@@ -232,8 +230,9 @@ public sealed class BinaryHeap
         int parentIndex = (index - 1) / 2;
         var parentKeyValuePair = _keyValuePairs[parentIndex];
 
-        // If the parent is larger, push the parent down and the value up--small rises to the top. We know this is okay (aka heap-preserving)
-        // because parent was smaller than the other child, as only one child gets out of order at a time. So both are larger than value.
+        // If the parent is larger, push the parent down and the value up--small rises to the
+        // top. We know this is okay (aka heap-preserving) because parent was smaller than the
+        // other child, as only one child gets out of order at a time. So both are larger than value.
         if (parentKeyValuePair.Value > keyValuePair.Value)
         {
             _keyValuePairs[index] = parentKeyValuePair;
@@ -255,10 +254,11 @@ public sealed class BinaryHeap
             var leftChildKeyValuePair = _keyValuePairs[leftChildIndex];
             var rightChildKeyValuePair = _keyValuePairs[rightChildIndex];
 
-            // If the left child is smaller than the right child (so left can move above right, no problem)...
+            // If the left child is smaller than the right child (so left can move above right)...
             if (leftChildKeyValuePair.Value < rightChildKeyValuePair.Value)
             {
-                // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+                // And the value is greater than its left child, push the left child up and
+                // the value down--big falls to the bottom.
                 if (keyValuePair.Value > leftChildKeyValuePair.Value)
                 {
                     _keyValuePairs[index] = leftChildKeyValuePair;
@@ -268,10 +268,11 @@ public sealed class BinaryHeap
                     SiftDown(leftChildIndex, keyValuePair);
                 }
             }
-            // If the right child is smaller or the same as the left child (so right can move above left, no problem)...
+            // If the right child is smaller or the same as the left child (so right can move above left)...
             else
             {
-                // And the value is greater than its right child, push the right child up and the value down--big falls to the bottom.
+                // And the value is greater than its right child, push the right child up and
+                // the value down--big falls to the bottom.
                 if (keyValuePair.Value > rightChildKeyValuePair.Value)
                 {
                     _keyValuePairs[index] = rightChildKeyValuePair;
@@ -287,7 +288,8 @@ public sealed class BinaryHeap
         {
             var leftChildKeyValuePair = _keyValuePairs[leftChildIndex];
 
-            // And the value is greater than its left child, push the left child up and the value down--big falls to the bottom.
+            // And the value is greater than its left child, push the left child up and
+            // the value down--big falls to the bottom.
             if (keyValuePair.Value > leftChildKeyValuePair.Value)
             {
                 _keyValuePairs[index] = leftChildKeyValuePair;

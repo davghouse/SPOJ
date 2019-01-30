@@ -64,9 +64,8 @@ public static class NAKANJ
             endVertexID: GetVertexID(endSquare));
 }
 
-// Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are
-// stored in an array and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its
-// index in that array.
+// Undirected, unweighted graph with no loops or multiple edges. The graph's vertices are stored
+// in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
 public sealed class SimpleGraph
 {
     public SimpleGraph(int vertexCount)

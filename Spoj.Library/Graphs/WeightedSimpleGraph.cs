@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Spoj.Library.Graphs
 {
-    // Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored in an array
-    // and the ID of a vertex (from 0 to vertexCount - 1) corresponds to its index in that array. Using a list
-    // instead of a dictionary for a vertex's edges can help avoid TLE for certain problems. Maintaining
-    // search state inside of the vertices themselves can also help.
+    // Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored
+    // in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
+    // Using a list instead of a dictionary for a vertex's edges can help avoid TLE for certain
+    // problems. Maintaining search state inside of the vertices themselves can also help.
     public sealed class WeightedSimpleGraph<T>
     {
         public WeightedSimpleGraph(int vertexCount)
