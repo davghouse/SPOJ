@@ -141,6 +141,7 @@
     <Compile Include="Solutions\6 - Emperor\CHOCOLATests.cs" />
     <Compile Include="Solutions\6 - Emperor\DSUBSEQTests.cs" />
     <Compile Include="Solutions\6 - Emperor\EKOTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\HIGHWAYSTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INVCNTTests.cs" />
     <Compile Include="Solutions\5 - King\JULKATests.cs" />
     <Compile Include="Solutions\5 - King\LASTDIG2Tests.cs" />
