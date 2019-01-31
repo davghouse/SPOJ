@@ -2308,6 +2308,29 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/MFLAR10/ #ad-hoc
+        ///// Determines if all words in a sentence start with the same character.
+        ///public static class MFLAR10
+        ///{
+        ///    public static bool Solve(string sentence)
+        ///    {
+        ///        string[] words = sentence.Split(default(char[]),
+        ///            // Just in case there&apos;s more than 1 space between words.
+        ///            StringSplitOptions.RemoveEmptyEntries);
+        ///        char firstChar = char.ToUpperInvariant(words[0][0]);
+        ///
+        ///        return words [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MFLAR10 {
+            get {
+                return ResourceManager.GetString("MFLAR10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///using Vertex = WeightedSimpleGraph.Vertex;
