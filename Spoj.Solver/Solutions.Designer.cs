@@ -1235,6 +1235,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/EBOXES/ #math
+        ///// Figures out how many boxes are given how many empty boxes there are.
+        ///public static class EBOXES
+        ///{
+        ///    // Problem statement isn&apos;t clear, but there are N initial boxes, and they aren&apos;t
+        ///    // part of the spawn. And boxes only spawn into unoccupied boxes. Let B_i and M_i be
+        ///    // the # of random big/medium boxes chosen in the ith round, into which K medium/small
+        ///    // boxes are spawned, respectively.
+        ///    // Total # of boxes = N + K(B_ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string EBOXES {
+            get {
+                return ResourceManager.GetString("EBOXES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/EC_CONB/ #ad-hoc #binary

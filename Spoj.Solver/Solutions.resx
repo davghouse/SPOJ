@@ -607,4 +607,7 @@
   <data name="ATOMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\3 - Warlord\ATOMS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EBOXES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\4 - Prince\EBOXES.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
