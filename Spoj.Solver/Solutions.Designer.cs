@@ -914,6 +914,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/CEQU/ #formula #gcd #math
+        ///// Given ax + by = c, determines if there are integers x, y satisfying it.
+        ///public static class CEQU
+        ///{
+        ///    // https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity.
+        ///    // That identity shows that ax + by can produce any integer that&apos;s a multiple of
+        ///    // GCD(a, b). Note the proof of it also shows that the GCD(a, b) is the smallest
+        ///    // attainable positive integer for ax + by, so only  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CEQU {
+            get {
+                return ResourceManager.GetString("CEQU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/TEMPLATE1/ #ad-hoc #greedy #sorting
         ///// Breaks a chocolate bar apart in the cheapest way possible.
