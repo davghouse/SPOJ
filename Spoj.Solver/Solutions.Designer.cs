@@ -1932,6 +1932,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/IITKWPCB/ #factors #math #proof
+        ///// Finds the largest number from N/2 that&apos;s coprime with N.
+        ///public static class IITKWPCB
+        ///{
+        ///    public static long Solve(long n)
+        ///        // Consider odd n. n - 1 is coprime with n because any factor f divides n but
+        ///        // doesn&apos;t divide 1, so n/f - 1/f is definitely not an integer. Hence, (n - 1)/2
+        ///        // is also not coprime with n, because it has the same insufficient factors as
+        ///        // n - 1, except for mis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IITKWPCB {
+            get {
+                return ResourceManager.GetString("IITKWPCB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
         ///// https://www.spoj.com/problems/INOUTEST/ #io
