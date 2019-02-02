@@ -2897,6 +2897,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/POLEVAL/ #ad-hoc
+        ///// Evaluates a polynomial of high degree.
+        ///public static class POLEVAL
+        ///{
+        ///    // The polynomial is like: c_n * x^n + c_n-1 * x^n-1 + … + c_2 * x^2 + c_1 * x + c_0
+        ///    // We start from the right-hand side and perform 2 multiplications and 1 addition for each
+        ///    // term. Importantly, we use x^m-1 from the previous coefficient to compute x^m = x*x^m-1.
+        ///    public static long Solve(int degree, int[] coefficients, int po [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string POLEVAL {
+            get {
+                return ResourceManager.GetString("POLEVAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/POUR1/ #ad-hoc #experiment #mod-math #simulation
         ///// Given two jugs, figures out how to fill them to reach a certain water level.
