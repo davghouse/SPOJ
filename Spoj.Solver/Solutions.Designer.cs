@@ -775,6 +775,25 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
+        ///// https://www.spoj.com/problems/BWIDOW/ #ad-hoc
+        ///// Determines if there&apos;s a ring through which all other rings can pass.
+        ///public static class BWIDOW
+        ///{
+        ///    // Choose the ring with the largest inner radii. There might be multiple rings
+        ///    // with this radius, but that doesn&apos;t matter--the outer radius is necessarily
+        ///    // larger than the inner radius, so in that case a ring can&apos;t be found even
+        ///    // if we choose the max inner radius ring with the largest outer radi [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BWIDOW {
+            get {
+                return ResourceManager.GetString("BWIDOW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
         ///// https://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization
         ///// Finds the minimal amount of cake ingredients to buy to use all of them completely up.
         ///public static class BYECAKES

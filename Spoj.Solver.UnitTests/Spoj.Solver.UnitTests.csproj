@@ -67,6 +67,7 @@
     <Compile Include="Solutions\3 - Warlord\ACPC10ATests.cs" />
     <Compile Include="Solutions\3 - Warlord\ATOMSTests.cs" />
     <Compile Include="Solutions\3 - Warlord\BOMARBLETests.cs" />
+    <Compile Include="Solutions\3 - Warlord\BWIDOWTests.cs" />
     <Compile Include="Solutions\3 - Warlord\CADYDISTTests.cs" />
     <Compile Include="Solutions\3 - Warlord\EC_CONBTests.cs" />
     <Compile Include="Solutions\3 - Warlord\MFLAR10Tests.cs" />
