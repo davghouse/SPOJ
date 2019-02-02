@@ -625,4 +625,7 @@
   <data name="ANARC09B" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\4 - Prince\ANARC09B.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="SCPC11B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\3 - Warlord\SCPC11B.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

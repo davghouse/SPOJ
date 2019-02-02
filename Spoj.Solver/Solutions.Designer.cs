@@ -3162,6 +3162,27 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/SCPC11B/ #ad-hoc #sorting
+        ///// Determines if charging stations are frequent enough to make a trip.
+        ///public static class SCPC11B
+        ///{
+        ///    // The distance between consecutive stations can&apos;t be more than 200. And from
+        ///    // the last station we have to travel to mile 1422, turn around, and still have
+        ///    // enough charge to make it back to the last station.
+        ///    public static bool Solve(int[] stationDistances)
+        ///    {
+        ///        Array.Sort(stat [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SCPC11B {
+            get {
+                return ResourceManager.GetString("SCPC11B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.IO;
         ///using System.Text;
