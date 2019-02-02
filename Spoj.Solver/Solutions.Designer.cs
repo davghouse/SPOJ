@@ -494,6 +494,25 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/ANARC09B/ #gcd
+        ///// Finds the smallest square a tile of a certain size can make.
+        ///public static class ANARC09B
+        ///{
+        ///    // We&apos;re building a square out of tiles with dimensions w x h, all stacked
+        ///    // the same way. The square will be a certain number of tiles wide, n, and
+        ///    // a certain number of tiles tall, m, where w * n = h * m in order to be
+        ///    // square. So w/h = m/n, we want smallest m/n, so we need to write w/h in
+        ///    // lowest terms by dividing [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ANARC09B {
+            get {
+                return ResourceManager.GetString("ANARC09B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/AP2/ #experiment #math #sequence
         ///// Given the third term, third-to-last term, and sum of an arithmetic progression, finds the whole series.
         ///public static class AP2
