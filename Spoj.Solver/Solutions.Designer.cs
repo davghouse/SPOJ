@@ -3182,6 +3182,24 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/SPEED/ #ad-hoc #gcd #math
+        ///// Finds at how many distinct points a runner passes a slower run on a circular track.
+        ///public static class SPEED
+        ///{
+        ///    // The pattern of meeting points will begin repeating once the two runners both
+        ///    // end up at the start position at the same time, since that&apos;s how the race began.
+        ///    // Imagine they met at a point for a second time before meeting up at start... their
+        ///    // speeds are constants so you could run time back [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SPEED {
+            get {
+                return ResourceManager.GetString("SPEED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/STAMPS/ #extrema #sorting
         ///// Figures out if Lucy can borrow enough stamps from a certain number of her friends.
         ///public static class STAMPS
