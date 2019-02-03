@@ -76,6 +76,7 @@
     <Compile Include="Solutions\3 - Warlord\POLEVALTests.cs" />
     <Compile Include="Solutions\3 - Warlord\RPLCTests.cs" />
     <Compile Include="Solutions\3 - Warlord\SCPC11BTests.cs" />
+    <Compile Include="Solutions\3 - Warlord\UJTests.cs" />
     <Compile Include="Solutions\3 - Warlord\WORDCNTTests.cs" />
     <Compile Include="Solutions\4 - Prince\ABSP1Tests.cs" />
     <Compile Include="Solutions\4 - Prince\AE00Tests.cs" />
