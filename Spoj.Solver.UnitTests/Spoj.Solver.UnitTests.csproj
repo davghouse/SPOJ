@@ -105,6 +105,7 @@
     <Compile Include="Solutions\5 - King\NAKANJTests.cs" />
     <Compile Include="Solutions\5 - King\NY10ETests.cs" />
     <Compile Include="Solutions\5 - King\TRGRIDTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\BLINNETTests.cs" />
     <Compile Include="Solutions\6 - Emperor\FCTRL2Tests.cs" />
     <Compile Include="Solutions\3 - Warlord\FENCE1Tests.cs" />
     <Compile Include="Solutions\3 - Warlord\GIRLSNBSTests.cs" />
@@ -186,7 +187,7 @@
     <Compile Include="Solutions\6 - Emperor\ANARC09ATests.cs" />
     <Compile Include="Solutions\6 - Emperor\ARRAYSUBTests.cs" />
     <Compile Include="Solutions\6 - Emperor\BUGLIFETests.cs" />
-    <Compile Include="Solutions\5 - King\CAM5Tests.cs" />
+    <Compile Include="Solutions\6 - Emperor\CAM5Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\COMDIVTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INOUTESTTests.cs" />
     <Compile Include="Solutions\6 - Emperor\INTESTTests.cs" />

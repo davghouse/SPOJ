@@ -1,24 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
-// https://www.spoj.com/problems/CAM5/ #dfs #disjoint-sets
-// Determines the number of friend components in a graph of peers.
-public sealed class CAM5
+// https://www.spoj.com/problems/BLINNET/ #disjoint-sets #mst
+// Finds the cheapest way to connect some cities together.
+public static class BLINNET
 {
-    private readonly DisjointSets _disjointSets;
-
-    // This can be solved by DFSing to find the number of connected components in the
-    // peer graph, but I went with a disjoint sets solution for the experience.
-    public CAM5(int peerCount)
+    public static long Solve(int cityCount, List<Edge> edges)
     {
-        _disjointSets = new DisjointSets(peerCount);
+        edges.Sort((e1, e2) => e1.Cost.CompareTo(e2.Cost));
+        var citySets = new DisjointSets(cityCount);
+        long totalEdgeCost = 0;
+
+        for (int e = 0; e < edges.Count; ++e)
+        {
+            if (!citySets.AreInSameSet(edges[e].SourceCity, edges[e].DestinationCity))
+            {
+                citySets.UnionSets(edges[e].SourceCity, edges[e].DestinationCity);
+                totalEdgeCost += edges[e].Cost;
+            }
+        }
+
+        return totalEdgeCost;
     }
-
-    public void AddFriendAssociation(int firstPeer, int secondPeer)
-        => _disjointSets.UnionSets(firstPeer, secondPeer);
-
-    public int Solve()
-        => _disjointSets.DisjointSetCount;
 }
 
 // https://en.wikipedia.org/wiki/Disjoint-set_data_structure
@@ -81,37 +86,62 @@ public sealed class DisjointSets
 
         --DisjointSetCount;
     }
+
+    public bool AreInSameSet(int firstElement, int secondElement)
+        => FindRoot(firstElement) == FindRoot(secondElement);
+}
+
+public struct Edge
+{
+    public Edge(int sourceCity, int destinationCity, int cost)
+    {
+        SourceCity = sourceCity;
+        DestinationCity = destinationCity;
+        Cost = cost;
+    }
+
+    public int SourceCity { get; }
+    public int DestinationCity { get; }
+    public int Cost { get; }
 }
 
 public static class Program
 {
     private static void Main()
     {
+        var output = new StringBuilder();
         int remainingTestCases = FastIO.ReadNonNegativeInt();
         while (remainingTestCases-- > 0)
         {
-            var solver = new CAM5(peerCount: FastIO.ReadNonNegativeInt());
+            int cityCount = FastIO.ReadNonNegativeInt();
+            var edges = new List<Edge>(capacity: 2 * cityCount);
 
-            int friendCount = FastIO.ReadNonNegativeInt();
-            for (int i = 0; i < friendCount; ++i)
+            for (int c = 0; c < cityCount; ++c)
             {
-                solver.AddFriendAssociation(
-                    firstPeer: FastIO.ReadNonNegativeInt(),
-                    secondPeer: FastIO.ReadNonNegativeInt());
+                FastIO.ConsumeString(); // Discard city name.
+
+                int neighborCount = FastIO.ReadNonNegativeInt();
+                for (int n = 0; n < neighborCount; ++n)
+                {
+                    edges.Add(new Edge(
+                        sourceCity: c,
+                        destinationCity: FastIO.ReadNonNegativeInt() - 1,
+                        cost: FastIO.ReadNonNegativeInt()));
+                }
             }
 
-            FastIO.WriteNonNegativeInt(solver.Solve());
-            FastIO.WriteLine();
+            output.Append(
+                BLINNET.Solve(cityCount, edges));
+            output.AppendLine();
         }
 
-        FastIO.Flush();
+        Console.Write(output);
     }
 }
 
 // This is based in part on submissions from https://www.codechef.com/status/INTEST.
 // It's assumed the input is well-formed, so if you try to read an integer when no
 // integers remain in the input, there's undefined behavior (infinite loop).
-// NOTE: FastIO might not be necessary, but the problem came with an IO warning.
 public static class FastIO
 {
     private const byte _null = (byte)'\0';
@@ -119,17 +149,11 @@ public static class FastIO
     private const byte _minusSign = (byte)'-';
     private const byte _zero = (byte)'0';
     private const int _inputBufferLimit = 8192;
-    private const int _outputBufferLimit = 8192;
 
     private static readonly Stream _inputStream = Console.OpenStandardInput();
     private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
     private static int _inputBufferSize = 0;
     private static int _inputBufferIndex = 0;
-
-    private static readonly Stream _outputStream = Console.OpenStandardOutput();
-    private static readonly byte[] _outputBuffer = new byte[_outputBufferLimit];
-    private static readonly byte[] _digitsBuffer = new byte[11];
-    private static int _outputBufferSize = 0;
 
     private static byte ReadByte()
     {
@@ -167,43 +191,26 @@ public static class FastIO
         return result;
     }
 
-    public static void WriteNonNegativeInt(int value)
+    public static void ConsumeString()
     {
-        int digitCount = 0;
+        byte letter;
+
+        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
         do
         {
-            int digit = value % 10;
-            _digitsBuffer[digitCount++] = (byte)(digit + _zero);
-            value /= 10;
-        } while (value > 0);
+            letter = ReadByte();
+        }
+        while (letter < _minusSign);
 
-        if (_outputBufferSize + digitCount > _outputBufferLimit)
+        //int stringLength = 0;
+        //_stringBuilder[stringLength++] = (char)letter;
+        while (true)
         {
-            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
-            _outputBufferSize = 0;
+            letter = ReadByte();
+            if (letter < _zero) break;
+            //_stringBuilder[stringLength++] = (char)letter;
         }
 
-        while (digitCount > 0)
-        {
-            _outputBuffer[_outputBufferSize++] = _digitsBuffer[--digitCount];
-        }
-    }
-
-    public static void WriteLine()
-    {
-        if (_outputBufferSize == _outputBufferLimit) // else _outputBufferSize < _outputBufferLimit.
-        {
-            _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
-            _outputBufferSize = 0;
-        }
-
-        _outputBuffer[_outputBufferSize++] = _newLine;
-    }
-
-    public static void Flush()
-    {
-        _outputStream.Write(_outputBuffer, 0, _outputBufferSize);
-        _outputBufferSize = 0;
-        _outputStream.Flush();
+        //return new string(_stringBuilder, 0, stringLength);
     }
 }

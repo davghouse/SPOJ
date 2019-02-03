@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Spoj.Solver.UnitTests.Solutions._5___King
+namespace Spoj.Solver.UnitTests.Solutions._6___Emperor
 {
     [TestClass]
     public sealed class CAM5Tests : SolutionTestsBase

@@ -290,13 +290,16 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AE00/ #division #experiment #math
-        ///// Counts the number of rectangles that can be constructed from n 1x1 squares (using any number of those squares), 1 &lt;= n &lt;= 10000.
-        ///// More info here: http://mathschallenge.net/library/number/number_of_divisors, https://en.wikipedia.org/wiki/Divisor_function
+        ///// Counts the number of rectangles that can be constructed from n 1x1 squares
+        ///// (using any number of those squares), 1 &lt;= n &lt;= 1000. More info here:
+        ///// http://mathschallenge.net/library/number/number_of_divisors
+        ///// https://en.wikipedia.org/wiki/Divisor_function
         ///public static class AE00
         ///{
         ///    public static int Solve(int n)
         ///    {
-        ///        // Rectangles from n squares can use any number of squares, that is, n squares can mak [rest of string was truncated]&quot;;.
+        ///        // Rectangles from n squares can use any number of squares, that is, n squares
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AE00 {
             get {
@@ -688,6 +691,31 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/BLINNET/ #disjoint-sets #mst
+        ///// Finds the cheapest way to connect some cities together.
+        ///public static class BLINNET
+        ///{
+        ///    public static long Solve(int cityCount, List&lt;Edge&gt; edges)
+        ///    {
+        ///        edges.Sort((e1, e2) =&gt; e1.Cost.CompareTo(e2.Cost));
+        ///        var citySets = new DisjointSets(cityCount);
+        ///        long totalEdgeCost = 0;
+        ///
+        ///        for (int e = 0; e &lt; edges.Count; ++e)
+        ///  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BLINNET {
+            get {
+                return ResourceManager.GetString("BLINNET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/BOMARBLE/ #math
         ///// Calculates the number of marbles in nested pentagons.
@@ -873,15 +901,16 @@ namespace Spoj.Solver {
         ///// Determines the number of friend components in a graph of peers.
         ///public sealed class CAM5
         ///{
-        ///    private readonly DisjointSets _disjointSets;
+        ///    private readonly DisjointSets _friendSets;
         ///
         ///    // This can be solved by DFSing to find the number of connected components in the
         ///    // peer graph, but I went with a disjoint sets solution for the experience.
         ///    public CAM5(int peerCount)
         ///    {
-        ///        _disjointSets = new DisjointSets(peerCount);
+        ///        _friendSets = new DisjointSets(peerCount);
         ///    }
-        /// [rest of string was truncated]&quot;;.
+        ///
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CAM5 {
             get {
