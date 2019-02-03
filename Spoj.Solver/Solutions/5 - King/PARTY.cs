@@ -5,48 +5,47 @@
 public static class PARTY
 {
     // If you don't know 0/1 knapsack and need a hint, knowing the DP is two-dimensional
-    // on the parties being considered and the amount of budget used should be enough.
-    // (If we're using i parties for some budget, the maximum fun value is the max of the value for i - 1
-    // parties at that budget, and the value for i - 1 parties at [the budget minus the ith party's fee]
-    // plus the fun value for the ith party.) We can't just read the lower right corner of the table
-    // though, since we need the minimum budget at which that maximum fun value occurs. The budget only
-    // goes to 500, so doing a binary search or something isn't necessary; just use a linear search.
-    // Seems obvious that this algorithm is correct (unlike EDIST).
-    public static Tuple<int, int> Solve(int partyBudget, int partyCount, int[,] partyEntranceFeesAndFunValues)
+    // on the parties being considered and the amount of budget used might be enough.
+    // (If we're using i parties for some budget, the maximum fun value is the max of the
+    // value for i - 1 parties at that budget, and the value for i - 1 parties at [the
+    // budget minus the ith party's fee] plus the fun value for the ith party.) We can't
+    // just read the lower right corner of the table though, since we need the minimum
+    // budget at which that maximum fun value occurs. The budget only goes to 500, so
+    // doing a binary search or something isn't necessary; just use a linear search. Seems
+    // obvious that this algorithm is correct (unlike EDIST).
+    public static Tuple<int, int> Solve(int partyBudget, int partyCount, int[,] parties)
     {
-        // The number of parties index is zero-based but the party budget index corresponds to the available party budget.
-        int[,] partyAndBudgetTableForFunValues = new int[partyCount, partyBudget + 1];
-        int nextPartyEntranceFee = partyEntranceFeesAndFunValues[0, 0];
-        int nextPartyFunValue = partyEntranceFeesAndFunValues[0, 1];
+        int[,] funValues = new int[partyCount, partyBudget + 1];
+        int partyEntranceFee = parties[0, 0];
+        int partyFunValue = parties[0, 1];
 
-        // Initialize the first row in the table; only the first party (the zeroth) is considered.
-        for (int availableBudget = 0; availableBudget <= partyBudget; ++availableBudget)
+        // Initialize the first row in the table; only the first party is considered.
+        for (int budget = 0; budget <= partyBudget; ++budget)
         {
-            partyAndBudgetTableForFunValues[0, availableBudget] = availableBudget >= nextPartyEntranceFee
-                ? nextPartyFunValue
-                : 0;
+            funValues[0, budget] = budget >= partyEntranceFee ? partyFunValue : 0;
         }
 
-        for (int nextParty = 1; nextParty < partyCount; ++nextParty)
+        for (int party = 1; party < partyCount; ++party)
         {
-            nextPartyEntranceFee = partyEntranceFeesAndFunValues[nextParty, 0];
-            nextPartyFunValue = partyEntranceFeesAndFunValues[nextParty, 1];
+            partyEntranceFee = parties[party, 0];
+            partyFunValue = parties[party, 1];
 
-            for (int availableBudget = 0; availableBudget <= partyBudget; ++availableBudget)
+            for (int budget = 0; budget <= partyBudget; ++budget)
             {
-                partyAndBudgetTableForFunValues[nextParty, availableBudget] = availableBudget >= nextPartyEntranceFee
-                    // Budget is big enough that we can try going to this party and using the remaining budget for the previous parties.
+                funValues[party, budget] = budget >= partyEntranceFee
+                    // Budget is big enough that we can try going to this party and
+                    // using the remaining budget for the previous parties.
                     ? Math.Max(
-                        partyAndBudgetTableForFunValues[nextParty - 1, availableBudget - nextPartyEntranceFee] + nextPartyFunValue,
-                        partyAndBudgetTableForFunValues[nextParty - 1, availableBudget])
-                    : partyAndBudgetTableForFunValues[nextParty - 1, availableBudget];
+                        funValues[party - 1, budget - partyEntranceFee] + partyFunValue,
+                        funValues[party - 1, budget])
+                    : funValues[party - 1, budget];
             }
         }
 
         int minimumBudgetForMaximumFunValue = partyBudget;
-        int maximumFunValue = partyAndBudgetTableForFunValues[partyCount - 1, partyBudget];
+        int maximumFunValue = funValues[partyCount - 1, partyBudget];
         while (minimumBudgetForMaximumFunValue - 1 >= 0
-            && partyAndBudgetTableForFunValues[partyCount - 1, minimumBudgetForMaximumFunValue - 1] == maximumFunValue)
+            && funValues[partyCount - 1, minimumBudgetForMaximumFunValue - 1] == maximumFunValue)
         {
             --minimumBudgetForMaximumFunValue;
         }
@@ -66,17 +65,16 @@ public static class Program
             int partyCount = line[1];
             if (partyBudget == 0 && partyCount == 0) return;
 
-            int[,] partyEntranceFeesAndFunValues = new int[partyCount, 2];
-
+            int[,] parties = new int[partyCount, 2];
             for (int i = 0; i < partyCount; ++i)
             {
                 line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-                partyEntranceFeesAndFunValues[i, 0] = line[0]; // entrance fee
-                partyEntranceFeesAndFunValues[i, 1] = line[1]; // fun value
+                parties[i, 0] = line[0]; // entrance fee
+                parties[i, 1] = line[1]; // fun value
             }
 
-            Tuple<int, int> budgetAndFunValueResult = PARTY.Solve(partyBudget, partyCount, partyEntranceFeesAndFunValues);
-            Console.WriteLine($"{budgetAndFunValueResult.Item1} {budgetAndFunValueResult.Item2}");
+            var result = PARTY.Solve(partyBudget, partyCount, parties);
+            Console.WriteLine($"{result.Item1} {result.Item2}");
 
             Console.ReadLine();
         }

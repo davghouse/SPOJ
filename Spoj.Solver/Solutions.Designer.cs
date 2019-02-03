@@ -2785,9 +2785,9 @@ namespace Spoj.Solver {
         ///public static class PARTY
         ///{
         ///    // If you don&apos;t know 0/1 knapsack and need a hint, knowing the DP is two-dimensional
-        ///    // on the parties being considered and the amount of budget used should be enough.
-        ///    // (If we&apos;re using i parties for some budget, the maximum fun value is the max of the value for i - 1
-        ///    // parti [rest of string was truncated]&quot;;.
+        ///    // on the parties being considered and the amount of budget used might be enough.
+        ///    // (If we&apos;re using i parties for some budget, the maximum fun value is the max of the
+        ///    // value for i - 1 partie [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PARTY {
             get {
@@ -3692,6 +3692,26 @@ namespace Spoj.Solver {
         public static string UPDATEIT {
             get {
                 return ResourceManager.GetString("UPDATEIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/WACHOVIA/ #dynamic-programming-2d #knapsack #optimization
+        ///// Chooses the bags a robber should take (0/1 knapsack).
+        ///public static class WACHOVIA
+        ///{
+        ///    // If you don&apos;t know 0/1 knapsack and need a hint, knowing the DP is two-dimensional
+        ///    // on the bags being considered and the total weight used might be enough. (If we&apos;re
+        ///    // using i bags for some weight, the maximum value is the max of the value for i - 1
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WACHOVIA {
+            get {
+                return ResourceManager.GetString("WACHOVIA", resourceCulture);
             }
         }
         

@@ -95,6 +95,7 @@
     <Compile Include="Solutions\5 - King\GAMESTests.cs" />
     <Compile Include="Solutions\5 - King\IITKWPCBTests.cs" />
     <Compile Include="Solutions\5 - King\TSHOW1Tests.cs" />
+    <Compile Include="Solutions\5 - King\WACHOVIATests.cs" />
     <Compile Include="Solutions\6 - Emperor\ALIENTests.cs" />
     <Compile Include="Solutions\5 - King\BUSYMANTests.cs" />
     <Compile Include="Solutions\5 - King\BYTESE2Tests.cs" />
