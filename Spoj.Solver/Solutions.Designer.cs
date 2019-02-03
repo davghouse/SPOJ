@@ -3676,6 +3676,31 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/WORDCNT/ #ad-hoc
+        ///// Finds the longest contiguous sequence of words of the same length.
+        ///public static class WORDCNT
+        ///{
+        ///    public static int Solve(string[] words)
+        ///    {
+        ///        int longestSequenceLength = 0;
+        ///        int currentSequenceLength = 0;
+        ///        int previousWordLength = -1;
+        ///        foreach (string word in words)
+        ///        {
+        ///            if (word.Length == previousWordLength)
+        ///            {
+        ///                ++currentSequenceLength;
+        ///            [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WORDCNT {
+            get {
+                return ResourceManager.GetString("WORDCNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
         ///// https://www.spoj.com/problems/ZSUM/ #ad-hoc #math #mod-math #sequence

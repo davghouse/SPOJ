@@ -274,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\3 - Warlord\WORDCNT.cs" />
     <None Include="Solutions\3 - Warlord\POLEVAL.cs" />
     <None Include="Solutions\3 - Warlord\BWIDOW.cs" />
     <None Include="Solutions\3 - Warlord\SCPC11B.cs" />
