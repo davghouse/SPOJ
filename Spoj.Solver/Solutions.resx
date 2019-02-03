@@ -310,9 +310,6 @@
   <data name="JAVAC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\3 - Warlord\JAVAC.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="JULKA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\5 - King\JULKA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="LASTDIG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\LASTDIG.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -468,9 +465,6 @@
   </data>
   <data name="AMR11E" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\5 - King\AMR11E.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="FCTRL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\5 - King\FCTRL2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="MUL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\2 - Chieftain\MUL.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -642,5 +636,11 @@
   </data>
   <data name="MAYA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\3 - Warlord\MAYA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="FCTRL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\FCTRL2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="JULKA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\JULKA.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

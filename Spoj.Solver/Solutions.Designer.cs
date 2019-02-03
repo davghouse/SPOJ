@@ -2351,11 +2351,11 @@ namespace Spoj.Solver {
         ///// Converts Mayan numbers to decimal numbers.
         ///public static class MAYA
         ///{
-        ///    private static readonly Dictionary&lt;string, int&gt; _mayanDigitsToInts = new Dictionary&lt;string, int&gt;
+        ///    private static readonly IReadOnlyDictionary&lt;string, int&gt; _mayanDigitsToInts = new Dictionary&lt;string, int&gt;
         ///    {
         ///        [&quot;S&quot;] = 0,      [&quot;.&quot;] = 1,        [&quot;..&quot;] = 2,        [&quot;...&quot;] = 3,        [&quot;....&quot;] = 4,
         ///        [&quot;-&quot;] = 5,      [&quot;. -&quot;] = 6,      [&quot;.. -&quot;] = 7,      [&quot;... -&quot;] = 8,      [&quot;.... -&quot;] = 9,
-        ///        [&quot;- -&quot;] = 10,   [&quot;. - -&quot;] [rest of string was truncated]&quot;;.
+        ///        [&quot;- -&quot;] = 10,    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAYA {
             get {
