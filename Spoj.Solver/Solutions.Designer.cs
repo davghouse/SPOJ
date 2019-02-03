@@ -3317,6 +3317,24 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/STREETR/ #ad-hoc #experiment #gcd
+        ///// Finds how many new trees need to be planted to make all trees an equal distance apart.
+        ///public static class STREETR
+        ///{
+        ///    // Whatever the largest distance possible between trees is, it has to evenly divide
+        ///    // each range between the existing trees. If it didn&apos;t, we&apos;d start trying to plant
+        ///    // trees in a range and eventually not be able to place the last tree properly. So
+        ///    // compute the GCD of all the range [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string STREETR {
+            get {
+                return ResourceManager.GetString("STREETR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/SUMFOUR/ #ad-hoc #binary-search #combinatorics #hash-table
