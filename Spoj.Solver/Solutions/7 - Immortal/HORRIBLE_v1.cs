@@ -133,8 +133,8 @@ public sealed class LazySumSegmentTree
         public long SumFromRangeAddition
             => RangeAddition * (SegmentEndIndex - SegmentStartIndex + 1);
 
-        public long SumWithoutRangeAddition { get; set; }
-        public long RangeAddition { get; set; }
+        public long SumWithoutRangeAddition { get; internal set; }
+        public long RangeAddition { get; internal set; }
 
         public int SegmentStartIndex { get; }
         public int SegmentEndIndex { get; }

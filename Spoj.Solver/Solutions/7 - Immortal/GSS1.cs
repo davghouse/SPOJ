@@ -88,7 +88,7 @@ public sealed class MaximumSumQueryObject
     }
 
     private int Sum { get; set; }
-    public int MaximumSum { get; set; }
+    public int MaximumSum { get; private set; }
     private int MaximumLeftStartingSum { get; set; }
     private int MaximumRightStartingSum { get; set; }
 

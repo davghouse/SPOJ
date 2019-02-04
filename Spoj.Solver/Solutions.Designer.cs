@@ -3208,6 +3208,34 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/RPLN/ #divide-and-conquer #segment-tree
+        ///// Finds the minimum score in a range.
+        ///public sealed class RPLN
+        ///{
+        ///    private readonly ArrayBasedSegmentTree _segmentTree;
+        ///
+        ///    public RPLN(int[] scores)
+        ///    {
+        ///        _segmentTree = new ArrayBasedSegmentTree(scores);
+        ///    }
+        ///
+        ///    public int Solve(int queryStartIndex, int queryEndIndex)
+        ///        =&gt; _segmentTree.Query(queryStartIndex, queryEndIndex);
+        ///}
+        ///
+        ///// Most guides on [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string RPLN {
+            get {
+                return ResourceManager.GetString("RPLN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math

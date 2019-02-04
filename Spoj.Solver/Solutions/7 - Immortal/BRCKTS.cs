@@ -166,8 +166,8 @@ public sealed class BracketBalanceQueryObject
     public bool IsBalanced
         => RightBracketCount == 0 && LeftBracketCount == 0;
 
-    public int RightBracketCount { get; set; }
-    public int LeftBracketCount { get; set; }
+    public int RightBracketCount { get; private set; }
+    public int LeftBracketCount { get; private set; }
 
     public BracketBalanceQueryObject Combine(BracketBalanceQueryObject rightAdjacentObject)
     {

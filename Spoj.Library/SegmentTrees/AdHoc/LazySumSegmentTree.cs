@@ -116,8 +116,8 @@ namespace Spoj.Library.SegmentTrees.AdHoc
             public int SumFromRangeAddition
                 => RangeAddition * (SegmentEndIndex - SegmentStartIndex + 1);
 
-            public int SumWithoutRangeAddition { get; set; }
-            public int RangeAddition { get; set; }
+            public int SumWithoutRangeAddition { get; internal set; }
+            public int RangeAddition { get; internal set; }
 
             public int SegmentStartIndex { get; }
             public int SegmentEndIndex { get; }

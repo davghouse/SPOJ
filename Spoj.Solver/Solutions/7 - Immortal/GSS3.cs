@@ -132,7 +132,7 @@ public sealed class MaximumSumQueryObject
     private int MaximumRightStartingSum { get; set; } // [ ... <-]
 
     public MaximumSumQueryObject Combine(MaximumSumQueryObject rightAdjacentObject)
-        => new MaximumSumQueryObject()
+        => new MaximumSumQueryObject
         {
             SegmentStartIndex = SegmentStartIndex,
             SegmentEndIndex = rightAdjacentObject.SegmentEndIndex,
