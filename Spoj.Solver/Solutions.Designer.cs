@@ -1232,8 +1232,8 @@ namespace Spoj.Solver {
         ///public static class DISUBSTR
         ///{
         ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
-        ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(nWlogn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the s [rest of string was truncated]&quot;;.
+        ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
+        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DISUBSTR {
             get {
@@ -3427,6 +3427,24 @@ namespace Spoj.Solver {
         public static string STREETR {
             get {
                 return ResourceManager.GetString("STREETR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/SUBST1/ #sorting #strings #suffixes
+        ///// Counts the number of distinct substrings in a string.
+        ///public static class SUBST1 // Same code as DISUBSTR...
+        ///{
+        ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
+        ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
+        ///    // actually create the substrings though. We don&apos;t need to create [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SUBST1 {
+            get {
+                return ResourceManager.GetString("SUBST1", resourceCulture);
             }
         }
         
