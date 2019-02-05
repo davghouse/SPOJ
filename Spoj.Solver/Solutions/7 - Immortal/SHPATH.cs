@@ -258,7 +258,8 @@ public static class Program
                 int sourceCity = cityIndices[FastIO.ReadString()];
                 int destinationCity = cityIndices[FastIO.ReadString()];
 
-                output.Append(SHPATH.Solve(cityGraph, sourceCity, destinationCity));
+                output.Append(
+                    SHPATH.Solve(cityGraph, sourceCity, destinationCity));
                 output.AppendLine();
             }
         }

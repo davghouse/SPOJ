@@ -38,8 +38,8 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
-            output.Append(ALICESIE.Solve(
-                int.Parse(Console.ReadLine())));
+            output.Append(
+                ALICESIE.Solve(int.Parse(Console.ReadLine())));
             output.AppendLine();
         }
 

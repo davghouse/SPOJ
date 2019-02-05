@@ -101,7 +101,8 @@ public static class Program
         while (remainingTestCases-- > 0)
         {
             int n = int.Parse(Console.ReadLine());
-            output.Append(ETF.Solve(n));
+            output.Append(
+                ETF.Solve(n));
             output.AppendLine();
         }
 

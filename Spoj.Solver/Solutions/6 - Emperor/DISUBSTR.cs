@@ -61,7 +61,8 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
-            output.Append(DISUBSTR.Solve(Console.ReadLine()));
+            output.Append(
+                DISUBSTR.Solve(Console.ReadLine()));
             output.AppendLine();
         }
 

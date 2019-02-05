@@ -48,7 +48,8 @@ public static class Program
         {
             int n = int.Parse(Console.ReadLine());
 
-            output.Append(AMR11E.Solve(n));
+            output.Append(
+                AMR11E.Solve(n));
             output.AppendLine();
         }
 

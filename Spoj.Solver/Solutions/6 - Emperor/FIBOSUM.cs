@@ -86,7 +86,8 @@ public static class Program
         {
             int[] range = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 
-            output.Append(FIBOSUM.Solve(range[0], range[1]));
+            output.Append(
+                FIBOSUM.Solve(range[0], range[1]));
             output.AppendLine();
         }
 
