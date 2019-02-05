@@ -12,9 +12,9 @@ public static class QTREE // v2, trading code quality/readability for better per
         _verticesEdgeWeights = new List<int>[10000],
         _verticesEdges = new List<int>[10000];
     private static readonly int[]
+        _verticesParents = new int[10000],
         _verticesDepths = new int[10000],
         _verticesSubtreeSizes = new int[10000],
-        _verticesParents = new int[10000],
         // An edge an ID, a parent, and child vertex--this stores an edge's child vertex ID.
         _edgesChildVertices = new int[9999],
         _chainsHeadVertices = new int[10000],
@@ -457,7 +457,7 @@ public static class FastIO
             throwawayInstructionChar = ReadByte();
         } while (throwawayInstructionChar >= _A);
 
-        return (char)firstInstructionChar;
+        return (char)firstInstructionChar; // Q for QUERY, C for CHANGE, D for DONE.
     }
 
     public static void WriteNonNegativeInt(int value)

@@ -3142,6 +3142,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/QTREE2/ #divide-and-conquer #graph-theory #lca #segment-tree #tree
+        ///// Finds the distance and kth edge between vertices in a tree.
+        ///public static class QTREE2 // Much of the code has been copied from QTREE_v2 to ensure no TLEs.
+        ///{
+        ///    private static int _vertexCount;
+        ///    private static readonly List&lt;int&gt;[]
+        ///        _verticesNeighbors = new List&lt;int&gt;[10000],
+        ///        _verticesEdgeWeights = new List&lt;int&gt;[1 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string QTREE2 {
+            get {
+                return ResourceManager.GetString("QTREE2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/QUADAREA/ #formula

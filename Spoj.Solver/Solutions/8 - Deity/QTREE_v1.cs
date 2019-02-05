@@ -629,7 +629,7 @@ public static class FastIO
             throwawayInstructionChar = ReadByte();
         } while (throwawayInstructionChar >= _A);
 
-        return (char)firstInstructionChar;
+        return (char)firstInstructionChar; // Q for QUERY, C for CHANGE, D for DONE.
     }
 
     public static void WriteNonNegativeInt(int value)
