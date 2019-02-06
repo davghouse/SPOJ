@@ -116,7 +116,8 @@ public static class Program
                 }
             }
 
-            output.Append($"Case {caseNumber++}: {ABCPATH.Solve(height, width, letterGrid)}");
+            output.Append(
+                $"Case {caseNumber++}: {ABCPATH.Solve(height, width, letterGrid)}");
             output.AppendLine();
         }
 
