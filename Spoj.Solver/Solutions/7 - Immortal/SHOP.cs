@@ -1,58 +1,118 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
-// https://www.spoj.com/problems/SHPATH/ #dijkstras #graph-theory #greedy #heap #shortest-path
-// Finds the cheapest path between pairs of cities.
-public static class SHPATH
+// https://www.spoj.com/problems/SHOP/ #dijkstras #graph-theory #greedy #heap #shortest-path
+// Finds the fastest path through a crowded computer shop.
+public sealed class SHOP
 {
+    private readonly int _height;
+    private readonly int _width;
+    private readonly char[,] _shopGrid;
+    private readonly int?[] _times;
+    private readonly int _startSquareID;
+    private readonly int _destinationSquareID;
+
+    public SHOP(int height, int width, char[,] shopGrid)
+    {
+        _height = height;
+        _width = width;
+        _shopGrid = shopGrid;
+        _times = new int?[_height * _width];
+
+        for (int r = 0; r < _height; ++r)
+        {
+            for (int c = 0; c < _width; ++c)
+            {
+                int squareID = GetSquareID(r, c);
+                char squareValue = _shopGrid[r, c];
+
+                if (squareValue == 'S')
+                {
+                    _startSquareID = squareID;
+                }
+                else if (squareValue == 'D')
+                {
+                    _destinationSquareID = squareID;
+                    _times[_destinationSquareID] = 0;
+                }
+                else if (squareValue != 'X')
+                {
+                    _times[squareID] = squareValue - '0';
+                }
+            }
+        }
+    }
+
+    private int GetSquareID(int row, int column)
+        =>  row * _width + column;
+
+    private bool TryGetSquareID(int row, int column, out int squareID)
+    {
+        squareID = GetSquareID(row, column);
+        return row >= 0 && row < _height && column >= 0 && column < _width;
+    }
+
+    private IEnumerable<int> GetNeighboringSquares(int squareID)
+    {
+        int row = squareID / _width;
+        int column = squareID % _width;
+        int neighborSquareID;
+
+        if (TryGetSquareID(row - 1, column, out neighborSquareID)) yield return neighborSquareID;
+        if (TryGetSquareID(row + 1, column, out neighborSquareID)) yield return neighborSquareID;
+        if (TryGetSquareID(row, column - 1, out neighborSquareID)) yield return neighborSquareID;
+        if (TryGetSquareID(row, column + 1, out neighborSquareID)) yield return neighborSquareID;
+    }
+
     // This uses Dijkstra's algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
     // We return immediately upon visiting the destination city, and we don't initialize the
     // heap with all cities. We only add cities to the heap when reaching one of their neighbor
     // cities. Without a pre-filled heap to rely on, we track what cities have been visited
     // using an array of bools.
-    public static int Solve(List<KeyValuePair<int, int>>[] cityGraph, int sourceCity, int destinationCity)
+    public int Solve()
     {
-        var pathCosts = new BinaryHeap(sourceCity);
-        bool[] visitedCities = new bool[cityGraph.Length];
+        var timeTotals = new BinaryHeap(_startSquareID);
+        bool[] visitedSquares = new bool[_height * _width];
 
-        while (!pathCosts.IsEmpty)
+        while (!timeTotals.IsEmpty)
         {
-            var cheapestPath = pathCosts.Extract();
-            int city = cheapestPath.Key;
-            int pathCostToCity = cheapestPath.Value;
+            var fastestTime = timeTotals.Extract();
+            int squareID = fastestTime.Key;
+            int timeToSquare = fastestTime.Value;
 
-            if (city == destinationCity)
-                return pathCostToCity;
+            if (squareID == _destinationSquareID)
+                return timeToSquare;
 
-            var neighboringEdges = cityGraph[city];
-            for (int e = 0; e < neighboringEdges.Count; ++e)
+            foreach (int neighborSquareID in GetNeighboringSquares(squareID))
             {
-                int neighbor = neighboringEdges[e].Key;
-                if (visitedCities[neighbor])
+                if (visitedSquares[neighborSquareID])
                     continue;
 
-                int pathCostToNeighborThroughCity = pathCostToCity + neighboringEdges[e].Value;
-                int currentPathCostToNeighbor;
+                int? timeToNeighbor = _times[neighborSquareID];
+                if (!timeToNeighbor.HasValue)
+                    continue;
 
-                // We know the neighboring city hasn't been visited yet, so we need to maintain its
-                // path cost in the heap. If it's already in the heap, see if a cheaper path exists
+                int timeToNeighborThroughSquare = timeToSquare + timeToNeighbor.Value;
+                int currentTimeToNeighbor;
+
+                // We know the neighboring square hasn't been visited yet, so we need to maintain its
+                // total time in the heap. If it's already in the heap, see if a cheaper path exists
                 // to it through the city we're visiting. If it isn't in the heap yet, add it.
-                if (pathCosts.TryGetValue(neighbor, out currentPathCostToNeighbor))
+                if (timeTotals.TryGetValue(neighborSquareID, out currentTimeToNeighbor))
                 {
-                    if (pathCostToNeighborThroughCity < currentPathCostToNeighbor)
+                    if (timeToNeighborThroughSquare < currentTimeToNeighbor)
                     {
-                        pathCosts.Update(neighbor, pathCostToNeighborThroughCity);
+                        timeTotals.Update(neighborSquareID, timeToNeighborThroughSquare);
                     }
                 }
                 else
                 {
-                    pathCosts.Add(neighbor, pathCostToNeighborThroughCity);
+                    timeTotals.Add(neighborSquareID, timeToNeighborThroughSquare);
                 }
             }
 
-            visitedCities[city] = true;
+            visitedSquares[squareID] = true;
         }
 
         throw new NotSupportedException();
@@ -230,118 +290,30 @@ public static class Program
     private static void Main()
     {
         var output = new StringBuilder();
-        int testCount = FastIO.ReadNonNegativeInt();
-        for (int t = 0; t < testCount; ++t)
+        string[] line;
+        char[,] shopGrid = new char[25, 25];
+        while ((line = Console.ReadLine().Split())[0] != "0")
         {
-            int cityCount = FastIO.ReadNonNegativeInt();
-            var cityIndices = new Dictionary<string, int>(cityCount);
-            var cityGraph = new List<KeyValuePair<int, int>>[cityCount];
+            int height = int.Parse(line[1]);
+            int width = int.Parse(line[0]);
 
-            for (int c = 0; c < cityCount; ++c)
+            for (int r = 0; r < height; ++r)
             {
-                cityIndices.Add(FastIO.ReadString(), c);
-                cityGraph[c] = new List<KeyValuePair<int, int>>();
-
-                int neighborCount = FastIO.ReadNonNegativeInt();
-                for (int n = 0; n < neighborCount; ++n)
+                string row = Console.ReadLine();
+                for (int c = 0; c < width; ++c)
                 {
-                    int neighborIndex = FastIO.ReadNonNegativeInt() - 1;
-                    int connectionCost = FastIO.ReadNonNegativeInt();
-
-                    cityGraph[c].Add(new KeyValuePair<int, int>(neighborIndex, connectionCost));
+                    shopGrid[r, c] = row[c];
                 }
             }
+            Console.ReadLine();
 
-            int pathCount = FastIO.ReadNonNegativeInt();
-            for (int p = 0; p < pathCount; ++p)
-            {
-                int sourceCity = cityIndices[FastIO.ReadString()];
-                int destinationCity = cityIndices[FastIO.ReadString()];
+            var solver = new SHOP(height, width, shopGrid);
 
-                output.Append(
-                    SHPATH.Solve(cityGraph, sourceCity, destinationCity));
-                output.AppendLine();
-            }
+            output.Append(
+                solver.Solve());
+            output.AppendLine();
         }
 
         Console.Write(output);
-    }
-}
-
-// This is based in part on submissions from https://www.codechef.com/status/INTEST.
-// It's assumed the input is well-formed, so if you try to read an integer when no
-// integers remain in the input, there's undefined behavior (infinite loop).
-public static class FastIO
-{
-    private const byte _null = (byte)'\0';
-    private const byte _newLine = (byte)'\n';
-    private const byte _minusSign = (byte)'-';
-    private const byte _zero = (byte)'0';
-    private const int _inputBufferLimit = 8192;
-    private const int _stringLengthLimit = 12;
-
-    private static readonly Stream _inputStream = Console.OpenStandardInput();
-    private static readonly byte[] _inputBuffer = new byte[_inputBufferLimit];
-    private static int _inputBufferSize = 0;
-    private static int _inputBufferIndex = 0;
-    private static readonly char[] _stringBuilder = new char[_stringLengthLimit];
-
-    private static byte ReadByte()
-    {
-        if (_inputBufferIndex == _inputBufferSize)
-        {
-            _inputBufferIndex = 0;
-            _inputBufferSize = _inputStream.Read(_inputBuffer, 0, _inputBufferLimit);
-            if (_inputBufferSize == 0)
-                return _null; // All input has been read.
-        }
-
-        return _inputBuffer[_inputBufferIndex++];
-    }
-
-    public static int ReadNonNegativeInt()
-    {
-        byte digit;
-
-        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
-        do
-        {
-            digit = ReadByte();
-        }
-        while (digit < _minusSign);
-
-        // Build up the integer from its digits, until we run into whitespace or the null byte.
-        int result = digit - _zero;
-        while (true)
-        {
-            digit = ReadByte();
-            if (digit < _zero) break;
-            result = result * 10 + (digit - _zero);
-        }
-
-        return result;
-    }
-
-    public static string ReadString()
-    {
-        byte letter;
-
-        // Consume and discard whitespace characters (their ASCII codes are all < _minusSign).
-        do
-        {
-            letter = ReadByte();
-        }
-        while (letter < _minusSign);
-
-        int stringLength = 0;
-        _stringBuilder[stringLength++] = (char)letter;
-        while (true)
-        {
-            letter = ReadByte();
-            if (letter < _zero) break;
-            _stringBuilder[stringLength++] = (char)letter;
-        }
-
-        return new string(_stringBuilder, 0, stringLength);
     }
 }

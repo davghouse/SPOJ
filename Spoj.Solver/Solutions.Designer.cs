@@ -3319,6 +3319,30 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/SHOP/ #dijkstras #graph-theory #greedy #heap #shortest-path
+        ///// Finds the fastest path through a crowded computer shop.
+        ///public sealed class SHOP
+        ///{
+        ///    private readonly int _height;
+        ///    private readonly int _width;
+        ///    private readonly char[,] _shopGrid;
+        ///    private readonly int?[] _times;
+        ///    private readonly int _startSquareID;
+        ///    private readonly int _destinationSquareID;
+        ///
+        ///    public SHOP(in [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SHOP {
+            get {
+                return ResourceManager.GetString("SHOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
         ///using System.IO;
         ///using System.Text;
         ///

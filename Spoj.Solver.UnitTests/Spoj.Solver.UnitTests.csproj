@@ -231,6 +231,7 @@
     <Compile Include="Solutions\7 - Immortal\QTREE2Tests.cs" />
     <Compile Include="Solutions\7 - Immortal\ROOTCIPHTests.cs" />
     <Compile Include="Solutions\7 - Immortal\RPLNTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\SHOPTests.cs" />
     <Compile Include="Solutions\7 - Immortal\SHPATHTests.cs" />
     <Compile Include="Solutions\7 - Immortal\UPDATEITTests.cs" />
     <Compile Include="Solutions\8 - Deity\DQUERYTests.cs" />
