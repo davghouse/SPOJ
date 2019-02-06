@@ -75,8 +75,6 @@ public sealed class SieveOfEratosthenesFactorizer
     public bool IsPrime(int n)
         => !_sieveWithSomePrimeFactor[n].HasValue;
 
-    public IReadOnlyList<int> Primes { get; }
-
     public IEnumerable<int> GetDistinctPrimeFactors(int n)
     {
         while (n > 1)

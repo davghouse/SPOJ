@@ -105,6 +105,7 @@
     <Compile Include="Solutions\5 - King\NAKANJTests.cs" />
     <Compile Include="Solutions\5 - King\NY10ETests.cs" />
     <Compile Include="Solutions\5 - King\TRGRIDTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\APSTests.cs" />
     <Compile Include="Solutions\6 - Emperor\BLINNETTests.cs" />
     <Compile Include="Solutions\6 - Emperor\FCTRL2Tests.cs" />
     <Compile Include="Solutions\3 - Warlord\FENCE1Tests.cs" />

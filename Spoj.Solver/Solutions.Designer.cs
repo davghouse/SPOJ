@@ -535,6 +535,29 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/APS/ #factors #primes #sieve
+        ///// Calculates a sequence defined in terms of a number&apos;s smallest prime factor.
+        ///public static class APS
+        ///{
+        ///    private const int _limit = 10000000;
+        ///    private static readonly SieveOfEratosthenesFactorizer _factorizer;
+        ///    private static readonly long[] _sequence;
+        ///
+        ///    static APS()
+        ///    {
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
+        ///        _sequence = new long[_limit [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string APS {
+            get {
+                return ResourceManager.GetString("APS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/ARITH2/ #ad-hoc #parsing #strings
