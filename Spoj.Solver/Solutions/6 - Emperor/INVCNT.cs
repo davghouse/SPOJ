@@ -58,13 +58,13 @@ public sealed class InversionBST
 
         while (true)
         {
-            // The value being added is going to the left or the right of node; either way, its subtree gets bigger.
-            ++node.SizeOfTreeRootedHere;
+            // The value being added is going to the left or right; either way, node's subtree gets bigger.
+            ++node.SubtreeSize;
 
             if (value < node.Value)
             {
                 // Going to the left, so inverted with this node and everything in its right subtree.
-                inversionCount += 1 + (node.RightChild?.SizeOfTreeRootedHere ?? 0);
+                inversionCount += 1 + (node.RightChild?.SubtreeSize ?? 0);
 
                 if (node.LeftChild == null)
                 {
@@ -92,11 +92,11 @@ public sealed class InversionBST
         public Node(int value)
         {
             Value = value;
-            SizeOfTreeRootedHere = 1;
+            SubtreeSize = 1;
         }
 
         public int Value { get; set; }
-        public int SizeOfTreeRootedHere { get; set; }
+        public int SubtreeSize { get; set; }
         public Node LeftChild { get; set; }
         public Node RightChild { get; set; }
     }

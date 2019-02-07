@@ -1042,6 +1042,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/CODESPTB/ #binary-search-tree #bit #sorting
+        ///// Finds the number of swaps necessary when performing insertion sort.
+        ///public static class CODESPTB
+        ///{
+        ///    private const int _elementLimit = 1000000;
+        ///
+        ///    // Insertion sort looks like this: [sorted part]k[unsorted part]. When adding the
+        ///    // kth element to the sorted part, we swap it with however many larger elements
+        ///    // there are to its left. The number of larger elements to its left  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CODESPTB {
+            get {
+                return ResourceManager.GetString("CODESPTB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/COINS/ #dynamic-programming-1d #recursion
@@ -1294,9 +1314,9 @@ namespace Spoj.Solver {
         ///// Finds the number of distinct elements in a subrange of an array.
         ///public static class DQUERY
         ///{
-        ///    // Needed hints to solve this one, this technique is kind of explained in lots of places but never clearly.
-        ///    // After looking through some links I was effectively solving with the following hints:
-        ///    // - Consider how to solve  [rest of string was truncated]&quot;;.
+        ///    // Needed hints to solve this one, this technique is kind of explained in lots of places but
+        ///    // never clearly. After looking through some links I was effectively solving with these hints:
+        ///    // - Consider how to solve the prob [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
