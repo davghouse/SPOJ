@@ -2629,6 +2629,33 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary
+        ///// Converts decimal integers to base -2.
+        ///public static class NEG2
+        ///{
+        ///    public static string Solve(long n)
+        ///    {
+        ///        long nToBaseNeg2 = 0;
+        ///
+        ///        while (n != 0)
+        ///        {
+        ///            if (n &gt; 0)
+        ///            {
+        ///                long nextPositivePowerOf2 = 1; // Start at 2^0
+        ///                long positivePowerOf2Sum = 1;
+        ///                while (positivePowerOf2Sum &lt; n)
+        ///                {
+        ///                    nextPositivePow [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NEG2 {
+            get {
+                return ResourceManager.GetString("NEG2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/NGM/ #game
         ///// For a game between two players where digits are subtracted from a number
         ///// in turn, finds who wins the game and what player one&apos;s first move should be if he can win.

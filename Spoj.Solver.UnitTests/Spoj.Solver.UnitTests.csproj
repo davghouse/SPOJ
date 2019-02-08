@@ -158,6 +158,7 @@
     <Compile Include="Solutions\6 - Emperor\CHOCOLATests.cs" />
     <Compile Include="Solutions\6 - Emperor\DSUBSEQTests.cs" />
     <Compile Include="Solutions\6 - Emperor\EKOTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\NEG2Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\SPEEDTests.cs" />
     <Compile Include="Solutions\6 - Emperor\SUBST1Tests.cs" />
     <Compile Include="Solutions\7 - Immortal\CODESPTBTests.cs" />
