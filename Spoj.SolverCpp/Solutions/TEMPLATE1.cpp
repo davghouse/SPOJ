@@ -1,14 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// See TEMPLATE.cs for details--this solution was submitted using C++ because C# I/O is too slow.
+// Submitted using C++ because C# was unavailable--see TEMPLATE.cs for details.
 class TEMPLATE
 {
 public:
-  TEMPLATE()
-  { }
-
-  int Solve(int a, int b)
+  static int Solve(int a, int b)
   {
     return a * b;
   }
@@ -16,8 +13,6 @@ public:
 
 int main()
 {
-  TEMPLATE solver;
-
   int remainingTestCases;
   cin >> remainingTestCases;
 
@@ -26,7 +21,7 @@ int main()
     int a, b;
     cin >> a >> b;
 
-    cout << solver.Solve(a, b) << endl;
+    cout << TEMPLATE::Solve(a, b) << endl;
   }
 
   return 0;

@@ -2629,23 +2629,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary
+        ///// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary #experiment
         ///// Converts decimal integers to base -2.
         ///public static class NEG2
         ///{
-        ///    public static string Solve(long n)
-        ///    {
-        ///        long nToBaseNeg2 = 0;
-        ///
-        ///        while (n != 0)
-        ///        {
-        ///            if (n &gt; 0)
-        ///            {
-        ///                long nextPositivePowerOf2 = 1; // Start at 2^0
-        ///                long positivePowerOf2Sum = 1;
-        ///                while (positivePowerOf2Sum &lt; n)
-        ///                {
-        ///                    nextPositivePow [rest of string was truncated]&quot;;.
+        ///    // Observe the following after playing around on paper for a while:
+        ///    // The positive powers of 2 are: 2^0 = 1, 2^2 = 4, 2^4 = 16, etc, so for example, we can
+        ///    // represent up to 5 (1 + 4) by using powers 2^2 and below, up to 21 (1 + 4 + 16) by using
+        ///    // powers 2^4 and below, and so on. Negatives are similar with 2^1 = -2, 2^3 = -8, where        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NEG2 {
             get {
@@ -3051,6 +3042,30 @@ namespace Spoj.Solver {
         public static string POLEVAL {
             get {
                 return ResourceManager.GetString("POLEVAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/PON/ #math #primes
+        ///// Determines if a number is (probably) prime.
+        ///public static class PON
+        ///{
+        ///    private static readonly Random _rand = new Random();
+        ///
+        ///    public static bool Solve(ulong n)
+        ///        =&gt; MillerRabinTest(n, witnessCount: 10);
+        ///
+        ///    // https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
+        ///    private static bool MillerRabinTest(ulong n, int witnessCount)
+        ///    {
+        ///        if (n &lt; 2) return false;
+        ///        if (n == 2 || n == 3) re [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PON {
+            get {
+                return ResourceManager.GetString("PON", resourceCulture);
             }
         }
         

@@ -2,14 +2,11 @@
 #include <stdio.h>
 using namespace std;
 
-// See TEMPLATE.cs for details--this solution was submitted using C++ because C# I/O is too slow.
+// Submitted using C++ because C# was unavailable--see TEMPLATE.cs for details.
 class TEMPLATE
 {
 public:
-  TEMPLATE()
-  { }
-
-  int Solve(int a, int b)
+  static int Solve(int a, int b)
   {
     return a * b;
   }
@@ -17,8 +14,6 @@ public:
 
 int main()
 {
-  TEMPLATE solver;
-
   int remainingTestCases;
   scanf("%d", &remainingTestCases);
 
@@ -27,7 +22,7 @@ int main()
     int a, b;
     scanf("%d %d", &a, &b);
 
-    printf("%d\n", solver.Solve(a, b));
+    printf("%d\n", TEMPLATE::Solve(a, b));
   }
 
   return 0;

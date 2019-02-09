@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// See SAMER08F.cs for details--this solution was submitted using C++ because C# was unavailable.
+// Submitted using C++ because C# was unavailable--see SAMER08F.cs for details.
 class SAMER08F
 {
 public:
@@ -38,7 +38,9 @@ int main()
 
   int n;
   while (cin >> n && n != 0)
+  {
     cout << solver.Solve(n) << endl;
+  }
 
   return 0;
 }

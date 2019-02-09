@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// See BOMARBLE.cs for details--this solution was submitted using C++ because C# was unavailable.
+// Submitted using C++ because C# was unavailable--see BOMARBLE.cs for details.
 class BOMARBLE
 {
 public:

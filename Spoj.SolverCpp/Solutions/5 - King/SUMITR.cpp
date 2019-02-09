@@ -7,7 +7,7 @@
 #include <algorithm>
 using namespace std;
 
-// See SUMITR.cs for details--this solution was submitted using C++ because I couldn't get C# under 256 bytes.
+// Submitted using C++ because I couldn't get C# <= 256 bytes--see SUMITR.cs for details.
 int main()
 {
   int size;

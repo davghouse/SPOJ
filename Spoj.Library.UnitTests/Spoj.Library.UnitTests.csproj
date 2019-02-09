@@ -74,6 +74,7 @@
     <Compile Include="IO\SlowestIOTests.cs" />
     <Compile Include="IO\SlowIOTests.cs" />
     <Compile Include="Mod10ExponentiatorTests.cs" />
+    <Compile Include="Primes\MillerRabinTestTests.cs" />
     <Compile Include="Primes\PrimeDeciderTests.cs" />
     <Compile Include="Primes\PrimeFactorizerTests.cs" />
     <Compile Include="Primes\PrimeProviderTests.cs" />

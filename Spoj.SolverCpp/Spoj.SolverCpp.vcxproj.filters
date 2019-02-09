@@ -36,16 +36,6 @@
     <ClCompile Include="Solutions\TEMPLATE2.cpp">
       <Filter>Solutions</Filter>
     </ClCompile>
-    <ClCompile Include="InputVerifier.cpp" />
-    <ClCompile Include="Solutions\6 - Emperor\COMDIV.cpp">
-      <Filter>Solutions\6 - Emperor</Filter>
-    </ClCompile>
-    <ClCompile Include="Solutions\8 - Deity\DQUERY.cpp">
-      <Filter>Solutions\8 - Deity</Filter>
-    </ClCompile>
-    <ClCompile Include="Solutions\6 - Emperor\OLOLO.cpp">
-      <Filter>Solutions\6 - Emperor</Filter>
-    </ClCompile>
     <ClCompile Include="Solutions\5 - King\SUMITR.cpp">
       <Filter>Solutions\5 - King</Filter>
     </ClCompile>
@@ -54,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Solutions\3 - Warlord\BOMARBLE.cpp">
       <Filter>Solutions\3 - Warlord</Filter>
+    </ClCompile>
+    <ClCompile Include="Solutions\6 - Emperor\PON.cpp">
+      <Filter>Solutions\6 - Emperor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
