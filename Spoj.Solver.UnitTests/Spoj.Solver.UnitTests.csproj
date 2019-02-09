@@ -93,6 +93,7 @@
     <Compile Include="Solutions\4 - Prince\LENGFACTTests.cs" />
     <Compile Include="Solutions\4 - Prince\STREETRTests.cs" />
     <Compile Include="Solutions\5 - King\ANARC08HTests.cs" />
+    <Compile Include="Solutions\5 - King\CATMTests.cs" />
     <Compile Include="Solutions\5 - King\CEQUTests.cs" />
     <Compile Include="Solutions\5 - King\GAMESTests.cs" />
     <Compile Include="Solutions\5 - King\IITKWPCBTests.cs" />

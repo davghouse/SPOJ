@@ -1025,6 +1025,32 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/CATM/ #bfs-multi-source #simulation
+        ///// Figures out if a mouse can escape from two cats.
+        ///public class CATM
+        ///{
+        ///    private readonly int _rowCount;
+        ///    private readonly int _columnCount;
+        ///
+        ///    public CATM(int rowCount, int columnCount)
+        ///    {
+        ///        _rowCount = rowCount;
+        ///        _columnCount = columnCount;
+        ///    }
+        ///
+        ///    // The cats are establishing a threshold of squares that the mouse can&apos;t reach before
+        ///    // they d [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CATM {
+            get {
+                return ResourceManager.GetString("CATM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///using System.Text;
         ///
