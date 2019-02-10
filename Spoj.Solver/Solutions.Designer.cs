@@ -476,6 +476,28 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/ANARC05H/ #dynamic-programming-2d
+        ///// Finds the number of ways to create increasing groups of digits.
+        ///public static class ANARC05H
+        ///{
+        ///    public static int Solve(int[] digits)
+        ///    {
+        ///        int totalDigitSum = digits.Sum();
+        ///
+        ///        // groupCounts(s, d) is the number of ways to group digits starting with the
+        ///        // digit at index d, given that the group to the left has a sum of s. Groups
+        ///        // of digits must be non-decrea [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ANARC05H {
+            get {
+                return ResourceManager.GetString("ANARC05H", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/ANARC08H/ #formula #game
         ///// Solves the Josephus problem in the easiest way.
