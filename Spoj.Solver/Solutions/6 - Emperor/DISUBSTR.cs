@@ -3,7 +3,7 @@ using System.Text;
 
 // https://www.spoj.com/problems/DISUBSTR/ #sorting #strings #suffixes
 // Counts the number of distinct substrings in a string.
-public static class DISUBSTR
+public static class DISUBSTR // Same problem as SUBST1.
 {
     // This uses the well-known concept of a suffix array. The string we're given is pretty short and there
     // aren't many test cases, so it's fine to create the sorted suffix start indices in O(n^2logn). I don't

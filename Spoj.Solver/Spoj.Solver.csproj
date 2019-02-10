@@ -242,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\6 - Emperor\AIBOHP.cs" />
+    <None Include="Solutions\6 - Emperor\IOIPALIN.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Solutions\4 - Prince\FARIDA.cs" />

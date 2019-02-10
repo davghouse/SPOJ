@@ -330,13 +330,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
         ///// Finds the minimum number of character insertions needed to turn a string into a palindrome.
-        ///public static class AIBOHP
+        ///public static class AIBOHP// Same problem as IOIPALIN.
         ///{
-        ///    private static int[,] _minimumInsertionCounts = new int[6100, 6100];
-        ///
         ///    // If the string starts and ends in the same characters, the insertion count is whatever
         ///    // the count is for the substring excluding those two characters. It wouldn&apos;t make sense
-        ///    // to add characters [rest of string was truncated]&quot;;.
+        ///    // to add characters before the start or after the end since (ignori [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AIBOHP {
             get {
@@ -1341,11 +1339,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/DISUBSTR/ #sorting #strings #suffixes
         ///// Counts the number of distinct substrings in a string.
-        ///public static class DISUBSTR
+        ///public static class DISUBSTR // Same problem as SUBST1.
         ///{
         ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
         ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to create the LCP array, but the  [rest of string was truncated]&quot;;.
+        ///    // actually create the substrings though. We don&apos;t need to cre [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DISUBSTR {
             get {
@@ -2230,6 +2228,23 @@ namespace Spoj.Solver {
         public static string INVCNT {
             get {
                 return ResourceManager.GetString("INVCNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/IOIPALIN/ #dynamic-programming-2d #optimization
+        ///// Finds the minimum number of character insertions needed to turn a string into a palindrome.
+        ///public static class IOIPALIN // Same problem as AIBOHP.
+        ///{
+        ///    // If the string starts and ends in the same characters, the insertion count is whatever
+        ///    // the count is for the substring excluding those two characters. It wouldn&apos;t make sense
+        ///    // to add characters before the start or after the end since (ign [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IOIPALIN {
+            get {
+                return ResourceManager.GetString("IOIPALIN", resourceCulture);
             }
         }
         
@@ -3639,11 +3654,11 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/SUBST1/ #sorting #strings #suffixes
         ///// Counts the number of distinct substrings in a string.
-        ///public static class SUBST1 // Same code as DISUBSTR...
+        ///public static class SUBST1 // Same problem as DISUBSTR.
         ///{
         ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
         ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to create [rest of string was truncated]&quot;;.
+        ///    // actually create the substrings though. We don&apos;t need to creat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SUBST1 {
             get {
@@ -3870,9 +3885,9 @@ namespace Spoj.Solver {
         ///// Finds the optimal order to sell cow treats that become more valuable over time.
         ///public static class TRT // v1, top-down, recursion with memoization
         ///{
-        ///    // Observation: for a given range, the starting age is always the same. That&apos;s because the starting age
-        ///    // corresponds to the number of treats chosen before arriving at the range, and to arrive at a range
-        /// [rest of string was truncated]&quot;;.
+        ///    // Observation: for a given range, the starting age is always the same. That&apos;s
+        ///    // because the starting age corresponds to the number of treats chosen before
+        ///    // arriving at the range, and to arrive at a [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v1 {
             get {
@@ -3888,8 +3903,8 @@ namespace Spoj.Solver {
         ///public static class TRT // v2, bottom-up, dynamic programming with tabulation
         ///{
         ///    // See TRT_v1 for the memoized solution that helps motivate this DP.
-        ///    // A 2D array is used for the DP, where the first index corresponds to a range&apos;s start index
-        ///    // and the second index corresponds to that range&apos;s end index. T [rest of string was truncated]&quot;;.
+        ///    // A 2D array is used for the DP, where the first index corresponds to a range&apos;s
+        ///    // start index and the second index corresponds to that range&apos;s end index. T [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v2 {
             get {

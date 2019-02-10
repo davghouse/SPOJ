@@ -1,8 +1,8 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/AIBOHP/ #dynamic-programming-2d #optimization
+// https://www.spoj.com/problems/IOIPALIN/ #dynamic-programming-2d #optimization
 // Finds the minimum number of character insertions needed to turn a string into a palindrome.
-public static class AIBOHP// Same problem as IOIPALIN.
+public static class IOIPALIN // Same problem as AIBOHP.
 {
     // If the string starts and ends in the same characters, the insertion count is whatever
     // the count is for the substring excluding those two characters. It wouldn't make sense
@@ -61,11 +61,9 @@ public static class Program
 {
     private static void Main()
     {
-        int remainingTestCases = int.Parse(Console.ReadLine());
-        while (remainingTestCases-- > 0)
-        {
-            Console.WriteLine(
-                AIBOHP.Solve(Console.ReadLine()));
-        }
+        Console.ReadLine();
+
+        Console.Write(
+            IOIPALIN.Solve(Console.ReadLine()));
     }
 }
