@@ -3610,6 +3610,25 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/SQRBR/ #dynamic-programming-2d
+        ///// Calculates how many valid bracket expressions there are.
+        ///public static class SQRBR
+        ///{
+        ///    // First I solved the problem where there are no brackets that must be open.
+        ///    // Full solution is easy from that, just throw in mustBeOpeningBracket checks.
+        ///    // Given a range r to c where we want to find the total expression count,
+        ///    // observe that r must be an open bracket. Then, the closing bracket m [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SQRBR {
+            get {
+                return ResourceManager.GetString("SQRBR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/STAMPS/ #extrema #sorting
         ///// Figures out if Lucy can borrow enough stamps from a certain number of her friends.
