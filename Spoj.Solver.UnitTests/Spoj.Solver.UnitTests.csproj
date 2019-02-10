@@ -90,6 +90,7 @@
     <Compile Include="Solutions\4 - Prince\ANARC09BTests.cs" />
     <Compile Include="Solutions\4 - Prince\CUBEFRTests.cs" />
     <Compile Include="Solutions\4 - Prince\EBOXESTests.cs" />
+    <Compile Include="Solutions\4 - Prince\ELEVTRBLTests.cs" />
     <Compile Include="Solutions\4 - Prince\LENGFACTTests.cs" />
     <Compile Include="Solutions\4 - Prince\STREETRTests.cs" />
     <Compile Include="Solutions\5 - King\ANARC08HTests.cs" />

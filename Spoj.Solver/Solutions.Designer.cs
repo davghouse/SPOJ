@@ -1554,6 +1554,31 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/ELEVTRBL/ #bfs
+        ///// Finds the minimum number of button pushes to ride a weird elevator.
+        ///public static class ELEVTRBL
+        ///{
+        ///    public static int? Solve(
+        ///        int floorCount,
+        ///        int startFloor, int goalFloor,
+        ///        int upInterval, int downInterval)
+        ///    {
+        ///        if (startFloor == goalFloor)
+        ///            return 0;
+        ///
+        ///        bool[] discoveredFloors = new bool[floorCount + 1];
+        ///        var floorsToVisit = new Queu [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ELEVTRBL {
+            get {
+                return ResourceManager.GetString("ELEVTRBL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/ENIGMATH/ #gcd #math
