@@ -3375,6 +3375,24 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/ROCK/ #dynamic-programming-2d
+        ///// Finds out how much length of a sweet/sour stick can be sold.
+        ///public static class ROCK
+        ///{
+        ///    // Subproblems are the usable length for a range of stick [r, c]. We can solve [r, c]
+        ///    // by noting that if there are more sweet than sour in the range, the whole range is
+        ///    // usable. Otherwise, it&apos;s necessary to break the range up at least once. So consider
+        ///    // all first break points, [r, r] U [r + 1, c] to [r, c - 1]  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ROCK {
+            get {
+                return ResourceManager.GetString("ROCK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
