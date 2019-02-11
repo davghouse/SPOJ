@@ -2451,6 +2451,32 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/LITE/ #divide-and-conquer #lazy #segment-tree
+        ///// Calculates how many lights in a range have been toggled on.
+        ///public sealed class LITE
+        ///{
+        ///    private readonly LazySumSegmentTree _segmentTree;
+        ///
+        ///    public LITE(int lightCount)
+        ///    {
+        ///        _segmentTree = new LazySumSegmentTree(lightCount);
+        ///    }
+        ///
+        ///    public void Update(int updateStartIndex, int updateEndIndex)
+        ///        =&gt; _segmentTree.Push(updateStartIndex, updateEndIndex);
+        ///
+        ///    p [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string LITE {
+            get {
+                return ResourceManager.GetString("LITE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Text;
         ///

@@ -21,13 +21,11 @@ public sealed class HORRIBLE // v1, using a segment tree
 
 public sealed class LazySumSegmentTree
 {
-    // Using static arrays for performance reasons (okay, maybe premature).
-    private static readonly long[] _sourceArray = new long[100000];
-    private static readonly QueryObject[] _treeArray = new QueryObject[2 * 1048576 - 1];
+    private readonly QueryObject[] _treeArray;
 
     public LazySumSegmentTree(int arrayLength)
     {
-        Array.Clear(_sourceArray, 0, arrayLength);
+        _treeArray = new QueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
         Build(0, 0, arrayLength - 1);
     }
 
@@ -35,7 +33,7 @@ public sealed class LazySumSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new QueryObject(segmentStartIndex, _sourceArray[segmentStartIndex]);
+            _treeArray[treeArrayIndex] = new QueryObject(segmentStartIndex, 0);
             return;
         }
 
@@ -131,13 +129,14 @@ public sealed class LazySumSegmentTree
             => SumWithoutRangeAddition + SumFromRangeAddition;
 
         public long SumFromRangeAddition
-            => RangeAddition * (SegmentEndIndex - SegmentStartIndex + 1);
+            => RangeAddition * SegmentLength;
 
         public long SumWithoutRangeAddition { get; internal set; }
         public long RangeAddition { get; internal set; }
 
         public int SegmentStartIndex { get; }
         public int SegmentEndIndex { get; }
+        public int SegmentLength => SegmentEndIndex - SegmentStartIndex + 1;
 
         public QueryObject(int index, long value)
         {
@@ -146,18 +145,18 @@ public sealed class LazySumSegmentTree
             SumWithoutRangeAddition = value;
         }
 
-        public QueryObject(int segmentStartIndex, int segmentEndIndex, long sum)
+        public QueryObject(int segmentStartIndex, int segmentEndIndex, long sumWithoutRangeAddition)
         {
             SegmentStartIndex = segmentStartIndex;
             SegmentEndIndex = segmentEndIndex;
-            SumWithoutRangeAddition = sum;
+            SumWithoutRangeAddition = sumWithoutRangeAddition;
         }
 
         public QueryObject Combine(QueryObject rightAdjacentObject)
             => new QueryObject(
                 segmentStartIndex: SegmentStartIndex,
                 segmentEndIndex: rightAdjacentObject.SegmentEndIndex,
-                sum: Sum + rightAdjacentObject.Sum);
+                sumWithoutRangeAddition: Sum + rightAdjacentObject.Sum);
 
         public void Update(long rangeAddition)
             => RangeAddition += rangeAddition;
@@ -173,6 +172,20 @@ public sealed class LazySumSegmentTree
 
         public bool DoesRightHalfOverlapWith(int startIndex, int endIndex)
             => endIndex > (SegmentStartIndex + SegmentEndIndex) / 2;
+    }
+}
+
+public static class MathHelper
+{
+    public static int FirstPowerOfTwoEqualOrGreater(int value)
+    {
+        int result = 1;
+        while (result < value)
+        {
+            result <<= 1;
+        }
+
+        return result;
     }
 }
 

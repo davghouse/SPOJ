@@ -114,13 +114,14 @@ namespace Spoj.Library.SegmentTrees.AdHoc
                 => SumWithoutRangeAddition + SumFromRangeAddition;
 
             public int SumFromRangeAddition
-                => RangeAddition * (SegmentEndIndex - SegmentStartIndex + 1);
+                => RangeAddition * SegmentLength;
 
             public int SumWithoutRangeAddition { get; internal set; }
             public int RangeAddition { get; internal set; }
 
             public int SegmentStartIndex { get; }
             public int SegmentEndIndex { get; }
+            public int SegmentLength => SegmentEndIndex - SegmentStartIndex + 1;
 
             public QueryObject(int index, int value)
             {
@@ -128,18 +129,18 @@ namespace Spoj.Library.SegmentTrees.AdHoc
                 SumWithoutRangeAddition = value;
             }
 
-            public QueryObject(int segmentStartIndex, int segmentEndIndex, int sum)
+            public QueryObject(int segmentStartIndex, int segmentEndIndex, int sumWithoutRangeAddition)
             {
                 SegmentStartIndex = segmentStartIndex;
                 SegmentEndIndex = segmentEndIndex;
-                SumWithoutRangeAddition = sum;
+                SumWithoutRangeAddition = sumWithoutRangeAddition;
             }
 
             public QueryObject Combine(QueryObject rightAdjacentObject)
                 => new QueryObject(
                     segmentStartIndex: SegmentStartIndex,
                     segmentEndIndex: rightAdjacentObject.SegmentEndIndex,
-                    sum: Sum + rightAdjacentObject.Sum);
+                    sumWithoutRangeAddition: Sum + rightAdjacentObject.Sum);
 
             public void Update(int rangeAddition)
                 => RangeAddition += rangeAddition;
