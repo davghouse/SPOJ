@@ -3530,6 +3530,33 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/SCUBADIV/ #memoization #recursion
+        ///// Finds the minimum cylinder weight for a scuba diver to survive.
+        ///public sealed class SCUBADIV
+        ///{
+        ///    private readonly int _cylinderCount;
+        ///    private readonly int[,] _cylinders;
+        ///
+        ///    public SCUBADIV(int cylinderCount, int[,] cylinders)
+        ///    {
+        ///        _cylinderCount = cylinderCount;
+        ///        _cylinders = cylinders;
+        ///    }
+        ///
+        ///    public int Solve(int oxygenReq, int nitrogenReq)
+        ///        =&gt; Solve(
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SCUBADIV {
+            get {
+                return ResourceManager.GetString("SCUBADIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Text;
         ///

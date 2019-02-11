@@ -697,4 +697,7 @@
   <data name="SQRBR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\6 - Emperor\SQRBR.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="SCUBADIV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\SCUBADIV.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
