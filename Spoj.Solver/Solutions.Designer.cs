@@ -1812,6 +1812,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/FREQUENT/ #divide-and-conquer #segment-tree
+        ///// Finds the count of the most frequent value in subranges of an ordered array.
+        ///public sealed class FREQUENT
+        ///{
+        ///    private readonly ArrayBasedSegmentTree _segmentTree;
+        ///
+        ///    public FREQUENT(int[] sourceArray)
+        ///    {
+        ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
+        ///    }
+        ///
+        ///    public int Query(int queryStartIndex, int queryEndIndex)
+        ///        =&gt; _segmentTree.Query(queryStartInd [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string FREQUENT {
+            get {
+                return ResourceManager.GetString("FREQUENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/GAMES/ #ad-hoc #gcd #proof
@@ -1896,8 +1920,7 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///using System.Text;
+        ///using System.IO;
         ///
         ///// https://www.spoj.com/problems/GSS1/ #divide-and-conquer #segment-tree
         ///// Does maximum sum subrange queries on an array.
@@ -1905,13 +1928,16 @@ namespace Spoj.Solver {
         ///{
         ///    private readonly ArrayBasedSegmentTree _segmentTree;
         ///
-        ///    public GSS1(IReadOnlyList&lt;int&gt; sourceArray)
+        ///    public GSS1(int[] sourceArray)
         ///    {
         ///        _segmentTree = new ArrayBasedSegmentTree(sourceArray);
         ///    }
         ///
         ///    public int Query(int queryStartIndex, int queryEndIndex)
-        ///        =&gt; _segmentTree.Query(query [rest of string was truncated]&quot;;.
+        ///        =&gt; _segmentTree.Query(queryStartIndex, queryEndIndex).MaximumSum;
+        ///}
+        ///
+        ///// Mo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GSS1 {
             get {
