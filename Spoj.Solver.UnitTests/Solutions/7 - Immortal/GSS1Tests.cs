@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Spoj.Solver.UnitTests.Solutions._7___Immortal
 {
@@ -20,7 +22,8 @@ namespace Spoj.Solver.UnitTests.Solutions._7___Immortal
         {
 @"2
 "
-        };
+        // For performance reasons FastIO new lines are \n instead of \r\n.
+        }.Select(o => o.Replace(Environment.NewLine, "\n")).ToArray();
 
         [TestMethod]
         public void GSS1() => TestSolution();
