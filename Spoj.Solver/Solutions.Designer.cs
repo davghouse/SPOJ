@@ -1168,6 +1168,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/CPCRC1C/ #ad-hoc #digits
+        ///// Sums the digits of all the numbers in a range.
+        ///public static class CPCRC1C
+        ///{
+        ///    public static long Solve(int start, int end)
+        ///        =&gt; SumOfDigitsFrom1To(end) - SumOfDigitsFrom1To(start - 1);
+        ///
+        ///    private static long SumOfDigitsFrom1To(int n)
+        ///    {
+        ///        if (n &lt;= 0) return 0;
+        ///
+        ///        // Say n = 37468. Create a stack looking like this: 3|7|4|6|8.
+        ///        var digits = BuildDigitsSt [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CPCRC1C {
+            get {
+                return ResourceManager.GetString("CPCRC1C", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/CPRMT/ #ad-hoc #buckets #strings

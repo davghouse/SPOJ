@@ -703,4 +703,7 @@
   <data name="LITE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\7 - Immortal\LITE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="CPCRC1C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\6 - Emperor\CPCRC1C.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
