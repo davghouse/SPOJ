@@ -71,8 +71,8 @@ public static class ONEZERO
             BinaryEqualingNumber = binaryEqualingNumber;
         }
 
-        public int NumberModN { get; set; }
-        public long BinaryEqualingNumber { get; set; }
+        public int NumberModN { get; }
+        public long BinaryEqualingNumber { get; }
         public string Number => Convert.ToString(BinaryEqualingNumber, toBase: 2);
 
         public NumberHaving1sAnd0s GetNumberTimes10(int n)
