@@ -1135,7 +1135,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
-        ///// https://www.spoj.com/problems/CODESPTB/ #binary-search-tree #bit #sorting
+        ///// https://www.spoj.com/problems/CODESPTB/ #bit #sorting
         ///// Finds the number of swaps necessary when performing insertion sort.
         ///public static class CODESPTB
         ///{
@@ -1143,7 +1143,8 @@ namespace Spoj.Solver {
         ///
         ///    // Insertion sort looks like this: [sorted part]k[unsorted part]. When adding the
         ///    // kth element to the sorted part, we swap it with however many larger elements
-        ///    // there are to its left. The number of larger elements to its left  [rest of string was truncated]&quot;;.
+        ///    // there are to its left. The number of larger elements to its left doesn&apos;t change
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CODESPTB {
             get {
@@ -4304,6 +4305,26 @@ namespace Spoj.Solver {
         public static string WORDCNT {
             get {
                 return ResourceManager.GetString("WORDCNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/YODANESS/ #ad-hoc #binary-search-tree
+        ///// Finds the number of word inversions in something Yoda has said.
+        ///public static class YODANESS
+        ///{
+        ///    // We can map Yoda&apos;s words to numbers using the ordered statement. Once
+        ///    // we do that we need to count the number of inversions in the resulting
+        ///    // array, just like CODESPTB or INVCNT.
+        ///    public static int Solve(int wordCount, string[] yodaStatement,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string YODANESS {
+            get {
+                return ResourceManager.GetString("YODANESS", resourceCulture);
             }
         }
         

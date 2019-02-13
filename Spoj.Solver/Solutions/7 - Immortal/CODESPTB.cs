@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-// https://www.spoj.com/problems/CODESPTB/ #binary-search-tree #bit #sorting
+// https://www.spoj.com/problems/CODESPTB/ #bit #sorting
 // Finds the number of swaps necessary when performing insertion sort.
 public static class CODESPTB
 {

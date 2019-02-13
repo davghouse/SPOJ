@@ -1,33 +1,7 @@
 2
-4
-SET 0 0 1
-SUM 0 0 3 3
-SET 2 2 12
-SET 1 2 5
-SET 0 2 7
-SET 2 1 -8
-SET 3 1 -3
-SET 3 2 4
-SET 3 3 5
-SET 2 3 -2
-SET 0 3 4
-SET 1 3 -10
-SUM 2 2 2 2
-SUM 2 2 3 3
-SUM 0 0 2 2
-SET 2 2 -12
-SUM 0 0 2 2
-SET 0 0 6
-SUM 0 0 2 2
-SUM 1 1 2 3
-SUM 0 0 2 3
-SUM 1 2 3 2 
-END
-4
-SET 0 0 1
-SUM 0 0 3 3
-SET 2 2 12
-SUM 2 2 2 2
-SUM 2 2 3 3
-SUM 0 0 2 2
-END
+6
+in the force strong you are
+you are strong in the force
+6
+or i will help you not
+or i will not help you
