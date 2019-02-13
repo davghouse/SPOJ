@@ -396,6 +396,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///
+        ///// https://www.spoj.com/problems/ALLIZWEL/ #dfs #recursion
+        ///// Determines if ALLIZZWELL can be made on a board of letters.
+        ///public sealed class ALLIZWEL
+        ///{
+        ///    private readonly int _rowCount;
+        ///    private readonly int _columnCount;
+        ///    private readonly char[,] _letterGrid;
+        ///
+        ///    public ALLIZWEL(int rowCount, int columnCount, char[,] letterGrid)
+        ///    {
+        ///        _rowCount = rowCount;
+        ///        _columnCount = columnCount;
+        ///        _letterGrid = letterGrid;        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ALLIZWEL {
+            get {
+                return ResourceManager.GetString("ALLIZWEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AMR10G/ #extrema #sorting
         ///// Finds a set of K students from N total having the minimum height difference between tallest and shortest.
