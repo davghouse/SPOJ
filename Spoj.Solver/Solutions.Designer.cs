@@ -2609,6 +2609,31 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/MATSUM/ #bit
+        ///// Updates a matrix and computes the sum of square ranges.
+        ///public sealed class MATSUM
+        ///{
+        ///    private int[,] _sourceMatrix;
+        ///    private readonly PURQBinaryIndexedTree2D _binaryIndexedTree;
+        ///
+        ///    public MATSUM(int matrixSize)
+        ///    {
+        ///        _sourceMatrix = new int[matrixSize, matrixSize];
+        ///        _binaryIndexedTree = new PURQBinaryIndexedTree2D(matrixSize, matrixSize);
+        ///    }
+        ///
+        ///    public void Set(int rowIndex, int column [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MATSUM {
+            get {
+                return ResourceManager.GetString("MATSUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/MAXLN/ #math #proof
         ///// Finds the max value of a formula given in terms of the side lengths of an inscribed triangle.

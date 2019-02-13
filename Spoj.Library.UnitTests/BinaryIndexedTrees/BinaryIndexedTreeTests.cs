@@ -44,7 +44,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 
             for (int a = 0; a < _sourceArrays.Length; ++a)
             {
-                var sourceArray = _sourceArrays[a];
+                int[] sourceArray = _sourceArrays[a];
                 var purqBinaryIndexedTree = new PURQBinaryIndexedTree(sourceArray);
 
                 for (int r = 0; r < 1000; ++r)
@@ -77,7 +77,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 
             for (int a = 0; a < _sourceArrays.Length; ++a)
             {
-                var sourceArray = _sourceArrays[a];
+                int[] sourceArray = _sourceArrays[a];
                 var rupqBinaryIndexedTree = new RUPQBinaryIndexedTree(sourceArray);
 
                 for (int r = 0; r < 1000; ++r)
@@ -109,7 +109,7 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
 
             for (int a = 0; a < _sourceArrays.Length; ++a)
             {
-                var sourceArray = _sourceArrays[a];
+                int[] sourceArray = _sourceArrays[a];
                 var rurqBinaryIndexedTree = new RURQBinaryIndexedTree(sourceArray);
 
                 for (int r = 0; r < 1000; ++r)
@@ -129,6 +129,73 @@ namespace Spoj.Library.UnitTests.BinaryIndexedTrees
                     {
                         int expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray, startIndex, endIndex);
                         Assert.AreEqual(expected, rurqBinaryIndexedTree.SumQuery(startIndex, endIndex));
+                    }
+                }
+            }
+        }
+
+        [TestMethod]
+        public void PURQBinaryIndexedTree2D_1()
+        {
+            var purqBinaryIndexedTree2D = new PURQBinaryIndexedTree2D(4, 5);
+            Assert.AreEqual(0, purqBinaryIndexedTree2D.SumQuery(0, 0, 1, 1));
+
+            purqBinaryIndexedTree2D.PointUpdate(0, 0, 1);
+            Assert.AreEqual(1, purqBinaryIndexedTree2D.SumQuery(0, 0, 1, 1));
+            Assert.AreEqual(1, purqBinaryIndexedTree2D.SumQuery(0, 0, 0, 0));
+
+            purqBinaryIndexedTree2D.PointUpdate(1, 1, 1);
+            Assert.AreEqual(2, purqBinaryIndexedTree2D.SumQuery(0, 0, 1, 1));
+
+            purqBinaryIndexedTree2D.PointUpdate(2, 2, 10);
+            Assert.AreEqual(2, purqBinaryIndexedTree2D.SumQuery(0, 0, 1, 1));
+            Assert.AreEqual(12, purqBinaryIndexedTree2D.SumQuery(0, 0, 2, 2));
+            Assert.AreEqual(11, purqBinaryIndexedTree2D.SumQuery(1, 1, 2, 2));
+
+            purqBinaryIndexedTree2D.PointUpdate(3, 1, 3);
+            Assert.AreEqual(15, purqBinaryIndexedTree2D.SumQuery(0, 0, 3, 3));
+
+            purqBinaryIndexedTree2D.PointUpdate(3, 4, 100);
+            Assert.AreEqual(100, purqBinaryIndexedTree2D.SumQuery(3, 4, 3, 4));
+        }
+
+        [TestMethod]
+        public void PURQBinaryIndexedTree2D_2()
+        {
+            var rand = new Random();
+
+            for (int rowCount = 1; rowCount < 10; ++rowCount)
+            {
+                for (int columnCount = 1; columnCount < 10; ++columnCount)
+                {
+                    int[,] sourceArray = new int[rowCount, columnCount];
+                    var purqBinaryIndexedTree2D = new PURQBinaryIndexedTree2D(rowCount, columnCount);
+
+                    for (int r = 0; r < 100; ++r)
+                    {
+                        int rowIndex1 = rand.Next(0, rowCount);
+                        int rowIndex2 = rand.Next(0, rowCount);
+                        int columnIndex1 = rand.Next(0, columnCount);
+                        int columnIndex2 = rand.Next(0, columnCount);
+                        int nearRowIndex = Math.Min(rowIndex1, rowIndex2);
+                        int nearColumnIndex = Math.Min(columnIndex1, columnIndex2);
+                        int farRowIndex = Math.Max(rowIndex1, rowIndex2);
+                        int farColumnIndex = Math.Max(columnIndex1, columnIndex2);
+
+                        int mode = rand.Next(2);
+
+                        if (mode == 0)
+                        {
+                            NaiveBinaryIndexedTreeAlternatives.PointUpdate(sourceArray, nearRowIndex, farColumnIndex, delta: r);
+                            purqBinaryIndexedTree2D.PointUpdate(nearRowIndex, farColumnIndex, delta: r);
+                        }
+                        else
+                        {
+                            int expected = NaiveBinaryIndexedTreeAlternatives.SumQuery(sourceArray,
+                                nearRowIndex, nearColumnIndex, farRowIndex, farColumnIndex);
+                            Assert.AreEqual(expected, purqBinaryIndexedTree2D.SumQuery(
+                                nearRowIndex, nearColumnIndex, farRowIndex, farColumnIndex));
+                        }
                     }
                 }
             }
