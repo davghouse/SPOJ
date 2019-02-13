@@ -32,7 +32,6 @@ namespace Spoj.Library
         {
             if (start > end) return null;
 
-            int initialEnd = end;
             int mid;
 
             while (start != end)
@@ -49,19 +48,13 @@ namespace Spoj.Library
                 }
             }
 
-            // This avoids a redundant verification when a solution can be found:
-            // If start(==end) isn't at initialEnd, there's a solution, since end only moves after a verify.
-            // If start is at intialEnd, we still need to try verifying it.
-            return start != initialEnd ? start
-                : verifier(start) ? start
-                : (int?)null;
+            return verifier(start) ? start : (int?)null;
         }
 
         private static int? SearchTrueToFalse(int start, int end, Predicate<int> verifier)
         {
             if (start > end) return null;
 
-            int initialStart = start;
             int mid;
 
             while (start != end)
@@ -78,12 +71,7 @@ namespace Spoj.Library
                 }
             }
 
-            // This avoids a redundant verification when a solution can be found:
-            // If start isn't at initialStart, there's a solution, since start only moves after a verify.
-            // If start is at initialStart, we still need to try verifying it.
-            return start != initialStart ? start
-                : verifier(start) ? start
-                : (int?)null;
+            return verifier(start) ? start : (int?)null;
         }
     }
 }

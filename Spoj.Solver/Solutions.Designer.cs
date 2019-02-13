@@ -399,7 +399,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/ALLIZWEL/ #dfs #recursion
-        ///// Determines if ALLIZZWELL can be made on a board of letters.
+        ///// Determines if ALLIZZWELL can be found in a grid of letters.
         ///public sealed class ALLIZWEL
         ///{
         ///    private readonly int _rowCount;
@@ -3152,6 +3152,27 @@ namespace Spoj.Solver {
         public static string PHONELST {
             get {
                 return ResourceManager.GetString("PHONELST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/PIE/ #binary-search #optimization
+        ///// Finds out how much pie each person can get when they all need the same amount.
+        ///public static class PIE
+        ///{
+        ///    public static double Solve(int pieCount, int personCount, int[] pieRadii)
+        ///    {
+        ///        double[] orderedPieVolumes = pieRadii
+        ///            // Pies are cylinders of height 1.
+        ///            .Select(r =&gt; Math.PI * r * r * 1)
+        ///            // Order so that we can speed up the verifier a bit--unr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string PIE {
+            get {
+                return ResourceManager.GetString("PIE", resourceCulture);
             }
         }
         

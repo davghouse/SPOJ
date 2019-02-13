@@ -87,16 +87,10 @@ public static class BinarySearch
         ? SearchFalseToTrue(start, end, verifier)
         : SearchTrueToFalse(start, end, verifier);
 
-    // When given an array, the verifier should be built against the values in the array, not its
-    // indices. To satisfy all needs, the index of the found value (rather than the value), is returned.
-    public static int? Search(IReadOnlyList<int> values, Predicate<int> verifier, Mode mode)
-        => Search(0, values.Count - 1, i => verifier(values[i]), mode);
-
     private static int? SearchFalseToTrue(int start, int end, Predicate<int> verifier)
     {
         if (start > end) return null;
 
-        int initialEnd = end;
         int mid;
 
         while (start != end)
@@ -113,19 +107,13 @@ public static class BinarySearch
             }
         }
 
-        // This avoids a redundant verification when a solution can be found:
-        // If start(==end) isn't at initialEnd, there's a solution, since end only moves after a verify.
-        // If start is at intialEnd, we still need to try verifying it.
-        return start != initialEnd ? start
-            : verifier(start) ? start
-            : (int?)null;
+        return verifier(start) ? start : (int?)null;
     }
 
     private static int? SearchTrueToFalse(int start, int end, Predicate<int> verifier)
     {
         if (start > end) return null;
 
-        int initialStart = start;
         int mid;
 
         while (start != end)
@@ -142,12 +130,7 @@ public static class BinarySearch
             }
         }
 
-        // This avoids a redundant verification when a solution can be found:
-        // If start isn't at initialStart, there's a solution, since start only moves after a verify.
-        // If start is at initialStart, we still need to try verifying it.
-        return start != initialStart ? start
-            : verifier(start) ? start
-            : (int?)null;
+        return verifier(start) ? start : (int?)null;
     }
 }
 

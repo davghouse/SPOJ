@@ -108,7 +108,7 @@
     <Compile Include="Solutions\5 - King\NAKANJTests.cs" />
     <Compile Include="Solutions\5 - King\NY10ETests.cs" />
     <Compile Include="Solutions\5 - King\TRGRIDTests.cs" />
-    <Compile Include="Solutions\6 - Emperor\ALLIZWELTESTS.cs" />
+    <Compile Include="Solutions\6 - Emperor\ALLIZWELTests.cs" />
     <Compile Include="Solutions\6 - Emperor\ANARC05HTests.cs" />
     <Compile Include="Solutions\6 - Emperor\APSTests.cs" />
     <Compile Include="Solutions\6 - Emperor\BLINNETTests.cs" />
@@ -165,6 +165,7 @@
     <Compile Include="Solutions\6 - Emperor\EKOTests.cs" />
     <Compile Include="Solutions\6 - Emperor\IOIPALINTests.cs" />
     <Compile Include="Solutions\6 - Emperor\NEG2Tests.cs" />
+    <Compile Include="Solutions\6 - Emperor\PIETests.cs" />
     <Compile Include="Solutions\6 - Emperor\PONTests.cs" />
     <Compile Include="Solutions\6 - Emperor\ROCKTests.cs" />
     <Compile Include="Solutions\6 - Emperor\SCUBADIVTests.cs" />
