@@ -727,10 +727,7 @@
   <data name="M3TILE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\6 - Emperor\M3TILE.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="MULTQ3_v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\8 - Deity\MULTQ3_v1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="MULTQ3_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Solutions\8 - Deity\MULTQ3_v2.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="MULTQ3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\8 - Deity\MULTQ3.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

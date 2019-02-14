@@ -6,9 +6,9 @@ using System.Linq;
 namespace Spoj.Solver.UnitTests.Solutions._8___Deity
 {
     [TestClass]
-    public sealed class MULTQ3_v2Tests : SolutionTestsBase
+    public sealed class MULTQ3Tests : SolutionTestsBase
     {
-        public override string SolutionSource => Solver.Solutions.MULTQ3_v2;
+        public override string SolutionSource => Solver.Solutions.MULTQ3;
 
         public override IReadOnlyList<string> TestInputs => new[]
         {
@@ -163,6 +163,6 @@ namespace Spoj.Solver.UnitTests.Solutions._8___Deity
         }.Select(o => o.Replace(Environment.NewLine, "\n")).ToArray();
 
         [TestMethod]
-        public void MULTQ3_v2() => TestSolution();
+        public void MULTQ3() => TestSolution();
     }
 }

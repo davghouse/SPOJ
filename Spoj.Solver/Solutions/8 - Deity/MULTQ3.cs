@@ -3,30 +3,39 @@ using System.IO;
 
 // https://www.spoj.com/problems/MULTQ3/ #divide-and-conquer #lazy #segment-tree
 // Does range increments and range queries for numbers divisible by 3.
-public sealed class MULTQ3LazySegmentTree // v2, trading code quality/readability for better performance
+public sealed class MULTQ3
 {
-    private readonly int _sourceArrayLength;
+    private readonly int _arrayEndIndex;
+    private readonly MULTQ3LazySegmentTree _segmentTree;
+
+    public MULTQ3(int arrayLength)
+    {
+        _arrayEndIndex = arrayLength - 1;
+        _segmentTree = new MULTQ3LazySegmentTree(arrayLength);
+    }
+
+    public void Increment(int incrementStartIndex, int incrementEndIndex)
+        => _segmentTree.Increment(0, 0, _arrayEndIndex, incrementStartIndex, incrementEndIndex);
+
+    public int Query(int queryStartIndex, int queryEndIndex)
+        => _segmentTree.Query(0, 0, _arrayEndIndex, queryStartIndex, queryEndIndex).Remainder0Count;
+}
+
+public sealed class MULTQ3LazySegmentTree
+{
     private readonly IncrementQueryObject[] _treeArray;
 
-    // This solution required a lot of optimizations. After struggling on my own, I based the
-    // optimizations off of https://github.com/cacophonix/SPOJ/blob/master/MULTQ3.cpp.
-    // The idea is to store how many numbers in a range have remainders of 0, 1, and 2 when divided
-    // by 3. Then we can calculate how range increments to that range affect the total count of
-    // numbers divisible by 3. For example, if the range increment is 2, any numbers in the range
-    // already having a remainder of 1 will have a remainder of 0 after applying the range increment.
     public MULTQ3LazySegmentTree(int arrayLength)
     {
-        _sourceArrayLength = arrayLength;
         _treeArray = new IncrementQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
-        Build(0, 0, _sourceArrayLength - 1);
+        Build(0, 0, arrayLength - 1);
     }
 
     private void Build(int treeArrayIndex, int segmentStartIndex, int segmentEndIndex)
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new IncrementQueryObject();
-            _treeArray[treeArrayIndex].Remainder0Count = 1;
+            _treeArray[treeArrayIndex] = new IncrementQueryObject { Remainder0Count = 1 };
             return;
         }
 
@@ -37,56 +46,68 @@ public sealed class MULTQ3LazySegmentTree // v2, trading code quality/readabilit
         Build(leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex);
         Build(rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex);
 
-        _treeArray[treeArrayIndex].Remainder0Count
-            = _treeArray[leftChildTreeArrayIndex].Remainder0Count
-            + _treeArray[rightChildTreeArrayIndex].Remainder0Count;
+        _treeArray[treeArrayIndex] = _treeArray[leftChildTreeArrayIndex].Combine(_treeArray[rightChildTreeArrayIndex]);
     }
 
-    public int Query(
+    // Instead of returning the children object directly, we have to add on the parent's range addition. The children
+    // query object knows the subset of the parent segment it intersects with, and everything in there needs the
+    // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
+    // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
+    // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
+    public IncrementQueryObject Query(
         int treeArrayIndex, int segmentStartIndex, int segmentEndIndex,
-        int queryStartIndex, int queryEndIndex, int rangeIncrements)
+        int queryStartIndex, int queryEndIndex)
     {
-        if (queryStartIndex <= segmentStartIndex && queryEndIndex >= segmentEndIndex)
-        {
-            switch (rangeIncrements % 3)
-            {
-                case 0: return _treeArray[treeArrayIndex].Remainder0Count;
-                case 1: return _treeArray[treeArrayIndex].Remainder2Count;
-                case 2: return _treeArray[treeArrayIndex].Remainder1Count;
-            }
-        }
+        var parentQueryObject = _treeArray[treeArrayIndex];
 
-        rangeIncrements += _treeArray[treeArrayIndex].RangeIncrements;
+        if (queryStartIndex <= segmentStartIndex && queryEndIndex >= segmentEndIndex)
+            return parentQueryObject;
+
         int leftChildTreeArrayIndex = (treeArrayIndex << 1) | 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
         int leftChildSegmentEndIndex = (segmentStartIndex + segmentEndIndex) >> 1;
+        IncrementQueryObject childrenQueryObject;
 
         if (queryStartIndex <= leftChildSegmentEndIndex && queryEndIndex > leftChildSegmentEndIndex)
-            return Query(
+        {
+            childrenQueryObject = Query(
                 leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex,
-                queryStartIndex, queryEndIndex, rangeIncrements)
-                + Query(
+                queryStartIndex, queryEndIndex)
+                .Combine(Query(
                     rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex,
-                    queryStartIndex, queryEndIndex, rangeIncrements);
+                    queryStartIndex, queryEndIndex));
+        }
         else if (queryStartIndex <= leftChildSegmentEndIndex)
-            return Query(
+        {
+            childrenQueryObject = Query(
                 leftChildTreeArrayIndex, segmentStartIndex, leftChildSegmentEndIndex,
-                queryStartIndex, queryEndIndex, rangeIncrements);
+                queryStartIndex, queryEndIndex);
+        }
         else
-            return Query(
+        {
+            childrenQueryObject = Query(
                 rightChildTreeArrayIndex, leftChildSegmentEndIndex + 1, segmentEndIndex,
-                queryStartIndex, queryEndIndex, rangeIncrements);
+                queryStartIndex, queryEndIndex);
+        }
+
+        var queryObject = new IncrementQueryObject
+        {
+            RangeIncrements = parentQueryObject.RangeIncrements
+        };
+        queryObject.SubsumeRemainders(childrenQueryObject);
+
+        return queryObject;
     }
 
     public void Increment(
         int treeArrayIndex, int segmentStartIndex, int segmentEndIndex,
         int incrementStartIndex, int incrementEndIndex)
     {
+        var queryObject = _treeArray[treeArrayIndex];
+
         if (incrementStartIndex <= segmentStartIndex && incrementEndIndex >= segmentEndIndex)
         {
-            _treeArray[treeArrayIndex].RangeIncrements++;
-            _treeArray[treeArrayIndex].Swap0And1RemainderCounts();
-            _treeArray[treeArrayIndex].Swap0And2RemainderCounts();
+            ++queryObject.RangeIncrements;
             return;
         }
 
@@ -108,51 +129,78 @@ public sealed class MULTQ3LazySegmentTree // v2, trading code quality/readabilit
                 incrementStartIndex, incrementEndIndex);
         }
 
-        _treeArray[treeArrayIndex].Remainder0Count =
-            _treeArray[leftChildTreeArrayIndex].Remainder0Count + _treeArray[rightChildTreeArrayIndex].Remainder0Count;
-        _treeArray[treeArrayIndex].Remainder1Count =
-            _treeArray[leftChildTreeArrayIndex].Remainder1Count + _treeArray[rightChildTreeArrayIndex].Remainder1Count;
-        _treeArray[treeArrayIndex].Remainder2Count =
-            _treeArray[leftChildTreeArrayIndex].Remainder2Count + _treeArray[rightChildTreeArrayIndex].Remainder2Count;
-        switch (_treeArray[treeArrayIndex].RangeIncrements % 3)
-        {
-            case 1:
-                _treeArray[treeArrayIndex].Swap0And1RemainderCounts();
-                _treeArray[treeArrayIndex].Swap0And2RemainderCounts();
-                break;
-            case 2:
-                _treeArray[treeArrayIndex].Swap0And1RemainderCounts();
-                _treeArray[treeArrayIndex].Swap1And2RemainderCounts();
-                break;
-        }
+        queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
     }
 
-    public struct IncrementQueryObject
+    // The idea is to store how many numbers in a range have remainders of 0, 1, and 2 when divided
+    // by 3. Then we can calculate how range increments to that range affect the total count of
+    // numbers divisible by 3. For example, if the range increment is 2, any numbers in the range
+    // already having a remainder of 1 will have a remainder of 0 after applying the range increment.
+    // The tricky part is doing the calculates fast enough to get AC.
+    public sealed class IncrementQueryObject
     {
-        public int Remainder0Count { get; set; }
-        public int Remainder1Count { get; set; }
-        public int Remainder2Count { get; set; }
+        public int Remainder0Count
+        {
+            get
+            {
+                switch (RangeIncrements % 3)
+                {
+                    case 0: return Remainder0CountWithoutRangeIncrements;
+                    case 1: return Remainder2CountWithoutRangeIncrements;
+                    case 2: return Remainder1CountWithoutRangeIncrements;
+                    default: return 0;
+                }
+            }
+            set
+            {
+                Remainder0CountWithoutRangeIncrements = value;
+            }
+        }
+
+        private int Remainder0CountWithoutRangeIncrements { get; set; }
+        private int Remainder1CountWithoutRangeIncrements { get; set; }
+        private int Remainder2CountWithoutRangeIncrements { get; set; }
         public int RangeIncrements { get; set; }
 
-        public void Swap0And1RemainderCounts()
+        public IncrementQueryObject Combine(IncrementQueryObject rightAdjacentObject)
         {
-            int oldRemainder1Count = Remainder1Count;
-            Remainder1Count = Remainder0Count;
-            Remainder0Count = oldRemainder1Count;
+            var combinedQueryObject = new IncrementQueryObject();
+            combinedQueryObject.SubsumeRemainders(this);
+            combinedQueryObject.SubsumeRemainders(rightAdjacentObject);
+
+            return combinedQueryObject;
         }
 
-        public void Swap0And2RemainderCounts()
+        public void Update(IncrementQueryObject updatedLeftChild, IncrementQueryObject updatedRightChild)
         {
-            int oldRemainder2Count = Remainder2Count;
-            Remainder2Count = Remainder0Count;
-            Remainder0Count = oldRemainder2Count;
+            // Zero these out first as we want the total of the children's updated contributions.
+            Remainder0CountWithoutRangeIncrements
+                = Remainder1CountWithoutRangeIncrements
+                = Remainder2CountWithoutRangeIncrements = 0;
+            SubsumeRemainders(updatedLeftChild);
+            SubsumeRemainders(updatedRightChild);
         }
 
-        public void Swap1And2RemainderCounts()
+        public void SubsumeRemainders(IncrementQueryObject child)
         {
-            int oldRemainder2Count = Remainder2Count;
-            Remainder2Count = Remainder1Count;
-            Remainder1Count = oldRemainder2Count;
+            switch (child.RangeIncrements % 3)
+            {
+                case 0:
+                    Remainder0CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
+                    Remainder1CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
+                    Remainder2CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
+                    break;
+                case 1:
+                    Remainder0CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
+                    Remainder1CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
+                    Remainder2CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
+                    break;
+                case 2:
+                    Remainder0CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
+                    Remainder1CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
+                    Remainder2CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
+                    break;
+            }
         }
     }
 }
@@ -176,8 +224,7 @@ public static class Program
     private static void Main()
     {
         int arrayLength = FastIO.ReadNonNegativeInt();
-        int arrayLengthMinus1 = arrayLength - 1;
-        var solver = new MULTQ3LazySegmentTree(arrayLength);
+        var solver = new MULTQ3(arrayLength);
 
         int operationCount = FastIO.ReadNonNegativeInt();
         for (int o = 0; o < operationCount; ++o)
@@ -187,17 +234,14 @@ public static class Program
             if (operation == 0)
             {
                 solver.Increment(
-                    treeArrayIndex: 0, segmentStartIndex: 0, segmentEndIndex: arrayLengthMinus1,
                     incrementStartIndex: FastIO.ReadNonNegativeInt(),
                     incrementEndIndex: FastIO.ReadNonNegativeInt());
             }
             else
             {
                 FastIO.WriteNonNegativeInt(solver.Query(
-                    treeArrayIndex: 0, segmentStartIndex: 0, segmentEndIndex: arrayLengthMinus1,
                     queryStartIndex: FastIO.ReadNonNegativeInt(),
-                    queryEndIndex: FastIO.ReadNonNegativeInt(),
-                    rangeIncrements: 0));
+                    queryEndIndex: FastIO.ReadNonNegativeInt()));
                 FastIO.WriteLine();
             }
         }
