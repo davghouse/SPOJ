@@ -2875,17 +2875,36 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/MULTQ3/ #divide-and-conquer #lazy #segment-tree
         ///// Does range increments and range queries for numbers divisible by 3.
-        ///public sealed class MULTQ3LazySegmentTree
+        ///public sealed class MULTQ3 // v1, same big O as v2 but too much overhead to get AC
+        ///{
+        ///    private readonly MULTQ3LazySegmentTree _segmentTree;
+        ///
+        ///    // The idea is to store how many numbers in a range have remainders of 0, 1, and 2 when divided
+        ///    // by 3. Then we can calculate how range increments to that range affec [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MULTQ3_v1 {
+            get {
+                return ResourceManager.GetString("MULTQ3_v1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/MULTQ3/ #divide-and-conquer #lazy #segment-tree
+        ///// Does range increments and range queries for numbers divisible by 3.
+        ///public sealed class MULTQ3LazySegmentTree // v2, trading code quality/readability for better performance
         ///{
         ///    private readonly int _sourceArrayLength;
         ///    private readonly IncrementQueryObject[] _treeArray;
         ///
-        ///    // This solution required a lot of weird optimizations. After struggling on my own,
-        ///    // I based the optimizations off of https://github.com/cacophonix/SPOJ/blob/mas [rest of string was truncated]&quot;;.
+        ///    // This solution required a lot of optimizations. After struggling on my own, I based the
+        ///    // optimiz [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string MULTQ3 {
+        public static string MULTQ3_v2 {
             get {
-                return ResourceManager.GetString("MULTQ3", resourceCulture);
+                return ResourceManager.GetString("MULTQ3_v2", resourceCulture);
             }
         }
         

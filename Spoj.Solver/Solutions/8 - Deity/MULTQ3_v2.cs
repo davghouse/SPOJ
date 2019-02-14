@@ -3,20 +3,17 @@ using System.IO;
 
 // https://www.spoj.com/problems/MULTQ3/ #divide-and-conquer #lazy #segment-tree
 // Does range increments and range queries for numbers divisible by 3.
-public sealed class MULTQ3LazySegmentTree
+public sealed class MULTQ3LazySegmentTree // v2, trading code quality/readability for better performance
 {
     private readonly int _sourceArrayLength;
     private readonly IncrementQueryObject[] _treeArray;
 
-    // This solution required a lot of weird optimizations. After struggling on my own,
-    // I based the optimizations off of https://github.com/cacophonix/SPOJ/blob/master/MULTQ3.cpp.
-    // Here's my original, cleaner code with the same runtime complexity:
-    // https://gist.github.com/davghouse/9823c61bee36232cd161475e124195fe.
-    // For the problem the idea is to store how many numbers in a range have remainders of 0,
-    // 1, and 2 when divided by 3. Then we can calculate how range increments to that range
-    // affect the total count of numbers divisible by 3. For example, if the range has been
-    // incremented 4 times, any numbers in the range with a remainder of 2 will have a remainder
-    // of 0 after the range is incremented.
+    // This solution required a lot of optimizations. After struggling on my own, I based the
+    // optimizations off of https://github.com/cacophonix/SPOJ/blob/master/MULTQ3.cpp.
+    // The idea is to store how many numbers in a range have remainders of 0, 1, and 2 when divided
+    // by 3. Then we can calculate how range increments to that range affect the total count of
+    // numbers divisible by 3. For example, if the range increment is 2, any numbers in the range
+    // already having a remainder of 1 will have a remainder of 0 after applying the range increment.
     public MULTQ3LazySegmentTree(int arrayLength)
     {
         _sourceArrayLength = arrayLength;
