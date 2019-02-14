@@ -7,7 +7,7 @@ public static class GNYR09F
     // The first index is n, number of bits.
     // The second index is k, number of adjacent bits.
     // The third index is 0 or 1, the bit the string ends with.
-    private static int[,,] _bitStringCounts = new int[101, 100, 2];
+    private static readonly int[,,] _bitStringCounts = new int[101, 100, 2];
 
     static GNYR09F()
     {

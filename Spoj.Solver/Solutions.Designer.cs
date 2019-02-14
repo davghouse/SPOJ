@@ -1953,11 +1953,11 @@ namespace Spoj.Solver {
         ///    // The first index is n, number of bits.
         ///    // The second index is k, number of adjacent bits.
         ///    // The third index is 0 or 1, the bit the string ends with.
-        ///    private static int[,,] _bitStringCounts = new int[101, 100, 2];
+        ///    private static readonly int[,,] _bitStringCounts = new int[101, 100, 2];
         ///
         ///    static GNYR09F()
         ///    {
-        ///        // For n = 0, there are no bits, so no strings for an [rest of string was truncated]&quot;;.
+        ///        // For n = 0, there are no bits, so no strin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GNYR09F {
             get {
@@ -2569,6 +2569,33 @@ namespace Spoj.Solver {
         public static string LITE {
             get {
                 return ResourceManager.GetString("LITE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/M3TILE/ #ad-hoc #dynamic-programming #recursion
+        ///// Calculates the number of tilings for a 3xn grid using 2x1 rectangles.
+        ///public static class M3TILE
+        ///{
+        ///    private static readonly int[] _tilingCounts = new int[31];
+        ///
+        ///    static M3TILE()
+        ///    {
+        ///        // Empty grid is considered to have 1 tiling.
+        ///        _tilingCounts[0] = 1;
+        ///
+        ///        // &gt;&gt;      ^^      &gt;&gt;
+        ///        // &gt;&gt;  or  ^^  or  ^^
+        ///        // &gt;&gt;      &gt;&gt;      ^^
+        ///        _tilingCounts[2] = 3;
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string M3TILE {
+            get {
+                return ResourceManager.GetString("M3TILE", resourceCulture);
             }
         }
         

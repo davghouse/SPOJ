@@ -165,6 +165,7 @@
     <Compile Include="Solutions\6 - Emperor\DSUBSEQTests.cs" />
     <Compile Include="Solutions\6 - Emperor\EKOTests.cs" />
     <Compile Include="Solutions\6 - Emperor\IOIPALINTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\M3TILETests.cs" />
     <Compile Include="Solutions\6 - Emperor\NEG2Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\PIETests.cs" />
     <Compile Include="Solutions\6 - Emperor\PONTests.cs" />
