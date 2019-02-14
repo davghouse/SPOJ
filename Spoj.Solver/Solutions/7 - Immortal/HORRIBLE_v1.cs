@@ -21,11 +21,11 @@ public sealed class HORRIBLE // v1, using a segment tree
 
 public sealed class LazySumSegmentTree
 {
-    private readonly QueryObject[] _treeArray;
+    private readonly SumQueryObject[] _treeArray;
 
     public LazySumSegmentTree(int arrayLength)
     {
-        _treeArray = new QueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
+        _treeArray = new SumQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
         Build(0, 0, arrayLength - 1);
     }
 
@@ -33,7 +33,7 @@ public sealed class LazySumSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new QueryObject(segmentStartIndex, 0);
+            _treeArray[treeArrayIndex] = new SumQueryObject(segmentStartIndex, 0);
             return;
         }
 
@@ -55,7 +55,7 @@ public sealed class LazySumSegmentTree
     // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
     // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
     // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
-    private QueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
+    private SumQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
     {
         var parentQueryObject = _treeArray[treeArrayIndex];
 
@@ -66,7 +66,7 @@ public sealed class LazySumSegmentTree
         bool rightHalfOverlaps = parentQueryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
-        QueryObject childrenQueryObject;
+        SumQueryObject childrenQueryObject;
 
         if (leftHalfOverlaps && rightHalfOverlaps)
         {
@@ -82,7 +82,7 @@ public sealed class LazySumSegmentTree
             childrenQueryObject = Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
         }
 
-        return new QueryObject(
+        return new SumQueryObject(
             childrenQueryObject.SegmentStartIndex,
             childrenQueryObject.SegmentEndIndex,
             childrenQueryObject.Sum)
@@ -123,37 +123,34 @@ public sealed class LazySumSegmentTree
         queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
     }
 
-    private sealed class QueryObject
+    private sealed class SumQueryObject
     {
         public long Sum
-            => SumWithoutRangeAddition + SumFromRangeAddition;
+            => SumWithoutRangeAddition + RangeAddition * SegmentLength;
 
-        public long SumFromRangeAddition
-            => RangeAddition * SegmentLength;
-
-        public long SumWithoutRangeAddition { get; internal set; }
-        public long RangeAddition { get; internal set; }
+        private long SumWithoutRangeAddition { get; set; }
+        public long RangeAddition { get; set; }
 
         public int SegmentStartIndex { get; }
         public int SegmentEndIndex { get; }
         public int SegmentLength => SegmentEndIndex - SegmentStartIndex + 1;
 
-        public QueryObject(int index, long value)
+        public SumQueryObject(int index, long value)
         {
             SegmentStartIndex = index;
             SegmentEndIndex = index;
             SumWithoutRangeAddition = value;
         }
 
-        public QueryObject(int segmentStartIndex, int segmentEndIndex, long sumWithoutRangeAddition)
+        public SumQueryObject(int segmentStartIndex, int segmentEndIndex, long sumWithoutRangeAddition)
         {
             SegmentStartIndex = segmentStartIndex;
             SegmentEndIndex = segmentEndIndex;
             SumWithoutRangeAddition = sumWithoutRangeAddition;
         }
 
-        public QueryObject Combine(QueryObject rightAdjacentObject)
-            => new QueryObject(
+        public SumQueryObject Combine(SumQueryObject rightAdjacentObject)
+            => new SumQueryObject(
                 segmentStartIndex: SegmentStartIndex,
                 segmentEndIndex: rightAdjacentObject.SegmentEndIndex,
                 sumWithoutRangeAddition: Sum + rightAdjacentObject.Sum);
@@ -161,7 +158,7 @@ public sealed class LazySumSegmentTree
         public void Update(long rangeAddition)
             => RangeAddition += rangeAddition;
 
-        public void Update(QueryObject updatedLeftChild, QueryObject updatedRightChild)
+        public void Update(SumQueryObject updatedLeftChild, SumQueryObject updatedRightChild)
             => SumWithoutRangeAddition = updatedLeftChild.Sum + updatedRightChild.Sum;
 
         public bool IsTotallyOverlappedBy(int startIndex, int endIndex)

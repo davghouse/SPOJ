@@ -2554,17 +2554,17 @@ namespace Spoj.Solver {
         ///// Calculates how many lights in a range have been toggled on.
         ///public sealed class LITE
         ///{
-        ///    private readonly LazySumSegmentTree _segmentTree;
+        ///    private readonly LITELazySegmentTree _segmentTree;
         ///
         ///    public LITE(int lightCount)
         ///    {
-        ///        _segmentTree = new LazySumSegmentTree(lightCount);
+        ///        _segmentTree = new LITELazySegmentTree(lightCount);
         ///    }
         ///
-        ///    public void Update(int updateStartIndex, int updateEndIndex)
-        ///        =&gt; _segmentTree.Push(updateStartIndex, updateEndIndex);
+        ///    public void Push(int pushStartIndex, int pushEndIndex)
+        ///        =&gt; _segmentTree.Push(pushStartIndex, pushEndIndex);
         ///
-        ///    p [rest of string was truncated]&quot;;.
+        ///    public in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LITE {
             get {
@@ -2866,6 +2866,26 @@ namespace Spoj.Solver {
         public static string MUL {
             get {
                 return ResourceManager.GetString("MUL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
+        ///// https://www.spoj.com/problems/MULTQ3/ #divide-and-conquer #lazy #segment-tree
+        ///// Does range increments and range queries for numbers divisible by 3.
+        ///public sealed class MULTQ3LazySegmentTree
+        ///{
+        ///    private readonly int _sourceArrayLength;
+        ///    private readonly IncrementQueryObject[] _treeArray;
+        ///
+        ///    // This solution required a lot of weird optimizations. After struggling on my own,
+        ///    // I based the optimizations off of https://github.com/cacophonix/SPOJ/blob/mas [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MULTQ3 {
+            get {
+                return ResourceManager.GetString("MULTQ3", resourceCulture);
             }
         }
         

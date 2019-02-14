@@ -275,6 +275,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\8 - Deity\MULTQ3.cs" />
     <None Include="Solutions\6 - Emperor\M3TILE.cs" />
     <None Include="Solutions\5 - King\GNYR09F.cs" />
     <None Include="Solutions\6 - Emperor\YODANESS.cs" />

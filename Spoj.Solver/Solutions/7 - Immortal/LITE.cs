@@ -5,27 +5,27 @@ using System.IO;
 // Calculates how many lights in a range have been toggled on.
 public sealed class LITE
 {
-    private readonly LazySumSegmentTree _segmentTree;
+    private readonly LITELazySegmentTree _segmentTree;
 
     public LITE(int lightCount)
     {
-        _segmentTree = new LazySumSegmentTree(lightCount);
+        _segmentTree = new LITELazySegmentTree(lightCount);
     }
 
-    public void Update(int updateStartIndex, int updateEndIndex)
-        => _segmentTree.Push(updateStartIndex, updateEndIndex);
+    public void Push(int pushStartIndex, int pushEndIndex)
+        => _segmentTree.Push(pushStartIndex, pushEndIndex);
 
     public int Query(int queryStartIndex, int queryEndIndex)
         => _segmentTree.Query(queryStartIndex, queryEndIndex);
 }
 
-public sealed class LazySumSegmentTree
+public sealed class LITELazySegmentTree
 {
-    private readonly QueryObject[] _treeArray;
+    private readonly PushQueryObject[] _treeArray;
 
-    public LazySumSegmentTree(int arrayLength)
+    public LITELazySegmentTree(int arrayLength)
     {
-        _treeArray = new QueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
+        _treeArray = new PushQueryObject[2 * MathHelper.FirstPowerOfTwoEqualOrGreater(arrayLength) - 1];
         Build(0, 0, arrayLength - 1);
     }
 
@@ -33,7 +33,7 @@ public sealed class LazySumSegmentTree
     {
         if (segmentStartIndex == segmentEndIndex)
         {
-            _treeArray[treeArrayIndex] = new QueryObject(segmentStartIndex);
+            _treeArray[treeArrayIndex] = new PushQueryObject(segmentStartIndex);
             return;
         }
 
@@ -55,7 +55,7 @@ public sealed class LazySumSegmentTree
     // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
     // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
     // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
-    private QueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
+    private PushQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
     {
         var parentQueryObject = _treeArray[treeArrayIndex];
 
@@ -66,7 +66,7 @@ public sealed class LazySumSegmentTree
         bool rightHalfOverlaps = parentQueryObject.DoesRightHalfOverlapWith(queryStartIndex, queryEndIndex);
         int leftChildTreeArrayIndex = 2 * treeArrayIndex + 1;
         int rightChildTreeArrayIndex = leftChildTreeArrayIndex + 1;
-        QueryObject childrenQueryObject;
+        PushQueryObject childrenQueryObject;
 
         if (leftHalfOverlaps && rightHalfOverlaps)
         {
@@ -82,7 +82,7 @@ public sealed class LazySumSegmentTree
             childrenQueryObject = Query(rightChildTreeArrayIndex, queryStartIndex, queryEndIndex);
         }
 
-        return new QueryObject(
+        return new PushQueryObject(
             childrenQueryObject.SegmentStartIndex,
             childrenQueryObject.SegmentEndIndex,
             childrenQueryObject.LitUpCount)
@@ -120,40 +120,40 @@ public sealed class LazySumSegmentTree
         queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
     }
 
-    private sealed class QueryObject
+    private sealed class PushQueryObject
     {
         public int LitUpCount
             => RangePushes % 2 == 0
             ? LitUpCountWithoutRangePushes
             : SegmentLightCount - LitUpCountWithoutRangePushes;
 
-        public int LitUpCountWithoutRangePushes { get; internal set; }
-        public int RangePushes { get; internal set; }
+        private int LitUpCountWithoutRangePushes { get; set; }
+        public int RangePushes { get; set; }
 
         public int SegmentStartIndex { get; }
         public int SegmentEndIndex { get; }
         public int SegmentLightCount => SegmentEndIndex - SegmentStartIndex + 1;
 
-        public QueryObject(int index)
+        public PushQueryObject(int index)
         {
             SegmentStartIndex = index;
             SegmentEndIndex = index;
         }
 
-        public QueryObject(int segmentStartIndex, int segmentEndIndex, int litUpCountWithoutRangePushes)
+        public PushQueryObject(int segmentStartIndex, int segmentEndIndex, int litUpCountWithoutRangePushes)
         {
             SegmentStartIndex = segmentStartIndex;
             SegmentEndIndex = segmentEndIndex;
             LitUpCountWithoutRangePushes = litUpCountWithoutRangePushes;
         }
 
-        public QueryObject Combine(QueryObject rightAdjacentObject)
-            => new QueryObject(
+        public PushQueryObject Combine(PushQueryObject rightAdjacentObject)
+            => new PushQueryObject(
                 segmentStartIndex: SegmentStartIndex,
                 segmentEndIndex: rightAdjacentObject.SegmentEndIndex,
                 litUpCountWithoutRangePushes: LitUpCount + rightAdjacentObject.LitUpCount);
 
-        public void Update(QueryObject updatedLeftChild, QueryObject updatedRightChild)
+        public void Update(PushQueryObject updatedLeftChild, PushQueryObject updatedRightChild)
             => LitUpCountWithoutRangePushes = updatedLeftChild.LitUpCount + updatedRightChild.LitUpCount;
 
         public bool IsTotallyOverlappedBy(int startIndex, int endIndex)
@@ -195,9 +195,9 @@ public static class Program
 
             if (operation == 0)
             {
-                solver.Update(
-                    updateStartIndex: FastIO.ReadNonNegativeInt() - 1,
-                    updateEndIndex: FastIO.ReadNonNegativeInt() - 1);
+                solver.Push(
+                    pushStartIndex: FastIO.ReadNonNegativeInt() - 1,
+                    pushEndIndex: FastIO.ReadNonNegativeInt() - 1);
             }
             else
             {
