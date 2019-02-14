@@ -20,6 +20,7 @@
 #dynamic-programming
 #dynamic-programming-1d
 #dynamic-programming-2d
+#dynamic-programming-3d
 #dynamic-programming-x
 #experiment
 #extrema

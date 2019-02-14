@@ -1,7 +1,11 @@
-2
-6
-in the force strong you are
-you are strong in the force
-6
-or i will help you not
-or i will not help you
+10
+1 5 2
+2 20 8
+3 30 17
+4 40 24
+5 50 37
+6 60 52
+7 70 59
+8 80 73
+9 90 84
+10 100 90

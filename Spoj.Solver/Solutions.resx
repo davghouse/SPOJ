@@ -721,4 +721,7 @@
   <data name="YODANESS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\6 - Emperor\YODANESS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="GNYR09F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\5 - King\GNYR09F.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

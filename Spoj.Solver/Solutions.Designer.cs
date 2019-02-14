@@ -1945,6 +1945,28 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///
+        ///// https://www.spoj.com/problems/GNYR09F/ #binary #dynamic-programming-3d
+        ///// Finds the number of n-bit strings with k adjacent bits.
+        ///public static class GNYR09F
+        ///{
+        ///    // The first index is n, number of bits.
+        ///    // The second index is k, number of adjacent bits.
+        ///    // The third index is 0 or 1, the bit the string ends with.
+        ///    private static int[,,] _bitStringCounts = new int[101, 100, 2];
+        ///
+        ///    static GNYR09F()
+        ///    {
+        ///        // For n = 0, there are no bits, so no strings for an [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GNYR09F {
+            get {
+                return ResourceManager.GetString("GNYR09F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
         ///// https://www.spoj.com/problems/GSS1/ #divide-and-conquer #segment-tree
@@ -3934,6 +3956,7 @@ namespace Spoj.Solver {
         ///#dynamic-programming
         ///#dynamic-programming-1d
         ///#dynamic-programming-2d
+        ///#dynamic-programming-3d
         ///#dynamic-programming-x
         ///#experiment
         ///#extrema
@@ -3951,10 +3974,7 @@ namespace Spoj.Solver {
         ///#inspection
         ///#intersection
         ///#intuition
-        ///#io
-        ///#knapsack
-        ///#lazy
-        ///#lc [rest of string was truncated]&quot;;.
+        ///# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
