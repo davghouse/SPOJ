@@ -103,11 +103,9 @@ public sealed class MULTQ3LazySegmentTree
         int treeArrayIndex, int segmentStartIndex, int segmentEndIndex,
         int incrementStartIndex, int incrementEndIndex)
     {
-        var queryObject = _treeArray[treeArrayIndex];
-
         if (incrementStartIndex <= segmentStartIndex && incrementEndIndex >= segmentEndIndex)
         {
-            ++queryObject.RangeIncrements;
+            ++_treeArray[treeArrayIndex].RangeIncrements;
             return;
         }
 
@@ -129,7 +127,7 @@ public sealed class MULTQ3LazySegmentTree
                 incrementStartIndex, incrementEndIndex);
         }
 
-        queryObject.Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
+        _treeArray[treeArrayIndex].Update(_treeArray[leftChildTreeArrayIndex], _treeArray[rightChildTreeArrayIndex]);
     }
 
     // The idea is to store how many numbers in a range have remainders of 0, 1, and 2 when divided
@@ -137,7 +135,7 @@ public sealed class MULTQ3LazySegmentTree
     // numbers divisible by 3. For example, if the range increment is 2, any numbers in the range
     // already having a remainder of 1 will have a remainder of 0 after applying the range increment.
     // The tricky part is doing the calculates fast enough to get AC.
-    public sealed class IncrementQueryObject
+    public struct IncrementQueryObject
     {
         public int Remainder0Count
         {
@@ -145,22 +143,22 @@ public sealed class MULTQ3LazySegmentTree
             {
                 switch (RangeIncrements % 3)
                 {
-                    case 0: return Remainder0CountWithoutRangeIncrements;
-                    case 1: return Remainder2CountWithoutRangeIncrements;
-                    case 2: return Remainder1CountWithoutRangeIncrements;
+                    case 0: return _remainder0CountWithoutRangeIncrements;
+                    case 1: return _remainder2CountWithoutRangeIncrements;
+                    case 2: return _remainder1CountWithoutRangeIncrements;
                     default: return 0;
                 }
             }
             set
             {
-                Remainder0CountWithoutRangeIncrements = value;
+                _remainder0CountWithoutRangeIncrements = value;
             }
         }
 
-        private int Remainder0CountWithoutRangeIncrements { get; set; }
-        private int Remainder1CountWithoutRangeIncrements { get; set; }
-        private int Remainder2CountWithoutRangeIncrements { get; set; }
-        public int RangeIncrements { get; set; }
+        private int _remainder0CountWithoutRangeIncrements;
+        private int _remainder1CountWithoutRangeIncrements;
+        private int _remainder2CountWithoutRangeIncrements;
+        public int RangeIncrements;
 
         public IncrementQueryObject Combine(IncrementQueryObject rightAdjacentObject)
         {
@@ -174,9 +172,9 @@ public sealed class MULTQ3LazySegmentTree
         public void Update(IncrementQueryObject updatedLeftChild, IncrementQueryObject updatedRightChild)
         {
             // Zero these out first as we want the total of the children's updated contributions.
-            Remainder0CountWithoutRangeIncrements
-                = Remainder1CountWithoutRangeIncrements
-                = Remainder2CountWithoutRangeIncrements = 0;
+            _remainder0CountWithoutRangeIncrements
+                = _remainder1CountWithoutRangeIncrements
+                = _remainder2CountWithoutRangeIncrements = 0;
             SubsumeRemainders(updatedLeftChild);
             SubsumeRemainders(updatedRightChild);
         }
@@ -186,19 +184,19 @@ public sealed class MULTQ3LazySegmentTree
             switch (child.RangeIncrements % 3)
             {
                 case 0:
-                    Remainder0CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
-                    Remainder1CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
-                    Remainder2CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
+                    _remainder0CountWithoutRangeIncrements += child._remainder0CountWithoutRangeIncrements;
+                    _remainder1CountWithoutRangeIncrements += child._remainder1CountWithoutRangeIncrements;
+                    _remainder2CountWithoutRangeIncrements += child._remainder2CountWithoutRangeIncrements;
                     break;
                 case 1:
-                    Remainder0CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
-                    Remainder1CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
-                    Remainder2CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
+                    _remainder0CountWithoutRangeIncrements += child._remainder2CountWithoutRangeIncrements;
+                    _remainder1CountWithoutRangeIncrements += child._remainder0CountWithoutRangeIncrements;
+                    _remainder2CountWithoutRangeIncrements += child._remainder1CountWithoutRangeIncrements;
                     break;
                 case 2:
-                    Remainder0CountWithoutRangeIncrements += child.Remainder1CountWithoutRangeIncrements;
-                    Remainder1CountWithoutRangeIncrements += child.Remainder2CountWithoutRangeIncrements;
-                    Remainder2CountWithoutRangeIncrements += child.Remainder0CountWithoutRangeIncrements;
+                    _remainder0CountWithoutRangeIncrements += child._remainder1CountWithoutRangeIncrements;
+                    _remainder1CountWithoutRangeIncrements += child._remainder2CountWithoutRangeIncrements;
+                    _remainder2CountWithoutRangeIncrements += child._remainder0CountWithoutRangeIncrements;
                     break;
             }
         }
