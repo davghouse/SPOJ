@@ -176,6 +176,7 @@
     <Compile Include="Solutions\6 - Emperor\SQRBRTests.cs" />
     <Compile Include="Solutions\6 - Emperor\SUBST1Tests.cs" />
     <Compile Include="Solutions\6 - Emperor\YODANESSTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\CHICAGOTests.cs" />
     <Compile Include="Solutions\7 - Immortal\CODESPTBTests.cs" />
     <Compile Include="Solutions\7 - Immortal\FREQUENTTests.cs" />
     <Compile Include="Solutions\7 - Immortal\HIGHWAYSTests.cs" />

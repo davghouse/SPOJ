@@ -1115,6 +1115,26 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using Vertex = WeightedSimpleGraph.Vertex;
+        ///
+        ///// https://www.spoj.com/problems/CHICAGO/ #dijkstras #graph-theory #greedy #heap #shortest-path
+        ///// Finds the path to Chicago with the highest probability of safety.
+        ///public static class CHICAGO
+        ///{
+        ///    // This uses Dijkstra&apos;s algorithm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm.
+        ///    // We return immediately upon visiting the destination intersection, and we don&apos;t [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CHICAGO {
+            get {
+                return ResourceManager.GetString("CHICAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/TEMPLATE1/ #ad-hoc #greedy #sorting
         ///// Breaks a chocolate bar apart in the cheapest way possible.
