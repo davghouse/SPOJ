@@ -724,6 +724,29 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/BEADS/ #ad-hoc #sorting
+        ///// Finds the start index of the minimum string rotation (lexicographically).
+        ///public static class BEADS
+        ///{
+        ///    public static int Solve(string @string)
+        ///    {
+        ///        // Create this to make the comparison much more convenient.
+        ///        string doubleString = @string + @string;
+        ///
+        ///        int minimumStartIndex = 0;
+        ///        for (int s = 1; s &lt; @string.Length; ++s)
+        ///        {
+        ///            // For perf, important to not actually create s [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BEADS {
+            get {
+                return ResourceManager.GetString("BEADS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/BEENUMS/ #formula #math #proof
         ///// Determines if the given number is a beehive number.
         ///public static class BEENUMS

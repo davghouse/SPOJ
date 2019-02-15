@@ -16,7 +16,7 @@ public static class SUBST1 // Same problem as DISUBSTR.
         {
             sortedSuffixStartIndices[i] = i;
         }
-        // Important to compare ordinal and not actually create the substrings for performance reasons.
+        // For perf, important to not actually create substrings, and to use compare ordinal.
         Array.Sort(sortedSuffixStartIndices, (i, j) => string.CompareOrdinal(s, i, s, j, s.Length));
 
         // Every substring is the prefix of a suffix, the suffix starting at the substring's start index,
