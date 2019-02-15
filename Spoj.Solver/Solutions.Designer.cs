@@ -3596,6 +3596,29 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/RENT/ #binary-search #dynamic-programming-1d #sorting
+        ///// Finds which flight orders to accept, given their duration and profit.
+        ///public static class RENT
+        ///{
+        ///    public static int Solve(int orderCount, FlightOrder[] orders)
+        ///    {
+        ///        // Sort by ascending end time.
+        ///        Array.Sort(orders, (f1, f2) =&gt; f1.EndTime.CompareTo(f2.EndTime));
+        ///
+        ///        // For the DP, store the best pr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string RENT {
+            get {
+                return ResourceManager.GetString("RENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/ROCK/ #dynamic-programming-2d
         ///// Finds out how much length of a sweet/sour stick can be sold.
