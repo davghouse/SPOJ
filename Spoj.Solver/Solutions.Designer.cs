@@ -723,6 +723,30 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/BABTWR/ #ad-hoc #dynamic-programming-1d
+        ///// Finds the height of the highest possible tower stack.
+        ///public static class BABTWR
+        ///{
+        ///    public static int Solve(Block[] blocks)
+        ///    {
+        ///        var effectiveBlocks = blocks
+        ///            .SelectMany(b =&gt; GetEffectiveBlocks(b))
+        ///            .OrderBy(b =&gt; b.BaseArea)
+        ///            .ToArray();
+        ///
+        ///        // Blocks with smaller area can never have blocks with large [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BABTWR {
+            get {
+                return ResourceManager.GetString("BABTWR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/BEADS/ #ad-hoc #sorting
         ///// Finds the start index of the minimum string rotation (lexicographically).

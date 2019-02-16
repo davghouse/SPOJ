@@ -113,6 +113,7 @@
     <Compile Include="Solutions\6 - Emperor\ALLIZWELTests.cs" />
     <Compile Include="Solutions\6 - Emperor\ANARC05HTests.cs" />
     <Compile Include="Solutions\6 - Emperor\APSTests.cs" />
+    <Compile Include="Solutions\6 - Emperor\BABTWRTests.cs" />
     <Compile Include="Solutions\6 - Emperor\BLINNETTests.cs" />
     <Compile Include="Solutions\6 - Emperor\CPCRC1CTests.cs" />
     <Compile Include="Solutions\6 - Emperor\FCTRL2Tests.cs" />

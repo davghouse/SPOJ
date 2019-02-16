@@ -1,7 +1,9 @@
-6
-helloworld
-amandamanda
-dontcallmebfu
-aaabaaa
-aaa
-zzzbbbr
+5
+31 41 59
+26 53 58
+97 93 23
+84 62 64
+33 83 27
+1
+1 1 1
+0
