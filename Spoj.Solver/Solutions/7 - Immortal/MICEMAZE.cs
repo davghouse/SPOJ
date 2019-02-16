@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Vertex = WeightedSimpleGraph.Vertex;
+using Vertex = WeightedDirectedGraph.Vertex;
 
 // https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
 // Finds the number of mice that can reach the end of a maze in time.
@@ -15,7 +15,7 @@ public static class MICEMAZE
     // limit, we can just break out of the loop w/o ever putting later cells onto the heap.
     public static int Solve(int cellCount, int exitCell, int timeLimit, int connectionCount, int[,] connections)
     {
-        var graph = new WeightedSimpleGraph(cellCount);
+        var graph = new WeightedDirectedGraph(cellCount);
         for (int c = 0; c < connectionCount; ++c)
         {
             graph.AddEdge(connections[c, 1], connections[c, 0], connections[c, 2]);
@@ -64,11 +64,11 @@ public static class MICEMAZE
     }
 }
 
-// Undirected, weighted graph with no loops or multiple edges. The graph's vertices are stored
+// Directed, weighted graph with no loops or multiple edges. The graph's vertices are stored
 // in an array, with the ID of a vertex (from 0 to vertexCount - 1) corresponding to its index.
-public sealed class WeightedSimpleGraph
+public sealed class WeightedDirectedGraph
 {
-    public WeightedSimpleGraph(int vertexCount)
+    public WeightedDirectedGraph(int vertexCount)
     {
         var vertices = new Vertex[vertexCount];
         for (int id = 0; id < vertexCount; ++id)
@@ -82,18 +82,18 @@ public sealed class WeightedSimpleGraph
     public IReadOnlyList<Vertex> Vertices { get; }
     public int VertexCount => Vertices.Count;
 
-    public void AddEdge(int firstVertexID, int secondVertexID, int weight)
-        => AddEdge(Vertices[firstVertexID], Vertices[secondVertexID], weight);
+    public void AddEdge(int startVertexID, int endVertexID, int weight)
+        => AddEdge(Vertices[startVertexID], Vertices[endVertexID], weight);
 
-    public void AddEdge(Vertex firstVertex, Vertex secondVertex, int weight)
-        => firstVertex.AddNeighbor(secondVertex, weight);
+    public void AddEdge(Vertex startVertex, Vertex endVertex, int weight)
+        => startVertex.AddNeighbor(endVertex, weight);
 
     public sealed class Vertex : IEquatable<Vertex>
     {
-        private readonly WeightedSimpleGraph _graph;
+        private readonly WeightedDirectedGraph _graph;
         private readonly Dictionary<Vertex, int> _edges = new Dictionary<Vertex, int>();
 
-        internal Vertex(WeightedSimpleGraph graph, int ID)
+        internal Vertex(WeightedDirectedGraph graph, int ID)
         {
             _graph = graph;
             this.ID = ID;
@@ -102,7 +102,7 @@ public sealed class WeightedSimpleGraph
         public int ID { get; }
 
         public IReadOnlyCollection<Vertex> Neighbors => _edges.Keys;
-        public int Degree => _edges.Count;
+        public int OutDegree => _edges.Count;
 
         internal void AddNeighbor(Vertex neighbor, int weight)
             => _edges.Add(neighbor, weight);

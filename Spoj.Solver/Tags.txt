@@ -22,6 +22,7 @@
 #dynamic-programming-2d
 #dynamic-programming-3d
 #dynamic-programming-x
+#euler-path
 #experiment
 #extrema
 #factorial

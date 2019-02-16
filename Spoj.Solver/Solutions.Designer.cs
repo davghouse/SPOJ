@@ -2833,14 +2833,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///using System.Linq;
-        ///using Vertex = WeightedSimpleGraph.Vertex;
+        ///using Vertex = WeightedDirectedGraph.Vertex;
         ///
         ///// https://www.spoj.com/problems/MICEMAZE/ #dijkstras #graph-theory #greedy #heap #shortest-path
         ///// Finds the number of mice that can reach the end of a maze in time.
         ///public static class MICEMAZE
         ///{
         ///    // We use Dijkstra&apos;s algorithm from the exit cell. It&apos;s like starting at our destination and
-        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection direct [rest of string was truncated]&quot;;.
+        ///    // then running time backwards to see where we could&apos;ve gotten there from. Connection dire [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MICEMAZE {
             get {
@@ -4100,6 +4100,7 @@ namespace Spoj.Solver {
         ///#dynamic-programming-2d
         ///#dynamic-programming-3d
         ///#dynamic-programming-x
+        ///#euler-path
         ///#experiment
         ///#extrema
         ///#factorial
@@ -4115,8 +4116,7 @@ namespace Spoj.Solver {
         ///#hld
         ///#inspection
         ///#intersection
-        ///#intuition
-        ///# [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
@@ -4467,6 +4467,26 @@ namespace Spoj.Solver {
         public static string WORDCNT {
             get {
                 return ResourceManager.GetString("WORDCNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/WORDS1/ #euler-path #graph-theory
+        ///// Determines if words can be arranged in sequence s.t. end/start letters match.
+        ///public static class WORDS1
+        ///{
+        ///    // Tricky part is noticing that instead of words being vertices, words can be edges in
+        ///    // a graph whose vertices represent letters. Then there&apos;s an edge between two vertices
+        ///    // for each word that starts with the start vertex&apos; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string WORDS1 {
+            get {
+                return ResourceManager.GetString("WORDS1", resourceCulture);
             }
         }
         
