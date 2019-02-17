@@ -14,9 +14,9 @@ public static class KQUERY
 
         // Sort source array values by descending value, but remember their original index.
         var orderedSourceValues = sourceArray
-            .Select((v, i) => new ValueSourceIndex(v, i))
+            .Select((v, i) => new IndexedValue(v, i))
             .ToArray();
-        Array.Sort(orderedSourceValues, (vi1, vi2) => vi2.Value.CompareTo(vi1.Value));
+        Array.Sort(orderedSourceValues, (v1, v2) => v2.Value.CompareTo(v1.Value));
 
         // Sort queries by descending k (a query looks for everything in a range > k).
         Array.Sort(queries, (q1, q2) => q2.GreaterThanLowerLimit.CompareTo(q1.GreaterThanLowerLimit));
@@ -65,9 +65,9 @@ public struct GreaterThanQuery
     public int ResultIndex { get; }
 }
 
-public struct ValueSourceIndex
+public struct IndexedValue
 {
-    public ValueSourceIndex(int value, int sourceIndex)
+    public IndexedValue(int value, int sourceIndex)
     {
         Value = value;
         SourceIndex = sourceIndex;

@@ -2907,6 +2907,29 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/MKTHNUM/ #binary-search #divide-and-conquer #segment-tree #sorting
+        ///// Answers k-th smallest element in a range queries.
+        ///public sealed class MKTHNUM
+        ///{
+        ///    private readonly int _sourceArrayEndIndex;
+        ///    private readonly MergeSortSegmentTree _segmentTree;
+        ///
+        ///    public MKTHNUM(int[] sourceArray)
+        ///    {
+        ///        _sourceArrayEndIndex = sourceArray.Length - 1;
+        ///        _segmentTree = new MergeSortSegmentTree(sourceArray); [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string MKTHNUM {
+            get {
+                return ResourceManager.GetString("MKTHNUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/MRECAMAN/ #ad-hoc #memoization

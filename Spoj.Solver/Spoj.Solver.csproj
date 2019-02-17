@@ -275,6 +275,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Solutions.resx</DependentUpon>
     </Compile>
+    <None Include="Solutions\8 - Deity\MKTHNUM.cs" />
     <None Include="Solutions\8 - Deity\KQUERY.cs" />
     <None Include="Solutions\7 - Immortal\WORDS1.cs" />
     <None Include="Solutions\6 - Emperor\BABTWR.cs" />
