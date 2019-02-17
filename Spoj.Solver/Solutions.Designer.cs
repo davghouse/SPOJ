@@ -1491,15 +1491,17 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.IO;
         ///using System.Linq;
-        ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/DQUERY/ #bit #offline #sorting
-        ///// Finds the number of distinct elements in a subrange of an array.
+        ///// Finds the number of distinct elements in subranges of an array.
         ///public static class DQUERY
         ///{
-        ///    // Needed hints to solve this one, this technique is kind of explained in lots of places but
-        ///    // never clearly. After looking through some links I was effectively solving with these hints:
-        ///    // - Consider how to solve the prob [rest of string was truncated]&quot;;.
+        ///    public static int[] Solve(int[] sourceArray, DistinctCountQuery[] queries)
+        ///    {
+        ///        int[] queryResults = new int[queries.Length];
+        ///
+        ///        // Queries are performed in phases, a phase for each of the sourceArray.Length possible
+        ///        // query  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DQUERY {
             get {
@@ -2497,6 +2499,27 @@ namespace Spoj.Solver {
         public static string KGSS {
             get {
                 return ResourceManager.GetString("KGSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///using System.Linq;
+        ///
+        ///// https://www.spoj.com/problems/KQUERY/ #bit #offline #sorting
+        ///// Finds the number of elements greater than a (variable) value in subranges of an array.
+        ///public static class KQUERY
+        ///{
+        ///    // This problem is similar to DQUERY, but requires less creativity I think. The
+        ///    // way to use the BIT was a lot easier to think of, but I&apos;ll still rank it as Deity.
+        ///    public static int[] SolveOffline(int[] sourceArray, GreaterThanQuery[] queries)
+        ///    {
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string KQUERY {
+            get {
+                return ResourceManager.GetString("KQUERY", resourceCulture);
             }
         }
         

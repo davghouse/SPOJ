@@ -1,80 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-// https://www.spoj.com/problems/DQUERY/ #bit #offline #sorting
-// Finds the number of distinct elements in subranges of an array.
-public static class DQUERY
+// https://www.spoj.com/problems/KQUERY/ #bit #offline #sorting
+// Finds the number of elements greater than a (variable) value in subranges of an array.
+public static class KQUERY
 {
-    public static int[] Solve(int[] sourceArray, DistinctCountQuery[] queries)
+    // This problem is similar to DQUERY, but requires less creativity I think. The
+    // way to use the BIT was a lot easier to think of, but I'll still rank it as Deity.
+    public static int[] SolveOffline(int[] sourceArray, GreaterThanQuery[] queries)
     {
         int[] queryResults = new int[queries.Length];
 
-        // Queries are performed in phases, a phase for each of the sourceArray.Length possible
-        // query end indices. The query start index doesn't matter, just the fact that all queries
-        // in a phase share an end index. The phases will proceed in ascending order of query end
-        // indices, which is why the query objects are sorted that way below. A PURQ BIT is queried
-        // within phases and updated between them. For any given phase, the PURQ BIT is always in a
-        // state such that it can only answer distinct count queries which have an end index equal
-        // to the phase's end index. The BIT's underlying array has 0s and 1s, where a 1 at an index
-        // means the value there is the latest occurrence of the value up to the phase's end index.
-        // The BIT returns sums like normal, but with this construction the sums correspond to the
-        // distinct count of values within the queried range. That's because for a given phase, all
-        // queries extend up to the phase's end index. So for any value known to be within the queried
-        // range, the latest occurrence of the value up to the phase's end index is definitely within
-        // the range, and its underlying BIT value accounts for a single 1 added to the returned sum.
-        // After a phase is complete, we increment the query end index for the next phase, update the
-        // BIT so the value there has a 1 (it's last, so definitely the latest for its value), and
-        // turn off any earlier value marked with a 1, since it's no longer the latest.
+        // Sort source array values by descending value, but remember their original index.
+        var orderedSourceValues = sourceArray
+            .Select((v, i) => new ValueSourceIndex(v, i))
+            .ToArray();
+        Array.Sort(orderedSourceValues, (vi1, vi2) => vi2.Value.CompareTo(vi1.Value));
 
-        // Sort queries by ascending query end index.
-        Array.Sort(queries, (q1, q2) => q1.QueryEndIndex.CompareTo(q2.QueryEndIndex));
+        // Sort queries by descending k (a query looks for everything in a range > k).
+        Array.Sort(queries, (q1, q2) => q2.GreaterThanLowerLimit.CompareTo(q1.GreaterThanLowerLimit));
 
-        var latestOccurrenceBIT = new PURQBinaryIndexedTree(sourceArray.Length);
-        var valuesLatestOccurrenceIndices = new Dictionary<int, int>(sourceArray.Length);
-        int queryIndex = 0;
-
-        for (int phaseEndIndex = 0;
-            phaseEndIndex < sourceArray.Length && queryIndex < queries.Length;
-            ++phaseEndIndex)
+        int sourceValuesIndex = 0;
+        // Set an index in this BIT to 1 once the source array value at that index is greater
+        // than the limit that we're considering for our queries. Queries are ordered descendingly
+        // by the limit being considered, so once we set it to 1 the first time, it's good
+        // for all future queries (since future queries will have even lower limits).
+        var greaterThanLimitBIT = new PURQBinaryIndexedTree(sourceArray.Length);
+        foreach (var query in queries)
         {
-            int endValue = sourceArray[phaseEndIndex];
-            int endValuesPreviousLatestOccurrenceIndex;
-            if (valuesLatestOccurrenceIndices.TryGetValue(
-                endValue, out endValuesPreviousLatestOccurrenceIndex))
+            while (sourceValuesIndex < sourceArray.Length
+                && orderedSourceValues[sourceValuesIndex].Value > query.GreaterThanLowerLimit)
             {
-                latestOccurrenceBIT.PointUpdate(endValuesPreviousLatestOccurrenceIndex, -1);
+                greaterThanLimitBIT.PointUpdate(
+                    orderedSourceValues[sourceValuesIndex].SourceIndex, 1);
+                ++sourceValuesIndex;
             }
-            latestOccurrenceBIT.PointUpdate(phaseEndIndex, 1);
-            valuesLatestOccurrenceIndices[endValue] = phaseEndIndex;
 
-            DistinctCountQuery query;
-            while (queryIndex < queries.Length
-                && (query = queries[queryIndex]).QueryEndIndex == phaseEndIndex)
-            {
-                queryResults[query.ResultIndex] = latestOccurrenceBIT.SumQuery(
-                    query.QueryStartIndex, phaseEndIndex);
-                ++queryIndex;
-            }
+            queryResults[query.ResultIndex] = greaterThanLimitBIT.SumQuery(
+                query.QueryStartIndex, query.QueryEndIndex);
         }
 
         return queryResults;
     }
 }
 
-public struct DistinctCountQuery
+public struct GreaterThanQuery
 {
-    public DistinctCountQuery(int queryStartIndex, int queryEndIndex, int resultIndex)
+    public GreaterThanQuery(
+        int queryStartIndex,
+        int queryEndIndex,
+        int greaterThanLowerLimit,
+        int resultIndex)
     {
         QueryStartIndex = queryStartIndex;
         QueryEndIndex = queryEndIndex;
+        GreaterThanLowerLimit = greaterThanLowerLimit;
         ResultIndex = resultIndex;
     }
 
     public int QueryStartIndex { get; }
     public int QueryEndIndex { get; }
+    public int GreaterThanLowerLimit { get; }
     public int ResultIndex { get; }
+}
+
+public struct ValueSourceIndex
+{
+    public ValueSourceIndex(int value, int sourceIndex)
+    {
+        Value = value;
+        SourceIndex = sourceIndex;
+    }
+
+    public int Value { get; }
+    public int SourceIndex { get; }
 }
 
 // Point update, range query binary indexed tree. This is the original BIT described
@@ -134,17 +134,18 @@ public static class Program
         }
 
         int queryCount = FastIO.ReadNonNegativeInt();
-        var queries = new DistinctCountQuery[queryCount];
+        var queries = new GreaterThanQuery[queryCount];
 
         for (int q = 0; q < queryCount; ++q)
         {
-            queries[q] = new DistinctCountQuery(
+            queries[q] = new GreaterThanQuery(
                 queryStartIndex: FastIO.ReadNonNegativeInt() - 1,
                 queryEndIndex: FastIO.ReadNonNegativeInt() - 1,
+                greaterThanLowerLimit: FastIO.ReadNonNegativeInt(),
                 resultIndex: q);
         }
 
-        int[] queryResults = DQUERY.Solve(sourceArray, queries);
+        int[] queryResults = KQUERY.SolveOffline(sourceArray, queries);
         foreach (int queryResult in queryResults)
         {
             FastIO.WriteNonNegativeInt(queryResult);
