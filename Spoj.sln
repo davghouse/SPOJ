@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spoj.Library", "Spoj.Librar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library.UnitTests", "Spoj.Library.UnitTests\Spoj.Library.UnitTests.csproj", "{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Spoj.SolverCpp", "Spoj.SolverCpp\Spoj.SolverCpp.vcxproj", "{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spoj.Library.PerformanceTests", "Spoj.Library.PerformanceTests\Spoj.Library.PerformanceTests.csproj", "{F3416C1B-AA2D-4028-9997-22F0FED2866D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{466E5B88-D17B-4626-9F5E-42E823AFD62C}"
@@ -68,18 +66,6 @@ Global
 		{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}.Release|x64.Build.0 = Release|Any CPU
 		{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}.Release|x86.ActiveCfg = Release|Any CPU
 		{57F0B88A-F92D-494F-9E99-A59C0CBBB26F}.Release|x86.Build.0 = Release|Any CPU
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|Any CPU.Build.0 = Debug|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|x64.ActiveCfg = Debug|x64
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|x64.Build.0 = Debug|x64
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|x86.ActiveCfg = Debug|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Debug|x86.Build.0 = Debug|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|Any CPU.ActiveCfg = Release|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|Any CPU.Build.0 = Release|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|x64.ActiveCfg = Release|x64
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|x64.Build.0 = Release|x64
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|x86.ActiveCfg = Release|Win32
-		{F75C78FF-DBA0-417E-B0F2-E7F88A22610A}.Release|x86.Build.0 = Release|Win32
 		{F3416C1B-AA2D-4028-9997-22F0FED2866D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3416C1B-AA2D-4028-9997-22F0FED2866D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3416C1B-AA2D-4028-9997-22F0FED2866D}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -107,5 +93,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {297ED4C8-D46B-4697-A755-B7A82BBD5B2E}
 	EndGlobalSection
 EndGlobal

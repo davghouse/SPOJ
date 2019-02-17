@@ -58,7 +58,7 @@
     <None Include="Solutions\7 - Immortal\GSS3.cs" />
     <None Include="Solutions\7 - Immortal\HORRIBLE_v2.cs" />
     <None Include="Solutions\6 - Emperor\BUGLIFE.cs" />
-    <None Include="Solutions\TEMPLATE1.cs" />
+    <Compile Include="Solutions\TEMPLATE1.cs" />
     <None Include="Solutions\1 - Settler\TEST.cs" />
     <None Include="Solutions\2 - Chieftain\ADDREV.cs" />
     <None Include="Solutions\2 - Chieftain\NSTEPS.cs" />
@@ -84,6 +84,10 @@
     <Content Include="Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Solutions\6 - Emperor\PON.cpp" />
+    <None Include="Solutions\5 - King\SAMER08F.cpp" />
+    <None Include="Solutions\5 - King\SUMITR.cpp" />
+    <None Include="Solutions\3 - Warlord\BOMARBLE.cpp" />
     <None Include="Solutions\2 - Chieftain\GUESSING.txt" />
     <None Include="Tags.txt" />
   </ItemGroup>
@@ -390,7 +394,6 @@
     <None Include="Solutions\7 - Immortal\HORRIBLE_v1.cs" />
     <None Include="Solutions\5 - King\ANARC05B.cs" />
     <None Include="Solutions\5 - King\ACPC11B.cs" />
-    <Compile Include="InputVerifier.cs" />
     <None Include="Solutions\3 - Warlord\DOTAA.cs" />
   </ItemGroup>
   <ItemGroup>
