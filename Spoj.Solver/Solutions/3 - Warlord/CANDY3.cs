@@ -1,11 +1,12 @@
 ﻿using System;
 
 // https://www.spoj.com/problems/CANDY3/ #division #mod-math
-// Determines if N bags full of candies can have their contents redistributed equally amongst N children.
+// Determines if N bags full of candies can have their contents
+// redistributed equally amongst N children.
 public static class CANDY3
 {
-    // I guess the numbers will be too big if summed directly, so need to use property of modular arithmetic:
-    // (a + b) mod m == (a mod m + b mod m) mod m
+    // I guess the numbers will be too big if summed directly, so need to use
+    // property of modular arithmetic: (a + b) mod m == (a mod m + b mod m) mod m
     public static bool Solve(ulong[] backpackCandyCounts)
     {
         uint N = (uint)backpackCandyCounts.Length;

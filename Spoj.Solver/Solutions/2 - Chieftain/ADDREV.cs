@@ -12,8 +12,11 @@ public static class ADDREV
         int reverse = 0;
         while (a != 0)
         {
-            reverse = reverse * 10 + a % 10; // Make room for the next digit, and then add it.
-            a = a / 10; // Remove the digit just added.
+            // Make room for the next digit, and then add it.
+            reverse = reverse * 10 + a % 10;
+
+            // Remove the digit just added.
+            a = a / 10;
         }
 
         return reverse;

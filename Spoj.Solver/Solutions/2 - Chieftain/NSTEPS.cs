@@ -7,12 +7,9 @@ public static class NSTEPS
     public static string Solve(int x, int y)
     {
         if (x == y || x == y + 2)
-        {
-            if (x % 2 == 0)
-                return (x + y).ToString();
-            else
-                return (x + y - 1).ToString();
-        }
+            return x % 2 == 0
+                ? (x + y).ToString()
+                : (x + y - 1).ToString();
 
         return "No Number";
     }

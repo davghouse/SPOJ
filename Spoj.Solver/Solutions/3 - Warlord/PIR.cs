@@ -27,7 +27,11 @@ public static class PIR
         double c = Math.Sqrt(z * X * Y);
         double d = Math.Sqrt(x * y * z);
 
-        double termUnderSqrt = (-a + b + c + d) * (a - b + c + d) * (a + b - c + d) * (a + b + c - d);
+        double termUnderSqrt =
+            (-a + b + c + d)
+            * (a - b + c + d)
+            * (a + b - c + d)
+            * (a + b + c - d);
         double numerator = Math.Sqrt(termUnderSqrt);
         double denominator = 192 * u * v * w;
 

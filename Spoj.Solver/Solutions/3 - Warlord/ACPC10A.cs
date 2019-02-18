@@ -6,12 +6,9 @@ using System.Linq;
 public static class ACPC10A
 {
     public static string Solve(int first, int second, int third)
-    {
-        if (IsArithmeticSequence(first, second, third))
-            return $"AP {third + (third - second)}";
-
-        return $"GP {third * (third / second)}";
-    }
+        => IsArithmeticSequence(first, second, third)
+        ? $"AP {third + (third - second)}"
+        : $"GP {third * (third / second)}";
 
     public static bool IsArithmeticSequence(params int[] sequence)
     {

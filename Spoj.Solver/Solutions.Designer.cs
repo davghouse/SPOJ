@@ -148,13 +148,14 @@ namespace Spoj.Solver {
         ///// Takes an equation with an inkblot over one number, and removes the blot.
         ///public static class ABSYS
         ///{
-        ///    // For whatever reason the inkblot is represented by the string &quot;machula&quot;.
+        ///    // The inkblot is represented by the string &quot;machula&quot;, apparently.
         ///    private const string _inkblot = &quot;machula&quot;;
         ///
         ///    // For an equation of the form &apos;number + number = number&apos;, just identify
         ///    // over what number the blot exists and solve for it using algebra.
         ///    public static string Solve(string line)
-        ///     [rest of string was truncated]&quot;;.
+        ///    {
+        ///      [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABSYS {
             get {
@@ -209,14 +210,13 @@ namespace Spoj.Solver {
         ///public static class ACPC10A
         ///{
         ///    public static string Solve(int first, int second, int third)
+        ///        =&gt; IsArithmeticSequence(first, second, third)
+        ///        ? $&quot;AP {third + (third - second)}&quot;
+        ///        : $&quot;GP {third * (third / second)}&quot;;
+        ///
+        ///    public static bool IsArithmeticSequence(params int[] sequence)
         ///    {
-        ///        if (IsArithmeticSequence(first, second, third))
-        ///            return $&quot;AP {third + (third - second)}&quot;;
-        ///
-        ///        return $&quot;GP {third * (third / second)}&quot;;
-        ///    }
-        ///
-        ///    public static bool IsArithmeticSequence(p [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACPC10A {
             get {
@@ -277,8 +277,10 @@ namespace Spoj.Solver {
         ///        int reverse = 0;
         ///        while (a != 0)
         ///        {
-        ///            reverse = reverse * 10 + a % 10; // Make room for the next digit, and then add it.
-        ///            a = a / 10; // Remove the digit jus [rest of string was truncated]&quot;;.
+        ///            // Make room for the next digit, and then add it.
+        ///            reverse = reverse * 10 + a % 10;
+        ///
+        ///            // Remove the digit  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ADDREV {
             get {
@@ -649,10 +651,11 @@ namespace Spoj.Solver {
         ///// Figures out if the army of Godzilla or the army of MechaGodzilla wins the war.
         ///public static class ARMY
         ///{
-        ///    // Each battle a random weakest unit dies, cross-army ties lost by MechaGodzilla&apos;s army.
-        ///    // The battles continue until one army is depleted. In effect, the victor is determined
-        ///    // by the strongest unit in each army, a tie going Godzilla&apos;s way.
-        ///    public static string Solve(int[] strengthsOfGodzilla [rest of string was truncated]&quot;;.
+        ///    // Each battle a random weakest unit dies, w/ cross-army ties lost by MechaGodzilla&apos;s
+        ///    // army. The battles continue until one army is depleted. In effect, the victor is
+        ///    // determined by the strongest unit in each army, a tie going Godzilla&apos;s way.
+        ///    public static string Solve(
+        ///        int[] streng [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARMY {
             get {
@@ -1058,7 +1061,8 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/CANDY/ #ad-hoc #division
-        ///// Given packets containing different numbers of candies, count the fewest moves needed to split them up fairly, if possible.
+        ///// Given packets containing different numbers of candies, count the fewest
+        ///// moves needed to split them up fairly, if possible.
         ///public static class CANDY
         ///{
         ///    public static int Solve(int[] packetCandyCounts)
@@ -1067,7 +1071,7 @@ namespace Spoj.Solver {
         ///        int totalCandies = packetCandyCounts.Sum();
         ///
         ///        if (totalCandies % packetCount != 0)
-        ///            return -1; // Splitting the cand [rest of string was truncated]&quot;;.
+        ///            return -1; // Splitting the  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANDY {
             get {
@@ -1079,15 +1083,16 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/CANDY3/ #division #mod-math
-        ///// Determines if N bags full of candies can have their contents redistributed equally amongst N children.
+        ///// Determines if N bags full of candies can have their contents
+        ///// redistributed equally amongst N children.
         ///public static class CANDY3
         ///{
-        ///    // I guess the numbers will be too big if summed directly, so need to use property of modular arithmetic:
-        ///    // (a + b) mod m == (a mod m + b mod m) mod m
+        ///    // I guess the numbers will be too big if summed directly, so need to use
+        ///    // property of modular arithmetic: (a + b) mod m == (a mod m + b mod m) mod m
         ///    public static bool Solve(ulong[] backpackCandyCounts)
         ///    {
         ///        uint N = (uint)backpackCandyCounts.Length;
-        ///        ulong m [rest of string was truncated]&quot;;.
+        ///        ulo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CANDY3 {
             get {
@@ -1581,9 +1586,10 @@ namespace Spoj.Solver {
         ///            return num;
         ///
         ///        string binaryRepresentation = Convert.ToString(num, toBase: 2);
-        ///        string reversedbinaryRepresentation = new string(binaryRepresentation.Reverse().ToArray());
+        ///        string reversedbinaryRepresentation
+        ///            = new string(binaryRepresentation.Reverse().ToArray());
         ///
-        ///        return Convert.ToInt32(reversedbinaryRepresen [rest of string was truncated]&quot;;.
+        ///        return Convert.ToInt32(reversedb [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EC_CONB {
             get {
@@ -1869,12 +1875,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/FENCE1/ #intuition #math
-        ///// Calculates how much area can be fenced in using a specified length of fence connected to a big wall.
+        ///// Finds the area that can be fenced in using a wall and some fence.
         ///public static class FENCE1
         ///{
-        ///    // So the answer here is to make a half circle with the fence, the wall forming the straight side.
-        ///    // Not sure how to prove it but it makes sense intuitively; convex, uses a lot of the free wall.
-        ///    // For the whole circle, C/2 = pi*r = length =&gt; r = length/pi, =&gt; A/2 = pi * r^2 / 2 = len [rest of string was truncated]&quot;;.
+        ///    // So the answer here is to make a half circle with the fence, the wall forming
+        ///    // the straight side. Not sure how to prove it but it makes sense intuitively;
+        ///    // convex, uses a lot of the free wall. For the whole circle:
+        ///    // C/2 = pi*r = length =&gt; r = length/pi, =&gt; A/2 = pi * r^2 / 2 = length ^ 2 / (2 * pi).
+        ///    pu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FENCE1 {
             get {
@@ -1972,7 +1980,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/GIRLSNBS/ #division #experiment
-        ///// Minimizes the maximum consecutive genders for some girls and boys sitting in a row.
+        ///// Minimizes the max consecutive genders for some girls and boys sitting in a row.
         ///public static class GIRLSNBS
         ///{
         ///    public static int Solve(int girlCount, int boyCount)
@@ -1981,7 +1989,7 @@ namespace Spoj.Solver {
         ///        int minCount = Math.Min(girlCount, boyCount);
         ///
         ///        // This happens to work for the case where both are equal (including both zero).
-        ///        // For normal cases where maxCoun [rest of string was truncated]&quot;;.
+        ///        // For normal cases where maxCount != [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GIRLSNBS {
             get {
@@ -2140,15 +2148,16 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/HANGOVER/ #binary-search #sequence
-        ///// Finds the number of cards necessary to achieve a given overhang value (less than 5.2).
+        ///// Finds the number of cards necessary to achieve a given overhang value.
         ///public static class HANGOVER
         ///{
         ///    private const float _overhangLimit = 5.2f;
         ///
-        ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t be a problem here (at least for the first 277 terms).
-        ///    private static readonly List&lt;float&gt; _runningOverhangTotals;
+        ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t
+        ///    // be a problem here (at least for the first 277 terms).
+        ///    private static readonly IReadOnlyList&lt;float&gt; _runningOverhangTotals;
         ///
-        ///    static HANGOVER()        /// [rest of string was truncated]&quot;;.
+        ///    static HANGOVER() [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HANGOVER {
             get {
@@ -2797,11 +2806,12 @@ namespace Spoj.Solver {
         ///// Converts Mayan numbers to decimal numbers.
         ///public static class MAYA
         ///{
-        ///    private static readonly IReadOnlyDictionary&lt;string, int&gt; _mayanDigitsToInts = new Dictionary&lt;string, int&gt;
+        ///    private static readonly
+        ///        IReadOnlyDictionary&lt;string, int&gt; _mayanDigitsToInts = new Dictionary&lt;string, int&gt;
         ///    {
         ///        [&quot;S&quot;] = 0,      [&quot;.&quot;] = 1,        [&quot;..&quot;] = 2,        [&quot;...&quot;] = 3,        [&quot;....&quot;] = 4,
         ///        [&quot;-&quot;] = 5,      [&quot;. -&quot;] = 6,      [&quot;.. -&quot;] = 7,      [&quot;... -&quot;] = 8,      [&quot;.... -&quot;] = 9,
-        ///        [&quot;- -&quot;] = 10,    [rest of string was truncated]&quot;;.
+        ///        [&quot;- -&quot;] [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAYA {
             get {
@@ -3114,12 +3124,9 @@ namespace Spoj.Solver {
         ///    public static string Solve(int x, int y)
         ///    {
         ///        if (x == y || x == y + 2)
-        ///        {
-        ///            if (x % 2 == 0)
-        ///                return (x + y).ToString();
-        ///            else
-        ///                return (x + y - 1).ToString();
-        ///        }
+        ///            return x % 2 == 0
+        ///                ? (x + y).ToString()
+        ///                : (x + y - 1).ToString();
         ///
         ///        return &quot;No Number&quot;;
         ///    }
@@ -3127,7 +3134,9 @@ namespace Spoj.Solver {
         ///
         ///public static class Program
         ///{
-        ///    private [rest of string was truncated]&quot;;.
+        ///    private static void Main()
+        ///    {
+        ///        int remaining [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NSTEPS {
             get {
@@ -4020,11 +4029,11 @@ namespace Spoj.Solver {
         ///{
         ///    public static string Solve(int neededStamps, int[] friendsStampCounts)
         ///    {
-        ///        // This sorts in ascending order and there&apos;s not a great way to get descending, so we&apos;ll traverse backwards.
         ///        Array.Sort(friendsStampCounts);
         ///
         ///        int borrowedStamps = 0;
-        ///        // Borrow stamps from the remain [rest of string was truncated]&quot;;.
+        ///        // Borrow stamps from the remaining friend with the most stamps until we get enough.
+        ///        for (int i = friendsStampCounts.Length - 1; i &gt;= 0; --i) [rest of string was truncated]&quot;;.
         /// </summary>
         public static string STAMPS {
             get {
@@ -4202,15 +4211,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/TEST/ #io
-        ///// Reads and prints console input until the answer to life, the universe, and everything is found.
+        ///// Reads and prints input until the answer to life, the universe, and everything is found.
         ///public static class TEST
         ///{
-        ///    private const string _answerToEverything = &quot;42&quot;;
-        ///
         ///    public static void Solve()
         ///    {
         ///        string line;
-        ///        while ((line = Console.ReadLine()) != _answerToEverything)
+        ///        while ((line = Console.ReadLine()) != &quot;42&quot;)
         ///        {
         ///            Console.WriteLine(line);
         ///        }
@@ -4220,7 +4227,9 @@ namespace Spoj.Solver {
         ///public static class Program
         ///{
         ///    private static void Main()
-        ///  [rest of string was truncated]&quot;;.
+        ///        =&gt; TEST.Solve();
+        ///}
+        ///.
         /// </summary>
         public static string TEST {
             get {
@@ -4234,13 +4243,14 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/TOANDFRO/ #ad-hoc #strings
         ///// Given an encoded message and the number of columns used to encode the message,
-        ///// transform the message to the array used for the encoding, and then to the original (padded) message.
+        ///// transform the message to the array used for the encoding, and then to the
+        ///// original (padded) message.
         ///public static class TOANDFRO
         ///{
         ///    public static string Solve(int columnCount, string encodedMessage)
         ///    {
         ///        int rowCount = encodedMessage.Length / columnCount;
-        ///        char[,] messageArray = new char[rowCount, col [rest of string was truncated]&quot;;.
+        ///        char[,] messageArray = new char[rowCount, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TOANDFRO {
             get {

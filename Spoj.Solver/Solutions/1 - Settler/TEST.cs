@@ -1,15 +1,13 @@
 using System;
 
 // https://www.spoj.com/problems/TEST/ #io
-// Reads and prints console input until the answer to life, the universe, and everything is found.
+// Reads and prints input until the answer to life, the universe, and everything is found.
 public static class TEST
 {
-    private const string _answerToEverything = "42";
-
     public static void Solve()
     {
         string line;
-        while ((line = Console.ReadLine()) != _answerToEverything)
+        while ((line = Console.ReadLine()) != "42")
         {
             Console.WriteLine(line);
         }

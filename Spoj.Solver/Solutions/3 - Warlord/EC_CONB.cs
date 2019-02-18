@@ -11,7 +11,8 @@ public static class EC_CONB
             return num;
 
         string binaryRepresentation = Convert.ToString(num, toBase: 2);
-        string reversedbinaryRepresentation = new string(binaryRepresentation.Reverse().ToArray());
+        string reversedbinaryRepresentation
+            = new string(binaryRepresentation.Reverse().ToArray());
 
         return Convert.ToInt32(reversedbinaryRepresentation, fromBase: 2);
     }

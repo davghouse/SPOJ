@@ -21,7 +21,7 @@ public static class Program
             string[] line = Console.ReadLine().Split();
 
             output.Append(
-                MUL.Solve(line[0], line[1]));
+                MUL.Solve(a: line[0], b: line[1]));
             output.AppendLine();
         }
 

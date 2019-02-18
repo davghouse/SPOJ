@@ -4,7 +4,7 @@
 // Takes an equation with an inkblot over one number, and removes the blot.
 public static class ABSYS
 {
-    // For whatever reason the inkblot is represented by the string "machula".
+    // The inkblot is represented by the string "machula", apparently.
     private const string _inkblot = "machula";
 
     // For an equation of the form 'number + number = number', just identify

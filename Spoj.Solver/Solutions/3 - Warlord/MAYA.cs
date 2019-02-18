@@ -5,7 +5,8 @@ using System.Collections.Generic;
 // Converts Mayan numbers to decimal numbers.
 public static class MAYA
 {
-    private static readonly IReadOnlyDictionary<string, int> _mayanDigitsToInts = new Dictionary<string, int>
+    private static readonly
+        IReadOnlyDictionary<string, int> _mayanDigitsToInts = new Dictionary<string, int>
     {
         ["S"] = 0,      ["."] = 1,        [".."] = 2,        ["..."] = 3,        ["...."] = 4,
         ["-"] = 5,      [". -"] = 6,      [".. -"] = 7,      ["... -"] = 8,      [".... -"] = 9,
@@ -13,7 +14,8 @@ public static class MAYA
         ["- - -"] = 15, [". - - -"] = 16, [".. - - -"] = 17, ["... - - -"] = 18, [".... - - -"] = 19,
     };
 
-    private static readonly IReadOnlyDictionary<int, int> _mayanPowersToInts = new Dictionary<int, int>
+    private static readonly
+        IReadOnlyDictionary<int, int> _mayanPowersToInts = new Dictionary<int, int>
     {
         [0] = 1,
         [1] = 20,

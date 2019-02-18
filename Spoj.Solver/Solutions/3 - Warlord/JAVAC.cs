@@ -20,7 +20,7 @@ public static class JAVAC
             char l = identifier[i];
             char r = identifier[i + 1];
 
-            // Either the character is lower, or it's an underscore with a word beginning immediately after.
+            // Either the character is lower, or it's an underscore with a word immediately after.
             isCppIdentifier = char.IsLower(l) || (l == '_' && char.IsLower(r));
         }
 

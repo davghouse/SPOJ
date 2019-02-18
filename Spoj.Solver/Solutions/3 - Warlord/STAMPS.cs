@@ -6,7 +6,6 @@ public static class STAMPS
 {
     public static string Solve(int neededStamps, int[] friendsStampCounts)
     {
-        // This sorts in ascending order and there's not a great way to get descending, so we'll traverse backwards.
         Array.Sort(friendsStampCounts);
 
         int borrowedStamps = 0;

@@ -30,10 +30,14 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
-            int[] line = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            string[] line = Console.ReadLine().Split();
 
-            Console.WriteLine(
-                DOTAA.Solve(heroCount: line[0], towerCount: line[1], towerDamage: line[2]) ? "YES" : "NO");
+            bool canHeroesSurvive = DOTAA.Solve(
+                heroCount: int.Parse(line[0]),
+                towerCount: int.Parse(line[1]),
+                towerDamage: int.Parse(line[2]));
+
+            Console.WriteLine(canHeroesSurvive ? "YES" : "NO");
         }
     }
 }
