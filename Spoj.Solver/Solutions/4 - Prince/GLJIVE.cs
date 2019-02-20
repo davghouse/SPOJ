@@ -4,8 +4,8 @@
 // Finds the contiguous subsequence starting from 1 that most closely adds to 100.
 public static class GLJIVE
 {
-    // Actually, the work below is wrong. We're looking for a contiguous subsequence starting
-    // from the first index, but not necessarily spanning all 10.
+    // Actually, the work below is wrong. We're looking for a contiguous subsequence
+    // starting from the first index, but not necessarily spanning all 10.
     public static int SolveCorrectly(int[] points)
     {
         int result = 0;
@@ -18,13 +18,14 @@ public static class GLJIVE
             }
             else // points[i] pushes us over 100...
             {
-                // So if the distance now is worse than (or equal to) the distance after adding it, add it.
+                // So if the distance now is worse than (or equal to) the distance
+                // after adding it, add it.
                 if (100 - result >= result + points[i] - 100)
                 {
                     result += points[i];
                 }
 
-                // And then it's time to stop, since we'll only get further away by adding more.
+                // And then stop, since adding more will only take us further away.
                 break;
             }
         }
@@ -37,11 +38,6 @@ public static class GLJIVE
     // brute force over the 2^10 - 1 subsets, - 1 since at least one value is needed.
     public static int SolveIncorrectly(int[] points)
     {
-        int[] powersOfTwoTo512 = new[]
-        {
-            1, 1 << 1, 1 << 2, 1 << 3, 1 << 4, 1 << 5, 1 << 6, 1 << 7, 1 << 8, 1 << 9
-        };
-
         int bestResult = 0;
         int bestDistance = 100;
 
@@ -54,7 +50,7 @@ public static class GLJIVE
 
             for (int j = 0; j <= 9; ++j)
             {
-                if ((i & powersOfTwoTo512[j]) != 0) // The jth bit is turned on.
+                if ((i & (1 << j)) != 0) // The jth bit is turned on.
                 {
                     result += points[j];
                 }

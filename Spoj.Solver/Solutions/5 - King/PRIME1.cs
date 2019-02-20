@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 // https://www.spoj.com/problems/PRIME1/ #primes #sieve
-// Returns all the primes between two numbers m and n (inclusive), where 1 <= m <= n <= 1,000,000,000.
+// Returns all the primes between two numbers m and n, up to 1,000,000,000.
 public static class PRIME1
 {
     private const int _limit = 1000000000;

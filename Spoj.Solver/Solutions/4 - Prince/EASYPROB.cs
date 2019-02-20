@@ -4,15 +4,12 @@
 // Transforms a number into its base 2 representation in a weird recursive way.
 public static class EASYPROB
 {
-    public static string Solve(int n)
-        => $"{n}={SolveRecursively(n)}";
-
     // Say n = 137. The binary representation of n is 10001001, or in other words:
     // 2^7 + 2^3 + 2^0, but those exponents get defined recursively using the same procedure:
     // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0, where there's a weird base case for 2^1 (it's just 2).
     // Oh and we're not using exponents, parenthesis stand in for them so it's like:
     // 2(2(2)+2+2(0))+2(2+2(0))+2(0).
-    private static string SolveRecursively(int n)
+    public static string Solve(int n)
     {
         // Normal base case.
         if (n == 0) return "0";
@@ -39,7 +36,7 @@ public static class EASYPROB
             }
             else
             {
-                result += $"2({SolveRecursively(exponentForThisPowerOfTwo)})";
+                result += $"2({Solve(exponentForThisPowerOfTwo)})";
             }
         }
 
@@ -54,8 +51,10 @@ public static class Program
         int remainingTestCases = int.Parse(Console.ReadLine());
         while (remainingTestCases-- > 0)
         {
+            int n = int.Parse(Console.ReadLine());
+
             Console.WriteLine(
-                EASYPROB.Solve(int.Parse(Console.ReadLine())));
+                $"{n}={EASYPROB.Solve(n)}");
         }
     }
 }

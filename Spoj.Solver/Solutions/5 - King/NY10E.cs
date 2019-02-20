@@ -31,7 +31,8 @@ public static class NY10E
             {
                 for (int d = 0; d <= digit; ++d)
                 {
-                    _endingDigitCounts[stringLength, digit] += _endingDigitCounts[stringLength - 1, d];
+                    _endingDigitCounts[stringLength, digit]
+                        += _endingDigitCounts[stringLength - 1, d];
                 }
             }
         }

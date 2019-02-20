@@ -8,7 +8,8 @@ public static class ARITH2
 {
     public static long Solve(string expression)
     {
-        string[] spacelessSubexpressions = expression.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+        string[] spacelessSubexpressions = expression.Split(
+            default(char[]), StringSplitOptions.RemoveEmptyEntries);
         string[] tokens = spacelessSubexpressions
             .SelectMany(s => s.SplitAndKeep(new[] { '+', '-', '*', '/', '=' }))
             .ToArray();
@@ -18,24 +19,15 @@ public static class ARITH2
         long result = long.Parse(tokens[0]);
         for (int i = 1; i < tokens.Length - 2; ++i)
         {
-            string @operator = tokens[i];
+            char @operator = tokens[i][0];
             long value = long.Parse(tokens[++i]);
 
-            if (@operator == "+")
+            switch (@operator)
             {
-                result += value;
-            }
-            else if (@operator == "-")
-            {
-                result -= value;
-            }
-            else if (@operator == "*")
-            {
-                result *= value;
-            }
-            else if (@operator == "/")
-            {
-                result /= value;
+                case '+': result += value; break;
+                case '-': result -= value; break;
+                case '*': result *= value; break;
+                case '/': result /= value; break;
             }
         }
 
@@ -60,7 +52,8 @@ public static class StringHelper
             }
             else if (nextDelimiterIndex > nextSubstringStartIndex)
             {
-                yield return s.Substring(nextSubstringStartIndex, nextDelimiterIndex - nextSubstringStartIndex);
+                yield return s.Substring(nextSubstringStartIndex,
+                    length: nextDelimiterIndex - nextSubstringStartIndex);
                 nextSubstringStartIndex = nextDelimiterIndex;
             }
             else // No next delimiter found; nextDelimiterIndex = -1.

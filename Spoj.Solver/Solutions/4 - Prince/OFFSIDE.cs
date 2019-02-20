@@ -12,7 +12,8 @@ public static class OFFSIDE
         int closestAttacker = attackers.Min();
 
         // Rather than finding the closest and second closest defenders, note that the
-        // attacker is offsides if he is cleanly before all the defenders except at most one (the goalie).
+        // attacker is offsides if he is cleanly before all the defenders except at
+        // most one (the goalie).
         int defendersFurtherThanClosestAttacker = defenders.Count(d => d > closestAttacker);
 
         return defendersFurtherThanClosestAttacker >= defenders.Length - 1;

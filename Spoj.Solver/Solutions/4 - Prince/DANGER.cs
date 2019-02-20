@@ -19,8 +19,8 @@ public static class DANGER
     // And so on, like:
     // n: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17...
     // s: 1 1 3 1 3 5 7 1 3 5  7  9  11 13 15 1  3...
-    // For a proof that this pattern holds, see Wikipedia. So the last survivor is 2*(n - 2^(floor(log(n)))) + 1,
-    // where the n - term gets n's distance past the greatest power of two equal to or less than it.
+    // So the last survivor is 2*(n - 2^(floor(log(n)))) + 1, where the n - term gets
+    // n's distance past the greatest power of two equal to or less than it.
     public static int Solve(string nEncoded)
     {
         int mantissa = (nEncoded[0] - '0') * 10 + (nEncoded[1] - '0');

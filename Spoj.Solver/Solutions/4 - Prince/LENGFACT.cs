@@ -8,7 +8,8 @@ public static class LENGFACT
     // to figure out a smart way and BigInteger was clearly going to be too slow. So:
     // https://oeis.org/A034886, https://mathoverflow.net/q/19170
     public static long Solve(long n)
-        => n < 2 ? 1 : (long)Math.Ceiling(Math.Log10(2 * Math.PI * n) / 2 + n * Math.Log10(n / Math.E));
+        => n < 2 ? 1
+        : (long)Math.Ceiling(Math.Log10(2 * Math.PI * n) / 2 + n * Math.Log10(n / Math.E));
 }
 
 public static class Program

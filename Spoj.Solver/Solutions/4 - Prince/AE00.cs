@@ -16,13 +16,14 @@ public static class AE00
         int cumulativeRectangleCount = 0;
         for (int s = 1; s <= n; ++s)
         {
-            // There's always at least one rectangle made from s squares, with dimensions 1 x s.
+            // Always at least one rectangle made from s squares, with dimensions 1 x s.
             cumulativeRectangleCount += 1;
 
-            // After that, look for how many ways there are to represent s as a product of two integers > 1.
+            // After that, look for ways to represent s as a product of two integers > 1.
             for (int d = 2; d <= Math.Sqrt(s); ++d)
             {
-                // If d divides s evenly, d x (s / d) are the dimensions of a rectangle made up from s squares.
+                // If d divides s evenly, d x (s / d) are the dimensions of a rectangle
+                // made up from s squares.
                 if (s % d == 0)
                 {
                     cumulativeRectangleCount += 1;

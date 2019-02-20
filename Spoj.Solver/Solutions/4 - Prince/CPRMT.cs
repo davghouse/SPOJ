@@ -17,9 +17,10 @@ public static class CPRMT
     {
         var common = new StringBuilder();
 
-        // Gonna take some care to do this in a single pass, rather than 26 passes with LINQ's Count().
-        // We know they're lowercase so buckets are convenient. For unbucketable we might need to sort both,
-        // then emulate a merge while counting up, or O(n) w/ overhead from a HashSet may be worth it.
+        // Gonna take some care to do this in a single pass, rather than 26 passes with LINQ's
+        // Count(). We know they're lowercase so buckets are convenient. For unbucketable we
+        // might need to sort both, then emulate a merge while counting up, or O(n) w/ overhead
+        // from a HashSet may be worth it.
         int[] firstCharacterCounts = new int[26];
         int[] secondCharacterCounts = new int[26];
 
@@ -35,7 +36,9 @@ public static class CPRMT
 
         for (char c = 'a'; c <= 'z'; ++c)
         {
-            common.Append(c, repeatCount: Math.Min(firstCharacterCounts[c - 'a'], secondCharacterCounts[c - 'a']));
+            common.Append(c, repeatCount: Math.Min(
+                firstCharacterCounts[c - 'a'],
+                secondCharacterCounts[c - 'a']));
         }
 
         return common.ToString();

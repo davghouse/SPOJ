@@ -39,16 +39,24 @@ public static class DIEHARD
         if (canSurviveMovingIntoWater && canSurviveMovingIntoFire)
         {
             timeUntilDeath = 2 + Math.Max(
-                SolveWithMemoization(health + _waterHealthDelta + _airHealthDelta, armor + _waterArmorDelta + _airArmorDelta),
-                SolveWithMemoization(health + _fireHealthDelta + _airHealthDelta, armor + _fireArmorDelta + _airArmorDelta));
+                SolveWithMemoization(
+                    health + _waterHealthDelta + _airHealthDelta,
+                    armor + _waterArmorDelta + _airArmorDelta),
+                SolveWithMemoization(
+                    health + _fireHealthDelta + _airHealthDelta,
+                    armor + _fireArmorDelta + _airArmorDelta));
         }
         else if (canSurviveMovingIntoWater)
         {
-            timeUntilDeath = 2 + SolveWithMemoization(health + _waterHealthDelta + _airHealthDelta, armor + _waterArmorDelta + _airArmorDelta);
+            timeUntilDeath = 2 + SolveWithMemoization(
+                health + _waterHealthDelta + _airHealthDelta,
+                armor + _waterArmorDelta + _airArmorDelta);
         }
         else if (canSurviveMovingIntoFire)
         {
-            timeUntilDeath = 2 + SolveWithMemoization(health + _fireHealthDelta + _airHealthDelta, armor + _fireArmorDelta + _airArmorDelta);
+            timeUntilDeath = 2 + SolveWithMemoization(
+                health + _fireHealthDelta + _airHealthDelta,
+                armor + _fireArmorDelta + _airArmorDelta);
         }
 
         _timesUntilDeath[healthAndArmor] = timeUntilDeath;

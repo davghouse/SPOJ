@@ -7,7 +7,8 @@ public static class HPYNOS
 {
     // n is limited to 2,147,483,647, so by inspection 1,999,999,999 will give us the
     // limit of the numbers we can get after at least one breaking. That is:
-    // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bool array to keep track of what's already seen.
+    // 1^2 + 9 * 9^2 = 730. So we'll have a size 731 bool array to keep track of
+    // what's already seen.
     public static int Solve(int n)
     {
         bool[] numbersAlreadySeen = new bool[731];

@@ -13,9 +13,12 @@ public static class CANTON
         int diagonal = (int)Math.Ceiling((Math.Sqrt(2 * n + 0.25) - 0.5));
         int positionOfFurthestTermAlongDiagonal = ((diagonal + 1) * diagonal) / 2;
         int termsBackFromFurthestTermAlongDiagonal = positionOfFurthestTermAlongDiagonal - n;
-        var diagonalEndPosition = diagonal % 2 == 0 ? DiagonalEndPosition.SideEdge : DiagonalEndPosition.TopEdge;
-        int numeratorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.SideEdge ? diagonal : 1;
-        int denominatorOfFurthestTermAlongDiagonal = diagonalEndPosition == DiagonalEndPosition.TopEdge ? diagonal : 1;
+        var diagonalEndPosition
+            = diagonal % 2 == 0 ? DiagonalEndPosition.SideEdge : DiagonalEndPosition.TopEdge;
+        int numeratorOfFurthestTermAlongDiagonal
+            = diagonalEndPosition == DiagonalEndPosition.SideEdge ? diagonal : 1;
+        int denominatorOfFurthestTermAlongDiagonal
+            = diagonalEndPosition == DiagonalEndPosition.TopEdge ? diagonal : 1;
 
         int numeratorOfNthTerm;
         int denominatorOfNthTerm;
@@ -23,15 +26,19 @@ public static class CANTON
         {
             // If the last term of the diagonal ends along the side, we traverse up and to the right
             // to find the nth term, the numerator decreasing and the denominator increasing.
-            numeratorOfNthTerm = numeratorOfFurthestTermAlongDiagonal - termsBackFromFurthestTermAlongDiagonal;
-            denominatorOfNthTerm = denominatorOfFurthestTermAlongDiagonal + termsBackFromFurthestTermAlongDiagonal;
+            numeratorOfNthTerm
+                = numeratorOfFurthestTermAlongDiagonal - termsBackFromFurthestTermAlongDiagonal;
+            denominatorOfNthTerm
+                = denominatorOfFurthestTermAlongDiagonal + termsBackFromFurthestTermAlongDiagonal;
         }
         else
         {
             // If the last term of the diagonal ends along the top, we traverse down and to the left
             // to find the nth term, the numerator increasing and the denominator decreasing.
-            numeratorOfNthTerm = numeratorOfFurthestTermAlongDiagonal + termsBackFromFurthestTermAlongDiagonal;
-            denominatorOfNthTerm = denominatorOfFurthestTermAlongDiagonal - termsBackFromFurthestTermAlongDiagonal;
+            numeratorOfNthTerm
+                = numeratorOfFurthestTermAlongDiagonal + termsBackFromFurthestTermAlongDiagonal;
+            denominatorOfNthTerm
+                = denominatorOfFurthestTermAlongDiagonal - termsBackFromFurthestTermAlongDiagonal;
         }
 
         return Tuple.Create(numeratorOfNthTerm, denominatorOfNthTerm);

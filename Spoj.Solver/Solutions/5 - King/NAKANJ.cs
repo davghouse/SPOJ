@@ -33,7 +33,8 @@ public static class NAKANJ
                     int columnTransformation = knightMoveTransformation.Item2;
 
                     int movedToVertexID;
-                    if (TryGetVertexID(r + rowTransformation, c + columnTransformation, out movedToVertexID))
+                    if (TryGetVertexID(r + rowTransformation, c + columnTransformation,
+                        out movedToVertexID))
                     {
                         _knightMoveGraph.AddEdge(thisVertexID, movedToVertexID);
                     }
@@ -119,7 +120,7 @@ public sealed class SimpleGraph
 
                 foreach (var neighbor in vertex.Neighbors)
                 {
-                    if (!discoveredVertexIDs[neighbor.ID]) 
+                    if (!discoveredVertexIDs[neighbor.ID])
                     {
                         if (neighbor == endVertex)
                             return distance;

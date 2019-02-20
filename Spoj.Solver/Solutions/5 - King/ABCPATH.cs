@@ -39,55 +39,19 @@ public static class ABCPATH
                 maxLetterFound = letter;
             }
 
-            int aboveRow = row - 1;
-            int belowRow = row + 1;
-            int leftColumn = column - 1;
-            int rightColumn = column + 1;
-            bool aboveRowExists = aboveRow >= 0;
-            bool belowRowExists = belowRow < height;
-            bool leftColumnExists = leftColumn >= 0;
-            bool rightColumnExists = rightColumn < width;
             char nextLetter = (char)(letter + 1);
 
-            if (aboveRowExists && leftColumnExists
-                && letterGrid[aboveRow, leftColumn] == nextLetter)
+            for (int r = row - 1; r <= row + 1; ++r)
             {
-                cellsToVisit.Push(Tuple.Create(aboveRow, leftColumn));
-            }
-            if (aboveRowExists
-                && letterGrid[aboveRow, column] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(aboveRow, column));
-            }
-            if (aboveRowExists && rightColumnExists
-                && letterGrid[aboveRow, rightColumn] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(aboveRow, rightColumn));
-            }
-            if (leftColumnExists
-                && letterGrid[row, leftColumn] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(row, leftColumn));
-            }
-            if (rightColumnExists
-                && letterGrid[row, rightColumn] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(row, rightColumn));
-            }
-            if (belowRowExists && leftColumnExists
-                && letterGrid[belowRow, leftColumn] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(belowRow, leftColumn));
-            }
-            if (belowRowExists
-                && letterGrid[belowRow, column] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(belowRow, column));
-            }
-            if (belowRowExists && rightColumnExists
-                && letterGrid[belowRow, rightColumn] == nextLetter)
-            {
-                cellsToVisit.Push(Tuple.Create(belowRow, rightColumn));
+                for (int c = column - 1; c <= column + 1; ++c)
+                {
+                    if (r >= 0 && r < height
+                        && c >= 0 && c < width
+                        && letterGrid[r, c] == nextLetter)
+                    {
+                        cellsToVisit.Push(Tuple.Create(r, c));
+                    }
+                }
             }
         }
 

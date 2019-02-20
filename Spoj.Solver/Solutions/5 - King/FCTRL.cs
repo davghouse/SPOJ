@@ -18,9 +18,10 @@ public static class FCTRL
     // 5 * 10 * 15 * 20 * 25 * 30 * 35 * 40 * 45 * 50
     // 1   1    1    1    1    1    1    1    1    1
     //                    1                        1
-    // => 10 + 2 total. Note the pattern that starts to emerge, a row of tallies for 5, for 25, for 125, etc,
-    // with a constant difference between tallyies on the same row (1, 5, 25, etc). To find the tally count on
-    // the first row for n, divide n by 5. On the second row, divide n by 25. On the third by 125, etc.
+    // => 10 + 2 total. Note the pattern that starts to emerge, a row of tallies for 5, for 25,
+    // for 125, etc, with a constant difference between tallyies on the same row (1, 5, 25, etc).
+    // To find the tally count on the first row for n, divide n by 5. On the second row, divide
+    // n by 25. On the third by 125, etc.
     public static int Solve(int n)
     {
         int count = 0;

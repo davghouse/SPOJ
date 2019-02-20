@@ -22,16 +22,17 @@ public static class MAJOR // v1, using a dictionary and no more than one full pa
         // If there were majorityCount unique transmissions, there'd be no way for a
         // a single transmission to have majorityCount occurrences (since then the total
         // transmission count would exceed how many transmissions there actually are).
-        // So, we'll short-circuit before we can ever get more than majorityCount
-        // keys in this dictionary, so we only need to reserve a capacity of majorityCount.
-        // Actually that's only true for an even total count, so should add 1, but add 2 for safety.
+        // So, we'll short-circuit before we can ever get more than majorityCount keys
+        // in this dictionary, so we only need to reserve a capacity of majorityCount.
+        // Actually that's only true for an even total count, so should add 1, but add 2
+        // for safety.
         var transmissionCounts = new Dictionary<string, int>(majorityCount + 2) { { transmissions[0], 1 } };
         string mostCountedTransmission = transmissions[0];
         int mostCountedTransmissionCount = 1;
 
         for (int t = 1; t < transmissions.Length; ++t)
         {
-            // If the most counted so far plus all the remaining doesn't get a majority, we're done.
+            // If the most counted so far + remaining doesn't get a majority, we're done.
             if (mostCountedTransmissionCount + (transmissions.Length - t) < majorityCount)
                 break;
 

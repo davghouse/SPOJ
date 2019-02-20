@@ -4,11 +4,12 @@
 // Finds the cheapest way to take buses between two cities, with constrained movement.
 public static class MISERMAN
 {
-    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of final bus we use
-    // to get there, plus cheapest way to get to that final bus, knowing we can arrive at it by taking
-    // any one of the adjacent buses in the previous city (so recursively find the cheapest way to get to
-    // those buses). So the DP array will hold cheapest way to get to the next city, using the bus at that
-    // position in the array. The hardest part is understanding what we're calculating.
+    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of
+    // final bus we use to get there, plus cheapest way to get to that final bus, knowing
+    // we can arrive at it by taking any one of the adjacent buses in the previous city
+    // (so recursively find the cheapest way to get to those buses). So the DP array will
+    // hold cheapest way to get to the next city, using the bus at that position in the
+    // array. The hardest part is understanding what we're calculating.
     public static int Solve(int cityCount, int busCount, int[,] busFares)
     {
         int[,] cheapestWayToGetToTheNextCityUsingThisBus = new int[cityCount, busCount];
@@ -22,12 +23,16 @@ public static class MISERMAN
         {
             for (int b = 0; b < busCount; ++b)
             {
-                int costToTakeLeftBusHere = b > 0 ? cheapestWayToGetToTheNextCityUsingThisBus[c - 1, b - 1] : int.MaxValue;
+                int costToTakeLeftBusHere = b > 0
+                    ? cheapestWayToGetToTheNextCityUsingThisBus[c - 1, b - 1] : int.MaxValue;
                 int costToTakeMiddleBusHere = cheapestWayToGetToTheNextCityUsingThisBus[c - 1, b];
-                int costToTakeRightBusHere = b < busCount - 1 ? cheapestWayToGetToTheNextCityUsingThisBus[c - 1, b + 1] : int.MaxValue;
+                int costToTakeRightBusHere = b < busCount - 1
+                    ? cheapestWayToGetToTheNextCityUsingThisBus[c - 1, b + 1] : int.MaxValue;
 
                 cheapestWayToGetToTheNextCityUsingThisBus[c, b] = busFares[c, b]
-                    + Math.Min(Math.Min(costToTakeLeftBusHere, costToTakeMiddleBusHere), costToTakeRightBusHere);
+                    + Math.Min(
+                        Math.Min(costToTakeLeftBusHere, costToTakeMiddleBusHere),
+                        costToTakeRightBusHere);
             }
         }
 
@@ -35,7 +40,8 @@ public static class MISERMAN
         for (int b = 0; b < busCount; ++b)
         {
             cheapestWayToGetToTheDestinationCity = Math.Min(
-                cheapestWayToGetToTheDestinationCity, cheapestWayToGetToTheNextCityUsingThisBus[cityCount - 1, b]);
+                cheapestWayToGetToTheDestinationCity,
+                cheapestWayToGetToTheNextCityUsingThisBus[cityCount - 1, b]);
         }
 
         return cheapestWayToGetToTheDestinationCity;
@@ -46,7 +52,8 @@ public static class Program
 {
     private static void Main()
     {
-        string[] line = Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+        string[] line = Console.ReadLine().Split(
+            default(char[]), StringSplitOptions.RemoveEmptyEntries);
         int cityCount = int.Parse(line[0]);
         int busCount = int.Parse(line[1]);
 
@@ -54,7 +61,8 @@ public static class Program
 
         for (int c = 0; c < cityCount; ++c)
         {
-            line = Console.ReadLine().Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+            line = Console.ReadLine().Split(
+                default(char[]), StringSplitOptions.RemoveEmptyEntries);
 
             for (int b = 0; b < busCount; ++b)
             {

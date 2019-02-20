@@ -14,10 +14,10 @@ public static class TRICOUNT
         long[] triangleCounts = new long[_maxLevel + 1];
         triangleCounts[0] = 0;
 
-        // Important that n starts out as a long here as intermediate calculations will exceed int.MaxValue.
         for (long n = 1; n <= _maxLevel; ++n)
         {
-            triangleCounts[n] = triangleCounts[n - 1] + (n + 1) * n / 2 + (long)Math.Ceiling(0.25 * (n * n - 1));
+            triangleCounts[n] = triangleCounts[n - 1]
+                + (n + 1) * n / 2 + (long)Math.Ceiling(0.25 * (n * n - 1));
         }
 
         _triangleCounts = triangleCounts;

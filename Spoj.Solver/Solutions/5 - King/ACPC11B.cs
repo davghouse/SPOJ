@@ -48,18 +48,26 @@ public static class ACPC11B
                 if (index == 0)
                 {
                     // Altitude is less than all altitudes on the other mountain.
-                    minimumDifference = Math.Min(minimumDifference, sortedAltitudes[0] - altitude);
+                    minimumDifference = Math.Min(
+                        minimumDifference,
+                        sortedAltitudes[0] - altitude);
                 }
                 else if (index < sortedAltitudes.Length)
                 {
                     // Altitude is between two altitudes on the other mountain.
-                    minimumDifference = Math.Min(minimumDifference, altitude - sortedAltitudes[index - 1]);
-                    minimumDifference = Math.Min(minimumDifference, sortedAltitudes[index] - altitude);
+                    minimumDifference = Math.Min(
+                        minimumDifference,
+                        altitude - sortedAltitudes[index - 1]);
+                    minimumDifference = Math.Min(
+                        minimumDifference,
+                        sortedAltitudes[index] - altitude);
                 }
                 else
                 {
                     // Altitude is greater than all altitudes on the other mountain.
-                    minimumDifference = Math.Min(minimumDifference, altitude - sortedAltitudes[sortedAltitudes.Length - 1]);
+                    minimumDifference = Math.Min(
+                        minimumDifference,
+                        altitude - sortedAltitudes[sortedAltitudes.Length - 1]);
                 }
             }
         }

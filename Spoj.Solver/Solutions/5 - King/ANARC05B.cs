@@ -18,7 +18,8 @@ public static class ANARC05B
         for (int firstSequenceIndex = 1; firstSequenceIndex <= firstSequenceLength; ++firstSequenceIndex)
         {
             // Could save work by only searching from the previous intersection point (w/o queue).
-            int secondSequenceIndex = Array.BinarySearch(secondSequence, 1, secondSequenceLength, firstSequence[firstSequenceIndex]);
+            int secondSequenceIndex = Array.BinarySearch(
+                secondSequence, 1, secondSequenceLength, firstSequence[firstSequenceIndex]);
             if (secondSequenceIndex > 0)
             {
                 intersectionPoints.Enqueue(Tuple.Create(firstSequenceIndex, secondSequenceIndex));

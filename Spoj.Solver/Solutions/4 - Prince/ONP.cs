@@ -10,9 +10,9 @@ public static class ONP
         if (expression.Length == 1)
             return expression;
 
-        // expression is of the form (firstSubexpression@secondSubexpression), where @ represents an arbitrary operator.
-        // Now RPN(expression) = RPN(firstSubexpression)RPN(secondSubexpression)@, so our job is just to identify
-        // the substrings of the two subexpressions, and solve recursively.
+        // expression is of the form (firstSubexpression@secondSubexpression), where @ represents
+        // an arbitrary operator. Now RPN(expression) = RPN(firstSubexpression)RPN(secondSubexpression)@,
+        // so our job is just to identify the substrings of the two subexpressions, and solve recursively.
 
         // Starts at index 1, immediately after the ( at the 0th index, and has some calculated length.
         string firstSubexpression = expression.Substring(

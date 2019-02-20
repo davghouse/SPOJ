@@ -9,7 +9,7 @@ public static class ENIGMATH
     // their GCD so that they are. So assume they are in lowest terms, A', B'. y must be an
     // integer, so x has to be a multiple of B' to make (A'/B')x an integer (since B' has
     // no factors in common with A'). Choosing x = B' then minimizes y as A', and also minimizes
-    // x. Therefore, x = B' = B / GCD(A,B) and y = A' = A / GCD(A,B). Consuming the array for convenience.
+    // x. Therefore, x = B' = B / GCD(A,B) and y = A' = A / GCD(A,B).
     public static int[] Solve(int[] ab)
     {
         int a = ab[0];
