@@ -51,11 +51,13 @@ public sealed class TrialDivisionFactorizer
         {
             foreach (long prime in _sieveFactorizer.Primes)
             {
-                // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have a factor
-                // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
-                // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
-                // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
-                // factors they'd have to all be >= 'prime', but in that case the loop wouldn't stop here.
+                // Check for factors up to sqrt(n), as non-primes with a factor larger than that
+                // must also have a factor less than that, otherwise they'd multiply together to
+                // make a number greater than n. The fact that n is getting smaller doesn't matter.
+                // If this condition stops the loop, what remains of n is a single prime factor.
+                // All primes less than 'prime' were already divided out, so for n to have multiple
+                // prime factors they'd have to all be >= 'prime', but in that case the loop
+                // wouldn't stop here.
                 if (prime * prime > n)
                     break;
 
@@ -70,7 +72,8 @@ public sealed class TrialDivisionFactorizer
                     yield break;
             }
 
-            // The loop above was broken out of (before n == 1), so the original n, or what remains of it, is prime.
+            // The loop above was broken out of (before n == 1), so the original n, or what
+            // remains of it, is prime.
             yield return n;
         }
     }
@@ -78,10 +81,11 @@ public sealed class TrialDivisionFactorizer
 
 public sealed class SieveOfEratosthenesFactorizer
 {
-    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
-    // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
-    // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
-    // can enumerate all its prime factors by dividing it by that factor, the quotient by its factor, etc.
+    // This sieve is slightly different, rather than storing false for prime (unsieved) and true
+    // for not prime (sieved), it stores null for prime and some prime factor (doesn't matter which)
+    // that divides the number for not prime. And has entries for evens. Knowing some prime factor
+    // that divides n, we can enumerate all its prime factors by dividing it by that factor, the
+    // quotient by its factor, etc.
     private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
     public SieveOfEratosthenesFactorizer(int limit)

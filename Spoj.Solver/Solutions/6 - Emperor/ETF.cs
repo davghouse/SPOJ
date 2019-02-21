@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 // https://www.spoj.com/problems/ETF/ #factors #formula #math #primes #sieve
-// Calculates the value of the totient function (count of relative primes) for the given n, 1 <= n <= 10^6.
+// Calculates the value of the totient function (count of relative primes).
 public static class ETF
 {
     private const int _limit = 1000000;
@@ -16,11 +16,10 @@ public static class ETF
     }
 
     // We know a sieve is pretty fast, especially only up to a million. And it can be modified easily
-    // to allow retrieving the prime factors of a given number. So combine that with Euler's product formula
-    // (see https://en.wikipedia.org/wiki/Euler%27s_totient_function#Euler.27s_product_formula). That's a lot
-    // better than my first idea for using a sieve, which was getting the prime factorization of every
-    // number below n and comparing it to n's prime factorization (and I only got it by browsing Wikipedia).
-    // I feel like I might've gotten lucky in thinking of a sieve first and then finding that formula.
+    // to allow retrieving the prime factors of a given number. So combine that with Euler's product
+    // formula (see https://en.wikipedia.org/wiki/Euler%27s_totient_function#Euler.27s_product_formula).
+    // That's a lot better than my first idea for using a sieve, which was getting the prime factorization
+    // of every number below n and comparing it to n's prime factorization.
     public static int Solve(int n)
     {
         int[] distinctPrimeFactors = _factorizer.GetDistinctPrimeFactors(n).ToArray();
@@ -37,10 +36,11 @@ public static class ETF
 
 public sealed class SieveOfEratosthenesFactorizer
 {
-    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
-    // prime (sieved), it stores null for prime and some prime factor (doesn't matter which) that divides
-    // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
-    // can enumerate all its prime factors by dividing it by that factor, the quotient by its factor, etc.
+    // This sieve is slightly different, rather than storing false for prime (unsieved) and true
+    // for not prime (sieved), it stores null for prime and some prime factor (doesn't matter which)
+    // that divides the number for not prime. And has entries for evens. Knowing some prime factor
+    // that divides n, we can enumerate all its prime factors by dividing it by that factor, the
+    // quotient by its factor, etc.
     private readonly IReadOnlyList<int?> _sieveWithSomePrimeFactor;
 
     public SieveOfEratosthenesFactorizer(int limit)

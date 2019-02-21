@@ -3,9 +3,9 @@
 namespace Spoj.Library.Tries
 {
     // Here's a good video on tries: https://www.youtube.com/watch?v=AXjmTQ8LEoI.
-    // Designed with the use case of Wordament boards in mind. There, word discovery is done by searching for words
-    // that are prefixed by words just searched for, so it's useful to expose terminal nodes of prior searches
-    // in order to skip ahead down the trie.
+    // Designed with the use case of Wordament boards in mind. There, word discovery is done by
+    // searching for words that are prefixed by words just searched for, so it's useful to expose
+    // terminal nodes of prior searches in order to skip ahead down the trie.
     public sealed partial class Trie
     {
         private readonly IEqualityComparer<char> _charEqualityComparer;
@@ -32,15 +32,16 @@ namespace Spoj.Library.Tries
             Node nextNode;
             int index = 0;
 
-            // Traverse down into the trie until running out of characters or getting to a node that needs a new child.
+            // Traverse down into the trie until running out of characters or getting to a
+            // node that needs a new child.
             while (index < word.Length && currentNode.Children.TryGetValue(word[index], out nextNode))
             {
                 currentNode = nextNode;
                 ++index;
             }
 
-            // The prefix of the word already in the trie has been exhausted, so we know all characters from this point
-            // forward will need to have nodes created and wired up.
+            // The prefix of the word already in the trie has been exhausted, so we know all
+            // characters from this point forward will need to have nodes created and wired up.
             while (index < word.Length)
             {
                 nextNode = new Node(word[index], index + 1, _charEqualityComparer);
@@ -49,13 +50,15 @@ namespace Spoj.Library.Tries
                 ++index;
             }
 
-            // currentNode is now the node corresponding to the final character in the word, so mark it as a word end.
+            // currentNode is now the node corresponding to the final character in the word,
+            // so mark it as a word end.
             currentNode.IsAWordEnd = true;
         }
 
-        /* In these searches, currentNode.Depth is how much length of the given string is already assumed to be matching.
-         * The next relevant index for us to check is the one just past that much length, i.e., [currentNode.Depth].
-         * Single-parameter overloads are provided to make writing LINQ statements more convenient (C() vs s => C(s)). */
+        /* In these searches, currentNode.Depth is how much length of the given string is
+         * already assumed to be matching. The next relevant index for us to check is the
+         * one just past that much length, i.e., [currentNode.Depth]. Single-parameter overloads
+         * are provided to make writing LINQ statements more convenient (C() vs s => C(s)). */
 
         public bool ContainsPrefix(string prefix) => ContainsPrefix(prefix, _root);
         public bool ContainsPrefix(string prefix, Node currentNode)
@@ -94,7 +97,8 @@ namespace Spoj.Library.Tries
         {
             Node nextNode;
 
-            // Traverse down into the trie until we run out of characters or get to a node that needs a new child.
+            // Traverse down into the trie until we run out of characters or get to a node
+            // that needs a new child.
             while (index < s.Length && currentNode.Children.TryGetValue(s[index], out nextNode))
             {
                 currentNode = nextNode;

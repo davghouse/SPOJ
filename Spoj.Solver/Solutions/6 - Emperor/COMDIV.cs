@@ -8,17 +8,19 @@ public static class COMDIV
 {
     private const int _limit = 1000000;
     private const int _sieveLimit = 10000; // (int)ceil(sqrt(_limit))
-    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
-    // prime (sieved), it stores 0 for prime and some prime factor (doesn't matter which) that divides
-    // the number for not prime. And has entries for evens. Knowing some prime factor that divides n, we
-    // can enumerate all its prime factors by dividing it by that factor, the quotient by its factor, etc.
+    // This sieve is slightly different, rather than storing false for prime (unsieved) and true
+    // for not prime (sieved), it stores null for prime and some prime factor (doesn't matter which)
+    // that divides the number for not prime. And has entries for evens. Knowing some prime factor
+    // that divides n, we can enumerate all its prime factors by dividing it by that factor, the
+    // quotient by its factor, etc.
     private static readonly int[] _factorSieve = new int[_sieveLimit + 1];
     private static readonly List<int> _primes = new List<int>(1229);
 
     static COMDIV()
     {
-        // Check for n up to sqrt(_sieveLimit), as any non-primes <= _sieveLimit with a factor > sqrt(_sieveLimit)
-        // must also have a factor < sqrt(_sieveLimit) (otherwise they'd be > _sieveLimit), and so already sieved.
+        // Check for n up to sqrt(_sieveLimit), as any non-primes <= _sieveLimit with a factor
+        // > sqrt(_sieveLimit) must also have a factor < sqrt(_sieveLimit) (otherwise they'd
+        // be > _sieveLimit), and so already sieved.
         for (int n = 2; n * n <= _sieveLimit; ++n)
         {
             // If we haven't sieved it yet then it's a prime, so sieve its multiples.
@@ -45,14 +47,14 @@ public static class COMDIV
         }
     }
 
-    // If it's a common divisor, it must divide the GCD. Therefore, if we find the number of divisors
-    // of the GCD, we find the number of common divisors. To find the number of divisors of a number,
-    // we need to find its prime factorization. Each factor can be chosen a certain number of times,
-    // from 0 up to its power in the factorization, independently of all other factors.
-    // n = p1^e1 * p2^e2 * ... * pk^ek => (e1 + 1) * (e2 + 1) * ... * (ek + 1) different combinations
-    // of prime factors. This corresponds to the number of divisors, since each different combination
-    // has a different prime factorization and is therefore a different number. The case where no
-    // factors are chosen corresponds to the divisor 1, which divides everything.
+    // If it's a common divisor, it must divide the GCD. Therefore, if we find the number of
+    // divisors of the GCD, we find the number of common divisors. To find the number of divisors
+    // of a number, we need to find its prime factorization. Each factor can be chosen a certain
+    // number of times, from 0 up to its power in the factorization, independently of all other
+    // factors. n = p1^e1 * p2^e2 * ... * pk^ek => (e1 + 1) * (e2 + 1) * ... * (ek + 1) different
+    // combinations of prime factors. This corresponds to the number of divisors, since each different
+    // combination has a different prime factorization and is therefore a different number. The case
+    // where no factors are chosen corresponds to the divisor 1, which divides everything.
     public static int Solve(int a, int b)
     {
         int gcd = GreatestCommonDivisor(a, b);
@@ -82,11 +84,13 @@ public static class COMDIV
             {
                 int prime = _primes[p];
 
-                // Check for factors up to sqrt(gcd), as non-primes with a factor larger than that must also have a factor
-                // less than that, otherwise they'd multiply together to make a number greater than n. The fact that gcd
-                // is getting smaller doesn't matter. If this condition stops the loop, what remains of gcd is 1 or a single
-                // prime factor. All primes less than 'prime' were already divided out, so for gcd to have multiple prime
-                // factors they'd have to all be >= 'prime', but in that case the loop wouldn't stop here.
+                // Check for factors up to sqrt(gcd), as non-primes with a factor larger than
+                // that must also have a factor less than that, otherwise they'd multiply together
+                // to make a number greater than n. The fact that gcd is getting smaller doesn't
+                // matter. If this condition stops the loop, what remains of gcd is 1 or a single
+                // prime factor. All primes less than 'prime' were already divided out, so for gcd
+                // to have multiple prime factors they'd have to all be >= 'prime', but in that
+                // case the loop wouldn't stop here.
                 if (prime * prime > gcd)
                     break;
 

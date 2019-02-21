@@ -6,6 +6,12 @@ using System.Text;
 // Finds the longest path between 'free' blocks in a labyrinth (a tree).
 public static class LABYR1
 {
+    private static readonly Tuple<int, int>[] _neighborBlockTransformations = new[]
+    {
+        Tuple.Create(-1, 0), Tuple.Create(1, 0),
+        Tuple.Create(0, -1), Tuple.Create(0, 1),
+    };
+
     // See image for details: http://i.imgur.com/hWnw1N9.jpg.
     public static int Solve(string[] labyrinth)
     {
@@ -59,34 +65,21 @@ public static class LABYR1
             {
                 var vertex = verticesToVisit.Dequeue();
                 int row = vertex.Item1;
-                int col = vertex.Item2;
+                int column = vertex.Item2;
 
-                if (row - 1 >= 0 && labyrinth[row - 1][col] == '.'
-                    && !discoveredVertices[row - 1, col])
+                foreach (var neighborBlockTransformation in _neighborBlockTransformations)
                 {
-                    discoveredVertices[row - 1, col] = true;
-                    verticesToVisit.Enqueue(Tuple.Create(row - 1, col));
-                }
+                    var neighborBlockRow = row + neighborBlockTransformation.Item1;
+                    var neighborBlockColumn = column + neighborBlockTransformation.Item2;
 
-                if (col + 1 < labyrinth[0].Length && labyrinth[row][col + 1] == '.'
-                    && !discoveredVertices[row, col + 1])
-                {
-                    discoveredVertices[row, col + 1] = true;
-                    verticesToVisit.Enqueue(Tuple.Create(row, col + 1));
-                }
-
-                if (row + 1 < labyrinth.Length && labyrinth[row + 1][col] == '.'
-                    && !discoveredVertices[row + 1, col])
-                {
-                    discoveredVertices[row + 1, col] = true;
-                    verticesToVisit.Enqueue(Tuple.Create(row + 1, col));
-                }
-
-                if (col - 1 >= 0 && labyrinth[row][col - 1] == '.'
-                    && !discoveredVertices[row, col - 1])
-                {
-                    discoveredVertices[row, col - 1] = true;
-                    verticesToVisit.Enqueue(Tuple.Create(row, col - 1));
+                    if (neighborBlockRow >= 0 && neighborBlockRow < labyrinth.Length
+                        && neighborBlockColumn >= 0 && neighborBlockColumn < labyrinth[0].Length
+                        && !discoveredVertices[neighborBlockRow, neighborBlockColumn]
+                        && labyrinth[neighborBlockRow][neighborBlockColumn] == '.')
+                    {
+                        discoveredVertices[neighborBlockRow, neighborBlockColumn] = true;
+                        verticesToVisit.Enqueue(Tuple.Create(neighborBlockRow, neighborBlockColumn));
+                    }
                 }
             }
         }

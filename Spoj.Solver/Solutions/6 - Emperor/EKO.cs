@@ -29,12 +29,14 @@ public static class EKO
         int? lastTreeNotNeedingCut = BinarySearch.Search(
             start: 0,
             end: treeCount - 1,
-            verifier: t => GetLengthAboveTree(totalHeight, runningHeightSums, treeHeights, t) >= requiredLength,
+            verifier: t => GetLengthAboveTree(
+                totalHeight, runningHeightSums, treeHeights, t) >= requiredLength,
             mode: BinarySearch.Mode.TrueToFalse);
 
         if (lastTreeNotNeedingCut.HasValue)
         {
-            long lengthAboveTree = GetLengthAboveTree(totalHeight, runningHeightSums, treeHeights, lastTreeNotNeedingCut.Value);
+            long lengthAboveTree = GetLengthAboveTree(
+                totalHeight, runningHeightSums, treeHeights, lastTreeNotNeedingCut.Value);
             int treesAfterTree = treeHeights.Length - lastTreeNotNeedingCut.Value - 1;
             long excessLengthAboveTree = lengthAboveTree - requiredLength;
             int treeHeight = treeHeights[lastTreeNotNeedingCut.Value];
@@ -54,7 +56,8 @@ public static class EKO
         }
     }
 
-    private static long GetLengthAboveTree(long totalHeight, long[] runningHeightSums, int[] treeHeights, int tree)
+    private static long GetLengthAboveTree(
+        long totalHeight, long[] runningHeightSums, int[] treeHeights, int tree)
     {
         long lengthAfterTree = totalHeight - runningHeightSums[tree];
         int treesAfterTree = treeHeights.Length - tree - 1;

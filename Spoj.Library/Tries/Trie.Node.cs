@@ -13,7 +13,7 @@ namespace Spoj.Library.Tries
                 Children = new Dictionary<char, Node>(charEqualityComparer);
             }
 
-            // Storing Value isn't necessary, it just helps me debug and think clearly about what's going on.
+            // Storing Value isn't necessary, it just helps me debug/think clearly.
             internal char Value { get; }
             internal int Depth { get; }
             internal bool IsAWordEnd { get; set; }

@@ -50,11 +50,12 @@ public sealed class LITELazySegmentTree
     public int Query(int queryStartIndex, int queryEndIndex)
         => Query(0, queryStartIndex, queryEndIndex).LitUpCount;
 
-    // Instead of returning the children object directly, we have to add on the parent's range addition. The children
-    // query object knows the subset of the parent segment it intersects with, and everything in there needs the
-    // additions that were applied to the parent segment as a whole. It's kind of weird, any pending range additions
-    // specifically for the children object gets brought out and added to the sum when we do .Combine or .Sum, but
-    // recursively it makes sense: the children object has a sum but still needs to know about the parent's range additions.
+    // Instead of returning the children object directly, we have to add on the parent's range addition. The
+    // children query object knows the subset of the parent segment it intersects with, and everything in
+    // there needs the additions that were applied to the parent segment as a whole. It's kind of weird, any
+    // pending range additions specifically for the children object gets brought out and added to the sum when
+    // we do .Combine or .Sum, but recursively it makes sense: the children object has a sum but still needs
+    // to know about the parent's range additions.
     private PushQueryObject Query(int treeArrayIndex, int queryStartIndex, int queryEndIndex)
     {
         var parentQueryObject = _treeArray[treeArrayIndex];

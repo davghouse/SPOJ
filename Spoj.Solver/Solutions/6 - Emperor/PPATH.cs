@@ -19,8 +19,9 @@ public static class PPATH
         _primeGraph = new SimpleGraph(10000);
         var primeDecider = new SieveOfEratosthenesDecider(9999);
 
-        // If n is a prime, connect to the primes greater than it, within a one-digit swap. Only
-        // greater than because lesser primes were already connected to it earlier in the loop.
+        // If n is a prime, connect to the primes greater than it, within a one-digit
+        // swap. Only greater than because lesser primes were already connected to it
+        // earlier in the loop.
         for (int n = 1001; n <= 9999; n += 2)
         {
             if (!primeDecider.IsOddPrime(n))

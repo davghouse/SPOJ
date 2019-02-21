@@ -5,14 +5,15 @@ using System.Collections.Generic;
 // Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
 public static class AGGRCOW
 {
-    // Given a potential shortest distance between stalls, it's easy to verify if the cows can be placed
-    // with at least that much distance between any two of them. To do this:
-    // Put a cow in the first stall, put the next cow in the 𝐟𝐢𝐫𝐬𝐭 stall to the right at least the given
-    // distance away from previous stall, and repeat, until no more cows or no more room to place them.
-    // If we can place the cows for a given distance, then we can place them for any shorter distance,
-    // since we'd have even more room/stalls to work with. If we can't place the cows for some distance,
-    // we can't place them for any longer distance, since we'd have even less room/stalls to work with.
-    // This fits the criteria for predicate-based binary searching on all potential shortest distances.
+    // Given a potential shortest distance between stalls, it's easy to verify if the cows can
+    // be placed with at least that much distance between any two of them. To do this:
+    // Put a cow in the first stall, put the next cow in the 𝐟𝐢𝐫𝐬𝐭 stall to the right at least
+    // the given distance away from previous stall, and repeat, until no more cows or no more
+    // room to place them. If we can place the cows for a given distance, then we can place
+    // them for any shorter distance, since we'd have even more room/stalls to work with. If
+    // we can't place the cows for some distance, we can't place them for any longer distance,
+    // since we'd have even less room/stalls to work with. This fits the criteria for
+    // predicate-based binary searching on all potential shortest distances.
     public static int Solve(int cowCount, int[] stallLocations)
     {
         Array.Sort(stallLocations);
@@ -25,15 +26,18 @@ public static class AGGRCOW
                 shortestDistanceBetweenAdjacentStalls, distanceBetweenAdjacentStalls);
         }
 
-        // We know there are enough stalls for all the cows, so there's always a solution. If we have to
-        // place cows in the two stalls closest to each other, that would be the worst solution.
+        // We know there are enough stalls for all the cows, so there's always a solution.
+        // If we have to place cows in the two stalls closest to each other, that would be
+        // the worst solution.
         int worstShortestDistance = shortestDistanceBetweenAdjacentStalls;
-        // It would be best if the stalls were such that all the cows could be placed an equal distance
-        // from each other, with a cow at the first stall and a cow at the last--so we use the full stall distance.
+        // It would be best if the stalls were such that all the cows could be placed an equal
+        // distance from each other, with a cow at the first stall and a cow at the last--so
+        // we use the full stall distance.
         int fullStallDistance = stallLocations[stallLocations.Length - 1] - stallLocations[0];
         int bestPotentialShortestDistance = fullStallDistance / (cowCount - 1);
 
-        // The preamble isn't necessary, it just helps us understand the problem. We could search from 1 to int.MaxValue.
+        // The preamble isn't necessary, it just helps us understand the problem. We could
+        // search from 1 to int.MaxValue.
         return BinarySearch.Search(
             start: worstShortestDistance,
             end: bestPotentialShortestDistance,
@@ -41,7 +45,8 @@ public static class AGGRCOW
             mode: BinarySearch.Mode.TrueToFalse).Value;
     }
 
-    private static bool VerifyShortestDistanceIsAttainable(int potentialShortestDistance, int cowCount, int[] stallLocations)
+    private static bool VerifyShortestDistanceIsAttainable(
+        int potentialShortestDistance, int cowCount, int[] stallLocations)
     {
         int cowsPlacedInStallsCount = 1;
         int previousStall = 0;
@@ -50,7 +55,8 @@ public static class AGGRCOW
             cowsPlacedInStallsCount < cowCount && currentStall < stallLocations.Length;
             ++currentStall)
         {
-            if (stallLocations[currentStall] - stallLocations[previousStall] >= potentialShortestDistance)
+            if (stallLocations[currentStall] - stallLocations[previousStall]
+                >= potentialShortestDistance)
             {
                 ++cowsPlacedInStallsCount;
                 previousStall = currentStall;

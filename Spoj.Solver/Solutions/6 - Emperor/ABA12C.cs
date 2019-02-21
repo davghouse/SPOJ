@@ -38,8 +38,9 @@ public static class ABA12C
                     int? packCost = GetPackCost(applePackCosts, packSize: s);
                     if (!packCost.HasValue) continue;
 
-                    // If the array value here is null the result will be null, which is what we want.
-                    // In that case, we can't use the pack as there's no way to get the rest of the apples if we do.
+                    // If the array value here is null the result will be null, which is what
+                    // we want. In that case, we can't use the pack as there's no way to get
+                    // the rest of the apples if we do.
                     int? minCostUsingThisPackSize = minCostForApples[p - 1, a - s] + packCost;
 
                     if (minCostUsingThisPackSize.HasValue)

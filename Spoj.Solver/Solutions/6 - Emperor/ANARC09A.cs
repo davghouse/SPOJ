@@ -8,11 +8,12 @@ public static class ANARC09A
     public static int Solve(string s)
         => SolveUsingAStack(s);
 
-    // This relies on a greedy strategy (I gave up and read the comments). Immediately when a } is found,
-    // pair it off with a { if one exists (by removing that { from the stack). {'s can only exist above all
-    // }'s on the stack. At the end we'll have one of the following that can be dealt with while popping
-    // & replacing til empty: {{{... or }}}... or }}}...}{...{{{ (note the transition point).
-    // The problem with this approach is that I haven't shown it's optimal.
+    // This relies on a greedy strategy (I gave up and read the comments). Immediately
+    // when a } is found, pair it off with a { if one exists (by removing that { from
+    // the stack). {'s can only exist above all }'s on the stack. At the end we'll have
+    // one of the following that can be dealt with while popping & replacing til empty:
+    // {{{... or }}}... or }}}...}{...{{{ (note the transition point). The problem with
+    // this approach is that I haven't shown it's optimal.
     private static int SolveUsingAStack(string s)
     {
         var unmatchedBrackets = new Stack<char>();
@@ -27,7 +28,8 @@ public static class ANARC09A
             {
                 if (unmatchedBrackets.Count > 0 && unmatchedBrackets.Peek() == '{')
                 {
-                    unmatchedBrackets.Pop(); // Match the stack's { with the } being considered.
+                    // Match the stack's { with the } being considered.
+                    unmatchedBrackets.Pop();
                 }
                 else
                 {
@@ -36,32 +38,36 @@ public static class ANARC09A
             }
         }
 
-        // We've matched everything we can greedily, so the stack is in one of the three scenarios mentioned above.
-        // Match brackets with as few replacements as possible from the top of the stack down.
+        // We've matched everything we can greedily, so the stack is in one of the
+        // three scenarios mentioned above. Match brackets with as few replacements
+        // as possible from the top of the stack down.
         int replacementCount = 0;
         while (unmatchedBrackets.Count != 0)
         {
             char rightUnmatchedBracket = unmatchedBrackets.Pop();
             char leftUnmatchedBracket = unmatchedBrackets.Pop();
 
-            replacementCount += ReplacementCountForAPairOfBrackets(leftUnmatchedBracket, rightUnmatchedBracket);
+            replacementCount += ReplacementCountForAPairOfBrackets(
+                leftUnmatchedBracket, rightUnmatchedBracket);
         }
 
         return replacementCount;
     }
 
-    // Once we balance s it'll either be of the form s={t} or the form s=uv (there are lots of possibilities).
-    // I think those parts can be treated independently from the perspective of balancing... balancing within a part
-    // can't affect the balancing outside the part. So a solution is to consider the min count for every possible form...
-    // This could be turned into DP but it's O(n^3) so it's probably not what the problem setter was looking for.
-    // It's here to sanity check the greedy solution for small test cases.
+    // Once we balance s it'll either be of the form s={t} or the form s=uv (there are
+    // lots of possibilities). I think those parts can be treated independently from
+    // the perspective of balancing... balancing within a part can't affect the balancing
+    // outside the part. So a solution is to consider the min count for every possible form...
+    // This could be turned into DP but it's O(n^3) so it's probably not what the problem
+    // setter was looking for. It's here to sanity check the greedy solution for small test cases.
     private static int SolveRecursively(string s, int startIndex, int endIndex)
     {
         // Base case for a range of two characters.
         if (endIndex - startIndex == 1)
             return ReplacementCountForAPairOfBrackets(s[startIndex], s[endIndex]);
 
-        // Otherwise, we need to try s={t}, and all the possibilies for s=uv, like  -u-|---v--- and  --u--|--v--.
+        // Otherwise, we need to try s={t}, and all the possibilies for s=uv, like
+        // -u-|---v--- and  --u--|--v--.
         int countForSubstringForm = ReplacementCountForAPairOfBrackets(s[startIndex], s[endIndex])
             + SolveRecursively(s, startIndex + 1, endIndex - 1);
 
@@ -70,9 +76,9 @@ public static class ANARC09A
             rightSubstringStartIndex <= endIndex - 1;
             rightSubstringStartIndex += 2)
         {
-            countForConcatenationForm = Math.Min(
-                countForConcatenationForm,
-                SolveRecursively(s, startIndex, rightSubstringStartIndex - 1) + SolveRecursively(s, rightSubstringStartIndex, endIndex));
+            countForConcatenationForm = Math.Min(countForConcatenationForm,
+                SolveRecursively(s, startIndex, rightSubstringStartIndex - 1)
+                + SolveRecursively(s, rightSubstringStartIndex, endIndex));
         }
 
         return Math.Min(countForSubstringForm, countForConcatenationForm);

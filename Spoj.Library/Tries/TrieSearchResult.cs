@@ -2,7 +2,8 @@
 {
     public sealed class TrieSearchResult
     {
-        // Provided to make beginning a prefix search chain more convenient (result.TerminalNode vs result?.TerminalNode)
+        // Provided to make beginning a prefix search chain more convenient
+        // (result.TerminalNode vs result?.TerminalNode)
         public TrieSearchResult()
         { }
 

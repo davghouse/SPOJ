@@ -32,8 +32,8 @@ public static class PERMUT1
     // sequences, we're adding a new largest element, (4). Because it's the largest element, it contributes
     // an obvious number of inversions--1 inversion for each element to its right. And all the inversions
     // from n=3 are still there--adding new elements doesn't change existing inversions. So:
-    // For each n=3 sequence with 0 inversions, we get a 3, 2, 1, and 0 inversion n=4 sequence (see 1 2 3 above).
-    // For each n=3 sequence with 1 inversions, we get a 4, 3, 2, and 1 inversion n=4 sequence (see 1 3 2 above).
+    // For each n=3 sequence with 0 inversions, we get a 3, 2, 1, and 0 inversion n=4 sequence (1 2 3 above).
+    // For each n=3 sequence with 1 inversions, we get a 4, 3, 2, and 1 inversion n=4 sequence (1 3 2 above).
     // Here's the full breakdown:
     // For each 0-inversion n=3, we get a: 3, 2, 1, 0 inversion n=4
     // For each 1-inversion n=3, we get a: 4, 3, 2, 1 inversion n=4

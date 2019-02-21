@@ -25,9 +25,9 @@ public static class APS
 
 public sealed class SieveOfEratosthenesFactorizer
 {
-    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
-    // prime (sieved), it stores null for prime and the first prime factor that divides the number for not
-    // prime. And has entries for evens.
+    // This sieve is slightly different, rather than storing false for prime (unsieved) and true
+    // for not prime (sieved), it stores null for prime and the first prime factor that divides
+    // the number for not prime. And has entries for evens.
     private readonly IReadOnlyList<int?> _sieveWithFirstPrimeFactor;
 
     public SieveOfEratosthenesFactorizer(int limit)

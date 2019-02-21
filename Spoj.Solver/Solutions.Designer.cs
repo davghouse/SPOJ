@@ -168,13 +168,14 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///
         ///// https://www.spoj.com/problems/ACODE/ #dynamic-programming #memoization #recursion
-        ///// Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
+        ///// Counts the ways to decode a number representing characters in alphabetical position.
         ///public static class ACODE
         ///{
         ///    // For example, 1 decodes into A, 10 decodes into J, and 15 decodes into AE and O.
-        ///    private static readonly IReadOnlyDictionary&lt;string, long&gt; _codedLetterDecodeCounts = new Dictionary&lt;string, long&gt;
+        ///    private static readonly
+        ///        IReadOnlyDictionary&lt;string, long&gt; _codedLetterDecodeCounts = new Dictionary&lt;string, long&gt;
         ///    {
-        ///        { &quot; [rest of string was truncated]&quot;;.
+        ///        { &quot;1&quot;, 1 }, { &quot;2&quot;, 1 },  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACODE_v1 {
             get {
@@ -186,14 +187,17 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/ACODE/ #dynamic-programming-1d
-        ///// Returns the number of ways to decode a number (string of digits) representing characters in alphabetical position.
+        ///// Counts the ways to decode a number representing characters in alphabetical position.
         ///public static class ACODE
         ///{
-        ///    // Array that&apos;s built dynamically, containing at index i the decode count for the first i digits
-        ///    // of the given number. The number is guaranteed to have no more than 5000 digits.
+        ///    // Array that&apos;s built dynamically, containing at index i the decode count for the
+        ///    // first i digits of the given number. The number is guaranteed to have no more
+        ///    // than 5000 digits.
         ///    private static long[] _decodeCounts = new long[5001];
         ///
-        ///    public static long Solve(s [rest of string was truncated]&quot;;.
+        ///    public static long Solve(string number)
+        ///    {
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ACODE_v2 {
             get {
@@ -317,8 +321,8 @@ namespace Spoj.Solver {
         ///// Places some cows in stalls in a way that maximizes: the shortest distance between any two cows.
         ///public static class AGGRCOW
         ///{
-        ///    // Given a potential shortest distance between stalls, it&apos;s easy to verify if the cows can be placed
-        ///    // with at least that much distance between any two of them. To do this:
+        ///    // Given a potential shortest distance between stalls, it&apos;s easy to verify if the cows can
+        ///    // be placed with at least that much distance between any two of them. To do this:
         ///    // Put a cow in the first stall, put the next cow in the 𝐟� [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AGGRCOW {
@@ -424,13 +428,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AMR10G/ #extrema #sorting
-        ///// Finds a set of K students from N total having the minimum height difference between tallest and shortest.
+        ///// Finds a set of K students from N total having the minimum height difference.
         ///public static class AMR10G
         ///{
         ///    // There are potentially many subsets of size costumeCount, but it doesn&apos;t make sense
         ///    // to consider all of them. Ignoring non-distinct heights (because it won&apos;t matter), every
         ///    // set of size costumeCount has a tallest student. There must be at least costumeCount - 1
-        ///    // stud [rest of string was truncated]&quot;;.
+        ///    // students shorter than that studen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR10G {
             get {
@@ -552,8 +556,9 @@ namespace Spoj.Solver {
         ///    public static int Solve(string s)
         ///        =&gt; SolveUsingAStack(s);
         ///
-        ///    // This relies on a greedy strategy (I gave up and read the comments). Immediately when a } is found,
-        ///    // pair it off with a { if one exists (by removing that { from t [rest of string was truncated]&quot;;.
+        ///    // This relies on a greedy strategy (I gave up and read the comments). Immediately
+        ///    // when a } is found, pair it off with a { if one exists (by removing that { from
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC09A {
             get {
@@ -584,14 +589,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/AP2/ #experiment #math #sequence
-        ///// Given the third term, third-to-last term, and sum of an arithmetic progression, finds the whole series.
+        ///// Given certain terms and the sum of an arithmetic progression, finds the whole series.
         ///public static class AP2
         ///{
         ///    public static long[] Solve(long thirdTerm, long thirdToLastTerm, long sum)
         ///    {
         ///        // In an AP, note that pairs like (a_1, a_n), (a_2, a_n-1) always add up to the same thing.
         ///        // A little more work shows (a_b + a_n-b) * (n/2) = sum, so n = 2 * sum / (a_b + a_n-b).
-        ///       [rest of string was truncated]&quot;;.
+        ///        int n = (int)(2  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AP2 {
             get {
@@ -633,9 +638,10 @@ namespace Spoj.Solver {
         ///{
         ///    public static long Solve(string expression)
         ///    {
-        ///        string[] spacelessSubexpressions = expression.Split(default(char[]), StringSplitOptions.RemoveEmptyEntries);
+        ///        string[] spacelessSubexpressions = expression.Split(
+        ///            default(char[]), StringSplitOptions.RemoveEmptyEntries);
         ///        string[] tokens = spacelessSubexpressions
-        ///            .Se [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARITH2 {
             get {
@@ -779,9 +785,10 @@ namespace Spoj.Solver {
         ///public static class BEENUMS
         ///{
         ///    // See image for details: http://i.imgur.com/ELtDEAU.jpg.
-        ///    // That shows that for &quot;number&quot; to be a beehive number, it must equal 3(n - 1)n + 1 for some integer n,
-        ///    // called the index. The quadratic equation lets us solve for the positive n index given &quot;number&quot;, and then
-        ///    // we just need to verify it&apos;s actually an integer. T [rest of string was truncated]&quot;;.
+        ///    // That shows that for &quot;number&quot; to be a beehive number, it must equal 3(n - 1)n + 1
+        ///    // for some integer n, called the index. The quadratic equation lets us solve for
+        ///    // the positive n index given &quot;number&quot;, and then we just need to verify it&apos;s actually
+        ///    // an in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BEENUMS {
             get {
@@ -817,9 +824,13 @@ namespace Spoj.Solver {
         ///// For all black and white pixels in a grid, finds the distance to the closest white pixel.
         ///public static class BITMAP
         ///{
-        ///    // White pixels are within zero of a white pixel. All black pixels adjacent to a white pixel
-        ///    // are within 1. All black pixels adjacent to those black pixels are within 2 (unless we already
-        ///    // know they&apos;re within 1). Easy to visua [rest of string was truncated]&quot;;.
+        ///    private static readonly Tuple&lt;int, int&gt;[] _neighborPixelTransformations = new[]
+        ///    {
+        ///        Tuple.Create(-1, 0), Tuple.Create(1, 0),
+        ///        Tuple.Create(0, -1), Tuple.Create(0, 1),
+        ///    };
+        ///
+        ///    // White pixels are within zero of a w [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BITMAP {
             get {
@@ -1230,12 +1241,13 @@ namespace Spoj.Solver {
         ///
         ///// https://www.spoj.com/problems/COINS/ #dynamic-programming-1d #recursion
         ///// Figures out if it&apos;s better to exchange a coin of value n directly for USD at a 1:1 rate,
-        ///// or split the coins up as Byteland banks allow (n/2, n/3, n/4 coins and then recursively on those...).
+        ///// or split the coins up as Byteland banks allow.
         ///public static class COINS
         ///{
         ///    private const int _cachedLimit = 15258; // 1 billion / 2^16
         ///
-        ///    // Cache some of the first 500 million values necessary to do this without recursive [rest of string was truncated]&quot;;.
+        ///    // Cache some of the first 500 million values necessary to do this without
+        ///    // recursive calls. The limit for the cache was picked thro [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COINS {
             get {
@@ -1254,8 +1266,8 @@ namespace Spoj.Solver {
         ///{
         ///    private const int _limit = 1000000;
         ///    private const int _sieveLimit = 10000; // (int)ceil(sqrt(_limit))
-        ///    // This sieve is slightly different, rather than storing false for prime (unsieved) and true for not
-        ///    // prime (sieved), it stores 0 for prime [rest of string was truncated]&quot;;.
+        ///    // This sieve is slightly different, rather than storing false for prime (unsieved) and true
+        ///    // for not prime (sieved), it stores null for pr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string COMDIV {
             get {
@@ -1423,7 +1435,7 @@ namespace Spoj.Solver {
         ///    // And so on, like:
         ///    // n: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17...
         ///    // s: 1 1 3 1 3 5 7 1 3 5  7  9  11 13 15 1  3...
-        ///    // For a proof that th [rest of string was truncated]&quot;;.
+        ///    // So the last survivo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DANGER {
             get {
@@ -1462,9 +1474,9 @@ namespace Spoj.Solver {
         ///// Counts the number of distinct substrings in a string.
         ///public static class DISUBSTR // Same problem as SUBST1.
         ///{
-        ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
-        ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to cre [rest of string was truncated]&quot;;.
+        ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short
+        ///    // and there aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices
+        ///    // in O(n^2logn). I don&apos;t actually create the substrings though. We don&apos;t need to cre [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DISUBSTR {
             get {
@@ -1540,12 +1552,10 @@ namespace Spoj.Solver {
         ///// Transforms a number into its base 2 representation in a weird recursive way.
         ///public static class EASYPROB
         ///{
-        ///    public static string Solve(int n)
-        ///        =&gt; $&quot;{n}={SolveRecursively(n)}&quot;;
-        ///
         ///    // Say n = 137. The binary representation of n is 10001001, or in other words:
         ///    // 2^7 + 2^3 + 2^0, but those exponents get defined recursively using the same procedure:
-        ///    // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0 [rest of string was truncated]&quot;;.
+        ///    // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0, where there&apos;s a weird base case for 2^1 (it&apos;s just 2).
+        ///    // Oh and we&apos;re not u [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EASYPROB {
             get {
@@ -1644,10 +1654,10 @@ namespace Spoj.Solver {
         ///// Finds the kth cube that ends in 888 (the first such cube is 192).
         ///public static class EIGHTS
         ///{
-        ///    // Only part that affects the last three digits of a multiplied number are the last three
-        ///    // digits of the numbers being multipled. These are all the three digit numbers whose
-        ///    // cubes end in 888. Any other, higher numbers whose cubes end in 888 must themselves
-        ///    // end in one of these [rest of string was truncated]&quot;;.
+        ///    // Only part that affects the last three digits of a multiplied number are
+        ///    // the last three digits of the numbers being multipled. These are all the
+        ///    // three digit numbers whose cubes end in 888. Any other, higher numbers
+        ///    // whose cubes end in 888 must themselves end in one of these [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EIGHTS {
             get {
@@ -1725,7 +1735,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/ETF/ #factors #formula #math #primes #sieve
-        ///// Calculates the value of the totient function (count of relative primes) for the given n, 1 &lt;= n &lt;= 10^6.
+        ///// Calculates the value of the totient function (count of relative primes).
         ///public static class ETF
         ///{
         ///    private const int _limit = 1000000;
@@ -1733,7 +1743,10 @@ namespace Spoj.Solver {
         ///
         ///    static ETF()
         ///    {
-        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);        /// [rest of string was truncated]&quot;;.
+        ///        _factorizer = new SieveOfEratosthenesFactorizer(_limit);
+        ///    }
+        ///
+        ///    // We know a sieve [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ETF {
             get {
@@ -1768,14 +1781,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/FARIDA/ #dynamic-programming-1d
-        ///// Takes the most coins from a series of monsters, where it&apos;s not possible to take from adjacent monsters.
+        ///// Takes the most coins possible from a series of non-adjacent monsters.
         ///public static class FARIDA
         ///{
         ///    private static long[] _maxCoinsCollectable = new long[10000];
         ///
-        ///    // The max coins collected through the first k monsters is max of: the coin count for the kth monster
-        ///    // plus the solution through k - 2 monsters (so the (k - 1)th monster definitely isn&apos;t chosen),
-        ///    // and th [rest of string was truncated]&quot;;.
+        ///    // The max coins collected through the first k monsters is max of: the coin count
+        ///    // for the kth monster plus the solution through k - 2 monsters (so the (k - 1)th
+        ///    // monster definitely isn&apos;t chosen), and the solution through the first k - 1 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FARIDA {
             get {
@@ -2004,8 +2017,8 @@ namespace Spoj.Solver {
         ///// Finds the contiguous subsequence starting from 1 that most closely adds to 100.
         ///public static class GLJIVE
         ///{
-        ///    // Actually, the work below is wrong. We&apos;re looking for a contiguous subsequence starting
-        ///    // from the first index, but not necessarily spanning all 10.
+        ///    // Actually, the work below is wrong. We&apos;re looking for a contiguous subsequence
+        ///    // starting from the first index, but not necessarily spanning all 10.
         ///    public static int SolveCorrectly(int[] points)
         ///    {
         ///        int result = 0;
@@ -2155,9 +2168,11 @@ namespace Spoj.Solver {
         ///
         ///    // Took a look at the data and it seems like float&apos;s precision won&apos;t
         ///    // be a problem here (at least for the first 277 terms).
-        ///    private static readonly IReadOnlyList&lt;float&gt; _runningOverhangTotals;
+        ///    private static readonly List&lt;float&gt; _runningOverhangTotals;
         ///
-        ///    static HANGOVER() [rest of string was truncated]&quot;;.
+        ///    static HANGOVER()
+        ///    {
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HANGOVER {
             get {
@@ -2195,8 +2210,11 @@ namespace Spoj.Solver {
         ///// Finds the largest rectangle (by area) in a histogram (rectangles w/ a common base).
         ///public static class HISTOGRA
         ///{
-        ///    // I looked at times after debating (but not implementing) divide and conquer and O(n^2) approaches, and
-        ///    // figured there must be an O(n) solution. Not sure if I got lucky thinking of a solution, I could imagi [rest of string was truncated]&quot;;.
+        ///    // I looked at times after debating (but not implementing) divide and conquer and O(n^2)
+        ///    // approaches, and figured there must be an O(n) solution.  The experience of ARRAYSUB
+        ///    // and HOTELS helped me.
+        ///
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HISTOGRA {
             get {
@@ -2280,8 +2298,9 @@ namespace Spoj.Solver {
         ///{
         ///    // n is limited to 2,147,483,647, so by inspection 1,999,999,999 will give us the
         ///    // limit of the numbers we can get after at least one breaking. That is:
-        ///    // 1^2 + 9 * 9^2 = 730. So we&apos;ll have a size 731 bool array to keep track of what&apos;s already seen.
-        ///    public static  [rest of string was truncated]&quot;;.
+        ///    // 1^2 + 9 * 9^2 = 730. So we&apos;ll have a size 731 bool array to keep track of
+        ///    // what&apos;s already seen.
+        ///    public [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HPYNOS {
             get {
@@ -2296,10 +2315,10 @@ namespace Spoj.Solver {
         ///// Determines who wins in a game where a number and all its divisors are removed each turn.
         ///public static class HUBULLU
         ///{
-        ///    // Assume by contradication player two can win. Blah blah the players are playing
-        ///    // optimally and the problem guarantees determining a winner is possible, or whatever,
-        ///    // I don&apos;t know anything about game theory which is what made this problem tricky
-        ///    // (spent a couple hours before coming up wi [rest of string was truncated]&quot;;.
+        ///    // Assume by contradication player two can win. Blah blah the players are playing optimally
+        ///    // and the problem guarantees determining a winner is possible, or whatever, I don&apos;t know
+        ///    // anything about game theory. Player one can choose number 1 as their first move, which
+        ///    // is a divisor of every [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HUBULLU {
             get {
@@ -2541,14 +2560,13 @@ namespace Spoj.Solver {
         ///// Finds the longest path between &apos;free&apos; blocks in a labyrinth (a tree).
         ///public static class LABYR1
         ///{
-        ///    // See image for details: http://i.imgur.com/hWnw1N9.jpg.
-        ///    public static int Solve(string[] labyrinth)
+        ///    private static readonly Tuple&lt;int, int&gt;[] _neighborBlockTransformations = new[]
         ///    {
-        ///        var startBlock = FindAnyFreeBlock(labyrinth);
-        ///        if (startBlock == null) return 0;
+        ///        Tuple.Create(-1, 0), Tuple.Create(1, 0),
+        ///        Tuple.Create(0, -1), Tuple.Create(0, 1),
+        ///    };
         ///
-        ///        int distance;
-        ///      [rest of string was truncated]&quot;;.
+        ///    // See image for details: http://i.imgur. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LABYR1 {
             get {
@@ -2637,7 +2655,8 @@ namespace Spoj.Solver {
         ///    // to figure out a smart way and BigInteger was clearly going to be too slow. So:
         ///    // https://oeis.org/A034886, https://mathoverflow.net/q/19170
         ///    public static long Solve(long n)
-        ///        =&gt; n &lt; 2 ? 1 : (long)Math.Ceiling(Math.Log10(2 * Math.PI * n)  [rest of string was truncated]&quot;;.
+        ///        =&gt; n &lt; 2 ? 1
+        ///        : (long)Math.Ceiling(Math.Log10(2 * Math [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LENGFACT {
             get {
@@ -2743,12 +2762,13 @@ namespace Spoj.Solver {
         ///using System.Numerics;
         ///
         ///// https://www.spoj.com/problems/MARBLES/ #big-numbers #combinatorics #math
-        ///// From k differently colored, infinite sets of marbles, counts the number of ways to choose n marbles s.t.
-        ///// there&apos;s always at least one marble of each color chosen.
+        ///// From k differently colored, infinite sets of marbles, counts the number of ways
+        ///// to choose n marbles s.t. there&apos;s always at least one marble of each color chosen.
         ///public static class MARBLES
         ///{
-        ///    // Knowing how to solve the problem without the requirement of a marble for each color is useful
-        ///    // (and it&apos;s a common problem). Effectively we need to distribute the marbles across c [rest of string was truncated]&quot;;.
+        ///    // Knowing how to solve the problem without the requirement of a marble for each
+        ///    // color is useful (and it&apos;s a common problem). Effectively we need to distribute
+        ///    // the marbles  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MARBLES {
             get {
@@ -2888,9 +2908,10 @@ namespace Spoj.Solver {
         ///// Finds the cheapest way to take buses between two cities, with constrained movement.
         ///public static class MISERMAN
         ///{
-        ///    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of final bus we use
-        ///    // to get there, plus cheapest way to get to that final bus, knowing we can arrive at it by taking
-        ///    // any one of the adjacent buses in the previous city (so recursively find [rest of string was truncated]&quot;;.
+        ///    // Basically the same as BYTESM2. Cheapest way to get to the final city is fare of
+        ///    // final bus we use to get there, plus cheapest way to get to that final bus, knowing
+        ///    // we can arrive at it by taking any one of the adjacent buses in the previous city
+        ///    // (so recursiv [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MISERMAN {
             get {
@@ -3222,8 +3243,8 @@ namespace Spoj.Solver {
         ///
         ///        while (remainingPyanis-- &gt; 0)
         ///        {
-        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pairs arrive adjacent to each other.
-        ///            // Since XOR is commut [rest of string was truncated]&quot;;.
+        ///            // It&apos;s easy to see XOR&apos;ing will work if all integer pairs arrive adjacent to each
+        ///            // other. Since XOR is commut [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OLOLO {
             get {
@@ -3269,8 +3290,8 @@ namespace Spoj.Solver {
         ///        if (expression.Length == 1)
         ///            return expression;
         ///
-        ///        // expression is of the form (firstSubexpression@secondSubexpression), where @ represents an arbitrary operator.
-        ///        // Now RPN [rest of string was truncated]&quot;;.
+        ///        // expression is of the form (firstSubexpression@secondSubexpression), where @ represents
+        ///        // an arbitrary operator. Now RPN [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ONP {
             get {
@@ -3283,14 +3304,15 @@ namespace Spoj.Solver {
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/PALIN/ #ad-hoc #experiment #inspection
-        ///// Outputs the smallest palindrome larger than the given integer (as strings, since they can be very large).
+        ///// Outputs the smallest palindrome larger than the given integer.
         ///public static class PALIN
         ///{
         ///    public static string Solve(string k)
         ///    {
-        ///        // Need to handle even-length and odd-length arrays a bit differently, since odds have a middle index.
+        ///        // Need to handle even-length and odd-length arrays a bit differently,
+        ///        // since odds have a middle index.
         ///        int? middleIndex = k.Length % 2 == 0 ? (int?)null : k.Length / 2;
-        ///        int leftHalfStartI [rest of string was truncated]&quot;;.
+        ///        int leftHalfStartIndex = middleIndex - 1 ?? k.Len [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PALIN {
             get {
@@ -3343,14 +3365,15 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///
         ///// https://www.spoj.com/problems/PERMUT2/ #ad-hoc #permutations
-        ///// Figures out if a permutation of n integers is the same as its inverse permutation (AKA ambiguous).
+        ///// Figures out if a permutation of n integers is the same as its inverse permutation.
         ///public static class PERMUT2
         ///{
         ///    public static bool Solve(int[] permutation)
         ///    {
         ///        // Given is a permutation like 5, 1, 2, 3, 4.
-        ///        // This (obviously) tells us the value 5 is at index 1, the value 1 is at index 2, and so on.
-        ///        // We can also interpret the permutation as specifying an inverse permuta [rest of string was truncated]&quot;;.
+        ///        // This (obviously) tells us the value 5 is at index 1, the value 1 is at index 2,
+        ///        // and so on. We can also interpret the permutation as specifying an inverse
+        ///        // permutation [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PERMUT2 {
             get {
@@ -3548,7 +3571,7 @@ namespace Spoj.Solver {
         ///using System.Text;
         ///
         ///// https://www.spoj.com/problems/PRIME1/ #primes #sieve
-        ///// Returns all the primes between two numbers m and n (inclusive), where 1 &lt;= m &lt;= n &lt;= 1,000,000,000.
+        ///// Returns all the primes between two numbers m and n, up to 1,000,000,000.
         ///public static class PRIME1
         ///{
         ///    private const int _limit = 1000000000;
@@ -3559,7 +3582,7 @@ namespace Spoj.Solver {
         ///        _decider = new TrialDivisionDecider(_limit);
         ///    }
         ///
-        ///    // This is still pretty slow, looks like we mig [rest of string was truncated]&quot;;.
+        ///    // This is still pretty slow, looks like we might want a segmented sieve?        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PRIME1 {
             get {
@@ -4086,9 +4109,9 @@ namespace Spoj.Solver {
         ///// Counts the number of distinct substrings in a string.
         ///public static class SUBST1 // Same problem as DISUBSTR.
         ///{
-        ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short and there
-        ///    // aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices in O(n^2logn). I don&apos;t
-        ///    // actually create the substrings though. We don&apos;t need to creat [rest of string was truncated]&quot;;.
+        ///    // This uses the well-known concept of a suffix array. The string we&apos;re given is pretty short
+        ///    // and there aren&apos;t many test cases, so it&apos;s fine to create the sorted suffix start indices
+        ///    // in O(n^2logn). I don&apos;t actually create the substrings though. We don&apos;t need to creat [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SUBST1 {
             get {
@@ -4491,9 +4514,10 @@ namespace Spoj.Solver {
         ///// Determines if the specified algorithm ever stops for a given input.
         ///public static class WILLITST
         ///{
-        ///    // If the second branch gets hit, the number maps to 3(n + 1) and definitely has a factor of 3.
-        ///    // That means that second branch eventually gets hit again, even if a lot of factors of 2 get divided out.
-        ///    // And when it&apos;s hit again, it still has a factor of 3 after mapping to 3(n + 1), and the process repeats [rest of string was truncated]&quot;;.
+        ///    // If the second branch gets hit, the number maps to 3(n + 1) and definitely
+        ///    // has a factor of 3. That means that second branch eventually gets hit again,
+        ///    // even if a lot of factors of 2 get divided out. And when it&apos;s hit again, it
+        ///    // still has a factor of 3 after mapping to 3(n + 1), and the process [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WILLITST {
             get {

@@ -31,11 +31,13 @@ namespace Spoj.Library.Primes
             {
                 foreach (int prime in _sieveFactorizer.Primes)
                 {
-                    // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have a factor
-                    // less than that, otherwise they'd multiply together to make a number greater than n. The fact that n
-                    // is getting smaller doesn't matter. If this condition stops the loop, what remains of n is a single
-                    // prime factor. All primes less than 'prime' were already divided out, so for n to have multiple prime
-                    // factors they'd have to all be >= 'prime', but in that case the loop wouldn't stop here.
+                    // Check for factors up to sqrt(n), as non-primes with a factor larger than that
+                    // must also have a factor less than that, otherwise they'd multiply together to
+                    // make a number greater than n. The fact that n is getting smaller doesn't matter.
+                    // If this condition stops the loop, what remains of n is a single prime factor.
+                    // All primes less than 'prime' were already divided out, so for n to have multiple
+                    // prime factors they'd have to all be >= 'prime', but in that case the loop
+                    // wouldn't stop here.
                     if (prime * prime > n)
                         break;
 
@@ -50,7 +52,8 @@ namespace Spoj.Library.Primes
                         yield break;
                 }
 
-                // The loop above was broken out of (before n == 1), so the original n, or what remains of it, is prime.
+                // The loop above was broken out of (before n == 1), so the original n, or what
+                // remains of it, is prime.
                 yield return n;
             }
         }

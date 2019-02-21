@@ -22,8 +22,9 @@ namespace Spoj.Library.Primes
 
             foreach (int prime in _sieveProvider.Primes)
             {
-                // Check for factors up to sqrt(n), as non-primes with a factor larger than that must also have
-                // a factor less than that, otherwise they'd multiply together to make a number greater than n.
+                // Check for factors up to sqrt(n), as non-primes with a factor larger than
+                // that must also have a factor less than that, otherwise they'd multiply
+                // together to make a number greater than n.
                 if (prime * prime > n)
                     break;
 

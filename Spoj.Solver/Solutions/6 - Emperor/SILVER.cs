@@ -22,23 +22,26 @@ public static class SILVER
     // Then I did 15 and 16 which brought out the binary pattern even more clearly. For example,
     // for 10 we need to get 3 'bits' of silver, 1, 2, 4, then, thinking in binary, we can represent
     // any number from 001 (1) to 111 (7). That is, by giving the creditor the appropriate
-    // combination of 3 bits, we can satisfy him through the first 7 days. The 3 cuts needed for 1, 2
-    // and 4 leave a 3 leftover bit, so we can use that too, in combination with the 7 combo, to satisfy from
-    // day 3 to 10. 3 cuts for 1, 2, 4 will satify up to a 15 day debt. For 15, there'd be an 8 leftover bit.
-    // We use the bits for days 1 to 7, then 8 for day 8, and then use 1 to 7 again for the remainder. Pattern:
+    // combination of 3 bits, we can satisfy him through the first 7 days. The 3 cuts needed for
+    // 1, 2 and 4 leave a 3 leftover bit, so we can use that too, in combination with the 7 combo,
+    // to satisfy from day 3 to 10. 3 cuts for 1, 2, 4 will satify up to a 15 day debt. For 15,
+    // there'd be an 8 leftover bit. We use the bits for days 1 to 7, then 8 for day 8, and then
+    // use 1 to 7 again for the remainder. Pattern:
     // 1         = 0 cuts
     // 2 to 3    = 1 cuts (1)
     // 4 to 7    = 2 cuts (1, 2)
     // 8 to 15   = 3 cuts (1, 2, 4)
-    // 16 to 31  = 4 cuts (1, 2, 4, 8) (...leftover can be 1 more than what we can represent with our cut bits.)
-    // So that's a new upper bound, down from what we know would've worked, which is cutting a new piece every day.
-    // To prove it's optimal, say we only needed 2 cuts for 8. Then with 3 bits total (one from the leftover),
-    // we'd have to represent the numbers 1 through 8 somehow. That is, we'd have to give the creditor a certain
-    // combination of those 3 bits each day (like first and third bit on the 3rd day), with each day's combination's
-    // value corresponding to the day number. The creditor either has a bit or doesn't, so we're seeing why binary
-    // is correct. If he either has a bit or doesn't, there are 2 * 2 * 2 - 1 possible combinations with 3 bits, the
-    // minus 1 because he has to have at least one bit, otherwise we wouldn't have given him anything. But that's only 7,
-    // which is less than the 8 distinct values we need for each different day.
+    // 16 to 31  = 4 cuts (1, 2, 4, 8) (...leftover can be 1 more than what we can represent with
+    // our cut bits.)
+    // So that's a new upper bound, down from what we know would've worked, which is cutting a new
+    // piece every day. To prove it's optimal, say we only needed 2 cuts for 8. Then with 3 bits
+    // total (one from the leftover), we'd have to represent the numbers 1 through 8 somehow. That
+    // is, we'd have to give the creditor a certain combination of those 3 bits each day (like first
+    // and third bit on the 3rd day), with each day's combination's value corresponding to the day
+    // number. The creditor either has a bit or doesn't, so we're seeing why binary is correct. If
+    // he either has a bit or doesn't, there are 2 * 2 * 2 - 1 possible combinations with 3 bits, the
+    // minus 1 because he has to have at least one bit, otherwise we wouldn't have given him anything.
+    // But that's only 7, which is less than the 8 distinct values we need for each different day.
     public static int Solve(int n)
         => (int)Math.Log(n, 2);
 }

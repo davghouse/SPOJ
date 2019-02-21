@@ -39,8 +39,9 @@ public struct BigInteger : IEquatable<BigInteger>
         : this(n.ToString())
     { }
 
-    // For a  number string, the first character is the most significant digit. For our _digits array, it's most
-    // convenient if the first element is the least significant digit, so reverse the order here.
+    // For a number string, the first character is the most significant digit. For our _digits
+    // array, it's most convenient if the first element is the least significant digit, so
+    // reverse the order here.
     public BigInteger(string digits)
     {
         byte[] digitsArray = new byte[digits.Length];

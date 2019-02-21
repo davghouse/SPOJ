@@ -27,14 +27,14 @@ public static class ONEZERO
         // get really huge so we work with the numbers % n. (number % n * 10) % n = (number * 10) % n
         // and similar when addition is involved, so this is fine. The big optimization is not
         // enqueuing a number into the BFS if we've already enqueued an earlier number equal to it % n.
-        // The operations % n would all be the same, but the earlier number would find a smaller multiple.
-        // The actual numbers are too big to store as numbers, so store the number whose binary
+        // The operations % n would all be the same, but the earlier number would find a smaller
+        // multiple. The actual numbers are too big to store as numbers, so store the number whose binary
         // representation (parsed as a number) equals the number. Example:
         // Say n = 17. 101 % 17 = 16. We store the 16, and we store 101 by storing 5, because 5's
         // binary representation is 101. To search from 101 we do 101 * 10 % 17 = 16 * 10 % 17 = 7,
         // we store the 7, and we store 1010 by storing 5 << 1 = 10, because 10's binary representation
-        // is 1010. We also do (101 * 10 + 1) % 17 = (16 * 10 + 1) % 17 = 8, we store the 8, and we store
-        // 1011 by storing (5 << 1) + 1 = 11, because 11's binary representation is 1011.
+        // is 1010. We also do (101 * 10 + 1) % 17 = (16 * 10 + 1) % 17 = 8, we store the 8, and we
+        // store 1011 by storing (5 << 1) + 1 = 11, because 11's binary representation is 1011.
         while (true)
         {
             int waveSize = numbersToVisit.Count;
