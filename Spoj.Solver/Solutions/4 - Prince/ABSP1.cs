@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/ABSP1/ #ad-hoc #experiment #proof
+// https://www.spoj.com/problems/ABSP1/ #ad-hoc #proof
 // Sums up the absolute differences of all distinct pairs in a pre-sorted array.
 public static class ABSP1
 {

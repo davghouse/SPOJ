@@ -123,7 +123,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/ABSP1/ #ad-hoc #experiment #proof
+        ///// https://www.spoj.com/problems/ABSP1/ #ad-hoc #proof
         ///// Sums up the absolute differences of all distinct pairs in a pre-sorted array.
         ///public static class ABSP1
         ///{
@@ -133,7 +133,7 @@ namespace Spoj.Solver {
         ///    // + |A1 - A2| + |A1 - A3| + ... + |A1 - An-1|
         ///    // ...
         ///    // + |An-2 - An-1|
-        ///    // We can get rid of the absolute value notation b [rest of string was truncated]&quot;;.
+        ///    // We can get rid of the absolute value notation by making use [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ABSP1 {
             get {
@@ -295,7 +295,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/AE00/ #division #experiment #math
+        ///// https://www.spoj.com/problems/AE00/ #division #math
         ///// Counts the number of rectangles that can be constructed from n 1x1 squares
         ///// (using any number of those squares), 1 &lt;= n &lt;= 1000. More info here:
         ///// http://mathschallenge.net/library/number/number_of_divisors
@@ -305,7 +305,7 @@ namespace Spoj.Solver {
         ///    public static int Solve(int n)
         ///    {
         ///        // Rectangles from n squares can use any number of squares, that is, n squares
-        /// [rest of string was truncated]&quot;;.
+        ///        // c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AE00 {
             get {
@@ -352,7 +352,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/ALICESIE/ #division #experiment #sieve
+        ///// https://www.spoj.com/problems/ALICESIE/ #division #sieve
         ///// Finds how many numbers remaining after sieving like Alice.
         ///public static class ALICESIE
         ///{
@@ -365,7 +365,7 @@ namespace Spoj.Solver {
         ///    //       X
         ///    // 3 2
         ///    //
-        ///    // The numbers that get crossed out are those t [rest of string was truncated]&quot;;.
+        ///    // The numbers that get crossed out are those that can divi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ALICESIE {
             get {
@@ -427,14 +427,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/AMR10G/ #extrema #sorting
+        ///// https://www.spoj.com/problems/AMR10G/ #sorting
         ///// Finds a set of K students from N total having the minimum height difference.
         ///public static class AMR10G
         ///{
         ///    // There are potentially many subsets of size costumeCount, but it doesn&apos;t make sense
         ///    // to consider all of them. Ignoring non-distinct heights (because it won&apos;t matter), every
         ///    // set of size costumeCount has a tallest student. There must be at least costumeCount - 1
-        ///    // students shorter than that studen [rest of string was truncated]&quot;;.
+        ///    // students shorter than that student, since  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR10G {
             get {
@@ -469,14 +469,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/AMR12D/ #inspection #intuition #strings
+        ///// https://www.spoj.com/problems/AMR12D/ #ad-hoc #strings
         ///// Determines if the reverse of every substring exists in a string.
         ///public static class AMR12D
         ///{
         ///    // One substring is the entire string. For the reverse of the entire string
         ///    // to be in the string, the reverse would need to be the same as the string,
         ///    // since the string is the only substring long enough to match the reversed string.
-        ///    // But given it&apos;s a palindrome, the reverse of all other substrin [rest of string was truncated]&quot;;.
+        ///    // But given it&apos;s a palindrome, the reverse of all other substrings also exist.        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AMR12D {
             get {
@@ -488,13 +488,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/ANARC05B/ #intersection #sequence #sorting
+        ///// https://www.spoj.com/problems/ANARC05B/ #sequence #sorting
         ///// Maximizes the sum while traversing a pair of intersecting, ordered sequences.
         ///public static class ANARC05B
         ///{
         ///    // Sequences are effectively one-indexed as the first element is the sequence size.
         ///    // And they&apos;re strictly increasing. And there&apos;s no cost for jumping between sequences,
-        ///    // so we can just do this greedily. The sequence to use from each intersection poin [rest of string was truncated]&quot;;.
+        ///    // so we can just do this greedily. The sequence to use from each intersection point
+        ///    // is t [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC05B {
             get {
@@ -549,7 +550,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/ANARC09A/ #dynamic-programming-x #greedy #recursion #stack
+        ///// https://www.spoj.com/problems/ANARC09A/ #greedy #recursion #stack
         ///// Finds the minimum number of replacements needed to balance a string of brackets.
         ///public static class ANARC09A
         ///{
@@ -558,7 +559,7 @@ namespace Spoj.Solver {
         ///
         ///    // This relies on a greedy strategy (I gave up and read the comments). Immediately
         ///    // when a } is found, pair it off with a { if one exists (by removing that { from
-        /// [rest of string was truncated]&quot;;.
+        ///    // the stack). {&apos;s  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ANARC09A {
             get {
@@ -588,7 +589,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/AP2/ #experiment #math #sequence
+        ///// https://www.spoj.com/problems/AP2/ #math #sequence
         ///// Given certain terms and the sum of an arithmetic progression, finds the whole series.
         ///public static class AP2
         ///{
@@ -596,7 +597,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // In an AP, note that pairs like (a_1, a_n), (a_2, a_n-1) always add up to the same thing.
         ///        // A little more work shows (a_b + a_n-b) * (n/2) = sum, so n = 2 * sum / (a_b + a_n-b).
-        ///        int n = (int)(2  [rest of string was truncated]&quot;;.
+        ///        int n = (int)(2 * sum / (thi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AP2 {
             get {
@@ -674,13 +675,13 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/ARRAYSUB/ #deque #extrema #sliding-window
+        ///// https://www.spoj.com/problems/ARRAYSUB/ #deque #sliding-window
         ///// Finds the maximum for all contiguous subarrays of a given size in an array.
         ///public static class ARRAYSUB
         ///{
         ///    // Looks like I ended up with the typical sliding-window deque solution. Here&apos;s an example for k = 3:
         ///    // 1 3 2 8 4 7 2, initialize left looking dominators like {3, 2}. These dominate everything to their
-        ///    // left until a bigger dominator.  [rest of string was truncated]&quot;;.
+        ///    // left until a bigger dominator. Leftmost  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ARRAYSUB {
             get {
@@ -800,14 +801,15 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/BISHOPS/ #ad-hoc #experiment #math
+        ///// https://www.spoj.com/problems/BISHOPS/ #ad-hoc #math
         ///// Finds the maximum number of bishops that can be (safely) placed on a given-size chessboard.
         ///public static class BISHOPS
         ///{
         ///    // I didn&apos;t prove optimality but it&apos;s easy to show at least 2n - 2 bishops is always
         ///    // possible by placing n along the top and n - 2 along the base (none in the corners).
         ///    // Might be easy to show 2n isn&apos;t possible.
-        ///    public static BigInteger Solve(BigInteg [rest of string was truncated]&quot;;.
+        ///    public static BigInteger Solve(BigInteger size)
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BISHOPS {
             get {
@@ -820,7 +822,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/BITMAP/ #bfs-multi-source #experiment
+        ///// https://www.spoj.com/problems/BITMAP/ #bfs
         ///// For all black and white pixels in a grid, finds the distance to the closest white pixel.
         ///public static class BITMAP
         ///{
@@ -830,7 +832,7 @@ namespace Spoj.Solver {
         ///        Tuple.Create(0, -1), Tuple.Create(0, 1),
         ///    };
         ///
-        ///    // White pixels are within zero of a w [rest of string was truncated]&quot;;.
+        ///    // White pixels are within zero of a white pixel. All black pix [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BITMAP {
             get {
@@ -971,13 +973,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization
+        ///// https://www.spoj.com/problems/BYECAKES/ #ad-hoc #division #optimization
         ///// Finds the minimal amount of cake ingredients to buy to use all of them completely up.
         ///public static class BYECAKES
         ///{
         ///    // Find the greatest number of cakes needed to deplete any one of the starting ingredients.
         ///    // This is the total number of cakes to bake, buying (across each ingredient) any missing
-        ///    // ingredients necessary to support that number of cakes. Pretty clear that  [rest of string was truncated]&quot;;.
+        ///    // ingredients necessary to support that number of cakes. Pretty clear that it&apos;s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BYECAKES {
             get {
@@ -1027,14 +1029,16 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/CADYDIST/ #ad-hoc #experiment #sorting
+        ///// https://www.spoj.com/problems/CADYDIST/ #ad-hoc #sorting
         ///// Given class sizes and candy prices, feed all students in the cheapest way possible.
         ///public static class CADYDIST
         ///{
         ///    // Similar to FASHION (which is ranked higher because it&apos;s confusing). One type of
         ///    // candy is bought per class. In order to minimize cost, buy the cheapest candy for
         ///    // the biggest class, and so on.
-        ///    public static long Solve(int[] classSizes, int[] candyPrices)        /// [rest of string was truncated]&quot;;.
+        ///    public static long Solve(int[] classSizes, int[] candyPrices)
+        ///    {
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CADYDIST {
             get {
@@ -1134,7 +1138,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/CATM/ #bfs-multi-source #simulation
+        ///// https://www.spoj.com/problems/CATM/ #bfs #simulation
         ///// Figures out if a mouse can escape from two cats.
         ///public class CATM
         ///{
@@ -1148,7 +1152,7 @@ namespace Spoj.Solver {
         ///    }
         ///
         ///    // The cats are establishing a threshold of squares that the mouse can&apos;t reach before
-        ///    // they d [rest of string was truncated]&quot;;.
+        ///    // they do. The mouse  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CATM {
             get {
@@ -1321,7 +1325,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/CRDS/ #inspection #sequence
+        ///// https://www.spoj.com/problems/CRDS/ #ad-hoc #sequence
         ///// Counts cards in a typical card pyramid, modulo 1000007.
         ///public static class CRDS
         ///{
@@ -1335,7 +1339,7 @@ namespace Spoj.Solver {
         ///        // There are m levels with card counts of 2, 4, ..., 2m, for (cancelling the 2s):
         ///        long cardsFromWalls = (m + 1) * m;
         ///
-        ///        return ( [rest of string was truncated]&quot;;.
+        ///        return (int) [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CRDS {
             get {
@@ -1416,7 +1420,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/DANGER/ #experiment #formula #game #math
+        ///// https://www.spoj.com/problems/DANGER/ #formula #game #math
         ///// Finds the last survivor for n people in a circle, where every second person dies.
         ///public static class DANGER
         ///{
@@ -1435,7 +1439,7 @@ namespace Spoj.Solver {
         ///    // And so on, like:
         ///    // n: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17...
         ///    // s: 1 1 3 1 3 5 7 1 3 5  7  9  11 13 15 1  3...
-        ///    // So the last survivo [rest of string was truncated]&quot;;.
+        ///    // So the last survivor is 2*(n -  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DANGER {
             get {
@@ -1447,7 +1451,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/DIEHARD/ #experiment #game #memoization
+        ///// https://www.spoj.com/problems/DIEHARD/ #game #memoization
         ///// Finds how long we can survive while moving between fire, water, and air.
         ///public static class DIEHARD
         ///{
@@ -1458,7 +1462,7 @@ namespace Spoj.Solver {
         ///    private const int _fireHealthDelta = -20;
         ///    private const int _fireArmorDelta = 5;
         ///
-        ///    [rest of string was truncated]&quot;;.
+        ///    private sta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DIEHARD {
             get {
@@ -1548,14 +1552,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/EASYPROB/ #binary #experiment #recursion
+        ///// https://www.spoj.com/problems/EASYPROB/ #binary #recursion
         ///// Transforms a number into its base 2 representation in a weird recursive way.
         ///public static class EASYPROB
         ///{
         ///    // Say n = 137. The binary representation of n is 10001001, or in other words:
         ///    // 2^7 + 2^3 + 2^0, but those exponents get defined recursively using the same procedure:
         ///    // 2^(2^2 + 2 + 2^0) + 2^(2 + 2^0) + 2^0, where there&apos;s a weird base case for 2^1 (it&apos;s just 2).
-        ///    // Oh and we&apos;re not u [rest of string was truncated]&quot;;.
+        ///    // Oh and we&apos;re not using exponen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EASYPROB {
             get {
@@ -1759,7 +1763,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/FACEFRND/ #ad-hoc #hash-table #network
+        ///// https://www.spoj.com/problems/FACEFRND/ #ad-hoc #hash-table
         ///// Finds friends of someone&apos;s friends given their friends and their friends&apos; friends.
         ///public static class FACEFRND
         ///{
@@ -1769,7 +1773,8 @@ namespace Spoj.Solver {
         ///        for (int f = 0; f &lt; friendCount; ++f)
         ///        {
         ///            friends.Add(friendDefinitions[f][0]);
-        ///    [rest of string was truncated]&quot;;.
+        ///        }
+        ///        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FACEFRND {
             get {
@@ -1800,14 +1805,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting
+        ///// https://www.spoj.com/problems/FASHION/ #ad-hoc #sorting
         ///// Given two arrays of hotness levels, pair them off to maximize the total hotness product.
         ///public static class FASHION
         ///{
         ///    // Problem statement leads one to believe these arrays are already in parallel;
         ///    // each pair already chosen. That&apos;s not the case, so it&apos;s necessary to figure out the
         ///    // pairings that produces the maximum sum of hotness bonds. Sorting and pairing the highest
-        ///    / [rest of string was truncated]&quot;;.
+        ///    // with the h [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FASHION {
             get {
@@ -1818,7 +1823,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/FAVDICE/ #experiment #math #probability #proof
+        ///// https://www.spoj.com/problems/FAVDICE/ #math #probability #proof
         ///// Finds the expected number of rolls before rolling every side of an n-sided die.
         ///public static class FAVDICE
         ///{
@@ -1832,7 +1837,10 @@ namespace Spoj.Solver {
         ///        }
         ///
         ///        return expectedRolls;
-        ///    }        /// [rest of string was truncated]&quot;;.
+        ///    }
+        ///}
+        ///
+        ///public [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FAVDICE {
             get {
@@ -1844,14 +1852,14 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/FCTRL/ #experiment #factorial #factors #inspection #math
+        ///// https://www.spoj.com/problems/FCTRL/ #factorial #factors #math
         ///// Returns the number of trailing zeros of n!, for very large n.
         ///public static class FCTRL
         ///{
         ///    // n! has as many zeros as it has factors of 10. n! has as many factors of 10 as it has
         ///    // min(factors of 2, factors of 5). Looking at some numbers, it&apos;s clear n! is picking up
         ///    // factors of 2 a lot faster than factors of 5. So we need to find the number of factors
-        ///    //  [rest of string was truncated]&quot;;.
+        ///    // of 5. Here&apos;s an example  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FCTRL {
             get {
@@ -1887,7 +1895,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/FENCE1/ #intuition #math
+        ///// https://www.spoj.com/problems/FENCE1/ #math
         ///// Finds the area that can be fenced in using a wall and some fence.
         ///public static class FENCE1
         ///{
@@ -1895,7 +1903,7 @@ namespace Spoj.Solver {
         ///    // the straight side. Not sure how to prove it but it makes sense intuitively;
         ///    // convex, uses a lot of the free wall. For the whole circle:
         ///    // C/2 = pi*r = length =&gt; r = length/pi, =&gt; A/2 = pi * r^2 / 2 = length ^ 2 / (2 * pi).
-        ///    pu [rest of string was truncated]&quot;;.
+        ///    public static [rest of string was truncated]&quot;;.
         /// </summary>
         public static string FENCE1 {
             get {
@@ -1972,7 +1980,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/GCD2/ #gcd #math
+        ///// https://www.spoj.com/problems/GCD2/ #big-numbers #gcd #math
         ///// Finds the GCD of two numbers, one of which can be really big.
         ///public static class GCD2
         ///{
@@ -1981,7 +1989,7 @@ namespace Spoj.Solver {
         ///
         ///    // This is a good article (first section): http://www.cut-the-knot.org/blue/Euclid.shtml.
         ///    // One point to note, for a = bt + r, the gcd(a, b) divides a so it divides bt + r.
-        ///    // And it divides b, so it divides bt, which means  [rest of string was truncated]&quot;;.
+        ///    // And it divides b, so it divides bt, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GCD2 {
             get {
@@ -1992,7 +2000,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/GIRLSNBS/ #division #experiment
+        ///// https://www.spoj.com/problems/GIRLSNBS/ #division
         ///// Minimizes the max consecutive genders for some girls and boys sitting in a row.
         ///public static class GIRLSNBS
         ///{
@@ -2002,7 +2010,7 @@ namespace Spoj.Solver {
         ///        int minCount = Math.Min(girlCount, boyCount);
         ///
         ///        // This happens to work for the case where both are equal (including both zero).
-        ///        // For normal cases where maxCount != [rest of string was truncated]&quot;;.
+        ///        // For normal cases where maxCount != minCount, n [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GIRLSNBS {
             get {
@@ -2013,7 +2021,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence #sets
+        ///// https://www.spoj.com/problems/GLJIVE/ #ad-hoc #binary #sequence
         ///// Finds the contiguous subsequence starting from 1 that most closely adds to 100.
         ///public static class GLJIVE
         ///{
@@ -2025,7 +2033,7 @@ namespace Spoj.Solver {
         ///
         ///        for (int i = 0; i &lt; 10; ++i)
         ///        {
-        ///          [rest of string was truncated]&quot;;.
+        ///            if  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GLJIVE {
             get {
@@ -2108,7 +2116,7 @@ namespace Spoj.Solver {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.spoj.com/problems/GUESSING/ #experiment
+        ///   Looks up a localized string similar to https://www.spoj.com/problems/GUESSING/ #ad-hoc
         ///Didn&apos;t use binary search, doesn&apos;t seem to be a limit on # of guesses allowed.
         ///And didn&apos;t use second clue (B) either, just first (A) which tells how many are in correct position.
         ///.
@@ -2206,7 +2214,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/HISTOGRA/ #ad-hoc #experiment #optimization #sliding-window #stack
+        ///// https://www.spoj.com/problems/HISTOGRA/ #ad-hoc #optimization #sliding-window #stack
         ///// Finds the largest rectangle (by area) in a histogram (rectangles w/ a common base).
         ///public static class HISTOGRA
         ///{
@@ -2214,7 +2222,7 @@ namespace Spoj.Solver {
         ///    // approaches, and figured there must be an O(n) solution.  The experience of ARRAYSUB
         ///    // and HOTELS helped me.
         ///
-        /// [rest of string was truncated]&quot;;.
+        ///    // I&apos;ll  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string HISTOGRA {
             get {
@@ -2406,7 +2414,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/INVCNT/ #ad-hoc #binary-search-tree
+        ///// https://www.spoj.com/problems/INVCNT/ #ad-hoc #bst
         ///// Finds the number of inversions (larger index, but smaller value) in an array.
         ///public static class INVCNT
         ///{
@@ -2417,7 +2425,7 @@ namespace Spoj.Solver {
         ///        var inversionBST = new InversionBST(array[0]);
         ///
         ///        long inversionCount = 0;
-        ///        for (int i = [rest of string was truncated]&quot;;.
+        ///        for (int i = 1; i &lt; array.L [rest of string was truncated]&quot;;.
         /// </summary>
         public static string INVCNT {
             get {
@@ -2602,7 +2610,7 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Numerics;
         ///
-        ///// https://www.spoj.com/problems/LASTDIG2/ #digits #mod-math
+        ///// https://www.spoj.com/problems/LASTDIG2/ #big-numbers #digits #mod-math
         ///// For big integer b and long e, compute b^e mod 10 (the last digit of b^e).
         ///public static class LASTDIG2
         ///{
@@ -2613,7 +2621,7 @@ namespace Spoj.Solver {
         ///public static class Mod10Exponentiator
         ///{
         ///    // Last digit patterns for repeated exponentiations of bases 0 through 9.
-        ///    // A repeating last digit establish [rest of string was truncated]&quot;;.
+        ///    // A repeating last di [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LASTDIG2 {
             get {
@@ -2722,13 +2730,13 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+        ///// https://www.spoj.com/problems/MAJOR/ #ad-hoc
         ///// Determines if any number makes up the majority of all the numbers sent.
         ///public static class MAJOR // v1, using a dictionary and no more than one full pass
         ///{
         ///    // TLE is strict here, don&apos;t even have time to parse the transmissions into ints.
         ///    // Don&apos;t have time to sort and traverse the array either, but dictionary of counts
-        ///    // might work. And we can optimize that  [rest of string was truncated]&quot;;.
+        ///    // might work. And we can optimize that a bit, ke [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAJOR_v1 {
             get {
@@ -2740,7 +2748,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Text;
         ///
-        ///// https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+        ///// https://www.spoj.com/problems/MAJOR/ #ad-hoc
         ///// Determines if any number makes up the majority of all the numbers sent.
         ///public static class MAJOR // v2, using the Boyer-Moore algorithm and two passes.
         ///{
@@ -2749,7 +2757,7 @@ namespace Spoj.Solver {
         ///    {
         ///        // Attempt to get the majority transmission.
         ///        string winningTransmission = null;
-        ///        for ( [rest of string was truncated]&quot;;.
+        ///        for (int t = 0 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MAJOR_v2 {
             get {
@@ -2941,7 +2949,7 @@ namespace Spoj.Solver {
         ///using System.IO;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/MKTHNUM/ #binary-search #divide-and-conquer #segment-tree #sorting
+        ///// https://www.spoj.com/problems/MKTHNUM/ #binary-search #divide-and-conquer #merge #segment-tree #sorting
         ///// Answers k-th smallest element in a range queries.
         ///public sealed class MKTHNUM
         ///{
@@ -2951,7 +2959,7 @@ namespace Spoj.Solver {
         ///    public MKTHNUM(int[] sourceArray)
         ///    {
         ///        _sourceArrayEndIndex = sourceArray.Length - 1;
-        ///        _segmentTree = new MergeSortSegmentTree(sourceArray); [rest of string was truncated]&quot;;.
+        ///        _segmentTree = new MergeSortSegmentTree(source [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MKTHNUM {
             get {
@@ -3061,14 +3069,15 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary #experiment
+        ///// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary
         ///// Converts decimal integers to base -2.
         ///public static class NEG2
         ///{
         ///    // Observe the following after playing around on paper for a while:
         ///    // The positive powers of 2 are: 2^0 = 1, 2^2 = 4, 2^4 = 16, etc, so for example, we can
         ///    // represent up to 5 (1 + 4) by using powers 2^2 and below, up to 21 (1 + 4 + 16) by using
-        ///    // powers 2^4 and below, and so on. Negatives are similar with 2^1 = -2, 2^3 = -8, where        /// [rest of string was truncated]&quot;;.
+        ///    // powers 2^4 and below, and so on. Negatives are similar with 2^1 = -2, 2^3 = -8, where
+        ///    // for  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NEG2 {
             get {
@@ -3210,7 +3219,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc #extrema
+        ///// https://www.spoj.com/problems/OFFSIDE/ #ad-hoc
         ///// Determines if an attacker is offsides (using player positions only).
         ///public static class OFFSIDE
         ///{
@@ -3220,7 +3229,7 @@ namespace Spoj.Solver {
         ///        // but that doesn&apos;t matter here. If anyone&apos;s offsides, the closest attacker is too.
         ///        int closestAttacker = attackers.Min();
         ///
-        ///     [rest of string was truncated]&quot;;.
+        ///        // Ra [rest of string was truncated]&quot;;.
         /// </summary>
         public static string OFFSIDE {
             get {
@@ -3303,7 +3312,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/PALIN/ #ad-hoc #experiment #inspection
+        ///// https://www.spoj.com/problems/PALIN/ #ad-hoc
         ///// Outputs the smallest palindrome larger than the given integer.
         ///public static class PALIN
         ///{
@@ -3312,7 +3321,8 @@ namespace Spoj.Solver {
         ///        // Need to handle even-length and odd-length arrays a bit differently,
         ///        // since odds have a middle index.
         ///        int? middleIndex = k.Length % 2 == 0 ? (int?)null : k.Length / 2;
-        ///        int leftHalfStartIndex = middleIndex - 1 ?? k.Len [rest of string was truncated]&quot;;.
+        ///        int leftHalfStartIndex = middleIndex - 1 ?? k.Length / 2 - 1;
+        ///        in [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PALIN {
             get {
@@ -3341,7 +3351,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/PERMUT1/ #dynamic-programming-2d
+        ///// https://www.spoj.com/problems/PERMUT1/ #dynamic-programming-2d #permutations
         ///// Finds the number of permutations of 1 ... n with k inversions.
         ///public static class PERMUT1
         ///{
@@ -3352,8 +3362,7 @@ namespace Spoj.Solver {
         ///    // 1 3 2: 1 inversion  (3 &gt; 2)
         ///    // 2 1 3: 1 inversion  (2 &gt; 1)
         ///    // 2 3 1: 2 inversions (2 &gt; 1, 3 &gt; 1)
-        ///    // 3 1 2: 2 inversions (3 &gt; 1, 3 &gt; 2)
-        ///     [rest of string was truncated]&quot;;.
+        ///    // 3 1 2: 2 inversions (3 &gt; 1 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PERMUT1 {
             get {
@@ -3526,14 +3535,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/POUR1/ #ad-hoc #experiment #mod-math #simulation
+        ///// https://www.spoj.com/problems/POUR1/ #ad-hoc #mod-math #simulation
         ///// Given two jugs, figures out how to fill them to reach a certain water level.
         ///public static class POUR1
         ///{
         ///    // Okay so, I just experimented with pen &amp; paper for an hour and convinced myself the following
         ///    // was worth trying. It seems there are two options. You can start by using the small jug to
         ///    // fill the large jug, or by using the large jug to fill the small jug. Once you start either
-        ///    [rest of string was truncated]&quot;;.
+        ///    // of these [rest of string was truncated]&quot;;.
         /// </summary>
         public static string POUR1 {
             get {
@@ -3807,7 +3816,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/RPLC/ #ad-hoc #extrema
+        ///// https://www.spoj.com/problems/RPLC/ #ad-hoc
         ///// Finds the lowest possible starting energy level when drinking ordered +- cokes.
         ///public static class RPLC
         ///{
@@ -3819,7 +3828,7 @@ namespace Spoj.Solver {
         ///        for (int i = 0; i &lt; cokes.Length; ++i)
         ///        {
         ///            currentEnergyLevel += cokes[i];
-        ///            if (currentEner [rest of string was truncated]&quot;;.
+        ///            if (currentEnergyLevel &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RPLC {
             get {
@@ -3859,7 +3868,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #experiment #math
+        ///// https://www.spoj.com/problems/SAMER08F/ #ad-hoc #dynamic-programming-1d #math
         ///// Returns the number of squares in a grid of n x n squares, for 1 &lt;= n &lt;= 100.
         ///// See SAMER08F.cpp--this solution was submitted using C++ because C# was unavailable.
         ///public static class SAMER08F
@@ -3869,7 +3878,7 @@ namespace Spoj.Solver {
         ///
         ///    static SAMER08F()
         ///    {
-        ///        int[] squareCounts = new [rest of string was truncated]&quot;;.
+        ///        int[] squareCounts = new int[_limit  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SAMER08F {
             get {
@@ -4046,7 +4055,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/STAMPS/ #extrema #sorting
+        ///// https://www.spoj.com/problems/STAMPS/ #sorting
         ///// Figures out if Lucy can borrow enough stamps from a certain number of her friends.
         ///public static class STAMPS
         ///{
@@ -4056,7 +4065,8 @@ namespace Spoj.Solver {
         ///
         ///        int borrowedStamps = 0;
         ///        // Borrow stamps from the remaining friend with the most stamps until we get enough.
-        ///        for (int i = friendsStampCounts.Length - 1; i &gt;= 0; --i) [rest of string was truncated]&quot;;.
+        ///        for (int i = friendsStampCounts.Length - 1; i &gt;= 0; --i)
+        ///        [rest of string was truncated]&quot;;.
         /// </summary>
         public static string STAMPS {
             get {
@@ -4086,14 +4096,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/STREETR/ #ad-hoc #experiment #gcd
+        ///// https://www.spoj.com/problems/STREETR/ #ad-hoc #gcd
         ///// Finds how many new trees need to be planted to make all trees an equal distance apart.
         ///public static class STREETR
         ///{
         ///    // Whatever the largest distance possible between trees is, it has to evenly divide
         ///    // each range between the existing trees. If it didn&apos;t, we&apos;d start trying to plant
         ///    // trees in a range and eventually not be able to place the last tree properly. So
-        ///    // compute the GCD of all the range [rest of string was truncated]&quot;;.
+        ///    // compute the GCD of all the ranges. Then plan [rest of string was truncated]&quot;;.
         /// </summary>
         public static string STREETR {
             get {
@@ -4156,13 +4166,12 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to #ad-hoc
         ///#bfs
-        ///#bfs-multi-source
         ///#big-numbers
         ///#binary
         ///#binary-search
-        ///#binary-search-tree
         ///#bit
         ///#bitmask
+        ///#bst
         ///#buckets
         ///#combinatorics
         ///#dag
@@ -4177,10 +4186,7 @@ namespace Spoj.Solver {
         ///#dynamic-programming-1d
         ///#dynamic-programming-2d
         ///#dynamic-programming-3d
-        ///#dynamic-programming-x
         ///#euler-path
-        ///#experiment
-        ///#extrema
         ///#factorial
         ///#factors
         ///#formula
@@ -4192,9 +4198,18 @@ namespace Spoj.Solver {
         ///#hash-table
         ///#heap
         ///#hld
-        ///#inspection
-        ///#intersection
-        /// [rest of string was truncated]&quot;;.
+        ///#io
+        ///#knapsack
+        ///#lazy
+        ///#lca
+        ///#longest-path
+        ///#math
+        ///#memoization
+        ///#merge
+        ///#mod-math
+        ///#mst
+        ///#offline
+        ///#optimiza [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
@@ -4284,7 +4299,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/TRGRID/ #ad-hoc #experiment #recursion
+        ///// https://www.spoj.com/problems/TRGRID/ #ad-hoc #recursion
         ///// Finds the final direction you&apos;ll be facing when spiraling in towards the center of a grid.
         ///public static class TRGRID
         ///{
@@ -4298,7 +4313,8 @@ namespace Spoj.Solver {
         ///    //  2) [|]
         ///    //      .
         ///    //      .
-        ///    // [rest of string was truncated]&quot;;.
+        ///    //      .
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRGRID {
             get {
@@ -4310,7 +4326,7 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/TRICOUNT/ #inspection #math #proof
+        ///// https://www.spoj.com/problems/TRICOUNT/ #math #proof
         ///// Counts triangles (of all sizes) for different levels of the given construction.
         ///public static class TRICOUNT
         ///{
@@ -4321,7 +4337,7 @@ namespace Spoj.Solver {
         ///    static TRICOUNT()
         ///    {
         ///        long[] triangleCounts = new long[_maxLevel + 1];
-        ///        tri [rest of string was truncated]&quot;;.
+        ///        triangleCounts[ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRICOUNT {
             get {
@@ -4333,13 +4349,13 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
-        ///// https://www.spoj.com/problems/TRT/ #experiment #memoization #optimization #recursion
+        ///// https://www.spoj.com/problems/TRT/ #memoization #optimization #recursion
         ///// Finds the optimal order to sell cow treats that become more valuable over time.
         ///public static class TRT // v1, top-down, recursion with memoization
         ///{
         ///    // Observation: for a given range, the starting age is always the same. That&apos;s
         ///    // because the starting age corresponds to the number of treats chosen before
-        ///    // arriving at the range, and to arrive at a [rest of string was truncated]&quot;;.
+        ///    // arriving at the range, and to arrive at a range we mu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v1 {
             get {
@@ -4350,13 +4366,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/TRT/ #dynamic-programming-2d #experiment #optimization
+        ///// https://www.spoj.com/problems/TRT/ #dynamic-programming-2d #optimization
         ///// Finds the optimal order to sell cow treats that become more valuable over time.
         ///public static class TRT // v2, bottom-up, dynamic programming with tabulation
         ///{
         ///    // See TRT_v1 for the memoized solution that helps motivate this DP.
         ///    // A 2D array is used for the DP, where the first index corresponds to a range&apos;s
-        ///    // start index and the second index corresponds to that range&apos;s end index. T [rest of string was truncated]&quot;;.
+        ///    // start index and the second index corresponds to that range&apos;s end index. The
+        ///    // v [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TRT_v2 {
             get {
@@ -4367,7 +4384,7 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/TSHOW1/ #binary #experiment #math
+        ///// https://www.spoj.com/problems/TSHOW1/ #binary #math
         ///// Finds the kth number composed of only the digits 5 and 6.
         ///public static class TSHOW1
         ///{
@@ -4385,7 +4402,8 @@ namespace Spoj.Solver {
         ///    //  9: 565 | 010
         ///    // 10: 566 | 011
         ///    // 11: 655 | 100
-        ///    // 12: 656 |  [rest of string was truncated]&quot;;.
+        ///    // 12: 656 | 101
+        ///    //  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TSHOW1 {
             get {
@@ -4510,14 +4528,14 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
-        ///// https://www.spoj.com/problems/WILLITST/ #experiment #game #math
+        ///// https://www.spoj.com/problems/WILLITST/ #game #math
         ///// Determines if the specified algorithm ever stops for a given input.
         ///public static class WILLITST
         ///{
         ///    // If the second branch gets hit, the number maps to 3(n + 1) and definitely
         ///    // has a factor of 3. That means that second branch eventually gets hit again,
         ///    // even if a lot of factors of 2 get divided out. And when it&apos;s hit again, it
-        ///    // still has a factor of 3 after mapping to 3(n + 1), and the process [rest of string was truncated]&quot;;.
+        ///    // still has a factor of 3 after mapping to 3(n + 1), and the process repeats...        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WILLITST {
             get {
@@ -4575,14 +4593,14 @@ namespace Spoj.Solver {
         ///using System.Collections.Generic;
         ///using System.Linq;
         ///
-        ///// https://www.spoj.com/problems/YODANESS/ #ad-hoc #binary-search-tree
+        ///// https://www.spoj.com/problems/YODANESS/ #ad-hoc #bst
         ///// Finds the number of word inversions in something Yoda has said.
         ///public static class YODANESS
         ///{
         ///    // We can map Yoda&apos;s words to numbers using the ordered statement. Once
         ///    // we do that we need to count the number of inversions in the resulting
         ///    // array, just like CODESPTB or INVCNT.
-        ///    public static int Solve(int wordCount, string[] yodaStatement,  [rest of string was truncated]&quot;;.
+        ///    public static int Solve(int wordCount, string[] yodaStatement, string[] ordere [rest of string was truncated]&quot;;.
         /// </summary>
         public static string YODANESS {
             get {

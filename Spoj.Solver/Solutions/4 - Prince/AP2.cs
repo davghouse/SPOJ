@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/AP2/ #experiment #math #sequence
+// https://www.spoj.com/problems/AP2/ #math #sequence
 // Given certain terms and the sum of an arithmetic progression, finds the whole series.
 public static class AP2
 {

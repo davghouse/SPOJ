@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/FENCE1/ #intuition #math
+// https://www.spoj.com/problems/FENCE1/ #math
 // Finds the area that can be fenced in using a wall and some fence.
 public static class FENCE1
 {

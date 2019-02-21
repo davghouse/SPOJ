@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+// https://www.spoj.com/problems/MAJOR/ #ad-hoc
 // Determines if any number makes up the majority of all the numbers sent.
 public static class MAJOR // v2, using the Boyer-Moore algorithm and two passes.
 {

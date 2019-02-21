@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/RPLC/ #ad-hoc #extrema
+// https://www.spoj.com/problems/RPLC/ #ad-hoc
 // Finds the lowest possible starting energy level when drinking ordered +- cokes.
 public static class RPLC
 {

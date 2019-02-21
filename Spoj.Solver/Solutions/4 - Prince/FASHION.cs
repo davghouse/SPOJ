@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-// https://www.spoj.com/problems/FASHION/ #ad-hoc #experiment #sorting
+// https://www.spoj.com/problems/FASHION/ #ad-hoc #sorting
 // Given two arrays of hotness levels, pair them off to maximize the total hotness product.
 public static class FASHION
 {

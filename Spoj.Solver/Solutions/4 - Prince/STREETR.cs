@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/STREETR/ #ad-hoc #experiment #gcd
+// https://www.spoj.com/problems/STREETR/ #ad-hoc #gcd
 // Finds how many new trees need to be planted to make all trees an equal distance apart.
 public static class STREETR
 {

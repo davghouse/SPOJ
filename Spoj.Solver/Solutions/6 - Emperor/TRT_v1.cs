@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/TRT/ #experiment #memoization #optimization #recursion
+// https://www.spoj.com/problems/TRT/ #memoization #optimization #recursion
 // Finds the optimal order to sell cow treats that become more valuable over time.
 public static class TRT // v1, top-down, recursion with memoization
 {

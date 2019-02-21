@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/PERMUT1/ #dynamic-programming-2d
+// https://www.spoj.com/problems/PERMUT1/ #dynamic-programming-2d #permutations
 // Finds the number of permutations of 1 ... n with k inversions.
 public static class PERMUT1
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/TSHOW1/ #binary #experiment #math
+// https://www.spoj.com/problems/TSHOW1/ #binary #math
 // Finds the kth number composed of only the digits 5 and 6.
 public static class TSHOW1
 {

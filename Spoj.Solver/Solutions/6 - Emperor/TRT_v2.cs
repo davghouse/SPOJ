@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/TRT/ #dynamic-programming-2d #experiment #optimization
+// https://www.spoj.com/problems/TRT/ #dynamic-programming-2d #optimization
 // Finds the optimal order to sell cow treats that become more valuable over time.
 public static class TRT // v2, bottom-up, dynamic programming with tabulation
 {

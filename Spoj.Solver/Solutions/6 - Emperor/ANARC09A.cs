@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/ANARC09A/ #dynamic-programming-x #greedy #recursion #stack
+// https://www.spoj.com/problems/ANARC09A/ #greedy #recursion #stack
 // Finds the minimum number of replacements needed to balance a string of brackets.
 public static class ANARC09A
 {

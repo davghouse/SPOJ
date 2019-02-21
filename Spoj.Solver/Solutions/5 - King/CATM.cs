@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// https://www.spoj.com/problems/CATM/ #bfs-multi-source #simulation
+// https://www.spoj.com/problems/CATM/ #bfs #simulation
 // Figures out if a mouse can escape from two cats.
 public class CATM
 {

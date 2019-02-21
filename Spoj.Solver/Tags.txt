@@ -1,12 +1,11 @@
 ﻿#ad-hoc
 #bfs
-#bfs-multi-source
 #big-numbers
 #binary
 #binary-search
-#binary-search-tree
 #bit
 #bitmask
+#bst
 #buckets
 #combinatorics
 #dag
@@ -21,10 +20,7 @@
 #dynamic-programming-1d
 #dynamic-programming-2d
 #dynamic-programming-3d
-#dynamic-programming-x
 #euler-path
-#experiment
-#extrema
 #factorial
 #factors
 #formula
@@ -36,9 +32,6 @@
 #hash-table
 #heap
 #hld
-#inspection
-#intersection
-#intuition
 #io
 #knapsack
 #lazy
@@ -49,13 +42,11 @@
 #merge
 #mod-math
 #mst
-#network
 #offline
 #optimization
 #parsing
 #path-optimization
 #permutations
-#plane
 #primes
 #prims
 #probability
@@ -64,7 +55,6 @@
 #recursion
 #segment-tree
 #sequence
-#sets
 #shortest-path
 #sieve
 #simulation

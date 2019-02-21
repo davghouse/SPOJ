@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-// https://www.spoj.com/problems/MKTHNUM/ #binary-search #divide-and-conquer #segment-tree #sorting
+// https://www.spoj.com/problems/MKTHNUM/ #binary-search #divide-and-conquer #merge #segment-tree #sorting
 // Answers k-th smallest element in a range queries.
 public sealed class MKTHNUM
 {

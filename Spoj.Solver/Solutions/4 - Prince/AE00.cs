@@ -1,6 +1,6 @@
 using System;
 
-// https://www.spoj.com/problems/AE00/ #division #experiment #math
+// https://www.spoj.com/problems/AE00/ #division #math
 // Counts the number of rectangles that can be constructed from n 1x1 squares
 // (using any number of those squares), 1 <= n <= 1000. More info here:
 // http://mathschallenge.net/library/number/number_of_divisors

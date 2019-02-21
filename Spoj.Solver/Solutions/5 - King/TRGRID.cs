@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/TRGRID/ #ad-hoc #experiment #recursion
+// https://www.spoj.com/problems/TRGRID/ #ad-hoc #recursion
 // Finds the final direction you'll be facing when spiraling in towards the center of a grid.
 public static class TRGRID
 {

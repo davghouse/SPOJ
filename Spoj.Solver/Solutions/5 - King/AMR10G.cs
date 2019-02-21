@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/AMR10G/ #extrema #sorting
+// https://www.spoj.com/problems/AMR10G/ #sorting
 // Finds a set of K students from N total having the minimum height difference.
 public static class AMR10G
 {

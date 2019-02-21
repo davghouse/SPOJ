@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// https://www.spoj.com/problems/YODANESS/ #ad-hoc #binary-search-tree
+// https://www.spoj.com/problems/YODANESS/ #ad-hoc #bst
 // Finds the number of word inversions in something Yoda has said.
 public static class YODANESS
 {

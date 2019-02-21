@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-// https://www.spoj.com/problems/MAJOR/ #ad-hoc #extrema
+// https://www.spoj.com/problems/MAJOR/ #ad-hoc
 // Determines if any number makes up the majority of all the numbers sent.
 public static class MAJOR // v1, using a dictionary and no more than one full pass
 {

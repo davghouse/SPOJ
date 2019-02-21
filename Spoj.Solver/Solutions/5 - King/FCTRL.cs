@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-// https://www.spoj.com/problems/FCTRL/ #experiment #factorial #factors #inspection #math
+// https://www.spoj.com/problems/FCTRL/ #factorial #factors #math
 // Returns the number of trailing zeros of n!, for very large n.
 public static class FCTRL
 {

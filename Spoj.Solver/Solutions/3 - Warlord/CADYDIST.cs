@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// https://www.spoj.com/problems/CADYDIST/ #ad-hoc #experiment #sorting
+// https://www.spoj.com/problems/CADYDIST/ #ad-hoc #sorting
 // Given class sizes and candy prices, feed all students in the cheapest way possible.
 public static class CADYDIST
 {

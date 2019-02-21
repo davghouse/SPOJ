@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-// https://www.spoj.com/problems/BYECAKES/ #division #experiment #optimization
+// https://www.spoj.com/problems/BYECAKES/ #ad-hoc #division #optimization
 // Finds the minimal amount of cake ingredients to buy to use all of them completely up.
 public static class BYECAKES
 {

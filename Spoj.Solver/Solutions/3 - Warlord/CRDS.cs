@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/CRDS/ #inspection #sequence
+// https://www.spoj.com/problems/CRDS/ #ad-hoc #sequence
 // Counts cards in a typical card pyramid, modulo 1000007.
 public static class CRDS
 {

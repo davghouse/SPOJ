@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/POUR1/ #ad-hoc #experiment #mod-math #simulation
+// https://www.spoj.com/problems/POUR1/ #ad-hoc #mod-math #simulation
 // Given two jugs, figures out how to fill them to reach a certain water level.
 public static class POUR1
 {

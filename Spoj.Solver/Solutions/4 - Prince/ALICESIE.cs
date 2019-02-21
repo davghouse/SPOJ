@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-// https://www.spoj.com/problems/ALICESIE/ #division #experiment #sieve
+// https://www.spoj.com/problems/ALICESIE/ #division #sieve
 // Finds how many numbers remaining after sieving like Alice.
 public static class ALICESIE
 {

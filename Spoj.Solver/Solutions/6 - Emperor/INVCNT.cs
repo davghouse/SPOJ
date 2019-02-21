@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/INVCNT/ #ad-hoc #binary-search-tree
+// https://www.spoj.com/problems/INVCNT/ #ad-hoc #bst
 // Finds the number of inversions (larger index, but smaller value) in an array.
 public static class INVCNT
 {

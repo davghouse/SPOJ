@@ -1,6 +1,6 @@
 ﻿using System;
 
-// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary #experiment
+// https://www.spoj.com/problems/NEG2/ #ad-hoc #binary
 // Converts decimal integers to base -2.
 public static class NEG2
 {
