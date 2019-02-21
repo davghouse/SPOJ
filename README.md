@@ -3,8 +3,8 @@ SPOJ
 
 C# solutions to the 200 most-solved problems on SPOJ: https://www.spoj.com/users/davidgalehouse/
 
-Solutions have unit testing, which relies on compiling them programmatically using Roslyn.
-This is necessary because I want them to be submittable to SPOJ without modifications or namespace clutter, so their build actions have to be set to none to prevent compilation errors like [CS0101](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0101) and [CS0017](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0017).
+Solutions are unit tested, which relies on compiling them programmatically using Roslyn.
+This is necessary because I want them to be submittable to SPOJ without modification or namespace clutter, so their build actions have to be set to none to prevent compilation errors like [CS0101](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0101) and [CS0017](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0017).
 
 To keep everything clean, I/O is separated from the actual problem solving.
 Performance of .NET's number parsing and Console I/O can be an issue.
