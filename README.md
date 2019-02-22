@@ -220,5 +220,5 @@ Submission History
 |2019/02/15|[RENT](https://www.spoj.com/problems/RENT/)|[RENT.cs](Spoj.Solver/Solutions/6%20-%20Emperor/RENT.cs)|#binary-search #dynamic-programming-1d #sorting|Emperor|
 |2019/02/16|[WORDS1](https://www.spoj.com/problems/WORDS1/)|[WORDS1.cs](Spoj.Solver/Solutions/7%20-%20Immortal/WORDS1.cs)|#euler-path #graph-theory|Immortal|
 |2019/02/16|[BABTWR](https://www.spoj.com/problems/BABTWR/)|[BABTWR.cs](Spoj.Solver/Solutions/6%20-%20Emperor/BABTWR.cs)|#ad-hoc #dynamic-programming-1d|Emperor|
-|2019/02/17|[KQUERY](https://www.spoj.com/problems/KQUERY/)|[KQUERY.cs](Spoj.Solver/Solutions/8%20-%20Deity/KQUERY.cs)|#bit #offline #sorting|Deity|
+|2019/02/17|[KQUERY](https://www.spoj.com/problems/KQUERY/)|[KQUERY.cs](Spoj.Solver/Solutions/7%20-%20Immortal/KQUERY.cs)|#bit #offline #sorting|Immortal|
 |2019/02/18|[MKTHNUM](https://www.spoj.com/problems/MKTHNUM/)|[MKTHNUM.cs](Spoj.Solver/Solutions/8%20-%20Deity/MKTHNUM.cs)|#binary-search #divide-and-conquer #merge #segment-tree #sorting|Deity|

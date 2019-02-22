@@ -261,7 +261,7 @@
     <Compile Include="Solutions\7 - Immortal\UPDATEITTests.cs" />
     <Compile Include="Solutions\7 - Immortal\WORDS1Tests.cs" />
     <Compile Include="Solutions\8 - Deity\DQUERYTests.cs" />
-    <Compile Include="Solutions\8 - Deity\KQUERYTests.cs" />
+    <Compile Include="Solutions\7 - Immortal\KQUERYTests.cs" />
     <Compile Include="Solutions\8 - Deity\MKTHNUMTests.cs" />
     <Compile Include="Solutions\8 - Deity\MULTQ3Tests.cs" />
     <Compile Include="Solutions\8 - Deity\QTREE_v1Tests.cs" />

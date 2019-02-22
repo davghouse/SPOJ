@@ -6,8 +6,8 @@ using System.Linq;
 // Finds the number of elements greater than a (variable) value in subranges of an array.
 public static class KQUERY
 {
-    // This problem is similar to DQUERY, but requires less creativity I think. The
-    // way to use the BIT was a lot easier to think of, but I'll still rank it as Deity.
+    // This problem is similar to DQUERY, but requires less creativity I think. It
+    // was easier to think of the way to use the BIT.
     public static int[] SolveOffline(int[] sourceArray, GreaterThanQuery[] queries)
     {
         int[] queryResults = new int[queries.Length];

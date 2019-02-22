@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Spoj.Solver.UnitTests.Solutions._8___Deity
+namespace Spoj.Solver.UnitTests.Solutions._7___Immortal
 {
     [TestClass]
     public sealed class KQUERYTests : SolutionTestsBase
