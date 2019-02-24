@@ -8,7 +8,7 @@ This is necessary because I want them to be submittable to SPOJ without modifica
 
 To keep everything clean, I/O is separated from the actual problem solving.
 Performance of .NET's number parsing and Console I/O can be an issue.
-I use the framework whenever possible, but [custom I/O handling](Spoj.Library/IO/FastIO.cs) is sometimes necessary.
+I use them whenever possible, but [custom I/O handling](Spoj.Library/IO/FastIO.cs) is sometimes necessary.
 
 Reusable components are housed in the Spoj.Library project.
 Due to performance concerns I usually don't bother programming with extensibility or safety in mind.
