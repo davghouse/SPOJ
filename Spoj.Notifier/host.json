@@ -1,0 +1,8 @@
+{
+    "version": "2.0",
+    "extensions": {
+        "sendGrid": {
+            "from": "SPOJ Notifier <spojnotifier@sendgrid.me>"
+        }
+    }
+}
