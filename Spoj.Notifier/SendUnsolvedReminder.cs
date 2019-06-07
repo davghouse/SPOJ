@@ -55,6 +55,8 @@ namespace Spoj.Notifier
                 .ToArray();
             if (unsolvedProblems.Any())
             {
+                log.LogInformation($"Unsolved problems found: {string.Join(", ", unsolvedProblems)}.");
+
                 var message = new SendGridMessage();
                 message.AddTo(Environment.GetEnvironmentVariable("SendGridMessageTo"));
                 message.SetSubject(unsolvedProblems.Length == 1 ? "A problem from SPOJ's top 200 needs to be solved!"
