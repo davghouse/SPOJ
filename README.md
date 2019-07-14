@@ -222,3 +222,4 @@ Submission History
 |2019/02/16|[BABTWR](https://www.spoj.com/problems/BABTWR/)|[BABTWR.cs](Spoj.Solver/Solutions/6%20-%20Emperor/BABTWR.cs)|#ad-hoc #dynamic-programming-1d|Emperor|
 |2019/02/17|[KQUERY](https://www.spoj.com/problems/KQUERY/)|[KQUERY.cs](Spoj.Solver/Solutions/7%20-%20Immortal/KQUERY.cs)|#bit #offline #sorting|Immortal|
 |2019/02/18|[MKTHNUM](https://www.spoj.com/problems/MKTHNUM/)|[MKTHNUM.cs](Spoj.Solver/Solutions/8%20-%20Deity/MKTHNUM.cs)|#binary-search #divide-and-conquer #merge #segment-tree #sorting|Deity|
+|2019/07/14|[CMPLS](https://www.spoj.com/problems/CMPLS/)|[CMPLS.cs](Spoj.Solver/Solutions/5%20-%20King/CMPLS.cs)|#math #sequence|King|

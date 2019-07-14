@@ -1222,6 +1222,30 @@ namespace Spoj.Solver {
         ///   Looks up a localized string similar to using System;
         ///using System.IO;
         ///
+        ///// https://www.spoj.com/problems/CMPLS/ #math #sequence
+        ///// Finds the next terms in the polynomial of lowest degree matching a sequence.
+        ///public static class CMPLS
+        ///{
+        ///    public static void Solve(int?[] sequence, int knownLength, int unknownLength)
+        ///    {
+        ///        int?[,] differences = new int?[sequence.Length, sequence.Length];
+        ///        for (int c = 0; c &lt; knownLength; ++c)
+        ///        {
+        ///            differences[0, c] = sequence[c].Value;
+        ///        }
+        ///
+        ///        for (int r =  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CMPLS {
+            get {
+                return ResourceManager.GetString("CMPLS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.IO;
+        ///
         ///// https://www.spoj.com/problems/CODESPTB/ #bit #sorting
         ///// Finds the number of swaps necessary when performing insertion sort.
         ///public static class CODESPTB

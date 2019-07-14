@@ -97,6 +97,7 @@
     <Compile Include="Solutions\5 - King\BEADSTests.cs" />
     <Compile Include="Solutions\5 - King\CATMTests.cs" />
     <Compile Include="Solutions\5 - King\CEQUTests.cs" />
+    <Compile Include="Solutions\5 - King\CMPLSTests.cs" />
     <Compile Include="Solutions\5 - King\GAMESTests.cs" />
     <Compile Include="Solutions\5 - King\GNYR09FTests.cs" />
     <Compile Include="Solutions\5 - King\IITKWPCBTests.cs" />

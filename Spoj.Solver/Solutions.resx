@@ -751,4 +751,7 @@
   <data name="KQUERY" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Solutions\7 - Immortal\KQUERY.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="CMPLS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Solutions\5 - King\CMPLS.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

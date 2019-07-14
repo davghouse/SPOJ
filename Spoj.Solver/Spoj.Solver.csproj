@@ -58,6 +58,7 @@
     <None Include="Solutions\7 - Immortal\GSS3.cs" />
     <None Include="Solutions\7 - Immortal\HORRIBLE_v2.cs" />
     <None Include="Solutions\6 - Emperor\BUGLIFE.cs" />
+    <None Include="Solutions\5 - King\CMPLS.cs" />
     <Compile Include="Solutions\TEMPLATE1.cs" />
     <None Include="Solutions\1 - Settler\TEST.cs" />
     <None Include="Solutions\2 - Chieftain\ADDREV.cs" />
