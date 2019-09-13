@@ -36,7 +36,6 @@ public static class Program
 public static class FastIO
 {
     private const byte _null = (byte)'\0';
-    private const byte _newLine = (byte)'\n';
     private const byte _minusSign = (byte)'-';
     private const byte _zero = (byte)'0';
     private const int _inputBufferLimit = 8192;

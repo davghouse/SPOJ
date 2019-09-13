@@ -25,8 +25,8 @@ namespace Spoj.Library
 
         // When given an array, the verifier should be built against the values in the array, not its
         // indices. To satisfy all needs, the index of the found value (rather than the value), is returned.
-        public static int? Search(IReadOnlyList<int> values, Predicate<int> verifier, Mode mode)
-            => Search(0, values.Count - 1, i => verifier(values[i]), mode);
+        public static int? Search(int[] values, Predicate<int> verifier, Mode mode)
+            => Search(0, values.Length - 1, i => verifier(values[i]), mode);
 
         private static int? SearchFalseToTrue(int start, int end, Predicate<int> verifier)
         {

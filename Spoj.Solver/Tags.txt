@@ -8,6 +8,7 @@
 #bst
 #buckets
 #combinatorics
+#compression
 #dag
 #deque
 #dfs

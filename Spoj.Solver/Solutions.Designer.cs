@@ -3334,6 +3334,28 @@ namespace Spoj.Solver {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using System.Text;
+        ///
+        ///// https://www.spoj.com/problems/ORDERSET/ #binary-search #bit #compression #offline #sorting
+        ///// Inserts and deletes elements while answering kth smallest and count smaller queries.
+        ///public sealed class ORDERSET
+        ///{
+        ///    private readonly HashSet&lt;int&gt; _possibleValues;
+        ///    private readonly int[] _orderedValues;
+        ///    private readonly bool[] _valueIsInserted;
+        ///    private readonly PURQBinaryIndexedTree [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ORDERSET {
+            get {
+                return ResourceManager.GetString("ORDERSET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Linq;
         ///
         ///// https://www.spoj.com/problems/PALIN/ #ad-hoc
@@ -4198,6 +4220,7 @@ namespace Spoj.Solver {
         ///#bst
         ///#buckets
         ///#combinatorics
+        ///#compression
         ///#dag
         ///#deque
         ///#dfs
@@ -4232,8 +4255,7 @@ namespace Spoj.Solver {
         ///#merge
         ///#mod-math
         ///#mst
-        ///#offline
-        ///#optimiza [rest of string was truncated]&quot;;.
+        ///#offl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tags {
             get {
