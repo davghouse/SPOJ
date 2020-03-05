@@ -2024,6 +2024,24 @@ namespace Spoj.Solver {
         /// <summary>
         ///   Looks up a localized string similar to using System;
         ///
+        ///// https://www.spoj.com/problems/GERGOVIA/ #greedy
+        ///// Distributes wine between houses where some are selling and some are buying.
+        ///public static class GERGOVIA
+        ///{
+        ///    // Doesn&apos;t matter the order in which you distribute the wine to houses. Could do furthest house
+        ///    // first or closest house first, because you pay for either choice equally when moving to the right.
+        ///    // When you move to the right, you know you&apos;re gonna have to travel through the house you&apos;re leaving
+        ///    // from for e [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GERGOVIA {
+            get {
+                return ResourceManager.GetString("GERGOVIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///
         ///// https://www.spoj.com/problems/GIRLSNBS/ #division
         ///// Minimizes the max consecutive genders for some girls and boys sitting in a row.
         ///public static class GIRLSNBS
