@@ -3,17 +3,7 @@ SPOJ
 
 C# solutions to the 200 most-solved problems on SPOJ: www.spoj.com/users/davidgalehouse/
 
-Solutions are unit tested, which relies on compiling them from source programmatically using Roslyn.
-This is necessary because I want them to be submittable to SPOJ without modification or namespace clutter, so their build actions have to be set to none to prevent compilation errors like [CS0101](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0101) and [CS0017](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0017).
-
-To keep everything clean, I/O is separated from the actual problem solving.
-Performance of .NET's number parsing and Console I/O can be an issue.
-I use them whenever possible, but [custom I/O handling](Spoj.Library/IO/FastIO.cs) is sometimes necessary.
-
-Reusable components are housed in the Spoj.Library project.
-Due to performance concerns I usually don't bother programming with extensibility or safety in mind.
-
-Problems are organized (roughly) by difficulty using [the levels from Civ V](https://civilization.fandom.com/wiki/Difficulty_level_(Civ5)), from Settler (easiest) to Deity (hardest).
+Problems are ranked (roughly) by difficulty using [the levels from Civ V](https://civilization.fandom.com/wiki/Difficulty_level_(Civ5)), from Settler (easiest) to Deity (hardest).
 
 Submission History
 ------------------
@@ -224,3 +214,16 @@ Submission History
 |2019/02/18|[MKTHNUM](https://www.spoj.com/problems/MKTHNUM/)|[MKTHNUM.cs](Spoj.Solver/Solutions/8%20-%20Deity/MKTHNUM.cs)|#binary-search #divide-and-conquer #merge #segment-tree #sorting|Deity|
 |2019/07/14|[CMPLS](https://www.spoj.com/problems/CMPLS/)|[CMPLS.cs](Spoj.Solver/Solutions/5%20-%20King/CMPLS.cs)|#math #sequence|King|
 |2019/09/12|[ORDERSET](https://www.spoj.com/problems/ORDERSET/)|[ORDERSET.cs](Spoj.Solver/Solutions/8%20-%20Deity/ORDERSET.cs)|#binary-search #bit #compression #offline #sorting|Deity|
+|2020/03/04|[GERGOVIA](https://www.spoj.com/problems/GERGOVIA/)|[GERGOVIA.cs](Spoj.Solver/Solutions/5%20-%20King/GERGOVIA.cs)|#greedy|King|
+
+Notes
+-----
+Solutions are unit tested, which relies on compiling them from source programmatically using Roslyn.
+This is necessary because I want them to be submittable to SPOJ without modification or namespace clutter, so their build actions have to be set to none to prevent compilation errors like [CS0101](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0101) and [CS0017](https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0017).
+
+To keep everything clean, I/O is separated from the actual problem solving.
+Performance of .NET's number parsing and Console I/O can be an issue.
+I use them whenever possible, but [custom I/O handling](Spoj.Library/IO/FastIO.cs) is sometimes necessary.
+
+Reusable components are housed in the Spoj.Library project.
+Due to performance concerns I usually don't bother programming with extensibility or safety in mind.
